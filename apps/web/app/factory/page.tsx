@@ -1,4 +1,4 @@
-import { safeFetchJson } from "@/lib/api";
+﻿import { safeFetchJson } from "@/lib/api";
 import { SiteLang } from "@/lib/i18n";
 import { getServerLang } from "@/lib/server-lang";
 
@@ -8,8 +8,17 @@ type MediaAsset = {
   image_url: string;
 };
 
+const fallbackFactoryImages: MediaAsset[] = [
+  {
+    id: -1,
+    title: "Factory Capability Panorama",
+    image_url: "/media/generated/factory-capability-panorama.png"
+  }
+];
+
 async function getFactoryImages(): Promise<MediaAsset[]> {
-  return safeFetchJson<MediaAsset[]>("/media/assets?asset_type=factory&limit=6", []);
+  const assets = await safeFetchJson<MediaAsset[]>("/media/assets?asset_type=factory&limit=6", []);
+  return assets.length > 0 ? assets : fallbackFactoryImages;
 }
 
 const copy: Record<
@@ -26,8 +35,7 @@ const copy: Record<
   en: {
     kicker: "Factory",
     title: "A disciplined production system built for reliability",
-    desc:
-      "Our factory combines seamless machinery, process control, and quality checkpoints to deliver stable output for global buyers.",
+    desc: "Our factory combines seamless machinery, process control, and quality checkpoints to deliver stable output for global buyers.",
     gallery: "Factory Visual Gallery",
     noVisual: "No factory visuals yet. Generate in Admin Creative Studio.",
     capabilities: [
@@ -41,20 +49,19 @@ const copy: Record<
     kicker: "工厂",
     title: "以稳定交付为目标的制造体系",
     desc: "工厂将无缝设备、工艺控制与质检节点协同运作，确保面对全球买家时依然保持稳定产出。",
-    gallery: "工厂视觉图集",
-    noVisual: "暂无工厂视觉素材，请在后台创意中心生成。",
+    gallery: "工厂视觉图库",
+    noVisual: "暂时还没有工厂视觉素材，请在后台创意中心生成。",
     capabilities: [
       { label: "打样周期", value: "5-7 天" },
       { label: "大货周期", value: "20-30 天" },
       { label: "单款单色 MOQ", value: "300-500 件" },
-      { label: "核心品类", value: "内衣 / 瑜伽 / 运动服饰" }
+      { label: "核心品类", value: "内衣 / 瑜伽 / 运动服" }
     ]
   },
   es: {
     kicker: "Fabrica",
     title: "Sistema de produccion disciplinado y confiable",
-    desc:
-      "La fabrica integra maquinaria seamless, control de proceso y puntos de calidad para mantener entregas estables.",
+    desc: "La fabrica integra maquinaria seamless, control de proceso y puntos de calidad para mantener entregas estables.",
     gallery: "Galeria Visual de Fabrica",
     noVisual: "Aun no hay visuales de fabrica. Generalos desde Admin.",
     capabilities: [
@@ -97,9 +104,7 @@ export default async function FactoryPage() {
               <p className="mt-2 text-sm text-[#4f607d]">{img.title}</p>
             </article>
           ))}
-          {images.length === 0 ? (
-            <div className="rounded-2xl border border-dashed border-slate-300 p-4 text-sm text-slate-500">{t.noVisual}</div>
-          ) : null}
+          {images.length === 0 ? <div className="rounded-2xl border border-dashed border-slate-300 p-4 text-sm text-slate-500">{t.noVisual}</div> : null}
         </div>
       </section>
     </main>

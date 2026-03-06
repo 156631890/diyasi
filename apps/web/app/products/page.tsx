@@ -1,4 +1,4 @@
-import BuyNowButton from "@/components/BuyNowButton";
+﻿import BuyNowButton from "@/components/BuyNowButton";
 import { safeFetchJson } from "@/lib/api";
 import { SiteLang } from "@/lib/i18n";
 import { getServerLang } from "@/lib/server-lang";
@@ -48,7 +48,7 @@ const copy: Record<
     title: "按分类组织的产品系统，提升选款效率",
     desc: "按品类快速浏览、对比与筛选，让合作从付费打样顺畅进入大货阶段。",
     all: "全部分类",
-    noPoster: "该分类暂无产品。",
+    noPoster: "该分类暂时没有产品。",
     noImage: "图片待更新",
     quote: "获取分类报价",
     bulk: "洽谈大货合作",
@@ -91,11 +91,7 @@ async function getCategories(): Promise<ProductCategory[]> {
   return safeFetchJson<ProductCategory[]>("/products/categories", []);
 }
 
-type ProductsPageProps = {
-  searchParams: {
-    category?: string;
-  };
-};
+type ProductsPageProps = { searchParams: { category?: string } };
 
 export default async function ProductsPage({ searchParams }: ProductsPageProps) {
   const lang = getServerLang();
@@ -104,9 +100,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
   const selectedKey = keyCategory(selected);
 
   const [products, categories] = await Promise.all([getProducts(), getCategories()]);
-  const filteredProducts = selectedKey
-    ? products.filter((item) => keyCategory(item.category) === selectedKey)
-    : products;
+  const filteredProducts = selectedKey ? products.filter((item) => keyCategory(item.category) === selectedKey) : products;
 
   return (
     <main className="container-shell py-10">
@@ -118,12 +112,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
 
       <section className="mt-7 card p-6">
         <div className="flex flex-wrap gap-2">
-          <Link
-            href="/products"
-            className={`rounded-full border px-4 py-2 text-sm ${
-              selectedKey ? "border-slate-300 text-slate-700" : "border-[#102949] bg-[#102949] text-white"
-            }`}
-          >
+          <Link href="/products" className={`rounded-full border px-4 py-2 text-sm ${selectedKey ? "border-slate-300 text-slate-700" : "border-[#102949] bg-[#102949] text-white"}`}>
             {t.all} ({products.length})
           </Link>
           {categories.map((item) => {
@@ -132,9 +121,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
               <Link
                 key={item.category}
                 href={`/products?category=${encodeURIComponent(item.category)}`}
-                className={`rounded-full border px-4 py-2 text-sm transition ${
-                  active ? "border-[#102949] bg-[#102949] text-white" : "border-slate-300 text-slate-700 hover:border-slate-400"
-                }`}
+                className={`rounded-full border px-4 py-2 text-sm transition ${active ? "border-[#102949] bg-[#102949] text-white" : "border-slate-300 text-slate-700 hover:border-slate-400"}`}
               >
                 {item.category} ({item.count})
               </Link>
@@ -144,9 +131,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
       </section>
 
       <section className="mt-8 space-y-4">
-        {filteredProducts.length === 0 ? (
-          <div className="card p-5 text-slate-600">{t.noPoster}</div>
-        ) : null}
+        {filteredProducts.length === 0 ? <div className="card p-5 text-slate-600">{t.noPoster}</div> : null}
         {filteredProducts.map((product) => {
           const price = resolvePrice(product);
           return (
@@ -154,9 +139,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
               {product.image_url ? (
                 <img src={product.image_url} alt={product.product_name} className="h-72 w-full object-cover" />
               ) : (
-                <div className="grid h-72 place-items-center bg-gradient-to-br from-[#dde8f7] to-[#f4e7d5] text-sm text-slate-600">
-                  {t.noImage}
-                </div>
+                <div className="grid h-72 place-items-center bg-gradient-to-br from-[#dde8f7] to-[#f4e7d5] text-sm text-slate-600">{t.noImage}</div>
               )}
               <div className="p-6">
                 <div className="flex flex-wrap items-start justify-between gap-3">
@@ -170,12 +153,8 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
                 <p className="mt-3 leading-7 text-[#4f607d]">{product.description}</p>
                 <div className="mt-5 flex flex-wrap gap-2">
                   <BuyNowButton title={`${product.product_name} - ${t.paidSample}`} unitAmountUsd={price} />
-                  <Link href="/contact" className="btn btn-soft">
-                    {t.bulk}
-                  </Link>
-                  <Link href="/contact" className="btn btn-soft">
-                    {t.quote}
-                  </Link>
+                  <Link href="/contact" className="btn btn-soft">{t.bulk}</Link>
+                  <Link href="/contact" className="btn btn-soft">{t.quote}</Link>
                 </div>
               </div>
             </article>

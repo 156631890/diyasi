@@ -1,4 +1,4 @@
-import { safeFetchJson } from "@/lib/api";
+﻿import { safeFetchJson } from "@/lib/api";
 import { SiteLang } from "@/lib/i18n";
 import { getServerLang } from "@/lib/server-lang";
 import Link from "next/link";
@@ -9,9 +9,15 @@ type MediaAsset = {
   title: string;
 };
 
+const fallbackHeroImage: MediaAsset = {
+  id: -1,
+  title: "Material Confidence Hero",
+  image_url: "/media/generated/hero-material-confidence.png"
+};
+
 async function getHeroImage(): Promise<MediaAsset | null> {
   const assets = await safeFetchJson<MediaAsset[]>("/media/assets?limit=1&asset_type=hero_banner", []);
-  return assets[0] || null;
+  return assets[0] || fallbackHeroImage;
 }
 
 type ValueItem = {
@@ -43,28 +49,17 @@ const copy: Record<
   en: {
     kicker: "About YiWu DiYaSi",
     title: "A manufacturing partner built for long-term brand growth",
-    p1:
-      "Founded on the belief that sustainability and high-quality manufacturing go hand in hand, YiWu DiYaSi Dress CO., LTD has spent over 23 years helping brands bring their dream underwear lines to life.",
-    p2:
-      "From product development to final delivery, we combine premium materials, reliable production systems, and practical OEM/ODM experience to support your growth at every stage.",
+    p1: "Founded on the belief that sustainability and high-quality manufacturing go hand in hand, YiWu DiYaSi Dress CO., LTD has spent over 23 years helping brands bring their dream underwear lines to life.",
+    p2: "From product development to final delivery, we combine premium materials, reliable production systems, and practical OEM/ODM experience to support your growth at every stage.",
     cta1: "Talk to Our Team",
     cta2: "View Factory",
     milestone: "Milestones",
     journey: "Our Growth Journey",
     noVisual: "Generate hero visual from Admin media library.",
     values: [
-      {
-        title: "Sustainable Material Commitment",
-        text: "We prioritize premium sustainable fabrics that deliver comfort, durability, and responsible sourcing."
-      },
-      {
-        title: "Precision Production Discipline",
-        text: "From knitting and cutting to inline inspection, every step is controlled for consistency at scale."
-      },
-      {
-        title: "Partnership for Growth",
-        text: "We support each brand from first idea to repeat production with clear communication and dependable lead time."
-      }
+      { title: "Sustainable Material Commitment", text: "We prioritize premium sustainable fabrics that deliver comfort, durability, and responsible sourcing." },
+      { title: "Precision Production Discipline", text: "From knitting and cutting to inline inspection, every step is controlled for consistency at scale." },
+      { title: "Partnership for Growth", text: "We support each brand from first idea to repeat production with clear communication and dependable lead time." }
     ],
     timeline: [
       { year: "2003", milestone: "Factory established with first seamless underwear production line." },
@@ -74,63 +69,41 @@ const copy: Record<
     ]
   },
   zh: {
-    kicker: "关于迪亚斯",
-    title: "面向品牌长期增长的制造合作伙伴",
-    p1:
-      "义乌迪亚斯服饰有限公司始终坚持“可持续与高品质制造并行”。23+ 年来，我们持续帮助品牌把理想内衣产品线从概念推进到市场落地。",
-    p2:
-      "从产品开发到最终交付，我们以优质面料、稳定制造体系与成熟 OEM/ODM 经验，为品牌每个阶段的增长提供支持。",
+    kicker: "关于迪雅斯",
+    title: "为品牌长期增长而建立的制造合作关系",
+    p1: "义乌迪雅斯服饰有限公司始终坚持可持续与高品质制造并行。23 年以上，我们持续帮助品牌把理想中的内衣产品线从概念推进到市场落地。",
+    p2: "从产品开发到最终交付，我们以优质面料、稳定制造体系和成熟的 OEM/ODM 经验，为品牌每一个阶段的增长提供支持。",
     cta1: "联系团队",
     cta2: "查看工厂",
     milestone: "发展里程碑",
     journey: "我们的成长路径",
     noVisual: "可在后台素材库生成品牌主视觉。",
     values: [
-      {
-        title: "可持续面料承诺",
-        text: "优先选择高品质可持续面料，在舒适性、耐用性与责任采购之间实现平衡。"
-      },
-      {
-        title: "精细化制造纪律",
-        text: "从织造、裁剪到在线质检，每个环节都以稳定和一致为核心进行控制。"
-      },
-      {
-        title: "面向增长的合作关系",
-        text: "我们从品牌初期开发到复购量产持续支持，以明确沟通和稳定交期陪伴成长。"
-      }
+      { title: "可持续面料承诺", text: "优先选择高品质、可追溯的面料方案，在舒适度、耐用性与责任采购之间实现平衡。" },
+      { title: "精细化制造纪律", text: "从织造、裁剪到在线质检，每一个环节都围绕稳定和一致性展开。" },
+      { title: "面向增长的合作关系", text: "我们从品牌初期开发到复购量产持续支持，以清晰沟通和稳定交期陪伴成长。" }
     ],
     timeline: [
-      { year: "2003", milestone: "工厂成立，投建首条无缝内衣生产线。" },
-      { year: "2011", milestone: "OEM/ODM 服务拓展至国际私牌客户。" },
-      { year: "2018", milestone: "强化质量体系并推进可持续面料路线。" },
+      { year: "2003", milestone: "工厂成立，并投入首条无缝内衣生产线。" },
+      { year: "2011", milestone: "OEM/ODM 服务扩展至国际品牌客户。" },
+      { year: "2018", milestone: "强化质量体系，并推进可持续面料 sourcing 路线。" },
       { year: "2026", milestone: "通过数字化官网与多语言系统升级全球业务能力。" }
     ]
   },
   es: {
     kicker: "Sobre YiWu DiYaSi",
     title: "Un socio de manufactura orientado al crecimiento de marca",
-    p1:
-      "Con la conviccion de que sostenibilidad y calidad deben avanzar juntas, YiWu DiYaSi Dress CO., LTD lleva mas de 23 anos ayudando a marcas a lanzar sus lineas de ropa interior.",
-    p2:
-      "Desde el desarrollo de producto hasta la entrega final, combinamos materiales premium, produccion estable y experiencia OEM/ODM para apoyar tu crecimiento.",
+    p1: "Con la conviccion de que sostenibilidad y calidad deben avanzar juntas, YiWu DiYaSi Dress CO., LTD lleva mas de 23 anos ayudando a marcas a lanzar sus lineas de ropa interior.",
+    p2: "Desde el desarrollo de producto hasta la entrega final, combinamos materiales premium, produccion estable y experiencia OEM/ODM para apoyar tu crecimiento.",
     cta1: "Hablar con el equipo",
     cta2: "Ver Fabrica",
     milestone: "Hitos",
     journey: "Nuestra Evolucion",
     noVisual: "Genera visual principal desde Admin.",
     values: [
-      {
-        title: "Compromiso con Materiales Sostenibles",
-        text: "Priorizamos tejidos premium sostenibles con equilibrio entre confort, durabilidad y trazabilidad."
-      },
-      {
-        title: "Disciplina de Produccion",
-        text: "Desde tejido y corte hasta inspeccion en linea, cada etapa se controla para mantener consistencia."
-      },
-      {
-        title: "Socio para el Crecimiento",
-        text: "Acompanamos a cada marca desde el primer desarrollo hasta produccion recurrente con plazos confiables."
-      }
+      { title: "Compromiso con Materiales Sostenibles", text: "Priorizamos tejidos premium sostenibles con equilibrio entre confort, durabilidad y trazabilidad." },
+      { title: "Disciplina de Produccion", text: "Desde tejido y corte hasta inspeccion en linea, cada etapa se controla para mantener consistencia." },
+      { title: "Socio para el Crecimiento", text: "Acompanamos a cada marca desde el primer desarrollo hasta produccion recurrente con plazos confiables." }
     ],
     timeline: [
       { year: "2003", milestone: "Fundacion de fabrica y primera linea seamless de ropa interior." },
@@ -155,21 +128,15 @@ export default async function AboutPage() {
             <p className="mt-4 leading-8 text-[#4f607d]">{t.p1}</p>
             <p className="mt-4 leading-8 text-[#4f607d]">{t.p2}</p>
             <div className="mt-6 flex gap-3">
-              <Link href="/contact" className="btn btn-primary">
-                {t.cta1}
-              </Link>
-              <Link href="/factory" className="btn btn-soft">
-                {t.cta2}
-              </Link>
+              <Link href="/contact" className="btn btn-primary">{t.cta1}</Link>
+              <Link href="/factory" className="btn btn-soft">{t.cta2}</Link>
             </div>
           </div>
           <div className="rounded-3xl border border-slate-200 bg-white/85 p-3">
             {heroImage ? (
               <img src={heroImage.image_url} alt={heroImage.title} className="h-[360px] w-full rounded-2xl object-cover" />
             ) : (
-              <div className="grid h-[360px] place-items-center rounded-2xl bg-gradient-to-br from-[#dce5f5] to-[#f6ead7] text-sm text-slate-600">
-                {t.noVisual}
-              </div>
+              <div className="grid h-[360px] place-items-center rounded-2xl bg-gradient-to-br from-[#dce5f5] to-[#f6ead7] text-sm text-slate-600">{t.noVisual}</div>
             )}
           </div>
         </div>

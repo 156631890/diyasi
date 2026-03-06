@@ -198,6 +198,108 @@ a {
   box-shadow: 0 24px 70px rgba(15, 27, 45, 0.08);
 }
 
+.home-gallery {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 180px;
+  gap: 1rem;
+}
+
+.home-gallery-main,
+.home-gallery-side {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 28px;
+  box-shadow: 0 24px 70px rgba(15, 27, 45, 0.16);
+}
+
+.home-gallery-main {
+  min-height: 460px;
+}
+
+.home-gallery-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.home-gallery-side {
+  min-height: 222px;
+}
+
+.home-gallery-fallback,
+.home-gallery-note {
+  display: grid;
+  place-items: center;
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.86) 0%, rgba(240, 233, 218, 0.92) 100%);
+  border: 1px solid rgba(184, 138, 59, 0.2);
+  color: #52627c;
+  text-align: center;
+  line-height: 1.8;
+  padding: 1.5rem;
+}
+
+.home-gallery-fallback {
+  min-height: 460px;
+}
+
+.home-gallery-note {
+  min-height: 222px;
+}
+
+.stat-band {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  border-top: 1px solid #cfdae9;
+  border-bottom: 1px solid #cfdae9;
+  padding: 1.5rem 0;
+}
+
+.stat-band-item {
+  padding-right: 1rem;
+}
+
+.split-gallery {
+  display: grid;
+  grid-template-columns: 1.3fr 0.85fr 0.85fr;
+  gap: 1rem;
+}
+
+.split-gallery-item {
+  position: relative;
+  overflow: hidden;
+  min-height: 420px;
+  border-radius: 30px;
+}
+
+.split-gallery-caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 1.25rem 1.25rem 1rem;
+  background: linear-gradient(180deg, rgba(11, 24, 41, 0) 0%, rgba(11, 24, 41, 0.82) 100%);
+  color: white;
+}
+
+.category-rows {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.category-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  padding-top: 1rem;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.02rem;
+}
+
+.category-row:hover {
+  color: white;
+}
+
 .contact-layout {
   display: grid;
   gap: 1.5rem;
@@ -281,7 +383,10 @@ a {
   .editorial-strip,
   .contact-layout,
   .payment-grid,
-  .process-row {
+  .process-row,
+  .stat-band,
+  .split-gallery,
+  .home-gallery {
     grid-template-columns: 1fr;
   }
 
@@ -292,5 +397,16 @@ a {
   .contact-aside {
     border-left: 0;
     padding-left: 0;
+  }
+
+  .home-gallery-main,
+  .home-gallery-fallback,
+  .split-gallery-item {
+    min-height: 320px;
+  }
+
+  .home-gallery-side,
+  .home-gallery-note {
+    min-height: 180px;
   }
 }

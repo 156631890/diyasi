@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { safeFetchJson } from "@/lib/api";
 import { SiteLang } from "@/lib/i18n";
 import { getServerLang } from "@/lib/server-lang";
@@ -15,6 +15,32 @@ type ProductCategory = {
   count: number;
 };
 
+type Metric = {
+  value: string;
+  label: string;
+};
+
+const fallbackPosters: MediaAsset[] = [
+  {
+    id: -1,
+    asset_type: "hero_banner",
+    title: "Material Confidence Hero",
+    image_url: "/media/generated/hero-material-confidence.png"
+  },
+  {
+    id: -2,
+    asset_type: "poster",
+    title: "Premium Collection Showroom",
+    image_url: "/media/generated/poster-premium-collection.png"
+  },
+  {
+    id: -3,
+    asset_type: "factory",
+    title: "Factory Capability Panorama",
+    image_url: "/media/generated/factory-capability-panorama.png"
+  }
+];
+
 const copy: Record<
   SiteLang,
   {
@@ -23,73 +49,98 @@ const copy: Record<
     heroDesc: string;
     ctaProducts: string;
     ctaContact: string;
-    posterKicker: string;
-    posterTitle: string;
-    posterDesc: string;
-    posterBtn: string;
+    storyKicker: string;
+    storyTitle: string;
+    storyDesc: string;
+    storyBtn: string;
     noPoster: string;
     catKicker: string;
     catTitle: string;
     catDesc: string;
+    noCategory: string;
+    metrics: Metric[];
   }
 > = {
   en: {
     heroKicker: "YiWu DiYaSi Dress CO., LTD",
-    heroTitle: "Premium sustainable underwear manufacturing for global brands",
+    heroTitle: "Premium sustainable underwear manufacturing with the presence of an established brand partner",
     heroDesc:
-      "Founded on the belief that sustainability and high-quality manufacturing go hand in hand, we have spent 23+ years helping brands bring their dream underwear lines to market.",
+      "For more than 23 years, we have helped underwear and activewear brands move from concept and sampling to repeatable bulk production with consistent quality, disciplined timelines, and premium fabric direction.",
     ctaProducts: "Browse Product Categories",
     ctaContact: "Discuss Your Project",
-    posterKicker: "Brand Creative",
-    posterTitle: "Campaign visuals built for premium positioning",
-    posterDesc:
-      "From hero banners to product posters, your website visuals are managed in one system and aligned with your brand story.",
-    posterBtn: "Open Media Library",
+    storyKicker: "Brand Visual Direction",
+    storyTitle: "A website experience that feels closer to a showroom than a catalog",
+    storyDesc:
+      "Visual assets, launch stories, and category navigation work together so buyers understand quality, mood, and manufacturing confidence before the first conversation.",
+    storyBtn: "Open Media Library",
     noPoster: "No featured visuals yet. Generate and set featured assets in Admin.",
     catKicker: "Product Navigation",
-    catTitle: "Category-first experience for faster buyer decisions",
+    catTitle: "Large categories, clearer choices, faster sourcing decisions",
     catDesc:
-      "Help international buyers quickly find target categories, evaluate options, and move from sampling to bulk production."
+      "Buyers should not dig through small cards. They should understand your strongest categories at a glance and move quickly into discussion.",
+    noCategory: "No categories available yet.",
+    metrics: [
+      { value: "23+", label: "years of manufacturing experience" },
+      { value: "5-7", label: "days for first sample development" },
+      { value: "300-500", label: "pcs MOQ per style and color" },
+      { value: "20-30", label: "days for bulk production window" }
+    ]
   },
   zh: {
-    heroKicker: "义乌迪亚斯服饰有限公司",
-    heroTitle: "面向全球品牌的高端可持续内衣制造伙伴",
+    heroKicker: "义乌迪雅斯服饰有限公司",
+    heroTitle: "面向全球品牌的高端可持续内衣制造体系",
     heroDesc:
-      "我们始终相信可持续与高品质制造可以并行发展。23+ 年来，迪亚斯持续帮助品牌将理想内衣产品线从概念落地到稳定交付。",
+      "23 年以上，我们持续帮助内衣与运动服品牌从概念、打样走向稳定量产，以更强的品质控制、更清晰的交付节奏和更成熟的面料方向支持品牌成长。",
     ctaProducts: "查看产品分类",
     ctaContact: "洽谈合作项目",
-    posterKicker: "品牌视觉",
-    posterTitle: "服务高端定位的官网视觉系统",
-    posterDesc: "从首页主视觉到产品海报，所有素材统一管理并围绕品牌叙事持续更新。",
-    posterBtn: "进入素材库",
-    noPoster: "暂无精选视觉，请在后台生成并设为精选素材。",
+    storyKicker: "品牌视觉方向",
+    storyTitle: "让官网更像展厅，而不是零散目录",
+    storyDesc:
+      "主视觉、品牌叙事和产品分类彼此配合，让采购方在第一次沟通之前就感受到品质、风格和制造信心。",
+    storyBtn: "进入素材库",
+    noPoster: "暂时还没有精选视觉素材，请在后台生成并设为精选。",
     catKicker: "产品导航",
-    catTitle: "以分类为核心，缩短买家决策路径",
-    catDesc: "让海外买家快速进入目标品类，清晰比较方案，并顺畅推进打样与大货合作。"
+    catTitle: "更大的分类结构，更清晰的选择路径",
+    catDesc: "采购方不应该在很多小卡片里来回寻找，而应该一眼看到你的核心品类，并快速进入沟通。",
+    noCategory: "暂时还没有可展示的分类。",
+    metrics: [
+      { value: "23+", label: "年制造经验" },
+      { value: "5-7", label: "天完成首轮打样" },
+      { value: "300-500", label: "件起订量区间" },
+      { value: "20-30", label: "天大货交付周期" }
+    ]
   },
   es: {
     heroKicker: "YiWu DiYaSi Dress CO., LTD",
     heroTitle: "Manufactura premium y sostenible de ropa interior para marcas globales",
     heroDesc:
-      "Con la conviccion de que sostenibilidad y calidad deben avanzar juntas, llevamos mas de 23 anos ayudando a marcas a lanzar y escalar sus lineas de ropa interior.",
+      "Durante mas de 23 anos hemos ayudado a marcas de underwear y activewear a pasar de concepto y muestra a produccion masiva estable, con mejor control de calidad, timing claro y direccion premium de tejido.",
     ctaProducts: "Ver Categorias",
     ctaContact: "Hablar del Proyecto",
-    posterKicker: "Creatividad de Marca",
-    posterTitle: "Visuales de campana para una posicion premium",
-    posterDesc:
-      "Desde banners principales hasta posters de producto, toda la creatividad se gestiona en un solo sistema alineado a tu historia de marca.",
-    posterBtn: "Abrir Biblioteca Media",
+    storyKicker: "Direccion Visual de Marca",
+    storyTitle: "Una experiencia web mas cercana a un showroom que a un catalogo",
+    storyDesc:
+      "Los visuales, la narrativa de lanzamiento y la navegacion por categorias trabajan juntos para mostrar calidad, tono y confianza productiva desde el primer vistazo.",
+    storyBtn: "Abrir Biblioteca Media",
     noPoster: "Aun no hay visuales destacados. Configuralos desde Admin.",
     catKicker: "Navegacion de Producto",
-    catTitle: "Estructura por categorias para decidir mas rapido",
+    catTitle: "Categorias grandes, decisiones mas claras, sourcing mas rapido",
     catDesc:
-      "Permite a compradores internacionales encontrar su categoria objetivo, comparar opciones y avanzar de muestra a produccion masiva."
+      "Los compradores no deberian navegar entre pequenas tarjetas. Deben entender las categorias fuertes de inmediato y avanzar a conversacion.",
+    noCategory: "Aun no hay categorias disponibles.",
+    metrics: [
+      { value: "23+", label: "anos de experiencia productiva" },
+      { value: "5-7", label: "dias para primera muestra" },
+      { value: "300-500", label: "pcs MOQ por estilo y color" },
+      { value: "20-30", label: "dias para produccion masiva" }
+    ]
   }
 };
 
 async function getFeaturedPosters(): Promise<MediaAsset[]> {
   const rows = await safeFetchJson<MediaAsset[]>("/media/assets?only_active=true&only_featured=true&limit=6", []);
-  return rows.filter((item) => item.asset_type === "poster" || item.asset_type === "hero_banner").slice(0, 3);
+  const filtered = rows.filter((item) => item.asset_type === "poster" || item.asset_type === "hero_banner").slice(0, 3);
+  return filtered.length > 0 ? filtered : fallbackPosters;
 }
 
 async function getCategories(): Promise<ProductCategory[]> {
@@ -100,6 +151,8 @@ export default async function HomePage() {
   const lang = getServerLang();
   const t = copy[lang];
   const [posters, categories] = await Promise.all([getFeaturedPosters(), getCategories()]);
+  const heroPoster = posters[0] || null;
+  const sidePosters = posters.slice(1, 3);
 
   const organizationJsonLd = {
     "@context": "https://schema.org",
@@ -112,68 +165,103 @@ export default async function HomePage() {
   };
 
   return (
-    <main className="pb-16">
+    <main className="pb-20">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+
       <section className="container-shell pt-10 lg:pt-14">
-        <div className="hero-panel p-7 md:p-10 lg:p-14">
-          <p className="kicker">{t.heroKicker}</p>
-          <h1 className="section-title mt-4 text-[#0f2038]">{t.heroTitle}</h1>
-          <p className="mt-5 max-w-3xl text-[1.04rem] leading-8 text-[#44546d]">{t.heroDesc}</p>
-          <div className="mt-7 flex flex-wrap gap-3">
-            <Link href="/products" className="btn btn-primary">
-              {t.ctaProducts}
-            </Link>
-            <Link href="/contact" className="btn btn-soft">
-              {t.ctaContact}
-            </Link>
+        <div className="hero-panel overflow-hidden px-7 py-8 md:px-10 md:py-10 lg:px-14 lg:py-14">
+          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+            <div>
+              <p className="kicker">{t.heroKicker}</p>
+              <h1 className="section-title mt-4 max-w-4xl text-[#0f2038]">{t.heroTitle}</h1>
+              <p className="mt-6 max-w-3xl text-[1.05rem] leading-8 text-[#44546d]">{t.heroDesc}</p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link href="/products" className="btn btn-primary">
+                  {t.ctaProducts}
+                </Link>
+                <Link href="/contact" className="btn btn-soft">
+                  {t.ctaContact}
+                </Link>
+              </div>
+            </div>
+
+            <div className="home-gallery">
+              {heroPoster ? (
+                <img src={heroPoster.image_url} alt={heroPoster.title} className="home-gallery-main" />
+              ) : (
+                <div className="home-gallery-fallback">{t.noPoster}</div>
+              )}
+              <div className="home-gallery-stack">
+                {sidePosters.length > 0 ? (
+                  sidePosters.map((asset) => (
+                    <img key={asset.id} src={asset.image_url} alt={asset.title} className="home-gallery-side" />
+                  ))
+                ) : (
+                  <div className="home-gallery-note">{t.noPoster}</div>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="container-shell mt-12">
-        <div className="card p-7 md:p-10">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <p className="kicker">{t.posterKicker}</p>
-              <h2 className="heading-font mt-2 text-4xl font-semibold text-[#11253f]">{t.posterTitle}</h2>
-              <p className="mt-2 text-[#51627d]">{t.posterDesc}</p>
-            </div>
-            <Link href="/admin" className="btn btn-soft">
-              {t.posterBtn}
-            </Link>
+      <section className="container-shell mt-10">
+        <div className="stat-band">
+          {t.metrics.map((metric) => (
+            <article key={metric.label} className="stat-band-item">
+              <p className="metric-num">{metric.value}</p>
+              <p className="mt-2 max-w-[14rem] text-sm uppercase tracking-[0.18em] text-[#5d6e89]">{metric.label}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="container-shell mt-14">
+        <div className="editorial-strip border-b-0 pt-0">
+          <div>
+            <p className="kicker">{t.storyKicker}</p>
+            <h2 className="heading-font mt-2 text-4xl font-semibold text-[#11253f] md:text-5xl">{t.storyTitle}</h2>
+            <p className="mt-4 max-w-3xl text-lg leading-8 text-[#51627d]">{t.storyDesc}</p>
           </div>
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
-            {posters.length === 0 ? (
-              <div className="rounded-2xl border border-dashed border-slate-300 p-4 text-sm text-slate-500 md:col-span-3">
-                {t.noPoster}
-              </div>
+          <Link href="/admin" className="btn btn-soft">
+            {t.storyBtn}
+          </Link>
+        </div>
+      </section>
+
+      <section className="container-shell mt-8">
+        {posters.length === 0 ? (
+          <div className="rounded-[28px] border border-dashed border-slate-300 px-6 py-8 text-sm text-slate-500">{t.noPoster}</div>
+        ) : (
+          <div className="split-gallery">
+            {posters.map((asset) => (
+              <article key={asset.id} className="split-gallery-item">
+                <img src={asset.image_url} alt={asset.title} className="h-full w-full object-cover" />
+                <div className="split-gallery-caption">
+                  <p>{asset.title}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        )}
+      </section>
+
+      <section className="container-shell mt-14">
+        <div className="dark-band rounded-[34px] px-7 py-10 shadow-[0_32px_90px_rgba(16,30,52,0.18)] md:px-10 lg:px-12">
+          <p className="kicker text-[#f3d7a1]">{t.catKicker}</p>
+          <h2 className="heading-font mt-2 max-w-4xl text-4xl font-semibold md:text-5xl">{t.catTitle}</h2>
+          <p className="mt-4 max-w-3xl text-lg leading-8 text-[#cfdbef]">{t.catDesc}</p>
+          <div className="category-rows mt-8">
+            {categories.length === 0 ? (
+              <div className="text-sm text-white/70">{t.noCategory}</div>
             ) : (
-              posters.map((asset) => (
-                <article key={asset.id} className="overflow-hidden rounded-3xl border border-slate-200 bg-white p-2">
-                  <img src={asset.image_url} alt={asset.title} className="h-72 w-full rounded-2xl object-cover" />
-                  <p className="mt-3 px-2 text-sm font-semibold text-[#1c2d4b]">{asset.title}</p>
-                </article>
+              categories.map((item) => (
+                <Link key={item.category} href={`/products?category=${encodeURIComponent(item.category)}`} className="category-row">
+                  <span>{item.category}</span>
+                  <span>{item.count}</span>
+                </Link>
               ))
             )}
-          </div>
-        </div>
-      </section>
-
-      <section className="container-shell mt-12">
-        <div className="dark-band card p-7 md:p-10">
-          <p className="kicker text-[#f3d7a1]">{t.catKicker}</p>
-          <h2 className="heading-font mt-2 text-4xl font-semibold">{t.catTitle}</h2>
-          <p className="mt-2 text-[#cfdbef]">{t.catDesc}</p>
-          <div className="mt-6 flex flex-wrap gap-2">
-            {categories.map((item) => (
-              <Link
-                key={item.category}
-                href={`/products?category=${encodeURIComponent(item.category)}`}
-                className="rounded-full border border-white/35 px-4 py-2 text-sm text-white/90 transition hover:bg-white/15"
-              >
-                {item.category} ({item.count})
-              </Link>
-            ))}
           </div>
         </div>
       </section>

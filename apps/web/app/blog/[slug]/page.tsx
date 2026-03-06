@@ -1,4 +1,4 @@
-import { safeFetchJson } from "@/lib/api";
+﻿import { safeFetchJson } from "@/lib/api";
 import { SiteLang } from "@/lib/i18n";
 import { getServerLang } from "@/lib/server-lang";
 import Link from "next/link";
@@ -13,9 +13,7 @@ type Article = {
   is_published: boolean;
 };
 
-type Props = {
-  params: { slug: string };
-};
+type Props = { params: { slug: string } };
 
 async function getArticle(slug: string): Promise<Article | null> {
   return safeFetchJson<Article | null>(`/seo/articles/${slug}`, null);
@@ -31,9 +29,7 @@ export default async function BlogDetailPage({ params }: Props) {
   const lang = getServerLang();
   const t = copy[lang];
   const article = await getArticle(params.slug);
-  if (!article) {
-    notFound();
-  }
+  if (!article) notFound();
 
   return (
     <main className="container-shell py-10">
@@ -42,16 +38,10 @@ export default async function BlogDetailPage({ params }: Props) {
         <h1 className="section-title mt-2 text-[#122744]">{article.title}</h1>
         <p className="mt-3 max-w-3xl leading-8 text-[#51627d]">{article.excerpt}</p>
         <div className="brand-divider my-6" />
-        <div className="prose prose-slate max-w-none whitespace-pre-wrap text-[15px] leading-8 text-[#243450]">
-          {article.body}
-        </div>
+        <div className="prose prose-slate max-w-none whitespace-pre-wrap text-[15px] leading-8 text-[#243450]">{article.body}</div>
         <div className="mt-8 flex flex-wrap gap-3">
-          <Link href="/blog" className="btn btn-soft">
-            {t.back}
-          </Link>
-          <Link href="/contact" className="btn btn-primary">
-            {t.discuss}
-          </Link>
+          <Link href="/blog" className="btn btn-soft">{t.back}</Link>
+          <Link href="/contact" className="btn btn-primary">{t.discuss}</Link>
         </div>
       </article>
     </main>

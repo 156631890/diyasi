@@ -1,14 +1,9 @@
-import { safeFetchJson } from "@/lib/api";
+﻿import { safeFetchJson } from "@/lib/api";
 import { SiteLang } from "@/lib/i18n";
 import { getServerLang } from "@/lib/server-lang";
 import Link from "next/link";
 
-type Article = {
-  title: string;
-  slug: string;
-  category: string;
-  excerpt: string;
-};
+type Article = { title: string; slug: string; category: string; excerpt: string };
 
 async function getArticles(): Promise<Article[]> {
   return safeFetchJson<Article[]>("/seo/articles", []);
@@ -18,23 +13,21 @@ const copy: Record<SiteLang, { kicker: string; title: string; desc: string; noAr
   en: {
     kicker: "Insights",
     title: "Practical knowledge for underwear brand growth",
-    desc:
-      "Read clear guides on supplier selection, MOQ planning, quality control, and launch strategy for global markets.",
+    desc: "Read clear guides on supplier selection, MOQ planning, quality control, and launch strategy for global markets.",
     noArticle: "No articles yet. Create or generate articles in Admin SEO.",
     readMore: "Read Article"
   },
   zh: {
     kicker: "行业洞察",
     title: "服务内衣品牌增长的实战内容",
-    desc: "围绕供应商筛选、MOQ 规划、质量控制与出海上线策略，持续发布可执行的运营与制造经验。",
-    noArticle: "暂未发布文章，可在后台 SEO 模块创建或生成。",
-    readMore: "阅读文章"
+    desc: "围绕供应商筛选、MOQ 规划、质量控制与出海策略，持续发布可执行的制造与运营经验。",
+    noArticle: "暂时还没有文章，可以在后台 SEO 模块创建或生成。",
+    readMore: "阅读全文"
   },
   es: {
     kicker: "Insights",
     title: "Conocimiento practico para crecer marcas de ropa interior",
-    desc:
-      "Guias claras sobre seleccion de proveedor, estrategia MOQ, control de calidad y lanzamiento para mercados globales.",
+    desc: "Guias claras sobre seleccion de proveedor, estrategia MOQ, control de calidad y lanzamiento para mercados globales.",
     noArticle: "Aun no hay articulos. Crea contenido desde Admin SEO.",
     readMore: "Leer Articulo"
   }
@@ -59,11 +52,7 @@ export default async function BlogPage() {
             <p className="text-xs uppercase tracking-widest text-[#8b6a2c]">{article.category}</p>
             <h2 className="heading-font mt-2 text-3xl font-semibold text-[#122744]">{article.title}</h2>
             <p className="mt-3 leading-7 text-[#4f607d]">{article.excerpt}</p>
-            <div className="mt-5">
-              <Link href={`/blog/${article.slug}`} className="btn btn-soft">
-                {t.readMore}
-              </Link>
-            </div>
+            <div className="mt-5"><Link href={`/blog/${article.slug}`} className="btn btn-soft">{t.readMore}</Link></div>
           </article>
         ))}
       </section>
