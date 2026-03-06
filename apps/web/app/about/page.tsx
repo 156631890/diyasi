@@ -1,4 +1,4 @@
-import { API_BASE } from "@/lib/api";
+import { safeFetchJson } from "@/lib/api";
 import { SiteLang } from "@/lib/i18n";
 import { getServerLang } from "@/lib/server-lang";
 import Link from "next/link";
@@ -10,11 +10,7 @@ type MediaAsset = {
 };
 
 async function getHeroImage(): Promise<MediaAsset | null> {
-  const response = await fetch(`${API_BASE}/media/assets?limit=1&asset_type=hero_banner`, { cache: "no-store" });
-  if (!response.ok) {
-    return null;
-  }
-  const assets = (await response.json()) as MediaAsset[];
+  const assets = await safeFetchJson<MediaAsset[]>("/media/assets?limit=1&asset_type=hero_banner", []);
   return assets[0] || null;
 }
 

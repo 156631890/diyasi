@@ -1,6 +1,25 @@
 export const API_BASE =
   process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8000";
 
+export async function safeFetchJson<T>(
+  path: string,
+  fallback: T,
+  init?: RequestInit
+): Promise<T> {
+  try {
+    const response = await fetch(`${API_BASE}${path}`, {
+      cache: "no-store",
+      ...init
+    });
+    if (!response.ok) {
+      return fallback;
+    }
+    return (await response.json()) as T;
+  } catch {
+    return fallback;
+  }
+}
+
 export async function apiGet<T>(path: string): Promise<T> {
   const response = await fetch(`${API_BASE}${path}`, {
     cache: "no-store"

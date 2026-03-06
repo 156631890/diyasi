@@ -1,4 +1,4 @@
-import { API_BASE } from "@/lib/api";
+import { safeFetchJson } from "@/lib/api";
 import { SiteLang } from "@/lib/i18n";
 import { getServerLang } from "@/lib/server-lang";
 import Link from "next/link";
@@ -18,11 +18,7 @@ type Props = {
 };
 
 async function getArticle(slug: string): Promise<Article | null> {
-  const response = await fetch(`${API_BASE}/seo/articles/${slug}`, { cache: "no-store" });
-  if (!response.ok) {
-    return null;
-  }
-  return response.json();
+  return safeFetchJson<Article | null>(`/seo/articles/${slug}`, null);
 }
 
 const copy: Record<SiteLang, { back: string; discuss: string }> = {

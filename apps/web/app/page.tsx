@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { API_BASE } from "@/lib/api";
+import { safeFetchJson } from "@/lib/api";
 import { SiteLang } from "@/lib/i18n";
 import { getServerLang } from "@/lib/server-lang";
 
@@ -88,22 +88,12 @@ const copy: Record<
 };
 
 async function getFeaturedPosters(): Promise<MediaAsset[]> {
-  const response = await fetch(`${API_BASE}/media/assets?only_active=true&only_featured=true&limit=6`, {
-    cache: "no-store"
-  });
-  if (!response.ok) {
-    return [];
-  }
-  const rows = (await response.json()) as MediaAsset[];
+  const rows = await safeFetchJson<MediaAsset[]>("/media/assets?only_active=true&only_featured=true&limit=6", []);
   return rows.filter((item) => item.asset_type === "poster" || item.asset_type === "hero_banner").slice(0, 3);
 }
 
 async function getCategories(): Promise<ProductCategory[]> {
-  const response = await fetch(`${API_BASE}/products/categories`, { cache: "no-store" });
-  if (!response.ok) {
-    return [];
-  }
-  return response.json();
+  return safeFetchJson<ProductCategory[]>("/products/categories", []);
 }
 
 export default async function HomePage() {

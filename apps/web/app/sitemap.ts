@@ -1,19 +1,11 @@
 import type { MetadataRoute } from "next";
-import { API_BASE } from "@/lib/api";
+import { safeFetchJson } from "@/lib/api";
 
 type Article = { slug: string };
 
 async function getArticleSlugs(): Promise<string[]> {
-  try {
-    const response = await fetch(`${API_BASE}/seo/articles`, { cache: "no-store" });
-    if (!response.ok) {
-      return [];
-    }
-    const rows = (await response.json()) as Article[];
-    return rows.map((row) => row.slug).filter(Boolean);
-  } catch {
-    return [];
-  }
+  const rows = await safeFetchJson<Article[]>("/seo/articles", []);
+  return rows.map((row) => row.slug).filter(Boolean);
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

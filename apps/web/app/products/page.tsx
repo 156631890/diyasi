@@ -1,5 +1,5 @@
 import BuyNowButton from "@/components/BuyNowButton";
-import { API_BASE } from "@/lib/api";
+import { safeFetchJson } from "@/lib/api";
 import { SiteLang } from "@/lib/i18n";
 import { getServerLang } from "@/lib/server-lang";
 import Link from "next/link";
@@ -84,19 +84,11 @@ function resolvePrice(product: Product): number {
 }
 
 async function getProducts(): Promise<Product[]> {
-  const response = await fetch(`${API_BASE}/products/`, { cache: "no-store" });
-  if (!response.ok) {
-    return [];
-  }
-  return response.json();
+  return safeFetchJson<Product[]>("/products/", []);
 }
 
 async function getCategories(): Promise<ProductCategory[]> {
-  const response = await fetch(`${API_BASE}/products/categories`, { cache: "no-store" });
-  if (!response.ok) {
-    return [];
-  }
-  return response.json();
+  return safeFetchJson<ProductCategory[]>("/products/categories", []);
 }
 
 type ProductsPageProps = {

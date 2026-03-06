@@ -1,4 +1,4 @@
-import { API_BASE } from "@/lib/api";
+import { safeFetchJson } from "@/lib/api";
 import { SiteLang } from "@/lib/i18n";
 import { getServerLang } from "@/lib/server-lang";
 
@@ -9,11 +9,7 @@ type MediaAsset = {
 };
 
 async function getFactoryImages(): Promise<MediaAsset[]> {
-  const response = await fetch(`${API_BASE}/media/assets?asset_type=factory&limit=6`, { cache: "no-store" });
-  if (!response.ok) {
-    return [];
-  }
-  return response.json();
+  return safeFetchJson<MediaAsset[]>("/media/assets?asset_type=factory&limit=6", []);
 }
 
 const copy: Record<

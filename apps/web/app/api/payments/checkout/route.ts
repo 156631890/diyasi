@@ -40,15 +40,19 @@ export async function POST(request: NextRequest) {
     source: "mock_checkout"
   };
 
-  const createResp = await fetch(`${backend}/orders/`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(orderPayload),
-    cache: "no-store"
-  });
-  if (!createResp.ok) {
-    const text = await createResp.text();
-    return NextResponse.json({ detail: `Failed to create order: ${text}` }, { status: 502 });
+  try {
+    const createResp = await fetch(`${backend}/orders/`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(orderPayload),
+      cache: "no-store"
+    });
+    if (!createResp.ok) {
+      const text = await createResp.text();
+      return NextResponse.json({ detail: `Failed to create order: ${text}` }, { status: 502 });
+    }
+  } catch {
+    // Keep checkout mock flow usable even if the backend is not reachable in Vercel.
   }
 
   const params = new URLSearchParams({
