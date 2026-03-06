@@ -13,5 +13,6 @@ coverage/
 *.db
 data/generated/
 .tmp/
+.npm-cache/
 apps/web/.npm-cache/
 *.log
