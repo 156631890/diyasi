@@ -120,7 +120,7 @@ export default async function AboutPage() {
   const heroImage = await getHeroImage();
   return (
     <main className="container-shell py-10">
-      <section className="hero-panel p-7 md:p-10">
+      <section className="hero-panel overflow-hidden p-7 md:p-10 lg:p-12">
         <div className="grid items-center gap-7 lg:grid-cols-2">
           <div>
             <p className="kicker">{t.kicker}</p>
@@ -132,9 +132,9 @@ export default async function AboutPage() {
               <Link href="/factory" className="btn btn-soft">{t.cta2}</Link>
             </div>
           </div>
-          <div className="rounded-3xl border border-slate-200 bg-white/85 p-3">
+          <div className="about-visual-shell">
             {heroImage ? (
-              <img src={heroImage.image_url} alt={heroImage.title} className="h-[360px] w-full rounded-2xl object-cover" />
+              <img src={heroImage.image_url} alt={heroImage.title} className="about-visual" />
             ) : (
               <div className="grid h-[360px] place-items-center rounded-2xl bg-gradient-to-br from-[#dce5f5] to-[#f6ead7] text-sm text-slate-600">{t.noVisual}</div>
             )}
@@ -142,26 +142,42 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      <section className="mt-10 grid gap-4 md:grid-cols-3">
+      <section className="mt-12">
+        <div className="section-lead">
+          <p className="kicker">{t.kicker}</p>
+          <h2 className="heading-font mt-2 text-4xl font-semibold text-[#122744]">{t.journey}</h2>
+        </div>
+      </section>
+
+      <section className="mt-8 about-principles">
         {t.values.map((item) => (
-          <article key={item.title} className="card p-6">
+          <article key={item.title} className="editorial-column">
             <h2 className="heading-font text-3xl font-semibold text-[#122744]">{item.title}</h2>
-            <p className="mt-3 leading-7 text-[#52627c]">{item.text}</p>
+            <p className="mt-4 leading-8 text-[#52627c]">{item.text}</p>
           </article>
         ))}
       </section>
 
-      <section className="mt-10 card p-7">
-        <p className="kicker">{t.milestone}</p>
-        <h2 className="heading-font mt-2 text-4xl font-semibold text-[#122744]">{t.journey}</h2>
-        <div className="mt-6 grid gap-3 md:grid-cols-2">
-          {t.timeline.map((item) => (
-            <article key={item.year} className="rounded-2xl border border-slate-200 p-4">
-              <p className="heading-font text-2xl font-semibold text-[#102949]">{item.year}</p>
-              <p className="mt-1 text-[#4f607d]">{item.milestone}</p>
-            </article>
-          ))}
+      <section className="mt-12 editorial-strip">
+        <div>
+          <p className="kicker">{t.milestone}</p>
+          <p className="mt-3 max-w-3xl text-lg leading-8 text-[#43536c]">
+            {lang === "zh"
+              ? "从第一条无缝内衣生产线开始，迪雅斯的能力建设始终围绕交付稳定性、品类延展和国际合作经验扩展。"
+              : lang === "es"
+                ? "Desde la primera linea seamless, la evolucion de DiYaSi ha estado centrada en estabilidad operativa, amplitud de categoria y experiencia internacional."
+                : "From the first seamless production line onward, DiYaSi has expanded around delivery stability, category depth, and international execution."}
+          </p>
         </div>
+      </section>
+
+      <section className="mt-8 about-timeline">
+        {t.timeline.map((item) => (
+          <article key={item.year} className="timeline-row">
+            <div className="timeline-year">{item.year}</div>
+            <p className="timeline-copy">{item.milestone}</p>
+          </article>
+        ))}
       </section>
     </main>
   );

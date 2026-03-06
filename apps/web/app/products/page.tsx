@@ -18,6 +18,13 @@ type ProductCategory = {
   count: number;
 };
 
+const fallbackProductImages: Record<string, string> = {
+  "SW-001": "/media/generated/products/seamless-women-brief.png",
+  "YL-002": "/media/generated/products/high-waist-yoga-leggings.png",
+  "AB-003": "/media/generated/products/supportive-sports-bra.png",
+  "MB-004": "/media/generated/products/men-seamless-boxer.png"
+};
+
 const copy: Record<
   SiteLang,
   {
@@ -83,6 +90,10 @@ function resolvePrice(product: Product): number {
   return categoryPricing[keyCategory(product.category)] || 279;
 }
 
+function resolveImage(product: Product): string {
+  return product.image_url || fallbackProductImages[product.product_id] || "";
+}
+
 async function getProducts(): Promise<Product[]> {
   return safeFetchJson<Product[]>("/products/", []);
 }
@@ -134,10 +145,11 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
         {filteredProducts.length === 0 ? <div className="card p-5 text-slate-600">{t.noPoster}</div> : null}
         {filteredProducts.map((product) => {
           const price = resolvePrice(product);
+          const image = resolveImage(product);
           return (
             <article key={product.product_id} className="card overflow-hidden">
-              {product.image_url ? (
-                <img src={product.image_url} alt={product.product_name} className="h-72 w-full object-cover" />
+              {image ? (
+                <img src={image} alt={product.product_name} className="h-72 w-full object-cover" />
               ) : (
                 <div className="grid h-72 place-items-center bg-gradient-to-br from-[#dde8f7] to-[#f4e7d5] text-sm text-slate-600">{t.noImage}</div>
               )}

@@ -79,29 +79,31 @@ export default async function FactoryPage() {
   const images = await getFactoryImages();
   return (
     <main className="container-shell py-10">
-      <section className="dark-band card p-7 md:p-10">
+      <section className="dark-band rounded-[34px] px-7 py-10 shadow-[0_32px_90px_rgba(16,30,52,0.18)] md:px-10 lg:px-12">
         <p className="kicker text-[#f3d7a1]">{t.kicker}</p>
         <h1 className="heading-font mt-2 text-5xl font-semibold">{t.title}</h1>
         <p className="mt-3 max-w-3xl leading-8 text-[#cfdbef]">{t.desc}</p>
       </section>
 
-      <section className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      <section className="mt-10 factory-metrics">
         {t.capabilities.map((item) => (
-          <article key={item.label} className="card p-5">
+          <article key={item.label} className="factory-metric">
             <p className="text-sm uppercase tracking-wide text-[#8b6a2c]">{item.label}</p>
             <p className="heading-font mt-2 text-3xl font-semibold text-[#102949]">{item.value}</p>
           </article>
         ))}
       </section>
 
-      <section className="mt-8 card p-7">
+      <section className="mt-12">
         <p className="kicker">{t.gallery}</p>
         <h2 className="heading-font mt-2 text-4xl font-semibold text-[#122744]">Production Visual Library</h2>
-        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 factory-gallery">
           {images.map((img) => (
-            <article key={img.id} className="rounded-2xl border border-slate-200 p-2">
-              <img src={img.image_url} alt={img.title} className="h-56 w-full rounded-xl object-cover" />
-              <p className="mt-2 text-sm text-[#4f607d]">{img.title}</p>
+            <article key={img.id} className="factory-gallery-item">
+              <img src={img.image_url} alt={img.title} className="h-full w-full object-cover" />
+              <div className="split-gallery-caption">
+                <p>{img.title}</p>
+              </div>
             </article>
           ))}
           {images.length === 0 ? <div className="rounded-2xl border border-dashed border-slate-300 p-4 text-sm text-slate-500">{t.noVisual}</div> : null}
