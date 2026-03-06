@@ -45,8 +45,8 @@ const copy: Record<SiteLang, FooterCopy> = {
     resourceTitle: "Resources",
     resourceItems: [
       { href: "/blog", label: "Blog" },
-      { href: "/admin", label: "Admin" },
-      { href: "/checkout/mock", label: "Payment Framework" }
+      { href: "/payments", label: "Payments" },
+      { href: "/admin", label: "Admin" }
     ],
     contactTitle: "Contact",
     rights: "All rights reserved."
@@ -73,8 +73,8 @@ const copy: Record<SiteLang, FooterCopy> = {
     resourceTitle: "\u8d44\u6e90",
     resourceItems: [
       { href: "/blog", label: "\u535a\u5ba2" },
-      { href: "/admin", label: "\u540e\u53f0" },
-      { href: "/checkout/mock", label: "\u652f\u4ed8\u6846\u67b6" }
+      { href: "/payments", label: "\u652f\u4ed8" },
+      { href: "/admin", label: "\u540e\u53f0" }
     ],
     contactTitle: "\u8054\u7cfb\u65b9\u5f0f",
     rights: "\u4fdd\u7559\u6240\u6709\u6743\u5229\u3002"
@@ -102,8 +102,8 @@ const copy: Record<SiteLang, FooterCopy> = {
     resourceTitle: "Recursos",
     resourceItems: [
       { href: "/blog", label: "Blog" },
-      { href: "/admin", label: "Admin" },
-      { href: "/checkout/mock", label: "Framework de Pago" }
+      { href: "/payments", label: "Pagos" },
+      { href: "/admin", label: "Admin" }
     ],
     contactTitle: "Contacto",
     rights: "Todos los derechos reservados."

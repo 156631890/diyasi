@@ -18,6 +18,7 @@ const labels: Record<
     factory: string;
     blog: string;
     contact: string;
+    payments: string;
     admin: string;
     cta: string;
     companyTag: string;
@@ -32,6 +33,7 @@ const labels: Record<
     factory: "Factory",
     blog: "Blog",
     contact: "Contact",
+    payments: "Payments",
     admin: "Admin",
     cta: "Start Project",
     companyTag: "23+ Years Underwear Manufacturing"
@@ -45,6 +47,7 @@ const labels: Record<
     factory: "\u5de5\u5382",
     blog: "\u535a\u5ba2",
     contact: "\u8054\u7cfb",
+    payments: "\u652f\u4ed8",
     admin: "\u540e\u53f0",
     cta: "\u542f\u52a8\u9879\u76ee",
     companyTag: "23+\u5e74\u5185\u8863\u5236\u9020"
@@ -58,6 +61,7 @@ const labels: Record<
     factory: "Fabrica",
     blog: "Blog",
     contact: "Contacto",
+    payments: "Pagos",
     admin: "Admin",
     cta: "Iniciar Proyecto",
     companyTag: "23+ anos de manufactura"
@@ -93,6 +97,7 @@ export default function TopNav({ initialLang }: TopNavProps) {
   const secondaryLinks: LinkItem[] = [
     { href: "/sustainability", label: t.sustainability },
     { href: "/factory", label: t.factory },
+    { href: "/payments", label: t.payments },
     { href: "/admin", label: t.admin }
   ];
 

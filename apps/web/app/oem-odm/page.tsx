@@ -1,5 +1,4 @@
-import BuyNowButton from "@/components/BuyNowButton";
-import { SiteLang } from "@/lib/i18n";
+﻿import { SiteLang } from "@/lib/i18n";
 import { getServerLang } from "@/lib/server-lang";
 import Link from "next/link";
 
@@ -16,16 +15,17 @@ const copy: Record<
     desc: string;
     pay: string;
     call: string;
+    sectionTitle: string;
     workflow: WorkflowBlock[];
   }
 > = {
   en: {
     kicker: "OEM / ODM",
     title: "From concept to shipment, executed in one manufacturing system",
-    desc:
-      "We integrate product planning, material development, fit engineering, and mass production into a practical workflow for global underwear brands.",
-    pay: "Pay Launch Deposit",
+    desc: "We integrate product planning, material development, fit engineering, and mass production into a practical workflow for global underwear brands.",
+    pay: "Open Payments Page",
     call: "Book Development Call",
+    sectionTitle: "Execution flow with fewer handoffs",
     workflow: [
       {
         title: "Product Planning",
@@ -47,22 +47,23 @@ const copy: Record<
   },
   zh: {
     kicker: "OEM / ODM",
-    title: "从产品概念到出货交付，一体化制造执行",
-    desc: "我们将产品规划、面料开发、版型优化与量产交付整合为可复制流程，服务全球内衣品牌增长。",
-    pay: "支付启动定金",
+    title: "从产品概念到出货交付，统一在一个制造系统里完成",
+    desc: "我们把产品规划、面料开发、版型优化和量产执行整合成一条连贯流程，服务全球内衣品牌。",
+    pay: "打开支付页面",
     call: "预约开发沟通",
+    sectionTitle: "更少交接的执行流程",
     workflow: [
       {
         title: "产品规划",
-        items: ["确定品类与市场定位", "明确成本目标与质量标准", "梳理版型与穿着方向"]
+        items: ["明确品类与市场定位", "确定目标成本与质量标准", "梳理版型与穿着方向"]
       },
       {
-        title: "面料与辅料开发",
-        items: ["可持续面料方案匹配", "颜色与辅料统一管理", "标签包装规范确认"]
+        title: "面料开发",
+        items: ["筛选可持续面料方案", "协调颜色与辅料", "确认标签与包装要求"]
       },
       {
         title: "打样与版型优化",
-        items: ["5-7 天完成首版样衣", "基于反馈快速迭代修正", "为量产做版型稳定化"]
+        items: ["5-7 天完成首版样衣", "根据反馈快速调整", "为量产做好版型稳定化"]
       },
       {
         title: "量产与交付",
@@ -73,10 +74,10 @@ const copy: Record<
   es: {
     kicker: "OEM / ODM",
     title: "Del concepto al envio dentro de un solo sistema de manufactura",
-    desc:
-      "Integramos plan de producto, desarrollo de material, ajuste de patron y produccion masiva en un flujo practico para marcas globales.",
-    pay: "Pagar Deposito Inicial",
+    desc: "Integramos plan de producto, desarrollo de material, ajuste de patron y produccion masiva en un flujo practico para marcas globales.",
+    pay: "Abrir Pagos",
     call: "Reservar Llamada",
+    sectionTitle: "Flujo de ejecucion con menos handoffs",
     workflow: [
       {
         title: "Plan de Producto",
@@ -103,29 +104,42 @@ export default function OemOdmPage() {
   const t = copy[lang];
   return (
     <main className="container-shell py-10">
-      <section className="dark-band card p-7 md:p-10">
+      <section className="dark-band rounded-[34px] px-7 py-10 shadow-[0_32px_90px_rgba(16,30,52,0.18)] md:px-10 lg:px-12">
         <p className="kicker text-[#f3d7a1]">{t.kicker}</p>
         <h1 className="heading-font mt-2 text-5xl font-semibold">{t.title}</h1>
         <p className="mt-3 max-w-3xl leading-8 text-[#cfdbef]">{t.desc}</p>
         <div className="mt-6 flex flex-wrap gap-3">
-          <BuyNowButton title="OEM Launch Deposit" unitAmountUsd={500} label={t.pay} />
+          <Link href="/payments" className="btn bg-white text-[#112742]">
+            {t.pay}
+          </Link>
           <Link href="/contact" className="btn bg-white text-[#112742]">
             {t.call}
           </Link>
         </div>
       </section>
 
-      <section className="mt-8 grid gap-4 md:grid-cols-2">
-        {t.workflow.map((block) => (
-          <article key={block.title} className="card p-6">
-            <h2 className="heading-font text-3xl font-semibold text-[#122744]">{block.title}</h2>
-            <ul className="mt-4 space-y-2 text-[#4f607d]">
-              {block.items.map((item) => (
-                <li key={item}>- {item}</li>
-              ))}
-            </ul>
-          </article>
-        ))}
+      <section className="mt-10">
+        <div className="section-lead">
+          <p className="kicker">{t.kicker}</p>
+          <h2 className="heading-font mt-2 text-4xl font-semibold text-[#122744]">{t.sectionTitle}</h2>
+        </div>
+        <div className="mt-8 space-y-8">
+          {t.workflow.map((block, index) => (
+            <article key={block.title} className="process-row">
+              <div className="process-index">{String(index + 1).padStart(2, "0")}</div>
+              <div className="process-copy">
+                <h2 className="heading-font text-4xl font-semibold text-[#122744]">{block.title}</h2>
+                <ul className="mt-4 grid gap-3 text-[#4f607d] md:grid-cols-2">
+                  {block.items.map((item) => (
+                    <li key={item} className="process-bullet">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
     </main>
   );

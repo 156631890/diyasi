@@ -165,6 +165,107 @@ a {
   background: linear-gradient(90deg, rgba(184, 138, 59, 0) 0%, rgba(184, 138, 59, 0.85) 50%, rgba(184, 138, 59, 0) 100%);
 }
 
+.section-lead {
+  max-width: 760px;
+}
+
+.editorial-column {
+  border-top: 1px solid #cfdae9;
+  padding-top: 1.5rem;
+}
+
+.editorial-strip {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  border-top: 1px solid #cfdae9;
+  border-bottom: 1px solid #cfdae9;
+  padding: 1.75rem 0;
+}
+
+.payment-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.payment-panel {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(249, 251, 255, 0.98) 100%);
+  border: 1px solid #d7e2f0;
+  border-radius: 28px;
+  padding: 2rem;
+  box-shadow: 0 24px 70px rgba(15, 27, 45, 0.08);
+}
+
+.contact-layout {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+}
+
+.contact-panel {
+  background: rgba(255, 255, 255, 0.92);
+  border-top: 1px solid #d1dceb;
+  padding-top: 1.5rem;
+}
+
+.contact-sideband {
+  border-radius: 30px;
+  background:
+    radial-gradient(80% 140% at 100% 0%, rgba(184, 138, 59, 0.24) 0, transparent 55%),
+    linear-gradient(155deg, #0f1b2d 0%, #112743 58%, #17365d 100%);
+  padding: 2rem;
+  color: #e7eef9;
+}
+
+.contact-aside {
+  border-left: 1px solid rgba(16, 41, 73, 0.12);
+  padding-left: 1.5rem;
+}
+
+.contact-point {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.contact-point span {
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: #102949;
+}
+
+.contact-point p {
+  margin: 0;
+  color: #44546d;
+  line-height: 1.8;
+}
+
+.process-row {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+  gap: 1.5rem;
+  border-top: 1px solid #cfdae9;
+  padding-top: 1.75rem;
+}
+
+.process-index {
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1;
+  color: #b88a3b;
+}
+
+.process-bullet {
+  list-style: none;
+  border-left: 2px solid #d7e2f0;
+  padding-left: 1rem;
+  line-height: 1.8;
+}
+
 @keyframes fadeUp {
   to {
     opacity: 1;
@@ -175,5 +276,21 @@ a {
 @media (max-width: 900px) {
   .hero-panel {
     border-radius: 22px;
+  }
+
+  .editorial-strip,
+  .contact-layout,
+  .payment-grid,
+  .process-row {
+    grid-template-columns: 1fr;
+  }
+
+  .editorial-strip {
+    align-items: start;
+  }
+
+  .contact-aside {
+    border-left: 0;
+    padding-left: 0;
   }
 }

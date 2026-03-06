@@ -11,7 +11,7 @@ async function getArticleSlugs(): Promise<string[]> {
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const site = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
   const now = new Date();
-  const basePaths = ["", "/about", "/products", "/oem-odm", "/sustainability", "/factory", "/blog", "/contact"];
+  const basePaths = ["", "/about", "/products", "/oem-odm", "/sustainability", "/factory", "/blog", "/contact", "/payments"];
   const staticUrls = basePaths.map((path) => ({
     url: `${site}${path}`,
     lastModified: now,
