@@ -12,3 +12,6 @@ coverage/
 *.sqlite3
 *.db
 data/generated/
+.tmp/
+apps/web/.npm-cache/
+*.log
