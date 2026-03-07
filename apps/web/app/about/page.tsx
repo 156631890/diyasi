@@ -108,23 +108,23 @@ const copy: Record<
   es: {
     kicker: "Sobre YiWu DiYaSi",
     title: "Un socio de manufactura orientado al crecimiento de marca",
-    p1: "Con la conviccion de que sostenibilidad y calidad deben avanzar juntas, YiWu DiYaSi Dress CO., LTD lleva mas de 23 anos ayudando a marcas a lanzar sus lineas de ropa interior.",
-    p2: "Desde el desarrollo de producto hasta la entrega final, combinamos materiales premium, produccion estable y experiencia OEM/ODM para apoyar tu crecimiento.",
-    cta1: "Iniciar Conversacion",
-    cta2: "Ver Fabrica",
+    p1: "Con la convicción de que sostenibilidad y calidad deben avanzar juntas, YiWu DiYaSi Dress CO., LTD lleva más de 23 años ayudando a marcas a lanzar y consolidar sus líneas de ropa interior.",
+    p2: "Desde el desarrollo de producto hasta la entrega final, combinamos materiales premium, producción estable y experiencia OEM/ODM para apoyar el crecimiento de cada marca con más criterio.",
+    cta1: "Iniciar Conversación",
+    cta2: "Ver Fábrica",
     milestone: "Hitos",
-    journey: "Nuestra Evolucion",
+    journey: "Nuestra Evolución",
     noVisual: "Genera visual principal desde Admin.",
     values: [
       { title: "Compromiso con Materiales Sostenibles", text: "Priorizamos tejidos premium sostenibles con equilibrio entre confort, durabilidad y trazabilidad." },
-      { title: "Disciplina de Produccion", text: "Desde tejido y corte hasta inspeccion en linea, cada etapa se controla para mantener consistencia." },
-      { title: "Socio para el Crecimiento", text: "Acompanamos a cada marca desde el primer desarrollo hasta produccion recurrente con plazos confiables." }
+      { title: "Disciplina de Producción", text: "Desde tejido y corte hasta inspección en línea, cada etapa se controla para mantener consistencia." },
+      { title: "Socio para el Crecimiento", text: "Acompañamos a cada marca desde el primer desarrollo hasta la producción recurrente con plazos confiables." }
     ],
     timeline: [
-      { year: "2003", milestone: "Fundacion de fabrica y primera linea seamless de ropa interior." },
-      { year: "2011", milestone: "Expansion del servicio OEM/ODM para marcas internacionales." },
-      { year: "2018", milestone: "Fortalecimiento de control de calidad y ruta de tejido sostenible." },
-      { year: "2026", milestone: "Operacion global reforzada con sistema digital y sitio multilingue." }
+      { year: "2003", milestone: "Fundación de la fábrica y puesta en marcha de la primera línea seamless de ropa interior." },
+      { year: "2011", milestone: "Expansión del servicio OEM/ODM para marcas internacionales." },
+      { year: "2018", milestone: "Refuerzo del control de calidad y de la estrategia de tejidos sostenibles." },
+      { year: "2026", milestone: "Operación global reforzada con sistema digital y sitio multilingüe." }
     ]
   }
 };
@@ -187,7 +187,7 @@ export default async function AboutPage() {
             {lang === "zh"
               ? "从第一条无缝内衣生产线开始，迪雅斯的能力建设始终围绕交付稳定性、品类延展和国际合作经验扩展。"
               : lang === "es"
-                ? "Desde la primera linea seamless, la evolucion de DiYaSi ha estado centrada en estabilidad operativa, amplitud de categoria y experiencia internacional."
+                ? "Desde la primera línea seamless, la evolución de DiYaSi se ha apoyado en estabilidad operativa, amplitud de categoría y experiencia internacional."
                 : "From the first seamless production line onward, DiYaSi has expanded around delivery stability, category depth, and international execution."}
           </p>
         </div>

@@ -73,27 +73,27 @@ const copy: Record<
   },
   es: {
     kicker: "OEM / ODM",
-    title: "Del concepto al envio dentro de un solo sistema de manufactura",
-    desc: "Integramos plan de producto, desarrollo de material, ajuste de patron y produccion masiva en un flujo practico para marcas globales.",
+    title: "Del concepto al envío dentro de un solo sistema de manufactura",
+    desc: "Integramos plan de producto, desarrollo de material, ajuste de patrón y producción masiva en un flujo práctico para marcas globales.",
     pay: "Abrir Pagos",
-    call: "Reservar Llamada",
-    sectionTitle: "Flujo de ejecucion con menos handoffs",
+    call: "Iniciar Conversación",
+    sectionTitle: "Flujo de ejecución con menos handoffs",
     workflow: [
       {
         title: "Plan de Producto",
-        items: ["Posicionamiento por categoria", "Objetivo de costo y calidad", "Direccion de fit y silueta"]
+        items: ["Posicionamiento por categoría", "Objetivo de costo y calidad", "Dirección de fit y silueta"]
       },
       {
         title: "Desarrollo de Material",
-        items: ["Opciones de tejido sostenible", "Coordinacion de color y trims", "Requisitos de empaque y etiqueta"]
+        items: ["Opciones de tejido sostenible", "Coordinación de color y trims", "Requisitos de empaque y etiqueta"]
       },
       {
         title: "Muestra y Ajuste",
-        items: ["Prototipo en 5-7 dias", "Revision de fit con feedback", "Optimizacion de patron para produccion"]
+        items: ["Prototipo en 5-7 días", "Revisión de fit con feedback", "Optimización de patrón para producción"]
       },
       {
-        title: "Produccion y Entrega",
-        items: ["Plan de linea y control de calidad", "Gestion de produccion masiva", "Plan de envio y reposicion"]
+        title: "Producción y Entrega",
+        items: ["Plan de línea y control de calidad", "Gestión de producción masiva", "Plan de envío y reposición"]
       }
     ]
   }

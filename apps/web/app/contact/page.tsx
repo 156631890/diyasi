@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import { API_BASE } from "@/lib/api";
+import { getClientLang } from "@/lib/client-lang";
 import Link from "next/link";
 import { FormEvent, useEffect, useState } from "react";
 
@@ -20,6 +21,11 @@ export default function ContactPage() {
       paymentDesc: string;
       paymentCta: string;
       submit: string;
+      namePlaceholder: string;
+      emailPlaceholder: string;
+      companyPlaceholder: string;
+      messagePlaceholder: string;
+      statusLabel: string;
       statusReady: string;
       statusSubmitting: string;
       statusSubmitted: string;
@@ -39,6 +45,11 @@ export default function ContactPage() {
       paymentDesc: "Keep consultation and payment separate. Use the dedicated payments page once scope and stage are already aligned.",
       paymentCta: "Open Payments",
       submit: "Send Inquiry",
+      namePlaceholder: "Name",
+      emailPlaceholder: "Email",
+      companyPlaceholder: "Company",
+      messagePlaceholder: "Describe your project scope",
+      statusLabel: "Status",
       statusReady: "Ready",
       statusSubmitting: "Submitting...",
       statusSubmitted: "Submitted",
@@ -57,6 +68,11 @@ export default function ContactPage() {
       paymentDesc: "请把咨询和支付动作分开。只有在范围和阶段已经明确后，再进入支付页面。",
       paymentCta: "前往支付",
       submit: "发送咨询",
+      namePlaceholder: "姓名",
+      emailPlaceholder: "邮箱",
+      companyPlaceholder: "公司名称",
+      messagePlaceholder: "请描述你的项目范围",
+      statusLabel: "状态",
       statusReady: "待提交",
       statusSubmitting: "提交中...",
       statusSubmitted: "提交成功",
@@ -66,37 +82,32 @@ export default function ContactPage() {
     },
     es: {
       lead: "Contacto",
-      title: "Una primera conversacion mas clara y mas serena para tu siguiente coleccion",
+      title: "Una primera conversación más clara y más serena para tu próxima colección",
       inquiry: "Consulta de Proyecto",
-      inquiryDesc: "Comparte categoria, rango de volumen, timing y prioridades del producto. Respondemos con siguientes pasos claros, no con lenguaje generico.",
-      processTitle: "Lo que nos ayuda a responder mejor",
-      process: ["Categoria objetivo y direccion de tejido", "Volumen estimado y posicion de mercado", "Ventana de muestra y fecha de lanzamiento"],
-      paymentTitle: "Necesitas pagar muestra o deposito?",
-      paymentDesc: "Separa consulta y pago. Usa la pagina de pagos solo cuando alcance y etapa ya esten claros.",
+      inquiryDesc: "Comparte categoría, rango de volumen, timing y prioridades del producto. Respondemos con siguientes pasos claros, no con lenguaje genérico.",
+      processTitle: "Qué nos ayuda a responder mejor",
+      process: ["Categoría objetivo y dirección textil", "Volumen estimado y posición de mercado", "Ventana de muestra y fecha de lanzamiento"],
+      paymentTitle: "¿Necesitas pagar muestra o depósito?",
+      paymentDesc: "Separa consulta y pago. Usa la página de pagos solo cuando alcance y etapa ya estén claros.",
       paymentCta: "Abrir Pagos",
       submit: "Enviar Consulta",
+      namePlaceholder: "Nombre",
+      emailPlaceholder: "Correo",
+      companyPlaceholder: "Empresa",
+      messagePlaceholder: "Describe el alcance de tu proyecto",
+      statusLabel: "Estado",
       statusReady: "Listo",
       statusSubmitting: "Enviando...",
       statusSubmitted: "Enviado",
-      statusFailed: "Error de envio",
-      leadTitle: "Las mejores consultas son especificas, medidas y honestas sobre la etapa real del proyecto.",
-      leadDesc: "Eso nos permite responder con criterio sobre material, MOQ y timing en lugar de lenguaje comercial generico."
+      statusFailed: "Error de envío",
+      leadTitle: "Las mejores consultas son específicas, medidas y honestas sobre la etapa real del proyecto.",
+      leadDesc: "Eso nos permite responder con criterio sobre material, MOQ y timing, en lugar de lenguaje comercial genérico."
     }
   };
 
   const [lang, setLang] = useState<Lang>("en");
   useEffect(() => {
-    const match = document.cookie.match(/(?:^|;\s*)site_lang=([^;]+)/);
-    const value = match?.[1] || "";
-    if (value.startsWith("zh")) {
-      setLang("zh");
-      return;
-    }
-    if (value.startsWith("es")) {
-      setLang("es");
-      return;
-    }
-    setLang("en");
+    setLang(getClientLang());
   }, []);
   const t = copy[lang];
 
@@ -161,13 +172,13 @@ export default function ContactPage() {
             ))}
           </div>
           <form className="mt-8 space-y-3" onSubmit={onSubmit}>
-            <input className="input" placeholder="Name" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
-            <input className="input" placeholder="Email" type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
-            <input className="input" placeholder="Company" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} />
-            <textarea className="input min-h-32" placeholder="Describe your project scope" required value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
+            <input className="input" placeholder={t.namePlaceholder} required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
+            <input className="input" placeholder={t.emailPlaceholder} type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
+            <input className="input" placeholder={t.companyPlaceholder} value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} />
+            <textarea className="input min-h-32" placeholder={t.messagePlaceholder} required value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
             <input type="text" className="hidden" tabIndex={-1} autoComplete="off" value={form.website} onChange={(e) => setForm({ ...form, website: e.target.value })} />
             <button className="btn btn-primary" type="submit">{t.submit}</button>
-            <p className="text-sm text-slate-500">Status: {statusText}</p>
+            <p className="text-sm text-slate-500">{t.statusLabel}: {statusText}</p>
           </form>
         </div>
 

@@ -1,14 +1,20 @@
 "use client";
 
 import { API_BASE } from "@/lib/api";
-import Link from "next/link";
+import CheckoutStatusView from "@/components/CheckoutStatusView";
+import { getClientLang } from "@/lib/client-lang";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
 export default function CheckoutSuccessPage() {
   const params = useSearchParams();
   const ref = params.get("ref") || "ORD-MOCK";
-  const [syncState, setSyncState] = useState("syncing...");
+  const [syncState, setSyncState] = useState("Syncing...");
+  const [lang, setLang] = useState<"en" | "zh" | "es">("en");
+
+  useEffect(() => {
+    setLang(getClientLang());
+  }, []);
 
   useEffect(() => {
     async function updateStatus() {
@@ -18,31 +24,35 @@ export default function CheckoutSuccessPage() {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ status: "paid", notes: "mock checkout paid" })
         });
-        setSyncState(response.ok ? "order marked paid" : "order status sync failed");
+        if (response.ok) {
+          setSyncState(
+            lang === "zh"
+              ? "订单状态已标记为已支付"
+              : lang === "es"
+                ? "El pedido ya figura como pagado"
+                : "Order marked as paid"
+          );
+          return;
+        }
+        setSyncState(
+          lang === "zh"
+            ? "订单状态同步失败"
+            : lang === "es"
+              ? "Falló la sincronización del estado"
+              : "Order status sync failed"
+        );
       } catch {
-        setSyncState("order status sync failed");
+        setSyncState(
+          lang === "zh"
+            ? "订单状态同步失败"
+            : lang === "es"
+              ? "Falló la sincronización del estado"
+              : "Order status sync failed"
+        );
       }
     }
     updateStatus();
-  }, [ref]);
+  }, [lang, ref]);
 
-  return (
-    <main className="container-shell py-16">
-      <section className="card max-w-2xl p-8">
-        <p className="kicker">Payment Framework</p>
-        <h1 className="heading-font mt-2 text-4xl font-semibold text-[#122744]">Mock payment marked as successful</h1>
-        <p className="mt-3 text-[#51627d]">
-          This is a simulated confirmation screen for order reference <strong>{ref}</strong>. Status sync: {syncState}
-        </p>
-        <div className="mt-6 flex gap-3">
-          <Link href="/products" className="btn btn-primary">
-            View Products
-          </Link>
-          <Link href="/contact" className="btn btn-soft">
-            Start a Conversation
-          </Link>
-        </div>
-      </section>
-    </main>
-  );
+  return <CheckoutStatusView mode="success" refCode={ref} syncState={syncState} lang={lang} />;
 }

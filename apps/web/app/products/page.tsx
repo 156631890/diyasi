@@ -63,13 +63,13 @@ const copy: Record<
   },
   es: {
     kicker: "Biblioteca de Producto",
-    title: "Coleccion por categorias para una seleccion mas eficiente",
-    desc: "Navega por categoria, filtra estilos rapidamente y avanza de muestra pagada a produccion masiva.",
-    all: "Todas las Categorias",
-    noPoster: "Aun no hay productos en esta categoria.",
+    title: "Colección por categorías para una selección más eficiente",
+    desc: "Navega por categoría, filtra estilos rápidamente y avanza de muestra pagada a producción masiva con más claridad.",
+    all: "Todas las Categorías",
+    noPoster: "Aún no hay productos en esta categoría.",
     noImage: "Imagen pendiente",
-    quote: "Iniciar Conversacion",
-    bulk: "Iniciar Conversacion",
+    quote: "Iniciar Conversación",
+    bulk: "Iniciar Conversación",
     paidSample: "Muestra Pagada"
   }
 };

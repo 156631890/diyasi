@@ -56,10 +56,10 @@ const copy: Record<
   },
   es: {
     kicker: "Sostenibilidad",
-    title: "La sostenibilidad es un estandar de produccion, no un eslogan",
+    title: "La sostenibilidad es un estándar de producción, no un eslogan",
     desc: "La aplicamos en decisiones de material, control de procesos y rendimiento de calidad a largo plazo.",
-    sectionTitle: "Como aparece en produccion",
-    closing: "La sostenibilidad tiene peso cuando se ve en disciplina de compra, estabilidad de proceso y vida util del producto, no solo en una insignia visual.",
+    sectionTitle: "Cómo aparece en producción",
+    closing: "La sostenibilidad gana peso cuando se ve en disciplina de compra, estabilidad de proceso y vida útil del producto, no solo en una insignia visual.",
     strategy: [
       {
         title: "Seleccion Responsable de Materiales",
@@ -67,11 +67,11 @@ const copy: Record<
       },
       {
         title: "Manufactura con Menos Desperdicio",
-        copy: "Con mejor planificacion y control de calidad reducimos retrabajos, desperdicio de material y exceso de empaque."
+        copy: "Con mejor planificación y control de calidad reducimos retrabajos, desperdicio de material y exceso de empaque."
       },
       {
-        title: "Diseno para Mayor Vida Util",
-        copy: "Mejor ajuste y construccion mas estable ayudan al cliente final a usar por mas tiempo y reemplazar menos."
+        title: "Diseño para Mayor Vida Útil",
+        copy: "Mejor ajuste y construcción más estable ayudan al cliente final a usar por más tiempo y reemplazar menos."
       }
     ]
   }

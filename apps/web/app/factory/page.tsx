@@ -81,16 +81,16 @@ const copy: Record<
     ]
   },
   es: {
-    kicker: "Fabrica",
-    title: "Sistema de produccion disciplinado y confiable",
-    desc: "La fabrica integra maquinaria seamless, control de proceso y puntos de calidad para mantener entregas estables.",
-    gallery: "Galeria Visual de Fabrica",
-    noVisual: "Aun no hay visuales de fabrica. Generalos desde Admin.",
+    kicker: "Fábrica",
+    title: "Un sistema de producción disciplinado, pensado para cumplir con estabilidad",
+    desc: "La fábrica integra maquinaria seamless, control de proceso y puntos de calidad para sostener entregas estables para compradores globales.",
+    gallery: "Galería Visual de Fábrica",
+    noVisual: "Aún no hay visuales de fábrica. Genéralos desde Admin.",
     capabilities: [
-      { label: "Tiempo de Muestra", value: "5-7 dias" },
-      { label: "Tiempo de Produccion Masiva", value: "20-30 dias" },
+      { label: "Tiempo de Muestra", value: "5-7 días" },
+      { label: "Tiempo de Producción Masiva", value: "20-30 días" },
       { label: "MOQ por estilo/color", value: "300-500 pcs" },
-      { label: "Categorias Principales", value: "Underwear / Yoga / Activewear" }
+      { label: "Categorías Principales", value: "Underwear / Yoga / Activewear" }
     ]
   }
 };

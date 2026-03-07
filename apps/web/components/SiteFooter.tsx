@@ -19,6 +19,7 @@ type FooterCopy = {
   resourceItems: Array<{ href: string; label: string }>;
   contactTitle: string;
   rights: string;
+  bottomLinks: Array<{ href: string; label: string }>;
 };
 
 const copy: Record<SiteLang, FooterCopy> = {
@@ -48,7 +49,12 @@ const copy: Record<SiteLang, FooterCopy> = {
       { href: "/admin", label: "Admin" }
     ],
     contactTitle: "Contact",
-    rights: "All rights reserved."
+    rights: "All rights reserved.",
+    bottomLinks: [
+      { href: "/sustainability", label: "Sustainability" },
+      { href: "/factory", label: "Factory" },
+      { href: "/admin", label: "Admin" }
+    ]
   },
   zh: {
     brandDesc: "义乌迪雅斯服饰有限公司。以更稳定的执行、更成熟的面料判断和更长期的交付信心，服务高端 private-label 内衣制造。",
@@ -76,15 +82,20 @@ const copy: Record<SiteLang, FooterCopy> = {
       { href: "/admin", label: "后台" }
     ],
     contactTitle: "联系方式",
-    rights: "保留所有权利。"
+    rights: "保留所有权利。",
+    bottomLinks: [
+      { href: "/sustainability", label: "可持续" },
+      { href: "/factory", label: "工厂" },
+      { href: "/admin", label: "后台" }
+    ]
   },
   es: {
-    brandDesc: "YiWu DiYaSi Dress CO., LTD. Manufactura private-label de ropa interior guiada por ejecucion disciplinada, criterio textil y confianza real de entrega.",
-    ctaTitle: "Un socio de manufactura mas sereno y mas solido para tu siguiente coleccion",
-    ctaDesc: "Desde la direccion de muestra hasta la entrega masiva estable, ayudamos a las marcas a avanzar con mas claridad y menos friccion.",
-    ctaPrimary: "Iniciar Conversacion",
-    ctaSecondary: "Ver Categorias",
-    navTitle: "Navegacion",
+    brandDesc: "YiWu DiYaSi Dress CO., LTD. Manufactura private-label de ropa interior guiada por ejecución disciplinada, criterio textil y confianza real de entrega.",
+    ctaTitle: "Un socio de manufactura más sereno y más sólido para tu próxima colección",
+    ctaDesc: "Desde la dirección de muestra hasta la entrega masiva estable, ayudamos a las marcas a avanzar con más claridad y menos fricción.",
+    ctaPrimary: "Iniciar Conversación",
+    ctaSecondary: "Ver Categorías",
+    navTitle: "Navegación",
     navItems: [
       { href: "/", label: "Inicio" },
       { href: "/about", label: "Nosotros" },
@@ -95,7 +106,7 @@ const copy: Record<SiteLang, FooterCopy> = {
     capabilityItems: [
       { href: "/oem-odm", label: "OEM / ODM" },
       { href: "/sustainability", label: "Sostenibilidad" },
-      { href: "/factory", label: "Fabrica" }
+      { href: "/factory", label: "Fábrica" }
     ],
     resourceTitle: "Recursos",
     resourceItems: [
@@ -104,7 +115,12 @@ const copy: Record<SiteLang, FooterCopy> = {
       { href: "/admin", label: "Admin" }
     ],
     contactTitle: "Contacto",
-    rights: "Todos los derechos reservados."
+    rights: "Todos los derechos reservados.",
+    bottomLinks: [
+      { href: "/sustainability", label: "Sostenibilidad" },
+      { href: "/factory", label: "Fábrica" },
+      { href: "/admin", label: "Admin" }
+    ]
   }
 };
 
@@ -175,9 +191,11 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
         <div className="container-shell flex flex-col items-center justify-between gap-3 py-4 text-xs text-slate-400 md:flex-row">
           <p>(c) {year} YiWu DiYaSi Dress CO., LTD. {t.rights}</p>
           <div className="flex flex-wrap items-center gap-3">
-            <Link href="/sustainability" className="hover:text-white">Sustainability</Link>
-            <Link href="/factory" className="hover:text-white">Factory</Link>
-            <Link href="/admin" className="hover:text-white">Admin</Link>
+            {t.bottomLinks.map((item) => (
+              <Link key={item.href} href={item.href} className="hover:text-white">
+                {item.label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>

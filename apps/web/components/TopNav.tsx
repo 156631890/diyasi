@@ -31,7 +31,7 @@ const labels: Record<
     oem: "OEM / ODM",
     sustainability: "Sustainability",
     factory: "Factory",
-    blog: "Blog",
+    blog: "Journal",
     contact: "Contact",
     payments: "Payments",
     admin: "Admin",
@@ -45,7 +45,7 @@ const labels: Record<
     oem: "OEM / ODM",
     sustainability: "\u53ef\u6301\u7eed",
     factory: "\u5de5\u5382",
-    blog: "\u535a\u5ba2",
+    blog: "\u6587\u7ae0",
     contact: "\u8054\u7cfb",
     payments: "\u652f\u4ed8",
     admin: "\u540e\u53f0",
@@ -58,13 +58,13 @@ const labels: Record<
     products: "Productos",
     oem: "OEM / ODM",
     sustainability: "Sostenibilidad",
-    factory: "Fabrica",
-    blog: "Blog",
+    factory: "Fábrica",
+    blog: "Journal",
     contact: "Contacto",
     payments: "Pagos",
     admin: "Admin",
-    cta: "Iniciar Conversacion",
-    companyTag: "Manufactura private label"
+    cta: "Iniciar Conversación",
+    companyTag: "Manufactura private label de ropa interior"
   }
 };
 

@@ -42,9 +42,9 @@ const copy: Record<
   },
   es: {
     back: "Ver Journal",
-    discuss: "Iniciar Conversacion",
+    discuss: "Iniciar Conversación",
     kicker: "Journal",
-    lead: "Un punto de vista claro importa mas que el volumen."
+    lead: "Un punto de vista claro importa más que el volumen."
   }
 };
 
@@ -77,7 +77,7 @@ export default async function BlogDetailPage({ params }: Props) {
             {lang === "zh"
               ? "这篇文章围绕制造判断、交付节奏与产品呈现展开，目标是帮助品牌在更早阶段做出更稳妥的决定。"
               : lang === "es"
-                ? "Este texto gira en torno a criterio de manufactura, ritmo de entrega y presentacion del producto para ayudar a tomar decisiones mas solidas desde etapas tempranas."
+                ? "Este texto gira en torno a criterio de manufactura, ritmo de entrega y presentación del producto para ayudar a tomar decisiones más sólidas desde etapas tempranas."
                 : "This piece is meant to support earlier, steadier decisions around manufacturing judgement, delivery rhythm, and product presentation."}
           </p>
         </div>

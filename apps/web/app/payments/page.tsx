@@ -53,17 +53,17 @@ const copy: Record<
   },
   es: {
     kicker: "Pagos",
-    title: "Un paso de pago dedicado para muestras y confirmacion temprana del proyecto",
-    desc: "El pago debe ocurrir solo cuando direccion, alcance y timing ya estan claros. Esta pagina mantiene ese paso separado de la consulta.",
-    leadTitle: "Usa esta pagina cuando la etapa del proyecto ya este definida.",
-    leadDesc: "El pago debe confirmar una etapa, no sustituir la conversacion.",
+    title: "Un paso de pago dedicado para muestras y confirmación temprana del proyecto",
+    desc: "El pago debe ocurrir solo cuando dirección, alcance y timing ya están claros. Esta página mantiene ese paso separado de la consulta.",
+    leadTitle: "Usa esta página cuando la etapa del proyecto ya esté definida.",
+    leadDesc: "El pago debe confirmar una etapa, no sustituir la conversación.",
     items: [
-      { title: "Tarifa de Desarrollo de Muestra", amount: 199, desc: "Para confirmar muestra pagada antes de patron y preparacion de materiales." },
-      { title: "Deposito de Lanzamiento OEM", amount: 500, desc: "Para iniciar el proyecto cuando alcance, precio y direccion de muestra ya estan claros." }
+      { title: "Tarifa de Desarrollo de Muestra", amount: 199, desc: "Para confirmar muestra pagada antes de patrón y preparación de materiales." },
+      { title: "Depósito de Lanzamiento OEM", amount: 500, desc: "Para iniciar el proyecto cuando alcance, precio y dirección de muestra ya están claros." }
     ],
     noteTitle: "Antes de pagar",
-    noteBody: "Confirma primero categoria, rango de volumen y timing de entrega con el equipo para que el pago coincida con la etapa correcta.",
-    contactCta: "Iniciar Conversacion"
+    noteBody: "Confirma primero categoría, rango de volumen y timing de entrega con el equipo para que el pago coincida con la etapa correcta.",
+    contactCta: "Iniciar Conversación"
   }
 };
 
@@ -95,7 +95,7 @@ export default function PaymentsPage() {
             <p className="heading-font mt-4 text-6xl font-semibold text-[#102949]">${item.amount}</p>
             <p className="mt-4 max-w-xl text-[#53647f]">{item.desc}</p>
             <div className="mt-6">
-              <BuyNowButton title={item.title} unitAmountUsd={item.amount} label={lang === "zh" ? "继续支付" : lang === "es" ? "Continuar al Pago" : "Continue to Payment"} />
+              <BuyNowButton title={item.title} unitAmountUsd={item.amount} label={lang === "zh" ? "继续支付" : lang === "es" ? "Continuar al pago" : "Continue to Payment"} />
             </div>
           </article>
         ))}

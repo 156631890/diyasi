@@ -41,12 +41,12 @@ const copy: Record<
   },
   es: {
     kicker: "Journal",
-    title: "Escritura del lado de fabrica para marcas que construyen con criterio",
-    desc: "Notas sobre sourcing, disciplina MOQ, control de calidad y decisiones de lanzamiento, pensadas para ser utiles y no ruidosas.",
-    noArticle: "Aun no hay articulos. Crea contenido desde Admin SEO.",
+    title: "Escritura desde fábrica para marcas que construyen con criterio",
+    desc: "Notas sobre sourcing, disciplina de MOQ, control de calidad y decisiones de lanzamiento, escritas para ser útiles y no ruidosas.",
+    noArticle: "Aún no hay artículos. Crea contenido desde Admin SEO.",
     readMore: "Leer",
-    leadTitle: "El tono debe sentirse mas cercano a guia que a marketing de contenido",
-    leadDesc: "La meta no es volumen. La meta es ofrecer un punto de vista mas claro para compradores que comparan fabrica, timing y calidad."
+    leadTitle: "El tono debe sentirse más cercano a una guía que a marketing de contenido",
+    leadDesc: "La meta no es el volumen. La meta es ofrecer un punto de vista más claro para compradores que comparan fábrica, timing y expectativas de calidad."
   }
 };
 

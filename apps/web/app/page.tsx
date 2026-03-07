@@ -112,27 +112,27 @@ const copy: Record<
   },
   es: {
     heroKicker: "YiWu DiYaSi Dress CO., LTD",
-    heroTitle: "Manufactura premium y sostenible de ropa interior para marcas globales",
+    heroTitle: "Manufactura premium de ropa interior para marcas que valoran consistencia, claridad y presencia de marca",
     heroDesc:
-      "Acompanamos a marcas de underwear y activewear desde concepto y muestra hasta produccion masiva estable, con ejecucion mas limpia, mejor control de calidad y una presentacion de producto mas premium.",
-    ctaProducts: "Ver Categorias",
-    ctaContact: "Iniciar Conversacion",
-    storyKicker: "Direccion Visual de Marca",
-    storyTitle: "Una entrada mas serena y premium para compradores serios",
+      "Acompañamos a marcas de underwear y activewear desde concepto y muestra hasta producción masiva estable, con una ejecución más limpia, mejor control de calidad y una presentación de producto más sólida desde el inicio.",
+    ctaProducts: "Ver Categorías",
+    ctaContact: "Iniciar Conversación",
+    storyKicker: "Dirección Visual de Marca",
+    storyTitle: "Una entrada más serena y más sólida para compradores serios",
     storyDesc:
-      "Los visuales, la estructura por categorias y la narrativa de marca deben comunicar solidez antes del primer correo.",
+      "Los visuales, la estructura por categorías y la narrativa de marca deben transmitir criterio antes del primer correo.",
     storyBtn: "Ver Media",
-    noPoster: "Aun no hay visuales destacados. Configuralos desde Admin.",
-    catKicker: "Navegacion de Producto",
-    catTitle: "Categorias grandes, decisiones mas claras, sourcing mas rapido",
+    noPoster: "Aún no hay visuales destacados. Configúralos desde Admin.",
+    catKicker: "Navegación de Producto",
+    catTitle: "Categorías amplias, decisiones más claras y sourcing más ágil",
     catDesc:
-      "Los compradores no deberian navegar entre pequenas tarjetas. Deben entender las categorias fuertes de inmediato y avanzar a conversacion.",
-    noCategory: "Aun no hay categorias disponibles.",
+      "Los compradores no deberían perderse entre tarjetas pequeñas. Deben entender tus categorías fuertes de inmediato y pasar a conversación con más contexto.",
+    noCategory: "Aún no hay categorías disponibles.",
     metrics: [
-      { value: "23+", label: "anos de experiencia productiva" },
-      { value: "5-7", label: "dias para primera muestra" },
+      { value: "23+", label: "años de experiencia productiva" },
+      { value: "5-7", label: "días para primera muestra" },
       { value: "300-500", label: "pcs MOQ por estilo y color" },
-      { value: "20-30", label: "dias para produccion masiva" }
+      { value: "20-30", label: "días para producción masiva" }
     ]
   }
 };

@@ -5,7 +5,7 @@ export const SUPPORTED_LANGS: SiteLang[] = ["en", "zh", "es"];
 export const LANG_LABELS: Record<SiteLang, string> = {
   en: "English",
   zh: "中文",
-  es: "Espanol"
+  es: "Español"
 };
 
 export function normalizeLang(value?: string | null): SiteLang {
