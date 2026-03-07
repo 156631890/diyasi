@@ -9,6 +9,19 @@ type MediaAsset = {
   title: string;
 };
 
+const aboutDetailImages = [
+  {
+    id: -11,
+    title: "Quality Check Fabric Detail",
+    image_url: "/media/generated/factory/quality-check-fabric-detail.png"
+  },
+  {
+    id: -12,
+    title: "Seamless Machine Detail",
+    image_url: "/media/generated/factory/seamless-machine-detail.png"
+  }
+];
+
 const fallbackHeroImage: MediaAsset = {
   id: -1,
   title: "Material Confidence Hero",
@@ -134,7 +147,14 @@ export default async function AboutPage() {
           </div>
           <div className="about-visual-shell">
             {heroImage ? (
-              <img src={heroImage.image_url} alt={heroImage.title} className="about-visual" />
+              <div className="about-visual-stack">
+                <img src={heroImage.image_url} alt={heroImage.title} className="about-visual" />
+                <div className="about-detail-grid">
+                  {aboutDetailImages.map((item) => (
+                    <img key={item.id} src={item.image_url} alt={item.title} className="about-detail-image" />
+                  ))}
+                </div>
+              </div>
             ) : (
               <div className="grid h-[360px] place-items-center rounded-2xl bg-gradient-to-br from-[#dce5f5] to-[#f6ead7] text-sm text-slate-600">{t.noVisual}</div>
             )}

@@ -13,12 +13,32 @@ const fallbackFactoryImages: MediaAsset[] = [
     id: -1,
     title: "Factory Capability Panorama",
     image_url: "/media/generated/factory-capability-panorama.png"
+  },
+  {
+    id: -2,
+    title: "Quality Check Fabric Detail",
+    image_url: "/media/generated/factory/quality-check-fabric-detail.png"
+  },
+  {
+    id: -3,
+    title: "Seamless Machine Detail",
+    image_url: "/media/generated/factory/seamless-machine-detail.png"
+  },
+  {
+    id: -4,
+    title: "Inspection and Finishing Table",
+    image_url: "/media/generated/factory/inspection-and-finishing-table.png"
   }
 ];
 
 async function getFactoryImages(): Promise<MediaAsset[]> {
   const assets = await safeFetchJson<MediaAsset[]>("/media/assets?asset_type=factory&limit=6", []);
-  return assets.length > 0 ? assets : fallbackFactoryImages;
+  if (assets.length === 0) {
+    return fallbackFactoryImages;
+  }
+  const existingTitles = new Set(assets.map((item) => item.title));
+  const extraFallbacks = fallbackFactoryImages.filter((item) => !existingTitles.has(item.title));
+  return [...assets, ...extraFallbacks].slice(0, 4);
 }
 
 const copy: Record<
