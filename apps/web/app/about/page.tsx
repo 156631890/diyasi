@@ -22,6 +22,8 @@ const aboutDetailImages = [
   }
 ];
 
+const aboutWideImage = "/media/generated/wide/about-wide-brand-floor.png";
+
 const fallbackHeroImage: MediaAsset = {
   id: -1,
   title: "Material Confidence Hero",
@@ -188,6 +190,12 @@ export default async function AboutPage() {
                 ? "Desde la primera linea seamless, la evolucion de DiYaSi ha estado centrada en estabilidad operativa, amplitud de categoria y experiencia internacional."
                 : "From the first seamless production line onward, DiYaSi has expanded around delivery stability, category depth, and international execution."}
           </p>
+        </div>
+      </section>
+
+      <section className="mt-8">
+        <div className="wide-visual-shell">
+          <img src={aboutWideImage} alt="Brand floor and development space" className="wide-visual" />
         </div>
       </section>
 

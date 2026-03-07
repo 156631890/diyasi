@@ -35,8 +35,8 @@ const labels: Record<
     contact: "Contact",
     payments: "Payments",
     admin: "Admin",
-    cta: "Start Project",
-    companyTag: "23+ Years Underwear Manufacturing"
+    cta: "Start a Collection",
+    companyTag: "Private Label Underwear Manufacturing"
   },
   zh: {
     home: "\u9996\u9875",
@@ -49,8 +49,8 @@ const labels: Record<
     contact: "\u8054\u7cfb",
     payments: "\u652f\u4ed8",
     admin: "\u540e\u53f0",
-    cta: "\u542f\u52a8\u9879\u76ee",
-    companyTag: "23+\u5e74\u5185\u8863\u5236\u9020"
+    cta: "\u542f\u52a8\u7cfb\u5217",
+    companyTag: "\u9ad8\u7aef\u5185\u8863\u5236\u9020"
   },
   es: {
     home: "Inicio",
@@ -63,8 +63,8 @@ const labels: Record<
     contact: "Contacto",
     payments: "Pagos",
     admin: "Admin",
-    cta: "Iniciar Proyecto",
-    companyTag: "23+ anos de manufactura"
+    cta: "Iniciar Coleccion",
+    companyTag: "Manufactura private label"
   }
 };
 

@@ -31,6 +31,8 @@ const fallbackFactoryImages: MediaAsset[] = [
   }
 ];
 
+const factoryWideImage = "/media/generated/wide/factory-wide-production-line.png";
+
 async function getFactoryImages(): Promise<MediaAsset[]> {
   const assets = await safeFetchJson<MediaAsset[]>("/media/assets?asset_type=factory&limit=6", []);
   if (assets.length === 0) {
@@ -117,6 +119,9 @@ export default async function FactoryPage() {
       <section className="mt-12">
         <p className="kicker">{t.gallery}</p>
         <h2 className="heading-font mt-2 text-4xl font-semibold text-[#122744]">Production Visual Library</h2>
+        <div className="mt-6 wide-visual-shell">
+          <img src={factoryWideImage} alt="Wide production line view" className="wide-visual" />
+        </div>
         <div className="mt-6 factory-gallery">
           {images.map((img) => (
             <article key={img.id} className="factory-gallery-item">
