@@ -46,8 +46,8 @@ const copy: Record<
     all: "All Categories",
     noPoster: "No products in this category yet.",
     noImage: "Image coming soon",
-    quote: "Request Category Quote",
-    bulk: "Discuss Bulk Order",
+    quote: "Start a Conversation",
+    bulk: "Start a Conversation",
     paidSample: "Paid Sample"
   },
   zh: {
@@ -57,8 +57,8 @@ const copy: Record<
     all: "全部分类",
     noPoster: "该分类暂时没有产品。",
     noImage: "图片待更新",
-    quote: "获取分类报价",
-    bulk: "洽谈大货合作",
+    quote: "开始沟通",
+    bulk: "开始沟通",
     paidSample: "付费打样"
   },
   es: {
@@ -68,8 +68,8 @@ const copy: Record<
     all: "Todas las Categorias",
     noPoster: "Aun no hay productos en esta categoria.",
     noImage: "Imagen pendiente",
-    quote: "Solicitar Cotizacion",
-    bulk: "Hablar Pedido Masivo",
+    quote: "Iniciar Conversacion",
+    bulk: "Iniciar Conversacion",
     paidSample: "Muestra Pagada"
   }
 };

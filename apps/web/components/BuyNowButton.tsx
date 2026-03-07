@@ -15,7 +15,7 @@ export default function BuyNowButton({
   unitAmountUsd,
   quantity = 1,
   className = "btn btn-primary",
-  label = "Pay Now"
+  label = "Continue to Payment"
 }: BuyNowButtonProps) {
   const [loading, setLoading] = useState(false);
 
@@ -41,7 +41,7 @@ export default function BuyNowButton({
 
   return (
     <button type="button" className={className} onClick={onCheckout} disabled={loading}>
-      {loading ? "Redirecting..." : label}
+      {loading ? "Opening Checkout..." : label}
     </button>
   );
 }

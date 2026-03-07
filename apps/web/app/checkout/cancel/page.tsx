@@ -36,10 +36,10 @@ export default function CheckoutCancelPage() {
         </p>
         <div className="mt-6 flex gap-3">
           <Link href="/products" className="btn btn-primary">
-            Back to Products
+            View Products
           </Link>
           <Link href="/contact" className="btn btn-soft">
-            Talk to Sales
+            Start a Conversation
           </Link>
         </div>
       </section>

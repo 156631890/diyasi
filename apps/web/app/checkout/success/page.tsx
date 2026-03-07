@@ -36,10 +36,10 @@ export default function CheckoutSuccessPage() {
         </p>
         <div className="mt-6 flex gap-3">
           <Link href="/products" className="btn btn-primary">
-            Continue Shopping
+            View Products
           </Link>
           <Link href="/contact" className="btn btn-soft">
-            Contact Team
+            Start a Conversation
           </Link>
         </div>
       </section>
