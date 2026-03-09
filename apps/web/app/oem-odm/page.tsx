@@ -105,9 +105,9 @@ export default function OemOdmPage() {
   return (
     <main className="container-shell py-10">
       <section className="dark-band rounded-[34px] px-7 py-10 shadow-[0_32px_90px_rgba(16,30,52,0.18)] md:px-10 lg:px-12">
-        <p className="kicker text-[#f3d7a1]">{t.kicker}</p>
+        <p className="kicker page-reference-subtitle text-[#f3d7a1]">{t.kicker}</p>
         <h1 className="heading-font mt-2 text-5xl font-semibold">{t.title}</h1>
-        <p className="mt-3 max-w-3xl leading-8 text-[#cfdbef]">{t.desc}</p>
+        <p className="page-reference-body mt-3 max-w-3xl text-[#cfdbef]">{t.desc}</p>
         <div className="mt-6 flex flex-wrap gap-3">
           <Link href="/payments" className="btn bg-white text-[#112742]">
             {t.pay}
@@ -120,16 +120,16 @@ export default function OemOdmPage() {
 
       <section className="mt-10">
         <div className="section-lead">
-          <p className="kicker">{t.kicker}</p>
-          <h2 className="heading-font mt-2 text-4xl font-semibold text-[#122744]">{t.sectionTitle}</h2>
+          <p className="kicker page-reference-subtitle">{t.kicker}</p>
+          <h2 className="page-reference-subtitle mt-2 text-[#122744]">{t.sectionTitle}</h2>
         </div>
         <div className="mt-8 space-y-8">
           {t.workflow.map((block, index) => (
             <article key={block.title} className="process-row">
               <div className="process-index">{String(index + 1).padStart(2, "0")}</div>
               <div className="process-copy">
-                <h2 className="heading-font text-4xl font-semibold text-[#122744]">{block.title}</h2>
-                <ul className="mt-4 grid gap-3 text-[#4f607d] md:grid-cols-2">
+                <h2 className="page-reference-subtitle text-[#122744]">{block.title}</h2>
+                <ul className="page-reference-body mt-4 grid gap-3 text-[#4f607d] md:grid-cols-2">
                   {block.items.map((item) => (
                     <li key={item} className="process-bullet">
                       {item}

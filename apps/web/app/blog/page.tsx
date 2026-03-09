@@ -62,14 +62,14 @@ export default async function BlogPage() {
       <section className="hero-panel p-7 md:p-10 lg:p-12">
         <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
           <div>
-            <p className="kicker">{t.kicker}</p>
+            <p className="kicker page-reference-subtitle">{t.kicker}</p>
             <h1 className="section-title mt-2 text-[#122744]">{t.title}</h1>
-            <p className="mt-4 max-w-3xl text-lg leading-8 text-[#51627d]">{t.desc}</p>
+            <p className="page-reference-body mt-4 max-w-3xl text-[#51627d]">{t.desc}</p>
           </div>
           <div className="contact-aside">
             <p className="text-xs uppercase tracking-[0.22em] text-[#8b6a2c]">{t.kicker}</p>
-            <p className="mt-4 text-lg leading-8 text-[#44546d]">{t.leadTitle}</p>
-            <p className="mt-3 text-[#5d6e89] leading-8">{t.leadDesc}</p>
+            <p className="page-reference-subtitle mt-4 text-[#44546d]">{t.leadTitle}</p>
+            <p className="page-reference-body mt-3 text-[#5d6e89]">{t.leadDesc}</p>
           </div>
         </div>
       </section>
@@ -79,15 +79,15 @@ export default async function BlogPage() {
           <article className="catalog-feature">
             <div className="catalog-feature-copy">
               <p className="kicker">{lead.category}</p>
-              <h2 className="heading-font mt-3 text-5xl font-semibold text-[#112742]">{lead.title}</h2>
-              <p className="mt-4 max-w-2xl text-lg leading-8 text-[#4f607d]">{lead.excerpt}</p>
+              <h2 className="page-reference-subtitle mt-3 text-[#112742]">{lead.title}</h2>
+              <p className="page-reference-body mt-4 max-w-2xl text-[#4f607d]">{lead.excerpt}</p>
               <div className="mt-8">
                 <Link href={`/blog/${lead.slug}`} className="btn btn-primary">{t.readMore}</Link>
               </div>
             </div>
             <div className="wide-visual-shell">
               <div className="grid h-full place-items-center bg-gradient-to-br from-[#dfe7f5] via-[#f6f8fc] to-[#efe5d3] px-8 text-center">
-                <p className="heading-font max-w-lg text-4xl font-semibold leading-[1.1] text-[#132845]">{lead.title}</p>
+                <p className="page-reference-subtitle max-w-lg text-[#132845]">{lead.title}</p>
               </div>
             </div>
           </article>
@@ -100,8 +100,8 @@ export default async function BlogPage() {
           <article key={article.slug} className="catalog-card">
             <div className="catalog-card-copy">
               <p className="text-xs uppercase tracking-[0.18em] text-[#8b6a2c]">{article.category}</p>
-              <h2 className="heading-font mt-2 text-3xl font-semibold text-[#122744]">{article.title}</h2>
-              <p className="mt-3 leading-8 text-[#4f607d]">{article.excerpt}</p>
+              <h2 className="page-reference-subtitle mt-2 text-[#122744]">{article.title}</h2>
+              <p className="page-reference-body mt-3 text-[#4f607d]">{article.excerpt}</p>
               <div className="mt-5"><Link href={`/blog/${article.slug}`} className="btn btn-soft">{t.readMore}</Link></div>
             </div>
           </article>

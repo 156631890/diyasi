@@ -83,22 +83,22 @@ export default function SustainabilityPage() {
   return (
     <main className="container-shell py-10">
       <section className="hero-panel p-7 md:p-10 lg:p-12">
-        <p className="kicker">{t.kicker}</p>
+        <p className="kicker page-reference-subtitle">{t.kicker}</p>
         <h1 className="section-title mt-2 text-[#122744]">{t.title}</h1>
-        <p className="mt-4 max-w-3xl leading-8 text-[#51627d]">{t.desc}</p>
+        <p className="page-reference-body mt-4 max-w-3xl text-[#51627d]">{t.desc}</p>
       </section>
 
       <section className="mt-10">
         <div className="section-lead">
-          <p className="kicker">{t.kicker}</p>
-          <h2 className="heading-font mt-2 text-4xl font-semibold text-[#122744]">{t.sectionTitle}</h2>
+          <p className="kicker page-reference-subtitle">{t.kicker}</p>
+          <h2 className="page-reference-subtitle mt-2 text-[#122744]">{t.sectionTitle}</h2>
         </div>
         <div className="mt-8 grid gap-8 md:grid-cols-3">
           {t.strategy.map((item, index) => (
             <article key={item.title} className="editorial-column">
               <p className="text-sm uppercase tracking-[0.22em] text-[#8b6a2c]">{String(index + 1).padStart(2, "0")}</p>
-              <h2 className="heading-font mt-4 text-3xl font-semibold text-[#112742]">{item.title}</h2>
-              <p className="mt-4 leading-8 text-[#4f607d]">{item.copy}</p>
+              <h2 className="page-reference-subtitle mt-4 text-[#112742]">{item.title}</h2>
+              <p className="page-reference-body mt-4 text-[#4f607d]">{item.copy}</p>
             </article>
           ))}
         </div>
@@ -106,8 +106,8 @@ export default function SustainabilityPage() {
 
       <section className="editorial-strip mt-12">
         <div>
-          <p className="kicker">{t.kicker}</p>
-          <p className="mt-3 max-w-3xl text-lg leading-8 text-[#43536c]">{t.closing}</p>
+          <p className="kicker page-reference-subtitle">{t.kicker}</p>
+          <p className="page-reference-body mt-3 max-w-3xl text-[#43536c]">{t.closing}</p>
         </div>
       </section>
     </main>

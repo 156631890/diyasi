@@ -102,23 +102,23 @@ export default async function FactoryPage() {
   return (
     <main className="container-shell py-10">
       <section className="dark-band rounded-[34px] px-7 py-10 shadow-[0_32px_90px_rgba(16,30,52,0.18)] md:px-10 lg:px-12">
-        <p className="kicker text-[#f3d7a1]">{t.kicker}</p>
+        <p className="kicker page-reference-subtitle text-[#f3d7a1]">{t.kicker}</p>
         <h1 className="heading-font mt-2 text-5xl font-semibold">{t.title}</h1>
-        <p className="mt-3 max-w-3xl leading-8 text-[#cfdbef]">{t.desc}</p>
+        <p className="page-reference-body mt-3 max-w-3xl text-[#cfdbef]">{t.desc}</p>
       </section>
 
       <section className="mt-10 factory-metrics">
         {t.capabilities.map((item) => (
           <article key={item.label} className="factory-metric">
             <p className="text-sm uppercase tracking-wide text-[#8b6a2c]">{item.label}</p>
-            <p className="heading-font mt-2 text-3xl font-semibold text-[#102949]">{item.value}</p>
+            <p className="page-reference-subtitle mt-2 text-[#102949]">{item.value}</p>
           </article>
         ))}
       </section>
 
       <section className="mt-12">
-        <p className="kicker">{t.gallery}</p>
-        <h2 className="heading-font mt-2 text-4xl font-semibold text-[#122744]">Production Visual Library</h2>
+        <p className="kicker page-reference-subtitle">{t.gallery}</p>
+        <h2 className="page-reference-subtitle mt-2 text-[#122744]">Production Visual Library</h2>
         <div className="mt-6 wide-visual-shell">
           <img src={factoryWideImage} alt="Wide production line view" className="wide-visual" />
         </div>
@@ -127,11 +127,11 @@ export default async function FactoryPage() {
             <article key={img.id} className="factory-gallery-item">
               <img src={img.image_url} alt={img.title} className="h-full w-full object-cover" />
               <div className="split-gallery-caption">
-                <p>{img.title}</p>
+                <p className="page-reference-body">{img.title}</p>
               </div>
             </article>
           ))}
-          {images.length === 0 ? <div className="rounded-2xl border border-dashed border-slate-300 p-4 text-sm text-slate-500">{t.noVisual}</div> : null}
+          {images.length === 0 ? <div className="page-reference-body rounded-2xl border border-dashed border-slate-300 p-4 text-slate-500">{t.noVisual}</div> : null}
         </div>
       </section>
     </main>
