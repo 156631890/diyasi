@@ -118,9 +118,9 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
   return (
     <main className="container-shell py-10">
       <section className="hero-panel p-7 md:p-10 lg:p-12">
-        <p className="kicker">{t.kicker}</p>
+        <p className="kicker page-reference-subtitle">{t.kicker}</p>
         <h1 className="section-title mt-2 text-[#122744]">{t.title}</h1>
-        <p className="mt-3 max-w-3xl leading-8 text-[#51627d]">{t.desc}</p>
+        <p className="page-reference-body mt-3 max-w-3xl text-[#51627d]">{t.desc}</p>
       </section>
 
       <section className="catalog-rail mt-8">
@@ -155,20 +155,20 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
             </div>
             <div className="catalog-feature-copy">
               <p className="kicker">{leadProduct.category}</p>
-              <h2 className="heading-font mt-3 text-5xl font-semibold text-[#112742]">{leadProduct.product_name}</h2>
-              <p className="mt-4 max-w-2xl text-lg leading-8 text-[#4f607d]">{leadProduct.description}</p>
+              <h2 className="page-reference-subtitle mt-3 text-[#112742]">{leadProduct.product_name}</h2>
+              <p className="page-reference-body mt-4 max-w-2xl text-[#4f607d]">{leadProduct.description}</p>
               <div className="mt-6 grid gap-3 md:grid-cols-3">
                 <div>
                   <p className="text-xs uppercase tracking-[0.18em] text-[#8b6a2c]">Fabric</p>
-                  <p className="mt-2 text-[#3f5068]">{leadProduct.fabric}</p>
+                  <p className="page-reference-body mt-2 text-[#3f5068]">{leadProduct.fabric}</p>
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-[0.18em] text-[#8b6a2c]">Price</p>
-                  <p className="mt-2 text-[#3f5068]">${resolvePrice(leadProduct)}</p>
+                  <p className="page-reference-body mt-2 text-[#3f5068]">${resolvePrice(leadProduct)}</p>
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-[0.18em] text-[#8b6a2c]">Product ID</p>
-                  <p className="mt-2 text-[#3f5068]">{leadProduct.product_id}</p>
+                  <p className="page-reference-body mt-2 text-[#3f5068]">{leadProduct.product_id}</p>
                 </div>
               </div>
               <div className="mt-8 flex flex-wrap gap-2">
@@ -197,12 +197,12 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <div>
                     <p className="text-xs uppercase tracking-[0.18em] text-[#8b6a2c]">{product.category}</p>
-                    <h2 className="heading-font mt-2 text-3xl font-semibold text-[#112742]">{product.product_name}</h2>
+                    <h2 className="page-reference-subtitle mt-2 text-[#112742]">{product.product_name}</h2>
                   </div>
                   <p className="rounded-full bg-[#102949] px-3 py-1 text-sm font-semibold text-white">${price}</p>
                 </div>
-                <p className="mt-2 text-sm text-[#5d6e89]">{product.fabric}</p>
-                <p className="mt-3 leading-7 text-[#4f607d]">{product.description}</p>
+                <p className="page-reference-body mt-2 text-[#5d6e89]">{product.fabric}</p>
+                <p className="page-reference-body mt-3 text-[#4f607d]">{product.description}</p>
                 <div className="mt-5 flex flex-wrap gap-2">
                   <BuyNowButton title={`${product.product_name} - ${t.paidSample}`} unitAmountUsd={price} />
                   <Link href="/contact" className="btn btn-soft">{t.bulk}</Link>

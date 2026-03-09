@@ -206,13 +206,13 @@ export default function ContactPage() {
       <section className="hero-panel overflow-hidden p-7 md:p-10 lg:p-12">
         <div className="grid gap-8 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
           <div>
-            <p className="kicker">{t.lead}</p>
+            <p className="kicker page-reference-subtitle">{t.lead}</p>
             <h1 className="section-title mt-2 text-[#122744]">{t.title}</h1>
           </div>
           <div className="contact-aside">
             <p className="text-xs uppercase tracking-[0.22em] text-[#8b6a2c]">{t.processTitle}</p>
-            <p className="mt-4 text-lg leading-8 text-[#44546d]">{t.leadTitle}</p>
-            <p className="mt-3 text-[#5d6e89] leading-8">{t.leadDesc}</p>
+            <p className="page-reference-subtitle mt-4 text-[#44546d]">{t.leadTitle}</p>
+            <p className="page-reference-body mt-3 text-[#5d6e89]">{t.leadDesc}</p>
           </div>
         </div>
       </section>
@@ -221,16 +221,16 @@ export default function ContactPage() {
         <div className="contact-panel">
           <div className="contact-inquiry-grid">
             <div className="contact-inquiry-copy">
-              <p className="kicker">{t.inquiry}</p>
-              <h2 className="heading-font mt-3 text-4xl font-semibold text-[#122744]">{t.inquiry}</h2>
-              <p className="mt-3 text-[#556681] leading-8">{t.inquiryDesc}</p>
+              <p className="kicker page-reference-subtitle">{t.inquiry}</p>
+              <h2 className="page-reference-subtitle mt-3 text-[#122744]">{t.inquiry}</h2>
+              <p className="page-reference-body mt-3 text-[#556681]">{t.inquiryDesc}</p>
               <p className="contact-inquiry-note">{t.inquiryNote}</p>
 
               <div className="contact-visual-anchor">
                 <div className="contact-visual-copy">
                   <p className="contact-visual-kicker">Brief</p>
-                  <h3 className="heading-font text-3xl font-semibold text-white">{t.visualTitle}</h3>
-                  <p className="mt-4 text-sm leading-8 text-[#d7e2f1]">{t.visualBody}</p>
+                  <h3 className="page-reference-subtitle text-white">{t.visualTitle}</h3>
+                  <p className="page-reference-body mt-4 text-[#d7e2f1]">{t.visualBody}</p>
                 </div>
                 <div className="contact-visual-image-shell">
                   <img src={contactWideImage} alt={t.visualImageAlt} className="contact-visual-image" />
@@ -247,7 +247,7 @@ export default function ContactPage() {
 
               <div className="contact-process-block">
                 <p className="text-xs uppercase tracking-[0.22em] text-[#8b6a2c]">{t.processTitle}</p>
-                <p className="mt-3 text-[#44546d] leading-8">{t.processLead}</p>
+                <p className="page-reference-body mt-3 text-[#44546d]">{t.processLead}</p>
                 <div className="mt-5 grid gap-3">
                   {t.process.map((item, index) => (
                     <div key={item} className="contact-process-item">
@@ -261,8 +261,8 @@ export default function ContactPage() {
 
             <form className="contact-form-card" onSubmit={onSubmit}>
               <div className="contact-form-head">
-                <p className="kicker">{t.formTitle}</p>
-                <p className="mt-3 text-[#44546d] leading-8">{t.formLead}</p>
+                <p className="kicker page-reference-subtitle">{t.formTitle}</p>
+                <p className="page-reference-body mt-3 text-[#44546d]">{t.formLead}</p>
               </div>
               <div className="contact-form-grid">
                 <label className="contact-field">
@@ -292,8 +292,8 @@ export default function ContactPage() {
         </div>
 
         <aside className="contact-sideband">
-          <p className="kicker">{t.paymentTitle}</p>
-          <p className="mt-3 text-lg leading-8 text-[#d9e4f4]">{t.paymentDesc}</p>
+          <p className="kicker page-reference-subtitle">{t.paymentTitle}</p>
+          <p className="page-reference-body mt-3 text-[#d9e4f4]">{t.paymentDesc}</p>
           <div className="mt-6">
             <Link href="/payments" className="btn bg-white text-[#102949]">{t.paymentCta}</Link>
           </div>

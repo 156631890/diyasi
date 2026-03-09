@@ -168,41 +168,43 @@ export default async function HomePage() {
     <main className="pb-20">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
 
-      <section className="container-shell pt-10 lg:pt-14">
-        <div className="hero-panel overflow-hidden px-7 py-8 md:px-10 md:py-10 lg:px-14 lg:py-14">
-          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
-            <div>
-              <p className="kicker home-reference-subtitle">{t.heroKicker}</p>
-              <h1 className="home-reference-title mt-4 max-w-4xl text-[#0f2038]">{t.heroTitle}</h1>
-              <p className="home-reference-body mt-6 max-w-3xl text-[#44546d]">{t.heroDesc}</p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/products" className="btn btn-primary">
-                  {t.ctaProducts}
-                </Link>
-                <Link href="/contact" className="btn btn-soft">
-                  {t.ctaContact}
-                </Link>
-              </div>
-            </div>
-
-            <div className="home-gallery">
-              {heroPoster ? (
-                <img src={heroPoster.image_url} alt={heroPoster.title} className="home-gallery-main" />
-              ) : (
-                <div className="home-gallery-fallback">{t.noPoster}</div>
-              )}
-              <div className="home-gallery-stack">
-                {sidePosters.length > 0 ? (
-                  sidePosters.map((asset) => (
-                    <img key={asset.id} src={asset.image_url} alt={asset.title} className="home-gallery-side" />
-                  ))
-                ) : (
-                  <div className="home-gallery-note">{t.noPoster}</div>
-                )}
-              </div>
+      <section className="pt-8 lg:pt-10">
+        <div className="home-reference-banner">
+          {heroPoster ? (
+            <img src={heroPoster.image_url} alt={heroPoster.title} className="home-reference-banner-image" />
+          ) : (
+            <div className="home-reference-banner-fallback">{t.noPoster}</div>
+          )}
+          <div className="home-reference-banner-overlay" />
+          <div className="container-shell home-reference-banner-content">
+            <p className="kicker home-reference-subtitle text-white">{t.heroKicker}</p>
+            <h1 className="home-reference-title mt-4 max-w-4xl text-white">{t.heroTitle}</h1>
+            <p className="home-reference-body mt-5 max-w-3xl text-white/90">{t.heroDesc}</p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Link href="/products" className="btn bg-white text-[#102949]">
+                {t.ctaProducts}
+              </Link>
+              <Link href="/contact" className="btn border border-white/60 bg-transparent text-white">
+                {t.ctaContact}
+              </Link>
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="container-shell mt-4">
+        {sidePosters.length > 0 ? (
+          <div className="home-reference-strip">
+            {sidePosters.map((asset) => (
+              <article key={asset.id} className="home-reference-strip-item">
+                <img src={asset.image_url} alt={asset.title} className="home-reference-strip-image" />
+                <div className="home-reference-strip-caption">
+                  <p className="home-reference-body text-white">{asset.title}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        ) : null}
       </section>
 
       <section className="container-shell mt-10">
