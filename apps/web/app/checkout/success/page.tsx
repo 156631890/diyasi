@@ -18,40 +18,38 @@ export default function CheckoutSuccessPage() {
 
   useEffect(() => {
     async function updateStatus() {
+      const failedCopy =
+        lang === "zh"
+          ? "订单状态同步失败"
+          : lang === "es"
+            ? "Falló la sincronización del estado"
+            : "Order status sync failed";
+
       try {
         const response = await fetch(`${API_BASE}/orders/${encodeURIComponent(ref)}/status`, {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ status: "paid", notes: "mock checkout paid" })
         });
-        if (response.ok) {
-          setSyncState(
-            lang === "zh"
-              ? "订单状态已标记为已支付"
-              : lang === "es"
-                ? "El pedido ya figura como pagado"
-                : "Order marked as paid"
-          );
+
+        if (!response.ok) {
+          setSyncState(failedCopy);
           return;
         }
+
         setSyncState(
           lang === "zh"
-            ? "订单状态同步失败"
+            ? "订单状态已标记为已支付"
             : lang === "es"
-              ? "Falló la sincronización del estado"
-              : "Order status sync failed"
+              ? "El pedido ya figura como pagado"
+              : "Order marked as paid"
         );
       } catch {
-        setSyncState(
-          lang === "zh"
-            ? "订单状态同步失败"
-            : lang === "es"
-              ? "Falló la sincronización del estado"
-              : "Order status sync failed"
-        );
+        setSyncState(failedCopy);
       }
     }
-    updateStatus();
+
+    void updateStatus();
   }, [lang, ref]);
 
   return <CheckoutStatusView mode="success" refCode={ref} syncState={syncState} lang={lang} />;

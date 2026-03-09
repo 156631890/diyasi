@@ -26,6 +26,8 @@ const copy: Record<
       refLabel: string;
       noteTitle: string;
       noteBody: string;
+      briefTitle: string;
+      briefBody: string;
       primaryCta: string;
       secondaryCta: string;
     }
@@ -34,27 +36,31 @@ const copy: Record<
   en: {
     success: {
       kicker: "Payments",
-      title: "The payment step has been confirmed.",
-      desc: "This confirmation marks the current project stage clearly so the next conversation can focus on product direction, sample timing, and execution.",
-      asideTitle: "Payment should support momentum, not replace it.",
-      asideDesc: "Use this step to confirm direction that has already been discussed, then move back into development with clear timing and scope.",
-      statusLabel: "Status sync",
+      title: "The payment checkpoint has been confirmed.",
+      desc: "This step should now hand the project back to product direction, sampling rhythm, and execution planning instead of keeping attention on checkout itself.",
+      asideTitle: "A confirmed payment should narrow the project, not complicate it.",
+      asideDesc: "The next useful move is to return to material choices, sample review, and delivery timing with a cleaner stage definition in place.",
+      statusLabel: "Status Sync",
       refLabel: "Reference",
       noteTitle: "What happens next",
-      noteBody: "Our team will treat this payment as stage confirmation. If material direction, quantities, or delivery timing still need adjustment, continue the conversation before moving deeper into execution.",
+      noteBody: "Our team will treat this payment as stage confirmation. If category, quantity range, or delivery timing still need adjustment, continue the conversation before moving deeper into execution.",
+      briefTitle: "Brief Perspective",
+      briefBody: "A completed payment is most useful when it confirms a stage that is already understood. It should reduce ambiguity, not create a new one.",
       primaryCta: "View Products",
       secondaryCta: "Start a Conversation"
     },
     cancel: {
       kicker: "Payments",
-      title: "The payment step was left incomplete.",
-      desc: "No payment was finalized. That is usually a signal that timing, scope, or internal alignment needs one more round of discussion before the project moves forward.",
-      asideTitle: "A paused payment is still useful information.",
-      asideDesc: "If the project stage is not fully clear yet, it is better to slow down, confirm direction, and restart from a cleaner brief.",
-      statusLabel: "Status sync",
+      title: "The payment checkpoint was left open.",
+      desc: "No payment was finalized. That usually means the project stage still needs a cleaner brief around scope, timing, or internal alignment before the next attempt.",
+      asideTitle: "A paused payment is still a useful project signal.",
+      asideDesc: "If the stage is not fully clear yet, stepping back to category, volume, and timing is the right move. A cleaner brief makes the next payment step simpler.",
+      statusLabel: "Status Sync",
       refLabel: "Reference",
       noteTitle: "Before you restart payment",
-      noteBody: "Review product category, estimated volume, target timing, and sample expectations first. Once the stage is clear, the payment step becomes straightforward.",
+      noteBody: "Review product category, expected volume, sample timing, and launch expectations first. Once the stage is clearly defined, the payment step becomes straightforward.",
+      briefTitle: "Brief Perspective",
+      briefBody: "Leaving payment unfinished is often a sign that the project still needs more clarity. Resolve the brief first, then come back to the transaction.",
       primaryCta: "View Products",
       secondaryCta: "Start a Conversation"
     }
@@ -62,27 +68,31 @@ const copy: Record<
   zh: {
     success: {
       kicker: "支付",
-      title: "当前支付阶段已确认。",
-      desc: "这一步的作用，是把当前项目阶段明确下来，让后续沟通重新回到产品方向、打样节奏与执行细节本身。",
-      asideTitle: "支付应该服务推进，而不是代替沟通。",
-      asideDesc: "当方向已经讨论清楚后，支付才是确认阶段的动作。之后的重点仍然是样品、节奏和执行落地。",
+      title: "当前支付节点已确认。",
+      desc: "这一步确认之后，页面重点不该继续停留在结算本身，而应该重新回到产品方向、打样节奏与执行安排。",
+      asideTitle: "一次已确认的支付，应该让项目更收敛，而不是更复杂。",
+      asideDesc: "接下来更有价值的动作，是回到面料选择、样品评估与交付时间判断，并在更清楚的阶段定义下继续推进。",
       statusLabel: "状态同步",
       refLabel: "参考编号",
       noteTitle: "接下来怎么推进",
-      noteBody: "团队会把这次支付视为阶段确认。如果面料方向、数量区间或交期仍需调整，建议先继续沟通，再进入更深的执行环节。",
+      noteBody: "团队会把这次支付视为阶段确认。如果品类、数量区间或交付时间仍需调整，建议先继续沟通，再进入更深的执行环节。",
+      briefTitle: "Brief 视角",
+      briefBody: "一笔完成的支付，最有价值的时候，是它确认了一个已经被理解清楚的阶段。它应该减少不确定性，而不是制造新的不确定性。",
       primaryCta: "查看产品",
       secondaryCta: "开始沟通"
     },
     cancel: {
       kicker: "支付",
-      title: "当前支付步骤尚未完成。",
-      desc: "本次没有实际完成支付。这通常意味着时间、范围或内部判断还需要再确认一次，再推进会更稳妥。",
-      asideTitle: "暂停支付，本身也是有效信息。",
-      asideDesc: "如果项目阶段还不够清楚，先放慢一步、重新确认方向，通常比仓促付款更合理。",
+      title: "当前支付节点尚未完成。",
+      desc: "本次没有实际完成支付。这通常意味着项目阶段在范围、时间或内部判断上，仍然需要一个更清楚的 brief。",
+      asideTitle: "暂停支付，本身也是一个有效的项目信号。",
+      asideDesc: "如果阶段还不够清楚，先回到品类、数量与时间判断上是对的。brief 越清晰，下一次支付动作就越直接。",
       statusLabel: "状态同步",
       refLabel: "参考编号",
       noteTitle: "再次支付前建议先确认",
-      noteBody: "先把产品品类、预估数量、目标时间和打样预期讨论清楚。阶段明确之后，支付动作本身会更直接。",
+      noteBody: "先把产品品类、预估数量、打样时间和上市预期讨论清楚。阶段定义越明确，支付步骤本身就越简单。",
+      briefTitle: "Brief 视角",
+      briefBody: "支付没有完成，往往不是坏事，而是在提醒项目还需要更清楚的判断。先把 brief 收干净，再回来处理交易动作。",
       primaryCta: "查看产品",
       secondaryCta: "开始沟通"
     }
@@ -90,27 +100,31 @@ const copy: Record<
   es: {
     success: {
       kicker: "Pagos",
-      title: "La etapa de pago ya quedó confirmada.",
-      desc: "Esta confirmación deja clara la fase actual del proyecto para que la siguiente conversación se centre en dirección de producto, timing de muestra y ejecución.",
-      asideTitle: "El pago debe sostener el avance, no sustituir la conversación.",
-      asideDesc: "Usa este paso para confirmar una dirección ya discutida y vuelve al desarrollo con alcance y tiempos más claros.",
-      statusLabel: "Estado de sincronización",
+      title: "El punto de pago ya quedó confirmado.",
+      desc: "Después de esta confirmación, la atención debería volver a dirección de producto, ritmo de muestra y planificación de ejecución, no quedarse en el checkout.",
+      asideTitle: "Un pago confirmado debe acotar la etapa, no volverla más compleja.",
+      asideDesc: "El siguiente movimiento útil es volver a materiales, revisión de muestra y timing de entrega con una definición de etapa mucho más limpia.",
+      statusLabel: "Estado de Sincronización",
       refLabel: "Referencia",
       noteTitle: "Qué sigue ahora",
-      noteBody: "Nuestro equipo tomará este pago como confirmación de etapa. Si aún falta ajustar materiales, volúmenes o timing de entrega, conviene seguir la conversación antes de profundizar la ejecución.",
+      noteBody: "Nuestro equipo tomará este pago como confirmación de etapa. Si categoría, rango de volumen o timing de entrega aún necesitan ajuste, conviene seguir la conversación antes de profundizar la ejecución.",
+      briefTitle: "Perspectiva del Brief",
+      briefBody: "Un pago completado es más valioso cuando confirma una etapa que ya se entiende bien. Debe reducir ambigüedad, no abrir una nueva.",
       primaryCta: "Ver Productos",
       secondaryCta: "Iniciar Conversación"
     },
     cancel: {
       kicker: "Pagos",
-      title: "La etapa de pago quedó sin completar.",
-      desc: "No se confirmó ningún pago. Normalmente eso indica que el timing, el alcance o la alineación interna todavía necesitan una conversación más clara antes de avanzar.",
-      asideTitle: "Un pago pausado también aporta información útil.",
-      asideDesc: "Si la etapa real del proyecto aún no está del todo definida, es mejor frenar, aclarar la dirección y retomar desde un brief más limpio.",
-      statusLabel: "Estado de sincronización",
+      title: "El punto de pago quedó abierto.",
+      desc: "No se confirmó ningún pago. Normalmente eso indica que la etapa del proyecto todavía necesita un brief más claro en alcance, timing o alineación interna.",
+      asideTitle: "Un pago pausado también es una señal útil del proyecto.",
+      asideDesc: "Si la etapa aún no está del todo clara, volver a categoría, volumen y timing es lo correcto. Cuanto más limpio esté el brief, más simple será el siguiente pago.",
+      statusLabel: "Estado de Sincronización",
       refLabel: "Referencia",
       noteTitle: "Antes de intentar pagar otra vez",
-      noteBody: "Revisa primero categoría, volumen estimado, timing objetivo y expectativa de muestra. Cuando la etapa está clara, el pago resulta mucho más directo.",
+      noteBody: "Revisa primero categoría, volumen estimado, timing de muestra y expectativa de lanzamiento. Cuando la etapa está bien definida, el pago se vuelve mucho más directo.",
+      briefTitle: "Perspectiva del Brief",
+      briefBody: "Dejar el pago sin completar no siempre es negativo; muchas veces solo indica que el proyecto aún necesita más claridad. Ordena el brief primero y luego vuelve a la transacción.",
       primaryCta: "Ver Productos",
       secondaryCta: "Iniciar Conversación"
     }
@@ -165,20 +179,8 @@ export default function CheckoutStatusView({ mode, refCode, syncState, lang }: C
         </article>
 
         <aside className="dark-band rounded-[28px] px-6 py-7">
-          <p className="kicker text-[#f3d7a1]">{t.kicker}</p>
-          <p className="mt-4 text-lg leading-8 text-[#d9e4f4]">
-            {mode === "success"
-              ? lang === "zh"
-                ? "如果你已经确认项目方向，可以直接继续样品、面料与交付节奏的沟通。"
-                : lang === "es"
-                  ? "Si la dirección del proyecto ya está clara, el siguiente paso es afinar muestra, materiales y ritmo de entrega."
-                  : "If project direction is already clear, the next step is to sharpen sample, material, and delivery planning."
-              : lang === "zh"
-                ? "如果你暂停了支付，建议先回到品类、数量与时间判断上，把项目阶段重新梳理清楚。"
-                : lang === "es"
-                  ? "Si pausaste el pago, conviene volver a categoría, volumen y timing para ordenar bien la etapa real del proyecto."
-                  : "If you paused payment, step back to category, volume, and timing so the project stage is clear again."}
-          </p>
+          <p className="kicker text-[#f3d7a1]">{t.briefTitle}</p>
+          <p className="mt-4 text-lg leading-8 text-[#d9e4f4]">{t.briefBody}</p>
         </aside>
       </section>
     </main>

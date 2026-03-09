@@ -10,7 +10,7 @@ type PaymentItem = {
   tag: string;
 };
 
-const paymentsWideImage = "/media/generated/wide/factory-wide-production-line.png";
+const paymentsWideImage = "/media/generated/wide/payments-wide-project-checkpoint.png";
 
 const copy: Record<
   SiteLang,

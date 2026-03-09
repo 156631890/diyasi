@@ -6,7 +6,7 @@ import Link from "next/link";
 import { FormEvent, useEffect, useState } from "react";
 
 type Lang = "en" | "zh" | "es";
-const contactWideImage = "/media/generated/wide/about-wide-brand-floor.png";
+const contactWideImage = "/media/generated/wide/contact-wide-brief-floor.png";
 
 export default function ContactPage() {
   const copy: Record<
