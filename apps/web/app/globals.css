@@ -475,6 +475,64 @@ a {
   padding-right: 1rem;
 }
 
+.contact-inquiry-note {
+  margin-top: 1rem;
+  max-width: 34rem;
+  color: #667892;
+  line-height: 1.9;
+}
+
+.contact-visual-anchor {
+  margin-top: 1.75rem;
+  border-radius: 30px;
+  background:
+    radial-gradient(100% 140% at 100% 0%, rgba(184, 138, 59, 0.28) 0, transparent 58%),
+    linear-gradient(155deg, #10213a 0%, #112743 54%, #1a3558 100%);
+  box-shadow: 0 22px 52px rgba(16, 33, 58, 0.18);
+  overflow: hidden;
+}
+
+.contact-visual-copy {
+  padding: 1.6rem 1.6rem 1.2rem;
+}
+
+.contact-visual-kicker {
+  margin: 0 0 0.85rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #f3d7a1;
+}
+
+.contact-visual-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.contact-visual-metric {
+  padding: 1.2rem 1.35rem 1.35rem;
+}
+
+.contact-visual-metric + .contact-visual-metric {
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.contact-visual-value {
+  margin: 0;
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: 2.6rem;
+  line-height: 1;
+  color: #fff;
+}
+
+.contact-visual-label {
+  margin: 0.7rem 0 0;
+  color: #d7e2f1;
+  line-height: 1.8;
+}
+
 .contact-process-block {
   margin-top: 2rem;
   border-top: 1px solid #d7e2f0;
@@ -517,10 +575,29 @@ a {
   padding: 1.35rem;
 }
 
+.contact-form-head {
+  margin-bottom: 1.1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #d7e2f0;
+}
+
 .contact-form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.9rem;
+}
+
+.contact-field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.contact-field-label {
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #7b889f;
 }
 
 .contact-form-span {
@@ -637,6 +714,15 @@ a {
 
   .contact-inquiry-copy {
     padding-right: 0;
+  }
+
+  .contact-visual-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-visual-metric + .contact-visual-metric {
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
   }
 
   .contact-process-item {
