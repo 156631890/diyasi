@@ -496,6 +496,17 @@ a {
   padding: 1.6rem 1.6rem 1.2rem;
 }
 
+.contact-visual-image-shell {
+  padding: 0 1rem 1rem;
+}
+
+.contact-visual-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
 .contact-visual-kicker {
   margin: 0 0 0.85rem;
   font-size: 0.72rem;
@@ -613,6 +624,83 @@ a {
   margin-top: 1rem;
 }
 
+.payment-brief-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(340px, 1.05fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.payment-brief-copy {
+  padding-right: 1rem;
+}
+
+.payment-brief-visual {
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 22px 52px rgba(16, 33, 58, 0.14);
+}
+
+.payment-brief-image {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+}
+
+.payment-brief-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.payment-brief-card {
+  border-radius: 28px;
+  border: 1px solid #d7e2f0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.99) 0%, rgba(246, 249, 253, 0.98) 100%);
+  box-shadow: 0 18px 45px rgba(17, 39, 66, 0.08);
+  padding: 1.35rem;
+}
+
+.payment-brief-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid #d7e2f0;
+}
+
+.payment-brief-tag,
+.payment-brief-label {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.payment-brief-tag {
+  color: #8b6a2c;
+}
+
+.payment-brief-label {
+  color: #7b889f;
+}
+
+.payment-brief-amount-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  align-items: end;
+  padding-top: 1rem;
+}
+
+.payment-brief-actions {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1.25rem;
+}
+
 .contact-sideband {
   border-radius: 30px;
   background:
@@ -712,7 +800,16 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .payment-brief-layout,
+  .payment-brief-amount-row {
+    grid-template-columns: 1fr;
+  }
+
   .contact-inquiry-copy {
+    padding-right: 0;
+  }
+
+  .payment-brief-copy {
     padding-right: 0;
   }
 

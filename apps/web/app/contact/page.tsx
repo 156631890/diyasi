@@ -6,6 +6,7 @@ import Link from "next/link";
 import { FormEvent, useEffect, useState } from "react";
 
 type Lang = "en" | "zh" | "es";
+const contactWideImage = "/media/generated/wide/about-wide-brand-floor.png";
 
 export default function ContactPage() {
   const copy: Record<
@@ -43,6 +44,7 @@ export default function ContactPage() {
       visualTitle: string;
       visualBody: string;
       visualMetrics: Array<{ value: string; label: string }>;
+      visualImageAlt: string;
     }
   > = {
     en: {
@@ -80,7 +82,8 @@ export default function ContactPage() {
       visualMetrics: [
         { value: "5-7", label: "days to first sample direction" },
         { value: "20-30", label: "days for stable bulk timing" }
-      ]
+      ],
+      visualImageAlt: "Brand development floor and showroom"
     },
     zh: {
       lead: "联系",
@@ -117,7 +120,8 @@ export default function ContactPage() {
       visualMetrics: [
         { value: "5-7", label: "天进入首轮打样方向" },
         { value: "20-30", label: "天进入稳定大货节奏" }
-      ]
+      ],
+      visualImageAlt: "品牌开发与展示空间"
     },
     es: {
       lead: "Contacto",
@@ -154,7 +158,8 @@ export default function ContactPage() {
       visualMetrics: [
         { value: "5-7", label: "días hacia la primera muestra" },
         { value: "20-30", label: "días para ritmo estable de producción" }
-      ]
+      ],
+      visualImageAlt: "Espacio de desarrollo y showroom de marca"
     }
   };
 
@@ -226,6 +231,9 @@ export default function ContactPage() {
                   <p className="contact-visual-kicker">Brief</p>
                   <h3 className="heading-font text-3xl font-semibold text-white">{t.visualTitle}</h3>
                   <p className="mt-4 text-sm leading-8 text-[#d7e2f1]">{t.visualBody}</p>
+                </div>
+                <div className="contact-visual-image-shell">
+                  <img src={contactWideImage} alt={t.visualImageAlt} className="contact-visual-image" />
                 </div>
                 <div className="contact-visual-metrics">
                   {t.visualMetrics.map((item) => (
