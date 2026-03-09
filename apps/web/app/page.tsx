@@ -172,9 +172,9 @@ export default async function HomePage() {
         <div className="hero-panel overflow-hidden px-7 py-8 md:px-10 md:py-10 lg:px-14 lg:py-14">
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
             <div>
-              <p className="kicker">{t.heroKicker}</p>
-              <h1 className="section-title mt-4 max-w-4xl text-[#0f2038]">{t.heroTitle}</h1>
-              <p className="mt-6 max-w-3xl text-[1.05rem] leading-8 text-[#44546d]">{t.heroDesc}</p>
+              <p className="kicker home-reference-subtitle">{t.heroKicker}</p>
+              <h1 className="home-reference-title mt-4 max-w-4xl text-[#0f2038]">{t.heroTitle}</h1>
+              <p className="home-reference-body mt-6 max-w-3xl text-[#44546d]">{t.heroDesc}</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link href="/products" className="btn btn-primary">
                   {t.ctaProducts}
@@ -210,7 +210,7 @@ export default async function HomePage() {
           {t.metrics.map((metric) => (
             <article key={metric.label} className="stat-band-item">
               <p className="metric-num">{metric.value}</p>
-              <p className="mt-2 max-w-[14rem] text-sm uppercase tracking-[0.18em] text-[#5d6e89]">{metric.label}</p>
+              <p className="home-reference-body mt-2 max-w-[14rem] uppercase tracking-[0.18em] text-[#5d6e89]">{metric.label}</p>
             </article>
           ))}
         </div>
@@ -219,9 +219,9 @@ export default async function HomePage() {
       <section className="container-shell mt-14">
         <div className="editorial-strip border-b-0 pt-0">
           <div>
-            <p className="kicker">{t.storyKicker}</p>
-            <h2 className="heading-font mt-2 text-4xl font-semibold text-[#11253f] md:text-5xl">{t.storyTitle}</h2>
-            <p className="mt-4 max-w-3xl text-lg leading-8 text-[#51627d]">{t.storyDesc}</p>
+            <p className="kicker home-reference-subtitle">{t.storyKicker}</p>
+            <h2 className="home-reference-subtitle mt-2 text-[#11253f]">{t.storyTitle}</h2>
+            <p className="home-reference-body mt-4 max-w-3xl text-[#51627d]">{t.storyDesc}</p>
           </div>
           <Link href="/admin" className="btn btn-soft">
             {t.storyBtn}
@@ -231,14 +231,14 @@ export default async function HomePage() {
 
       <section className="container-shell mt-8">
         {posters.length === 0 ? (
-          <div className="rounded-[28px] border border-dashed border-slate-300 px-6 py-8 text-sm text-slate-500">{t.noPoster}</div>
+          <div className="home-reference-body rounded-[28px] border border-dashed border-slate-300 px-6 py-8 text-slate-500">{t.noPoster}</div>
         ) : (
           <div className="split-gallery">
             {posters.map((asset) => (
               <article key={asset.id} className="split-gallery-item">
                 <img src={asset.image_url} alt={asset.title} className="h-full w-full object-cover" />
                 <div className="split-gallery-caption">
-                  <p>{asset.title}</p>
+                  <p className="home-reference-body">{asset.title}</p>
                 </div>
               </article>
             ))}
@@ -248,17 +248,17 @@ export default async function HomePage() {
 
       <section className="container-shell mt-14">
         <div className="dark-band rounded-[34px] px-7 py-10 shadow-[0_32px_90px_rgba(16,30,52,0.18)] md:px-10 lg:px-12">
-          <p className="kicker text-[#f3d7a1]">{t.catKicker}</p>
-          <h2 className="heading-font mt-2 max-w-4xl text-4xl font-semibold md:text-5xl">{t.catTitle}</h2>
-          <p className="mt-4 max-w-3xl text-lg leading-8 text-[#cfdbef]">{t.catDesc}</p>
+          <p className="kicker home-reference-subtitle text-[#f3d7a1]">{t.catKicker}</p>
+          <h2 className="home-reference-subtitle mt-2 max-w-4xl text-white">{t.catTitle}</h2>
+          <p className="home-reference-body mt-4 max-w-3xl text-[#cfdbef]">{t.catDesc}</p>
           <div className="category-rows mt-8">
             {categories.length === 0 ? (
-              <div className="text-sm text-white/70">{t.noCategory}</div>
+              <div className="home-reference-body text-white/70">{t.noCategory}</div>
             ) : (
               categories.map((item) => (
                 <Link key={item.category} href={`/products?category=${encodeURIComponent(item.category)}`} className="category-row">
-                  <span>{item.category}</span>
-                  <span>{item.count}</span>
+                  <span className="home-reference-body">{item.category}</span>
+                  <span className="home-reference-body">{item.count}</span>
                 </Link>
               ))
             )}
