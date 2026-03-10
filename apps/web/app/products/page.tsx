@@ -1,9 +1,10 @@
+import Link from "next/link";
+
 import BuyNowButton from "@/components/BuyNowButton";
 import { safeFetchJson } from "@/lib/api";
 import { fallbackCatalogCategories, fallbackCatalogProducts } from "@/lib/catalog";
 import { SiteLang } from "@/lib/i18n";
 import { getServerLang } from "@/lib/server-lang";
-import Link from "next/link";
 
 type Product = {
   product_id: string;
@@ -48,42 +49,46 @@ const copy: Record<
     noPoster: string;
     noImage: string;
     quote: string;
-    bulk: string;
     paidSample: string;
+    items: string;
+    viewDetails: string;
   }
 > = {
   en: {
-    kicker: "Product Library",
-    title: "Category-based collection built for sourcing efficiency",
-    desc: "Browse by category, shortlist styles faster, and move smoothly from paid sampling to bulk production.",
-    all: "All Categories",
+    kicker: "Women / Product Catalogue",
+    title: "A tighter catalogue view built for quick style selection",
+    desc: "Browse categories, compare silhouettes, and move directly from shortlist to sample request.",
+    all: "All",
     noPoster: "No products in this category yet.",
     noImage: "Image coming soon",
     quote: "Start a Conversation",
-    bulk: "Start a Conversation",
-    paidSample: "Paid Sample"
+    paidSample: "Paid Sample",
+    items: "items",
+    viewDetails: "View Details"
   },
   zh: {
-    kicker: "产品库",
-    title: "按分类组织的产品系统，提升选款效率",
-    desc: "按品类快速浏览、对比与筛选，让合作从付费打样顺畅进入大货阶段。",
-    all: "全部分类",
+    kicker: "产品目录",
+    title: "更接近选款目录的产品排版",
+    desc: "按分类快速浏览款式，缩短筛选路径，并直接进入打样与沟通。",
+    all: "全部",
     noPoster: "该分类暂时没有产品。",
     noImage: "图片待更新",
     quote: "开始沟通",
-    bulk: "开始沟通",
-    paidSample: "付费打样"
+    paidSample: "付费打样",
+    items: "款",
+    viewDetails: "查看详情"
   },
   es: {
-    kicker: "Biblioteca de Producto",
-    title: "Colección por categorías para una selección más eficiente",
-    desc: "Navega por categoría, filtra estilos rápidamente y avanza de muestra pagada a producción masiva con más claridad.",
-    all: "Todas las Categorías",
-    noPoster: "Aún no hay productos en esta categoría.",
+    kicker: "Catalogo de Producto",
+    title: "Una vista de catalogo mas limpia para seleccionar estilos con rapidez",
+    desc: "Explora por categoria, compara siluetas y pasa de la preseleccion a la muestra pagada con mas claridad.",
+    all: "Todo",
+    noPoster: "Aun no hay productos en esta categoria.",
     noImage: "Imagen pendiente",
-    quote: "Iniciar Conversación",
-    bulk: "Iniciar Conversación",
-    paidSample: "Muestra Pagada"
+    quote: "Iniciar Conversacion",
+    paidSample: "Muestra Pagada",
+    items: "articulos",
+    viewDetails: "Ver Detalle"
   }
 };
 
@@ -113,7 +118,12 @@ function resolvePrice(product: Product): number {
 }
 
 function resolveImage(product: Product): string {
-  return product.image_url || fallbackProductImages[product.product_id] || categoryFallbackImages[keyCategory(product.category)] || "";
+  return (
+    product.image_url ||
+    fallbackProductImages[product.product_id] ||
+    categoryFallbackImages[keyCategory(product.category)] ||
+    ""
+  );
 }
 
 async function getProducts(): Promise<Product[]> {
@@ -133,21 +143,36 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
   const selectedKey = keyCategory(selected);
 
   const [products, categories] = await Promise.all([getProducts(), getCategories()]);
-  const filteredProducts = selectedKey ? products.filter((item) => keyCategory(item.category) === selectedKey) : products;
-  const leadProduct = filteredProducts[0] || null;
-  const supportingProducts = filteredProducts.slice(1);
+  const filteredProducts = selectedKey
+    ? products.filter((item) => keyCategory(item.category) === selectedKey)
+    : products;
 
   return (
-    <main className="container-shell py-10">
-      <section className="hero-panel p-7 md:p-10 lg:p-12">
+    <main className="container-shell py-8 md:py-10">
+      <section className="catalog-intro">
         <p className="kicker page-reference-subtitle">{t.kicker}</p>
-        <h1 className="section-title mt-2 text-[#122744]">{t.title}</h1>
-        <p className="page-reference-body mt-3 max-w-3xl text-[#51627d]">{t.desc}</p>
+        <div className="catalog-intro-row">
+          <div>
+            <h1 className="section-title mt-2 text-[#122744]">{t.title}</h1>
+            <p className="page-reference-body mt-3 max-w-2xl text-[#51627d]">{t.desc}</p>
+          </div>
+          <div className="catalog-meta">
+            <p className="catalog-meta-count">
+              {filteredProducts.length} {t.items}
+            </p>
+            <p className="page-reference-body text-[#687894]">
+              {selectedKey ? selected : t.all}
+            </p>
+          </div>
+        </div>
       </section>
 
-      <section className="catalog-rail mt-8">
-        <div className="flex flex-wrap gap-2">
-          <Link href="/products" className={`rounded-full border px-4 py-2 text-sm ${selectedKey ? "border-slate-300 text-slate-700" : "border-[#102949] bg-[#102949] text-white"}`}>
+      <section className="catalog-filter-bar mt-8">
+        <div className="catalog-filter-scroll">
+          <Link
+            href="/products"
+            className={`catalog-filter-pill ${selectedKey ? "" : "catalog-filter-pill-active"}`}
+          >
             {t.all} ({products.length})
           </Link>
           {categories.map((item) => {
@@ -156,7 +181,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
               <Link
                 key={item.category}
                 href={`/products?category=${encodeURIComponent(item.category)}`}
-                className={`rounded-full border px-4 py-2 text-sm transition ${active ? "border-[#102949] bg-[#102949] text-white" : "border-slate-300 text-slate-700 hover:border-slate-400"}`}
+                className={`catalog-filter-pill ${active ? "catalog-filter-pill-active" : ""}`}
               >
                 {item.category} ({item.count})
               </Link>
@@ -165,70 +190,48 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
         </div>
       </section>
 
-      <section className="mt-10">
-        {leadProduct ? (
-          <article className="catalog-feature">
-            <div className="catalog-feature-media">
-              {resolveImage(leadProduct) ? (
-                <img src={resolveImage(leadProduct)} alt={leadProduct.product_name} className="h-full w-full object-cover" />
-              ) : (
-                <div className="grid h-full place-items-center bg-gradient-to-br from-[#dde8f7] to-[#f4e7d5] text-sm text-slate-600">{t.noImage}</div>
-              )}
-            </div>
-            <div className="catalog-feature-copy">
-              <p className="kicker">{leadProduct.category}</p>
-              <h2 className="page-reference-subtitle mt-3 text-[#112742]">{leadProduct.product_name}</h2>
-              <p className="page-reference-body mt-4 max-w-2xl text-[#4f607d]">{leadProduct.description}</p>
-              <div className="mt-6 grid gap-3 md:grid-cols-3">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.18em] text-[#8b6a2c]">Fabric</p>
-                  <p className="page-reference-body mt-2 text-[#3f5068]">{leadProduct.fabric}</p>
-                </div>
-                <div>
-                  <p className="text-xs uppercase tracking-[0.18em] text-[#8b6a2c]">Price</p>
-                  <p className="page-reference-body mt-2 text-[#3f5068]">${resolvePrice(leadProduct)}</p>
-                </div>
-                <div>
-                  <p className="text-xs uppercase tracking-[0.18em] text-[#8b6a2c]">Product ID</p>
-                  <p className="page-reference-body mt-2 text-[#3f5068]">{leadProduct.product_id}</p>
-                </div>
-              </div>
-              <div className="mt-8 flex flex-wrap gap-2">
-                <BuyNowButton title={`${leadProduct.product_name} - ${t.paidSample}`} unitAmountUsd={resolvePrice(leadProduct)} />
-                <Link href="/contact" className="btn btn-soft">{t.bulk}</Link>
-                <Link href="/contact" className="btn btn-soft">{t.quote}</Link>
-              </div>
-            </div>
-          </article>
-        ) : null}
+      <section className="catalog-toolbar mt-6">
+        <p className="catalog-toolbar-text">
+          {selectedKey ? selected : t.all} / {filteredProducts.length} {t.items}
+        </p>
       </section>
 
-      <section className="catalog-grid mt-12">
-        {filteredProducts.length === 0 ? <div className="card p-5 text-slate-600">{t.noPoster}</div> : null}
-        {supportingProducts.map((product) => {
+      <section className="catalog-grid-clean mt-6">
+        {filteredProducts.length === 0 ? (
+          <div className="card p-5 text-slate-600">{t.noPoster}</div>
+        ) : null}
+        {filteredProducts.map((product) => {
           const price = resolvePrice(product);
           const image = resolveImage(product);
           return (
-            <article key={product.product_id} className="catalog-card">
-              {image ? (
-                <img src={image} alt={product.product_name} className="catalog-card-image" />
-              ) : (
-                <div className="grid h-72 place-items-center bg-gradient-to-br from-[#dde8f7] to-[#f4e7d5] text-sm text-slate-600">{t.noImage}</div>
-              )}
-              <div className="catalog-card-copy">
-                <div className="flex flex-wrap items-start justify-between gap-3">
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.18em] text-[#8b6a2c]">{product.category}</p>
-                    <h2 className="page-reference-subtitle mt-2 text-[#112742]">{product.product_name}</h2>
-                  </div>
-                  <p className="rounded-full bg-[#102949] px-3 py-1 text-sm font-semibold text-white">${price}</p>
+            <article key={product.product_id} className="catalog-card-clean">
+              <div className="catalog-card-clean-media">
+                {image ? (
+                  <img
+                    src={image}
+                    alt={product.product_name}
+                    className="catalog-card-clean-image"
+                  />
+                ) : (
+                  <div className="catalog-card-clean-fallback">{t.noImage}</div>
+                )}
+              </div>
+              <div className="catalog-card-clean-copy">
+                <p className="catalog-card-clean-category">{product.category}</p>
+                <h2 className="catalog-card-clean-title">{product.product_name}</h2>
+                <p className="catalog-card-clean-fabric">{product.fabric}</p>
+                <div className="catalog-card-clean-bottom">
+                  <p className="catalog-card-clean-price">${price}</p>
+                  <p className="catalog-card-clean-link">{t.viewDetails}</p>
                 </div>
-                <p className="page-reference-body mt-2 text-[#5d6e89]">{product.fabric}</p>
-                <p className="page-reference-body mt-3 text-[#4f607d]">{product.description}</p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  <BuyNowButton title={`${product.product_name} - ${t.paidSample}`} unitAmountUsd={price} />
-                  <Link href="/contact" className="btn btn-soft">{t.bulk}</Link>
-                  <Link href="/contact" className="btn btn-soft">{t.quote}</Link>
+                <div className="catalog-card-clean-actions">
+                  <BuyNowButton
+                    title={`${product.product_name} - ${t.paidSample}`}
+                    unitAmountUsd={price}
+                  />
+                  <Link href="/contact" className="btn btn-soft">
+                    {t.quote}
+                  </Link>
                 </div>
               </div>
             </article>
@@ -238,4 +241,3 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
     </main>
   );
 }
-
