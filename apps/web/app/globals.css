@@ -881,7 +881,8 @@ a {
 
 .factory-capability-card {
   border: 1px solid #d7e2f0;
-  padding: 1rem;
+  min-height: 168px;
+  padding: 1.35rem 1.4rem;
   background: rgba(255, 255, 255, 0.92);
 }
 
@@ -899,22 +900,22 @@ a {
 
 .factory-home-title {
   font-family: Arial, "Helvetica Neue", sans-serif;
-  font-size: 24px;
-  line-height: 1.4;
+  font-size: clamp(28px, 2.4vw, 32px);
+  line-height: 1.3;
   font-weight: 700;
 }
 
 .factory-home-card-title {
   font-family: Arial, "Helvetica Neue", sans-serif;
-  font-size: 20px;
-  line-height: 1.45;
+  font-size: clamp(22px, 1.9vw, 26px);
+  line-height: 1.35;
   font-weight: 700;
 }
 
 .factory-home-body {
   font-family: Arial, "Helvetica Neue", sans-serif;
-  font-size: 14px;
-  line-height: 1.9;
+  font-size: clamp(15px, 1.2vw, 16px);
+  line-height: 1.85;
   font-weight: 400;
 }
 
@@ -932,7 +933,7 @@ a {
 .factory-detail-card {
   position: relative;
   overflow: hidden;
-  min-height: 300px;
+  min-height: 360px;
   border-radius: 26px;
 }
 
@@ -948,7 +949,7 @@ a {
 .factory-product-caption {
   position: absolute;
   inset: auto 0 0 0;
-  padding: 1rem 1.1rem;
+  padding: 1.35rem 1.35rem 1.15rem;
   background: linear-gradient(180deg, rgba(11, 24, 41, 0) 0%, rgba(11, 24, 41, 0.82) 100%);
 }
 
@@ -965,7 +966,8 @@ a {
 .factory-news-card {
   border: 1px solid #d7e2f0;
   background: rgba(255, 255, 255, 0.94);
-  padding: 1.2rem;
+  min-height: 340px;
+  padding: 1.6rem;
 }
 
 .factory-cert-code,
@@ -973,14 +975,14 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 68px;
-  height: 68px;
-  padding: 0 1rem;
+  min-width: 78px;
+  height: 78px;
+  padding: 0 1.15rem;
   border-radius: 999px;
   background: #122744;
   color: white;
   font-family: Arial, "Helvetica Neue", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -995,16 +997,16 @@ a {
 .factory-product-tile {
   position: relative;
   overflow: hidden;
-  min-height: 280px;
+  min-height: 340px;
   border-radius: 28px;
 }
 
 .factory-cta-band {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) auto;
-  gap: 1.5rem;
+  gap: 2rem;
   align-items: center;
-  padding: 2.4rem;
+  padding: 2.8rem 3rem;
   border-radius: 32px;
   background:
     radial-gradient(85% 130% at 100% 0%, rgba(184, 138, 59, 0.24) 0, transparent 55%),
@@ -1027,14 +1029,19 @@ a {
 .factory-info-bar {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 1.25rem;
   border-top: 1px solid #d7e2f0;
   border-bottom: 1px solid #d7e2f0;
-  padding: 1.2rem 0;
+  padding: 0;
 }
 
 .factory-info-item {
-  padding-right: 1rem;
+  padding: 1.5rem 1.4rem 1.35rem 0;
+  border-right: 1px solid #dfe6f0;
+}
+
+.factory-info-item:last-child {
+  border-right: 0;
 }
 
 .contact-layout {
@@ -1405,8 +1412,25 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .factory-cert-card,
+  .factory-custom-card,
+  .factory-news-card,
+  .factory-capability-card {
+    min-height: 0;
+  }
+
   .factory-cta-actions {
     justify-content: flex-start;
+  }
+
+  .factory-info-item {
+    border-right: 0;
+    border-bottom: 1px solid #dfe6f0;
+    padding-right: 0;
+  }
+
+  .factory-info-item:last-child {
+    border-bottom: 0;
   }
 
   .editorial-strip {
@@ -1496,5 +1520,9 @@ a {
   .factory-video-cover,
   .factory-product-tile {
     min-height: 240px;
+  }
+
+  .factory-detail-card {
+    min-height: 260px;
   }
 }
