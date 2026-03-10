@@ -119,3 +119,56 @@ python scripts/run_free_pipeline.py --mode scrape --query "seamless underwear br
 
 - Default DB is SQLite for local dev (free). You can switch to PostgreSQL/Supabase by `DATABASE_URL`.
 - In mock mail mode, no real email is sent and all outreach content is stored to log file.
+
+## 6) Deploy Backend
+
+Recommended production setup for the current stack:
+
+- Frontend: Vercel
+- Backend: Railway
+- Database: SQLite on a Railway Volume
+
+This is the practical fit for the current codebase because the API already uses SQLite. Deploying the API onto an ephemeral filesystem risks losing product data between deploys or restarts.
+
+### Railway API Service
+
+1. Create a new Railway project from this GitHub repo.
+2. Create a service from the repo and set its `Root Directory` to `services/api`.
+3. Railway will pick up `services/api/railway.json`.
+4. Add a mounted volume and use mount path `/data`.
+5. Set these environment variables on the Railway service:
+
+```bash
+DATABASE_URL=sqlite:////data/lead_engine.db
+BACKEND_CORS_ORIGINS=https://www.chuangrongapparel.com,https://chuangrongapparel.com,https://<your-vercel-domain>
+SMTP_MOCK_MODE=true
+GEMINI_API_KEY=<your-key-if-needed>
+GEMINI_MODEL=gemini-3.1-flash-image-preview
+```
+
+6. Deploy the service.
+7. Verify these URLs:
+
+```text
+https://<your-railway-domain>/health
+https://<your-railway-domain>/products/
+https://<your-railway-domain>/products/categories
+```
+
+If the database starts empty, the API startup hook will seed the product table automatically.
+
+### Vercel Frontend
+
+On the Vercel project, set:
+
+```bash
+NEXT_PUBLIC_BACKEND_URL=https://<your-railway-domain>
+```
+
+Then redeploy the frontend.
+
+### Current product import behavior
+
+- The backend now seeds the Alibaba-derived product catalog into the `products` table.
+- If the database still contains the original 5 demo products, startup will replace that legacy seed with the newer catalog automatically.
+- If the database already contains newer products you entered later, it will not wipe them.
