@@ -270,6 +270,31 @@ a {
   color: #ffffff;
 }
 
+.home-wide-band {
+  width: 100%;
+}
+
+.home-wide-band-plain {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.82) 0%, rgba(247, 249, 253, 0.94) 100%);
+}
+
+.home-wide-band-soft {
+  background:
+    radial-gradient(70% 90% at 100% 0%, rgba(184, 138, 59, 0.08) 0, transparent 58%),
+    linear-gradient(180deg, #f7f9fc 0%, #eef3f8 100%);
+}
+
+.home-wide-band-white {
+  background: #ffffff;
+}
+
+.home-wide-band-dark {
+  background:
+    radial-gradient(80% 120% at 100% 0%, rgba(184, 138, 59, 0.18) 0, transparent 52%),
+    linear-gradient(180deg, #f3f6fb 0%, #edf2f8 100%);
+}
+
 .home-reference-strip {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
