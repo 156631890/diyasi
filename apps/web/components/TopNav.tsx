@@ -75,8 +75,8 @@ type TopNavProps = {
 function linkClass(pathname: string, href: string): string {
   const active = href === "/" ? pathname === "/" : pathname.startsWith(href);
   return active
-    ? "rounded-full bg-[#102949] px-3 py-1.5 text-white"
-    : "rounded-full px-3 py-1.5 text-slate-700 hover:bg-slate-100 hover:text-[#102949]";
+      ? "nav-link nav-link-active"
+      : "nav-link";
 }
 
 export default function TopNav({ initialLang }: TopNavProps) {

@@ -73,30 +73,39 @@ a {
 
 .btn {
   border: 0;
-  border-radius: 999px;
-  padding: 0.7rem 1.1rem;
-  font-weight: 600;
+  border-radius: 2px;
+  padding: 0.58rem 1rem;
+  font-family: Arial, "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .btn:hover {
-  transform: translateY(-1px);
+  opacity: 0.9;
 }
 
 .btn:active {
-  transform: translateY(0);
+  opacity: 1;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #203457 0, #12263f 100%);
+  background: #102949;
   color: #ffffff;
-  box-shadow: 0 10px 26px rgba(18, 38, 63, 0.3);
+  box-shadow: none;
 }
 
 .btn-soft {
-  background: var(--brand-soft);
-  color: #5d451d;
+  background: transparent;
+  color: #102949;
+  border: 1px solid #b8c5d9;
 }
 
 .heading-font {
@@ -140,9 +149,9 @@ a {
 }
 
 .kicker {
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  font-size: 0.75rem;
+  font-size: 11px;
   font-weight: 700;
   color: var(--brand);
 }
@@ -220,6 +229,47 @@ a {
   padding-bottom: 2rem;
 }
 
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  border-bottom: 1px solid transparent;
+  padding: 0.25rem 0;
+  font-family: Arial, "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #516178;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #102949;
+  border-bottom-color: #102949;
+}
+
+.nav-link-active {
+  color: #102949;
+  border-bottom-color: #102949;
+}
+
+.nav-cta {
+  min-width: 0;
+  padding-inline: 1rem;
+}
+
+.home-reference-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.home-reference-btn-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: transparent;
+  color: #ffffff;
+}
+
 .home-reference-strip {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -255,9 +305,17 @@ a {
   color: #e8effa;
 }
 
+.stat-band {
+  border-top: 1px solid #cfdae9;
+  border-bottom: 1px solid #cfdae9;
+  background: transparent;
+}
+
 .metric-num {
-  font-family: var(--font-heading), Georgia, serif;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-family: Arial, "Helvetica Neue", sans-serif;
+  font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
   line-height: 1;
   color: #102949;
 }
