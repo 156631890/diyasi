@@ -1,5 +1,6 @@
-﻿import BuyNowButton from "@/components/BuyNowButton";
+import BuyNowButton from "@/components/BuyNowButton";
 import { safeFetchJson } from "@/lib/api";
+import { fallbackCatalogCategories, fallbackCatalogProducts } from "@/lib/catalog";
 import { SiteLang } from "@/lib/i18n";
 import { getServerLang } from "@/lib/server-lang";
 import Link from "next/link";
@@ -116,11 +117,11 @@ function resolveImage(product: Product): string {
 }
 
 async function getProducts(): Promise<Product[]> {
-  return safeFetchJson<Product[]>("/products/", []);
+  return safeFetchJson<Product[]>("/products/", fallbackCatalogProducts);
 }
 
 async function getCategories(): Promise<ProductCategory[]> {
-  return safeFetchJson<ProductCategory[]>("/products/categories", []);
+  return safeFetchJson<ProductCategory[]>("/products/categories", fallbackCatalogCategories);
 }
 
 type ProductsPageProps = { searchParams: { category?: string } };
@@ -237,3 +238,4 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
     </main>
   );
 }
+
