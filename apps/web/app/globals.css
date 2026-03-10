@@ -890,11 +890,32 @@ a {
 .factory-info-label {
   margin: 0;
   font-family: Arial, "Helvetica Neue", sans-serif;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #8b6a2c;
+}
+
+.factory-home-title {
+  font-family: Arial, "Helvetica Neue", sans-serif;
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.factory-home-card-title {
+  font-family: Arial, "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  line-height: 1.45;
+  font-weight: 700;
+}
+
+.factory-home-body {
+  font-family: Arial, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  line-height: 1.9;
+  font-weight: 400;
 }
 
 .factory-section-head {
@@ -952,14 +973,14 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 56px;
-  height: 56px;
-  padding: 0 0.9rem;
+  min-width: 68px;
+  height: 68px;
+  padding: 0 1rem;
   border-radius: 999px;
   background: #122744;
   color: white;
   font-family: Arial, "Helvetica Neue", sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -983,7 +1004,7 @@ a {
   grid-template-columns: minmax(0, 1.2fr) auto;
   gap: 1.5rem;
   align-items: center;
-  padding: 2rem;
+  padding: 2.4rem;
   border-radius: 32px;
   background:
     radial-gradient(85% 130% at 100% 0%, rgba(184, 138, 59, 0.24) 0, transparent 55%),

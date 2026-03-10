@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 
 import { safeFetchJson } from "@/lib/api";
 import { fallbackCatalogCategories } from "@/lib/catalog";
@@ -79,7 +79,7 @@ const fallbackFactoryImages: MediaAsset[] = [
 
 const featuredShowcase = [
   {
-    title: "Women’s Seamless Underwear",
+    title: "Women鈥檚 Seamless Underwear",
     image: "/media/generated/products/seamless-women-brief.png",
     link: "/products?category=Women's%20Panties"
   },
@@ -89,7 +89,7 @@ const featuredShowcase = [
     link: "/products?category=Bras"
   },
   {
-    title: "Men’s Boxer Programs",
+    title: "Men鈥檚 Boxer Programs",
     image: "/media/generated/products/men-seamless-boxer.png",
     link: "/products?category=Men%20Underwear"
   },
@@ -439,21 +439,21 @@ export default async function HomePage() {
               <div className="factory-video-overlay">
                 <div className="factory-video-play">Play</div>
                 <div>
-                  <p className="page-reference-subtitle text-white">{t.videoTitle}</p>
-                  <p className="page-reference-body mt-2 max-w-xl text-white/85">{t.videoDesc}</p>
+                  <p className="factory-home-title text-white">{t.videoTitle}</p>
+                  <p className="factory-home-body mt-2 max-w-xl text-white/85">{t.videoDesc}</p>
                 </div>
               </div>
             </div>
           </div>
           <div className="factory-story-copy">
             <p className="kicker page-reference-subtitle">{t.factoryKicker}</p>
-            <h2 className="page-reference-subtitle mt-3 text-[#122744]">{t.factoryTitle}</h2>
-            <p className="page-reference-body mt-4 text-[#53637c]">{t.factoryDesc}</p>
+            <h2 className="factory-home-title mt-3 text-[#122744]">{t.factoryTitle}</h2>
+            <p className="factory-home-body mt-4 text-[#53637c]">{t.factoryDesc}</p>
             <div className="factory-capability-grid mt-8">
               {t.capability.map((item) => (
                 <article key={item.label} className="factory-capability-card">
                   <p className="factory-capability-label">{item.label}</p>
-                  <p className="page-reference-body mt-2 text-[#253753]">{item.value}</p>
+                  <p className="factory-home-body mt-2 text-[#253753]">{item.value}</p>
                 </article>
               ))}
             </div>
@@ -471,14 +471,14 @@ export default async function HomePage() {
         <div className="home-full-bleed-shell py-12">
         <div className="factory-section-head">
           <p className="kicker page-reference-subtitle">{t.gallery}</p>
-          <h2 className="page-reference-subtitle mt-2 text-[#122744]">Production floor and detail views</h2>
+          <h2 className="factory-home-title mt-2 text-[#122744]">Production floor and detail views</h2>
         </div>
         <div className="factory-detail-grid mt-6">
           {factoryImages.map((img) => (
             <article key={img.id} className="factory-detail-card">
               <img src={img.image_url} alt={img.title} className="factory-detail-image" />
               <div className="factory-detail-caption">
-                <p className="page-reference-body text-white">{img.title}</p>
+                <p className="factory-home-body text-white">{img.title}</p>
               </div>
             </article>
           ))}
@@ -490,14 +490,14 @@ export default async function HomePage() {
         <div className="home-full-bleed-shell py-12">
         <div className="factory-section-head">
           <p className="kicker page-reference-subtitle">{t.certificates}</p>
-          <h2 className="page-reference-subtitle mt-2 text-[#122744]">Trust markers buyers look for early</h2>
+          <h2 className="factory-home-title mt-2 text-[#122744]">Trust markers buyers look for early</h2>
         </div>
         <div className="factory-cert-grid mt-6">
           {t.certificatesList.map((item) => (
             <article key={item.code} className="factory-cert-card">
               <div className="factory-cert-code">{item.code}</div>
-              <h3 className="page-reference-subtitle mt-4 text-[#122744]">{item.title}</h3>
-              <p className="page-reference-body mt-3 text-[#5b6b84]">{item.body}</p>
+              <h3 className="factory-home-card-title mt-4 text-[#122744]">{item.title}</h3>
+              <p className="factory-home-body mt-3 text-[#5b6b84]">{item.body}</p>
             </article>
           ))}
         </div>
@@ -508,14 +508,14 @@ export default async function HomePage() {
         <div className="home-full-bleed-shell py-12">
         <div className="factory-section-head">
           <p className="kicker page-reference-subtitle">{t.customize}</p>
-          <h2 className="page-reference-subtitle mt-2 text-[#122744]">From concept to shipment in a readable sequence</h2>
+          <h2 className="factory-home-title mt-2 text-[#122744]">From concept to shipment in a readable sequence</h2>
         </div>
         <div className="factory-custom-grid mt-6">
           {t.customSteps.map((item) => (
             <article key={item.icon} className="factory-custom-card">
               <div className="factory-custom-icon">{item.icon}</div>
-              <h3 className="page-reference-subtitle mt-4 text-[#122744]">{item.title}</h3>
-              <p className="page-reference-body mt-3 text-[#566880]">{item.body}</p>
+              <h3 className="factory-home-card-title mt-4 text-[#122744]">{item.title}</h3>
+              <p className="factory-home-body mt-3 text-[#566880]">{item.body}</p>
             </article>
           ))}
         </div>
@@ -526,14 +526,14 @@ export default async function HomePage() {
         <div className="home-full-bleed-shell py-12">
         <div className="factory-section-head">
           <p className="kicker page-reference-subtitle">{t.products}</p>
-          <h2 className="page-reference-subtitle mt-2 text-[#122744]">{t.productsDesc}</h2>
+          <h2 className="factory-home-title mt-2 text-[#122744]">{t.productsDesc}</h2>
         </div>
         <div className="factory-product-rows mt-6">
           {featuredShowcase.map((item) => (
             <Link key={item.title} href={item.link} className="factory-product-tile">
               <img src={item.image} alt={item.title} className="factory-product-image" />
               <div className="factory-product-caption">
-                <p className="page-reference-subtitle text-white">{item.title}</p>
+                <p className="factory-home-title text-white">{item.title}</p>
               </div>
             </Link>
           ))}
@@ -571,7 +571,7 @@ export default async function HomePage() {
         <div className="home-full-bleed-shell py-12">
         <div className="factory-section-head">
           <p className="kicker page-reference-subtitle">{t.news}</p>
-          <h2 className="page-reference-subtitle mt-2 text-[#122744]">Recent activity and publishing</h2>
+          <h2 className="factory-home-title mt-2 text-[#122744]">Recent activity and publishing</h2>
         </div>
         <div className="factory-news-grid mt-6">
           {recentArticles.length === 0 ? (
@@ -580,8 +580,8 @@ export default async function HomePage() {
           {recentArticles.map((article) => (
             <article key={article.slug} className="factory-news-card">
               <p className="factory-news-category">{article.category}</p>
-              <h3 className="page-reference-subtitle mt-3 text-[#122744]">{article.title}</h3>
-              <p className="page-reference-body mt-3 text-[#566880]">{article.excerpt}</p>
+              <h3 className="factory-home-title mt-3 text-[#122744]">{article.title}</h3>
+              <p className="factory-home-body mt-3 text-[#566880]">{article.excerpt}</p>
               <div className="mt-5">
                 <Link href={`/blog/${article.slug}`} className="btn btn-soft">
                   {t.readMore}
@@ -598,8 +598,8 @@ export default async function HomePage() {
           <div className="factory-cta-band">
           <div>
             <p className="kicker page-reference-subtitle text-[#f3d7a1]">{t.contactTitle}</p>
-            <h2 className="page-reference-subtitle mt-3 text-white">{t.contactTitle}</h2>
-            <p className="page-reference-body mt-3 max-w-2xl text-white/82">{t.contactBody}</p>
+            <h2 className="factory-home-title mt-3 text-white">{t.contactTitle}</h2>
+            <p className="factory-home-body mt-3 max-w-2xl text-white/82">{t.contactBody}</p>
           </div>
           <div className="factory-cta-actions">
             <Link href="/contact" className="btn btn-primary">
@@ -619,7 +619,7 @@ export default async function HomePage() {
           {t.infoBar.map((item) => (
             <article key={item.label} className="factory-info-item">
               <p className="factory-info-label">{item.label}</p>
-              <p className="page-reference-subtitle mt-2 text-[#122744]">{item.value}</p>
+              <p className="factory-home-title mt-2 text-[#122744]">{item.value}</p>
             </article>
           ))}
           </div>
@@ -628,3 +628,4 @@ export default async function HomePage() {
     </main>
   );
 }
+
