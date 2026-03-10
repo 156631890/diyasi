@@ -25,6 +25,18 @@ const fallbackProductImages: Record<string, string> = {
   "MB-004": "/media/generated/products/men-seamless-boxer.png"
 };
 
+const categoryFallbackImages: Record<string, string> = {
+  "women's panties": "/media/generated/products/seamless-women-brief.png",
+  bras: "/media/generated/products/supportive-sports-bra.png",
+  thongs: "/media/generated/products/seamless-women-brief.png",
+  "men underwear": "/media/generated/products/men-seamless-boxer.png",
+  "gym & sports wear": "/media/generated/products/high-waist-yoga-leggings.png",
+  "home wear": "/media/generated/products/high-waist-yoga-leggings.png",
+  "socks & hosiery": "/media/generated/products/men-seamless-boxer.png",
+  "base layers": "/media/generated/products/high-waist-yoga-leggings.png",
+  shorts: "/media/generated/products/high-waist-yoga-leggings.png"
+};
+
 const copy: Record<
   SiteLang,
   {
@@ -79,7 +91,16 @@ const categoryPricing: Record<string, number> = {
   "yoga leggings": 299,
   "sports bras": 279,
   "mens underwear": 259,
-  loungewear: 289
+  loungewear: 289,
+  "women's panties": 249,
+  bras: 279,
+  thongs: 229,
+  "men underwear": 259,
+  "gym & sports wear": 319,
+  "home wear": 289,
+  "socks & hosiery": 189,
+  "base layers": 309,
+  shorts: 259
 };
 
 function keyCategory(value: string): string {
@@ -91,7 +112,7 @@ function resolvePrice(product: Product): number {
 }
 
 function resolveImage(product: Product): string {
-  return product.image_url || fallbackProductImages[product.product_id] || "";
+  return product.image_url || fallbackProductImages[product.product_id] || categoryFallbackImages[keyCategory(product.category)] || "";
 }
 
 async function getProducts(): Promise<Product[]> {
