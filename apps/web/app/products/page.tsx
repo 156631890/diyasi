@@ -27,16 +27,43 @@ const fallbackProductImages: Record<string, string> = {
   "MB-004": "/media/generated/products/men-seamless-boxer.png"
 };
 
-const categoryFallbackImages: Record<string, string> = {
-  "women's panties": "/media/generated/products/seamless-women-brief.png",
-  bras: "/media/generated/products/supportive-sports-bra.png",
-  thongs: "/media/generated/products/seamless-women-brief.png",
-  "men underwear": "/media/generated/products/men-seamless-boxer.png",
-  "gym & sports wear": "/media/generated/products/high-waist-yoga-leggings.png",
-  "home wear": "/media/generated/products/high-waist-yoga-leggings.png",
-  "socks & hosiery": "/media/generated/products/men-seamless-boxer.png",
-  "base layers": "/media/generated/products/high-waist-yoga-leggings.png",
-  shorts: "/media/generated/products/high-waist-yoga-leggings.png"
+const categoryImagePairs: Record<string, [string, string]> = {
+  "women's panties": [
+    "/media/generated/products/seamless-women-brief.png",
+    "/media/generated/products/supportive-sports-bra.png"
+  ],
+  bras: [
+    "/media/generated/products/supportive-sports-bra.png",
+    "/media/generated/products/seamless-women-brief.png"
+  ],
+  thongs: [
+    "/media/generated/products/seamless-women-brief.png",
+    "/media/generated/products/high-waist-yoga-leggings.png"
+  ],
+  "men underwear": [
+    "/media/generated/products/men-seamless-boxer.png",
+    "/media/generated/products/high-waist-yoga-leggings.png"
+  ],
+  "gym & sports wear": [
+    "/media/generated/products/high-waist-yoga-leggings.png",
+    "/media/generated/products/supportive-sports-bra.png"
+  ],
+  "home wear": [
+    "/media/generated/products/high-waist-yoga-leggings.png",
+    "/media/generated/products/seamless-women-brief.png"
+  ],
+  "socks & hosiery": [
+    "/media/generated/products/men-seamless-boxer.png",
+    "/media/generated/products/supportive-sports-bra.png"
+  ],
+  "base layers": [
+    "/media/generated/products/high-waist-yoga-leggings.png",
+    "/media/generated/products/men-seamless-boxer.png"
+  ],
+  shorts: [
+    "/media/generated/products/high-waist-yoga-leggings.png",
+    "/media/generated/products/seamless-women-brief.png"
+  ]
 };
 
 const copy: Record<
@@ -68,8 +95,8 @@ const copy: Record<
   },
   zh: {
     kicker: "产品目录",
-    title: "更接近选款目录的产品排版",
-    desc: "按分类快速浏览款式，缩短筛选路径，并直接进入打样与沟通。",
+    title: "更适合快速选款的目录式产品页",
+    desc: "按分类浏览、对比版型，并直接从筛选进入打样或询盘。",
     all: "全部",
     noPoster: "该分类暂时没有产品。",
     noImage: "图片待更新",
@@ -117,13 +144,17 @@ function resolvePrice(product: Product): number {
   return categoryPricing[keyCategory(product.category)] || 279;
 }
 
-function resolveImage(product: Product): string {
+function resolvePrimaryImage(product: Product): string {
   return (
     product.image_url ||
     fallbackProductImages[product.product_id] ||
-    categoryFallbackImages[keyCategory(product.category)] ||
+    categoryImagePairs[keyCategory(product.category)]?.[0] ||
     ""
   );
+}
+
+function resolveHoverImage(product: Product): string {
+  return categoryImagePairs[keyCategory(product.category)]?.[1] || resolvePrimaryImage(product);
 }
 
 async function getProducts(): Promise<Product[]> {
@@ -160,9 +191,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
             <p className="catalog-meta-count">
               {filteredProducts.length} {t.items}
             </p>
-            <p className="page-reference-body text-[#687894]">
-              {selectedKey ? selected : t.all}
-            </p>
+            <p className="page-reference-body text-[#687894]">{selectedKey ? selected : t.all}</p>
           </div>
         </div>
       </section>
@@ -202,16 +231,24 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
         ) : null}
         {filteredProducts.map((product) => {
           const price = resolvePrice(product);
-          const image = resolveImage(product);
+          const primaryImage = resolvePrimaryImage(product);
+          const hoverImage = resolveHoverImage(product);
           return (
             <article key={product.product_id} className="catalog-card-clean">
               <div className="catalog-card-clean-media">
-                {image ? (
-                  <img
-                    src={image}
-                    alt={product.product_name}
-                    className="catalog-card-clean-image"
-                  />
+                {primaryImage ? (
+                  <div className="catalog-card-clean-media-stack">
+                    <img
+                      src={primaryImage}
+                      alt={product.product_name}
+                      className="catalog-card-clean-image catalog-card-clean-image-primary"
+                    />
+                    <img
+                      src={hoverImage}
+                      alt={`${product.product_name} alternate view`}
+                      className="catalog-card-clean-image catalog-card-clean-image-secondary"
+                    />
+                  </div>
                 ) : (
                   <div className="catalog-card-clean-fallback">{t.noImage}</div>
                 )}
