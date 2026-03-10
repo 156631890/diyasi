@@ -274,6 +274,12 @@ a {
   width: 100%;
 }
 
+.home-full-bleed-shell {
+  width: min(100%, calc(100vw - 2.4rem));
+  max-width: 1560px;
+  margin: 0 auto;
+}
+
 .home-wide-band-plain {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.82) 0%, rgba(247, 249, 253, 0.94) 100%);

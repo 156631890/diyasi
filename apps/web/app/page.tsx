@@ -427,7 +427,7 @@ export default async function HomePage() {
       </section>
 
       <section className="home-wide-band home-wide-band-white">
-        <div className="container-shell py-12">
+        <div className="home-full-bleed-shell py-12">
           <div className="factory-story-shell">
           <div className="factory-video-panel">
             <div className="factory-video-cover">
@@ -468,7 +468,7 @@ export default async function HomePage() {
       </section>
 
       <section className="home-wide-band home-wide-band-plain">
-        <div className="container-shell py-12">
+        <div className="home-full-bleed-shell py-12">
         <div className="factory-section-head">
           <p className="kicker page-reference-subtitle">{t.gallery}</p>
           <h2 className="page-reference-subtitle mt-2 text-[#122744]">Production floor and detail views</h2>
@@ -487,7 +487,7 @@ export default async function HomePage() {
       </section>
 
       <section className="home-wide-band home-wide-band-soft">
-        <div className="container-shell py-12">
+        <div className="home-full-bleed-shell py-12">
         <div className="factory-section-head">
           <p className="kicker page-reference-subtitle">{t.certificates}</p>
           <h2 className="page-reference-subtitle mt-2 text-[#122744]">Trust markers buyers look for early</h2>
@@ -505,7 +505,7 @@ export default async function HomePage() {
       </section>
 
       <section className="home-wide-band home-wide-band-white">
-        <div className="container-shell py-12">
+        <div className="home-full-bleed-shell py-12">
         <div className="factory-section-head">
           <p className="kicker page-reference-subtitle">{t.customize}</p>
           <h2 className="page-reference-subtitle mt-2 text-[#122744]">From concept to shipment in a readable sequence</h2>
@@ -523,7 +523,7 @@ export default async function HomePage() {
       </section>
 
       <section className="home-wide-band home-wide-band-plain">
-        <div className="container-shell py-12">
+        <div className="home-full-bleed-shell py-12">
         <div className="factory-section-head">
           <p className="kicker page-reference-subtitle">{t.products}</p>
           <h2 className="page-reference-subtitle mt-2 text-[#122744]">{t.productsDesc}</h2>
@@ -568,7 +568,7 @@ export default async function HomePage() {
       </section>
 
       <section className="home-wide-band home-wide-band-soft">
-        <div className="container-shell py-12">
+        <div className="home-full-bleed-shell py-12">
         <div className="factory-section-head">
           <p className="kicker page-reference-subtitle">{t.news}</p>
           <h2 className="page-reference-subtitle mt-2 text-[#122744]">Recent activity and publishing</h2>
@@ -594,7 +594,7 @@ export default async function HomePage() {
       </section>
 
       <section className="home-wide-band home-wide-band-dark">
-        <div className="container-shell py-12">
+        <div className="home-full-bleed-shell py-12">
           <div className="factory-cta-band">
           <div>
             <p className="kicker page-reference-subtitle text-[#f3d7a1]">{t.contactTitle}</p>
@@ -614,7 +614,7 @@ export default async function HomePage() {
       </section>
 
       <section className="home-wide-band home-wide-band-white">
-        <div className="container-shell py-10">
+        <div className="home-full-bleed-shell py-10">
           <div className="factory-info-bar">
           {t.infoBar.map((item) => (
             <article key={item.label} className="factory-info-item">
