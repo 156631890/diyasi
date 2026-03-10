@@ -1,5 +1,7 @@
-﻿import Link from "next/link";
+import Link from "next/link";
+
 import { safeFetchJson } from "@/lib/api";
+import { fallbackCatalogCategories } from "@/lib/catalog";
 import { SiteLang } from "@/lib/i18n";
 import { getServerLang } from "@/lib/server-lang";
 
@@ -13,6 +15,13 @@ type MediaAsset = {
 type ProductCategory = {
   category: string;
   count: number;
+};
+
+type Article = {
+  title: string;
+  slug: string;
+  category: string;
+  excerpt: string;
 };
 
 type Metric = {
@@ -41,6 +50,56 @@ const fallbackPosters: MediaAsset[] = [
   }
 ];
 
+const fallbackFactoryImages: MediaAsset[] = [
+  {
+    id: -11,
+    asset_type: "factory",
+    title: "Factory Capability Panorama",
+    image_url: "/media/generated/factory-capability-panorama.png"
+  },
+  {
+    id: -12,
+    asset_type: "factory",
+    title: "Quality Check Fabric Detail",
+    image_url: "/media/generated/factory/quality-check-fabric-detail.png"
+  },
+  {
+    id: -13,
+    asset_type: "factory",
+    title: "Seamless Machine Detail",
+    image_url: "/media/generated/factory/seamless-machine-detail.png"
+  },
+  {
+    id: -14,
+    asset_type: "factory",
+    title: "Inspection and Finishing Table",
+    image_url: "/media/generated/factory/inspection-and-finishing-table.png"
+  }
+];
+
+const featuredShowcase = [
+  {
+    title: "Women’s Seamless Underwear",
+    image: "/media/generated/products/seamless-women-brief.png",
+    link: "/products?category=Women's%20Panties"
+  },
+  {
+    title: "Supportive Bras",
+    image: "/media/generated/products/supportive-sports-bra.png",
+    link: "/products?category=Bras"
+  },
+  {
+    title: "Men’s Boxer Programs",
+    image: "/media/generated/products/men-seamless-boxer.png",
+    link: "/products?category=Men%20Underwear"
+  },
+  {
+    title: "Activewear Capsules",
+    image: "/media/generated/products/high-waist-yoga-leggings.png",
+    link: "/products?category=Gym%20%26%20Sports%20Wear"
+  }
+];
+
 const copy: Record<
   SiteLang,
   {
@@ -49,110 +108,257 @@ const copy: Record<
     heroDesc: string;
     ctaProducts: string;
     ctaContact: string;
-    storyKicker: string;
-    storyTitle: string;
-    storyDesc: string;
-    storyBtn: string;
     noPoster: string;
-    catKicker: string;
-    catTitle: string;
-    catDesc: string;
-    noCategory: string;
     metrics: Metric[];
+    factoryKicker: string;
+    factoryTitle: string;
+    factoryDesc: string;
+    videoTitle: string;
+    videoDesc: string;
+    videoCta: string;
+    capability: Array<{ label: string; value: string }>;
+    gallery: string;
+    certificates: string;
+    certificatesList: Array<{ code: string; title: string; body: string }>;
+    customize: string;
+    customSteps: Array<{ icon: string; title: string; body: string }>;
+    products: string;
+    productsDesc: string;
+    news: string;
+    noNews: string;
+    readMore: string;
+    contactTitle: string;
+    contactBody: string;
+    inquire: string;
+    paidSample: string;
+    infoBar: Array<{ label: string; value: string }>;
+    categoryTitle: string;
+    categoryDesc: string;
+    noCategory: string;
   }
 > = {
   en: {
     heroKicker: "YiWu DiYaSi Dress CO., LTD",
-    heroTitle: "Premium underwear manufacturing for brands that value consistency, clarity, and quiet confidence",
+    heroTitle: "Factory strength, category clarity, and brand-ready execution in one homepage",
     heroDesc:
-      "We support underwear and activewear brands from concept and sampling through stable bulk production, with stronger quality discipline, cleaner execution, and a more premium product presentation from the start.",
+      "The homepage should already tell buyers how you produce, what you sell, how you customize, and how quickly they can move into a useful inquiry.",
     ctaProducts: "View Categories",
     ctaContact: "Start a Conversation",
-    storyKicker: "Brand Visual Direction",
-    storyTitle: "A calmer, more premium front door for serious buyers",
-    storyDesc:
-      "Visual systems, category structure, and launch materials should communicate substance before a single email is exchanged.",
-    storyBtn: "View Media",
     noPoster: "No featured visuals yet. Generate and set featured assets in Admin.",
-    catKicker: "Product Navigation",
-    catTitle: "Large categories, clearer choices, faster sourcing decisions",
-    catDesc:
-      "Buyers should not dig through small cards. They should understand your strongest categories at a glance and move quickly into discussion.",
-    noCategory: "No categories available yet.",
     metrics: [
       { value: "23+", label: "years of manufacturing experience" },
       { value: "5-7", label: "days for first sample development" },
       { value: "300-500", label: "pcs MOQ per style and color" },
       { value: "20-30", label: "days for bulk production window" }
-    ]
+    ],
+    factoryKicker: "Factory Overview",
+    factoryTitle: "A homepage that already answers the first factory questions",
+    factoryDesc:
+      "Instead of splitting brand, factory, and conversion into separate weak pages, the homepage now carries the strongest proof points in one readable flow.",
+    videoTitle: "Factory Introduction Video",
+    videoDesc: "Production line overview, inspection rhythm, and pack-out sequence can be shared once the inquiry becomes concrete.",
+    videoCta: "Request the Video",
+    capability: [
+      { label: "Seamless Machinery", value: "Integrated knitting to finishing" },
+      { label: "QC Routine", value: "Inline checks and final inspection" },
+      { label: "Packaging Support", value: "Private label pack-out coordination" },
+      { label: "Core Scope", value: "Underwear / Bras / Activewear" }
+    ],
+    gallery: "Factory Gallery",
+    certificates: "Certificates",
+    certificatesList: [
+      { code: "BSCI", title: "Audit Readiness", body: "Factory communication and document flow structured for buyer compliance review." },
+      { code: "OEKO", title: "Material Awareness", body: "Comfort, fabric touch, and safer material positioning aligned with brand expectations." },
+      { code: "QA", title: "Quality Sequence", body: "Inspection checkpoints built into sampling, bulk production, and final packing." },
+      { code: "OEM", title: "Private Label Execution", body: "Support for labels, packaging, and customized production briefs." }
+    ],
+    customize: "Customization Flow",
+    customSteps: [
+      { icon: "01", title: "Style Brief", body: "Confirm category direction, target pricing, and fit references." },
+      { icon: "02", title: "Sampling", body: "Translate requirements into a sample round with material and trim checks." },
+      { icon: "03", title: "Bulk Planning", body: "Lock colorways, capacity windows, and packaging details before PO." },
+      { icon: "04", title: "Shipment", body: "Coordinate inspection, packing, and export timing with a single production rhythm." }
+    ],
+    products: "Main Product Lines",
+    productsDesc: "Two clean rows should be enough for buyers to understand the commercial center of the factory.",
+    news: "Recent News",
+    noNews: "No recent news yet.",
+    readMore: "Read More",
+    contactTitle: "Move from review to inquiry",
+    contactBody: "If you already know your category, MOQ range, and launch timing, we can turn the first exchange into a productive brief instead of a generic introduction.",
+    inquire: "Start a Conversation",
+    paidSample: "Paid Sample",
+    infoBar: [
+      { label: "Sampling", value: "5-7 days" },
+      { label: "Bulk Lead Time", value: "20-30 days" },
+      { label: "MOQ", value: "300-500 pcs" },
+      { label: "Language", value: "EN / ZH / ES" }
+    ],
+    categoryTitle: "Large categories, clearer choices, faster sourcing decisions",
+    categoryDesc: "Core categories should still be visible on the homepage for buyers who prefer to jump straight into product navigation.",
+    noCategory: "No categories available yet."
   },
   zh: {
     heroKicker: "义乌迪雅斯服饰有限公司",
-    heroTitle: "面向重视稳定、清晰与品牌质感客户的高端内衣制造体系",
+    heroTitle: "把工厂实力、产品结构和转化路径直接放进首页",
     heroDesc:
-      "我们帮助内衣与运动服品牌从概念、打样走向稳定量产，以更克制的执行、更可靠的品质控制和更成熟的产品呈现支持品牌成长。",
+      "首页就应该让买家看懂你怎么生产、卖什么、如何定制，以及如何快速进入有效询盘。",
     ctaProducts: "查看分类",
     ctaContact: "开始沟通",
-    storyKicker: "品牌视觉方向",
-    storyTitle: "让官网更像品牌展厅，而不是信息堆叠",
-    storyDesc:
-      "主视觉、分类结构与品牌叙事应当在第一次联系之前，就传达出品质感与制造信心。",
-    storyBtn: "查看素材",
     noPoster: "暂时还没有精选视觉素材，请在后台生成并设为精选。",
-    catKicker: "产品导航",
-    catTitle: "更大的分类结构，更清晰的选择路径",
-    catDesc: "采购方不应该在很多小卡片里来回寻找，而应该一眼看到你的核心品类，并快速进入沟通。",
-    noCategory: "暂时还没有可展示的分类。",
     metrics: [
       { value: "23+", label: "年制造经验" },
       { value: "5-7", label: "天完成首轮打样" },
       { value: "300-500", label: "件起订量区间" },
       { value: "20-30", label: "天大货交付周期" }
-    ]
+    ],
+    factoryKicker: "工厂概览",
+    factoryTitle: "首页先回答买家最先关心的工厂问题",
+    factoryDesc:
+      "不再把品牌、工厂和询盘转化拆成弱关联页面，而是在首页里按更清晰的顺序整合起来。",
+    videoTitle: "工厂介绍视频",
+    videoDesc: "生产线、质检节奏和包装流程的完整视频，可在询盘后按需发送。",
+    videoCta: "索取视频",
+    capability: [
+      { label: "无缝设备", value: "从织造到后整的一体流程" },
+      { label: "质检节奏", value: "在线检查与尾检并行" },
+      { label: "包装支持", value: "支持品牌包装落地" },
+      { label: "核心范围", value: "内衣 / 文胸 / 运动服" }
+    ],
+    gallery: "工厂展示",
+    certificates: "证书展示",
+    certificatesList: [
+      { code: "BSCI", title: "审核准备", body: "工厂沟通和文件流转可以配合买家合规审核。" },
+      { code: "OEKO", title: "材料认知", body: "围绕舒适度、手感和材料定位建立更清晰的表达。" },
+      { code: "QA", title: "质量节点", body: "把检查节点放进打样、大货和包装阶段。" },
+      { code: "OEM", title: "品牌定制", body: "支持洗标、包装和定制化生产 brief。" }
+    ],
+    customize: "定制流程",
+    customSteps: [
+      { icon: "01", title: "款式 Brief", body: "先确认品类方向、目标价位和版型参考。" },
+      { icon: "02", title: "打样推进", body: "把需求转成样衣，并同步面料和辅料判断。" },
+      { icon: "03", title: "大货计划", body: "在下单前锁定颜色、产能窗口和包装细节。" },
+      { icon: "04", title: "出货执行", body: "统一衔接检验、包装与出运节奏。" }
+    ],
+    products: "主要产品线",
+    productsDesc: "用两行重点产品概览，让买家更快理解你的商业中心。",
+    news: "最近新闻",
+    noNews: "暂时还没有最近新闻。",
+    readMore: "阅读更多",
+    contactTitle: "从浏览进入询盘",
+    contactBody: "如果你已经明确品类、MOQ 区间和上市时间，我们可以把第一次沟通直接推进成有效 brief，而不是泛泛介绍。",
+    inquire: "开始沟通",
+    paidSample: "付费打样",
+    infoBar: [
+      { label: "打样", value: "5-7 天" },
+      { label: "大货周期", value: "20-30 天" },
+      { label: "MOQ", value: "300-500 件" },
+      { label: "语言", value: "中 / 英 / 西" }
+    ],
+    categoryTitle: "把核心分类直接放在首页，减少买家寻找路径",
+    categoryDesc: "对更偏采购导向的买家来说，首页就应该能直接进入产品分类。",
+    noCategory: "暂时还没有可展示的分类。"
   },
   es: {
     heroKicker: "YiWu DiYaSi Dress CO., LTD",
-    heroTitle: "Manufactura premium de ropa interior para marcas que valoran consistencia, claridad y presencia de marca",
+    heroTitle: "Un inicio que ya muestra fabrica, categorias y conversion",
     heroDesc:
-      "Acompañamos a marcas de underwear y activewear desde concepto y muestra hasta producción masiva estable, con una ejecución más limpia, mejor control de calidad y una presentación de producto más sólida desde el inicio.",
-    ctaProducts: "Ver Categorías",
-    ctaContact: "Iniciar Conversación",
-    storyKicker: "Dirección Visual de Marca",
-    storyTitle: "Una entrada más serena y más sólida para compradores serios",
-    storyDesc:
-      "Los visuales, la estructura por categorías y la narrativa de marca deben transmitir criterio antes del primer correo.",
-    storyBtn: "Ver Media",
-    noPoster: "Aún no hay visuales destacados. Configúralos desde Admin.",
-    catKicker: "Navegación de Producto",
-    catTitle: "Categorías amplias, decisiones más claras y sourcing más ágil",
-    catDesc:
-      "Los compradores no deberían perderse entre tarjetas pequeñas. Deben entender tus categorías fuertes de inmediato y pasar a conversación con más contexto.",
-    noCategory: "Aún no hay categorías disponibles.",
+      "La homepage debe explicar desde el principio como produces, que vendes, como personalizas y como puede avanzar el comprador hacia una consulta util.",
+    ctaProducts: "Ver Categorias",
+    ctaContact: "Iniciar Conversacion",
+    noPoster: "Aun no hay visuales destacados. Configuralos desde Admin.",
     metrics: [
-      { value: "23+", label: "años de experiencia productiva" },
-      { value: "5-7", label: "días para primera muestra" },
+      { value: "23+", label: "anos de experiencia productiva" },
+      { value: "5-7", label: "dias para primera muestra" },
       { value: "300-500", label: "pcs MOQ por estilo y color" },
-      { value: "20-30", label: "días para producción masiva" }
-    ]
+      { value: "20-30", label: "dias para produccion masiva" }
+    ],
+    factoryKicker: "Vision General de Fabrica",
+    factoryTitle: "La homepage ya debe responder las primeras preguntas del comprador",
+    factoryDesc:
+      "En lugar de separar marca, fabrica y conversion en paginas debiles, el inicio ahora concentra los puntos mas utiles en una sola secuencia.",
+    videoTitle: "Video de Introduccion de Fabrica",
+    videoDesc: "El recorrido por planta, inspeccion y empaque puede compartirse cuando la consulta ya es concreta.",
+    videoCta: "Solicitar Video",
+    capability: [
+      { label: "Maquinaria Seamless", value: "Del tejido al acabado en un flujo integrado" },
+      { label: "Rutina QC", value: "Revisiones en linea e inspeccion final" },
+      { label: "Packaging", value: "Coordinacion de pack-out para marca privada" },
+      { label: "Alcance", value: "Underwear / Bras / Activewear" }
+    ],
+    gallery: "Galeria de Fabrica",
+    certificates: "Certificados",
+    certificatesList: [
+      { code: "BSCI", title: "Preparacion de Auditoria", body: "Comunicacion de fabrica y documentos listos para revisiones de compliance." },
+      { code: "OEKO", title: "Criterio de Material", body: "Comodidad, tacto y posicionamiento de material alineados con la marca." },
+      { code: "QA", title: "Secuencia de Calidad", body: "Puntos de inspeccion incorporados a muestra, bulk y empaque final." },
+      { code: "OEM", title: "Ejecucion Private Label", body: "Soporte para etiquetas, empaque y briefs personalizados." }
+    ],
+    customize: "Flujo de Personalizacion",
+    customSteps: [
+      { icon: "01", title: "Brief de Estilo", body: "Definir categoria, rango de precio objetivo y referencias de fit." },
+      { icon: "02", title: "Muestreo", body: "Convertir el requerimiento en muestra con control de material y trims." },
+      { icon: "03", title: "Plan de Produccion", body: "Cerrar colorways, capacidad y detalles de empaque antes del PO." },
+      { icon: "04", title: "Envio", body: "Coordinar inspeccion, packing y salida con un mismo ritmo productivo." }
+    ],
+    products: "Lineas Principales",
+    productsDesc: "Dos filas limpias deben bastar para mostrar el centro comercial de la fabrica.",
+    news: "Noticias Recientes",
+    noNews: "Aun no hay noticias recientes.",
+    readMore: "Leer Mas",
+    contactTitle: "Pasar de revision a consulta",
+    contactBody: "Si ya conoces tu categoria, MOQ y timing de lanzamiento, la primera conversacion puede convertirse en un brief util y no en una introduccion generica.",
+    inquire: "Iniciar Conversacion",
+    paidSample: "Muestra Pagada",
+    infoBar: [
+      { label: "Muestra", value: "5-7 dias" },
+      { label: "Produccion", value: "20-30 dias" },
+      { label: "MOQ", value: "300-500 pcs" },
+      { label: "Idioma", value: "EN / ZH / ES" }
+    ],
+    categoryTitle: "Las categorias clave tambien deben aparecer en la homepage",
+    categoryDesc: "Para compradores mas directos, la homepage debe seguir permitiendo entrar al catalogo desde el primer scroll.",
+    noCategory: "Aun no hay categorias disponibles."
   }
 };
 
 async function getFeaturedPosters(): Promise<MediaAsset[]> {
   const rows = await safeFetchJson<MediaAsset[]>("/media/assets?only_active=true&only_featured=true&limit=6", []);
-  const filtered = rows.filter((item) => item.asset_type === "poster" || item.asset_type === "hero_banner").slice(0, 3);
+  const filtered = rows
+    .filter((item) => item.asset_type === "poster" || item.asset_type === "hero_banner")
+    .slice(0, 3);
   return filtered.length > 0 ? filtered : fallbackPosters;
 }
 
+async function getFactoryImages(): Promise<MediaAsset[]> {
+  const assets = await safeFetchJson<MediaAsset[]>("/media/assets?asset_type=factory&limit=6", []);
+  if (assets.length === 0) {
+    return fallbackFactoryImages;
+  }
+  const existingTitles = new Set(assets.map((item) => item.title));
+  const extraFallbacks = fallbackFactoryImages.filter((item) => !existingTitles.has(item.title));
+  return [...assets, ...extraFallbacks].slice(0, 4);
+}
+
 async function getCategories(): Promise<ProductCategory[]> {
-  return safeFetchJson<ProductCategory[]>("/products/categories", []);
+  return safeFetchJson<ProductCategory[]>("/products/categories", fallbackCatalogCategories);
+}
+
+async function getArticles(): Promise<Article[]> {
+  return safeFetchJson<Article[]>("/seo/articles", []);
 }
 
 export default async function HomePage() {
   const lang = getServerLang();
   const t = copy[lang];
-  const [posters, categories] = await Promise.all([getFeaturedPosters(), getCategories()]);
+  const [posters, categories, factoryImages, articles] = await Promise.all([
+    getFeaturedPosters(),
+    getCategories(),
+    getFactoryImages(),
+    getArticles()
+  ]);
   const heroPoster = posters[0] || null;
-  const sidePosters = posters.slice(1, 3);
+  const recentArticles = articles.slice(0, 3);
 
   const organizationJsonLd = {
     "@context": "https://schema.org",
@@ -180,11 +386,11 @@ export default async function HomePage() {
             <p className="kicker home-reference-subtitle text-white">{t.heroKicker}</p>
             <h1 className="home-reference-title mt-4 max-w-4xl text-white">{t.heroTitle}</h1>
             <p className="home-reference-body mt-5 max-w-3xl text-white/90">{t.heroDesc}</p>
-            <div className="mt-7 flex flex-wrap gap-3">
+            <div className="home-reference-actions mt-7">
               <Link href="/products" className="btn bg-white text-[#102949]">
                 {t.ctaProducts}
               </Link>
-              <Link href="/contact" className="btn border border-white/60 bg-transparent text-white">
+              <Link href="/contact" className="btn home-reference-btn-secondary">
                 {t.ctaContact}
               </Link>
             </div>
@@ -192,27 +398,12 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="container-shell mt-4">
-        {sidePosters.length > 0 ? (
-          <div className="home-reference-strip">
-            {sidePosters.map((asset) => (
-              <article key={asset.id} className="home-reference-strip-item">
-                <img src={asset.image_url} alt={asset.title} className="home-reference-strip-image" />
-                <div className="home-reference-strip-caption">
-                  <p className="home-reference-body text-white">{asset.title}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        ) : null}
-      </section>
-
       <section className="container-shell mt-10">
         <div className="stat-band">
           {t.metrics.map((metric) => (
             <article key={metric.label} className="stat-band-item">
               <p className="metric-num">{metric.value}</p>
-              <p className="home-reference-body mt-2 max-w-[14rem] uppercase tracking-[0.18em] text-[#5d6e89]">{metric.label}</p>
+              <p className="metric-label mt-2 max-w-[14rem]">{metric.label}</p>
             </article>
           ))}
         </div>
@@ -221,50 +412,195 @@ export default async function HomePage() {
       <section className="container-shell mt-14">
         <div className="editorial-strip border-b-0 pt-0">
           <div>
-            <p className="kicker home-reference-subtitle">{t.storyKicker}</p>
-            <h2 className="home-reference-subtitle mt-2 text-[#11253f]">{t.storyTitle}</h2>
-            <p className="home-reference-body mt-4 max-w-3xl text-[#51627d]">{t.storyDesc}</p>
+            <p className="kicker home-reference-subtitle">{t.factoryKicker}</p>
+            <h2 className="home-reference-subtitle mt-2 text-[#11253f]">{t.factoryTitle}</h2>
+            <p className="home-reference-body mt-4 max-w-3xl text-[#51627d]">{t.factoryDesc}</p>
           </div>
-          <Link href="/admin" className="btn btn-soft">
-            {t.storyBtn}
+          <Link href="/contact" className="btn btn-soft">
+            {t.inquire}
           </Link>
         </div>
       </section>
 
       <section className="container-shell mt-8">
-        {posters.length === 0 ? (
-          <div className="home-reference-body rounded-[28px] border border-dashed border-slate-300 px-6 py-8 text-slate-500">{t.noPoster}</div>
-        ) : (
-          <div className="split-gallery">
-            {posters.map((asset) => (
-              <article key={asset.id} className="split-gallery-item">
-                <img src={asset.image_url} alt={asset.title} className="h-full w-full object-cover" />
-                <div className="split-gallery-caption">
-                  <p className="home-reference-body">{asset.title}</p>
+        <div className="factory-story-shell">
+          <div className="factory-video-panel">
+            <div className="factory-video-cover">
+              <img
+                src="/media/generated/wide/factory-wide-production-line.png"
+                alt={t.videoTitle}
+                className="factory-video-image"
+              />
+              <div className="factory-video-overlay">
+                <div className="factory-video-play">Play</div>
+                <div>
+                  <p className="page-reference-subtitle text-white">{t.videoTitle}</p>
+                  <p className="page-reference-body mt-2 max-w-xl text-white/85">{t.videoDesc}</p>
                 </div>
-              </article>
-            ))}
+              </div>
+            </div>
           </div>
-        )}
+          <div className="factory-story-copy">
+            <p className="kicker page-reference-subtitle">{t.factoryKicker}</p>
+            <h2 className="page-reference-subtitle mt-3 text-[#122744]">{t.factoryTitle}</h2>
+            <p className="page-reference-body mt-4 text-[#53637c]">{t.factoryDesc}</p>
+            <div className="factory-capability-grid mt-8">
+              {t.capability.map((item) => (
+                <article key={item.label} className="factory-capability-card">
+                  <p className="factory-capability-label">{item.label}</p>
+                  <p className="page-reference-body mt-2 text-[#253753]">{item.value}</p>
+                </article>
+              ))}
+            </div>
+            <div className="mt-8">
+              <Link href="/contact" className="btn btn-primary">
+                {t.videoCta}
+              </Link>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section className="container-shell mt-14">
+      <section className="container-shell mt-12">
+        <div className="factory-section-head">
+          <p className="kicker page-reference-subtitle">{t.gallery}</p>
+          <h2 className="page-reference-subtitle mt-2 text-[#122744]">Production floor and detail views</h2>
+        </div>
+        <div className="factory-detail-grid mt-6">
+          {factoryImages.map((img) => (
+            <article key={img.id} className="factory-detail-card">
+              <img src={img.image_url} alt={img.title} className="factory-detail-image" />
+              <div className="factory-detail-caption">
+                <p className="page-reference-body text-white">{img.title}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="container-shell mt-12">
+        <div className="factory-section-head">
+          <p className="kicker page-reference-subtitle">{t.certificates}</p>
+          <h2 className="page-reference-subtitle mt-2 text-[#122744]">Trust markers buyers look for early</h2>
+        </div>
+        <div className="factory-cert-grid mt-6">
+          {t.certificatesList.map((item) => (
+            <article key={item.code} className="factory-cert-card">
+              <div className="factory-cert-code">{item.code}</div>
+              <h3 className="page-reference-subtitle mt-4 text-[#122744]">{item.title}</h3>
+              <p className="page-reference-body mt-3 text-[#5b6b84]">{item.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="container-shell mt-12">
+        <div className="factory-section-head">
+          <p className="kicker page-reference-subtitle">{t.customize}</p>
+          <h2 className="page-reference-subtitle mt-2 text-[#122744]">From concept to shipment in a readable sequence</h2>
+        </div>
+        <div className="factory-custom-grid mt-6">
+          {t.customSteps.map((item) => (
+            <article key={item.icon} className="factory-custom-card">
+              <div className="factory-custom-icon">{item.icon}</div>
+              <h3 className="page-reference-subtitle mt-4 text-[#122744]">{item.title}</h3>
+              <p className="page-reference-body mt-3 text-[#566880]">{item.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="container-shell mt-12">
+        <div className="factory-section-head">
+          <p className="kicker page-reference-subtitle">{t.products}</p>
+          <h2 className="page-reference-subtitle mt-2 text-[#122744]">{t.productsDesc}</h2>
+        </div>
+        <div className="factory-product-rows mt-6">
+          {featuredShowcase.map((item) => (
+            <Link key={item.title} href={item.link} className="factory-product-tile">
+              <img src={item.image} alt={item.title} className="factory-product-image" />
+              <div className="factory-product-caption">
+                <p className="page-reference-subtitle text-white">{item.title}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="container-shell mt-12">
         <div className="dark-band rounded-[34px] px-7 py-10 shadow-[0_32px_90px_rgba(16,30,52,0.18)] md:px-10 lg:px-12">
-          <p className="kicker home-reference-subtitle text-[#f3d7a1]">{t.catKicker}</p>
-          <h2 className="home-reference-subtitle mt-2 max-w-4xl text-white">{t.catTitle}</h2>
-          <p className="home-reference-body mt-4 max-w-3xl text-[#cfdbef]">{t.catDesc}</p>
+          <p className="kicker home-reference-subtitle text-[#f3d7a1]">{t.categoryTitle}</p>
+          <h2 className="home-reference-subtitle mt-2 max-w-4xl text-white">{t.categoryTitle}</h2>
+          <p className="home-reference-body mt-4 max-w-3xl text-[#cfdbef]">{t.categoryDesc}</p>
           <div className="category-rows mt-8">
             {categories.length === 0 ? (
               <div className="home-reference-body text-white/70">{t.noCategory}</div>
             ) : (
               categories.map((item) => (
-                <Link key={item.category} href={`/products?category=${encodeURIComponent(item.category)}`} className="category-row">
+                <Link
+                  key={item.category}
+                  href={`/products?category=${encodeURIComponent(item.category)}`}
+                  className="category-row"
+                >
                   <span className="home-reference-body">{item.category}</span>
                   <span className="home-reference-body">{item.count}</span>
                 </Link>
               ))
             )}
           </div>
+        </div>
+      </section>
+
+      <section className="container-shell mt-12">
+        <div className="factory-section-head">
+          <p className="kicker page-reference-subtitle">{t.news}</p>
+          <h2 className="page-reference-subtitle mt-2 text-[#122744]">Recent activity and publishing</h2>
+        </div>
+        <div className="factory-news-grid mt-6">
+          {recentArticles.length === 0 ? (
+            <div className="card p-6 text-[#53637c]">{t.noNews}</div>
+          ) : null}
+          {recentArticles.map((article) => (
+            <article key={article.slug} className="factory-news-card">
+              <p className="factory-news-category">{article.category}</p>
+              <h3 className="page-reference-subtitle mt-3 text-[#122744]">{article.title}</h3>
+              <p className="page-reference-body mt-3 text-[#566880]">{article.excerpt}</p>
+              <div className="mt-5">
+                <Link href={`/blog/${article.slug}`} className="btn btn-soft">
+                  {t.readMore}
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="container-shell mt-12">
+        <div className="factory-cta-band">
+          <div>
+            <p className="kicker page-reference-subtitle text-[#f3d7a1]">{t.contactTitle}</p>
+            <h2 className="page-reference-subtitle mt-3 text-white">{t.contactTitle}</h2>
+            <p className="page-reference-body mt-3 max-w-2xl text-white/82">{t.contactBody}</p>
+          </div>
+          <div className="factory-cta-actions">
+            <Link href="/contact" className="btn btn-primary">
+              {t.inquire}
+            </Link>
+            <Link href="/payments" className="btn factory-cta-secondary">
+              {t.paidSample}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="container-shell mt-8">
+        <div className="factory-info-bar">
+          {t.infoBar.map((item) => (
+            <article key={item.label} className="factory-info-item">
+              <p className="factory-info-label">{item.label}</p>
+              <p className="page-reference-subtitle mt-2 text-[#122744]">{item.value}</p>
+            </article>
+          ))}
         </div>
       </section>
     </main>
