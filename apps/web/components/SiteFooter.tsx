@@ -1,4 +1,5 @@
-﻿import Link from "next/link";
+import Link from "next/link";
+
 import { SiteLang } from "@/lib/i18n";
 
 type SiteFooterProps = {
@@ -6,120 +7,152 @@ type SiteFooterProps = {
 };
 
 type FooterCopy = {
+  eyebrow: string;
   brandDesc: string;
   ctaTitle: string;
   ctaDesc: string;
   ctaPrimary: string;
   ctaSecondary: string;
-  navTitle: string;
-  navItems: Array<{ href: string; label: string }>;
-  capabilityTitle: string;
-  capabilityItems: Array<{ href: string; label: string }>;
-  resourceTitle: string;
-  resourceItems: Array<{ href: string; label: string }>;
+  quickTitle: string;
+  quickItems: Array<{ href: string; label: string }>;
+  productTitle: string;
+  productItems: Array<{ href: string; label: string }>;
+  supportTitle: string;
+  supportItems: Array<{ href: string; label: string }>;
   contactTitle: string;
+  contactRows: Array<{ label: string; value: string }>;
   rights: string;
   bottomLinks: Array<{ href: string; label: string }>;
 };
 
 const copy: Record<SiteLang, FooterCopy> = {
   en: {
-    brandDesc: "YiWu DiYaSi Dress CO., LTD. Private-label underwear manufacturing shaped by disciplined execution, material sensitivity, and long-term delivery confidence.",
-    ctaTitle: "A quieter, stronger manufacturing partner for your next collection",
-    ctaDesc: "From first sample direction to stable bulk delivery, we help brands build collections with more clarity and less friction.",
+    eyebrow: "YiWu DiYaSi",
+    brandDesc:
+      "Private-label underwear manufacturing shaped by disciplined execution, commercial clarity, and stable delivery confidence.",
+    ctaTitle: "Build with a factory that reads clearly before the first call",
+    ctaDesc:
+      "Use the footer like a final decision point: review categories, reach the factory team, or move directly into inquiry.",
     ctaPrimary: "Start a Conversation",
     ctaSecondary: "View Categories",
-    navTitle: "Navigation",
-    navItems: [
+    quickTitle: "Quick Links",
+    quickItems: [
       { href: "/", label: "Home" },
-      { href: "/about", label: "About" },
-      { href: "/products", label: "Products" },
+      { href: "/about", label: "About Us" },
+      { href: "/factory", label: "Factory" },
       { href: "/contact", label: "Contact" }
     ],
-    capabilityTitle: "Capabilities",
-    capabilityItems: [
+    productTitle: "Products",
+    productItems: [
+      { href: "/products?category=Women's%20Panties", label: "Women's Panties" },
+      { href: "/products?category=Bras", label: "Bras" },
+      { href: "/products?category=Men%20Underwear", label: "Men Underwear" },
+      { href: "/products?category=Gym%20%26%20Sports%20Wear", label: "Activewear" }
+    ],
+    supportTitle: "Support",
+    supportItems: [
       { href: "/oem-odm", label: "OEM / ODM" },
-      { href: "/sustainability", label: "Sustainability" },
-      { href: "/factory", label: "Factory" }
-    ],
-    resourceTitle: "Resources",
-    resourceItems: [
-      { href: "/blog", label: "Journal" },
       { href: "/payments", label: "Payments" },
-      { href: "/admin", label: "Admin" }
+      { href: "/blog", label: "Journal" },
+      { href: "/sustainability", label: "Sustainability" }
     ],
-    contactTitle: "Contact",
+    contactTitle: "Contact Us",
+    contactRows: [
+      { label: "Email", value: "sales@diyasidress.com" },
+      { label: "Address", value: "Yiwu, Zhejiang, China" },
+      { label: "Lead Time", value: "Sampling 5-7 days / Bulk 20-30 days" }
+    ],
     rights: "All rights reserved.",
     bottomLinks: [
-      { href: "/sustainability", label: "Sustainability" },
-      { href: "/factory", label: "Factory" },
-      { href: "/admin", label: "Admin" }
+      { href: "/products", label: "Products" },
+      { href: "/contact", label: "Inquiry" },
+      { href: "/payments", label: "Payments" }
     ]
   },
   zh: {
-    brandDesc: "义乌迪雅斯服饰有限公司。以更稳定的执行、更成熟的面料判断和更长期的交付信心，服务高端 private-label 内衣制造。",
-    ctaTitle: "为下一季系列，选择更克制也更可靠的制造合作方",
-    ctaDesc: "从样品方向到稳定量产，我们帮助品牌以更清晰的节奏推进产品，而不是被流程拖拽。",
+    eyebrow: "义乌迪雅斯",
+    brandDesc:
+      "以更稳定的执行、更清晰的商业表达和更可靠的交付节奏，支持 private-label 内衣制造合作。",
+    ctaTitle: "让买家在页脚也能快速完成判断与联系",
+    ctaDesc:
+      "页脚不只是收尾，而是最后一个转化节点：继续看分类、直接联系工厂，或进入正式询盘。",
     ctaPrimary: "开始沟通",
     ctaSecondary: "查看分类",
-    navTitle: "网站导航",
-    navItems: [
+    quickTitle: "快捷导航",
+    quickItems: [
       { href: "/", label: "首页" },
       { href: "/about", label: "关于我们" },
-      { href: "/products", label: "产品" },
+      { href: "/factory", label: "工厂" },
       { href: "/contact", label: "联系" }
     ],
-    capabilityTitle: "能力模块",
-    capabilityItems: [
+    productTitle: "产品分类",
+    productItems: [
+      { href: "/products?category=Women's%20Panties", label: "女士内裤" },
+      { href: "/products?category=Bras", label: "文胸" },
+      { href: "/products?category=Men%20Underwear", label: "男士内裤" },
+      { href: "/products?category=Gym%20%26%20Sports%20Wear", label: "运动服" }
+    ],
+    supportTitle: "支持",
+    supportItems: [
       { href: "/oem-odm", label: "OEM / ODM" },
-      { href: "/sustainability", label: "可持续" },
-      { href: "/factory", label: "工厂" }
-    ],
-    resourceTitle: "资源",
-    resourceItems: [
-      { href: "/blog", label: "文章" },
       { href: "/payments", label: "支付" },
-      { href: "/admin", label: "后台" }
+      { href: "/blog", label: "文章" },
+      { href: "/sustainability", label: "可持续" }
     ],
-    contactTitle: "联系方式",
+    contactTitle: "联系我们",
+    contactRows: [
+      { label: "邮箱", value: "sales@diyasidress.com" },
+      { label: "地址", value: "中国浙江义乌" },
+      { label: "周期", value: "打样 5-7 天 / 大货 20-30 天" }
+    ],
     rights: "保留所有权利。",
     bottomLinks: [
-      { href: "/sustainability", label: "可持续" },
-      { href: "/factory", label: "工厂" },
-      { href: "/admin", label: "后台" }
+      { href: "/products", label: "产品" },
+      { href: "/contact", label: "询盘" },
+      { href: "/payments", label: "支付" }
     ]
   },
   es: {
-    brandDesc: "YiWu DiYaSi Dress CO., LTD. Manufactura private-label de ropa interior guiada por ejecución disciplinada, criterio textil y confianza real de entrega.",
-    ctaTitle: "Un socio de manufactura más sereno y más sólido para tu próxima colección",
-    ctaDesc: "Desde la dirección de muestra hasta la entrega masiva estable, ayudamos a las marcas a avanzar con más claridad y menos fricción.",
-    ctaPrimary: "Iniciar Conversación",
-    ctaSecondary: "Ver Categorías",
-    navTitle: "Navegación",
-    navItems: [
+    eyebrow: "YiWu DiYaSi",
+    brandDesc:
+      "Manufactura private-label de ropa interior guiada por ejecucion disciplinada, claridad comercial y confianza real de entrega.",
+    ctaTitle: "Un footer que todavia ayuda a decidir y contactar",
+    ctaDesc:
+      "El cierre de pagina tambien debe convertir: revisar categorias, contactar la fabrica o avanzar hacia una consulta concreta.",
+    ctaPrimary: "Iniciar Conversacion",
+    ctaSecondary: "Ver Categorias",
+    quickTitle: "Enlaces Rapidos",
+    quickItems: [
       { href: "/", label: "Inicio" },
       { href: "/about", label: "Nosotros" },
-      { href: "/products", label: "Productos" },
+      { href: "/factory", label: "Fabrica" },
       { href: "/contact", label: "Contacto" }
     ],
-    capabilityTitle: "Capacidades",
-    capabilityItems: [
-      { href: "/oem-odm", label: "OEM / ODM" },
-      { href: "/sustainability", label: "Sostenibilidad" },
-      { href: "/factory", label: "Fábrica" }
+    productTitle: "Productos",
+    productItems: [
+      { href: "/products?category=Women's%20Panties", label: "Panties Mujer" },
+      { href: "/products?category=Bras", label: "Bras" },
+      { href: "/products?category=Men%20Underwear", label: "Underwear Hombre" },
+      { href: "/products?category=Gym%20%26%20Sports%20Wear", label: "Activewear" }
     ],
-    resourceTitle: "Recursos",
-    resourceItems: [
-      { href: "/blog", label: "Journal" },
+    supportTitle: "Soporte",
+    supportItems: [
+      { href: "/oem-odm", label: "OEM / ODM" },
       { href: "/payments", label: "Pagos" },
-      { href: "/admin", label: "Admin" }
+      { href: "/blog", label: "Journal" },
+      { href: "/sustainability", label: "Sostenibilidad" }
     ],
     contactTitle: "Contacto",
+    contactRows: [
+      { label: "Email", value: "sales@diyasidress.com" },
+      { label: "Direccion", value: "Yiwu, Zhejiang, China" },
+      { label: "Lead Time", value: "Muestra 5-7 dias / Produccion 20-30 dias" }
+    ],
     rights: "Todos los derechos reservados.",
     bottomLinks: [
-      { href: "/sustainability", label: "Sostenibilidad" },
-      { href: "/factory", label: "Fábrica" },
-      { href: "/admin", label: "Admin" }
+      { href: "/products", label: "Productos" },
+      { href: "/contact", label: "Consulta" },
+      { href: "/payments", label: "Pagos" }
     ]
   }
 };
@@ -127,72 +160,110 @@ const copy: Record<SiteLang, FooterCopy> = {
 export default function SiteFooter({ initialLang }: SiteFooterProps) {
   const t = copy[initialLang];
   const year = new Date().getFullYear();
+
   return (
-    <footer className="mt-20 border-t border-slate-200 bg-[#0f1b2d] text-slate-200">
-      <div className="container-shell py-10">
-        <section className="rounded-3xl border border-white/15 bg-gradient-to-br from-[#152845] via-[#11213b] to-[#1a3153] p-6 md:p-8 lg:p-10">
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-3xl">
-              <p className="kicker text-[#f3d7a1]">YiWu DiYaSi</p>
-              <h2 className="heading-font mt-2 text-3xl font-semibold text-white md:text-4xl">{t.ctaTitle}</h2>
-              <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-300">{t.ctaDesc}</p>
+    <footer className="mt-20 border-t border-[#18263b] bg-[#0b1523] text-slate-200">
+      <div className="border-b border-white/10">
+        <div className="home-full-bleed-shell py-12">
+          <section className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+            <div>
+              <p className="kicker text-[#f3d7a1]">{t.eyebrow}</p>
+              <h2 className="mt-3 font-[Arial] text-[30px] font-bold leading-[1.25] text-white">
+                {t.ctaTitle}
+              </h2>
+              <p className="mt-4 max-w-3xl font-[Arial] text-[15px] leading-[1.9] text-slate-300">
+                {t.ctaDesc}
+              </p>
             </div>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/contact" className="btn btn-primary text-sm">{t.ctaPrimary}</Link>
-              <Link href="/products" className="btn bg-white text-sm text-[#102949]">{t.ctaSecondary}</Link>
+            <div className="flex flex-wrap gap-3 lg:justify-end">
+              <Link href="/contact" className="btn btn-primary">
+                {t.ctaPrimary}
+              </Link>
+              <Link href="/products" className="btn bg-white text-[#102949]">
+                {t.ctaSecondary}
+              </Link>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
+      </div>
 
-        <section className="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
-          <div>
-            <p className="heading-font text-2xl font-semibold text-white">YiWu DiYaSi</p>
-            <p className="mt-3 text-sm leading-7 text-slate-300">{t.brandDesc}</p>
-            <div className="mt-5 grid gap-2 text-xs uppercase tracking-[0.18em] text-slate-400">
-              <p>Sampling 5-7 days</p>
-              <p>Production 20-30 days</p>
-              <p>MOQ 300-500 pcs</p>
-            </div>
+      <div className="home-full-bleed-shell py-12">
+        <section className="grid gap-10 lg:grid-cols-[1.05fr_0.75fr_0.75fr_0.95fr]">
+          <div className="pr-4">
+            <p className="font-[Arial] text-[28px] font-bold leading-none text-white">YiWu DiYaSi</p>
+            <p className="mt-4 max-w-md font-[Arial] text-[15px] leading-[1.9] text-slate-300">
+              {t.brandDesc}
+            </p>
           </div>
 
           <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-[#f3d7a1]">{t.navTitle}</p>
-            <div className="mt-3 grid gap-2 text-sm">
-              {t.navItems.map((item) => (
-                <Link key={item.href} href={item.href} className="rounded-lg px-2 py-1 hover:bg-white/10 hover:text-white">{item.label}</Link>
+            <p className="font-[Arial] text-[13px] font-bold uppercase tracking-[0.18em] text-[#f3d7a1]">
+              {t.quickTitle}
+            </p>
+            <div className="mt-4 grid gap-3">
+              {t.quickItems.map((item) => (
+                <Link key={item.href} href={item.href} className="font-[Arial] text-[15px] text-slate-300 transition hover:text-white">
+                  {item.label}
+                </Link>
               ))}
             </div>
           </div>
 
           <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-[#f3d7a1]">{t.capabilityTitle}</p>
-            <div className="mt-3 grid gap-2 text-sm">
-              {t.capabilityItems.map((item) => (
-                <Link key={item.href} href={item.href} className="rounded-lg px-2 py-1 hover:bg-white/10 hover:text-white">{item.label}</Link>
+            <p className="font-[Arial] text-[13px] font-bold uppercase tracking-[0.18em] text-[#f3d7a1]">
+              {t.productTitle}
+            </p>
+            <div className="mt-4 grid gap-3">
+              {t.productItems.map((item) => (
+                <Link key={item.href} href={item.href} className="font-[Arial] text-[15px] text-slate-300 transition hover:text-white">
+                  {item.label}
+                </Link>
               ))}
             </div>
           </div>
 
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-[#f3d7a1]">{t.resourceTitle}</p>
-            <div className="mt-3 grid gap-2 text-sm">
-              {t.resourceItems.map((item) => (
-                <Link key={item.href} href={item.href} className="rounded-lg px-2 py-1 hover:bg-white/10 hover:text-white">{item.label}</Link>
-              ))}
+          <div className="grid gap-8">
+            <div>
+              <p className="font-[Arial] text-[13px] font-bold uppercase tracking-[0.18em] text-[#f3d7a1]">
+                {t.supportTitle}
+              </p>
+              <div className="mt-4 grid gap-3">
+                {t.supportItems.map((item) => (
+                  <Link key={item.href} href={item.href} className="font-[Arial] text-[15px] text-slate-300 transition hover:text-white">
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
             </div>
-            <p className="mt-4 text-sm font-semibold text-white">{t.contactTitle}</p>
-            <p className="mt-1 text-sm text-slate-300">sales@diyasidress.com</p>
-            <p className="text-sm text-slate-300">Yiwu, Zhejiang, China</p>
+            <div>
+              <p className="font-[Arial] text-[13px] font-bold uppercase tracking-[0.18em] text-[#f3d7a1]">
+                {t.contactTitle}
+              </p>
+              <div className="mt-4 grid gap-4">
+                {t.contactRows.map((row) => (
+                  <div key={row.label}>
+                    <p className="font-[Arial] text-[11px] font-bold uppercase tracking-[0.16em] text-slate-500">
+                      {row.label}
+                    </p>
+                    <p className="mt-1 font-[Arial] text-[15px] leading-[1.8] text-slate-300">
+                      {row.value}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-shell flex flex-col items-center justify-between gap-3 py-4 text-xs text-slate-400 md:flex-row">
-          <p>(c) {year} YiWu DiYaSi Dress CO., LTD. {t.rights}</p>
-          <div className="flex flex-wrap items-center gap-3">
+        <div className="home-full-bleed-shell flex flex-col gap-4 py-5 md:flex-row md:items-center md:justify-between">
+          <p className="font-[Arial] text-[12px] text-slate-400">
+            (c) {year} YiWu DiYaSi Dress CO., LTD. {t.rights}
+          </p>
+          <div className="flex flex-wrap items-center gap-4">
             {t.bottomLinks.map((item) => (
-              <Link key={item.href} href={item.href} className="hover:text-white">
+              <Link key={item.href} href={item.href} className="font-[Arial] text-[12px] uppercase tracking-[0.12em] text-slate-400 transition hover:text-white">
                 {item.label}
               </Link>
             ))}
