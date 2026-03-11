@@ -162,16 +162,16 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-20 border-t border-[#18263b] bg-[#0b1523] text-slate-200">
+    <footer className="mt-16 border-t border-[#18263b] bg-[#0b1523] text-slate-200">
       <div className="border-b border-white/10">
-        <div className="home-full-bleed-shell py-12">
-          <section className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+        <div className="home-full-bleed-shell py-9">
+          <section className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
             <div>
               <p className="kicker text-[#f3d7a1]">{t.eyebrow}</p>
-              <h2 className="mt-3 font-[Arial] text-[30px] font-bold leading-[1.25] text-white">
+              <h2 className="mt-2 font-[Arial] text-[26px] font-bold leading-[1.2] text-white">
                 {t.ctaTitle}
               </h2>
-              <p className="mt-4 max-w-3xl font-[Arial] text-[15px] leading-[1.9] text-slate-300">
+              <p className="mt-3 max-w-3xl font-[Arial] text-[14px] leading-[1.8] text-slate-300">
                 {t.ctaDesc}
               </p>
             </div>
@@ -187,11 +187,11 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
         </div>
       </div>
 
-      <div className="home-full-bleed-shell py-12">
-        <section className="grid gap-10 lg:grid-cols-[1.05fr_0.75fr_0.75fr_0.95fr]">
+      <div className="home-full-bleed-shell py-9">
+        <section className="grid gap-8 lg:grid-cols-[1.05fr_0.75fr_0.75fr_0.95fr]">
           <div className="pr-4">
-            <p className="font-[Arial] text-[28px] font-bold leading-none text-white">YiWu DiYaSi</p>
-            <p className="mt-4 max-w-md font-[Arial] text-[15px] leading-[1.9] text-slate-300">
+            <p className="font-[Arial] text-[24px] font-bold leading-none text-white">YiWu DiYaSi</p>
+            <p className="mt-3 max-w-md font-[Arial] text-[14px] leading-[1.8] text-slate-300">
               {t.brandDesc}
             </p>
           </div>
@@ -200,9 +200,9 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
             <p className="font-[Arial] text-[13px] font-bold uppercase tracking-[0.18em] text-[#f3d7a1]">
               {t.quickTitle}
             </p>
-            <div className="mt-4 grid gap-3">
+            <div className="mt-3 grid gap-2.5">
               {t.quickItems.map((item) => (
-                <Link key={item.href} href={item.href} className="font-[Arial] text-[15px] text-slate-300 transition hover:text-white">
+                <Link key={item.href} href={item.href} className="font-[Arial] text-[14px] text-slate-300 transition hover:text-white">
                   {item.label}
                 </Link>
               ))}
@@ -213,23 +213,23 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
             <p className="font-[Arial] text-[13px] font-bold uppercase tracking-[0.18em] text-[#f3d7a1]">
               {t.productTitle}
             </p>
-            <div className="mt-4 grid gap-3">
+            <div className="mt-3 grid gap-2.5">
               {t.productItems.map((item) => (
-                <Link key={item.href} href={item.href} className="font-[Arial] text-[15px] text-slate-300 transition hover:text-white">
+                <Link key={item.href} href={item.href} className="font-[Arial] text-[14px] text-slate-300 transition hover:text-white">
                   {item.label}
                 </Link>
               ))}
             </div>
           </div>
 
-          <div className="grid gap-8">
+          <div className="grid gap-6">
             <div>
               <p className="font-[Arial] text-[13px] font-bold uppercase tracking-[0.18em] text-[#f3d7a1]">
                 {t.supportTitle}
               </p>
-              <div className="mt-4 grid gap-3">
+              <div className="mt-3 grid gap-2.5">
                 {t.supportItems.map((item) => (
-                  <Link key={item.href} href={item.href} className="font-[Arial] text-[15px] text-slate-300 transition hover:text-white">
+                  <Link key={item.href} href={item.href} className="font-[Arial] text-[14px] text-slate-300 transition hover:text-white">
                     {item.label}
                   </Link>
                 ))}
@@ -239,13 +239,13 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
               <p className="font-[Arial] text-[13px] font-bold uppercase tracking-[0.18em] text-[#f3d7a1]">
                 {t.contactTitle}
               </p>
-              <div className="mt-4 grid gap-4">
+              <div className="mt-3 grid gap-3">
                 {t.contactRows.map((row) => (
                   <div key={row.label}>
                     <p className="font-[Arial] text-[11px] font-bold uppercase tracking-[0.16em] text-slate-500">
                       {row.label}
                     </p>
-                    <p className="mt-1 font-[Arial] text-[15px] leading-[1.8] text-slate-300">
+                    <p className="mt-1 font-[Arial] text-[14px] leading-[1.7] text-slate-300">
                       {row.value}
                     </p>
                   </div>
@@ -257,7 +257,7 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="home-full-bleed-shell flex flex-col gap-4 py-5 md:flex-row md:items-center md:justify-between">
+        <div className="home-full-bleed-shell flex flex-col gap-3 py-4 md:flex-row md:items-center md:justify-between">
           <p className="font-[Arial] text-[12px] text-slate-400">
             (c) {year} YiWu DiYaSi Dress CO., LTD. {t.rights}
           </p>
