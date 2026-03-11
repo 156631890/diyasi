@@ -1065,7 +1065,7 @@ a {
 .contact-layout {
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+  grid-template-columns: 1fr;
 }
 
 .contact-panel {
@@ -1076,8 +1076,8 @@ a {
 
 .contact-inquiry-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.86fr) minmax(320px, 1fr);
-  gap: 2rem;
+  grid-template-columns: minmax(0, 0.95fr) minmax(360px, 0.95fr);
+  gap: 2.2rem;
   align-items: start;
 }
 
@@ -1193,7 +1193,7 @@ a {
   border: 1px solid #d7e2f0;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(246, 249, 253, 0.98) 100%);
   box-shadow: 0 18px 45px rgba(17, 39, 66, 0.08);
-  padding: 1.35rem;
+  padding: 1.6rem;
 }
 
 .contact-form-head {
@@ -1311,13 +1311,22 @@ a {
   margin-top: 1.25rem;
 }
 
-.contact-sideband {
+.contact-payment-band {
   border-radius: 30px;
   background:
     radial-gradient(80% 140% at 100% 0%, rgba(184, 138, 59, 0.24) 0, transparent 55%),
     linear-gradient(155deg, #0f1b2d 0%, #112743 58%, #17365d 100%);
-  padding: 2rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) auto;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.8rem 2rem;
   color: #e7eef9;
+}
+
+.contact-payment-actions {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .contact-aside {
@@ -1464,6 +1473,14 @@ a {
   .contact-inquiry-grid,
   .contact-form-grid {
     grid-template-columns: 1fr;
+  }
+
+  .contact-payment-band {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-payment-actions {
+    justify-content: flex-start;
   }
 
   .payment-brief-layout,

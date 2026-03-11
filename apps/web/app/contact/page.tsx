@@ -291,13 +291,16 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <aside className="contact-sideband">
-          <p className="kicker page-reference-subtitle">{t.paymentTitle}</p>
-          <p className="page-reference-body mt-3 text-[#d9e4f4]">{t.paymentDesc}</p>
-          <div className="mt-6">
+        <section className="contact-payment-band">
+          <div>
+            <p className="kicker page-reference-subtitle text-[#f3d7a1]">{t.paymentTitle}</p>
+            <h2 className="page-reference-subtitle mt-3 text-white">{t.paymentTitle}</h2>
+            <p className="page-reference-body mt-3 max-w-2xl text-[#d9e4f4]">{t.paymentDesc}</p>
+          </div>
+          <div className="contact-payment-actions">
             <Link href="/payments" className="btn bg-white text-[#102949]">{t.paymentCta}</Link>
           </div>
-        </aside>
+        </section>
       </section>
     </main>
   );
