@@ -295,6 +295,11 @@ a {
   background: #ffffff;
 }
 
+.factory-info-band {
+  border-top: 1px solid #dfe6f0;
+  border-bottom: 1px solid #dfe6f0;
+}
+
 .home-wide-band-dark {
   background:
     radial-gradient(80% 120% at 100% 0%, rgba(184, 138, 59, 0.18) 0, transparent 52%),
@@ -1040,13 +1045,16 @@ a {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1.25rem;
-  border-top: 1px solid #d7e2f0;
-  border-bottom: 1px solid #d7e2f0;
+  align-items: stretch;
   padding: 0;
 }
 
 .factory-info-item {
-  padding: 1.5rem 1.4rem 1.35rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 178px;
+  padding: 2rem 1.6rem 1.8rem 0;
   border-right: 1px solid #dfe6f0;
 }
 
@@ -1437,6 +1445,7 @@ a {
     border-right: 0;
     border-bottom: 1px solid #dfe6f0;
     padding-right: 0;
+    min-height: 0;
   }
 
   .factory-info-item:last-child {

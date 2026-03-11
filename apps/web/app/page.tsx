@@ -613,8 +613,8 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="home-wide-band home-wide-band-white">
-        <div className="home-full-bleed-shell py-10">
+      <section className="home-wide-band home-wide-band-white factory-info-band">
+        <div className="home-full-bleed-shell py-0">
           <div className="factory-info-bar">
           {t.infoBar.map((item) => (
             <article key={item.label} className="factory-info-item">
