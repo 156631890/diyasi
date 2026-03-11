@@ -140,7 +140,7 @@ export default function CheckoutStatusView({ mode, refCode, syncState, lang }: C
         <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
           <div>
             <p className="kicker">{t.kicker}</p>
-            <h1 className="section-title mt-2 text-[#122744]">{t.title}</h1>
+            <h1 className="section-title mt-2 text-[#6a3524]">{t.title}</h1>
             <p className="mt-4 max-w-3xl text-lg leading-8 text-[#51627d]">{t.desc}</p>
           </div>
           <div className="contact-aside">

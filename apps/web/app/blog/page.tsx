@@ -63,13 +63,13 @@ export default async function BlogPage() {
         <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
           <div>
             <p className="kicker page-reference-subtitle">{t.kicker}</p>
-            <h1 className="section-title mt-2 text-[#122744]">{t.title}</h1>
-            <p className="page-reference-body mt-4 max-w-3xl text-[#51627d]">{t.desc}</p>
+            <h1 className="section-title mt-2 text-[#6a3524]">{t.title}</h1>
+            <p className="page-reference-body mt-4 max-w-3xl text-[#7d4f3e]">{t.desc}</p>
           </div>
           <div className="contact-aside">
             <p className="text-xs uppercase tracking-[0.22em] text-[#8b6a2c]">{t.kicker}</p>
-            <p className="page-reference-subtitle mt-4 text-[#44546d]">{t.leadTitle}</p>
-            <p className="page-reference-body mt-3 text-[#5d6e89]">{t.leadDesc}</p>
+            <p className="page-reference-subtitle mt-4 text-[#6a3524]">{t.leadTitle}</p>
+            <p className="page-reference-body mt-3 text-[#7d4f3e]">{t.leadDesc}</p>
           </div>
         </div>
       </section>
@@ -79,15 +79,15 @@ export default async function BlogPage() {
           <article className="catalog-feature">
             <div className="catalog-feature-copy">
               <p className="kicker">{lead.category}</p>
-              <h2 className="page-reference-subtitle mt-3 text-[#112742]">{lead.title}</h2>
-              <p className="page-reference-body mt-4 max-w-2xl text-[#4f607d]">{lead.excerpt}</p>
+              <h2 className="page-reference-subtitle mt-3 text-[#6a3524]">{lead.title}</h2>
+              <p className="page-reference-body mt-4 max-w-2xl text-[#7d4f3e]">{lead.excerpt}</p>
               <div className="mt-8">
                 <Link href={`/blog/${lead.slug}`} className="btn btn-primary">{t.readMore}</Link>
               </div>
             </div>
             <div className="wide-visual-shell">
-              <div className="grid h-full place-items-center bg-gradient-to-br from-[#dfe7f5] via-[#f6f8fc] to-[#efe5d3] px-8 text-center">
-                <p className="page-reference-subtitle max-w-lg text-[#132845]">{lead.title}</p>
+              <div className="grid h-full place-items-center bg-gradient-to-br from-[#fff7f0] via-[#fffaf6] to-[#efe0d2] px-8 text-center">
+                <p className="page-reference-subtitle max-w-lg text-[#6a3524]">{lead.title}</p>
               </div>
             </div>
           </article>
@@ -95,13 +95,13 @@ export default async function BlogPage() {
       </section>
 
       <section className="catalog-grid mt-12">
-        {articles.length === 0 ? <div className="card p-6 text-[#52627d]">{t.noArticle}</div> : null}
+        {articles.length === 0 ? <div className="card p-6 text-[#7d4f3e]">{t.noArticle}</div> : null}
         {rest.map((article) => (
           <article key={article.slug} className="catalog-card">
             <div className="catalog-card-copy">
               <p className="text-xs uppercase tracking-[0.18em] text-[#8b6a2c]">{article.category}</p>
-              <h2 className="page-reference-subtitle mt-2 text-[#122744]">{article.title}</h2>
-              <p className="page-reference-body mt-3 text-[#4f607d]">{article.excerpt}</p>
+              <h2 className="page-reference-subtitle mt-2 text-[#6a3524]">{article.title}</h2>
+              <p className="page-reference-body mt-3 text-[#7d4f3e]">{article.excerpt}</p>
               <div className="mt-5"><Link href={`/blog/${article.slug}`} className="btn btn-soft">{t.readMore}</Link></div>
             </div>
           </article>

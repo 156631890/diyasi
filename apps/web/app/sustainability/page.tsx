@@ -84,14 +84,14 @@ export default function SustainabilityPage() {
     <main className="container-shell py-10">
       <section className="hero-panel p-7 md:p-10 lg:p-12">
         <p className="kicker page-reference-subtitle">{t.kicker}</p>
-        <h1 className="section-title mt-2 text-[#122744]">{t.title}</h1>
+        <h1 className="section-title mt-2 text-[#6a3524]">{t.title}</h1>
         <p className="page-reference-body mt-4 max-w-3xl text-[#51627d]">{t.desc}</p>
       </section>
 
       <section className="mt-10">
         <div className="section-lead">
           <p className="kicker page-reference-subtitle">{t.kicker}</p>
-          <h2 className="page-reference-subtitle mt-2 text-[#122744]">{t.sectionTitle}</h2>
+          <h2 className="page-reference-subtitle mt-2 text-[#6a3524]">{t.sectionTitle}</h2>
         </div>
         <div className="mt-8 grid gap-8 md:grid-cols-3">
           {t.strategy.map((item, index) => (

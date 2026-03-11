@@ -115,7 +115,7 @@ export default function PaymentsPage() {
       <section className="mt-10 payment-brief-layout">
         <div className="payment-brief-copy">
           <p className="kicker page-reference-subtitle">{t.briefTitle}</p>
-          <h2 className="page-reference-subtitle mt-3 text-[#122744]">{t.briefTitle}</h2>
+          <h2 className="page-reference-subtitle mt-3 text-[#6a3524]">{t.briefTitle}</h2>
           <p className="page-reference-body mt-3 max-w-2xl text-[#556681]">{t.briefLead}</p>
           <div className="payment-brief-visual mt-6">
             <img src={paymentsWideImage} alt={t.imageAlt} className="payment-brief-image" />
@@ -131,10 +131,10 @@ export default function PaymentsPage() {
             </div>
             <div className="payment-brief-amount-row">
               <div>
-                <h3 className="page-reference-subtitle text-[#102949]">{item.title}</h3>
+                <h3 className="page-reference-subtitle text-[#8d452d]">{item.title}</h3>
                 <p className="page-reference-body mt-3 max-w-xl text-[#53647f]">{item.desc}</p>
               </div>
-              <p className="heading-font text-5xl font-semibold text-[#102949]">${item.amount}</p>
+              <p className="heading-font text-5xl font-semibold text-[#8d452d]">${item.amount}</p>
             </div>
             <div className="payment-brief-actions">
               <BuyNowButton title={item.title} unitAmountUsd={item.amount} label={lang === "zh" ? "继续支付" : lang === "es" ? "Continuar al pago" : "Continue to Payment"} />

@@ -60,7 +60,7 @@ export default async function BlogDetailPage({ params }: Props) {
         <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
           <div>
             <p className="kicker page-reference-subtitle">{t.kicker}</p>
-            <h1 className="section-title mt-2 text-[#122744]">{article.title}</h1>
+            <h1 className="section-title mt-2 text-[#6a3524]">{article.title}</h1>
             <p className="page-reference-body mt-4 max-w-3xl text-[#51627d]">{article.excerpt}</p>
           </div>
           <div className="contact-aside">

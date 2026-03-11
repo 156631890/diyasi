@@ -293,13 +293,13 @@ export default async function FactoryPage() {
         </div>
         <div className="factory-story-copy">
           <p className="kicker page-reference-subtitle">{t.kicker}</p>
-          <h2 className="page-reference-subtitle mt-3 text-[#122744]">{t.introTitle}</h2>
-          <p className="page-reference-body mt-4 text-[#53637c]">{t.introBody}</p>
+          <h2 className="page-reference-subtitle mt-3 text-[#6a3524]">{t.introTitle}</h2>
+          <p className="page-reference-body mt-4 text-[#7d4f3e]">{t.introBody}</p>
           <div className="factory-capability-grid mt-8">
             {t.capability.map((item) => (
               <article key={item.label} className="factory-capability-card">
                 <p className="factory-capability-label">{item.label}</p>
-                <p className="page-reference-body mt-2 text-[#253753]">{item.value}</p>
+                <p className="page-reference-body mt-2 text-[#7d4f3e]">{item.value}</p>
               </article>
             ))}
           </div>
@@ -314,7 +314,7 @@ export default async function FactoryPage() {
       <section className="mt-12">
         <div className="factory-section-head">
           <p className="kicker page-reference-subtitle">{t.gallery}</p>
-          <h2 className="page-reference-subtitle mt-2 text-[#122744]">{t.floorTitle}</h2>
+          <h2 className="page-reference-subtitle mt-2 text-[#6a3524]">{t.floorTitle}</h2>
         </div>
         <div className="factory-detail-grid mt-6">
           {images.map((img) => (
@@ -331,14 +331,14 @@ export default async function FactoryPage() {
       <section className="mt-12">
         <div className="factory-section-head">
           <p className="kicker page-reference-subtitle">{t.certificates}</p>
-          <h2 className="page-reference-subtitle mt-2 text-[#122744]">{t.complianceTitle}</h2>
+          <h2 className="page-reference-subtitle mt-2 text-[#6a3524]">{t.complianceTitle}</h2>
         </div>
         <div className="factory-cert-grid mt-6">
           {t.certificatesList.map((item) => (
             <article key={item.code} className="factory-cert-card">
               <div className="factory-cert-code">{item.code}</div>
-              <h3 className="page-reference-subtitle mt-4 text-[#122744]">{item.title}</h3>
-              <p className="page-reference-body mt-3 text-[#5b6b84]">{item.body}</p>
+              <h3 className="page-reference-subtitle mt-4 text-[#6a3524]">{item.title}</h3>
+              <p className="page-reference-body mt-3 text-[#7d4f3e]">{item.body}</p>
             </article>
           ))}
         </div>
@@ -347,14 +347,14 @@ export default async function FactoryPage() {
       <section className="mt-12">
         <div className="factory-section-head">
           <p className="kicker page-reference-subtitle">{t.customize}</p>
-          <h2 className="page-reference-subtitle mt-2 text-[#122744]">{t.flowTitle}</h2>
+          <h2 className="page-reference-subtitle mt-2 text-[#6a3524]">{t.flowTitle}</h2>
         </div>
         <div className="factory-custom-grid mt-6">
           {t.customSteps.map((item) => (
             <article key={item.icon} className="factory-custom-card">
               <div className="factory-custom-icon">{item.icon}</div>
-              <h3 className="page-reference-subtitle mt-4 text-[#122744]">{item.title}</h3>
-              <p className="page-reference-body mt-3 text-[#566880]">{item.body}</p>
+              <h3 className="page-reference-subtitle mt-4 text-[#6a3524]">{item.title}</h3>
+              <p className="page-reference-body mt-3 text-[#7d4f3e]">{item.body}</p>
             </article>
           ))}
         </div>
@@ -363,7 +363,7 @@ export default async function FactoryPage() {
       <section className="mt-12">
         <div className="factory-section-head">
           <p className="kicker page-reference-subtitle">{t.products}</p>
-          <h2 className="page-reference-subtitle mt-2 text-[#122744]">{t.linesTitle}</h2>
+          <h2 className="page-reference-subtitle mt-2 text-[#6a3524]">{t.linesTitle}</h2>
         </div>
         <div className="factory-product-rows mt-6">
           {featuredShowcase.map((item) => (
@@ -380,17 +380,17 @@ export default async function FactoryPage() {
       <section className="mt-12">
         <div className="factory-section-head">
           <p className="kicker page-reference-subtitle">{t.news}</p>
-          <h2 className="page-reference-subtitle mt-2 text-[#122744]">{t.updatesTitle}</h2>
+          <h2 className="page-reference-subtitle mt-2 text-[#6a3524]">{t.updatesTitle}</h2>
         </div>
         <div className="factory-news-grid mt-6">
           {recentArticles.length === 0 ? (
-            <div className="card p-6 text-[#53637c]">{t.noNews}</div>
+            <div className="card p-6 text-[#7d4f3e]">{t.noNews}</div>
           ) : null}
           {recentArticles.map((article) => (
             <article key={article.slug} className="factory-news-card">
               <p className="factory-news-category">{article.category}</p>
-              <h3 className="page-reference-subtitle mt-3 text-[#122744]">{article.title}</h3>
-              <p className="page-reference-body mt-3 text-[#566880]">{article.excerpt}</p>
+              <h3 className="page-reference-subtitle mt-3 text-[#6a3524]">{article.title}</h3>
+              <p className="page-reference-body mt-3 text-[#7d4f3e]">{article.excerpt}</p>
               <div className="mt-5">
                 <Link href={`/blog/${article.slug}`} className="btn btn-soft">
                   {t.readMore}
@@ -421,7 +421,7 @@ export default async function FactoryPage() {
         {t.infoBar.map((item) => (
           <article key={item.label} className="factory-info-item">
             <p className="factory-info-label">{item.label}</p>
-            <p className="page-reference-subtitle mt-2 text-[#122744]">{item.value}</p>
+            <p className="page-reference-subtitle mt-2 text-[#6a3524]">{item.value}</p>
           </article>
         ))}
       </section>

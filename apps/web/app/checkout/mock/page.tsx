@@ -20,12 +20,12 @@ export default function CheckoutMockPage({ searchParams }: Props) {
     <main className="container-shell py-16">
       <section className="card max-w-2xl p-8">
         <p className="kicker">Payment Framework</p>
-        <h1 className="heading-font mt-2 text-4xl font-semibold text-[#122744]">Mock Checkout</h1>
+        <h1 className="heading-font mt-2 text-4xl font-semibold text-[#6a3524]">Mock Checkout</h1>
         <p className="mt-3 text-[#51627d]">
           Third-party payment is not connected yet. This page is the independent-site checkout framework.
         </p>
 
-        <div className="mt-6 space-y-2 rounded-2xl border border-slate-200 p-4 text-sm text-[#42536f]">
+        <div className="mt-6 space-y-2 rounded-2xl border border-[rgba(191,144,118,0.26)] p-4 text-sm text-[#7d4f3e]">
           <p>
             <strong>Order Ref:</strong> {ref}
           </p>

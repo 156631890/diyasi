@@ -139,9 +139,9 @@ export default async function AboutPage() {
         <div className="grid items-center gap-7 lg:grid-cols-2">
           <div>
             <p className="kicker page-reference-subtitle">{t.kicker}</p>
-            <h1 className="section-title mt-3 text-[#122744]">{t.title}</h1>
-            <p className="page-reference-body mt-4 text-[#4f607d]">{t.p1}</p>
-            <p className="page-reference-body mt-4 text-[#4f607d]">{t.p2}</p>
+            <h1 className="section-title mt-3 text-[#6a3524]">{t.title}</h1>
+            <p className="page-reference-body mt-4 text-[#7d4f3e]">{t.p1}</p>
+            <p className="page-reference-body mt-4 text-[#7d4f3e]">{t.p2}</p>
             <div className="mt-6 flex gap-3">
               <Link href="/contact" className="btn btn-primary">{t.cta1}</Link>
               <Link href="/factory" className="btn btn-soft">{t.cta2}</Link>
@@ -158,7 +158,7 @@ export default async function AboutPage() {
                 </div>
               </div>
             ) : (
-              <div className="grid h-[360px] place-items-center rounded-2xl bg-gradient-to-br from-[#dce5f5] to-[#f6ead7] text-sm text-slate-600">{t.noVisual}</div>
+              <div className="grid h-[360px] place-items-center rounded-2xl bg-gradient-to-br from-[#fff7f0] to-[#f6e3d4] text-sm text-[#7d4f3e]">{t.noVisual}</div>
             )}
           </div>
         </div>
@@ -167,15 +167,15 @@ export default async function AboutPage() {
       <section className="mt-12">
         <div className="section-lead">
           <p className="kicker page-reference-subtitle">{t.kicker}</p>
-          <h2 className="page-reference-subtitle mt-2 text-[#122744]">{t.journey}</h2>
+          <h2 className="page-reference-subtitle mt-2 text-[#6a3524]">{t.journey}</h2>
         </div>
       </section>
 
       <section className="mt-8 about-principles">
         {t.values.map((item) => (
           <article key={item.title} className="editorial-column">
-            <h2 className="page-reference-subtitle text-[#122744]">{item.title}</h2>
-            <p className="page-reference-body mt-4 text-[#52627c]">{item.text}</p>
+            <h2 className="page-reference-subtitle text-[#6a3524]">{item.title}</h2>
+            <p className="page-reference-body mt-4 text-[#7d4f3e]">{item.text}</p>
           </article>
         ))}
       </section>
@@ -183,7 +183,7 @@ export default async function AboutPage() {
       <section className="mt-12 editorial-strip">
         <div>
           <p className="kicker page-reference-subtitle">{t.milestone}</p>
-          <p className="page-reference-body mt-3 max-w-3xl text-[#43536c]">
+          <p className="page-reference-body mt-3 max-w-3xl text-[#7d4f3e]">
             {lang === "zh"
               ? "从第一条无缝内衣生产线开始，迪雅斯的能力建设始终围绕交付稳定性、品类延展和国际合作经验扩展。"
               : lang === "es"

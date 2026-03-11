@@ -104,15 +104,15 @@ export default function OemOdmPage() {
   const t = copy[lang];
   return (
     <main className="container-shell py-10">
-      <section className="dark-band rounded-[34px] px-7 py-10 shadow-[0_32px_90px_rgba(16,30,52,0.18)] md:px-10 lg:px-12">
+      <section className="home-cta-band rounded-[34px] px-7 py-10 shadow-[0_32px_90px_rgba(121,72,47,0.18)] md:px-10 lg:px-12">
         <p className="kicker page-reference-subtitle text-[#f3d7a1]">{t.kicker}</p>
         <h1 className="heading-font mt-2 text-5xl font-semibold">{t.title}</h1>
-        <p className="page-reference-body mt-3 max-w-3xl text-[#cfdbef]">{t.desc}</p>
+        <p className="page-reference-body mt-3 max-w-3xl text-[#f3dfd3]">{t.desc}</p>
         <div className="mt-6 flex flex-wrap gap-3">
-          <Link href="/payments" className="btn bg-white text-[#112742]">
+          <Link href="/payments" className="btn bg-white text-[#8d452d]">
             {t.pay}
           </Link>
-          <Link href="/contact" className="btn bg-white text-[#112742]">
+          <Link href="/contact" className="btn bg-white text-[#8d452d]">
             {t.call}
           </Link>
         </div>
@@ -121,15 +121,15 @@ export default function OemOdmPage() {
       <section className="mt-10">
         <div className="section-lead">
           <p className="kicker page-reference-subtitle">{t.kicker}</p>
-          <h2 className="page-reference-subtitle mt-2 text-[#122744]">{t.sectionTitle}</h2>
+          <h2 className="page-reference-subtitle mt-2 text-[#6a3524]">{t.sectionTitle}</h2>
         </div>
         <div className="mt-8 space-y-8">
           {t.workflow.map((block, index) => (
             <article key={block.title} className="process-row">
               <div className="process-index">{String(index + 1).padStart(2, "0")}</div>
               <div className="process-copy">
-                <h2 className="page-reference-subtitle text-[#122744]">{block.title}</h2>
-                <ul className="page-reference-body mt-4 grid gap-3 text-[#4f607d] md:grid-cols-2">
+                <h2 className="page-reference-subtitle text-[#6a3524]">{block.title}</h2>
+                <ul className="page-reference-body mt-4 grid gap-3 text-[#7d4f3e] md:grid-cols-2">
                   {block.items.map((item) => (
                     <li key={item} className="process-bullet">
                       {item}

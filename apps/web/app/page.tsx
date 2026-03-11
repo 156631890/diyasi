@@ -17,13 +17,6 @@ type ProductCategory = {
   count: number;
 };
 
-type Article = {
-  title: string;
-  slug: string;
-  category: string;
-  excerpt: string;
-};
-
 type Metric = {
   value: string;
   label: string;
@@ -124,9 +117,6 @@ const copy: Record<
     customSteps: Array<{ icon: string; title: string; body: string }>;
     products: string;
     productsDesc: string;
-    news: string;
-    noNews: string;
-    readMore: string;
     contactTitle: string;
     contactBody: string;
     inquire: string;
@@ -135,6 +125,9 @@ const copy: Record<
     categoryTitle: string;
     categoryDesc: string;
     noCategory: string;
+    galleryTitle: string;
+    certificatesTitle: string;
+    customizeTitle: string;
   }
 > = {
   en: {
@@ -181,9 +174,6 @@ const copy: Record<
     ],
     products: "Main Product Lines",
     productsDesc: "Two rows that clarify the commercial core.",
-    news: "Recent News",
-    noNews: "No recent news yet.",
-    readMore: "Read More",
     contactTitle: "Move from review to inquiry",
     contactBody: "If you are a wholesaler, retailer, or DTC team with a target category, MOQ, and launch timing, we can move the first exchange directly into a useful production brief.",
     inquire: "Start a Conversation",
@@ -196,7 +186,10 @@ const copy: Record<
     ],
     categoryTitle: "Large categories. Clearer choices.",
     categoryDesc: "Browse core product lines for women, men, bras, and activewear programs.",
-    noCategory: "No categories available yet."
+    noCategory: "No categories available yet.",
+    galleryTitle: "Production floor and detail views",
+    certificatesTitle: "Trust markers buyers look for early",
+    customizeTitle: "From concept to shipment in a readable sequence"
   },
   zh: {
     heroKicker: "义乌迪雅斯服饰有限公司",
@@ -242,9 +235,6 @@ const copy: Record<
     ],
     products: "主要产品线",
     productsDesc: "用两行重点产品概览，快速说明你的主销方向。",
-    news: "最近新闻",
-    noNews: "暂时还没有最近新闻。",
-    readMore: "阅读更多",
     contactTitle: "从浏览进入询盘",
     contactBody: "如果你是批发商、零售商或 DTC 品牌，并且已经明确品类、MOQ 区间和上市时间，我们可以把第一次沟通直接推进成有效 production brief。",
     inquire: "开始沟通",
@@ -257,7 +247,10 @@ const copy: Record<
     ],
     categoryTitle: "把核心分类直接放在首页",
     categoryDesc: "直接查看女士内裤、文胸、男士内裤和运动系列等核心产品分类。",
-    noCategory: "暂时还没有可展示的分类。"
+    noCategory: "暂时还没有可展示的分类。",
+    galleryTitle: "生产现场与工艺细节展示",
+    certificatesTitle: "买家会优先关注的合作信号",
+    customizeTitle: "从概念到出货的完整推进顺序"
   },
   es: {
     heroKicker: "YiWu DiYaSi Dress CO., LTD",
@@ -303,9 +296,6 @@ const copy: Record<
     ],
     products: "Lineas Principales",
     productsDesc: "Dos filas claras para mostrar el nucleo comercial.",
-    news: "Noticias Recientes",
-    noNews: "Aun no hay noticias recientes.",
-    readMore: "Leer Mas",
     contactTitle: "Pasar de revision a consulta",
     contactBody: "Si eres mayorista, retailer o marca DTC y ya conoces tu categoria, MOQ y timing, la primera conversacion puede convertirse en un brief productivo.",
     inquire: "Iniciar Conversacion",
@@ -318,7 +308,10 @@ const copy: Record<
     ],
     categoryTitle: "Categorias grandes, decisiones mas claras",
     categoryDesc: "Explora categorias principales para mujer, hombre, bras y activewear.",
-    noCategory: "Aun no hay categorias disponibles."
+    noCategory: "Aun no hay categorias disponibles.",
+    galleryTitle: "Vistas de planta y detalles de produccion",
+    certificatesTitle: "Senales de confianza que el comprador revisa primero",
+    customizeTitle: "De concepto a envio en una secuencia clara"
   }
 };
 
@@ -344,21 +337,15 @@ async function getCategories(): Promise<ProductCategory[]> {
   return safeFetchJson<ProductCategory[]>("/products/categories", fallbackCatalogCategories);
 }
 
-async function getArticles(): Promise<Article[]> {
-  return safeFetchJson<Article[]>("/seo/articles", []);
-}
-
 export default async function HomePage() {
   const lang = getServerLang();
   const t = copy[lang];
-  const [posters, categories, factoryImages, articles] = await Promise.all([
+  const [posters, categories, factoryImages] = await Promise.all([
     getFeaturedPosters(),
     getCategories(),
-    getFactoryImages(),
-    getArticles()
+    getFactoryImages()
   ]);
   const heroPoster = posters[0] || null;
-  const recentArticles = articles.slice(0, 3);
 
   const organizationJsonLd = {
     "@context": "https://schema.org",
@@ -415,7 +402,7 @@ export default async function HomePage() {
 
       <section className="home-wide-band home-wide-band-plain mt-8">
         <div className="container-shell py-2">
-          <div className="home-overview-grid">
+          <div className="home-overview-flow">
             <article className="home-overview-card home-overview-card-large">
               <p className="kicker home-reference-subtitle">{t.factoryKicker}</p>
               <h2 className="home-reference-subtitle mt-2 text-[#5e3120]">{t.factoryTitle}</h2>
@@ -433,23 +420,8 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="home-wide-band home-wide-band-soft mt-6">
-        <div className="container-shell py-8">
-          <div className="editorial-strip border-b-0 pt-0">
-          <div>
-            <p className="kicker home-reference-subtitle">{t.factoryKicker}</p>
-            <h2 className="home-reference-subtitle mt-2 text-[#6a3524]">{t.videoTitle}</h2>
-            <p className="home-reference-body mt-4 max-w-3xl text-[#7d4f3e]">{t.videoDesc}</p>
-          </div>
-          <Link href="/contact" className="btn btn-soft">
-            {t.inquire}
-          </Link>
-          </div>
-        </div>
-      </section>
-
       <section className="home-wide-band home-wide-band-white">
-        <div className="home-full-bleed-shell py-10">
+        <div className="home-full-bleed-shell py-12">
           <div className="factory-story-shell">
           <div className="factory-video-panel">
             <div className="factory-video-cover">
@@ -475,7 +447,7 @@ export default async function HomePage() {
               {t.capability.map((item) => (
                 <article key={item.label} className="factory-capability-card">
                   <p className="factory-capability-label">{item.label}</p>
-                  <p className="factory-home-body mt-2 text-[#253753]">{item.value}</p>
+                  <p className="factory-home-body mt-2 text-[#7d4f3e]">{item.value}</p>
                 </article>
               ))}
             </div>
@@ -489,55 +461,52 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="home-wide-band home-wide-band-plain">
-        <div className="home-full-bleed-shell py-10">
-        <div className="factory-section-head">
-          <p className="kicker page-reference-subtitle">{t.gallery}</p>
-          <h2 className="factory-home-title mt-2 text-[#122744]">Production floor and detail views</h2>
-        </div>
-        <div className="factory-detail-grid mt-6">
-          {factoryImages.map((img) => (
-            <article key={img.id} className="factory-detail-card">
-              <img src={img.image_url} alt={img.title} className="factory-detail-image" />
-              <div className="factory-detail-caption">
-                <p className="factory-home-body text-white">{img.title}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-        </div>
-      </section>
-
       <section className="home-wide-band home-wide-band-soft">
-        <div className="home-full-bleed-shell py-10">
-        <div className="factory-section-head">
-          <p className="kicker page-reference-subtitle">{t.certificates}</p>
-          <h2 className="factory-home-title mt-2 text-[#122744]">Trust markers buyers look for early</h2>
-        </div>
-        <div className="factory-cert-grid mt-6">
-          {t.certificatesList.map((item) => (
-            <article key={item.code} className="factory-cert-card">
-              <div className="factory-cert-code">{item.code}</div>
-              <h3 className="factory-home-card-title mt-4 text-[#122744]">{item.title}</h3>
-              <p className="factory-home-body mt-3 text-[#5b6b84]">{item.body}</p>
-            </article>
-          ))}
-        </div>
+        <div className="home-full-bleed-shell py-12">
+          <div className="factory-section-head">
+            <p className="kicker page-reference-subtitle">{t.certificates}</p>
+            <h2 className="factory-home-title mt-2 text-[#6a3524]">{t.certificatesTitle}</h2>
+          </div>
+          <div className="home-trust-grid mt-6">
+            <div className="home-trust-visual">
+              <p className="kicker page-reference-subtitle">{t.gallery}</p>
+              <h3 className="factory-home-card-title mt-3 text-[#6a3524]">{t.galleryTitle}</h3>
+              <div className="factory-detail-grid mt-5">
+                {factoryImages.slice(0, 3).map((img) => (
+                  <article key={img.id} className="factory-detail-card">
+                    <img src={img.image_url} alt={img.title} className="factory-detail-image" />
+                    <div className="factory-detail-caption">
+                      <p className="factory-home-body text-white">{img.title}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+            <div className="factory-cert-grid home-trust-cards">
+              {t.certificatesList.map((item) => (
+                <article key={item.code} className="factory-cert-card">
+                  <div className="factory-cert-code">{item.code}</div>
+                  <h3 className="factory-home-card-title mt-4 text-[#6a3524]">{item.title}</h3>
+                  <p className="factory-home-body mt-3 text-[#7d4f3e]">{item.body}</p>
+                </article>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
       <section className="home-wide-band home-wide-band-white">
-        <div className="home-full-bleed-shell py-10">
+        <div className="home-full-bleed-shell py-12">
         <div className="factory-section-head">
           <p className="kicker page-reference-subtitle">{t.customize}</p>
-          <h2 className="factory-home-title mt-2 text-[#122744]">From concept to shipment in a readable sequence</h2>
+          <h2 className="factory-home-title mt-2 text-[#6a3524]">{t.customizeTitle}</h2>
         </div>
         <div className="factory-custom-grid mt-6">
           {t.customSteps.map((item) => (
             <article key={item.icon} className="factory-custom-card">
               <div className="factory-custom-icon">{item.icon}</div>
-              <h3 className="factory-home-card-title mt-4 text-[#122744]">{item.title}</h3>
-              <p className="factory-home-body mt-3 text-[#566880]">{item.body}</p>
+              <h3 className="factory-home-card-title mt-4 text-[#6a3524]">{item.title}</h3>
+              <p className="factory-home-body mt-3 text-[#7d4f3e]">{item.body}</p>
             </article>
           ))}
         </div>
@@ -545,78 +514,51 @@ export default async function HomePage() {
       </section>
 
       <section className="home-wide-band home-wide-band-plain">
-        <div className="home-full-bleed-shell py-10">
-        <div className="factory-section-head">
-          <p className="kicker page-reference-subtitle">{t.products}</p>
-          <h2 className="factory-home-title mt-2 text-[#122744]">{t.productsDesc}</h2>
-        </div>
-        <div className="factory-product-rows mt-6">
-          {featuredShowcase.map((item) => (
-            <Link key={item.title} href={item.link} className="factory-product-tile">
-              <img src={item.image} alt={item.title} className="factory-product-image" />
-              <div className="factory-product-caption">
-                <p className="factory-home-title text-white">{item.title}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-        </div>
-      </section>
-
-      <section className="home-wide-band home-wide-band-dark">
-        <div className="container-shell py-8">
-        <div className="home-category-panel rounded-[34px] px-7 py-10 md:px-10 lg:px-12">
-          <p className="kicker home-reference-subtitle text-[#f3d7a1]">{t.categoryTitle}</p>
-          <h2 className="home-reference-subtitle mt-2 max-w-4xl text-[#fff6ef]">{t.categoryTitle}</h2>
-          <p className="home-reference-body mt-4 max-w-3xl text-[#ffe1d1]">{t.categoryDesc}</p>
-          <div className="category-rows mt-8">
-            {categories.length === 0 ? (
-              <div className="home-reference-body text-white/70">{t.noCategory}</div>
-            ) : (
-              categories.map((item) => (
-                <Link
-                  key={item.category}
-                  href={`/products?category=${encodeURIComponent(item.category)}`}
-                  className="category-row"
-                >
-                  <span className="home-reference-body">{item.category}</span>
-                  <span className="home-reference-body">{item.count}</span>
+        <div className="home-full-bleed-shell py-12">
+          <div className="factory-section-head">
+            <p className="kicker page-reference-subtitle">{t.products}</p>
+            <h2 className="factory-home-title mt-2 text-[#6a3524]">{t.productsDesc}</h2>
+          </div>
+          <div className="home-product-flow mt-6">
+            <div className="factory-product-rows">
+              {featuredShowcase.map((item) => (
+                <Link key={item.title} href={item.link} className="factory-product-tile">
+                  <img src={item.image} alt={item.title} className="factory-product-image" />
+                  <div className="factory-product-caption">
+                    <p className="factory-home-title text-white">{item.title}</p>
+                  </div>
                 </Link>
-              ))
-            )}
+              ))}
+            </div>
+            <div className="home-product-side">
+              <div className="home-category-panel rounded-[34px] px-7 py-10 md:px-10">
+                <p className="kicker home-reference-subtitle text-[#c36b44]">{t.products}</p>
+                <h2 className="home-reference-subtitle mt-2 max-w-4xl text-[#5e3120]">{t.categoryTitle}</h2>
+                <p className="home-reference-body mt-4 max-w-3xl text-[#7d4f3e]">{t.categoryDesc}</p>
+                <div className="category-rows mt-8">
+                  {categories.length === 0 ? (
+                    <div className="home-reference-body text-[#7d4f3e]">{t.noCategory}</div>
+                  ) : (
+                    categories.map((item) => (
+                      <Link
+                        key={item.category}
+                        href={`/products?category=${encodeURIComponent(item.category)}`}
+                        className="category-row"
+                      >
+                        <span className="home-reference-body">{item.category}</span>
+                        <span className="home-reference-body">{item.count}</span>
+                      </Link>
+                    ))
+                  )}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        </div>
-      </section>
-
-      <section className="home-wide-band home-wide-band-soft">
-        <div className="home-full-bleed-shell py-10">
-        <div className="factory-section-head">
-          <p className="kicker page-reference-subtitle">{t.news}</p>
-          <h2 className="factory-home-title mt-2 text-[#122744]">Recent activity and publishing</h2>
-        </div>
-        <div className="factory-news-grid mt-6">
-          {recentArticles.length === 0 ? (
-            <div className="card p-6 text-[#53637c]">{t.noNews}</div>
-          ) : null}
-          {recentArticles.map((article) => (
-            <article key={article.slug} className="factory-news-card">
-              <p className="factory-news-category">{article.category}</p>
-              <h3 className="factory-home-title mt-3 text-[#122744]">{article.title}</h3>
-              <p className="factory-home-body mt-3 text-[#566880]">{article.excerpt}</p>
-              <div className="mt-5">
-                <Link href={`/blog/${article.slug}`} className="btn btn-soft">
-                  {t.readMore}
-                </Link>
-              </div>
-            </article>
-          ))}
-        </div>
-        </div>
       </section>
 
       <section className="home-wide-band home-wide-band-dark">
-        <div className="home-full-bleed-shell py-10">
+        <div className="home-full-bleed-shell py-12">
           <div className="factory-cta-band home-cta-band">
           <div>
             <p className="kicker page-reference-subtitle text-[#f3d7a1]">{t.contactTitle}</p>

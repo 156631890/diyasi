@@ -143,3 +143,11 @@ async def generate_product_image(
     db.commit()
 
     return ImageResponse(product_id=product.product_id, prompt=prompt, image_data_url=image_data_url)
+
+
+@router.get("/{product_id}", response_model=ProductOut)
+def get_product(product_id: str, db: Session = Depends(get_db)) -> Product:
+    product = db.query(Product).filter(Product.product_id == product_id).first()
+    if not product:
+        raise HTTPException(status_code=404, detail="Product not found.")
+    return product
