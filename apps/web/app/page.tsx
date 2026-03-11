@@ -79,7 +79,7 @@ const fallbackFactoryImages: MediaAsset[] = [
 
 const featuredShowcase = [
   {
-    title: "Women鈥檚 Seamless Underwear",
+    title: "Women's Seamless Underwear",
     image: "/media/generated/products/seamless-women-brief.png",
     link: "/products?category=Women's%20Panties"
   },
@@ -89,7 +89,7 @@ const featuredShowcase = [
     link: "/products?category=Bras"
   },
   {
-    title: "Men鈥檚 Boxer Programs",
+    title: "Men's Boxer Programs",
     image: "/media/generated/products/men-seamless-boxer.png",
     link: "/products?category=Men%20Underwear"
   },
@@ -152,7 +152,7 @@ const copy: Record<
       { value: "20-30", label: "days for bulk production window" }
     ],
     factoryKicker: "Factory Overview",
-    factoryTitle: "A homepage that already answers the first factory questions",
+    factoryTitle: "The first factory questions, answered early",
     factoryDesc:
       "Instead of splitting brand, factory, and conversion into separate weak pages, the homepage now carries the strongest proof points in one readable flow.",
     videoTitle: "Factory Introduction Video",
@@ -180,7 +180,7 @@ const copy: Record<
       { icon: "04", title: "Shipment", body: "Coordinate inspection, packing, and export timing with a single production rhythm." }
     ],
     products: "Main Product Lines",
-    productsDesc: "Two clean rows should be enough for buyers to understand the commercial center of the factory.",
+    productsDesc: "Two rows that clarify the commercial core.",
     news: "Recent News",
     noNews: "No recent news yet.",
     readMore: "Read More",
@@ -194,7 +194,7 @@ const copy: Record<
       { label: "MOQ", value: "300-500 pcs" },
       { label: "Language", value: "EN / ZH / ES" }
     ],
-    categoryTitle: "Large categories, clearer choices, faster sourcing decisions",
+    categoryTitle: "Large categories. Clearer choices.",
     categoryDesc: "Core categories should still be visible on the homepage for buyers who prefer to jump straight into product navigation.",
     noCategory: "No categories available yet."
   },
@@ -213,7 +213,7 @@ const copy: Record<
       { value: "20-30", label: "天大货交付周期" }
     ],
     factoryKicker: "工厂概览",
-    factoryTitle: "首页先回答买家最先关心的工厂问题",
+    factoryTitle: "首页先回答买家最关心的问题",
     factoryDesc:
       "不再把品牌、工厂和询盘转化拆成弱关联页面，而是在首页里按更清晰的顺序整合起来。",
     videoTitle: "工厂介绍视频",
@@ -241,7 +241,7 @@ const copy: Record<
       { icon: "04", title: "出货执行", body: "统一衔接检验、包装与出运节奏。" }
     ],
     products: "主要产品线",
-    productsDesc: "用两行重点产品概览，让买家更快理解你的商业中心。",
+    productsDesc: "用两行重点产品概览，快速说明你的主销方向。",
     news: "最近新闻",
     noNews: "暂时还没有最近新闻。",
     readMore: "阅读更多",
@@ -255,7 +255,7 @@ const copy: Record<
       { label: "MOQ", value: "300-500 件" },
       { label: "语言", value: "中 / 英 / 西" }
     ],
-    categoryTitle: "把核心分类直接放在首页，减少买家寻找路径",
+    categoryTitle: "把核心分类直接放在首页",
     categoryDesc: "对更偏采购导向的买家来说，首页就应该能直接进入产品分类。",
     noCategory: "暂时还没有可展示的分类。"
   },
@@ -274,7 +274,7 @@ const copy: Record<
       { value: "20-30", label: "dias para produccion masiva" }
     ],
     factoryKicker: "Vision General de Fabrica",
-    factoryTitle: "La homepage ya debe responder las primeras preguntas del comprador",
+    factoryTitle: "Las primeras preguntas del comprador, resueltas antes",
     factoryDesc:
       "En lugar de separar marca, fabrica y conversion en paginas debiles, el inicio ahora concentra los puntos mas utiles en una sola secuencia.",
     videoTitle: "Video de Introduccion de Fabrica",
@@ -302,7 +302,7 @@ const copy: Record<
       { icon: "04", title: "Envio", body: "Coordinar inspeccion, packing y salida con un mismo ritmo productivo." }
     ],
     products: "Lineas Principales",
-    productsDesc: "Dos filas limpias deben bastar para mostrar el centro comercial de la fabrica.",
+    productsDesc: "Dos filas claras para mostrar el nucleo comercial.",
     news: "Noticias Recientes",
     noNews: "Aun no hay noticias recientes.",
     readMore: "Leer Mas",
@@ -316,7 +316,7 @@ const copy: Record<
       { label: "MOQ", value: "300-500 pcs" },
       { label: "Idioma", value: "EN / ZH / ES" }
     ],
-    categoryTitle: "Las categorias clave tambien deben aparecer en la homepage",
+    categoryTitle: "Categorias grandes, decisiones mas claras",
     categoryDesc: "Para compradores mas directos, la homepage debe seguir permitiendo entrar al catalogo desde el primer scroll.",
     noCategory: "Aun no hay categorias disponibles."
   }
@@ -619,7 +619,7 @@ export default async function HomePage() {
           {t.infoBar.map((item) => (
             <article key={item.label} className="factory-info-item">
               <p className="factory-info-label">{item.label}</p>
-              <p className="factory-home-title mt-2 text-[#122744]">{item.value}</p>
+              <p className="factory-info-value mt-2">{item.value}</p>
             </article>
           ))}
           </div>
