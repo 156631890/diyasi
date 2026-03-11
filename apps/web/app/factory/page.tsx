@@ -44,7 +44,7 @@ const factoryWideImage = "/media/generated/wide/factory-wide-production-line.png
 
 const featuredShowcase = [
   {
-    title: "Women’s Seamless Underwear",
+    title: "Women's Seamless Underwear",
     image: "/media/generated/products/seamless-women-brief.png",
     link: "/products?category=Women's%20Panties"
   },
@@ -54,7 +54,7 @@ const featuredShowcase = [
     link: "/products?category=Bras"
   },
   {
-    title: "Men’s Boxer Programs",
+    title: "Men's Boxer Programs",
     image: "/media/generated/products/men-seamless-boxer.png",
     link: "/products?category=Men%20Underwear"
   },
@@ -98,6 +98,12 @@ const copy: Record<
     inquire: string;
     customize: string;
     products: string;
+    paidSample: string;
+    floorTitle: string;
+    complianceTitle: string;
+    flowTitle: string;
+    linesTitle: string;
+    updatesTitle: string;
     infoBar: Array<{ label: string; value: string }>;
     capability: Array<{ label: string; value: string }>;
     customSteps: Array<{ icon: string; title: string; body: string }>;
@@ -108,21 +114,27 @@ const copy: Record<
 > = {
   en: {
     kicker: "Factory",
-    title: "Factory introduction built for brand buyers, not generic traffic",
-    desc: "A clearer supplier page covering production capability, quality discipline, certificates, recent updates, and direct inquiry conversion.",
+    title: "Underwear factory capability, compliance, and production overview",
+    desc: "Review production lines, quality control, certificates, sample flow, and contact details for OEM / ODM cooperation.",
     videoTitle: "Factory Introduction Video",
     videoDesc: "A full walk-through of the production floor, inspection sequence, and packing line can be shared during inquiry.",
     videoCta: "Request the Video",
-    introTitle: "Manufacturing discipline that reads clearly before the first call",
-    introBody: "We organize the factory story around what buyers actually evaluate: equipment stability, process control, proof of compliance, recent activity, and how quickly a team can move from concept to sample.",
+    introTitle: "Production setup for sampling and bulk orders",
+    introBody: "Our factory supports seamless underwear, bras, and activewear with integrated equipment, inline inspection, and private-label packaging coordination.",
     gallery: "Factory Gallery",
     certificates: "Certificates",
     news: "Recent News",
-    contactTitle: "Move from review to inquiry",
-    contactBody: "If you already know your category, MOQ range, and launch timing, we can turn the first exchange into a productive brief instead of a generic introduction.",
+    contactTitle: "Start an Inquiry",
+    contactBody: "Send your category, MOQ range, target market, and launch timing to start sample planning or bulk production discussion.",
     inquire: "Start a Conversation",
     customize: "Customization Flow",
     products: "Main Product Lines",
+    paidSample: "Paid Sample",
+    floorTitle: "Production floor, machinery, and inspection details",
+    complianceTitle: "Compliance, materials, and quality checkpoints",
+    flowTitle: "From product brief to shipment",
+    linesTitle: "Main product lines for recurring orders",
+    updatesTitle: "Recent factory and article updates",
     infoBar: [
       { label: "Sampling", value: "5-7 days" },
       { label: "Bulk Lead Time", value: "20-30 days" },
@@ -152,21 +164,27 @@ const copy: Record<
   },
   zh: {
     kicker: "工厂",
-    title: "面向品牌买家的工厂介绍页，而不是普通展示页",
-    desc: "把生产能力、质量体系、证书背书、近期动态与询盘转化组织到同一条清晰路径中。",
+    title: "内衣工厂能力、合规资质与生产概览",
+    desc: "查看生产线、质量控制、证书资质、打样流程，以及 OEM / ODM 合作联系信息。",
     videoTitle: "工厂介绍视频",
-    videoDesc: "生产车间、质检流程与包装线的完整介绍视频，可在询盘后按需发送。",
+    videoDesc: "生产车间、检验流程和包装线介绍视频可在询盘后按需提供。",
     videoCta: "索取视频",
-    introTitle: "让买家在第一次沟通前就读懂你的制造能力",
-    introBody: "页面围绕买家真正关心的内容展开：设备稳定性、流程控制、合规证明、近期动态，以及从开发到打样的执行速度。",
+    introTitle: "支持打样与大货订单的生产体系",
+    introBody: "工厂覆盖内衣、文胸和运动系列，具备一体化设备、在线检验和品牌包装配合能力。",
     gallery: "工厂展示",
     certificates: "证书展示",
-    news: "最近新闻",
-    contactTitle: "从浏览进入询盘",
-    contactBody: "如果你已经明确品类、MOQ 区间和上市时间，我们可以把第一次沟通直接推进成有效 brief，而不是泛泛介绍。",
+    news: "最新动态",
+    contactTitle: "提交询盘",
+    contactBody: "发送品类、MOQ 区间、目标市场和上市时间，开始打样或大货生产沟通。",
     inquire: "开始沟通",
     customize: "定制流程",
     products: "主要产品线",
+    paidSample: "付费打样",
+    floorTitle: "生产车间、设备与检验细节",
+    complianceTitle: "合规资质、材料标准与质量节点",
+    flowTitle: "从产品 brief 到出货",
+    linesTitle: "适合长期复购的核心产品线",
+    updatesTitle: "最新工厂与文章动态",
     infoBar: [
       { label: "打样", value: "5-7 天" },
       { label: "大货周期", value: "20-30 天" },
@@ -174,43 +192,49 @@ const copy: Record<
       { label: "语言", value: "中 / 英 / 西" }
     ],
     capability: [
-      { label: "无缝设备", value: "从织造到后整的一体流程" },
-      { label: "质检节奏", value: "在线检查与尾检并行" },
-      { label: "包装支持", value: "支持品牌包装落地" },
-      { label: "核心范围", value: "内衣 / 文胸 / 运动服" }
+      { label: "无缝设备", value: "从织造到后整的一体化流程" },
+      { label: "质检流程", value: "在线检查与尾检并行" },
+      { label: "包装支持", value: "支持品牌包装与 pack-out 配合" },
+      { label: "核心范围", value: "内衣 / 文胸 / 运动系列" }
     ],
     customSteps: [
-      { icon: "01", title: "款式 Brief", body: "先确认品类方向、目标价位和版型参考。" },
-      { icon: "02", title: "打样推进", body: "把需求转成样衣，并同步面料和辅料判断。" },
+      { icon: "01", title: "产品 Brief", body: "确认品类方向、目标价位和版型参考。" },
+      { icon: "02", title: "打样安排", body: "根据需求推进样衣开发，并同步面料和辅料确认。" },
       { icon: "03", title: "大货计划", body: "在下单前锁定颜色、产能窗口和包装细节。" },
-      { icon: "04", title: "出货执行", body: "统一衔接检验、包装与出运节奏。" }
+      { icon: "04", title: "出货执行", body: "统一衔接检验、包装和出运安排。" }
     ],
     certificatesList: [
-      { code: "BSCI", title: "审核准备", body: "工厂沟通和文件流转可以配合买家合规审核。" },
-      { code: "OEKO", title: "材料认知", body: "围绕舒适度、手感和材料定位建立更清晰的表达。" },
-      { code: "QA", title: "质量节点", body: "把检查节点放进打样、大货和包装阶段。" },
-      { code: "OEM", title: "品牌定制", body: "支持洗标、包装和定制化生产 brief。" }
+      { code: "BSCI", title: "审核准备", body: "配合买家合规审核所需的沟通与文件支持。" },
+      { code: "OEKO", title: "材料标准", body: "围绕舒适度、手感和材料定位提供清晰方案。" },
+      { code: "QA", title: "质量节点", body: "在打样、大货和包装环节设置质量检查点。" },
+      { code: "OEM", title: "品牌定制", body: "支持洗标、包装和定制化生产 brief 执行。" }
     ],
-    noNews: "暂时还没有最近新闻。",
+    noNews: "暂时还没有最新动态。",
     readMore: "阅读更多"
   },
   es: {
     kicker: "Fabrica",
-    title: "Una presentacion de fabrica pensada para compradores, no para trafico generico",
-    desc: "La pagina organiza capacidad productiva, control de calidad, certificados, noticias recientes y conversion a consulta en una sola narrativa clara.",
+    title: "Capacidad de fabrica, compliance y produccion de ropa interior",
+    desc: "Revisa lineas de produccion, control de calidad, certificados, flujo de muestra y contacto para cooperacion OEM / ODM.",
     videoTitle: "Video de Introduccion de Fabrica",
     videoDesc: "El recorrido completo por planta, inspeccion y empaque puede compartirse durante la consulta.",
     videoCta: "Solicitar Video",
-    introTitle: "Una fabrica que puede leerse con claridad antes de la primera llamada",
-    introBody: "La estructura responde a lo que un comprador realmente evalua: estabilidad de equipo, control de proceso, respaldo documental, actividad reciente y velocidad para pasar de idea a muestra.",
+    introTitle: "Estructura productiva para muestras y pedidos bulk",
+    introBody: "La fabrica trabaja underwear, bras y activewear con equipo integrado, inspeccion en linea y coordinacion de empaque private-label.",
     gallery: "Galeria de Fabrica",
     certificates: "Certificados",
     news: "Noticias Recientes",
-    contactTitle: "Pasar de revision a consulta",
-    contactBody: "Si ya conoces tu categoria, MOQ y timing de lanzamiento, la primera conversacion puede convertirse en un brief util y no en una introduccion generica.",
+    contactTitle: "Iniciar Consulta",
+    contactBody: "Envia categoria, MOQ, mercado objetivo y timing de lanzamiento para iniciar muestra o conversacion de produccion bulk.",
     inquire: "Iniciar Conversacion",
     customize: "Flujo de Personalizacion",
     products: "Lineas Principales",
+    paidSample: "Muestra Pagada",
+    floorTitle: "Piso de produccion, maquinaria y detalles de inspeccion",
+    complianceTitle: "Compliance, materiales y puntos de calidad",
+    flowTitle: "Del brief de producto al envio",
+    linesTitle: "Lineas principales para pedidos recurrentes",
+    updatesTitle: "Actualizaciones de fabrica y articulos",
     infoBar: [
       { label: "Muestra", value: "5-7 dias" },
       { label: "Produccion", value: "20-30 dias" },
@@ -290,7 +314,7 @@ export default async function FactoryPage() {
       <section className="mt-12">
         <div className="factory-section-head">
           <p className="kicker page-reference-subtitle">{t.gallery}</p>
-          <h2 className="page-reference-subtitle mt-2 text-[#122744]">Production floor and detail views</h2>
+          <h2 className="page-reference-subtitle mt-2 text-[#122744]">{t.floorTitle}</h2>
         </div>
         <div className="factory-detail-grid mt-6">
           {images.map((img) => (
@@ -307,7 +331,7 @@ export default async function FactoryPage() {
       <section className="mt-12">
         <div className="factory-section-head">
           <p className="kicker page-reference-subtitle">{t.certificates}</p>
-          <h2 className="page-reference-subtitle mt-2 text-[#122744]">Trust markers buyers look for early</h2>
+          <h2 className="page-reference-subtitle mt-2 text-[#122744]">{t.complianceTitle}</h2>
         </div>
         <div className="factory-cert-grid mt-6">
           {t.certificatesList.map((item) => (
@@ -323,7 +347,7 @@ export default async function FactoryPage() {
       <section className="mt-12">
         <div className="factory-section-head">
           <p className="kicker page-reference-subtitle">{t.customize}</p>
-          <h2 className="page-reference-subtitle mt-2 text-[#122744]">From concept to shipment in a readable sequence</h2>
+          <h2 className="page-reference-subtitle mt-2 text-[#122744]">{t.flowTitle}</h2>
         </div>
         <div className="factory-custom-grid mt-6">
           {t.customSteps.map((item) => (
@@ -339,7 +363,7 @@ export default async function FactoryPage() {
       <section className="mt-12">
         <div className="factory-section-head">
           <p className="kicker page-reference-subtitle">{t.products}</p>
-          <h2 className="page-reference-subtitle mt-2 text-[#122744]">Two-row overview of the main selling lines</h2>
+          <h2 className="page-reference-subtitle mt-2 text-[#122744]">{t.linesTitle}</h2>
         </div>
         <div className="factory-product-rows mt-6">
           {featuredShowcase.map((item) => (
@@ -356,7 +380,7 @@ export default async function FactoryPage() {
       <section className="mt-12">
         <div className="factory-section-head">
           <p className="kicker page-reference-subtitle">{t.news}</p>
-          <h2 className="page-reference-subtitle mt-2 text-[#122744]">Recent activity and publishing</h2>
+          <h2 className="page-reference-subtitle mt-2 text-[#122744]">{t.updatesTitle}</h2>
         </div>
         <div className="factory-news-grid mt-6">
           {recentArticles.length === 0 ? (
@@ -388,7 +412,7 @@ export default async function FactoryPage() {
             {t.inquire}
           </Link>
           <Link href="/payments" className="btn factory-cta-secondary">
-            Paid Sample
+            {t.paidSample}
           </Link>
         </div>
       </section>

@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { LANG_LABELS, SiteLang } from "@/lib/i18n";
 import { useState } from "react";
+
+import { LANG_LABELS, SiteLang } from "@/lib/i18n";
 
 type LinkItem = { href: string; label: string };
 
@@ -36,21 +37,21 @@ const labels: Record<
     payments: "Payments",
     admin: "Admin",
     cta: "Start a Conversation",
-    companyTag: "Private Label Underwear Manufacturing"
+    companyTag: "Underwear Factory for Wholesalers, Retailers, and DTC Brands"
   },
   zh: {
-    home: "\u9996\u9875",
-    about: "\u5173\u4e8e\u6211\u4eec",
-    products: "\u4ea7\u54c1",
+    home: "首页",
+    about: "关于我们",
+    products: "产品",
     oem: "OEM / ODM",
-    sustainability: "\u53ef\u6301\u7eed",
-    factory: "\u5de5\u5382",
-    blog: "\u6587\u7ae0",
-    contact: "\u8054\u7cfb",
-    payments: "\u652f\u4ed8",
-    admin: "\u540e\u53f0",
-    cta: "\u5f00\u59cb\u6c9f\u901a",
-    companyTag: "\u9ad8\u7aef\u5185\u8863\u5236\u9020"
+    sustainability: "可持续",
+    factory: "工厂",
+    blog: "文章",
+    contact: "联系",
+    payments: "支付",
+    admin: "后台",
+    cta: "开始沟通",
+    companyTag: "服务批发商、零售商与 DTC 品牌的内衣工厂"
   },
   es: {
     home: "Inicio",
@@ -58,13 +59,13 @@ const labels: Record<
     products: "Productos",
     oem: "OEM / ODM",
     sustainability: "Sostenibilidad",
-    factory: "Fábrica",
+    factory: "Fabrica",
     blog: "Journal",
     contact: "Contacto",
     payments: "Pagos",
     admin: "Admin",
-    cta: "Iniciar Conversación",
-    companyTag: "Manufactura private label de ropa interior"
+    cta: "Iniciar Conversacion",
+    companyTag: "Fabrica de ropa interior para mayoristas, retailers y marcas DTC"
   }
 };
 
@@ -74,9 +75,7 @@ type TopNavProps = {
 
 function linkClass(pathname: string, href: string): string {
   const active = href === "/" ? pathname === "/" : pathname.startsWith(href);
-  return active
-      ? "nav-link nav-link-active"
-      : "nav-link";
+  return active ? "nav-link nav-link-active" : "nav-link";
 }
 
 export default function TopNav({ initialLang }: TopNavProps) {
@@ -108,10 +107,10 @@ export default function TopNav({ initialLang }: TopNavProps) {
   }
 
   return (
-    <header className="sticky top-0 z-30 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
-      <div className="hidden border-b border-slate-200/80 lg:block">
+    <header className="top-nav-shell sticky top-0 z-30 backdrop-blur-xl">
+      <div className="top-nav-meta-shell hidden lg:block">
         <div className="container-shell flex items-center justify-between py-2 text-xs">
-          <p className="font-semibold tracking-wide text-[#6a7891]">{t.companyTag}</p>
+          <p className="top-nav-meta-copy font-semibold tracking-wide">{t.companyTag}</p>
           <div className="flex items-center gap-1">
             {secondaryLinks.map((item) => (
               <Link key={item.href} href={item.href} className={linkClass(pathname, item.href)}>
@@ -119,7 +118,7 @@ export default function TopNav({ initialLang }: TopNavProps) {
               </Link>
             ))}
             <select
-              className="ml-2 rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700"
+              className="top-nav-select ml-2 rounded-full px-3 py-1 text-xs"
               value={lang}
               onChange={(e) => onLanguageChange(e.target.value as SiteLang)}
             >
@@ -135,21 +134,25 @@ export default function TopNav({ initialLang }: TopNavProps) {
 
       <div className="container-shell flex items-center justify-between py-3">
         <Link href="/" className="flex items-center gap-3">
-          <span className="grid h-10 w-10 place-items-center rounded-full bg-[#102949] text-xs font-bold text-white">
+          <span className="top-nav-brand-badge grid h-10 w-10 place-items-center rounded-full text-xs font-bold text-white">
             DYS
           </span>
-          <span className="heading-font text-xl font-semibold tracking-wide text-[#102949]">YiWu DiYaSi</span>
+          <span className="top-nav-brand-name heading-font text-xl font-semibold tracking-wide">YiWu DiYaSi</span>
         </Link>
 
-        <nav className="hidden items-center gap-1 text-sm lg:flex">
+        <nav className="hidden items-center gap-4 text-sm lg:flex xl:gap-6">
           {primaryLinks.map((item) => (
-            <Link key={item.href} href={item.href} className={linkClass(pathname, item.href)}>
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`${linkClass(pathname, item.href)} nav-link-primary`}
+            >
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <Link href="/contact" className="btn btn-primary hidden text-sm lg:inline-flex">
+        <Link href="/contact" className="btn btn-primary top-nav-cta hidden text-sm lg:inline-flex">
           {t.cta}
         </Link>
       </div>
@@ -164,7 +167,7 @@ export default function TopNav({ initialLang }: TopNavProps) {
             ))}
           </div>
           <select
-            className="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700"
+            className="top-nav-select rounded-full px-3 py-1 text-xs"
             value={lang}
             onChange={(e) => onLanguageChange(e.target.value as SiteLang)}
           >

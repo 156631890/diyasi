@@ -32,19 +32,19 @@ const copy: Record<
     back: "View Journal",
     discuss: "Start a Conversation",
     kicker: "Journal",
-    lead: "A clear point of view matters more than volume."
+    lead: "Factory article on product development, quality, and delivery."
   },
   zh: {
     back: "查看文章",
     discuss: "开始沟通",
     kicker: "文章",
-    lead: "真正有价值的内容，重点不在数量，而在判断。"
+    lead: "这是一篇关于产品开发、质量与交付的工厂文章。"
   },
   es: {
     back: "Ver Journal",
     discuss: "Iniciar Conversación",
     kicker: "Journal",
-    lead: "Un punto de vista claro importa más que el volumen."
+    lead: "Articulo de fabrica sobre desarrollo de producto, calidad y entrega."
   }
 };
 
@@ -75,10 +75,10 @@ export default async function BlogDetailPage({ params }: Props) {
           <p className="kicker page-reference-subtitle">{article.category}</p>
           <p className="page-reference-body mt-3 max-w-3xl text-[#43536c]">
             {lang === "zh"
-              ? "这篇文章围绕制造判断、交付节奏与产品呈现展开，目标是帮助品牌在更早阶段做出更稳妥的决定。"
+              ? "这篇文章围绕产品开发、生产安排、交付节奏和工厂合作展开。"
               : lang === "es"
-                ? "Este texto gira en torno a criterio de manufactura, ritmo de entrega y presentación del producto para ayudar a tomar decisiones más sólidas desde etapas tempranas."
-                : "This piece is meant to support earlier, steadier decisions around manufacturing judgement, delivery rhythm, and product presentation."}
+                ? "Este articulo trata desarrollo de producto, ritmo de entrega, produccion y cooperacion con fabrica."
+                : "This article covers product development, production timing, delivery rhythm, and factory cooperation."}
           </p>
         </div>
       </section>

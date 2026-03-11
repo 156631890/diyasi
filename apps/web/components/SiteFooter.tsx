@@ -29,10 +29,10 @@ const copy: Record<SiteLang, FooterCopy> = {
   en: {
     eyebrow: "YiWu DiYaSi",
     brandDesc:
-      "Private-label underwear manufacturing shaped by disciplined execution, commercial clarity, and stable delivery confidence.",
-    ctaTitle: "Build with a factory that reads clearly before the first call",
+      "Underwear factory supporting wholesalers, retailers, and DTC brands with private-label development and stable delivery.",
+    ctaTitle: "Wholesale, retail, and DTC underwear production with clear MOQ and delivery timing",
     ctaDesc:
-      "Use the footer like a final decision point: review categories, reach the factory team, or move directly into inquiry.",
+      "Review categories, send your project brief, or move directly into inquiry for sampling and OEM / ODM support.",
     ctaPrimary: "Start a Conversation",
     ctaSecondary: "View Categories",
     quickTitle: "Quick Links",
@@ -70,12 +70,10 @@ const copy: Record<SiteLang, FooterCopy> = {
     ]
   },
   zh: {
-    eyebrow: "义乌迪雅斯",
-    brandDesc:
-      "以更稳定的执行、更清晰的商业表达和更可靠的交付节奏，支持 private-label 内衣制造合作。",
-    ctaTitle: "让买家在页脚也能快速完成判断与联系",
-    ctaDesc:
-      "页脚不只是收尾，而是最后一个转化节点：继续看分类、直接联系工厂，或进入正式询盘。",
+    eyebrow: "义乌蒂雅思",
+    brandDesc: "服务批发商、零售商与 DTC 品牌的内衣工厂，支持贴牌开发与稳定交付。",
+    ctaTitle: "提供清晰 MOQ、打样节奏与交期安排的内衣制造合作",
+    ctaDesc: "查看产品分类，提交项目需求，或直接发起询盘，推进打样与 OEM / ODM 合作。",
     ctaPrimary: "开始沟通",
     ctaSecondary: "查看分类",
     quickTitle: "快捷导航",
@@ -90,7 +88,7 @@ const copy: Record<SiteLang, FooterCopy> = {
       { href: "/products?category=Women's%20Panties", label: "女士内裤" },
       { href: "/products?category=Bras", label: "文胸" },
       { href: "/products?category=Men%20Underwear", label: "男士内裤" },
-      { href: "/products?category=Gym%20%26%20Sports%20Wear", label: "运动服" }
+      { href: "/products?category=Gym%20%26%20Sports%20Wear", label: "运动系列" }
     ],
     supportTitle: "支持",
     supportItems: [
@@ -115,10 +113,10 @@ const copy: Record<SiteLang, FooterCopy> = {
   es: {
     eyebrow: "YiWu DiYaSi",
     brandDesc:
-      "Manufactura private-label de ropa interior guiada por ejecucion disciplinada, claridad comercial y confianza real de entrega.",
-    ctaTitle: "Un footer que todavia ayuda a decidir y contactar",
+      "Fabrica de ropa interior para mayoristas, retailers y marcas DTC con desarrollo private-label y entrega estable.",
+    ctaTitle: "Produccion de ropa interior para mayoristas, retail y marcas DTC con MOQ y entrega claros",
     ctaDesc:
-      "El cierre de pagina tambien debe convertir: revisar categorias, contactar la fabrica o avanzar hacia una consulta concreta.",
+      "Revisa categorias, envia tu brief de proyecto o avanza a una consulta directa para muestreo y OEM / ODM.",
     ctaPrimary: "Iniciar Conversacion",
     ctaSecondary: "Ver Categorias",
     quickTitle: "Enlaces Rapidos",
@@ -162,24 +160,24 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-16 border-t border-[#18263b] bg-[#0b1523] text-slate-200">
-      <div className="border-b border-white/10">
+    <footer className="site-footer-shell mt-16">
+      <div className="border-b border-[rgba(154,97,70,0.18)]">
         <div className="home-full-bleed-shell py-9">
-          <section className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+          <section className="site-footer-panel grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
             <div>
-              <p className="kicker text-[#f3d7a1]">{t.eyebrow}</p>
-              <h2 className="mt-2 font-[Arial] text-[26px] font-bold leading-[1.2] text-white">
+              <p className="kicker text-[#9e5637]">{t.eyebrow}</p>
+              <h2 className="mt-2 font-[Arial] text-[26px] font-bold leading-[1.2] text-[#5a2f1e]">
                 {t.ctaTitle}
               </h2>
-              <p className="mt-3 max-w-3xl font-[Arial] text-[14px] leading-[1.8] text-slate-300">
+              <p className="mt-3 max-w-3xl font-[Arial] text-[14px] leading-[1.8] text-[#7c6357]">
                 {t.ctaDesc}
               </p>
             </div>
             <div className="flex flex-wrap gap-3 lg:justify-end">
-              <Link href="/contact" className="btn btn-primary">
+              <Link href="/contact" className="btn btn-primary site-footer-btn-primary">
                 {t.ctaPrimary}
               </Link>
-              <Link href="/products" className="btn bg-white text-[#102949]">
+              <Link href="/products" className="btn site-footer-btn-secondary">
                 {t.ctaSecondary}
               </Link>
             </div>
@@ -190,19 +188,17 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
       <div className="home-full-bleed-shell py-9">
         <section className="grid gap-8 lg:grid-cols-[1.05fr_0.75fr_0.75fr_0.95fr]">
           <div className="pr-4">
-            <p className="font-[Arial] text-[24px] font-bold leading-none text-white">YiWu DiYaSi</p>
-            <p className="mt-3 max-w-md font-[Arial] text-[14px] leading-[1.8] text-slate-300">
+            <p className="font-[Arial] text-[24px] font-bold leading-none text-[#5a2f1e]">YiWu DiYaSi</p>
+            <p className="mt-3 max-w-md font-[Arial] text-[14px] leading-[1.8] text-[#7c6357]">
               {t.brandDesc}
             </p>
           </div>
 
           <div>
-            <p className="font-[Arial] text-[13px] font-bold uppercase tracking-[0.18em] text-[#f3d7a1]">
-              {t.quickTitle}
-            </p>
+            <p className="site-footer-heading">{t.quickTitle}</p>
             <div className="mt-3 grid gap-2.5">
               {t.quickItems.map((item) => (
-                <Link key={item.href} href={item.href} className="font-[Arial] text-[14px] text-slate-300 transition hover:text-white">
+                <Link key={item.href} href={item.href} className="site-footer-link">
                   {item.label}
                 </Link>
               ))}
@@ -210,12 +206,10 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
           </div>
 
           <div>
-            <p className="font-[Arial] text-[13px] font-bold uppercase tracking-[0.18em] text-[#f3d7a1]">
-              {t.productTitle}
-            </p>
+            <p className="site-footer-heading">{t.productTitle}</p>
             <div className="mt-3 grid gap-2.5">
               {t.productItems.map((item) => (
-                <Link key={item.href} href={item.href} className="font-[Arial] text-[14px] text-slate-300 transition hover:text-white">
+                <Link key={item.href} href={item.href} className="site-footer-link">
                   {item.label}
                 </Link>
               ))}
@@ -224,28 +218,22 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
 
           <div className="grid gap-6">
             <div>
-              <p className="font-[Arial] text-[13px] font-bold uppercase tracking-[0.18em] text-[#f3d7a1]">
-                {t.supportTitle}
-              </p>
+              <p className="site-footer-heading">{t.supportTitle}</p>
               <div className="mt-3 grid gap-2.5">
                 {t.supportItems.map((item) => (
-                  <Link key={item.href} href={item.href} className="font-[Arial] text-[14px] text-slate-300 transition hover:text-white">
+                  <Link key={item.href} href={item.href} className="site-footer-link">
                     {item.label}
                   </Link>
                 ))}
               </div>
             </div>
             <div>
-              <p className="font-[Arial] text-[13px] font-bold uppercase tracking-[0.18em] text-[#f3d7a1]">
-                {t.contactTitle}
-              </p>
+              <p className="site-footer-heading">{t.contactTitle}</p>
               <div className="mt-3 grid gap-3">
                 {t.contactRows.map((row) => (
                   <div key={row.label}>
-                    <p className="font-[Arial] text-[11px] font-bold uppercase tracking-[0.16em] text-slate-500">
-                      {row.label}
-                    </p>
-                    <p className="mt-1 font-[Arial] text-[14px] leading-[1.7] text-slate-300">
+                    <p className="site-footer-label">{row.label}</p>
+                    <p className="mt-1 font-[Arial] text-[14px] leading-[1.7] text-[#7c6357]">
                       {row.value}
                     </p>
                   </div>
@@ -256,14 +244,14 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
         </section>
       </div>
 
-      <div className="border-t border-white/10">
+      <div className="border-t border-[rgba(154,97,70,0.18)]">
         <div className="home-full-bleed-shell flex flex-col gap-3 py-4 md:flex-row md:items-center md:justify-between">
-          <p className="font-[Arial] text-[12px] text-slate-400">
+          <p className="font-[Arial] text-[12px] text-[#9d7d6f]">
             (c) {year} YiWu DiYaSi Dress CO., LTD. {t.rights}
           </p>
           <div className="flex flex-wrap items-center gap-4">
             {t.bottomLinks.map((item) => (
-              <Link key={item.href} href={item.href} className="font-[Arial] text-[12px] uppercase tracking-[0.12em] text-slate-400 transition hover:text-white">
+              <Link key={item.href} href={item.href} className="site-footer-bottom-link">
                 {item.label}
               </Link>
             ))}

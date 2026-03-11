@@ -82,9 +82,9 @@ const copy: Record<
   }
 > = {
   en: {
-    kicker: "Women / Product Catalogue",
-    title: "A tighter catalogue view built for quick style selection",
-    desc: "Browse categories, compare silhouettes, and move directly from shortlist to sample request.",
+    kicker: "Product Catalogue",
+    title: "Underwear, bras, and activewear catalogue",
+    desc: "Browse categories, compare styles, and move directly into inquiry or paid sampling.",
     all: "All",
     noPoster: "No products in this category yet.",
     noImage: "Image coming soon",
@@ -95,11 +95,11 @@ const copy: Record<
   },
   zh: {
     kicker: "产品目录",
-    title: "更适合快速选款的目录式产品页",
-    desc: "按分类浏览、对比版型，并直接从筛选进入打样或询盘。",
+    title: "内衣、文胸与运动系列产品目录",
+    desc: "按分类浏览产品，对比款式，并直接进入询盘或付费打样。",
     all: "全部",
-    noPoster: "该分类暂时没有产品。",
-    noImage: "图片待更新",
+    noPoster: "当前分类下暂无产品。",
+    noImage: "图片即将更新",
     quote: "开始沟通",
     paidSample: "付费打样",
     items: "款",
@@ -107,8 +107,8 @@ const copy: Record<
   },
   es: {
     kicker: "Catalogo de Producto",
-    title: "Una vista de catalogo mas limpia para seleccionar estilos con rapidez",
-    desc: "Explora por categoria, compara siluetas y pasa de la preseleccion a la muestra pagada con mas claridad.",
+    title: "Catalogo de underwear, bras y activewear",
+    desc: "Explora categorias, compara estilos y pasa directo a consulta o muestra pagada.",
     all: "Todo",
     noPoster: "Aun no hay productos en esta categoria.",
     noImage: "Imagen pendiente",

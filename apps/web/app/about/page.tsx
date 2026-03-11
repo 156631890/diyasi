@@ -63,9 +63,9 @@ const copy: Record<
 > = {
   en: {
     kicker: "About YiWu DiYaSi",
-    title: "A manufacturing partner built for long-term brand growth",
-    p1: "Founded on the belief that sustainability and high-quality manufacturing go hand in hand, YiWu DiYaSi Dress CO., LTD has spent over 23 years helping brands bring their dream underwear lines to life.",
-    p2: "From product development to final delivery, we combine premium materials, reliable production systems, and practical OEM/ODM experience to support your growth at every stage.",
+    title: "An underwear factory built for wholesalers, retailers, and DTC brands",
+    p1: "YiWu DiYaSi Dress CO., LTD is a manufacturing factory with more than 23 years of experience serving wholesale programs, retail collections, and private-label DTC underwear lines.",
+    p2: "From product development to final delivery, we combine premium materials, stable production systems, and practical OEM/ODM execution to support buyers who need repeatable commercial results.",
     cta1: "Start a Conversation",
     cta2: "View Factory",
     milestone: "Milestones",
@@ -85,9 +85,9 @@ const copy: Record<
   },
   zh: {
     kicker: "关于迪雅斯",
-    title: "为品牌长期增长而建立的制造合作关系",
-    p1: "义乌迪雅斯服饰有限公司始终坚持可持续与高品质制造并行。23 年以上，我们持续帮助品牌把理想中的内衣产品线从概念推进到市场落地。",
-    p2: "从产品开发到最终交付，我们以优质面料、稳定制造体系和成熟的 OEM/ODM 经验，为品牌每一个阶段的增长提供支持。",
+    title: "一家服务批发商、零售商与 DTC 品牌的内衣工厂",
+    p1: "义乌迪雅斯服饰有限公司是一家内衣制造工厂，23 年以上持续服务批发项目、零售系列与 private-label DTC 品牌。",
+    p2: "从产品开发到最终交付，我们以优质面料、稳定制造体系和成熟的 OEM/ODM 执行能力，支持需要长期复购与稳定交付的客户。",
     cta1: "开始沟通",
     cta2: "查看工厂",
     milestone: "发展里程碑",
@@ -107,9 +107,9 @@ const copy: Record<
   },
   es: {
     kicker: "Sobre YiWu DiYaSi",
-    title: "Un socio de manufactura orientado al crecimiento de marca",
-    p1: "Con la convicción de que sostenibilidad y calidad deben avanzar juntas, YiWu DiYaSi Dress CO., LTD lleva más de 23 años ayudando a marcas a lanzar y consolidar sus líneas de ropa interior.",
-    p2: "Desde el desarrollo de producto hasta la entrega final, combinamos materiales premium, producción estable y experiencia OEM/ODM para apoyar el crecimiento de cada marca con más criterio.",
+    title: "Una fabrica de ropa interior para mayoristas, retailers y marcas DTC",
+    p1: "YiWu DiYaSi Dress CO., LTD es una fabrica con mas de 23 anos de experiencia atendiendo programas mayoristas, colecciones retail y marcas DTC de ropa interior.",
+    p2: "Desde el desarrollo hasta la entrega final, combinamos materiales premium, produccion estable y ejecucion OEM/ODM para clientes que necesitan resultados comerciales repetibles.",
     cta1: "Iniciar Conversación",
     cta2: "Ver Fábrica",
     milestone: "Hitos",

@@ -14,10 +14,10 @@ const copy: Record<
 > = {
   en: {
     kicker: "Sustainability",
-    title: "Sustainability is a production standard, not a marketing slogan",
-    desc: "We apply sustainability through material decisions, process control, and long-term product quality performance.",
+    title: "Sustainable materials, lower waste, and longer product life",
+    desc: "Our sustainability work focuses on material selection, process control, and product durability in daily production.",
     sectionTitle: "How it shows up in production",
-    closing: "Sustainability is strongest when it is visible in sourcing discipline, process stability, and product life span, not just in a footer badge.",
+    closing: "We apply sustainability through certified fabrics, waste reduction, and longer-wear products across sampling and bulk production.",
     strategy: [
       {
         title: "Responsible Material Selection",
@@ -35,10 +35,10 @@ const copy: Record<
   },
   zh: {
     kicker: "可持续",
-    title: "可持续不是营销口号，而是生产标准",
-    desc: "我们把可持续落实在面料选择、工艺控制与长期质量表现上。",
+    title: "可持续面料、减少浪费与更长产品寿命",
+    desc: "我们的可持续工作落实在面料选择、生产控制和产品耐用性上。",
     sectionTitle: "它如何体现在生产里",
-    closing: "真正有分量的可持续，应该体现在采购纪律、流程稳定性和产品寿命里，而不是只停留在页面标签。",
+    closing: "我们通过认证面料、减少浪费和更耐穿的产品，把可持续落实到打样和量产流程里。",
     strategy: [
       {
         title: "负责任的面料选择",
@@ -56,10 +56,10 @@ const copy: Record<
   },
   es: {
     kicker: "Sostenibilidad",
-    title: "La sostenibilidad es un estándar de producción, no un eslogan",
-    desc: "La aplicamos en decisiones de material, control de procesos y rendimiento de calidad a largo plazo.",
+    title: "Materiales sostenibles, menos desperdicio y mayor vida util",
+    desc: "La sostenibilidad se aplica en seleccion de materiales, control de proceso y durabilidad del producto.",
     sectionTitle: "Cómo aparece en producción",
-    closing: "La sostenibilidad gana peso cuando se ve en disciplina de compra, estabilidad de proceso y vida útil del producto, no solo en una insignia visual.",
+    closing: "La aplicamos con tejidos certificados, menos desperdicio y productos de mayor duracion en muestra y produccion bulk.",
     strategy: [
       {
         title: "Seleccion Responsable de Materiales",

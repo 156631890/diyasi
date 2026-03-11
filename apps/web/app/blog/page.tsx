@@ -23,30 +23,30 @@ const copy: Record<
 > = {
   en: {
     kicker: "Journal",
-    title: "Thoughtful factory-side writing for brands building with intention",
-    desc: "Notes on sourcing, MOQ discipline, quality control, and launch decisions, written to be useful rather than noisy.",
+    title: "Factory articles on sourcing, MOQ, quality control, and launch planning",
+    desc: "Read practical articles on product development, sampling, compliance, and delivery planning for underwear programs.",
     noArticle: "No articles yet. Create or generate articles in Admin SEO.",
     readMore: "Read",
-    leadTitle: "Writing that should feel closer to guidance than content marketing",
-    leadDesc: "The goal is not volume. The goal is a clearer point of view for buyers comparing factories, timelines, and quality expectations."
+    leadTitle: "Articles for buyers comparing factories, timelines, and product quality",
+    leadDesc: "These posts focus on sourcing decisions, MOQ structure, production timing, and common issues in OEM / ODM underwear projects."
   },
   zh: {
     kicker: "文章",
-    title: "写给真正准备启动产品线品牌方的工厂侧内容",
-    desc: "围绕 sourcing、MOQ 节奏、质量控制与出海决策，提供更有判断力而不是更嘈杂的内容。",
+    title: "围绕 sourcing、MOQ、质量控制与上市节奏的工厂文章",
+    desc: "这里集中展示与产品开发、打样推进、合规准备和交付计划相关的实用内容。",
     noArticle: "暂时还没有文章，可以在后台 SEO 模块创建或生成。",
     readMore: "阅读",
-    leadTitle: "这些内容应该更像判断参考，而不是内容营销",
-    leadDesc: "重点不是数量，而是帮助买家在比较工厂、时间和质量预期时，获得更清晰的视角。"
+    leadTitle: "写给正在比较工厂、交期和质量预期的采购团队",
+    leadDesc: "文章重点覆盖 sourcing 选择、MOQ 结构、生产节奏，以及 OEM / ODM 项目中的常见问题。"
   },
   es: {
     kicker: "Journal",
-    title: "Escritura desde fábrica para marcas que construyen con criterio",
-    desc: "Notas sobre sourcing, disciplina de MOQ, control de calidad y decisiones de lanzamiento, escritas para ser útiles y no ruidosas.",
+    title: "Articulos de fabrica sobre sourcing, MOQ, control de calidad y lanzamientos",
+    desc: "Consulta contenido practico sobre desarrollo de producto, muestreo, compliance y planificacion de entrega.",
     noArticle: "Aún no hay artículos. Crea contenido desde Admin SEO.",
     readMore: "Leer",
-    leadTitle: "El tono debe sentirse más cercano a una guía que a marketing de contenido",
-    leadDesc: "La meta no es el volumen. La meta es ofrecer un punto de vista más claro para compradores que comparan fábrica, timing y expectativas de calidad."
+    leadTitle: "Contenido para compradores que comparan fabrica, timing y calidad",
+    leadDesc: "Los articulos se enfocan en decisiones de sourcing, estructura de MOQ, tiempos de produccion y problemas comunes en proyectos OEM / ODM."
   }
 };
 

@@ -33,11 +33,11 @@ const copy: Record<
 > = {
   en: {
     kicker: "Payments",
-    title: "A dedicated payment step for samples and early-stage project confirmation",
-    desc: "Payment should happen only after direction, scope, and timing are already aligned. This page keeps that step clear and separate from consultation.",
-    intro: "This page should read like a project brief checkpoint, not like a generic checkout table.",
-    leadTitle: "Use this page when the project is already understood.",
-    leadDesc: "The payment should confirm a stage, not replace a conversation.",
+    title: "Pay sample fees and OEM launch deposits in one dedicated page",
+    desc: "Use this page for paid sample confirmation and OEM launch deposits once your product scope, quantity, and delivery stage are defined.",
+    intro: "Choose the payment that matches your current project stage and continue with sample setup or launch planning.",
+    leadTitle: "Sample fee and launch deposit options",
+    leadDesc: "Each payment item maps to a defined stage in sampling or project kickoff.",
     items: [
       { tag: "Sample", title: "Sample Development Fee", amount: 199, desc: "For paid sample confirmation before pattern and material setup." },
       { tag: "Launch", title: "OEM Launch Deposit", amount: 500, desc: "For project kickoff after scope, pricing, and sampling direction are aligned." }
@@ -46,36 +46,36 @@ const copy: Record<
     noteBody: "Confirm product direction, quantity range, and delivery timing with the team first so the payment matches the project stage.",
     contactCta: "Start a Conversation",
     briefTitle: "Payment Brief",
-    briefLead: "Each payment card should feel like a controlled stage confirmation, with enough context to make the action feel deliberate.",
+    briefLead: "Select the stage that matches your project and complete payment for sample development or launch deposit processing.",
     imageAlt: "Wide production line and factory floor",
     amountLabel: "Amount"
   },
   zh: {
     kicker: "支付",
-    title: "把打样费和项目启动确认放在一个独立且清晰的支付步骤里",
-    desc: "支付应当发生在方向、范围和时间已经明确之后，而不是拿来代替沟通。本页只承担确认阶段的作用。",
-    intro: "这里更应该像项目阶段确认页，而不是普通结算列表。",
-    leadTitle: "当项目阶段已经明确时，再进入这个页面。",
-    leadDesc: "支付应该用来确认阶段，而不是代替沟通本身。",
+    title: "在一个独立页面完成打样费与 OEM 启动定金支付",
+    desc: "当产品范围、数量区间和交付阶段已经明确后，可以在这里完成付费打样或项目启动定金支付。",
+    intro: "选择当前项目对应的付款阶段，继续推进打样准备或 OEM 项目启动。",
+    leadTitle: "打样费与启动定金",
+    leadDesc: "每个支付项目都对应明确的打样阶段或项目启动阶段。",
     items: [
       { tag: "打样", title: "打样开发费", amount: 199, desc: "用于确认付费打样，并开始版型与面料准备。" },
       { tag: "启动", title: "OEM 启动定金", amount: 500, desc: "用于确认报价、范围和打样方向后的项目启动。" }
     ],
     noteTitle: "付款前",
-    noteBody: "建议先与团队确认品类方向、数量区间和交付时间，再进行对应阶段的付款。",
+    noteBody: "付款前请确认品类、数量区间、打样安排和交付时间，确保支付对应当前项目阶段。",
     contactCta: "开始沟通",
     briefTitle: "支付 Brief",
-    briefLead: "每个支付卡片都应该像一个被清楚定义的阶段确认，而不是直接催促付款的按钮区。",
+    briefLead: "根据当前项目阶段选择对应金额，完成打样开发费或 OEM 启动定金支付。",
     imageAlt: "生产线与工厂空间横向画面",
     amountLabel: "金额"
   },
   es: {
     kicker: "Pagos",
-    title: "Un paso de pago dedicado para muestras y confirmación temprana del proyecto",
-    desc: "El pago debe ocurrir solo cuando dirección, alcance y timing ya están claros. Esta página mantiene ese paso separado de la consulta.",
-    intro: "Esta página debe sentirse más como un punto de control del proyecto que como una tabla de checkout genérica.",
-    leadTitle: "Usa esta página cuando la etapa del proyecto ya esté definida.",
-    leadDesc: "El pago debe confirmar una etapa, no sustituir la conversación.",
+    title: "Paga muestras y depositos OEM en una pagina dedicada",
+    desc: "Usa esta pagina para confirmar muestra pagada y depositos de lanzamiento OEM cuando alcance, volumen y etapa ya estan definidos.",
+    intro: "Elige el pago que coincide con tu etapa actual y continua con muestra o lanzamiento del proyecto.",
+    leadTitle: "Opciones de muestra y deposito",
+    leadDesc: "Cada pago corresponde a una etapa definida de muestreo o arranque del proyecto.",
     items: [
       { tag: "Muestra", title: "Tarifa de Desarrollo de Muestra", amount: 199, desc: "Para confirmar muestra pagada antes de patrón y preparación de materiales." },
       { tag: "Inicio", title: "Depósito de Lanzamiento OEM", amount: 500, desc: "Para iniciar el proyecto cuando alcance, precio y dirección de muestra ya están claros." }
@@ -84,7 +84,7 @@ const copy: Record<
     noteBody: "Confirma primero categoría, rango de volumen y timing de entrega con el equipo para que el pago coincida con la etapa correcta.",
     contactCta: "Iniciar Conversación",
     briefTitle: "Brief de Pago",
-    briefLead: "Cada tarjeta de pago debe sentirse como una confirmación controlada de etapa, no como un empujón genérico hacia checkout.",
+    briefLead: "Selecciona la etapa correcta y completa el pago para desarrollo de muestra o deposito de lanzamiento OEM.",
     imageAlt: "Vista amplia de línea de producción y fábrica",
     amountLabel: "Importe"
   }

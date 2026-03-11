@@ -139,9 +139,9 @@ const copy: Record<
 > = {
   en: {
     heroKicker: "YiWu DiYaSi Dress CO., LTD",
-    heroTitle: "Factory strength, category clarity, and brand-ready execution in one homepage",
+    heroTitle: "Private-label underwear manufacturing for wholesalers, retailers, and DTC brands",
     heroDesc:
-      "The homepage should already tell buyers how you produce, what you sell, how you customize, and how quickly they can move into a useful inquiry.",
+      "We produce underwear, bras, and activewear for wholesale programs, retail collections, and DTC brands with clear sampling, MOQ, and delivery planning.",
     ctaProducts: "View Categories",
     ctaContact: "Start a Conversation",
     noPoster: "No featured visuals yet. Generate and set featured assets in Admin.",
@@ -154,7 +154,7 @@ const copy: Record<
     factoryKicker: "Factory Overview",
     factoryTitle: "The first factory questions, answered early",
     factoryDesc:
-      "Instead of splitting brand, factory, and conversion into separate weak pages, the homepage now carries the strongest proof points in one readable flow.",
+      "YiWu DiYaSi combines seamless production, inline quality control, and private-label packaging support for repeat wholesale, retail, and DTC orders.",
     videoTitle: "Factory Introduction Video",
     videoDesc: "Production line overview, inspection rhythm, and pack-out sequence can be shared once the inquiry becomes concrete.",
     videoCta: "Request the Video",
@@ -185,7 +185,7 @@ const copy: Record<
     noNews: "No recent news yet.",
     readMore: "Read More",
     contactTitle: "Move from review to inquiry",
-    contactBody: "If you already know your category, MOQ range, and launch timing, we can turn the first exchange into a productive brief instead of a generic introduction.",
+    contactBody: "If you are a wholesaler, retailer, or DTC team with a target category, MOQ, and launch timing, we can move the first exchange directly into a useful production brief.",
     inquire: "Start a Conversation",
     paidSample: "Paid Sample",
     infoBar: [
@@ -195,14 +195,14 @@ const copy: Record<
       { label: "Language", value: "EN / ZH / ES" }
     ],
     categoryTitle: "Large categories. Clearer choices.",
-    categoryDesc: "Core categories should still be visible on the homepage for buyers who prefer to jump straight into product navigation.",
+    categoryDesc: "Browse core product lines for women, men, bras, and activewear programs.",
     noCategory: "No categories available yet."
   },
   zh: {
     heroKicker: "义乌迪雅斯服饰有限公司",
-    heroTitle: "把工厂实力、产品结构和转化路径直接放进首页",
+    heroTitle: "服务批发、零售与 DTC 品牌的 private-label 内衣制造",
     heroDesc:
-      "首页就应该让买家看懂你怎么生产、卖什么、如何定制，以及如何快速进入有效询盘。",
+      "我们生产内衣、文胸和运动系列，支持批发项目、零售系列与 DTC 品牌的打样、定制和稳定交付。",
     ctaProducts: "查看分类",
     ctaContact: "开始沟通",
     noPoster: "暂时还没有精选视觉素材，请在后台生成并设为精选。",
@@ -213,9 +213,9 @@ const copy: Record<
       { value: "20-30", label: "天大货交付周期" }
     ],
     factoryKicker: "工厂概览",
-    factoryTitle: "首页先回答买家最关心的问题",
+    factoryTitle: "工厂能力、产品范围与合作流程一页看清",
     factoryDesc:
-      "不再把品牌、工厂和询盘转化拆成弱关联页面，而是在首页里按更清晰的顺序整合起来。",
+      "迪雅斯提供无缝生产、在线质检、品牌包装配合与 OEM / ODM 执行，适合需要稳定复购和清晰交期的客户。",
     videoTitle: "工厂介绍视频",
     videoDesc: "生产线、质检节奏和包装流程的完整视频，可在询盘后按需发送。",
     videoCta: "索取视频",
@@ -246,7 +246,7 @@ const copy: Record<
     noNews: "暂时还没有最近新闻。",
     readMore: "阅读更多",
     contactTitle: "从浏览进入询盘",
-    contactBody: "如果你已经明确品类、MOQ 区间和上市时间，我们可以把第一次沟通直接推进成有效 brief，而不是泛泛介绍。",
+    contactBody: "如果你是批发商、零售商或 DTC 品牌，并且已经明确品类、MOQ 区间和上市时间，我们可以把第一次沟通直接推进成有效 production brief。",
     inquire: "开始沟通",
     paidSample: "付费打样",
     infoBar: [
@@ -256,14 +256,14 @@ const copy: Record<
       { label: "语言", value: "中 / 英 / 西" }
     ],
     categoryTitle: "把核心分类直接放在首页",
-    categoryDesc: "对更偏采购导向的买家来说，首页就应该能直接进入产品分类。",
+    categoryDesc: "直接查看女士内裤、文胸、男士内裤和运动系列等核心产品分类。",
     noCategory: "暂时还没有可展示的分类。"
   },
   es: {
     heroKicker: "YiWu DiYaSi Dress CO., LTD",
-    heroTitle: "Un inicio que ya muestra fabrica, categorias y conversion",
+    heroTitle: "Manufactura private-label de ropa interior para mayoristas, retailers y marcas DTC",
     heroDesc:
-      "La homepage debe explicar desde el principio como produces, que vendes, como personalizas y como puede avanzar el comprador hacia una consulta util.",
+      "Producimos underwear, bras y activewear para programas mayoristas, colecciones retail y marcas DTC con muestreo, MOQ y entrega definidos.",
     ctaProducts: "Ver Categorias",
     ctaContact: "Iniciar Conversacion",
     noPoster: "Aun no hay visuales destacados. Configuralos desde Admin.",
@@ -276,7 +276,7 @@ const copy: Record<
     factoryKicker: "Vision General de Fabrica",
     factoryTitle: "Las primeras preguntas del comprador, resueltas antes",
     factoryDesc:
-      "En lugar de separar marca, fabrica y conversion en paginas debiles, el inicio ahora concentra los puntos mas utiles en una sola secuencia.",
+      "YiWu DiYaSi combina produccion seamless, control de calidad en linea y soporte de empaque private-label para pedidos repetibles.",
     videoTitle: "Video de Introduccion de Fabrica",
     videoDesc: "El recorrido por planta, inspeccion y empaque puede compartirse cuando la consulta ya es concreta.",
     videoCta: "Solicitar Video",
@@ -307,7 +307,7 @@ const copy: Record<
     noNews: "Aun no hay noticias recientes.",
     readMore: "Leer Mas",
     contactTitle: "Pasar de revision a consulta",
-    contactBody: "Si ya conoces tu categoria, MOQ y timing de lanzamiento, la primera conversacion puede convertirse en un brief util y no en una introduccion generica.",
+    contactBody: "Si eres mayorista, retailer o marca DTC y ya conoces tu categoria, MOQ y timing, la primera conversacion puede convertirse en un brief productivo.",
     inquire: "Iniciar Conversacion",
     paidSample: "Muestra Pagada",
     infoBar: [
@@ -317,7 +317,7 @@ const copy: Record<
       { label: "Idioma", value: "EN / ZH / ES" }
     ],
     categoryTitle: "Categorias grandes, decisiones mas claras",
-    categoryDesc: "Para compradores mas directos, la homepage debe seguir permitiendo entrar al catalogo desde el primer scroll.",
+    categoryDesc: "Explora categorias principales para mujer, hombre, bras y activewear.",
     noCategory: "Aun no hay categorias disponibles."
   }
 };
@@ -374,8 +374,8 @@ export default async function HomePage() {
     <main className="pb-20">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
 
-      <section className="pt-8 lg:pt-10">
-        <div className="home-reference-banner">
+      <section className="pt-6 lg:pt-8">
+        <div className="home-reference-banner home-hero-shell">
           {heroPoster ? (
             <img src={heroPoster.image_url} alt={heroPoster.title} className="home-reference-banner-image" />
           ) : (
@@ -383,30 +383,52 @@ export default async function HomePage() {
           )}
           <div className="home-reference-banner-overlay" />
           <div className="container-shell home-reference-banner-content">
-            <p className="kicker home-reference-subtitle text-white">{t.heroKicker}</p>
-            <h1 className="home-reference-title mt-4 max-w-4xl text-white">{t.heroTitle}</h1>
-            <p className="home-reference-body mt-5 max-w-3xl text-white/90">{t.heroDesc}</p>
-            <div className="home-reference-actions mt-7">
-              <Link href="/products" className="btn bg-white text-[#102949]">
-                {t.ctaProducts}
-              </Link>
-              <Link href="/contact" className="btn home-reference-btn-secondary">
-                {t.ctaContact}
-              </Link>
+            <div className="home-hero-grid">
+              <div className="home-hero-copy">
+                <p className="kicker home-reference-subtitle text-white">{t.heroKicker}</p>
+                <h1 className="home-reference-title mt-4 max-w-4xl text-white">{t.heroTitle}</h1>
+                <p className="home-reference-body mt-5 max-w-3xl text-white/90">{t.heroDesc}</p>
+                <div className="home-reference-actions mt-7">
+                  <Link href="/products" className="btn home-hero-btn-primary">
+                    {t.ctaProducts}
+                  </Link>
+                  <Link href="/contact" className="btn home-reference-btn-secondary">
+                    {t.ctaContact}
+                  </Link>
+                </div>
+              </div>
+              <div className="home-hero-panel">
+                <p className="home-hero-panel-kicker">Factory Snapshot</p>
+                <div className="home-hero-metric-list">
+                  {t.metrics.map((metric) => (
+                    <article key={metric.label} className="home-hero-metric">
+                      <p className="home-hero-metric-value">{metric.value}</p>
+                      <p className="home-hero-metric-label">{metric.label}</p>
+                    </article>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="home-wide-band home-wide-band-plain mt-10">
-        <div className="container-shell py-8">
-          <div className="stat-band">
-          {t.metrics.map((metric) => (
-            <article key={metric.label} className="stat-band-item">
-              <p className="metric-num">{metric.value}</p>
-              <p className="metric-label mt-2 max-w-[14rem]">{metric.label}</p>
+      <section className="home-wide-band home-wide-band-plain mt-8">
+        <div className="container-shell py-2">
+          <div className="home-overview-grid">
+            <article className="home-overview-card home-overview-card-large">
+              <p className="kicker home-reference-subtitle">{t.factoryKicker}</p>
+              <h2 className="home-reference-subtitle mt-2 text-[#5e3120]">{t.factoryTitle}</h2>
+              <p className="home-reference-body mt-4 max-w-3xl text-[#7d4f3e]">{t.factoryDesc}</p>
             </article>
-          ))}
+            <article className="home-overview-card">
+              <p className="home-overview-label">{t.categoryTitle}</p>
+              <p className="home-reference-body mt-3 text-[#7d4f3e]">{t.categoryDesc}</p>
+            </article>
+            <article className="home-overview-card">
+              <p className="home-overview-label">{t.contactTitle}</p>
+              <p className="home-reference-body mt-3 text-[#7d4f3e]">{t.contactBody}</p>
+            </article>
           </div>
         </div>
       </section>
@@ -416,8 +438,8 @@ export default async function HomePage() {
           <div className="editorial-strip border-b-0 pt-0">
           <div>
             <p className="kicker home-reference-subtitle">{t.factoryKicker}</p>
-            <h2 className="home-reference-subtitle mt-2 text-[#11253f]">{t.factoryTitle}</h2>
-            <p className="home-reference-body mt-4 max-w-3xl text-[#51627d]">{t.factoryDesc}</p>
+            <h2 className="home-reference-subtitle mt-2 text-[#6a3524]">{t.videoTitle}</h2>
+            <p className="home-reference-body mt-4 max-w-3xl text-[#7d4f3e]">{t.videoDesc}</p>
           </div>
           <Link href="/contact" className="btn btn-soft">
             {t.inquire}
@@ -447,8 +469,8 @@ export default async function HomePage() {
           </div>
           <div className="factory-story-copy">
             <p className="kicker page-reference-subtitle">{t.factoryKicker}</p>
-            <h2 className="factory-home-title mt-3 text-[#122744]">{t.factoryTitle}</h2>
-            <p className="factory-home-body mt-4 text-[#53637c]">{t.factoryDesc}</p>
+            <h2 className="factory-home-title mt-3 text-[#6c3827]">{t.factoryTitle}</h2>
+            <p className="factory-home-body mt-4 text-[#7d4f3e]">{t.factoryDesc}</p>
             <div className="factory-capability-grid mt-8">
               {t.capability.map((item) => (
                 <article key={item.label} className="factory-capability-card">
@@ -543,10 +565,10 @@ export default async function HomePage() {
 
       <section className="home-wide-band home-wide-band-dark">
         <div className="container-shell py-8">
-        <div className="dark-band rounded-[34px] px-7 py-10 shadow-[0_32px_90px_rgba(16,30,52,0.18)] md:px-10 lg:px-12">
+        <div className="home-category-panel rounded-[34px] px-7 py-10 md:px-10 lg:px-12">
           <p className="kicker home-reference-subtitle text-[#f3d7a1]">{t.categoryTitle}</p>
-          <h2 className="home-reference-subtitle mt-2 max-w-4xl text-white">{t.categoryTitle}</h2>
-          <p className="home-reference-body mt-4 max-w-3xl text-[#cfdbef]">{t.categoryDesc}</p>
+          <h2 className="home-reference-subtitle mt-2 max-w-4xl text-[#fff6ef]">{t.categoryTitle}</h2>
+          <p className="home-reference-body mt-4 max-w-3xl text-[#ffe1d1]">{t.categoryDesc}</p>
           <div className="category-rows mt-8">
             {categories.length === 0 ? (
               <div className="home-reference-body text-white/70">{t.noCategory}</div>
@@ -595,7 +617,7 @@ export default async function HomePage() {
 
       <section className="home-wide-band home-wide-band-dark">
         <div className="home-full-bleed-shell py-10">
-          <div className="factory-cta-band">
+          <div className="factory-cta-band home-cta-band">
           <div>
             <p className="kicker page-reference-subtitle text-[#f3d7a1]">{t.contactTitle}</p>
             <h2 className="factory-home-title mt-3 text-white">{t.contactTitle}</h2>
