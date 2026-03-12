@@ -1,5 +1,6 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 
+import HomeProductCarousel from "@/components/HomeProductCarousel";
 import { safeFetchJson } from "@/lib/api";
 import { fallbackCatalogCategories } from "@/lib/catalog";
 import { getCatalogProducts } from "@/lib/catalog-source";
@@ -181,7 +182,7 @@ const copy: Record<
       { icon: "04", title: "Shipment", body: "Coordinate inspection, packing, and export timing with a single production rhythm." }
     ],
     products: "Main Product Lines",
-    productsDesc: "Two rows that clarify the commercial core.",
+    productsDesc: "Carousel highlights that keep the commercial focus readable.",
     contactTitle: "Move from review to inquiry",
     contactBody: "If you are a wholesaler, retailer, or DTC team with a target category, MOQ, and launch timing, we can move the first exchange directly into a useful production brief.",
     inquire: "Start a Conversation",
@@ -202,8 +203,7 @@ const copy: Record<
   zh: {
     heroKicker: "义乌迪雅斯服饰有限公司",
     heroTitle: "服务批发、零售与 DTC 品牌的 private-label 内衣制造",
-    heroDesc:
-      "我们生产内衣、文胸和运动系列，支持批发项目、零售系列与 DTC 品牌的打样、定制和稳定交付。",
+    heroDesc: "我们生产内衣、文胸和运动系列，支持批发项目、零售系列与 DTC 品牌的打样、定制和稳定交付。",
     ctaProducts: "查看分类",
     ctaContact: "开始沟通",
     noPoster: "暂时还没有精选视觉素材，请在后台生成并设为精选。",
@@ -215,8 +215,7 @@ const copy: Record<
     ],
     factoryKicker: "工厂概览",
     factoryTitle: "工厂能力、产品范围与合作流程一页看清",
-    factoryDesc:
-      "迪雅斯提供无缝生产、在线质检、品牌包装配合与 OEM / ODM 执行，适合需要稳定复购和清晰交期的客户。",
+    factoryDesc: "迪雅斯提供无缝生产、在线质检、品牌包装配合与 OEM / ODM 执行，适合需要稳定复购和清晰交期的客户。",
     videoTitle: "工厂介绍视频",
     videoDesc: "生产线、质检节奏和包装流程的完整视频，可在询盘后按需发送。",
     videoCta: "索取视频",
@@ -242,7 +241,7 @@ const copy: Record<
       { icon: "04", title: "出货执行", body: "统一衔接检验、包装与出运节奏。" }
     ],
     products: "主要产品线",
-    productsDesc: "用两行重点产品概览，快速说明你的主销方向。",
+    productsDesc: "用轮播展示核心系列，首页节奏更清晰。",
     contactTitle: "从浏览进入询盘",
     contactBody: "如果你是批发商、零售商或 DTC 品牌，并且已经明确品类、MOQ 区间和上市时间，我们可以把第一次沟通直接推进成有效 production brief。",
     inquire: "开始沟通",
@@ -263,8 +262,7 @@ const copy: Record<
   es: {
     heroKicker: "YiWu DiYaSi Dress CO., LTD",
     heroTitle: "Manufactura private-label de ropa interior para mayoristas, retailers y marcas DTC",
-    heroDesc:
-      "Producimos underwear, bras y activewear para programas mayoristas, colecciones retail y marcas DTC con muestreo, MOQ y entrega definidos.",
+    heroDesc: "Producimos underwear, bras y activewear para programas mayoristas, colecciones retail y marcas DTC con muestreo, MOQ y entrega definidos.",
     ctaProducts: "Ver Categorias",
     ctaContact: "Iniciar Conversacion",
     noPoster: "Aun no hay visuales destacados. Configuralos desde Admin.",
@@ -276,8 +274,7 @@ const copy: Record<
     ],
     factoryKicker: "Vision General de Fabrica",
     factoryTitle: "Las primeras preguntas del comprador, resueltas antes",
-    factoryDesc:
-      "YiWu DiYaSi combina produccion seamless, control de calidad en linea y soporte de empaque private-label para pedidos repetibles.",
+    factoryDesc: "YiWu DiYaSi combina produccion seamless, control de calidad en linea y soporte de empaque private-label para pedidos repetibles.",
     videoTitle: "Video de Introduccion de Fabrica",
     videoDesc: "El recorrido por planta, inspeccion y empaque puede compartirse cuando la consulta ya es concreta.",
     videoCta: "Solicitar Video",
@@ -303,7 +300,7 @@ const copy: Record<
       { icon: "04", title: "Envio", body: "Coordinar inspeccion, packing y salida con un mismo ritmo productivo." }
     ],
     products: "Lineas Principales",
-    productsDesc: "Dos filas claras para mostrar el nucleo comercial.",
+    productsDesc: "Un carrusel limpio para mostrar las lineas clave.",
     contactTitle: "Pasar de revision a consulta",
     contactBody: "Si eres mayorista, retailer o marca DTC y ya conoces tu categoria, MOQ y timing, la primera conversacion puede convertirse en un brief productivo.",
     inquire: "Iniciar Conversacion",
@@ -448,40 +445,40 @@ export default async function HomePage() {
       <section className="home-wide-band home-wide-band-white">
         <div className="home-full-bleed-shell py-12">
           <div className="factory-story-shell">
-          <div className="factory-video-panel">
-            <div className="factory-video-cover">
-              <img
-                src="/media/generated/wide/factory-wide-production-line.png"
-                alt={t.videoTitle}
-                className="factory-video-image"
-              />
-              <div className="factory-video-overlay">
-                <div className="factory-video-play">Play</div>
-                <div>
-                  <p className="factory-home-title text-white">{t.videoTitle}</p>
-                  <p className="factory-home-body mt-2 max-w-xl text-white/85">{t.videoDesc}</p>
+            <div className="factory-video-panel">
+              <div className="factory-video-cover">
+                <img
+                  src="/media/generated/wide/factory-wide-production-line.png"
+                  alt={t.videoTitle}
+                  className="factory-video-image"
+                />
+                <div className="factory-video-overlay">
+                  <div className="factory-video-play">Play</div>
+                  <div>
+                    <p className="factory-home-title text-white">{t.videoTitle}</p>
+                    <p className="factory-home-body mt-2 max-w-xl text-white/85">{t.videoDesc}</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="factory-story-copy">
-            <p className="kicker page-reference-subtitle">{t.factoryKicker}</p>
-            <h2 className="factory-home-title mt-3 text-[#6c3827]">{t.factoryTitle}</h2>
-            <p className="factory-home-body mt-4 text-[#7d4f3e]">{t.factoryDesc}</p>
-            <div className="factory-capability-grid mt-8">
-              {t.capability.map((item) => (
-                <article key={item.label} className="factory-capability-card">
-                  <p className="factory-capability-label">{item.label}</p>
-                  <p className="factory-home-body mt-2 text-[#7d4f3e]">{item.value}</p>
-                </article>
-              ))}
+            <div className="factory-story-copy">
+              <p className="kicker page-reference-subtitle">{t.factoryKicker}</p>
+              <h2 className="factory-home-title mt-3 text-[#6c3827]">{t.factoryTitle}</h2>
+              <p className="factory-home-body mt-4 text-[#7d4f3e]">{t.factoryDesc}</p>
+              <div className="factory-capability-grid mt-8">
+                {t.capability.map((item) => (
+                  <article key={item.label} className="factory-capability-card">
+                    <p className="factory-capability-label">{item.label}</p>
+                    <p className="factory-home-body mt-2 text-[#7d4f3e]">{item.value}</p>
+                  </article>
+                ))}
+              </div>
+              <div className="mt-8">
+                <Link href="/contact" className="btn btn-primary">
+                  {t.videoCta}
+                </Link>
+              </div>
             </div>
-            <div className="mt-8">
-              <Link href="/contact" className="btn btn-primary">
-                {t.videoCta}
-              </Link>
-            </div>
-          </div>
           </div>
         </div>
       </section>
@@ -522,19 +519,19 @@ export default async function HomePage() {
 
       <section className="home-wide-band home-wide-band-white">
         <div className="home-full-bleed-shell py-12">
-        <div className="factory-section-head">
-          <p className="kicker page-reference-subtitle">{t.customize}</p>
-          <h2 className="factory-home-title mt-2 text-[#6a3524]">{t.customizeTitle}</h2>
-        </div>
-        <div className="factory-custom-grid mt-6">
-          {t.customSteps.map((item) => (
-            <article key={item.icon} className="factory-custom-card">
-              <div className="factory-custom-icon">{item.icon}</div>
-              <h3 className="factory-home-card-title mt-4 text-[#6a3524]">{item.title}</h3>
-              <p className="factory-home-body mt-3 text-[#7d4f3e]">{item.body}</p>
-            </article>
-          ))}
-        </div>
+          <div className="factory-section-head">
+            <p className="kicker page-reference-subtitle">{t.customize}</p>
+            <h2 className="factory-home-title mt-2 text-[#6a3524]">{t.customizeTitle}</h2>
+          </div>
+          <div className="factory-custom-grid mt-6">
+            {t.customSteps.map((item) => (
+              <article key={item.icon} className="factory-custom-card">
+                <div className="factory-custom-icon">{item.icon}</div>
+                <h3 className="factory-home-card-title mt-4 text-[#6a3524]">{item.title}</h3>
+                <p className="factory-home-body mt-3 text-[#7d4f3e]">{item.body}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -545,16 +542,7 @@ export default async function HomePage() {
             <h2 className="factory-home-title mt-2 text-[#6a3524]">{t.productsDesc}</h2>
           </div>
           <div className="home-product-flow mt-6">
-            <div className="factory-product-rows">
-              {featuredShowcase.map((item) => (
-                <Link key={item.title} href={item.link} className="factory-product-tile">
-                  <img src={item.image} alt={item.title} className="factory-product-image" />
-                  <div className="factory-product-caption">
-                    <p className="factory-home-title text-white">{item.title}</p>
-                  </div>
-                </Link>
-              ))}
-            </div>
+            <HomeProductCarousel items={featuredShowcase} />
             <div className="home-product-side">
               <div className="home-category-panel rounded-[34px] px-7 py-10 md:px-10">
                 <p className="kicker home-reference-subtitle text-[#c36b44]">{t.products}</p>
@@ -585,19 +573,19 @@ export default async function HomePage() {
       <section className="home-wide-band home-wide-band-dark">
         <div className="home-full-bleed-shell py-12">
           <div className="factory-cta-band home-cta-band">
-          <div>
-            <p className="kicker page-reference-subtitle text-[#f3d7a1]">{t.contactTitle}</p>
-            <h2 className="factory-home-title mt-3 text-white">{t.contactTitle}</h2>
-            <p className="factory-home-body mt-3 max-w-2xl text-white/82">{t.contactBody}</p>
-          </div>
-          <div className="factory-cta-actions">
-            <Link href="/contact" className="btn btn-primary">
-              {t.inquire}
-            </Link>
-            <Link href="/payments" className="btn factory-cta-secondary">
-              {t.paidSample}
-            </Link>
-          </div>
+            <div>
+              <p className="kicker page-reference-subtitle text-[#f3d7a1]">{t.contactTitle}</p>
+              <h2 className="factory-home-title mt-3 text-white">{t.contactTitle}</h2>
+              <p className="factory-home-body mt-3 max-w-2xl text-white/82">{t.contactBody}</p>
+            </div>
+            <div className="factory-cta-actions">
+              <Link href="/contact" className="btn btn-primary">
+                {t.inquire}
+              </Link>
+              <Link href="/payments" className="btn factory-cta-secondary">
+                {t.paidSample}
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -605,17 +593,15 @@ export default async function HomePage() {
       <section className="home-wide-band home-wide-band-white factory-info-band">
         <div className="home-full-bleed-shell py-0">
           <div className="factory-info-bar">
-          {t.infoBar.map((item) => (
-            <article key={item.label} className="factory-info-item">
-              <p className="factory-info-label">{item.label}</p>
-              <p className="factory-info-value mt-2">{item.value}</p>
-            </article>
-          ))}
+            {t.infoBar.map((item) => (
+              <article key={item.label} className="factory-info-item">
+                <p className="factory-info-label">{item.label}</p>
+                <p className="factory-info-value mt-2">{item.value}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
     </main>
   );
 }
-
-
