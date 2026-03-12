@@ -77,6 +77,60 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     areaServed: "Worldwide",
     knowsLanguage: ["en", "zh", "es"]
   };
+  const localBusinessJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: SITE_NAME,
+    url: SITE_URL,
+    description: SITE_DESCRIPTION,
+    image: `${SITE_URL}/media/generated/factory-capability-panorama.png`,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Yiwu",
+      addressRegion: "Zhejiang",
+      addressCountry: "CN"
+    },
+    areaServed: ["North America", "Europe", "Asia", "Worldwide"],
+    knowsLanguage: ["en", "zh", "es"],
+    additionalProperty: [
+      {
+        "@type": "PropertyValue",
+        name: "Manufacturing Experience",
+        value: "23+ years"
+      },
+      {
+        "@type": "PropertyValue",
+        name: "First Sample Lead Time",
+        value: "5-7 days"
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Bulk Production Lead Time",
+        value: "20-30 days"
+      },
+      {
+        "@type": "PropertyValue",
+        name: "MOQ per style and color",
+        value: "300-500 pcs"
+      }
+    ],
+    makesOffer: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Private-label underwear manufacturing"
+        }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "OEM / ODM product development"
+        }
+      }
+    ]
+  };
 
   return (
     <html lang={lang}>
@@ -85,6 +139,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
         />
         <TopNav initialLang={lang} />
         {children}

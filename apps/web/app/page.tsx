@@ -160,7 +160,7 @@ const copy: Record<
       { value: "23+", label: "years of manufacturing experience" },
       { value: "5-7", label: "days for first sample development" },
       { value: "300-500", label: "pcs MOQ per style and color" },
-      { value: "20-30", label: "days for bulk production window" }
+      { value: "20-30", label: "days for bulk production per order" }
     ],
     factoryKicker: "Factory Overview",
     factoryTitle: "The first factory questions, answered early",
@@ -197,10 +197,10 @@ const copy: Record<
     inquire: "Start a Conversation",
     paidSample: "Paid Sample",
     infoBar: [
-      { label: "Sampling", value: "5-7 days" },
-      { label: "Bulk Lead Time", value: "20-30 days" },
-      { label: "MOQ", value: "300-500 pcs" },
-      { label: "Language", value: "EN / ZH / ES" }
+      { label: "Sampling", value: "5-7 days / first round" },
+      { label: "Bulk Lead Time", value: "20-30 days / order" },
+      { label: "MOQ", value: "300-500 pcs / style-color" },
+      { label: "Support", value: "EN / ZH / ES" }
     ],
     categoryTitle: "Large categories. Clearer choices.",
     categoryDesc: "Browse core product lines for women, men, bras, and activewear programs.",
@@ -382,7 +382,7 @@ export default async function HomePage() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "YiWu DiYaSi Dress CO., LTD",
-    url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
+    url: "https://www.yiwudiyasidress.com",
     description: "Premium sustainable underwear manufacturing partner.",
     areaServed: "Worldwide",
     knowsLanguage: ["en", "zh", "es"]

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { safeFetchJson } from "@/lib/api";
 import { getCatalogProducts } from "@/lib/catalog-source";
+import { SITE_URL } from "@/lib/seo";
 
 type Article = { slug: string };
 
@@ -10,11 +11,10 @@ async function getArticleSlugs(): Promise<string[]> {
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const site = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
   const now = new Date();
   const basePaths = ["", "/about", "/products", "/oem-odm", "/sustainability", "/factory", "/blog", "/contact", "/payments"];
   const staticUrls = basePaths.map((path) => ({
-    url: `${site}${path}`,
+    url: `${SITE_URL}${path}`,
     lastModified: now,
     changeFrequency: "weekly" as const,
     priority: path === "" ? 1 : 0.8
@@ -23,13 +23,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const slugs = await getArticleSlugs();
   const products = await getCatalogProducts();
   const blogUrls = slugs.map((slug) => ({
-    url: `${site}/blog/${slug}`,
+    url: `${SITE_URL}/blog/${slug}`,
     lastModified: now,
     changeFrequency: "weekly" as const,
     priority: 0.7
   }));
   const productUrls = products.map((product) => ({
-    url: `${site}/products/${encodeURIComponent(product.product_id)}`,
+    url: `${SITE_URL}/products/${encodeURIComponent(product.product_id)}`,
     lastModified: now,
     changeFrequency: "weekly" as const,
     priority: 0.7
