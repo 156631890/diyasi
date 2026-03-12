@@ -2202,17 +2202,20 @@ a {
 
 .contact-inquiry-copy {
   padding-right: 1rem;
+  display: grid;
+  align-content: start;
+  gap: 1.1rem;
 }
 
 .contact-inquiry-note {
-  margin-top: 1rem;
+  margin-top: 0;
   max-width: 34rem;
   color: #8f7064;
   line-height: 1.9;
 }
 
 .contact-visual-anchor {
-  margin-top: 1.75rem;
+  margin-top: 0.35rem;
   border-radius: 30px;
   background:
     radial-gradient(100% 140% at 100% 0%, rgba(184, 138, 59, 0.28) 0, transparent 58%),
@@ -2274,7 +2277,7 @@ a {
 }
 
 .contact-process-block {
-  margin-top: 2rem;
+  margin-top: 0.5rem;
   border-top: 1px solid rgba(191, 144, 118, 0.24);
   padding-top: 1.5rem;
 }
@@ -2312,7 +2315,7 @@ a {
   border: 1px solid var(--line);
   background: linear-gradient(180deg, rgba(255, 252, 247, 0.98) 0%, rgba(250, 240, 231, 0.98) 100%);
   box-shadow: var(--panel-shadow);
-  padding: 1.6rem;
+  padding: 1.85rem;
 }
 
 .contact-form-head {

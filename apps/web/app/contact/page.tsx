@@ -221,9 +221,11 @@ export default function ContactPage() {
         <div className="contact-panel">
           <div className="contact-inquiry-grid">
             <div className="contact-inquiry-copy">
-              <p className="kicker page-reference-subtitle">{t.inquiry}</p>
-              <h2 className="page-reference-subtitle mt-3 text-[#6a3524]">{t.inquiry}</h2>
-              <p className="page-reference-body page-copy mt-3 text-[#7d4f3e]">{t.inquiryDesc}</p>
+              <div className="page-section-head">
+                <p className="kicker page-reference-subtitle">{t.inquiry}</p>
+                <h2 className="card-title-standard text-[#6a3524]">{t.inquiry}</h2>
+              </div>
+              <p className="page-reference-body page-copy mt-4 text-[#7d4f3e]">{t.inquiryDesc}</p>
               <p className="contact-inquiry-note">{t.inquiryNote}</p>
 
               <div className="contact-visual-anchor">
