@@ -12,6 +12,8 @@ import {
   isInStock,
   isLowMoq,
   isOemReady,
+  resolveDisplayDescription,
+  resolveDisplayTitle,
   resolveHoverImage,
   resolvePrice,
   resolvePriceText,
@@ -279,6 +281,7 @@ export default function ProductCatalogView({
             <>
               <section className="catalog-grid-clean mt-6">
                 {visibleProducts.map((product) => {
+                  const displayTitle = resolveDisplayTitle(product);
                   const price = resolvePrice(product);
                   const primaryImage = resolvePrimaryImage(product);
                   const hoverImage = resolveHoverImage(product);
@@ -293,12 +296,12 @@ export default function ProductCatalogView({
                             <div className="catalog-card-clean-media-stack">
                               <img
                                 src={primaryImage}
-                                alt={product.product_name}
+                                alt={displayTitle}
                                 className="catalog-card-clean-image catalog-card-clean-image-primary"
                               />
                               <img
                                 src={hoverImage}
-                                alt={`${product.product_name} alternate view`}
+                                alt={`${displayTitle} alternate view`}
                                 className="catalog-card-clean-image catalog-card-clean-image-secondary"
                               />
                             </div>
@@ -318,9 +321,11 @@ export default function ProductCatalogView({
                       <div className="catalog-card-clean-copy">
                         <p className="catalog-card-clean-category">{product.category}</p>
                         <Link href={href}>
-                          <h2 className="catalog-card-clean-title">{product.product_name}</h2>
+                          <h2 className="catalog-card-clean-title">{displayTitle}</h2>
                         </Link>
-                        <p className="catalog-card-clean-fabric">{product.fabric || product.description}</p>
+                        <p className="catalog-card-clean-fabric">
+                          {resolveDisplayDescription(product)}
+                        </p>
                         <div className="catalog-card-clean-tags">
                           {product.moq ? (
                             <span className="catalog-card-tag">
@@ -342,7 +347,7 @@ export default function ProductCatalogView({
                         </div>
                         <div className="catalog-card-clean-actions">
                           <BuyNowButton
-                            title={`${product.product_name} - ${copy.paidSample}`}
+                            title={`${displayTitle} - ${copy.paidSample}`}
                             unitAmountUsd={price}
                           />
                           <Link href="/contact" className="btn btn-soft">
@@ -386,7 +391,7 @@ export default function ProductCatalogView({
                 {quickViewImages[0] ? (
                   <img
                     src={quickViewImages[0]}
-                    alt={quickViewProduct.product_name}
+                    alt={resolveDisplayTitle(quickViewProduct)}
                     className="catalog-related-image"
                   />
                 ) : (
@@ -395,9 +400,9 @@ export default function ProductCatalogView({
               </div>
               <div className="catalog-quick-view-copy">
                 <p className="catalog-card-clean-category">{quickViewProduct.category}</p>
-                <h3 className="catalog-group-title">{quickViewProduct.product_name}</h3>
+                <h3 className="catalog-group-title">{resolveDisplayTitle(quickViewProduct)}</h3>
                 <p className="catalog-card-clean-fabric">
-                  {quickViewProduct.fabric || quickViewProduct.description}
+                  {resolveDisplayDescription(quickViewProduct)}
                 </p>
                 <div className="catalog-card-clean-tags">
                   {quickViewProduct.moq ? (

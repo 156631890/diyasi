@@ -8,6 +8,8 @@ import { getCatalogProductById, getCatalogProducts } from "@/lib/catalog-source"
 import {
   buildGalleryImages,
   DisplayProduct,
+  resolveDisplayDescription,
+  resolveDisplayTitle,
   resolvePrice,
   resolvePriceText,
   topFamily
@@ -48,7 +50,8 @@ const copy: Record<
     productionTime: "Production Time",
     color: "Color",
     size: "Size",
-    sourceNote: "Product data is currently enhanced from the Alibaba listing page, including visible price, MOQ, and gallery assets.",
+    sourceNote:
+      "Product data is currently enhanced from the Alibaba listing page, including visible price, MOQ, and gallery assets.",
     noImage: "Image coming soon",
     relatedTitle: "Related products",
     relatedDesc: "More styles from the same category or top-level product family.",
@@ -66,9 +69,9 @@ const copy: Record<
     productionTime: "生产周期",
     color: "颜色",
     size: "尺码",
-    sourceNote: "当前产品信息已用 Alibaba 列表页可见的价格、MOQ 和图片做增强整理。",
+    sourceNote: "当前产品信息已结合 Alibaba 列表页可见的价格、MOQ 与图片资源进行整理。",
     noImage: "图片即将更新",
-    relatedTitle: "相关推荐",
+    relatedTitle: "相关产品",
     relatedDesc: "同类目或同一级产品线的更多款式。",
     viewDetails: "查看详情"
   },
@@ -84,7 +87,8 @@ const copy: Record<
     productionTime: "Tiempo de Produccion",
     color: "Color",
     size: "Talla",
-    sourceNote: "Los datos del producto estan reforzados con precio visible, MOQ y galeria obtenidos de la lista de Alibaba.",
+    sourceNote:
+      "Los datos del producto estan reforzados con precio visible, MOQ y galeria obtenidos de la lista de Alibaba.",
     noImage: "Imagen pendiente",
     relatedTitle: "Productos relacionados",
     relatedDesc: "Mas estilos de la misma categoria o familia principal.",
@@ -98,10 +102,7 @@ type ProductDetailPageProps = {
 
 export default async function ProductDetailPage({ params }: ProductDetailPageProps) {
   const productId = decodeURIComponent(params.productId);
-  const [product, allProducts] = await Promise.all([
-    getCatalogProductById(productId),
-    getCatalogProducts()
-  ]);
+  const [product, allProducts] = await Promise.all([getCatalogProductById(productId), getCatalogProducts()]);
   const lang = getServerLang();
   const t = copy[lang];
 
@@ -110,6 +111,8 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
   }
 
   const typedProduct = product as DisplayProduct;
+  const displayTitle = resolveDisplayTitle(typedProduct);
+  const displayDescription = resolveDisplayDescription(typedProduct);
   const price = resolvePrice(typedProduct);
   const priceText = resolvePriceText(typedProduct);
   const family = topFamily(typedProduct.category);
@@ -118,11 +121,9 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
     .filter((item) => item.product_id !== typedProduct.product_id)
     .sort((left, right) => {
       const leftScore =
-        (left.category === typedProduct.category ? 2 : 0) +
-        (topFamily(left.category) === family ? 1 : 0);
+        (left.category === typedProduct.category ? 2 : 0) + (topFamily(left.category) === family ? 1 : 0);
       const rightScore =
-        (right.category === typedProduct.category ? 2 : 0) +
-        (topFamily(right.category) === family ? 1 : 0);
+        (right.category === typedProduct.category ? 2 : 0) + (topFamily(right.category) === family ? 1 : 0);
       return rightScore - leftScore || left.product_name.localeCompare(right.product_name);
     })
     .filter((item) => item.category === typedProduct.category || topFamily(item.category) === family)
@@ -137,16 +138,12 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
       </div>
 
       <section className="catalog-detail-shell">
-        <ProductGallery
-          productName={typedProduct.product_name}
-          images={galleryImages}
-          emptyLabel={t.noImage}
-        />
+        <ProductGallery productName={displayTitle} images={galleryImages} emptyLabel={t.noImage} />
 
         <div className="catalog-detail-copy">
           <p className="catalog-card-clean-category">{typedProduct.category}</p>
-          <h1 className="catalog-detail-title">{typedProduct.product_name}</h1>
-          <p className="catalog-detail-desc">{typedProduct.description}</p>
+          <h1 className="catalog-detail-title">{displayTitle}</h1>
+          <p className="catalog-detail-desc">{displayDescription}</p>
 
           <div className="catalog-detail-price-row">
             <p className="catalog-detail-price">{priceText}</p>
@@ -154,10 +151,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
           </div>
 
           <div className="catalog-detail-actions">
-            <BuyNowButton
-              title={`${typedProduct.product_name} - ${t.paidSample}`}
-              unitAmountUsd={price}
-            />
+            <BuyNowButton title={`${displayTitle} - ${t.paidSample}`} unitAmountUsd={price} />
             <Link href="/contact" className="btn btn-soft">
               {t.quote}
             </Link>
@@ -197,10 +191,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
             </dl>
           </div>
 
-          <ProductInquiryForm
-            productName={typedProduct.product_name}
-            category={typedProduct.category}
-          />
+          <ProductInquiryForm productName={displayTitle} category={typedProduct.category} />
         </div>
       </section>
 
@@ -217,13 +208,14 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
             {relatedProducts.map((item) => {
               const relatedProduct = item as DisplayProduct;
               const relatedImages = buildGalleryImages(relatedProduct);
+
               return (
                 <article key={item.product_id} className="catalog-related-card">
                   <Link href={`/products/${encodeURIComponent(item.product_id)}`} className="catalog-related-media">
                     {relatedImages[0] ? (
                       <img
                         src={relatedImages[0]}
-                        alt={item.product_name}
+                        alt={resolveDisplayTitle(relatedProduct)}
                         className="catalog-related-image"
                       />
                     ) : (
@@ -232,7 +224,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                   </Link>
                   <div className="catalog-related-copy">
                     <p className="catalog-card-clean-category">{item.category}</p>
-                    <h3 className="catalog-related-title">{item.product_name}</h3>
+                    <h3 className="catalog-related-title">{resolveDisplayTitle(relatedProduct)}</h3>
                     <Link
                       href={`/products/${encodeURIComponent(item.product_id)}`}
                       className="catalog-card-clean-link"

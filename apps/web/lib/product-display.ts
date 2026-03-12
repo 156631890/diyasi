@@ -183,3 +183,131 @@ export function isInStock(product: DisplayProduct): boolean {
   const text = [product.product_name, product.description].join(" ").toLowerCase();
   return text.includes("in stock") || text.includes("stock");
 }
+
+const TITLE_BANNED_PATTERNS = [
+  /\bready[\s-]*to[\s-]*ship\b/gi,
+  /\bin stock\b/gi,
+  /\bstock\b/gi,
+  /\blow price\b/gi,
+  /\bhot sale\b/gi,
+  /\bbest selling\b/gi,
+  /\bwholesale\b/gi,
+  /\bcross-border\b/gi
+];
+
+const DESCRIPTION_BANNED_PATTERNS = [
+  /\bready[\s-]*to[\s-]*ship\b/gi,
+  /\bin stock\b/gi,
+  /\bstock\b/gi,
+  /\blow price\b/gi,
+  /\bhot sale\b/gi,
+  /\bbest selling\b/gi,
+  /\bwholesale\b/gi,
+  /\bcross-border\b/gi,
+  /\balibaba source link\b/gi,
+  /\bvisible alibaba fob range\b/gi,
+  /\bthis listing is grouped under\b/gi
+];
+
+const TITLE_FILLER_WORDS = new Set([
+  "ready",
+  "ship",
+  "stock",
+  "cheap",
+  "low-price",
+  "low",
+  "price"
+]);
+
+function normalizeTitleSeparators(value: string): string {
+  return value
+    .replace(/[|/]+/g, " ")
+    .replace(/[_-]+/g, " ")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+}
+
+function dedupeTitleWords(value: string): string {
+  const words = value.split(/\s+/);
+  const seen = new Set<string>();
+  const cleaned: string[] = [];
+
+  for (const word of words) {
+    const normalized = word.toLowerCase().replace(/[^a-z0-9]+/g, "");
+    if (!normalized) {
+      continue;
+    }
+    if (TITLE_FILLER_WORDS.has(normalized)) {
+      continue;
+    }
+    if (seen.has(normalized) && normalized.length > 3) {
+      continue;
+    }
+    seen.add(normalized);
+    cleaned.push(word);
+  }
+
+  return cleaned.join(" ");
+}
+
+export function resolveDisplayTitle(product: DisplayProduct): string {
+  let title = product.product_name || "";
+  for (const pattern of TITLE_BANNED_PATTERNS) {
+    title = title.replace(pattern, " ");
+  }
+  title = normalizeTitleSeparators(title);
+  title = dedupeTitleWords(title);
+  title = title.replace(/\s{2,}/g, " ").replace(/\b(?:for|with|and)\s*$/i, "").trim();
+  return title || product.product_name;
+}
+
+function normalizeSentence(value: string): string {
+  return value
+    .replace(/\s+/g, " ")
+    .replace(/\s*,\s*/g, ", ")
+    .replace(/\s*\.\s*/g, ". ")
+    .trim()
+    .replace(/^[,.;:\s]+|[,.;:\s]+$/g, "");
+}
+
+function cleanDescriptionText(value: string): string {
+  let cleaned = value || "";
+  for (const pattern of DESCRIPTION_BANNED_PATTERNS) {
+    cleaned = cleaned.replace(pattern, " ");
+  }
+  cleaned = cleaned
+    .replace(/\b(?:factory direct|direct factory)\b/gi, "factory production")
+    .replace(/\bsexy\b/gi, "")
+    .replace(/\bladies girls\b/gi, "women")
+    .replace(/\bnew arrival\b/gi, "")
+    .replace(/\brelief body\b/gi, "bodywear")
+    .replace(/\s{2,}/g, " ");
+  return normalizeSentence(cleaned);
+}
+
+export function resolveDisplayDescription(product: DisplayProduct): string {
+  const description = cleanDescriptionText(product.description || "");
+  const fabric = normalizeSentence(product.fabric || "");
+  const parts: string[] = [];
+
+  if (description) {
+    parts.push(description);
+  } else if (fabric) {
+    parts.push(`${fabric} construction for brand and private label programs.`);
+  } else {
+    parts.push(
+      `Professional ${topFamily(product.category).toLowerCase()} manufacturing for retail, DTC, and private label programs.`
+    );
+  }
+
+  if (product.moq) {
+    parts.push(`MOQ ${product.moq}.`);
+  }
+
+  if (product.price_text) {
+    parts.push(`Reference FOB ${resolvePriceText(product)}.`);
+  }
+
+  const summary = normalizeSentence(parts.join(" "));
+  return summary || `${resolveDisplayTitle(product)} for brand, retail, and private label programs.`;
+}
