@@ -22,6 +22,15 @@ const copy: Record<
     topLevelLabel: string;
     subcategoryLabel: string;
     loadMore: string;
+    searchLabel: string;
+    searchPlaceholder: string;
+    moqLabel: string;
+    priceLabel: string;
+    quickView: string;
+    inStock: string;
+    oemReady: string;
+    lowMoq: string;
+    close: string;
   }
 > = {
   en: {
@@ -41,7 +50,16 @@ const copy: Record<
     groupedLead: "All subcategories",
     topLevelLabel: "Top-level categories",
     subcategoryLabel: "Subcategories",
-    loadMore: "Load more"
+    loadMore: "Load more",
+    searchLabel: "Search products",
+    searchPlaceholder: "Search by product name, fabric, or MOQ",
+    moqLabel: "MOQ",
+    priceLabel: "Range",
+    quickView: "Quick View",
+    inStock: "In Stock",
+    oemReady: "OEM Ready",
+    lowMoq: "Low MOQ",
+    close: "Close"
   },
   zh: {
     kicker: "产品目录",
@@ -60,7 +78,16 @@ const copy: Record<
     groupedLead: "全部二级分类",
     topLevelLabel: "一级分类",
     subcategoryLabel: "二级分类",
-    loadMore: "加载更多"
+    loadMore: "加载更多",
+    searchLabel: "搜索产品",
+    searchPlaceholder: "按产品名、面料或 MOQ 搜索",
+    moqLabel: "MOQ",
+    priceLabel: "价格区间",
+    quickView: "快速预览",
+    inStock: "有现货",
+    oemReady: "可 OEM",
+    lowMoq: "低 MOQ",
+    close: "关闭"
   },
   es: {
     kicker: "Catalogo de Productos",
@@ -79,7 +106,16 @@ const copy: Record<
     groupedLead: "Todas las subcategorias",
     topLevelLabel: "Categorias principales",
     subcategoryLabel: "Subcategorias",
-    loadMore: "Cargar mas"
+    loadMore: "Cargar mas",
+    searchLabel: "Buscar productos",
+    searchPlaceholder: "Buscar por nombre, tejido o MOQ",
+    moqLabel: "MOQ",
+    priceLabel: "Rango",
+    quickView: "Vista Rapida",
+    inStock: "En Stock",
+    oemReady: "OEM Disponible",
+    lowMoq: "MOQ Bajo",
+    close: "Cerrar"
   }
 };
 

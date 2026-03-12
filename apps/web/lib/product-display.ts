@@ -10,6 +10,10 @@ export type DisplayProduct = {
   moq?: string;
   sample_time?: string;
   production_time?: string;
+  gallery_images?: string[];
+  price_text?: string;
+  price_from?: string;
+  detail_url?: string;
 };
 
 export const fallbackProductImages: Record<string, string> = {
@@ -114,7 +118,22 @@ export function topFamily(value: string): string {
 }
 
 export function resolvePrice(product: DisplayProduct): number {
+  if (product.price_from) {
+    const parsed = Number(product.price_from.replace(/[^\d.]/g, ""));
+    if (!Number.isNaN(parsed) && parsed > 0) {
+      return parsed;
+    }
+  }
   return categoryPricing[keyCategory(product.category)] || 279;
+}
+
+export function resolvePriceText(product: DisplayProduct): string {
+  const text = (product.price_text || "").trim();
+  if (text) {
+    return text.startsWith("$") ? text : `$${text}`;
+  }
+  const price = resolvePrice(product);
+  return `$${Math.max(price - 20, 0)}-${price + 40}`;
 }
 
 export function resolvePrimaryImage(product: DisplayProduct): string {
@@ -132,9 +151,30 @@ export function resolveHoverImage(product: DisplayProduct): string {
 
 export function buildGalleryImages(product: DisplayProduct): string[] {
   const candidates = [
+    ...(product.gallery_images || []),
     resolvePrimaryImage(product),
     resolveHoverImage(product),
     fallbackProductImages[product.product_id]
   ].filter(Boolean);
   return [...new Set(candidates)];
+}
+
+export function extractMoqNumber(product: DisplayProduct): number | null {
+  const match = (product.moq || "").match(/\d+/);
+  return match ? Number(match[0]) : null;
+}
+
+export function isLowMoq(product: DisplayProduct): boolean {
+  const moq = extractMoqNumber(product);
+  return moq !== null && moq <= 50;
+}
+
+export function isOemReady(product: DisplayProduct): boolean {
+  const text = [product.product_name, product.description].join(" ").toLowerCase();
+  return ["oem", "custom", "private label", "logo"].some((term) => text.includes(term));
+}
+
+export function isInStock(product: DisplayProduct): boolean {
+  const text = [product.product_name, product.description].join(" ").toLowerCase();
+  return text.includes("in stock") || text.includes("stock");
 }

@@ -23,3 +23,7 @@ def run_migrations(engine: Engine) -> None:
     _add_column_if_missing(engine, "media_assets", "is_featured BOOLEAN NOT NULL DEFAULT 0", "is_featured")
     _add_column_if_missing(engine, "media_assets", "is_active BOOLEAN NOT NULL DEFAULT 1", "is_active")
     _add_column_if_missing(engine, "media_assets", "sort_order INTEGER NOT NULL DEFAULT 0", "sort_order")
+    _add_column_if_missing(engine, "products", "gallery_images TEXT NOT NULL DEFAULT '[]'", "gallery_images")
+    _add_column_if_missing(engine, "products", "price_text VARCHAR(120) NOT NULL DEFAULT ''", "price_text")
+    _add_column_if_missing(engine, "products", "price_from VARCHAR(40) NOT NULL DEFAULT ''", "price_from")
+    _add_column_if_missing(engine, "products", "detail_url TEXT NOT NULL DEFAULT ''", "detail_url")

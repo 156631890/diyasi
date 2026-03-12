@@ -14,6 +14,10 @@ export type CatalogProduct = {
   moq?: string;
   sample_time?: string;
   production_time?: string;
+  gallery_images?: string[];
+  price_text?: string;
+  price_from?: string;
+  detail_url?: string;
   description: string;
   image_url: string;
 };
@@ -60,8 +64,20 @@ function dataFilePath(): string {
 function normalizeProducts(products: CatalogProduct[]): CatalogProduct[] {
   return products.map((product) => ({
     ...product,
-    category: categoryDisplayMap[product.category] || product.category
+    category: categoryDisplayMap[product.category] || product.category,
+    gallery_images: Array.isArray(product.gallery_images) ? product.gallery_images : [],
+    price_text: product.price_text || "",
+    price_from: product.price_from || "",
+    detail_url: product.detail_url || ""
   }));
+}
+
+function mergeProducts(primary: CatalogProduct[], fallback: CatalogProduct[]): CatalogProduct[] {
+  const fallbackById = new Map(fallback.map((item) => [item.product_id, item]));
+  return primary.map((item) => {
+    const enriched = fallbackById.get(item.product_id);
+    return enriched ? { ...item, ...enriched } : item;
+  });
 }
 
 async function readImportedProducts(): Promise<CatalogProduct[] | null> {
@@ -83,15 +99,12 @@ function categoriesFromProducts(products: CatalogProduct[]): CatalogCategory[] {
 }
 
 export async function getCatalogProducts(): Promise<CatalogProduct[]> {
+  const importedProducts = await readImportedProducts();
   const apiProducts = await safeFetchJson<CatalogProduct[]>("/products/", []);
   if (apiProducts.length > 0) {
-    return apiProducts;
+    return importedProducts ? mergeProducts(apiProducts, importedProducts) : apiProducts;
   }
-  const importedProducts = await readImportedProducts();
-  if (importedProducts) {
-    return importedProducts;
-  }
-  return fallbackCatalogProducts;
+  return importedProducts || fallbackCatalogProducts;
 }
 
 export async function getCatalogCategories(): Promise<CatalogCategory[]> {
@@ -107,14 +120,18 @@ export async function getCatalogCategories(): Promise<CatalogCategory[]> {
 }
 
 export async function getCatalogProductById(productId: string): Promise<CatalogProduct | null> {
+  const importedProducts = await readImportedProducts();
   const apiProduct = await safeFetchJson<CatalogProduct | null>(
     `/products/${encodeURIComponent(productId)}`,
     null
   );
   if (apiProduct) {
+    if (importedProducts) {
+      const enriched = importedProducts.find((item) => item.product_id === productId);
+      return enriched ? { ...apiProduct, ...enriched } : apiProduct;
+    }
     return apiProduct;
   }
-  const importedProducts = await readImportedProducts();
   if (importedProducts) {
     return importedProducts.find((item) => item.product_id === productId) || null;
   }

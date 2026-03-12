@@ -21,6 +21,10 @@ class Product(Base):
     production_time: Mapped[str] = mapped_column(String(120), default="")
     description: Mapped[str] = mapped_column(Text, default="")
     image_url: Mapped[str] = mapped_column(Text, default="")
+    gallery_images: Mapped[str] = mapped_column(Text, default="[]")
+    price_text: Mapped[str] = mapped_column(String(120), default="")
+    price_from: Mapped[str] = mapped_column(String(40), default="")
+    detail_url: Mapped[str] = mapped_column(Text, default="")
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
     updated_at: Mapped[datetime] = mapped_column(
         DateTime, default=datetime.utcnow, onupdate=datetime.utcnow

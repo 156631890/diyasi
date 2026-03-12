@@ -9,6 +9,7 @@ import {
   buildGalleryImages,
   DisplayProduct,
   resolvePrice,
+  resolvePriceText,
   topFamily
 } from "@/lib/product-display";
 import { SiteLang } from "@/lib/i18n";
@@ -47,7 +48,7 @@ const copy: Record<
     productionTime: "Production Time",
     color: "Color",
     size: "Size",
-    sourceNote: "Imported from Alibaba listing data and organized for standalone site browsing.",
+    sourceNote: "Product data is currently enhanced from the Alibaba listing page, including visible price, MOQ, and gallery assets.",
     noImage: "Image coming soon",
     relatedTitle: "Related products",
     relatedDesc: "More styles from the same category or top-level product family.",
@@ -65,7 +66,7 @@ const copy: Record<
     productionTime: "生产周期",
     color: "颜色",
     size: "尺码",
-    sourceNote: "产品信息来自 Alibaba 公开列表页，并已整理为独立站展示结构。",
+    sourceNote: "当前产品信息已用 Alibaba 列表页可见的价格、MOQ 和图片做增强整理。",
     noImage: "图片即将更新",
     relatedTitle: "相关推荐",
     relatedDesc: "同类目或同一级产品线的更多款式。",
@@ -83,7 +84,7 @@ const copy: Record<
     productionTime: "Tiempo de Produccion",
     color: "Color",
     size: "Talla",
-    sourceNote: "Importado desde listados publicos de Alibaba y organizado para el sitio independiente.",
+    sourceNote: "Los datos del producto estan reforzados con precio visible, MOQ y galeria obtenidos de la lista de Alibaba.",
     noImage: "Imagen pendiente",
     relatedTitle: "Productos relacionados",
     relatedDesc: "Mas estilos de la misma categoria o familia principal.",
@@ -110,6 +111,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
 
   const typedProduct = product as DisplayProduct;
   const price = resolvePrice(typedProduct);
+  const priceText = resolvePriceText(typedProduct);
   const family = topFamily(typedProduct.category);
   const galleryImages = buildGalleryImages(typedProduct);
   const relatedProducts = allProducts
@@ -147,7 +149,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
           <p className="catalog-detail-desc">{typedProduct.description}</p>
 
           <div className="catalog-detail-price-row">
-            <p className="catalog-detail-price">${price}</p>
+            <p className="catalog-detail-price">{priceText}</p>
             <p className="catalog-detail-note">{t.sourceNote}</p>
           </div>
 
@@ -212,31 +214,35 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
             <p className="page-reference-body text-[#9d7d6f]">{t.relatedDesc}</p>
           </div>
           <div className="catalog-related-grid">
-            {relatedProducts.map((item) => (
-              <article key={item.product_id} className="catalog-related-card">
-                <Link href={`/products/${encodeURIComponent(item.product_id)}`} className="catalog-related-media">
-                  {buildGalleryImages(item as DisplayProduct)[0] ? (
-                    <img
-                      src={buildGalleryImages(item as DisplayProduct)[0]}
-                      alt={item.product_name}
-                      className="catalog-related-image"
-                    />
-                  ) : (
-                    <div className="catalog-card-clean-fallback">{t.noImage}</div>
-                  )}
-                </Link>
-                <div className="catalog-related-copy">
-                  <p className="catalog-card-clean-category">{item.category}</p>
-                  <h3 className="catalog-related-title">{item.product_name}</h3>
-                  <Link
-                    href={`/products/${encodeURIComponent(item.product_id)}`}
-                    className="catalog-card-clean-link"
-                  >
-                    {t.viewDetails}
+            {relatedProducts.map((item) => {
+              const relatedProduct = item as DisplayProduct;
+              const relatedImages = buildGalleryImages(relatedProduct);
+              return (
+                <article key={item.product_id} className="catalog-related-card">
+                  <Link href={`/products/${encodeURIComponent(item.product_id)}`} className="catalog-related-media">
+                    {relatedImages[0] ? (
+                      <img
+                        src={relatedImages[0]}
+                        alt={item.product_name}
+                        className="catalog-related-image"
+                      />
+                    ) : (
+                      <div className="catalog-card-clean-fallback">{t.noImage}</div>
+                    )}
                   </Link>
-                </div>
-              </article>
-            ))}
+                  <div className="catalog-related-copy">
+                    <p className="catalog-card-clean-category">{item.category}</p>
+                    <h3 className="catalog-related-title">{item.product_name}</h3>
+                    <Link
+                      href={`/products/${encodeURIComponent(item.product_id)}`}
+                      className="catalog-card-clean-link"
+                    >
+                      {t.viewDetails}
+                    </Link>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </section>
       ) : null}

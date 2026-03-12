@@ -149,24 +149,98 @@ def normalize_image_url(url: str) -> str:
     return url
 
 
+def normalize_image_list(urls: list[str]) -> list[str]:
+    normalized = [normalize_image_url(str(url)) for url in urls if str(url).strip()]
+    return list(OrderedDict.fromkeys(normalized))
+
+
+def extract_gallery_images(item: dict[str, Any]) -> list[str]:
+    images: list[str] = []
+
+    image_urls = item.get("imageUrls", {})
+    if isinstance(image_urls, dict):
+        original = image_urls.get("original")
+        if original:
+            images.append(str(original))
+
+    image_url_list = item.get("imageUrlList", [])
+    if isinstance(image_url_list, list):
+        for image in image_url_list:
+            if isinstance(image, dict):
+                original = image.get("original") or image.get("x350") or image.get("x220")
+                if original:
+                    images.append(str(original))
+
+    sku_images = item.get("skuImg", [])
+    if isinstance(sku_images, list):
+        images.extend(str(url) for url in sku_images if str(url).strip())
+
+    return normalize_image_list(images)
+
+
+def extract_price_text(item: dict[str, Any]) -> str:
+    return str(item.get("fobPriceWithoutUnit") or item.get("fobPrice") or "").strip()
+
+
+def extract_price_floor(price_text: str) -> str:
+    match = re.search(r"(\d+(?:\.\d+)?)", price_text)
+    return match.group(1) if match else ""
+
+
+def build_description(
+    category: str,
+    subject: str,
+    price: str,
+    moq: str,
+    color: str,
+    gallery_images: list[str],
+    detail_url: str,
+) -> str:
+    description_parts = [
+        subject,
+        f"This listing is grouped under {display_category(category)}.",
+    ]
+    if price:
+        description_parts.append(f"Visible Alibaba FOB range: {price}.")
+    if moq:
+        description_parts.append(f"Published MOQ: {moq}.")
+    if color:
+        description_parts.append(f"Visible color references: {color}.")
+    if gallery_images:
+        description_parts.append(f"Available gallery assets captured from the listing: {len(gallery_images)} images.")
+    description_parts.append("Suitable for wholesale inquiry, OEM customization review, and sample planning.")
+    if detail_url:
+        description_parts.append(f"Alibaba source link: {detail_url}.")
+    return " ".join(part for part in description_parts if part).strip()
+
+
+def _sqlite_columns(cursor: sqlite3.Cursor, table_name: str) -> set[str]:
+    rows = cursor.execute(f"PRAGMA table_info({table_name})").fetchall()
+    return {row[1] for row in rows}
+
+
+def ensure_product_columns(cursor: sqlite3.Cursor) -> None:
+    required = {
+        "gallery_images": "ALTER TABLE products ADD COLUMN gallery_images TEXT NOT NULL DEFAULT '[]'",
+        "price_text": "ALTER TABLE products ADD COLUMN price_text TEXT NOT NULL DEFAULT ''",
+        "price_from": "ALTER TABLE products ADD COLUMN price_from TEXT NOT NULL DEFAULT ''",
+        "detail_url": "ALTER TABLE products ADD COLUMN detail_url TEXT NOT NULL DEFAULT ''",
+    }
+    existing = _sqlite_columns(cursor, "products")
+    for name, sql in required.items():
+        if name not in existing:
+            cursor.execute(sql)
+
+
 def build_product_payload(category: str, item: dict[str, Any]) -> dict[str, str]:
     product_id = f"ALI-{item['id']}"
     subject = str(item.get("subject", "")).strip()
-    price = str(item.get("fobPrice", "")).strip()
+    price = extract_price_text(item)
     moq = str(item.get("moq", "")).strip()
-    image_url = normalize_image_url(item.get("imageUrls", {}).get("original", ""))
+    gallery_images = extract_gallery_images(item)
+    image_url = gallery_images[0] if gallery_images else ""
     detail_url = normalize_image_url(str(item.get("url", "")))
     color = ", ".join(item.get("skuColorRGB", [])[:6])
-    description_parts = [
-        subject,
-        f"Alibaba category: {category}.",
-    ]
-    if price:
-        description_parts.append(f"FOB: {price}.")
-    if moq:
-        description_parts.append(f"MOQ: {moq}.")
-    if detail_url:
-        description_parts.append(f"Source: {detail_url}.")
 
     return {
         "product_id": product_id,
@@ -178,9 +252,57 @@ def build_product_payload(category: str, item: dict[str, Any]) -> dict[str, str]
         "moq": moq,
         "sample_time": "",
         "production_time": "",
-        "description": " ".join(part for part in description_parts if part).strip(),
+        "description": build_description(category, subject, price, moq, color, gallery_images, detail_url),
         "image_url": image_url,
+        "gallery_images": gallery_images,
+        "price_text": price,
+        "price_from": extract_price_floor(price),
+        "detail_url": detail_url,
     }
+
+
+def load_products_from_db(categories: list[str]) -> list[dict[str, str]]:
+    if not categories:
+        return []
+
+    repo_root = Path(__file__).resolve().parents[1]
+    db_path = repo_root / "services" / "api" / "lead_engine.db"
+    if not db_path.exists():
+        return []
+
+    conn = sqlite3.connect(db_path)
+    conn.row_factory = sqlite3.Row
+    cursor = conn.cursor()
+    ensure_product_columns(cursor)
+    rows = cursor.execute(
+        "SELECT product_id, product_name, category, fabric, color, size, moq, sample_time, production_time, description, image_url, gallery_images, price_text, price_from, detail_url "
+        f"FROM products WHERE product_id LIKE 'ALI-%' AND category IN ({','.join('?' for _ in categories)})",
+        categories,
+    ).fetchall()
+    conn.close()
+
+    restored: list[dict[str, str]] = []
+    for row in rows:
+        restored.append(
+            {
+                "product_id": row["product_id"],
+                "product_name": row["product_name"],
+                "category": row["category"],
+                "fabric": row["fabric"] or "",
+                "color": row["color"] or "",
+                "size": row["size"] or "",
+                "moq": row["moq"] or "",
+                "sample_time": row["sample_time"] or "",
+                "production_time": row["production_time"] or "",
+                "description": row["description"] or "",
+                "image_url": row["image_url"] or "",
+                "gallery_images": json.loads(row["gallery_images"] or "[]"),
+                "price_text": row["price_text"] or "",
+                "price_from": row["price_from"] or "",
+                "detail_url": row["detail_url"] or "",
+            }
+        )
+    return restored
 
 
 def collect_products() -> tuple[list[dict[str, str]], dict[str, int]]:
@@ -197,6 +319,10 @@ def collect_products() -> tuple[list[dict[str, str]], dict[str, int]]:
         for item in items:
             payload = build_product_payload(category, item)
             products_by_id[payload["product_id"]] = payload
+
+    missing_categories = [display_category(category) for category, count in counts.items() if count == 0]
+    for payload in load_products_from_db(missing_categories):
+        products_by_id[payload["product_id"]] = payload
 
     return list(products_by_id.values()), counts
 
@@ -226,6 +352,7 @@ def import_direct_db(products: list[dict[str, str]]) -> dict[str, int]:
     duplicates = 0
     now = datetime.utcnow().isoformat(sep=" ", timespec="seconds")
     try:
+        ensure_product_columns(cursor)
         existing_ids = {
             row[0]
             for row in cursor.execute(
@@ -237,14 +364,42 @@ def import_direct_db(products: list[dict[str, str]]) -> dict[str, int]:
         }
         for item in products:
             if item["product_id"] in existing_ids:
+                cursor.execute(
+                    """
+                    UPDATE products
+                    SET product_name = ?, category = ?, fabric = ?, color = ?, size = ?, moq = ?,
+                        sample_time = ?, production_time = ?, description = ?, image_url = ?,
+                        gallery_images = ?, price_text = ?, price_from = ?, detail_url = ?, updated_at = ?
+                    WHERE product_id = ?
+                    """,
+                    [
+                        item["product_name"],
+                        item["category"],
+                        item["fabric"],
+                        item["color"],
+                        item["size"],
+                        item["moq"],
+                        item["sample_time"],
+                        item["production_time"],
+                        item["description"],
+                        item["image_url"],
+                        json.dumps(item.get("gallery_images", []), ensure_ascii=False),
+                        item.get("price_text", ""),
+                        item.get("price_from", ""),
+                        item.get("detail_url", ""),
+                        now,
+                        item["product_id"],
+                    ],
+                )
                 duplicates += 1
                 continue
             cursor.execute(
                 """
                 INSERT INTO products (
                     product_id, product_name, category, fabric, color, size, moq,
-                    sample_time, production_time, description, image_url, created_at, updated_at
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    sample_time, production_time, description, image_url, gallery_images,
+                    price_text, price_from, detail_url, created_at, updated_at
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """,
                 [
                     item["product_id"],
@@ -258,6 +413,10 @@ def import_direct_db(products: list[dict[str, str]]) -> dict[str, int]:
                     item["production_time"],
                     item["description"],
                     item["image_url"],
+                    json.dumps(item.get("gallery_images", []), ensure_ascii=False),
+                    item.get("price_text", ""),
+                    item.get("price_from", ""),
+                    item.get("detail_url", ""),
                     now,
                     now,
                 ],
