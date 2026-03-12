@@ -121,7 +121,7 @@ const homeReferenceContent: Record<
 > = {
   en: {
     sectionTitle: "Why brands work with DiYaSi",
-    sectionLead: "DiYaSi combines established factory experience, qualified production systems, and long-term OEM / ODM support for global underwear programs.",
+    sectionLead: "Established factory experience, qualified production, and dependable OEM / ODM support.",
     items: [
       {
         title: "Professional Manufacturer",
@@ -267,7 +267,7 @@ const copy: Record<
       { icon: "04", title: "Shipment", body: "Coordinate inspection, packing, and export timing with a single production rhythm." }
     ],
     products: "Main Product Lines",
-    productsDesc: "Core product lines for wholesale, retail, and DTC development.",
+    productsDesc: "Selected underwear, bra, and activewear lines.",
     contactTitle: "Move from review to inquiry",
     contactBody: "Share your target category, MOQ range, and launch timing to start sampling or bulk production discussion with the factory.",
     inquire: "Start a Conversation",
@@ -282,7 +282,7 @@ const copy: Record<
     categoryDesc: "Browse core product lines for women, men, bras, and activewear programs.",
     noCategory: "No categories available yet.",
     galleryTitle: "Production floor and detail views",
-    certificatesTitle: "Certificates, quality control, and factory production",
+    certificatesTitle: "Certificates and factory standards",
     customizeTitle: "From concept to shipment"
   },
   zh: {
@@ -555,14 +555,6 @@ export default async function HomePage() {
               ))}
             </div>
           </div>
-          <div className="factory-capability-grid mt-6">
-            {t.capability.map((item) => (
-              <article key={item.label} className="factory-capability-card">
-                <p className="factory-capability-label">{item.label}</p>
-                <p className="factory-home-body mt-2 text-[#7d4f3e]">{item.value}</p>
-              </article>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -572,7 +564,7 @@ export default async function HomePage() {
             <p className="kicker home-section-kicker">{t.products}</p>
             <h2 className="home-section-title">{t.productsDesc}</h2>
           </div>
-          <div className="home-product-flow mt-6">
+          <div className="mt-6">
             <HomeProductCarousel items={featuredShowcase} />
             <div className="home-product-side">
               <div className="home-category-panel rounded-[34px] px-7 py-10 md:px-10">
