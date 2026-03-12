@@ -74,6 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     name: SITE_NAME,
     url: SITE_URL,
     description: SITE_DESCRIPTION,
+    foundingDate: "2002",
     email: "imbella.vicky@diyasidress.com",
     telephone: "+86-18042579030",
     faxNumber: "+86-579-85569925",
@@ -87,6 +88,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     url: SITE_URL,
     description: SITE_DESCRIPTION,
     image: `${SITE_URL}/media/generated/factory-capability-panorama.png`,
+    foundingDate: "2002",
     email: "imbella.vicky@diyasidress.com",
     telephone: "+86-18042579030",
     faxNumber: "+86-579-85569925",
@@ -119,6 +121,31 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         "@type": "PropertyValue",
         name: "MOQ per style and color",
         value: "300-500 pcs"
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Flexible MOQ",
+        value: "100-500 pcs/style"
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Factory Size",
+        value: "20,000 m²"
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Employees",
+        value: "100+"
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Monthly Capacity",
+        value: "600,000+ pieces"
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Export Markets",
+        value: "30+ countries"
       }
     ],
     makesOffer: [

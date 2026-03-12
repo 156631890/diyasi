@@ -157,7 +157,7 @@ export default function ProductCatalogView({ products, categories, copy }: Produ
   }
 
   return (
-    <section className="catalog-layout mt-8">
+    <section className="catalog-layout page-section">
       <aside className="catalog-sidebar">
         <div className="catalog-sidebar-panel">
           <p className="catalog-sidebar-label">{copy.topLevelLabel}</p>

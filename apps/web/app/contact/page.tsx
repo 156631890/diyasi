@@ -202,10 +202,10 @@ export default function ContactPage() {
           : t.statusFailed;
 
   return (
-    <main className="container-shell py-10">
-      <section className="hero-panel overflow-hidden p-7 md:p-10 lg:p-12">
+    <main className="container-shell page-shell page-stack">
+      <section className="hero-panel page-hero overflow-hidden md:p-10 lg:p-12">
         <div className="grid gap-8 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
-          <div>
+          <div className="page-copy-wide">
             <p className="kicker page-reference-subtitle">{t.lead}</p>
             <h1 className="section-title mt-2 text-[#6a3524]">{t.title}</h1>
           </div>
@@ -217,13 +217,13 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="contact-layout mt-10">
+      <section className="contact-layout page-section">
         <div className="contact-panel">
           <div className="contact-inquiry-grid">
             <div className="contact-inquiry-copy">
               <p className="kicker page-reference-subtitle">{t.inquiry}</p>
               <h2 className="page-reference-subtitle mt-3 text-[#6a3524]">{t.inquiry}</h2>
-              <p className="page-reference-body mt-3 text-[#7d4f3e]">{t.inquiryDesc}</p>
+              <p className="page-reference-body page-copy mt-3 text-[#7d4f3e]">{t.inquiryDesc}</p>
               <p className="contact-inquiry-note">{t.inquiryNote}</p>
 
               <div className="contact-visual-anchor">
@@ -262,7 +262,7 @@ export default function ContactPage() {
             <form className="contact-form-card" onSubmit={onSubmit}>
               <div className="contact-form-head">
                 <p className="kicker page-reference-subtitle">{t.formTitle}</p>
-                <p className="page-reference-body mt-3 text-[#7d4f3e]">{t.formLead}</p>
+                <p className="page-reference-body page-copy mt-3 text-[#7d4f3e]">{t.formLead}</p>
               </div>
               <div className="contact-form-grid">
                 <label className="contact-field">

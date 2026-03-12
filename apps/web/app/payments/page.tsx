@@ -95,28 +95,28 @@ export default function PaymentsPage() {
   const t = copy[lang];
 
   return (
-    <main className="container-shell py-10">
-      <section className="dark-band rounded-[34px] px-7 py-10 shadow-[0_32px_90px_rgba(16,30,52,0.18)] md:px-10 lg:px-12">
+    <main className="container-shell page-shell page-stack">
+      <section className="dark-band page-hero rounded-[34px] shadow-[0_32px_90px_rgba(121,72,47,0.18)] md:px-10 lg:px-12">
         <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
-          <div className="max-w-4xl">
+          <div className="page-copy-wide">
             <p className="kicker page-reference-subtitle text-[#f3d7a1]">{t.kicker}</p>
             <h1 className="heading-font mt-2 text-5xl font-semibold">{t.title}</h1>
-            <p className="page-reference-body mt-4 max-w-3xl text-[#d9e4f4]">{t.desc}</p>
-            <p className="page-reference-body mt-4 max-w-2xl text-white/75">{t.intro}</p>
+            <p className="page-reference-body mt-4 text-[#fff0e5]">{t.desc}</p>
+            <p className="page-reference-body mt-4 text-white/75">{t.intro}</p>
           </div>
           <div className="rounded-[28px] border border-white/15 bg-white/5 p-5">
             <p className="text-xs uppercase tracking-[0.22em] text-[#f3d7a1]">{t.kicker}</p>
-            <p className="page-reference-subtitle mt-4 text-white/90">{t.leadTitle}</p>
-            <p className="page-reference-body mt-3 text-[#d9e4f4]">{t.leadDesc}</p>
+            <p className="card-title-standard mt-4 text-white/90">{t.leadTitle}</p>
+            <p className="page-reference-body mt-3 text-[#fff0e5]">{t.leadDesc}</p>
           </div>
         </div>
       </section>
 
-      <section className="mt-10 payment-brief-layout">
+      <section className="payment-brief-layout page-section">
         <div className="payment-brief-copy">
           <p className="kicker page-reference-subtitle">{t.briefTitle}</p>
-          <h2 className="page-reference-subtitle mt-3 text-[#6a3524]">{t.briefTitle}</h2>
-          <p className="page-reference-body mt-3 max-w-2xl text-[#556681]">{t.briefLead}</p>
+          <h2 className="card-title-standard mt-3 text-[#6a3524]">{t.briefTitle}</h2>
+          <p className="page-reference-body page-copy mt-3 text-[#7d4f3e]">{t.briefLead}</p>
           <div className="payment-brief-visual mt-6">
             <img src={paymentsWideImage} alt={t.imageAlt} className="payment-brief-image" />
           </div>
@@ -131,8 +131,8 @@ export default function PaymentsPage() {
             </div>
             <div className="payment-brief-amount-row">
               <div>
-                <h3 className="page-reference-subtitle text-[#8d452d]">{item.title}</h3>
-                <p className="page-reference-body mt-3 max-w-xl text-[#53647f]">{item.desc}</p>
+                <h3 className="card-title-standard text-[#8d452d]">{item.title}</h3>
+                <p className="page-reference-body mt-3 max-w-xl text-[#7d4f3e]">{item.desc}</p>
               </div>
               <p className="heading-font text-5xl font-semibold text-[#8d452d]">${item.amount}</p>
             </div>
@@ -144,10 +144,10 @@ export default function PaymentsPage() {
         </div>
       </section>
 
-      <section className="editorial-strip mt-10">
-        <div>
+      <section className="editorial-strip page-section">
+        <div className="page-copy-wide">
           <p className="kicker page-reference-subtitle">{t.noteTitle}</p>
-          <p className="page-reference-body mt-3 max-w-3xl text-[#43536c]">{t.noteBody}</p>
+          <p className="page-reference-body mt-3 text-[#7d4f3e]">{t.noteBody}</p>
         </div>
         <Link href="/contact" className="btn btn-soft">
           {t.contactCta}

@@ -58,49 +58,49 @@ export default async function BlogPage() {
   const rest = articles.slice(1);
 
   return (
-    <main className="container-shell py-10">
-      <section className="hero-panel p-7 md:p-10 lg:p-12">
+    <main className="container-shell page-shell page-stack">
+      <section className="hero-panel page-hero md:p-10 lg:p-12">
         <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
-          <div>
+          <div className="page-copy-wide">
             <p className="kicker page-reference-subtitle">{t.kicker}</p>
             <h1 className="section-title mt-2 text-[#6a3524]">{t.title}</h1>
-            <p className="page-reference-body mt-4 max-w-3xl text-[#7d4f3e]">{t.desc}</p>
+            <p className="page-reference-body mt-4 text-[#7d4f3e]">{t.desc}</p>
           </div>
           <div className="contact-aside">
             <p className="text-xs uppercase tracking-[0.22em] text-[#8b6a2c]">{t.kicker}</p>
-            <p className="page-reference-subtitle mt-4 text-[#6a3524]">{t.leadTitle}</p>
-            <p className="page-reference-body mt-3 text-[#7d4f3e]">{t.leadDesc}</p>
+            <p className="card-title-standard mt-4 text-[#6a3524]">{t.leadTitle}</p>
+            <p className="page-reference-body page-copy mt-3 text-[#7d4f3e]">{t.leadDesc}</p>
           </div>
         </div>
       </section>
 
-      <section className="mt-10">
+      <section className="page-section">
         {lead ? (
           <article className="catalog-feature">
             <div className="catalog-feature-copy">
               <p className="kicker">{lead.category}</p>
-              <h2 className="page-reference-subtitle mt-3 text-[#6a3524]">{lead.title}</h2>
-              <p className="page-reference-body mt-4 max-w-2xl text-[#7d4f3e]">{lead.excerpt}</p>
+              <h2 className="card-title-standard mt-3 text-[#6a3524]">{lead.title}</h2>
+              <p className="page-reference-body page-copy mt-4 text-[#7d4f3e]">{lead.excerpt}</p>
               <div className="mt-8">
                 <Link href={`/blog/${lead.slug}`} className="btn btn-primary">{t.readMore}</Link>
               </div>
             </div>
             <div className="wide-visual-shell">
               <div className="grid h-full place-items-center bg-gradient-to-br from-[#fff7f0] via-[#fffaf6] to-[#efe0d2] px-8 text-center">
-                <p className="page-reference-subtitle max-w-lg text-[#6a3524]">{lead.title}</p>
+                <p className="card-title-standard max-w-lg text-[#6a3524]">{lead.title}</p>
               </div>
             </div>
           </article>
         ) : null}
       </section>
 
-      <section className="catalog-grid mt-12">
+      <section className="catalog-grid page-section">
         {articles.length === 0 ? <div className="card p-6 text-[#7d4f3e]">{t.noArticle}</div> : null}
         {rest.map((article) => (
           <article key={article.slug} className="catalog-card">
             <div className="catalog-card-copy">
               <p className="text-xs uppercase tracking-[0.18em] text-[#8b6a2c]">{article.category}</p>
-              <h2 className="page-reference-subtitle mt-2 text-[#6a3524]">{article.title}</h2>
+              <h2 className="card-title-standard mt-2 text-[#6a3524]">{article.title}</h2>
               <p className="page-reference-body mt-3 text-[#7d4f3e]">{article.excerpt}</p>
               <div className="mt-5"><Link href={`/blog/${article.slug}`} className="btn btn-soft">{t.readMore}</Link></div>
             </div>

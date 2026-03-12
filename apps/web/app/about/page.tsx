@@ -156,13 +156,13 @@ export default async function AboutPage() {
   };
 
   return (
-    <main className="container-shell py-10">
+    <main className="container-shell page-shell page-stack">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageJsonLd) }} />
 
-      <section className="hero-panel overflow-hidden p-7 md:p-10 lg:p-12">
+      <section className="hero-panel page-hero overflow-hidden md:p-10 lg:p-12">
         <div className="grid items-center gap-7 lg:grid-cols-2">
-          <div>
+          <div className="page-copy-wide">
             <p className="kicker page-reference-subtitle">{t.kicker}</p>
             <h1 className="section-title mt-3 text-[#6a3524]">{t.title}</h1>
             <p className="page-reference-body mt-4 text-[#7d4f3e]">{t.p1}</p>
@@ -195,14 +195,14 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      <section className="mt-12">
-        <div className="section-lead">
+      <section className="page-section">
+        <div className="page-section-head">
           <p className="kicker page-reference-subtitle">{t.kicker}</p>
           <h2 className="page-reference-subtitle mt-2 text-[#6a3524]">{t.journey}</h2>
         </div>
       </section>
 
-      <section className="mt-8 about-principles">
+      <section className="about-principles">
         {t.values.map((item) => (
           <article key={item.title} className="editorial-column">
             <h2 className="page-reference-subtitle text-[#6a3524]">{item.title}</h2>
@@ -211,8 +211,8 @@ export default async function AboutPage() {
         ))}
       </section>
 
-      <section className="mt-12 editorial-strip">
-        <div>
+      <section className="page-section editorial-strip">
+        <div className="page-copy-wide">
           <p className="kicker page-reference-subtitle">{t.milestone}</p>
           <p className="page-reference-body mt-3 max-w-3xl text-[#7d4f3e]">
             {lang === "zh"
@@ -224,13 +224,13 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      <section className="mt-8">
+      <section>
         <div className="wide-visual-shell">
           <img src={aboutWideImage} alt="Brand floor and development space" className="wide-visual" />
         </div>
       </section>
 
-      <section className="mt-8 about-timeline">
+      <section className="about-timeline">
         {t.timeline.map((item) => (
           <article key={item.year} className="timeline-row">
             <div className="timeline-year">{item.year}</div>

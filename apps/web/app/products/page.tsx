@@ -156,16 +156,16 @@ export default async function ProductsPage() {
   ]);
 
   return (
-    <main className="container-shell py-8 md:py-10">
+    <main className="container-shell page-shell-tight">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <section className="catalog-intro">
         <p className="kicker page-reference-subtitle">{t.kicker}</p>
         <div className="catalog-intro-row">
-          <div>
+          <div className="page-copy-wide">
             <h1 className="section-title mt-2 text-[#6a3524]">{t.title}</h1>
-            <p className="page-reference-body mt-3 max-w-2xl text-[#7d4f3e]">{t.desc}</p>
+            <p className="page-reference-body mt-3 text-[#7d4f3e]">{t.desc}</p>
           </div>
           <div className="catalog-meta">
             <p className="catalog-meta-count">

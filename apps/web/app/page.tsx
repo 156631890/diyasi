@@ -389,10 +389,10 @@ export default async function HomePage() {
   };
 
   return (
-    <main className="pb-20">
+    <main className="page-shell pb-20">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
 
-      <section className="pt-6 lg:pt-8">
+      <section>
         <div className="home-reference-banner home-hero-shell">
           {heroPoster ? (
             <img src={heroPoster.image_url} alt={heroPoster.title} className="home-reference-banner-image" />
@@ -431,8 +431,8 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="home-wide-band home-wide-band-plain mt-8">
-        <div className="container-shell py-2">
+      <section className="home-wide-band home-wide-band-plain page-section">
+        <div className="container-shell py-4">
           <div className="home-overview-flow">
             <article className="home-overview-card home-overview-card-large">
               <p className="kicker home-reference-subtitle">{t.factoryKicker}</p>
@@ -451,7 +451,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="home-wide-band home-wide-band-white">
+      <section className="home-wide-band home-wide-band-white page-section">
         <div className="home-full-bleed-shell py-12">
           <div className="factory-story-shell">
             <div className="factory-video-panel">
@@ -473,7 +473,7 @@ export default async function HomePage() {
             <div className="factory-story-copy">
               <p className="kicker page-reference-subtitle">{t.factoryKicker}</p>
               <h2 className="factory-home-title mt-3 text-[#6c3827]">{t.factoryTitle}</h2>
-              <p className="factory-home-body mt-4 text-[#7d4f3e]">{t.factoryDesc}</p>
+              <p className="factory-home-body page-copy mt-4 text-[#7d4f3e]">{t.factoryDesc}</p>
               <div className="factory-capability-grid mt-8">
                 {t.capability.map((item) => (
                   <article key={item.label} className="factory-capability-card">
@@ -492,7 +492,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="home-wide-band home-wide-band-soft">
+      <section className="home-wide-band home-wide-band-soft page-section">
         <div className="home-full-bleed-shell py-12">
           <div className="factory-section-head">
             <p className="kicker page-reference-subtitle">{t.certificates}</p>
@@ -526,7 +526,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="home-wide-band home-wide-band-white">
+      <section className="home-wide-band home-wide-band-white page-section">
         <div className="home-full-bleed-shell py-12">
           <div className="factory-section-head">
             <p className="kicker page-reference-subtitle">{t.customize}</p>
@@ -544,7 +544,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="home-wide-band home-wide-band-plain">
+      <section className="home-wide-band home-wide-band-plain page-section">
         <div className="home-full-bleed-shell py-12">
           <div className="factory-section-head">
             <p className="kicker page-reference-subtitle">{t.products}</p>
@@ -579,7 +579,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="home-wide-band home-wide-band-dark">
+      <section className="home-wide-band home-wide-band-dark page-section">
         <div className="home-full-bleed-shell py-12">
           <div className="factory-cta-band home-cta-band">
             <div>
@@ -599,7 +599,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="home-wide-band home-wide-band-white factory-info-band">
+      <section className="home-wide-band home-wide-band-white factory-info-band page-section">
         <div className="home-full-bleed-shell py-0">
           <div className="factory-info-bar">
             {t.infoBar.map((item) => (

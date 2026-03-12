@@ -131,14 +131,14 @@ export default function OemOdmPage() {
   };
 
   return (
-    <main className="container-shell py-10">
+    <main className="container-shell page-shell page-stack">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
 
-      <section className="home-cta-band rounded-[34px] px-7 py-10 shadow-[0_32px_90px_rgba(121,72,47,0.18)] md:px-10 lg:px-12">
+      <section className="home-cta-band page-hero rounded-[34px] shadow-[0_32px_90px_rgba(121,72,47,0.18)] md:px-10 lg:px-12">
         <p className="kicker page-reference-subtitle text-[#ffd7ba]">{t.kicker}</p>
         <h1 className="heading-font mt-2 text-5xl font-semibold text-[#fff7f0]">{t.title}</h1>
-        <p className="page-reference-body mt-3 max-w-3xl text-[#fff0e5]">{t.desc}</p>
+        <p className="page-reference-body page-copy-wide mt-3 text-[#fff0e5]">{t.desc}</p>
         <div className="mt-6 flex flex-wrap gap-3">
           <Link
             href="/payments"
@@ -155,8 +155,8 @@ export default function OemOdmPage() {
         </div>
       </section>
 
-      <section className="mt-10">
-        <div className="section-lead">
+      <section className="page-section">
+        <div className="page-section-head">
           <p className="kicker page-reference-subtitle">{t.kicker}</p>
           <h2 className="page-reference-subtitle mt-2 text-[#6a3524]">{t.sectionTitle}</h2>
         </div>
