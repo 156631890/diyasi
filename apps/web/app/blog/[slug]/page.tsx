@@ -1,8 +1,11 @@
-﻿import { safeFetchJson } from "@/lib/api";
-import { SiteLang } from "@/lib/i18n";
-import { getServerLang } from "@/lib/server-lang";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+
+import { safeFetchJson } from "@/lib/api";
+import { SiteLang } from "@/lib/i18n";
+import { buildBreadcrumbJsonLd, buildMetadata, absoluteUrl } from "@/lib/seo";
+import { getServerLang } from "@/lib/server-lang";
 
 type Article = {
   title: string;
@@ -42,11 +45,29 @@ const copy: Record<
   },
   es: {
     back: "Ver Journal",
-    discuss: "Iniciar Conversación",
+    discuss: "Iniciar Conversacion",
     kicker: "Journal",
     lead: "Articulo de fabrica sobre desarrollo de producto, calidad y entrega."
   }
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const article = await getArticle(params.slug);
+
+  if (!article) {
+    return buildMetadata({
+      title: "Article not found",
+      description: "This journal page is not available.",
+      path: `/blog/${params.slug}`
+    });
+  }
+
+  return buildMetadata({
+    title: article.title,
+    description: article.excerpt,
+    path: `/blog/${article.slug}`
+  });
+}
 
 export default async function BlogDetailPage({ params }: Props) {
   const lang = getServerLang();
@@ -54,8 +75,34 @@ export default async function BlogDetailPage({ params }: Props) {
   const article = await getArticle(params.slug);
   if (!article) notFound();
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.excerpt,
+    articleSection: article.category,
+    url: absoluteUrl(`/blog/${article.slug}`),
+    author: {
+      "@type": "Organization",
+      name: "YiWu DiYaSi Dress CO., LTD"
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "YiWu DiYaSi Dress CO., LTD"
+    }
+  };
+
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: "Journal", path: "/blog" },
+    { name: article.title, path: `/blog/${article.slug}` }
+  ]);
+
   return (
     <main className="container-shell py-10">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+
       <section className="hero-panel p-7 md:p-10 lg:p-12">
         <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
           <div>
@@ -86,8 +133,12 @@ export default async function BlogDetailPage({ params }: Props) {
       <article className="mt-10">
         <div className="prose prose-slate max-w-none whitespace-pre-wrap page-reference-body text-[#243450]">{article.body}</div>
         <div className="mt-10 flex flex-wrap gap-3">
-          <Link href="/blog" className="btn btn-soft">{t.back}</Link>
-          <Link href="/contact" className="btn btn-primary">{t.discuss}</Link>
+          <Link href="/blog" className="btn btn-soft">
+            {t.back}
+          </Link>
+          <Link href="/contact" className="btn btn-primary">
+            {t.discuss}
+          </Link>
         </div>
       </article>
     </main>

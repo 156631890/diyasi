@@ -1,8 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { safeFetchJson } from "@/lib/api";
 import { SiteLang } from "@/lib/i18n";
+import { absoluteUrl, buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { getServerLang } from "@/lib/server-lang";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Factory",
+  description:
+    "Review YiWu DiYaSi factory capability, production lines, quality control, certificates, and OEM / ODM execution flow.",
+  path: "/factory"
+});
 
 type MediaAsset = {
   id: number;
@@ -18,26 +27,10 @@ type Article = {
 };
 
 const fallbackFactoryImages: MediaAsset[] = [
-  {
-    id: -1,
-    title: "Factory Capability Panorama",
-    image_url: "/media/generated/factory-capability-panorama.png"
-  },
-  {
-    id: -2,
-    title: "Quality Check Fabric Detail",
-    image_url: "/media/generated/factory/quality-check-fabric-detail.png"
-  },
-  {
-    id: -3,
-    title: "Seamless Machine Detail",
-    image_url: "/media/generated/factory/seamless-machine-detail.png"
-  },
-  {
-    id: -4,
-    title: "Inspection and Finishing Table",
-    image_url: "/media/generated/factory/inspection-and-finishing-table.png"
-  }
+  { id: -1, title: "Factory Capability Panorama", image_url: "/media/generated/factory-capability-panorama.png" },
+  { id: -2, title: "Quality Check Fabric Detail", image_url: "/media/generated/factory/quality-check-fabric-detail.png" },
+  { id: -3, title: "Seamless Machine Detail", image_url: "/media/generated/factory/seamless-machine-detail.png" },
+  { id: -4, title: "Inspection and Finishing Table", image_url: "/media/generated/factory/inspection-and-finishing-table.png" }
 ];
 
 const factoryWideImage = "/media/generated/wide/factory-wide-production-line.png";
@@ -269,9 +262,23 @@ export default async function FactoryPage() {
   const t = copy[lang];
   const [images, articles] = await Promise.all([getFactoryImages(), getArticles()]);
   const recentArticles = articles.slice(0, 3);
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: "Factory", path: "/factory" }
+  ]);
+  const webPageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: t.title,
+    description: t.desc,
+    url: absoluteUrl("/factory")
+  };
 
   return (
     <main className="container-shell py-10">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }} />
+
       <section className="dark-band rounded-[34px] px-7 py-10 shadow-[0_32px_90px_rgba(16,30,52,0.18)] md:px-10 lg:px-12">
         <p className="kicker page-reference-subtitle text-[#f3d7a1]">{t.kicker}</p>
         <h1 className="heading-font mt-2 text-5xl font-semibold">{t.title}</h1>
@@ -383,9 +390,7 @@ export default async function FactoryPage() {
           <h2 className="page-reference-subtitle mt-2 text-[#6a3524]">{t.updatesTitle}</h2>
         </div>
         <div className="factory-news-grid mt-6">
-          {recentArticles.length === 0 ? (
-            <div className="card p-6 text-[#7d4f3e]">{t.noNews}</div>
-          ) : null}
+          {recentArticles.length === 0 ? <div className="card p-6 text-[#7d4f3e]">{t.noNews}</div> : null}
           {recentArticles.map((article) => (
             <article key={article.slug} className="factory-news-card">
               <p className="factory-news-category">{article.category}</p>

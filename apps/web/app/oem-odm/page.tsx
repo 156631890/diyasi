@@ -1,6 +1,16 @@
-﻿import { SiteLang } from "@/lib/i18n";
-import { getServerLang } from "@/lib/server-lang";
+import type { Metadata } from "next";
 import Link from "next/link";
+
+import { SiteLang } from "@/lib/i18n";
+import { absoluteUrl, buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
+import { getServerLang } from "@/lib/server-lang";
+
+export const metadata: Metadata = buildMetadata({
+  title: "OEM / ODM",
+  description:
+    "Explore YiWu DiYaSi OEM / ODM workflow from product planning and material development to sampling, production, and shipment.",
+  path: "/oem-odm"
+});
 
 type WorkflowBlock = {
   title: string;
@@ -102,8 +112,29 @@ const copy: Record<
 export default function OemOdmPage() {
   const lang = getServerLang();
   const t = copy[lang];
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: "OEM / ODM", path: "/oem-odm" }
+  ]);
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "OEM / ODM Underwear Manufacturing",
+    description: t.desc,
+    provider: {
+      "@type": "Organization",
+      name: "YiWu DiYaSi Dress CO., LTD"
+    },
+    serviceType: "OEM / ODM manufacturing",
+    areaServed: "Worldwide",
+    url: absoluteUrl("/oem-odm")
+  };
+
   return (
     <main className="container-shell py-10">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+
       <section className="home-cta-band rounded-[34px] px-7 py-10 shadow-[0_32px_90px_rgba(121,72,47,0.18)] md:px-10 lg:px-12">
         <p className="kicker page-reference-subtitle text-[#ffd7ba]">{t.kicker}</p>
         <h1 className="heading-font mt-2 text-5xl font-semibold text-[#fff7f0]">{t.title}</h1>

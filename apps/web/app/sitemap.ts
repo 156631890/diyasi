@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { safeFetchJson } from "@/lib/api";
+import { getCatalogProducts } from "@/lib/catalog-source";
 
 type Article = { slug: string };
 
@@ -20,12 +21,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   const slugs = await getArticleSlugs();
+  const products = await getCatalogProducts();
   const blogUrls = slugs.map((slug) => ({
     url: `${site}/blog/${slug}`,
     lastModified: now,
     changeFrequency: "weekly" as const,
     priority: 0.7
   }));
+  const productUrls = products.map((product) => ({
+    url: `${site}/products/${encodeURIComponent(product.product_id)}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.7
+  }));
 
-  return [...staticUrls, ...blogUrls];
+  return [...staticUrls, ...blogUrls, ...productUrls];
 }

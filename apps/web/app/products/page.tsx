@@ -1,7 +1,17 @@
+import type { Metadata } from "next";
+
 import ProductCatalogView from "@/components/ProductCatalogView";
 import { getCatalogCategories, getCatalogProducts } from "@/lib/catalog-source";
 import { SiteLang } from "@/lib/i18n";
+import { buildBreadcrumbJsonLd, buildMetadata, absoluteUrl } from "@/lib/seo";
 import { getServerLang } from "@/lib/server-lang";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Products",
+  description:
+    "Private-label underwear, bras, shapewear, and activewear catalogue for wholesalers, retailers, and DTC brands.",
+  path: "/products"
+});
 
 const copy: Record<
   SiteLang,
@@ -123,9 +133,33 @@ export default async function ProductsPage() {
   const lang = getServerLang();
   const t = copy[lang];
   const [products, categories] = await Promise.all([getCatalogProducts(), getCatalogCategories()]);
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: products.slice(0, 24).map((product, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: absoluteUrl(`/products/${encodeURIComponent(product.product_id)}`),
+      name: product.product_name
+    }))
+  };
+  const collectionPageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: t.title,
+    description: t.desc,
+    url: absoluteUrl("/products")
+  };
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: "Products", path: "/products" }
+  ]);
 
   return (
     <main className="container-shell py-8 md:py-10">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <section className="catalog-intro">
         <p className="kicker page-reference-subtitle">{t.kicker}</p>
         <div className="catalog-intro-row">

@@ -1,5 +1,15 @@
-﻿import { SiteLang } from "@/lib/i18n";
+import type { Metadata } from "next";
+
+import { SiteLang } from "@/lib/i18n";
+import { absoluteUrl, buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { getServerLang } from "@/lib/server-lang";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Sustainability",
+  description:
+    "See how YiWu DiYaSi approaches sustainable materials, waste reduction, and longer product life across sampling and bulk production.",
+  path: "/sustainability"
+});
 
 const copy: Record<
   SiteLang,
@@ -80,8 +90,23 @@ const copy: Record<
 export default function SustainabilityPage() {
   const lang = getServerLang();
   const t = copy[lang];
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: "Sustainability", path: "/sustainability" }
+  ]);
+  const webPageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: t.title,
+    description: t.desc,
+    url: absoluteUrl("/sustainability")
+  };
+
   return (
     <main className="container-shell py-10">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }} />
+
       <section className="hero-panel p-7 md:p-10 lg:p-12">
         <p className="kicker page-reference-subtitle">{t.kicker}</p>
         <h1 className="section-title mt-2 text-[#6a3524]">{t.title}</h1>

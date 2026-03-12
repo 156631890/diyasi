@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -14,6 +15,7 @@ import {
   resolvePriceText,
   topFamily
 } from "@/lib/product-display";
+import { buildBreadcrumbJsonLd, buildMetadata, absoluteUrl } from "@/lib/seo";
 import { SiteLang } from "@/lib/i18n";
 import { getServerLang } from "@/lib/server-lang";
 
@@ -110,6 +112,28 @@ type ProductDetailPageProps = {
   params: { productId: string };
 };
 
+export async function generateMetadata({ params }: ProductDetailPageProps): Promise<Metadata> {
+  const product = await getCatalogProductById(decodeURIComponent(params.productId));
+
+  if (!product) {
+    return buildMetadata({
+      title: "Product not found",
+      description: "This product page is not available.",
+      path: `/products/${params.productId}`
+    });
+  }
+
+  const typedProduct = product as DisplayProduct;
+  const title = resolveDisplayTitle(typedProduct);
+  const description = resolveDisplayDescription(typedProduct);
+
+  return buildMetadata({
+    title,
+    description,
+    path: `/products/${encodeURIComponent(typedProduct.product_id)}`
+  });
+}
+
 export default async function ProductDetailPage({ params }: ProductDetailPageProps) {
   const productId = decodeURIComponent(params.productId);
   const [product, allProducts] = await Promise.all([getCatalogProductById(productId), getCatalogProducts()]);
@@ -139,8 +163,38 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
     .filter((item) => item.category === typedProduct.category || topFamily(item.category) === family)
     .slice(0, 4);
 
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: displayTitle,
+    description: displayDescription,
+    image: galleryImages.map((image) => (image.startsWith("http") ? image : absoluteUrl(image))),
+    sku: typedProduct.product_id,
+    category: typedProduct.category,
+    brand: {
+      "@type": "Brand",
+      name: "YiWu DiYaSi"
+    },
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "USD",
+      price: price,
+      availability: "https://schema.org/InStock",
+      url: absoluteUrl(`/products/${encodeURIComponent(typedProduct.product_id)}`)
+    }
+  };
+
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: "Products", path: "/products" },
+    { name: displayTitle, path: `/products/${encodeURIComponent(typedProduct.product_id)}` }
+  ]);
+
   return (
     <main className="container-shell py-8 md:py-10">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+
       <div className="catalog-detail-back">
         <Link href="/products" className="catalog-detail-back-link">
           {t.back}

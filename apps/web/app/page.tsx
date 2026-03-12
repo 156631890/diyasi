@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import HomeProductCarousel from "@/components/HomeProductCarousel";
@@ -6,7 +7,15 @@ import { fallbackCatalogCategories } from "@/lib/catalog";
 import { getCatalogProducts } from "@/lib/catalog-source";
 import { SiteLang } from "@/lib/i18n";
 import { resolveDisplayTitle, resolvePrimaryImage, topFamily, type DisplayProduct } from "@/lib/product-display";
+import { buildMetadata } from "@/lib/seo";
 import { getServerLang } from "@/lib/server-lang";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Private Label Underwear Manufacturer",
+  description:
+    "YiWu DiYaSi manufactures underwear, bras, shapewear, and activewear for wholesalers, retailers, and DTC brands.",
+  path: "/"
+});
 
 type MediaAsset = {
   id: number;

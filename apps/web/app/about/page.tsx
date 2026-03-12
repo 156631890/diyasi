@@ -1,7 +1,17 @@
-﻿import { safeFetchJson } from "@/lib/api";
-import { SiteLang } from "@/lib/i18n";
-import { getServerLang } from "@/lib/server-lang";
+import type { Metadata } from "next";
 import Link from "next/link";
+
+import { safeFetchJson } from "@/lib/api";
+import { SiteLang } from "@/lib/i18n";
+import { absoluteUrl, buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
+import { getServerLang } from "@/lib/server-lang";
+
+export const metadata: Metadata = buildMetadata({
+  title: "About",
+  description:
+    "Learn about YiWu DiYaSi, an underwear factory serving wholesalers, retailers, and DTC brands with OEM / ODM manufacturing.",
+  path: "/about"
+});
 
 type MediaAsset = {
   id: number;
@@ -133,8 +143,23 @@ export default async function AboutPage() {
   const lang = getServerLang();
   const t = copy[lang];
   const heroImage = await getHeroImage();
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" }
+  ]);
+  const aboutPageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: t.title,
+    description: `${t.p1} ${t.p2}`,
+    url: absoluteUrl("/about")
+  };
+
   return (
     <main className="container-shell py-10">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageJsonLd) }} />
+
       <section className="hero-panel overflow-hidden p-7 md:p-10 lg:p-12">
         <div className="grid items-center gap-7 lg:grid-cols-2">
           <div>
@@ -143,8 +168,12 @@ export default async function AboutPage() {
             <p className="page-reference-body mt-4 text-[#7d4f3e]">{t.p1}</p>
             <p className="page-reference-body mt-4 text-[#7d4f3e]">{t.p2}</p>
             <div className="mt-6 flex gap-3">
-              <Link href="/contact" className="btn btn-primary">{t.cta1}</Link>
-              <Link href="/factory" className="btn btn-soft">{t.cta2}</Link>
+              <Link href="/contact" className="btn btn-primary">
+                {t.cta1}
+              </Link>
+              <Link href="/factory" className="btn btn-soft">
+                {t.cta2}
+              </Link>
             </div>
           </div>
           <div className="about-visual-shell">
@@ -158,7 +187,9 @@ export default async function AboutPage() {
                 </div>
               </div>
             ) : (
-              <div className="grid h-[360px] place-items-center rounded-2xl bg-gradient-to-br from-[#fff7f0] to-[#f6e3d4] text-sm text-[#7d4f3e]">{t.noVisual}</div>
+              <div className="grid h-[360px] place-items-center rounded-2xl bg-gradient-to-br from-[#fff7f0] to-[#f6e3d4] text-sm text-[#7d4f3e]">
+                {t.noVisual}
+              </div>
             )}
           </div>
         </div>

@@ -156,3 +156,11 @@ export default function PaymentsPage() {
     </main>
   );
 }
+import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
+export const metadata: Metadata = buildMetadata({
+  title: "Payments",
+  description:
+    "Pay sample development fees and OEM launch deposits for YiWu DiYaSi projects once scope, timing, and production stage are confirmed.",
+  path: "/payments"
+});
