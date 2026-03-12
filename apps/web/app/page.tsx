@@ -121,7 +121,7 @@ const homeReferenceContent: Record<
 > = {
   en: {
     sectionTitle: "Why brands work with DiYaSi",
-    sectionLead: "Established factory experience, qualified production, and dependable OEM / ODM support.",
+    sectionLead: "DiYaSi combines established factory experience, qualified production systems, and long-term OEM / ODM support for global underwear programs.",
     items: [
       {
         title: "Professional Manufacturer",
@@ -267,7 +267,7 @@ const copy: Record<
       { icon: "04", title: "Shipment", body: "Coordinate inspection, packing, and export timing with a single production rhythm." }
     ],
     products: "Main Product Lines",
-    productsDesc: "Selected underwear, bra, and activewear lines.",
+    productsDesc: "Core product lines for wholesale, retail, and DTC development.",
     contactTitle: "Move from review to inquiry",
     contactBody: "Share your target category, MOQ range, and launch timing to start sampling or bulk production discussion with the factory.",
     inquire: "Start a Conversation",
@@ -282,7 +282,7 @@ const copy: Record<
     categoryDesc: "Browse core product lines for women, men, bras, and activewear programs.",
     noCategory: "No categories available yet.",
     galleryTitle: "Production floor and detail views",
-    certificatesTitle: "Certificates and factory standards",
+    certificatesTitle: "Certificates, quality control, and factory production",
     customizeTitle: "From concept to shipment"
   },
   zh: {
@@ -510,9 +510,9 @@ export default async function HomePage() {
 
       <section className="home-wide-band home-wide-band-white page-section">
         <div className="home-full-bleed-shell py-12">
-          <div className="home-section-head">
-            <p className="kicker home-section-kicker">{ref.sectionTitle}</p>
-            <h2 className="home-section-title">{ref.sectionLead}</h2>
+          <div className="factory-section-head">
+            <p className="kicker page-reference-subtitle">{ref.sectionTitle}</p>
+            <h2 className="factory-home-title mt-2 text-[#6a3524]">{ref.sectionLead}</h2>
           </div>
           <div className="factory-cert-grid mt-6">
             {ref.items.map((item) => (
@@ -527,9 +527,9 @@ export default async function HomePage() {
 
       <section className="home-wide-band home-wide-band-soft page-section">
         <div className="home-full-bleed-shell py-12">
-          <div className="home-section-head">
-            <p className="kicker home-section-kicker">{t.certificates}</p>
-            <h2 className="home-section-title">{t.certificatesTitle}</h2>
+          <div className="factory-section-head">
+            <p className="kicker page-reference-subtitle">{t.certificates}</p>
+            <h2 className="factory-home-title mt-2 text-[#6a3524]">{t.certificatesTitle}</h2>
           </div>
           <div className="home-trust-grid mt-6">
             <div className="home-trust-visual">
@@ -555,23 +555,31 @@ export default async function HomePage() {
               ))}
             </div>
           </div>
+          <div className="factory-capability-grid mt-6">
+            {t.capability.map((item) => (
+              <article key={item.label} className="factory-capability-card">
+                <p className="factory-capability-label">{item.label}</p>
+                <p className="factory-home-body mt-2 text-[#7d4f3e]">{item.value}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
       <section className="home-wide-band home-wide-band-plain page-section">
         <div className="home-full-bleed-shell py-12">
-          <div className="home-section-head">
-            <p className="kicker home-section-kicker">{t.products}</p>
-            <h2 className="home-section-title">{t.productsDesc}</h2>
+          <div className="factory-section-head">
+            <p className="kicker page-reference-subtitle">{t.products}</p>
+            <h2 className="factory-home-title mt-2 text-[#6a3524]">{t.productsDesc}</h2>
           </div>
-          <div className="mt-6">
+          <div className="home-product-flow mt-6">
             <HomeProductCarousel items={featuredShowcase} />
             <div className="home-product-side">
               <div className="home-category-panel rounded-[34px] px-7 py-10 md:px-10">
-                <h2 className="home-product-side-title">
+                <h2 className="home-reference-subtitle max-w-4xl text-[#5e3120]">
                   {lang === "zh" ? "核心品类与量产方向" : lang === "es" ? "Categorias clave y enfoque de produccion" : "Core categories and production focus"}
                 </h2>
-                <p className="home-product-side-copy">{t.categoryDesc}</p>
+                <p className="home-reference-body mt-4 max-w-3xl text-[#7d4f3e]">{t.categoryDesc}</p>
                 <div className="category-rows mt-8">
                   {categories.length === 0 ? (
                     <div className="home-reference-body text-[#7d4f3e]">{t.noCategory}</div>
