@@ -431,35 +431,6 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="home-wide-band home-wide-band-plain page-section">
-        <div className="container-shell py-4">
-          <div className="home-overview-flow">
-            <article className="home-overview-card home-overview-card-large">
-              <h2 className="home-reference-subtitle text-[#5e3120]">{t.factoryTitle}</h2>
-              <p className="home-reference-body mt-4 max-w-3xl text-[#7d4f3e]">{t.factoryDesc}</p>
-            </article>
-            <article className="home-overview-card">
-              <p className="home-reference-body text-[#7d4f3e]">
-                {lang === "zh"
-                  ? "工厂位于浙江义乌，支持内衣、文胸、家居服与运动系列开发，覆盖 OEM / ODM、打样推进、量产安排与品牌包装配合。"
-                  : lang === "es"
-                    ? "La fabrica en Yiwu desarrolla underwear, bras, loungewear y activewear con soporte OEM / ODM, muestreo, bulk y empaque private-label."
-                    : "Based in Yiwu, the factory supports underwear, bras, loungewear, and activewear with OEM / ODM development, sampling, bulk planning, and private-label packaging."}
-              </p>
-            </article>
-            <article className="home-overview-card">
-              <p className="home-reference-body text-[#7d4f3e]">
-                {lang === "zh"
-                  ? "适合正在寻找稳定交期、清晰 MOQ、认证资质和长期合作工厂的批发商、零售商与 DTC 品牌。"
-                  : lang === "es"
-                    ? "Adecuado para mayoristas, retailers y marcas DTC que buscan lead time estable, MOQ claro, certificaciones y cooperacion de largo plazo."
-                    : "Built for wholesalers, retailers, and DTC brands that need stable lead time, clear MOQ, certifications, and long-term factory cooperation."}
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
       <section className="home-wide-band home-wide-band-white page-section">
         <div className="home-full-bleed-shell py-12">
           <div className="factory-story-shell">
