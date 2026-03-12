@@ -30,6 +30,29 @@ type FeaturedProduct = {
   link: string;
 };
 
+function resolveHomeProductTitle(product: DisplayProduct): string {
+  const family = topFamily(product.category);
+
+  if (family === "Women's Panties") {
+    return "Women's Panties";
+  }
+  if (family === "Bras") {
+    return "Bras";
+  }
+  if (family === "Men's Underwear") {
+    return "Men's Underwear";
+  }
+  if (family === "Activewear") {
+    return "Activewear";
+  }
+
+  return resolveDisplayTitle(product)
+    .replace(/\b(?:women's|womens|men's|mens)\b/gi, "")
+    .replace(/\b(?:underwear|panties|bra|bras|activewear|wear)\b/gi, "")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+}
+
 const fallbackPosters: MediaAsset[] = [
   {
     id: -1,
@@ -332,7 +355,7 @@ async function getFeaturedShowcase(): Promise<FeaturedProduct[]> {
   const source = selected.length >= 4 ? selected.slice(0, 4) : products.slice(0, 4);
 
   return source.map((product) => ({
-    title: resolveDisplayTitle(product),
+    title: resolveHomeProductTitle(product),
     image: resolvePrimaryImage(product),
     link: `/products/${encodeURIComponent(product.product_id)}`
   }));
