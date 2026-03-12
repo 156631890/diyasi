@@ -623,6 +623,36 @@ export default async function HomePage() {
         </div>
       </section>
 
+      <section className="page-section">
+        <div className="home-full-bleed-shell">
+          <div className="home-bottom-feature">
+            <img
+              src="/media/custom/home-bottom-oem.png"
+              alt="DiYaSi OEM and ODM factory introduction"
+              className="home-bottom-feature-image"
+            />
+            <div className="home-bottom-feature-overlay" />
+            <div className="home-bottom-feature-copy">
+              <p className="kicker text-white/85">OEM / ODM</p>
+              <h2 className="home-reference-title mt-3 max-w-3xl text-white">
+                {lang === "zh"
+                  ? "20+ 年经验的内衣工厂配合 OEM / ODM 开发与量产"
+                  : lang === "es"
+                    ? "OEM / ODM con mas de 20 anos de experiencia en fabrica"
+                    : "20+ years of factory experience for OEM / ODM development"}
+              </h2>
+              <p className="home-reference-body mt-4 max-w-3xl text-white/88">
+                {lang === "zh"
+                  ? "设计、打样、生产与出货由同一工厂体系执行，支持多款式开发与稳定交付。"
+                  : lang === "es"
+                    ? "Diseno, muestreo, produccion y embarque dentro de un mismo sistema de fabrica para estilos multiples y entrega estable."
+                    : "Design, sampling, production, and shipment are handled within one factory system for multi-style development and stable delivery."}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
   );
 }
