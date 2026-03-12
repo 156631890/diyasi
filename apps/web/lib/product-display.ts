@@ -137,6 +137,9 @@ export function resolvePriceText(product: DisplayProduct): string {
 }
 
 export function resolvePrimaryImage(product: DisplayProduct): string {
+  if (product.gallery_images && product.gallery_images.length > 0) {
+    return product.gallery_images[0];
+  }
   return (
     product.image_url ||
     fallbackProductImages[product.product_id] ||
@@ -146,14 +149,16 @@ export function resolvePrimaryImage(product: DisplayProduct): string {
 }
 
 export function resolveHoverImage(product: DisplayProduct): string {
-  return categoryImagePairs[keyCategory(product.category)]?.[1] || resolvePrimaryImage(product);
+  if (product.gallery_images && product.gallery_images.length > 1) {
+    return product.gallery_images[1];
+  }
+  return resolvePrimaryImage(product);
 }
 
 export function buildGalleryImages(product: DisplayProduct): string[] {
   const candidates = [
     ...(product.gallery_images || []),
     resolvePrimaryImage(product),
-    resolveHoverImage(product),
     fallbackProductImages[product.product_id]
   ].filter(Boolean);
   return [...new Set(candidates)];
