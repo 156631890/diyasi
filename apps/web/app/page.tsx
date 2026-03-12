@@ -510,9 +510,9 @@ export default async function HomePage() {
 
       <section className="home-wide-band home-wide-band-white page-section">
         <div className="home-full-bleed-shell py-12">
-          <div className="factory-section-head">
-            <p className="kicker page-reference-subtitle">{ref.sectionTitle}</p>
-            <h2 className="factory-home-title mt-2 text-[#6a3524]">{ref.sectionLead}</h2>
+          <div className="home-section-head">
+            <p className="kicker home-section-kicker">{ref.sectionTitle}</p>
+            <h2 className="home-section-title">{ref.sectionLead}</h2>
           </div>
           <div className="factory-cert-grid mt-6">
             {ref.items.map((item) => (
@@ -527,9 +527,9 @@ export default async function HomePage() {
 
       <section className="home-wide-band home-wide-band-soft page-section">
         <div className="home-full-bleed-shell py-12">
-          <div className="factory-section-head">
-            <p className="kicker page-reference-subtitle">{t.certificates}</p>
-            <h2 className="factory-home-title mt-2 text-[#6a3524]">{t.certificatesTitle}</h2>
+          <div className="home-section-head">
+            <p className="kicker home-section-kicker">{t.certificates}</p>
+            <h2 className="home-section-title">{t.certificatesTitle}</h2>
           </div>
           <div className="home-trust-grid mt-6">
             <div className="home-trust-visual">
@@ -568,18 +568,18 @@ export default async function HomePage() {
 
       <section className="home-wide-band home-wide-band-plain page-section">
         <div className="home-full-bleed-shell py-12">
-          <div className="factory-section-head">
-            <p className="kicker page-reference-subtitle">{t.products}</p>
-            <h2 className="factory-home-title mt-2 text-[#6a3524]">{t.productsDesc}</h2>
+          <div className="home-section-head">
+            <p className="kicker home-section-kicker">{t.products}</p>
+            <h2 className="home-section-title">{t.productsDesc}</h2>
           </div>
           <div className="home-product-flow mt-6">
             <HomeProductCarousel items={featuredShowcase} />
             <div className="home-product-side">
               <div className="home-category-panel rounded-[34px] px-7 py-10 md:px-10">
-                <h2 className="home-reference-subtitle max-w-4xl text-[#5e3120]">
+                <h2 className="home-product-side-title">
                   {lang === "zh" ? "核心品类与量产方向" : lang === "es" ? "Categorias clave y enfoque de produccion" : "Core categories and production focus"}
                 </h2>
-                <p className="home-reference-body mt-4 max-w-3xl text-[#7d4f3e]">{t.categoryDesc}</p>
+                <p className="home-product-side-copy">{t.categoryDesc}</p>
                 <div className="category-rows mt-8">
                   {categories.length === 0 ? (
                     <div className="home-reference-body text-[#7d4f3e]">{t.noCategory}</div>
