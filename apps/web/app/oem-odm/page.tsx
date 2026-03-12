@@ -105,14 +105,20 @@ export default function OemOdmPage() {
   return (
     <main className="container-shell py-10">
       <section className="home-cta-band rounded-[34px] px-7 py-10 shadow-[0_32px_90px_rgba(121,72,47,0.18)] md:px-10 lg:px-12">
-        <p className="kicker page-reference-subtitle text-[#f3d7a1]">{t.kicker}</p>
-        <h1 className="heading-font mt-2 text-5xl font-semibold">{t.title}</h1>
-        <p className="page-reference-body mt-3 max-w-3xl text-[#f3dfd3]">{t.desc}</p>
+        <p className="kicker page-reference-subtitle text-[#ffd7ba]">{t.kicker}</p>
+        <h1 className="heading-font mt-2 text-5xl font-semibold text-[#fff7f0]">{t.title}</h1>
+        <p className="page-reference-body mt-3 max-w-3xl text-[#fff0e5]">{t.desc}</p>
         <div className="mt-6 flex flex-wrap gap-3">
-          <Link href="/payments" className="btn bg-white text-[#8d452d]">
+          <Link
+            href="/payments"
+            className="btn border border-[#ffe2cf] bg-[#fff7f1] text-[#8d452d] hover:bg-[#ffe9db]"
+          >
             {t.pay}
           </Link>
-          <Link href="/contact" className="btn bg-white text-[#8d452d]">
+          <Link
+            href="/contact"
+            className="btn border border-[#f7cdb1] bg-transparent text-[#fff7f0] hover:bg-white/12"
+          >
             {t.call}
           </Link>
         </div>
