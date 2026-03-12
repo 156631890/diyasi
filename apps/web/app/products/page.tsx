@@ -44,24 +44,23 @@ const copy: Record<
   }
 > = {
   en: {
-    kicker: "Product Catalogue",
-    title: "Private label underwear, bras, shapewear, and activewear",
-    desc:
-      "Browse imported Alibaba styles now organized for wholesale buyers, retailers, DTC brands, and factory development briefs.",
-    all: "All products",
+    kicker: "Products",
+    title: "Underwear, bras, shapewear, and activewear",
+    desc: "",
+    all: "All",
     noProducts: "No products found in this category yet.",
     noImage: "Image coming soon",
     quote: "Start a Conversation",
     paidSample: "Paid Sample",
     items: "items",
     viewDetails: "View Details",
-    browseAll: "Browse all categories",
+    browseAll: "All",
     categoryLabel: "Category",
-    groupedLead: "All subcategories",
-    topLevelLabel: "Top-level categories",
-    subcategoryLabel: "Subcategories",
+    groupedLead: "All",
+    topLevelLabel: "Categories",
+    subcategoryLabel: "Filters",
     loadMore: "Load more",
-    searchLabel: "Search products",
+    searchLabel: "Search",
     searchPlaceholder: "Search by product name, fabric, or MOQ",
     moqLabel: "MOQ",
     priceLabel: "Range",
@@ -100,24 +99,23 @@ const copy: Record<
     close: "关闭"
   },
   es: {
-    kicker: "Catalogo de Productos",
-    title: "Catalogo de underwear, bras, shapewear y activewear",
-    desc:
-      "Explora productos organizados para compradores mayoristas, retailers, marcas DTC y proyectos de desarrollo de fabrica.",
-    all: "Todos los productos",
+    kicker: "Productos",
+    title: "Underwear, bras, shapewear y activewear",
+    desc: "",
+    all: "Todo",
     noProducts: "Todavia no hay productos en esta categoria.",
     noImage: "Imagen pendiente",
     quote: "Iniciar Consulta",
     paidSample: "Muestra Pagada",
     items: "articulos",
     viewDetails: "Ver Detalle",
-    browseAll: "Ver todas las categorias",
+    browseAll: "Todo",
     categoryLabel: "Categoria",
-    groupedLead: "Todas las subcategorias",
-    topLevelLabel: "Categorias principales",
-    subcategoryLabel: "Subcategorias",
+    groupedLead: "Todo",
+    topLevelLabel: "Categorias",
+    subcategoryLabel: "Filtros",
     loadMore: "Cargar mas",
-    searchLabel: "Buscar productos",
+    searchLabel: "Buscar",
     searchPlaceholder: "Buscar por nombre, tejido o MOQ",
     moqLabel: "MOQ",
     priceLabel: "Rango",
@@ -165,7 +163,7 @@ export default async function ProductsPage() {
         <div className="catalog-intro-row">
           <div className="page-copy-wide">
             <h1 className="section-title mt-2 text-[#6a3524]">{t.title}</h1>
-            <p className="page-reference-body mt-3 text-[#7d4f3e]">{t.desc}</p>
+            {t.desc ? <p className="page-reference-body mt-3 text-[#7d4f3e]">{t.desc}</p> : null}
           </div>
           <div className="catalog-meta">
             <p className="catalog-meta-count">

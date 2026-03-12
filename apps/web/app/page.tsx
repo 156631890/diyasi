@@ -329,106 +329,6 @@ const copy: Record<
   }
 };
 
-const companyContent: Record<
-  SiteLang,
-  {
-    title: string;
-    lead: string;
-    certificationsTitle: string;
-    advantagesTitle: string;
-    storiesTitle: string;
-    storiesLead: string;
-    overviewStats: Array<{ label: string; value: string }>;
-    certificationsInline: string[];
-    advantages: string[];
-    successStories: Array<{ country: string; product: string; annualVolume: string; years: string }>;
-  }
-> = {
-  en: {
-    title: "Company Overview",
-    lead: "Core factory facts, certifications, and long-term buyer programs shown early for faster evaluation.",
-    certificationsTitle: "Certifications",
-    advantagesTitle: "Advantages",
-    storiesTitle: "Success Stories",
-    storiesLead: "Representative buyer programs across Europe and North America.",
-    overviewStats: [
-      { label: "Established", value: "2002" },
-      { label: "Location", value: "No.16 DaShi Road, FoTang Town, Yiwu, Zhejiang, China" },
-      { label: "Factory Size", value: "20,000 m²" },
-      { label: "Employees", value: "100+" },
-      { label: "Monthly Capacity", value: "600,000+ pieces" },
-      { label: "Export Markets", value: "30+ countries" }
-    ],
-    certificationsInline: ["BSCI", "SEDEX", "ISO 9001", "OEKO-TEX"],
-    advantages: [
-      "Flexible MOQ: 100-500 pcs/style",
-      "OEM / ODM services",
-      "Fast sampling: 5-7 days",
-      "3-stage QC",
-      "Lead time: 20-30 days",
-      "Eco-friendly fabrics available"
-    ],
-    successStories: [
-      { country: "Spain", product: "Seamless Underwear", annualVolume: "1M-2M pcs", years: "15 yrs" },
-      { country: "USA", product: "Loungewear Sets", annualVolume: "500K-800K pcs", years: "8 yrs" },
-      { country: "Germany", product: "Sports Bras & Leggings", annualVolume: "300K-500K pcs", years: "5 yrs" }
-    ]
-  },
-  zh: {
-    title: "公司概览",
-    lead: "把工厂规模、认证资质和长期合作案例提前放到首页，方便客户快速判断。",
-    certificationsTitle: "认证资质",
-    advantagesTitle: "工厂优势",
-    storiesTitle: "合作案例",
-    storiesLead: "面向欧洲与北美客户的代表性合作项目。",
-    overviewStats: [
-      { label: "成立时间", value: "2002" },
-      { label: "工厂地址", value: "浙江省义乌市佛堂镇大士路16号" },
-      { label: "工厂面积", value: "20,000 平方米" },
-      { label: "员工人数", value: "100+" },
-      { label: "月产能", value: "600,000+ 件" },
-      { label: "出口市场", value: "30+ 国家" }
-    ],
-    certificationsInline: ["BSCI", "SEDEX", "ISO 9001", "OEKO-TEX"],
-    advantages: ["灵活 MOQ：100-500 件/款", "支持 OEM / ODM", "5-7 天快速打样", "3 道质检流程", "20-30 天交期", "可提供环保面料"],
-    successStories: [
-      { country: "西班牙", product: "无缝内衣", annualVolume: "100万-200万件", years: "15年" },
-      { country: "美国", product: "家居服套装", annualVolume: "50万-80万件", years: "8年" },
-      { country: "德国", product: "运动文胸与打底裤", annualVolume: "30万-50万件", years: "5年" }
-    ]
-  },
-  es: {
-    title: "Resumen de Empresa",
-    lead: "Datos clave de fabrica, certificaciones y programas de largo plazo visibles desde el inicio.",
-    certificationsTitle: "Certificaciones",
-    advantagesTitle: "Ventajas",
-    storiesTitle: "Casos de Exito",
-    storiesLead: "Programas representativos en Europa y Norteamerica.",
-    overviewStats: [
-      { label: "Fundacion", value: "2002" },
-      { label: "Ubicacion", value: "No.16 DaShi Road, FoTang Town, Yiwu, Zhejiang, China" },
-      { label: "Tamano de Fabrica", value: "20,000 m²" },
-      { label: "Empleados", value: "100+" },
-      { label: "Capacidad Mensual", value: "600,000+ piezas" },
-      { label: "Mercados", value: "30+ paises" }
-    ],
-    certificationsInline: ["BSCI", "SEDEX", "ISO 9001", "OEKO-TEX"],
-    advantages: [
-      "MOQ flexible: 100-500 pcs/estilo",
-      "Servicios OEM / ODM",
-      "Muestra rapida: 5-7 dias",
-      "QC en 3 etapas",
-      "Lead time: 20-30 dias",
-      "Tejidos eco-friendly disponibles"
-    ],
-    successStories: [
-      { country: "Spain", product: "Seamless Underwear", annualVolume: "1M-2M pcs", years: "15 yrs" },
-      { country: "USA", product: "Loungewear Sets", annualVolume: "500K-800K pcs", years: "8 yrs" },
-      { country: "Germany", product: "Sports Bras & Leggings", annualVolume: "300K-500K pcs", years: "5 yrs" }
-    ]
-  }
-};
-
 async function getFeaturedPosters(): Promise<MediaAsset[]> {
   const rows = await safeFetchJson<MediaAsset[]>("/media/assets?only_active=true&only_featured=true&limit=6", []);
   const filtered = rows
@@ -470,7 +370,6 @@ async function getFeaturedShowcase(): Promise<FeaturedProduct[]> {
 export default async function HomePage() {
   const lang = getServerLang();
   const t = copy[lang];
-  const company = companyContent[lang];
   const [posters, categories, factoryImages, featuredShowcase] = await Promise.all([
     getFeaturedPosters(),
     getCategories(),
@@ -536,17 +435,26 @@ export default async function HomePage() {
         <div className="container-shell py-4">
           <div className="home-overview-flow">
             <article className="home-overview-card home-overview-card-large">
-              <p className="kicker home-reference-subtitle">{t.factoryKicker}</p>
-              <h2 className="home-reference-subtitle mt-2 text-[#5e3120]">{t.factoryTitle}</h2>
+              <h2 className="home-reference-subtitle text-[#5e3120]">{t.factoryTitle}</h2>
               <p className="home-reference-body mt-4 max-w-3xl text-[#7d4f3e]">{t.factoryDesc}</p>
             </article>
             <article className="home-overview-card">
-              <p className="home-overview-label">{t.categoryTitle}</p>
-              <p className="home-reference-body mt-3 text-[#7d4f3e]">{t.categoryDesc}</p>
+              <p className="home-reference-body text-[#7d4f3e]">
+                {lang === "zh"
+                  ? "工厂位于浙江义乌，支持内衣、文胸、家居服与运动系列开发，覆盖 OEM / ODM、打样推进、量产安排与品牌包装配合。"
+                  : lang === "es"
+                    ? "La fabrica en Yiwu desarrolla underwear, bras, loungewear y activewear con soporte OEM / ODM, muestreo, bulk y empaque private-label."
+                    : "Based in Yiwu, the factory supports underwear, bras, loungewear, and activewear with OEM / ODM development, sampling, bulk planning, and private-label packaging."}
+              </p>
             </article>
             <article className="home-overview-card">
-              <p className="home-overview-label">{t.contactTitle}</p>
-              <p className="home-reference-body mt-3 text-[#7d4f3e]">{t.contactBody}</p>
+              <p className="home-reference-body text-[#7d4f3e]">
+                {lang === "zh"
+                  ? "适合正在寻找稳定交期、清晰 MOQ、认证资质和长期合作工厂的批发商、零售商与 DTC 品牌。"
+                  : lang === "es"
+                    ? "Adecuado para mayoristas, retailers y marcas DTC que buscan lead time estable, MOQ claro, certificaciones y cooperacion de largo plazo."
+                    : "Built for wholesalers, retailers, and DTC brands that need stable lead time, clear MOQ, certifications, and long-term factory cooperation."}
+              </p>
             </article>
           </div>
         </div>
@@ -630,75 +538,6 @@ export default async function HomePage() {
       <section className="home-wide-band home-wide-band-white page-section">
         <div className="home-full-bleed-shell py-12">
           <div className="factory-section-head">
-            <p className="kicker page-reference-subtitle">{company.title}</p>
-            <h2 className="factory-home-title mt-2 text-[#6a3524]">{company.lead}</h2>
-          </div>
-          <div className="company-overview-grid mt-6">
-            <article className="company-overview-card">
-              <div className="company-overview-list">
-                {company.overviewStats.map((item) => (
-                  <div key={item.label} className="company-overview-row">
-                    <p className="company-overview-label">{item.label}</p>
-                    <p className="company-overview-value">{item.value}</p>
-                  </div>
-                ))}
-              </div>
-            </article>
-            <div className="grid gap-4">
-              <article className="company-overview-card">
-                <p className="kicker page-reference-subtitle">{company.certificationsTitle}</p>
-                <div className="chip-list mt-4">
-                  {company.certificationsInline.map((item) => (
-                    <span key={item} className="chip">
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </article>
-              <article className="company-overview-card">
-                <p className="kicker page-reference-subtitle">{company.advantagesTitle}</p>
-                <div className="chip-list mt-4">
-                  {company.advantages.map((item) => (
-                    <span key={item} className="chip">
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </article>
-            </div>
-          </div>
-          <div className="company-overview-card mt-6 overflow-x-auto">
-            <div className="factory-section-head">
-              <p className="kicker page-reference-subtitle">{company.storiesTitle}</p>
-              <h3 className="card-title-standard mt-2 text-[#6a3524]">{company.storiesLead}</h3>
-            </div>
-            <table className="success-table mt-5">
-              <thead>
-                <tr>
-                  <th>Country</th>
-                  <th>Product</th>
-                  <th>Annual Volume</th>
-                  <th>Years</th>
-                </tr>
-              </thead>
-              <tbody>
-                {company.successStories.map((story) => (
-                  <tr key={`${story.country}-${story.product}`}>
-                    <td>{story.country}</td>
-                    <td>{story.product}</td>
-                    <td>{story.annualVolume}</td>
-                    <td>{story.years}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section className="home-wide-band home-wide-band-white page-section">
-        <div className="home-full-bleed-shell py-12">
-          <div className="factory-section-head">
             <p className="kicker page-reference-subtitle">{t.customize}</p>
             <h2 className="factory-home-title mt-2 text-[#6a3524]">{t.customizeTitle}</h2>
           </div>
@@ -724,8 +563,9 @@ export default async function HomePage() {
             <HomeProductCarousel items={featuredShowcase} />
             <div className="home-product-side">
               <div className="home-category-panel rounded-[34px] px-7 py-10 md:px-10">
-                <p className="kicker home-reference-subtitle text-[#c36b44]">{t.products}</p>
-                <h2 className="home-reference-subtitle mt-2 max-w-4xl text-[#5e3120]">{t.categoryTitle}</h2>
+                <h2 className="home-reference-subtitle max-w-4xl text-[#5e3120]">
+                  {lang === "zh" ? "核心品类与量产方向" : lang === "es" ? "Categorias clave y enfoque de produccion" : "Core categories and production focus"}
+                </h2>
                 <p className="home-reference-body mt-4 max-w-3xl text-[#7d4f3e]">{t.categoryDesc}</p>
                 <div className="category-rows mt-8">
                   {categories.length === 0 ? (
@@ -753,8 +593,9 @@ export default async function HomePage() {
         <div className="home-full-bleed-shell py-12">
           <div className="factory-cta-band home-cta-band">
             <div>
-              <p className="kicker page-reference-subtitle text-[#f3d7a1]">{t.contactTitle}</p>
-              <h2 className="factory-home-title mt-3 text-white">{t.contactTitle}</h2>
+              <h2 className="factory-home-title text-white">
+                {lang === "zh" ? "带着品类、数量和时间节点开始沟通" : lang === "es" ? "Inicia la conversacion con categoria, volumen y timing" : "Start the conversation with category, volume, and launch timing"}
+              </h2>
               <p className="factory-home-body mt-3 max-w-2xl text-white/82">{t.contactBody}</p>
             </div>
             <div className="factory-cta-actions">
