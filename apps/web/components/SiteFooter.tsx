@@ -58,23 +58,25 @@ const copy: Record<SiteLang, FooterCopy> = {
     ],
     contactTitle: "Contact Us",
     contactRows: [
-      { label: "Email", value: "sales@diyasidress.com" },
-      { label: "Address", value: "Yiwu, Zhejiang, China" },
-      { label: "Lead Time", value: "Sampling 5-7 days / Bulk 20-30 days" }
+      { label: "Email", value: "imbella.vicky@diyasidress.com" },
+      { label: "Tel", value: "+86-18042579030" },
+      { label: "Fax", value: "+86-579-85569925" },
+      { label: "Address", value: "NO.16 DaShi Road, FoTang Town, Yiwu, Zhejiang, China" }
     ],
     rights: "All rights reserved.",
     bottomLinks: [
-      { href: "/products", label: "Products" },
-      { href: "/contact", label: "Inquiry" },
-      { href: "/payments", label: "Payments" }
+      { href: "/about", label: "About US" },
+      { href: "/contact", label: "Contact" },
+      { href: "/privacy-policy", label: "Privacy Policy" },
+      { href: "/return-policy", label: "Return Policy" }
     ]
   },
   zh: {
-    eyebrow: "义乌蒂雅思",
+    eyebrow: "义乌谛雅思",
     brandDesc: "服务批发商、零售商与 DTC 品牌的内衣工厂，支持贴牌开发与稳定交付。",
     ctaTitle: "提供清晰 MOQ、打样节奏与交期安排的内衣制造合作",
-    ctaDesc: "查看产品分类，提交项目需求，或直接发起询盘，推进打样与 OEM / ODM 合作。",
-    ctaPrimary: "开始沟通",
+    ctaDesc: "查看产品分类、提交项目需求，或直接发起询盘，推进打样与 OEM / ODM 合作。",
+    ctaPrimary: "开始洽谈",
     ctaSecondary: "查看分类",
     quickTitle: "快捷导航",
     quickItems: [
@@ -99,15 +101,17 @@ const copy: Record<SiteLang, FooterCopy> = {
     ],
     contactTitle: "联系我们",
     contactRows: [
-      { label: "邮箱", value: "sales@diyasidress.com" },
-      { label: "地址", value: "中国浙江义乌" },
-      { label: "周期", value: "打样 5-7 天 / 大货 20-30 天" }
+      { label: "邮箱", value: "imbella.vicky@diyasidress.com" },
+      { label: "电话", value: "+86-18042579030" },
+      { label: "传真", value: "+86-579-85569925" },
+      { label: "地址", value: "浙江省义乌市佛堂镇大士路16号" }
     ],
     rights: "保留所有权利。",
     bottomLinks: [
-      { href: "/products", label: "产品" },
-      { href: "/contact", label: "询盘" },
-      { href: "/payments", label: "支付" }
+      { href: "/about", label: "关于我们" },
+      { href: "/contact", label: "联系" },
+      { href: "/privacy-policy", label: "隐私政策" },
+      { href: "/return-policy", label: "退换政策" }
     ]
   },
   es: {
@@ -142,15 +146,17 @@ const copy: Record<SiteLang, FooterCopy> = {
     ],
     contactTitle: "Contacto",
     contactRows: [
-      { label: "Email", value: "sales@diyasidress.com" },
-      { label: "Direccion", value: "Yiwu, Zhejiang, China" },
-      { label: "Lead Time", value: "Muestra 5-7 dias / Produccion 20-30 dias" }
+      { label: "Email", value: "imbella.vicky@diyasidress.com" },
+      { label: "Tel", value: "+86-18042579030" },
+      { label: "Fax", value: "+86-579-85569925" },
+      { label: "Direccion", value: "NO.16 DaShi Road, FoTang Town, Yiwu, Zhejiang, China" }
     ],
     rights: "Todos los derechos reservados.",
     bottomLinks: [
-      { href: "/products", label: "Productos" },
-      { href: "/contact", label: "Consulta" },
-      { href: "/payments", label: "Pagos" }
+      { href: "/about", label: "About US" },
+      { href: "/contact", label: "Contact" },
+      { href: "/privacy-policy", label: "Privacy Policy" },
+      { href: "/return-policy", label: "Return Policy" }
     ]
   }
 };
@@ -186,12 +192,10 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
       </div>
 
       <div className="home-full-bleed-shell py-9">
-        <section className="grid gap-8 lg:grid-cols-[1.05fr_0.75fr_0.75fr_0.95fr]">
+        <section className="grid gap-8 lg:grid-cols-[1.05fr_0.72fr_0.72fr_1.15fr]">
           <div className="pr-4">
             <p className="font-[Arial] text-[24px] font-bold leading-none text-[#5a2f1e]">YiWu DiYaSi</p>
-            <p className="mt-3 max-w-md font-[Arial] text-[14px] leading-[1.8] text-[#7c6357]">
-              {t.brandDesc}
-            </p>
+            <p className="mt-3 max-w-md font-[Arial] text-[14px] leading-[1.8] text-[#7c6357]">{t.brandDesc}</p>
           </div>
 
           <div>
@@ -229,13 +233,11 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
             </div>
             <div>
               <p className="site-footer-heading">{t.contactTitle}</p>
-              <div className="mt-3 grid gap-3">
+              <div className="mt-3 grid gap-2.5">
                 {t.contactRows.map((row) => (
-                  <div key={row.label}>
-                    <p className="site-footer-label">{row.label}</p>
-                    <p className="mt-1 font-[Arial] text-[14px] leading-[1.7] text-[#7c6357]">
-                      {row.value}
-                    </p>
+                  <div key={row.label} className="site-footer-contact-row">
+                    <p className="site-footer-label site-footer-contact-key">{row.label}</p>
+                    <p className="site-footer-contact-value">{row.value}</p>
                   </div>
                 ))}
               </div>

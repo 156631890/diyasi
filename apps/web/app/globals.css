@@ -471,6 +471,27 @@ a {
   color: #a5877a;
 }
 
+.site-footer-contact-row {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: start;
+}
+
+.site-footer-contact-key {
+  margin: 0;
+  padding-top: 0.18rem;
+}
+
+.site-footer-contact-value {
+  margin: 0;
+  font-family: Arial, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #7c6357;
+  overflow-wrap: anywhere;
+}
+
 .site-footer-bottom-link {
   font-family: Arial, "Helvetica Neue", sans-serif;
   font-size: 12px;
@@ -2470,6 +2491,11 @@ a {
 
   .contact-payment-band {
     grid-template-columns: 1fr;
+  }
+
+  .site-footer-contact-row {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
   }
 
   .contact-payment-actions {

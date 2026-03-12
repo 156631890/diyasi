@@ -74,6 +74,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     name: SITE_NAME,
     url: SITE_URL,
     description: SITE_DESCRIPTION,
+    email: "imbella.vicky@diyasidress.com",
+    telephone: "+86-18042579030",
+    faxNumber: "+86-579-85569925",
     areaServed: "Worldwide",
     knowsLanguage: ["en", "zh", "es"]
   };
@@ -84,8 +87,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     url: SITE_URL,
     description: SITE_DESCRIPTION,
     image: `${SITE_URL}/media/generated/factory-capability-panorama.png`,
+    email: "imbella.vicky@diyasidress.com",
+    telephone: "+86-18042579030",
+    faxNumber: "+86-579-85569925",
     address: {
       "@type": "PostalAddress",
+      streetAddress: "NO.16 DaShi Road, FoTang Town",
       addressLocality: "Yiwu",
       addressRegion: "Zhejiang",
       addressCountry: "CN"
