@@ -111,6 +111,82 @@ const fallbackFactoryImages: MediaAsset[] = [
   }
 ];
 
+const homeReferenceContent: Record<
+  SiteLang,
+  {
+    sectionTitle: string;
+    sectionLead: string;
+    items: Array<{ title: string; body: string }>;
+  }
+> = {
+  en: {
+    sectionTitle: "Why brands work with DiYaSi",
+    sectionLead: "A homepage structure inspired by established factory sites, but focused on your real strengths rather than marketplace language.",
+    items: [
+      {
+        title: "Professional Manufacturer",
+        body: "Underwear and loungewear manufacturing experience since 2002 with OEM / ODM execution for wholesale, retail, and DTC programs."
+      },
+      {
+        title: "Wide Product Range",
+        body: "Support for underwear, bras, shapewear, activewear, kids wear, and maternity programs within one factory workflow."
+      },
+      {
+        title: "Qualified Factory",
+        body: "BSCI, SEDEX, ISO 9001, and OEKO-TEX aligned production with 3-stage QC and stable delivery planning."
+      },
+      {
+        title: "Long-Term Cooperation",
+        body: "Built for buyers who need flexible MOQ, repeat orders, clear communication, and dependable production follow-through."
+      }
+    ]
+  },
+  zh: {
+    sectionTitle: "客户为什么选择 DiYaSi",
+    sectionLead: "借鉴成熟工厂站首页的信息结构，但只保留真正有用的工厂背书，不做平台化堆砌。",
+    items: [
+      {
+        title: "专业工厂",
+        body: "自 2002 年起专注内衣与家居服制造，服务批发、零售与 DTC 品牌的 OEM / ODM 项目。"
+      },
+      {
+        title: "品类覆盖广",
+        body: "支持内衣、文胸、塑形、运动、儿童和孕产系列，在同一工厂体系内完成开发与生产。"
+      },
+      {
+        title: "资质与质检",
+        body: "围绕 BSCI、SEDEX、ISO 9001、OEKO-TEX 和 3 道质检流程建立稳定交付能力。"
+      },
+      {
+        title: "长期合作能力",
+        body: "适合需要灵活 MOQ、稳定返单、清晰沟通和持续量产配合的客户。"
+      }
+    ]
+  },
+  es: {
+    sectionTitle: "Por que las marcas trabajan con DiYaSi",
+    sectionLead: "Tomamos la logica estructural de un sitio de fabrica consolidado, pero con una presentacion mas limpia y centrada en tus fortalezas reales.",
+    items: [
+      {
+        title: "Fabricante Profesional",
+        body: "Experiencia en underwear y loungewear desde 2002 con ejecucion OEM / ODM para programas wholesale, retail y DTC."
+      },
+      {
+        title: "Rango Amplio",
+        body: "Soporte para underwear, bras, shapewear, activewear, kids wear y maternity dentro de un mismo flujo de fabrica."
+      },
+      {
+        title: "Fabrica Calificada",
+        body: "Produccion alineada con BSCI, SEDEX, ISO 9001 y OEKO-TEX, con QC en 3 etapas y planificacion de entrega estable."
+      },
+      {
+        title: "Cooperacion a Largo Plazo",
+        body: "Pensado para compradores que necesitan MOQ flexible, recompra, comunicacion clara y ejecucion confiable."
+      }
+    ]
+  }
+};
+
 const copy: Record<
   SiteLang,
   {
@@ -370,6 +446,7 @@ async function getFeaturedShowcase(): Promise<FeaturedProduct[]> {
 export default async function HomePage() {
   const lang = getServerLang();
   const t = copy[lang];
+  const ref = homeReferenceContent[lang];
   const [posters, categories, factoryImages, featuredShowcase] = await Promise.all([
     getFeaturedPosters(),
     getCategories(),
@@ -433,41 +510,17 @@ export default async function HomePage() {
 
       <section className="home-wide-band home-wide-band-white page-section">
         <div className="home-full-bleed-shell py-12">
-          <div className="factory-story-shell">
-            <div className="factory-video-panel">
-              <div className="factory-video-cover">
-                <img
-                  src="/media/generated/wide/factory-wide-production-line.png"
-                  alt={t.videoTitle}
-                  className="factory-video-image"
-                />
-                <div className="factory-video-overlay">
-                  <div className="factory-video-play">Play</div>
-                  <div>
-                    <p className="factory-home-title text-white">{t.videoTitle}</p>
-                    <p className="factory-home-body mt-2 max-w-xl text-white/85">{t.videoDesc}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="factory-story-copy">
-              <p className="kicker page-reference-subtitle">{t.factoryKicker}</p>
-              <h2 className="factory-home-title mt-3 text-[#6c3827]">{t.factoryTitle}</h2>
-              <p className="factory-home-body page-copy mt-4 text-[#7d4f3e]">{t.factoryDesc}</p>
-              <div className="factory-capability-grid mt-8">
-                {t.capability.map((item) => (
-                  <article key={item.label} className="factory-capability-card">
-                    <p className="factory-capability-label">{item.label}</p>
-                    <p className="factory-home-body mt-2 text-[#7d4f3e]">{item.value}</p>
-                  </article>
-                ))}
-              </div>
-              <div className="mt-8">
-                <Link href="/contact" className="btn btn-primary">
-                  {t.videoCta}
-                </Link>
-              </div>
-            </div>
+          <div className="factory-section-head">
+            <p className="kicker page-reference-subtitle">{ref.sectionTitle}</p>
+            <h2 className="factory-home-title mt-2 text-[#6a3524]">{ref.sectionLead}</h2>
+          </div>
+          <div className="factory-cert-grid mt-6">
+            {ref.items.map((item) => (
+              <article key={item.title} className="factory-cert-card">
+                <h3 className="card-title-standard text-[#6a3524]">{item.title}</h3>
+                <p className="page-reference-body mt-4 text-[#7d4f3e]">{item.body}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -480,8 +533,7 @@ export default async function HomePage() {
           </div>
           <div className="home-trust-grid mt-6">
             <div className="home-trust-visual">
-              <p className="kicker page-reference-subtitle">{t.gallery}</p>
-              <h3 className="factory-home-card-title mt-3 text-[#6a3524]">{t.galleryTitle}</h3>
+              <h3 className="factory-home-card-title text-[#6a3524]">{t.galleryTitle}</h3>
               <div className="factory-detail-grid mt-5">
                 {factoryImages.slice(0, 3).map((img) => (
                   <article key={img.id} className="factory-detail-card">
@@ -503,21 +555,11 @@ export default async function HomePage() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="home-wide-band home-wide-band-white page-section">
-        <div className="home-full-bleed-shell py-12">
-          <div className="factory-section-head">
-            <p className="kicker page-reference-subtitle">{t.customize}</p>
-            <h2 className="factory-home-title mt-2 text-[#6a3524]">{t.customizeTitle}</h2>
-          </div>
-          <div className="factory-custom-grid mt-6">
-            {t.customSteps.map((item) => (
-              <article key={item.icon} className="factory-custom-card">
-                <div className="factory-custom-icon">{item.icon}</div>
-                <h3 className="factory-home-card-title mt-4 text-[#6a3524]">{item.title}</h3>
-                <p className="factory-home-body mt-3 text-[#7d4f3e]">{item.body}</p>
+          <div className="factory-capability-grid mt-6">
+            {t.capability.map((item) => (
+              <article key={item.label} className="factory-capability-card">
+                <p className="factory-capability-label">{item.label}</p>
+                <p className="factory-home-body mt-2 text-[#7d4f3e]">{item.value}</p>
               </article>
             ))}
           </div>
@@ -581,18 +623,6 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="home-wide-band home-wide-band-white factory-info-band page-section">
-        <div className="home-full-bleed-shell py-0">
-          <div className="factory-info-bar">
-            {t.infoBar.map((item) => (
-              <article key={item.label} className="factory-info-item">
-                <p className="factory-info-label">{item.label}</p>
-                <p className="factory-info-value mt-2">{item.value}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
     </main>
   );
 }
