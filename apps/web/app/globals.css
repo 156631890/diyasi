@@ -479,6 +479,31 @@ a {
   color: #8d6b5d;
 }
 
+.brand-logo-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.brand-logo-image {
+  display: block;
+  width: 144px;
+  height: auto;
+}
+
+.brand-logo-compact .brand-logo-image,
+.brand-logo-image-compact {
+  width: 118px;
+}
+
+.site-footer-logo .brand-logo-image {
+  width: 156px;
+}
+
 .top-nav-brand-badge {
   background: linear-gradient(135deg, #b86743 0%, #8d452d 100%);
   box-shadow: 0 12px 24px rgba(158, 86, 55, 0.2);

@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import BrandLogo from "@/components/BrandLogo";
 import { SiteLang } from "@/lib/i18n";
 
 type SiteFooterProps = {
@@ -194,7 +195,7 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
       <div className="home-full-bleed-shell py-9">
         <section className="grid gap-8 lg:grid-cols-[1.05fr_0.72fr_0.72fr_1.15fr]">
           <div className="pr-4">
-            <p className="font-[Arial] text-[24px] font-bold leading-none text-[#5a2f1e]">YiWu DiYaSi</p>
+            <BrandLogo href="/" className="site-footer-logo" />
             <p className="mt-3 max-w-md font-[Arial] text-[14px] leading-[1.8] text-[#7c6357]">{t.brandDesc}</p>
           </div>
 

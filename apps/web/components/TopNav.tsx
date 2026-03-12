@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
+import BrandLogo from "@/components/BrandLogo";
 import { LANG_LABELS, SiteLang } from "@/lib/i18n";
 
 type LinkItem = { href: string; label: string };
@@ -133,12 +134,7 @@ export default function TopNav({ initialLang }: TopNavProps) {
       </div>
 
       <div className="container-shell flex items-center justify-between py-3">
-        <Link href="/" className="flex items-center gap-3">
-          <span className="top-nav-brand-badge grid h-10 w-10 place-items-center rounded-full text-xs font-bold text-white">
-            DYS
-          </span>
-          <span className="top-nav-brand-name heading-font text-xl font-semibold tracking-wide">YiWu DiYaSi</span>
-        </Link>
+        <BrandLogo compact />
 
         <nav className="hidden items-center gap-4 text-sm lg:flex xl:gap-6">
           {primaryLinks.map((item) => (
