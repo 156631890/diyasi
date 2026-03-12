@@ -32,7 +32,7 @@ const copy: Record<
   en: {
     kicker: "OEM / ODM",
     title: "From concept to shipment, executed in one manufacturing system",
-    desc: "We integrate product planning, material development, fit engineering, and mass production into a practical workflow for global underwear brands.",
+    desc: "We handle product planning, material development, fit engineering, and mass production for global underwear brands in one factory system.",
     pay: "Open Payments Page",
     call: "Book Development Call",
     sectionTitle: "Execution flow with fewer handoffs",

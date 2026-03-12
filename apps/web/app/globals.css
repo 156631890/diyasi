@@ -1007,7 +1007,29 @@ a {
 
 .catalog-intro {
   border-bottom: 1px solid rgba(191, 144, 118, 0.24);
-  padding-bottom: 1.25rem;
+  padding-bottom: 1.5rem;
+}
+
+.catalog-intro-kicker {
+  margin: 0;
+  font-family: Arial, "Helvetica Neue", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #9e5637;
+}
+
+.catalog-intro-copy {
+  max-width: 42rem;
+}
+
+.catalog-intro-title {
+  margin: 0.65rem 0 0;
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: clamp(2.2rem, 3.8vw, 4rem);
+  line-height: 1.02;
+  color: #6a3524;
 }
 
 .catalog-intro-row {
@@ -2581,6 +2603,11 @@ a {
   .catalog-intro-row {
     display: grid;
     align-items: start;
+  }
+
+  .catalog-intro-title {
+    font-size: clamp(1.9rem, 9vw, 2.7rem);
+    line-height: 1.08;
   }
 
   .catalog-meta {

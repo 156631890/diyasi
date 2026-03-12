@@ -27,8 +27,8 @@ const copy: Record<
     desc: "Read practical articles on product development, sampling, compliance, and delivery planning for underwear programs.",
     noArticle: "No articles yet. Create or generate articles in Admin SEO.",
     readMore: "Read",
-    leadTitle: "Articles for buyers comparing factories, timelines, and product quality",
-    leadDesc: "These posts focus on sourcing decisions, MOQ structure, production timing, and common issues in OEM / ODM underwear projects."
+    leadTitle: "Factory articles on sourcing, MOQ, production timing, and quality control",
+    leadDesc: "These posts cover supplier selection, MOQ planning, production timing, and common issues in OEM / ODM underwear projects."
   },
   zh: {
     kicker: "文章",

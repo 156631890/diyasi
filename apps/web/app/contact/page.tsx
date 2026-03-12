@@ -76,9 +76,9 @@ export default function ContactPage() {
       statusSubmitted: "Submitted",
       statusFailed: "Submission failed",
       leadTitle: "Send a clear brief and we will respond with sample, MOQ, and lead-time details.",
-      leadDesc: "Our team replies around material direction, quantity structure, sampling plan, and production timing for your project.",
+      leadDesc: "Our team replies with material suggestions, quantity planning, sample arrangement, and production timing for your project.",
       visualTitle: "From first inquiry to sample planning",
-      visualBody: "A clear inquiry helps us move directly into category review, sample arrangement, and delivery scheduling.",
+      visualBody: "The inquiry moves into category review, sample arrangement, and delivery scheduling once the project details are confirmed.",
       visualMetrics: [
         { value: "5-7", label: "days to first sample direction" },
         { value: "20-30", label: "days for stable bulk timing" }

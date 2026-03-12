@@ -32,7 +32,7 @@ const copy: Record<SiteLang, FooterCopy> = {
       "Underwear factory supporting wholesalers, retailers, and DTC brands with private-label development and stable delivery.",
     ctaTitle: "Wholesale, retail, and DTC underwear production with clear MOQ and delivery timing",
     ctaDesc:
-      "Review categories, send your project brief, or move directly into inquiry for sampling and OEM / ODM support.",
+      "Browse product categories, send your requirements, and start sampling or OEM / ODM production with the factory team.",
     ctaPrimary: "Start a Conversation",
     ctaSecondary: "View Categories",
     quickTitle: "Quick Links",

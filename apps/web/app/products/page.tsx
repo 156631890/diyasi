@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import ProductCatalogView from "@/components/ProductCatalogView";
 import { getCatalogCategories, getCatalogProducts } from "@/lib/catalog-source";
 import { SiteLang } from "@/lib/i18n";
-import { buildBreadcrumbJsonLd, buildMetadata, absoluteUrl } from "@/lib/seo";
+import { absoluteUrl, buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { getServerLang } from "@/lib/server-lang";
 
 export const metadata: Metadata = buildMetadata({
@@ -71,24 +71,23 @@ const copy: Record<
     close: "Close"
   },
   zh: {
-    kicker: "产品目录",
-    title: "内衣、文胸、塑形衣与运动服产品目录",
-    desc:
-      "按适合独立站的目录结构浏览产品，方便批发商、零售商、DTC 品牌和工厂开发项目快速筛选款式。",
-    all: "全部产品",
-    noProducts: "当前分类下暂时没有产品。",
+    kicker: "产品",
+    title: "内衣、文胸、塑形与运动系列",
+    desc: "",
+    all: "全部",
+    noProducts: "当前分类下暂无产品。",
     noImage: "图片即将更新",
     quote: "发起询盘",
     paidSample: "付费打样",
     items: "款",
     viewDetails: "查看详情",
-    browseAll: "浏览全部分类",
+    browseAll: "全部",
     categoryLabel: "分类",
-    groupedLead: "全部二级分类",
-    topLevelLabel: "一级分类",
-    subcategoryLabel: "二级分类",
+    groupedLead: "全部",
+    topLevelLabel: "分类",
+    subcategoryLabel: "筛选",
     loadMore: "加载更多",
-    searchLabel: "搜索产品",
+    searchLabel: "搜索",
     searchPlaceholder: "按产品名、面料或 MOQ 搜索",
     moqLabel: "MOQ",
     priceLabel: "价格区间",
@@ -159,10 +158,10 @@ export default async function ProductsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <section className="catalog-intro">
-        <p className="kicker page-reference-subtitle">{t.kicker}</p>
+        <p className="catalog-intro-kicker">{t.kicker}</p>
         <div className="catalog-intro-row">
-          <div className="page-copy-wide">
-            <h1 className="section-title mt-2 text-[#6a3524]">{t.title}</h1>
+          <div className="catalog-intro-copy">
+            <h1 className="catalog-intro-title">{t.title}</h1>
             {t.desc ? <p className="page-reference-body mt-3 text-[#7d4f3e]">{t.desc}</p> : null}
           </div>
           <div className="catalog-meta">

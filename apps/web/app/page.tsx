@@ -121,7 +121,7 @@ const homeReferenceContent: Record<
 > = {
   en: {
     sectionTitle: "Why brands work with DiYaSi",
-    sectionLead: "A homepage structure inspired by established factory sites, but focused on your real strengths rather than marketplace language.",
+    sectionLead: "DiYaSi combines established factory experience, qualified production systems, and long-term OEM / ODM support for global underwear programs.",
     items: [
       {
         title: "Professional Manufacturer",
@@ -143,7 +143,7 @@ const homeReferenceContent: Record<
   },
   zh: {
     sectionTitle: "客户为什么选择 DiYaSi",
-    sectionLead: "借鉴成熟工厂站首页的信息结构，但只保留真正有用的工厂背书，不做平台化堆砌。",
+    sectionLead: "DiYaSi 具备成熟工厂经验、稳定生产体系和长期 OEM / ODM 配合能力，适合面向全球市场的内衣项目。",
     items: [
       {
         title: "专业工厂",
@@ -165,7 +165,7 @@ const homeReferenceContent: Record<
   },
   es: {
     sectionTitle: "Por que las marcas trabajan con DiYaSi",
-    sectionLead: "Tomamos la logica estructural de un sitio de fabrica consolidado, pero con una presentacion mas limpia y centrada en tus fortalezas reales.",
+    sectionLead: "DiYaSi combina experiencia de fabrica, sistema productivo calificado y soporte OEM / ODM de largo plazo para programas globales de underwear.",
     items: [
       {
         title: "Fabricante Profesional",
@@ -254,7 +254,7 @@ const copy: Record<
     gallery: "Factory Gallery",
     certificates: "Certificates",
     certificatesList: [
-      { code: "BSCI", title: "Audit Readiness", body: "Factory communication and document flow structured for buyer compliance review." },
+      { code: "BSCI", title: "Social Compliance", body: "Factory documents and production communication support international buyer compliance review." },
       { code: "OEKO", title: "Material Awareness", body: "Comfort, fabric touch, and safer material positioning aligned with brand expectations." },
       { code: "QA", title: "Quality Sequence", body: "Inspection checkpoints built into sampling, bulk production, and final packing." },
       { code: "OEM", title: "Private Label Execution", body: "Support for labels, packaging, and customized production briefs." }
@@ -267,9 +267,9 @@ const copy: Record<
       { icon: "04", title: "Shipment", body: "Coordinate inspection, packing, and export timing with a single production rhythm." }
     ],
     products: "Main Product Lines",
-    productsDesc: "Carousel highlights that keep the commercial focus readable.",
+    productsDesc: "Core product lines for wholesale, retail, and DTC development.",
     contactTitle: "Move from review to inquiry",
-    contactBody: "If you are a wholesaler, retailer, or DTC team with a target category, MOQ, and launch timing, we can move the first exchange directly into a useful production brief.",
+    contactBody: "Share your target category, MOQ range, and launch timing to start sampling or bulk production discussion with the factory.",
     inquire: "Start a Conversation",
     paidSample: "Paid Sample",
     infoBar: [
@@ -282,8 +282,8 @@ const copy: Record<
     categoryDesc: "Browse core product lines for women, men, bras, and activewear programs.",
     noCategory: "No categories available yet.",
     galleryTitle: "Production floor and detail views",
-    certificatesTitle: "Trust markers buyers look for early",
-    customizeTitle: "From concept to shipment in a readable sequence"
+    certificatesTitle: "Certificates, quality control, and factory production",
+    customizeTitle: "From concept to shipment"
   },
   zh: {
     heroKicker: "义乌迪雅斯服饰有限公司",
