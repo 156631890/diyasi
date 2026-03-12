@@ -1,9 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-  <rect width="128" height="128" rx="24" fill="#fffaf5"/>
-  <circle cx="64" cy="52" r="37" fill="none" stroke="#191615" stroke-width="4"/>
-  <g fill="#191615" font-family="Times New Roman, Georgia, serif" text-anchor="middle">
-    <text x="64" y="39" font-size="28" font-weight="700">D</text>
-    <text x="64" y="58" font-size="34" font-weight="700">Y</text>
-    <text x="64" y="81" font-size="31" font-weight="700">S</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 768">
+  <rect width="768" height="768" fill="#f3f3f3"/>
+  <circle cx="384" cy="276" r="169" fill="none" stroke="#050505" stroke-width="24"/>
+  <g fill="#050505" font-family="Times New Roman, Georgia, serif" text-anchor="middle">
+    <text x="374" y="220" font-size="125" font-weight="700">D</text>
+    <text x="401" y="309" font-size="110" font-weight="700">Y</text>
+    <text x="379" y="424" font-size="118" font-weight="700">S</text>
+  </g>
+  <g fill="#050505" font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <text x="384" y="587" font-size="88" font-weight="800" letter-spacing="5">DIYASI</text>
+    <text x="384" y="646" font-size="46" font-weight="700" letter-spacing="6">UNDERWEAR</text>
   </g>
 </svg>
