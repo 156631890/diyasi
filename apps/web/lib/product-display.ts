@@ -206,7 +206,11 @@ const DESCRIPTION_BANNED_PATTERNS = [
   /\bcross-border\b/gi,
   /\balibaba source link\b/gi,
   /\bvisible alibaba fob range\b/gi,
-  /\bthis listing is grouped under\b/gi
+  /\bthis listing is grouped under\b/gi,
+  /\breference fob\b/gi,
+  /\bmoq\b/gi,
+  /https?:\/\/[^\s]+/gi,
+  /www\.[^\s]+/gi
 ];
 
 const TITLE_FILLER_WORDS = new Set([
@@ -276,6 +280,8 @@ function cleanDescriptionText(value: string): string {
     cleaned = cleaned.replace(pattern, " ");
   }
   cleaned = cleaned
+    .replace(/\$\s*\d+(?:\.\d+)?\s*-\s*\d+(?:\.\d+)?/g, " ")
+    .replace(/\b\d+\s*(?:pieces|piece|pcs)\b/gi, " ")
     .replace(/\b(?:factory direct|direct factory)\b/gi, "factory production")
     .replace(/\bsexy\b/gi, "")
     .replace(/\bladies girls\b/gi, "women")
@@ -298,14 +304,6 @@ export function resolveDisplayDescription(product: DisplayProduct): string {
     parts.push(
       `Professional ${topFamily(product.category).toLowerCase()} manufacturing for retail, DTC, and private label programs.`
     );
-  }
-
-  if (product.moq) {
-    parts.push(`MOQ ${product.moq}.`);
-  }
-
-  if (product.price_text) {
-    parts.push(`Reference FOB ${resolvePriceText(product)}.`);
   }
 
   const summary = normalizeSentence(parts.join(" "));

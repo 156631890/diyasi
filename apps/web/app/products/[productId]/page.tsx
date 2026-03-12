@@ -31,18 +31,21 @@ const copy: Record<
     productionTime: string;
     color: string;
     size: string;
-    sourceNote: string;
     noImage: string;
     relatedTitle: string;
     relatedDesc: string;
     viewDetails: string;
+    collectionLabel: string;
+    overviewLabel: string;
+    overviewIntro: string;
+    referencePrice: string;
   }
 > = {
   en: {
     back: "Back to Products",
     quote: "Start a Conversation",
     paidSample: "Paid Sample",
-    overview: "Product Overview",
+    overview: "Product Specifications",
     category: "Category",
     fabric: "Fabric",
     moq: "MOQ",
@@ -50,18 +53,20 @@ const copy: Record<
     productionTime: "Production Time",
     color: "Color",
     size: "Size",
-    sourceNote:
-      "Product data is currently enhanced from the Alibaba listing page, including visible price, MOQ, and gallery assets.",
     noImage: "Image coming soon",
     relatedTitle: "Related products",
     relatedDesc: "More styles from the same category or top-level product family.",
-    viewDetails: "View Details"
+    viewDetails: "View Details",
+    collectionLabel: "Collection",
+    overviewLabel: "Overview",
+    overviewIntro: "A focused product brief for brand, retail, and private label development.",
+    referencePrice: "Reference Price"
   },
   zh: {
     back: "返回产品列表",
     quote: "发起询盘",
     paidSample: "付费打样",
-    overview: "产品信息",
+    overview: "产品规格",
     category: "分类",
     fabric: "面料",
     moq: "起订量",
@@ -69,17 +74,20 @@ const copy: Record<
     productionTime: "生产周期",
     color: "颜色",
     size: "尺码",
-    sourceNote: "当前产品信息已结合 Alibaba 列表页可见的价格、MOQ 与图片资源进行整理。",
     noImage: "图片即将更新",
     relatedTitle: "相关产品",
     relatedDesc: "同类目或同一级产品线的更多款式。",
-    viewDetails: "查看详情"
+    viewDetails: "查看详情",
+    collectionLabel: "系列",
+    overviewLabel: "概览",
+    overviewIntro: "面向品牌、零售与贴牌开发的精简产品信息。",
+    referencePrice: "参考价格"
   },
   es: {
     back: "Volver a Productos",
     quote: "Iniciar Consulta",
     paidSample: "Muestra Pagada",
-    overview: "Resumen del Producto",
+    overview: "Especificaciones del Producto",
     category: "Categoria",
     fabric: "Tejido",
     moq: "MOQ",
@@ -87,12 +95,14 @@ const copy: Record<
     productionTime: "Tiempo de Produccion",
     color: "Color",
     size: "Talla",
-    sourceNote:
-      "Los datos del producto estan reforzados con precio visible, MOQ y galeria obtenidos de la lista de Alibaba.",
     noImage: "Imagen pendiente",
     relatedTitle: "Productos relacionados",
     relatedDesc: "Mas estilos de la misma categoria o familia principal.",
-    viewDetails: "Ver Detalle"
+    viewDetails: "Ver Detalle",
+    collectionLabel: "Coleccion",
+    overviewLabel: "Resumen",
+    overviewIntro: "Un resumen de producto pensado para desarrollo de marca, retail y private label.",
+    referencePrice: "Precio de Referencia"
   }
 };
 
@@ -141,13 +151,22 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
         <ProductGallery productName={displayTitle} images={galleryImages} emptyLabel={t.noImage} />
 
         <div className="catalog-detail-copy">
-          <p className="catalog-card-clean-category">{typedProduct.category}</p>
-          <h1 className="catalog-detail-title">{displayTitle}</h1>
-          <p className="catalog-detail-desc">{displayDescription}</p>
+          <div className="catalog-detail-header">
+            <p className="catalog-detail-kicker">
+              {t.collectionLabel} / {family}
+            </p>
+            <p className="catalog-detail-category">{typedProduct.category}</p>
+            <h1 className="catalog-detail-title">{displayTitle}</h1>
+            <div className="catalog-detail-intro">
+              <p className="catalog-detail-intro-label">{t.overviewLabel}</p>
+              <p className="catalog-detail-intro-text">{t.overviewIntro}</p>
+            </div>
+            <p className="catalog-detail-desc">{displayDescription}</p>
+          </div>
 
           <div className="catalog-detail-price-row">
+            <p className="catalog-detail-price-label">{t.referencePrice}</p>
             <p className="catalog-detail-price">{priceText}</p>
-            <p className="catalog-detail-note">{t.sourceNote}</p>
           </div>
 
           <div className="catalog-detail-actions">
