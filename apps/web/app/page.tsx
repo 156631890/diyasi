@@ -2,7 +2,9 @@
 
 import { safeFetchJson } from "@/lib/api";
 import { fallbackCatalogCategories } from "@/lib/catalog";
+import { getCatalogProducts } from "@/lib/catalog-source";
 import { SiteLang } from "@/lib/i18n";
+import { resolveDisplayTitle, resolvePrimaryImage, topFamily, type DisplayProduct } from "@/lib/product-display";
 import { getServerLang } from "@/lib/server-lang";
 
 type MediaAsset = {
@@ -20,6 +22,12 @@ type ProductCategory = {
 type Metric = {
   value: string;
   label: string;
+};
+
+type FeaturedProduct = {
+  title: string;
+  image: string;
+  link: string;
 };
 
 const fallbackPosters: MediaAsset[] = [
@@ -67,29 +75,6 @@ const fallbackFactoryImages: MediaAsset[] = [
     asset_type: "factory",
     title: "Inspection and Finishing Table",
     image_url: "/media/generated/factory/inspection-and-finishing-table.png"
-  }
-];
-
-const featuredShowcase = [
-  {
-    title: "Women's Seamless Underwear",
-    image: "/media/generated/products/seamless-women-brief.png",
-    link: "/products?category=Women's%20Panties"
-  },
-  {
-    title: "Supportive Bras",
-    image: "/media/generated/products/supportive-sports-bra.png",
-    link: "/products?category=Bras"
-  },
-  {
-    title: "Men's Boxer Programs",
-    image: "/media/generated/products/men-seamless-boxer.png",
-    link: "/products?category=Men%20Underwear"
-  },
-  {
-    title: "Activewear Capsules",
-    image: "/media/generated/products/high-waist-yoga-leggings.png",
-    link: "/products?category=Gym%20%26%20Sports%20Wear"
   }
 ];
 
@@ -337,13 +322,30 @@ async function getCategories(): Promise<ProductCategory[]> {
   return safeFetchJson<ProductCategory[]>("/products/categories", fallbackCatalogCategories);
 }
 
+async function getFeaturedShowcase(): Promise<FeaturedProduct[]> {
+  const products = (await getCatalogProducts()) as DisplayProduct[];
+  const targetFamilies = ["Women's Panties", "Bras", "Men's Underwear", "Activewear"];
+  const selected = targetFamilies
+    .map((family) => products.find((item) => topFamily(item.category) === family))
+    .filter((item): item is DisplayProduct => Boolean(item));
+
+  const source = selected.length >= 4 ? selected.slice(0, 4) : products.slice(0, 4);
+
+  return source.map((product) => ({
+    title: resolveDisplayTitle(product),
+    image: resolvePrimaryImage(product),
+    link: `/products/${encodeURIComponent(product.product_id)}`
+  }));
+}
+
 export default async function HomePage() {
   const lang = getServerLang();
   const t = copy[lang];
-  const [posters, categories, factoryImages] = await Promise.all([
+  const [posters, categories, factoryImages, featuredShowcase] = await Promise.all([
     getFeaturedPosters(),
     getCategories(),
-    getFactoryImages()
+    getFactoryImages(),
+    getFeaturedShowcase()
   ]);
   const heroPoster = posters[0] || null;
 
