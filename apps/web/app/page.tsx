@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import HomeProductCarousel from "@/components/HomeProductCarousel";
+import HeroCarousel from "@/components/HeroCarousel";
 import { safeFetchJson } from "@/lib/api";
 import { fallbackCatalogCategories } from "@/lib/catalog";
 import { getCatalogProducts } from "@/lib/catalog-source";
@@ -12,50 +12,23 @@ import { getServerLang } from "@/lib/server-lang";
 
 export const metadata: Metadata = buildMetadata({
   title: "Private Label Underwear Manufacturer",
-  description:
-    "YiWu DiYaSi manufactures underwear, bras, shapewear, and activewear for wholesalers, retailers, and DTC brands.",
+  description: "YiWu DiYaSi manufactures underwear, bras, shapewear, and activewear for wholesalers, retailers, and DTC brands.",
   path: "/"
 });
-
-type MediaAsset = {
-  id: number;
-  asset_type: string;
-  title: string;
-  image_url: string;
-};
 
 type ProductCategory = {
   category: string;
   count: number;
 };
 
-type Metric = {
-  value: string;
-  label: string;
-};
-
-type FeaturedProduct = {
-  title: string;
-  image: string;
-  link: string;
-};
+type DisplayProductWithImage = DisplayProduct & { image: string };
 
 function resolveHomeProductTitle(product: DisplayProduct): string {
   const family = topFamily(product.category);
-
-  if (family === "Women's Panties") {
-    return "Women's Panties";
-  }
-  if (family === "Bras") {
-    return "Bras";
-  }
-  if (family === "Men's Underwear") {
-    return "Men's Underwear";
-  }
-  if (family === "Activewear") {
-    return "Activewear";
-  }
-
+  if (family === "Women's Panties") return "Women's Panties";
+  if (family === "Bras") return "Bras";
+  if (family === "Men's Underwear") return "Men's Underwear";
+  if (family === "Activewear") return "Activewear";
   return resolveDisplayTitle(product)
     .replace(/\b(?:women's|womens|men's|mens)\b/gi, "")
     .replace(/\b(?:underwear|panties|bra|bras|activewear|wear)\b/gi, "")
@@ -63,397 +36,133 @@ function resolveHomeProductTitle(product: DisplayProduct): string {
     .trim();
 }
 
-const fallbackPosters: MediaAsset[] = [
-  {
-    id: -1,
-    asset_type: "hero_banner",
-    title: "Material Confidence Hero",
-    image_url: "/media/generated/hero-material-confidence.png"
-  },
-  {
-    id: -2,
-    asset_type: "poster",
-    title: "Premium Collection Showroom",
-    image_url: "/media/generated/poster-premium-collection.png"
-  },
-  {
-    id: -3,
-    asset_type: "factory",
-    title: "Factory Capability Panorama",
-    image_url: "/media/generated/factory-capability-panorama.png"
-  }
-];
-
-const fallbackFactoryImages: MediaAsset[] = [
-  {
-    id: -11,
-    asset_type: "factory",
-    title: "Factory Capability Panorama",
-    image_url: "/media/generated/factory-capability-panorama.png"
-  },
-  {
-    id: -12,
-    asset_type: "factory",
-    title: "Quality Check Fabric Detail",
-    image_url: "/media/generated/factory/quality-check-fabric-detail.png"
-  },
-  {
-    id: -13,
-    asset_type: "factory",
-    title: "Seamless Machine Detail",
-    image_url: "/media/generated/factory/seamless-machine-detail.png"
-  },
-  {
-    id: -14,
-    asset_type: "factory",
-    title: "Inspection and Finishing Table",
-    image_url: "/media/generated/factory/inspection-and-finishing-table.png"
-  }
-];
-
-const homeReferenceContent: Record<
-  SiteLang,
-  {
-    sectionTitle: string;
-    sectionLead: string;
-    items: Array<{ title: string; body: string }>;
-  }
-> = {
+const copy: Record<SiteLang, {
+  heroTitle: string;
+  heroDesc: string;
+  mainProducts: string;
+  mainProductsDesc: string;
+  aboutTitle: string;
+  aboutDesc: string;
+  aboutStats: Array<{ value: string; label: string }>;
+  factoryTitle: string;
+  factoryDesc: string;
+  certTitle: string;
+  certDesc: string;
+  serviceTitle: string;
+  serviceDesc: string;
+  services: Array<{ title: string; desc: string; icon: string }>;
+  contactTitle: string;
+  contactDesc: string;
+}> = {
   en: {
-    sectionTitle: "Why brands work with DiYaSi",
-    sectionLead: "DiYaSi combines established factory experience, qualified production systems, and long-term OEM / ODM support for global underwear programs.",
-    items: [
-      {
-        title: "Professional Manufacturer",
-        body: "Underwear and loungewear manufacturing experience since 2002 with OEM / ODM execution for wholesale, retail, and DTC programs."
-      },
-      {
-        title: "Wide Product Range",
-        body: "Support for underwear, bras, shapewear, activewear, kids wear, and maternity programs within one factory workflow."
-      },
-      {
-        title: "Qualified Factory",
-        body: "BSCI, SEDEX, ISO 9001, and OEKO-TEX aligned production with 3-stage QC and stable delivery planning."
-      },
-      {
-        title: "Long-Term Cooperation",
-        body: "Built for buyers who need flexible MOQ, repeat orders, clear communication, and dependable production follow-through."
-      }
-    ]
+    heroTitle: "Professional OEM/ODM Underwear Manufacturer",
+    heroDesc: "Specializing in seamless underwear, bras, shapewear, and activewear since 2002",
+    mainProducts: "Main Products",
+    mainProductsDesc: "We have sufficient ready-to-ship stock products with varieties of designs and colors to satisfy your needs.",
+    aboutTitle: "About YiWu DiYaSi",
+    aboutDesc: "Founded in 2002, YiWu DiYaSi is located in Yiwu City, Zhejiang Province — China's renowned hub for underwear manufacturing. With over 20,000㎡ of factory space and more than 100 skilled employees, we are a modern factory specializing in the design, development, and production of women's underwear, bras, period underwear, and shapewear. We provide full-service OEM and ODM solutions to global brands.",
+    aboutStats: [
+      { value: "23+", label: "Years Experience" },
+      { value: "20,000㎡", label: "Factory Space" },
+      { value: "100+", label: "Skilled Employees" },
+      { value: "600K+", label: "Monthly Output" }
+    ],
+    factoryTitle: "Our Factory",
+    factoryDesc: "Tour our state-of-the-art manufacturing facility",
+    certTitle: "Our Certificate",
+    certDesc: "Your trusted source for sustainable intimates. Our factory has certifications including BSCI, SEDEX, ISO 9001, and OEKO-TEX.",
+    serviceTitle: "Our Service",
+    serviceDesc: "Professional underwear manufacturer supplying OEM designs and supporting OEM orders.",
+    services: [
+      { title: "Customized Logo", desc: "MOQ: 500PCS, Lead Time 14-24 Days", icon: "🏷️" },
+      { title: "Customized Design", desc: "MOQ: 1000PCS, Lead Time 60 Days", icon: "✏️" },
+      { title: "Customized Package", desc: "MOQ: 1000PCS, Lead Time 14-21 Days", icon: "📦" }
+    ],
+    contactTitle: "Contact Us",
+    contactDesc: "If you are interested in our products and looking for wholesale, or looking to customize your design, please leave a message here."
   },
   zh: {
-    sectionTitle: "客户为什么选择 DiYaSi",
-    sectionLead: "DiYaSi 具备成熟工厂经验、稳定生产体系和长期 OEM / ODM 配合能力，适合面向全球市场的内衣项目。",
-    items: [
-      {
-        title: "专业工厂",
-        body: "自 2002 年起专注内衣与家居服制造，服务批发、零售与 DTC 品牌的 OEM / ODM 项目。"
-      },
-      {
-        title: "品类覆盖广",
-        body: "支持内衣、文胸、塑形、运动、儿童和孕产系列，在同一工厂体系内完成开发与生产。"
-      },
-      {
-        title: "资质与质检",
-        body: "围绕 BSCI、SEDEX、ISO 9001、OEKO-TEX 和 3 道质检流程建立稳定交付能力。"
-      },
-      {
-        title: "长期合作能力",
-        body: "适合需要灵活 MOQ、稳定返单、清晰沟通和持续量产配合的客户。"
-      }
-    ]
+    heroTitle: "专业 OEM/ODM 内衣制造商",
+    heroDesc: "自2002年起专注于无缝内衣、文胸、塑形衣和运动服饰",
+    mainProducts: "主要产品",
+    mainProductsDesc: "我们有充足的现货产品，款式和颜色多样，满足您的需求。",
+    aboutTitle: "关于迪雅斯",
+    aboutDesc: "义乌迪雅斯成立于2002年，位于浙江省义乌市——中国知名的内衣制造中心。拥有超过20,000平方米的工厂空间和100多名熟练员工，我们是一家现代化工厂，专业从事女士内衣、文胸、经期内衣和塑形衣的设计、开发和生产。我们为全球品牌提供全方位的OEM和ODM解决方案。",
+    aboutStats: [
+      { value: "23+", label: "年经验" },
+      { value: "20,000㎡", label: "工厂面积" },
+      { value: "100+", label: "熟练员工" },
+      { value: "60万+", label: "月产量" }
+    ],
+    factoryTitle: "我们的工厂",
+    factoryDesc: "参观我们最先进的制造设施",
+    certTitle: "我们的证书",
+    certDesc: "您值得信赖的可持续内衣来源。我们的工厂拥有BSCI、SEDEX、ISO 9001和OEKO-TEX认证。",
+    serviceTitle: "我们的服务",
+    serviceDesc: "专业内衣制造商，提供OEM设计和OEM订单支持。",
+    services: [
+      { title: "定制Logo", desc: "起订量:500件，交期14-24天", icon: "🏷️" },
+      { title: "定制设计", desc: "起订量:1000件，交期60天", icon: "✏️" },
+      { title: "定制包装", desc: "起订量:1000件，交期14-21天", icon: "📦" }
+    ],
+    contactTitle: "联系我们",
+    contactDesc: "如果您对我们的产品感兴趣，寻求批发或定制设计，请在此留言。"
   },
   es: {
-    sectionTitle: "Por que las marcas trabajan con DiYaSi",
-    sectionLead: "DiYaSi combina experiencia de fabrica, sistema productivo calificado y soporte OEM / ODM de largo plazo para programas globales de underwear.",
-    items: [
-      {
-        title: "Fabricante Profesional",
-        body: "Experiencia en underwear y loungewear desde 2002 con ejecucion OEM / ODM para programas wholesale, retail y DTC."
-      },
-      {
-        title: "Rango Amplio",
-        body: "Soporte para underwear, bras, shapewear, activewear, kids wear y maternity dentro de un mismo flujo de fabrica."
-      },
-      {
-        title: "Fabrica Calificada",
-        body: "Produccion alineada con BSCI, SEDEX, ISO 9001 y OEKO-TEX, con QC en 3 etapas y planificacion de entrega estable."
-      },
-      {
-        title: "Cooperacion a Largo Plazo",
-        body: "Pensado para compradores que necesitan MOQ flexible, recompra, comunicacion clara y ejecucion confiable."
-      }
-    ]
+    heroTitle: "Fabricante Profesional de Ropa Interior OEM/ODM",
+    heroDesc: "Especializados en ropa interior sin costuras, sostenes y ropa deportiva desde 2002",
+    mainProducts: "Productos Principales",
+    mainProductsDesc: "Tenemos suficientes productos stock con variedad de diseños y colores.",
+    aboutTitle: "Sobre YiWu DiYaSi",
+    aboutDesc: "Fundada en 2002, YiWu DiYaSi se encuentra en Yiwu, provincia de Zhejiang. Con más de 20,000㎡ de fábrica y más de 100 empleados especializados, somos una fábrica moderna especializada en diseño y producción de ropa interior.",
+    aboutStats: [
+      { value: "23+", label: "Años Experiencia" },
+      { value: "20,000㎡", label: "Espacio Fábrica" },
+      { value: "100+", label: "Empleados" },
+      { value: "600K+", label: "Producción Mensual" }
+    ],
+    factoryTitle: "Nuestra Fábrica",
+    factoryDesc: "Visite nuestras instalaciones de fabricación",
+    certTitle: "Nuestros Certificados",
+    certDesc: "Su fuente confiable de ropa interior sostenible. Certificaciones BSCI, SEDEX, ISO 9001, OEKO-TEX.",
+    serviceTitle: "Nuestro Servicio",
+    serviceDesc: "Fabricante profesional de ropa interior con diseños OEM.",
+    services: [
+      { title: "Logo Personalizado", desc: "MOQ: 500 unidades, 14-24 días", icon: "🏷️" },
+      { title: "Diseño Personalizado", desc: "MOQ: 1000 unidades, 60 días", icon: "✏️" },
+      { title: "Empaque Personalizado", desc: "MOQ: 1000 unidades, 14-21 días", icon: "📦" }
+    ],
+    contactTitle: "Contáctenos",
+    contactDesc: "Si está interesado en nuestros productos, deje un mensaje aquí."
   }
 };
-
-const copy: Record<
-  SiteLang,
-  {
-    heroKicker: string;
-    heroTitle: string;
-    heroDesc: string;
-    ctaProducts: string;
-    ctaContact: string;
-    noPoster: string;
-    metrics: Metric[];
-    factoryKicker: string;
-    factoryTitle: string;
-    factoryDesc: string;
-    videoTitle: string;
-    videoDesc: string;
-    videoCta: string;
-    capability: Array<{ label: string; value: string }>;
-    gallery: string;
-    certificates: string;
-    certificatesList: Array<{ code: string; title: string; body: string }>;
-    customize: string;
-    customSteps: Array<{ icon: string; title: string; body: string }>;
-    products: string;
-    productsDesc: string;
-    contactTitle: string;
-    contactBody: string;
-    inquire: string;
-    paidSample: string;
-    infoBar: Array<{ label: string; value: string }>;
-    categoryTitle: string;
-    categoryDesc: string;
-    noCategory: string;
-    galleryTitle: string;
-    certificatesTitle: string;
-    customizeTitle: string;
-  }
-> = {
-  en: {
-    heroKicker: "YiWu DiYaSi Dress CO., LTD",
-    heroTitle: "Private-label underwear manufacturing for wholesalers, retailers, and DTC brands",
-    heroDesc:
-      "We produce underwear, bras, and activewear for wholesale programs, retail collections, and DTC brands with clear sampling, MOQ, and delivery planning.",
-    ctaProducts: "View Categories",
-    ctaContact: "Start a Conversation",
-    noPoster: "No featured visuals yet. Generate and set featured assets in Admin.",
-    metrics: [
-      { value: "23+", label: "years of manufacturing experience" },
-      { value: "5-7", label: "days for first sample development" },
-      { value: "300-500", label: "pcs MOQ per style and color" },
-      { value: "20-30", label: "days for bulk production per order" }
-    ],
-    factoryKicker: "Factory Overview",
-    factoryTitle: "The first factory questions, answered early",
-    factoryDesc:
-      "YiWu DiYaSi combines seamless production, inline quality control, and private-label packaging support for repeat wholesale, retail, and DTC orders.",
-    videoTitle: "Factory Introduction Video",
-    videoDesc: "Production line overview, inspection rhythm, and pack-out sequence can be shared once the inquiry becomes concrete.",
-    videoCta: "Request the Video",
-    capability: [
-      { label: "Seamless Machinery", value: "Integrated knitting to finishing" },
-      { label: "QC Routine", value: "Inline checks and final inspection" },
-      { label: "Packaging Support", value: "Private label pack-out coordination" },
-      { label: "Core Scope", value: "Underwear / Bras / Activewear" }
-    ],
-    gallery: "Factory Gallery",
-    certificates: "Certificates",
-    certificatesList: [
-      { code: "BSCI", title: "Social Compliance", body: "Factory documents and production communication support international buyer compliance review." },
-      { code: "OEKO", title: "Material Awareness", body: "Comfort, fabric touch, and safer material positioning aligned with brand expectations." },
-      { code: "QA", title: "Quality Sequence", body: "Inspection checkpoints built into sampling, bulk production, and final packing." },
-      { code: "OEM", title: "Private Label Execution", body: "Support for labels, packaging, and customized production briefs." }
-    ],
-    customize: "Customization Flow",
-    customSteps: [
-      { icon: "01", title: "Style Brief", body: "Confirm category direction, target pricing, and fit references." },
-      { icon: "02", title: "Sampling", body: "Translate requirements into a sample round with material and trim checks." },
-      { icon: "03", title: "Bulk Planning", body: "Lock colorways, capacity windows, and packaging details before PO." },
-      { icon: "04", title: "Shipment", body: "Coordinate inspection, packing, and export timing with a single production rhythm." }
-    ],
-    products: "Main Product Lines",
-    productsDesc: "Core product lines for wholesale, retail, and DTC development.",
-    contactTitle: "Move from review to inquiry",
-    contactBody: "Share your target category, MOQ range, and launch timing to start sampling or bulk production discussion with the factory.",
-    inquire: "Start a Conversation",
-    paidSample: "Paid Sample",
-    infoBar: [
-      { label: "Sampling", value: "5-7 days / first round" },
-      { label: "Bulk Lead Time", value: "20-30 days / order" },
-      { label: "MOQ", value: "300-500 pcs / style-color" },
-      { label: "Support", value: "EN / ZH / ES" }
-    ],
-    categoryTitle: "Large categories. Clearer choices.",
-    categoryDesc: "Browse core product lines for women, men, bras, and activewear programs.",
-    noCategory: "No categories available yet.",
-    galleryTitle: "Production floor and detail views",
-    certificatesTitle: "Certificates, quality control, and factory production",
-    customizeTitle: "From concept to shipment"
-  },
-  zh: {
-    heroKicker: "义乌迪雅斯服饰有限公司",
-    heroTitle: "服务批发、零售与 DTC 品牌的 private-label 内衣制造",
-    heroDesc: "我们生产内衣、文胸和运动系列，支持批发项目、零售系列与 DTC 品牌的打样、定制和稳定交付。",
-    ctaProducts: "查看分类",
-    ctaContact: "开始沟通",
-    noPoster: "暂时还没有精选视觉素材，请在后台生成并设为精选。",
-    metrics: [
-      { value: "23+", label: "年制造经验" },
-      { value: "5-7", label: "天完成首轮打样" },
-      { value: "300-500", label: "件起订量区间" },
-      { value: "20-30", label: "天大货交付周期" }
-    ],
-    factoryKicker: "工厂概览",
-    factoryTitle: "工厂能力、产品范围与合作流程一页看清",
-    factoryDesc: "迪雅斯提供无缝生产、在线质检、品牌包装配合与 OEM / ODM 执行，适合需要稳定复购和清晰交期的客户。",
-    videoTitle: "工厂介绍视频",
-    videoDesc: "生产线、质检节奏和包装流程的完整视频，可在询盘后按需发送。",
-    videoCta: "索取视频",
-    capability: [
-      { label: "无缝设备", value: "从织造到后整的一体流程" },
-      { label: "质检节奏", value: "在线检查与尾检并行" },
-      { label: "包装支持", value: "支持品牌包装落地" },
-      { label: "核心范围", value: "内衣 / 文胸 / 运动服" }
-    ],
-    gallery: "工厂展示",
-    certificates: "证书展示",
-    certificatesList: [
-      { code: "BSCI", title: "审核准备", body: "工厂沟通和文件流转可以配合买家合规审核。" },
-      { code: "OEKO", title: "材料认知", body: "围绕舒适度、手感和材料定位建立更清晰的表达。" },
-      { code: "QA", title: "质量节点", body: "把检查节点放进打样、大货和包装阶段。" },
-      { code: "OEM", title: "品牌定制", body: "支持洗标、包装和定制化生产 brief。" }
-    ],
-    customize: "定制流程",
-    customSteps: [
-      { icon: "01", title: "款式 Brief", body: "先确认品类方向、目标价位和版型参考。" },
-      { icon: "02", title: "打样推进", body: "把需求转成样衣，并同步面料和辅料判断。" },
-      { icon: "03", title: "大货计划", body: "在下单前锁定颜色、产能窗口和包装细节。" },
-      { icon: "04", title: "出货执行", body: "统一衔接检验、包装与出运节奏。" }
-    ],
-    products: "主要产品线",
-    productsDesc: "用轮播展示核心系列，首页节奏更清晰。",
-    contactTitle: "从浏览进入询盘",
-    contactBody: "如果你是批发商、零售商或 DTC 品牌，并且已经明确品类、MOQ 区间和上市时间，我们可以把第一次沟通直接推进成有效 production brief。",
-    inquire: "开始沟通",
-    paidSample: "付费打样",
-    infoBar: [
-      { label: "打样", value: "5-7 天" },
-      { label: "大货周期", value: "20-30 天" },
-      { label: "MOQ", value: "300-500 件" },
-      { label: "语言", value: "中 / 英 / 西" }
-    ],
-    categoryTitle: "把核心分类直接放在首页",
-    categoryDesc: "直接查看女士内裤、文胸、男士内裤和运动系列等核心产品分类。",
-    noCategory: "暂时还没有可展示的分类。",
-    galleryTitle: "生产现场与工艺细节展示",
-    certificatesTitle: "买家会优先关注的合作信号",
-    customizeTitle: "从概念到出货的完整推进顺序"
-  },
-  es: {
-    heroKicker: "YiWu DiYaSi Dress CO., LTD",
-    heroTitle: "Manufactura private-label de ropa interior para mayoristas, retailers y marcas DTC",
-    heroDesc: "Producimos underwear, bras y activewear para programas mayoristas, colecciones retail y marcas DTC con muestreo, MOQ y entrega definidos.",
-    ctaProducts: "Ver Categorias",
-    ctaContact: "Iniciar Conversacion",
-    noPoster: "Aun no hay visuales destacados. Configuralos desde Admin.",
-    metrics: [
-      { value: "23+", label: "anos de experiencia productiva" },
-      { value: "5-7", label: "dias para primera muestra" },
-      { value: "300-500", label: "pcs MOQ por estilo y color" },
-      { value: "20-30", label: "dias para produccion masiva" }
-    ],
-    factoryKicker: "Vision General de Fabrica",
-    factoryTitle: "Las primeras preguntas del comprador, resueltas antes",
-    factoryDesc: "YiWu DiYaSi combina produccion seamless, control de calidad en linea y soporte de empaque private-label para pedidos repetibles.",
-    videoTitle: "Video de Introduccion de Fabrica",
-    videoDesc: "El recorrido por planta, inspeccion y empaque puede compartirse cuando la consulta ya es concreta.",
-    videoCta: "Solicitar Video",
-    capability: [
-      { label: "Maquinaria Seamless", value: "Del tejido al acabado en un flujo integrado" },
-      { label: "Rutina QC", value: "Revisiones en linea e inspeccion final" },
-      { label: "Packaging", value: "Coordinacion de pack-out para marca privada" },
-      { label: "Alcance", value: "Underwear / Bras / Activewear" }
-    ],
-    gallery: "Galeria de Fabrica",
-    certificates: "Certificados",
-    certificatesList: [
-      { code: "BSCI", title: "Preparacion de Auditoria", body: "Comunicacion de fabrica y documentos listos para revisiones de compliance." },
-      { code: "OEKO", title: "Criterio de Material", body: "Comodidad, tacto y posicionamiento de material alineados con la marca." },
-      { code: "QA", title: "Secuencia de Calidad", body: "Puntos de inspeccion incorporados a muestra, bulk y empaque final." },
-      { code: "OEM", title: "Ejecucion Private Label", body: "Soporte para etiquetas, empaque y briefs personalizados." }
-    ],
-    customize: "Flujo de Personalizacion",
-    customSteps: [
-      { icon: "01", title: "Brief de Estilo", body: "Definir categoria, rango de precio objetivo y referencias de fit." },
-      { icon: "02", title: "Muestreo", body: "Convertir el requerimiento en muestra con control de material y trims." },
-      { icon: "03", title: "Plan de Produccion", body: "Cerrar colorways, capacidad y detalles de empaque antes del PO." },
-      { icon: "04", title: "Envio", body: "Coordinar inspeccion, packing y salida con un mismo ritmo productivo." }
-    ],
-    products: "Lineas Principales",
-    productsDesc: "Un carrusel limpio para mostrar las lineas clave.",
-    contactTitle: "Pasar de revision a consulta",
-    contactBody: "Si eres mayorista, retailer o marca DTC y ya conoces tu categoria, MOQ y timing, la primera conversacion puede convertirse en un brief productivo.",
-    inquire: "Iniciar Conversacion",
-    paidSample: "Muestra Pagada",
-    infoBar: [
-      { label: "Muestra", value: "5-7 dias" },
-      { label: "Produccion", value: "20-30 dias" },
-      { label: "MOQ", value: "300-500 pcs" },
-      { label: "Idioma", value: "EN / ZH / ES" }
-    ],
-    categoryTitle: "Categorias grandes, decisiones mas claras",
-    categoryDesc: "Explora categorias principales para mujer, hombre, bras y activewear.",
-    noCategory: "Aun no hay categorias disponibles.",
-    galleryTitle: "Vistas de planta y detalles de produccion",
-    certificatesTitle: "Senales de confianza que el comprador revisa primero",
-    customizeTitle: "De concepto a envio en una secuencia clara"
-  }
-};
-
-async function getFeaturedPosters(): Promise<MediaAsset[]> {
-  const rows = await safeFetchJson<MediaAsset[]>("/media/assets?only_active=true&only_featured=true&limit=6", []);
-  const filtered = rows
-    .filter((item) => item.asset_type === "poster" || item.asset_type === "hero_banner")
-    .slice(0, 3);
-  return filtered.length > 0 ? filtered : fallbackPosters;
-}
-
-async function getFactoryImages(): Promise<MediaAsset[]> {
-  const assets = await safeFetchJson<MediaAsset[]>("/media/assets?asset_type=factory&limit=6", []);
-  if (assets.length === 0) {
-    return fallbackFactoryImages;
-  }
-  const existingTitles = new Set(assets.map((item) => item.title));
-  const extraFallbacks = fallbackFactoryImages.filter((item) => !existingTitles.has(item.title));
-  return [...assets, ...extraFallbacks].slice(0, 4);
-}
 
 async function getCategories(): Promise<ProductCategory[]> {
   return safeFetchJson<ProductCategory[]>("/products/categories", fallbackCatalogCategories);
 }
 
-async function getFeaturedShowcase(): Promise<FeaturedProduct[]> {
+async function getFeaturedShowcase(): Promise<DisplayProductWithImage[]> {
   const products = (await getCatalogProducts()) as DisplayProduct[];
   const targetFamilies = ["Women's Panties", "Bras", "Men's Underwear", "Activewear"];
   const selected = targetFamilies
     .map((family) => products.find((item) => topFamily(item.category) === family))
     .filter((item): item is DisplayProduct => Boolean(item));
 
-  const source = selected.length >= 4 ? selected.slice(0, 4) : products.slice(0, 4);
+  const source = selected.length >= 8 ? selected.slice(0, 8) : products.slice(0, 8);
 
   return source.map((product) => ({
-    title: resolveHomeProductTitle(product),
-    image: resolvePrimaryImage(product),
-    link: `/products/${encodeURIComponent(product.product_id)}`
+    ...product,
+    image: resolvePrimaryImage(product)
   }));
 }
 
 export default async function HomePage() {
   const lang = getServerLang();
   const t = copy[lang];
-  const ref = homeReferenceContent[lang];
-  const [posters, categories, factoryImages, featuredShowcase] = await Promise.all([
-    getFeaturedPosters(),
+  const [categories, featuredProducts] = await Promise.all([
     getCategories(),
-    getFactoryImages(),
     getFeaturedShowcase()
   ]);
-  const heroPoster = posters[0] || null;
 
   const organizationJsonLd = {
     "@context": "https://schema.org",
@@ -466,189 +175,187 @@ export default async function HomePage() {
   };
 
   return (
-    <main className="page-shell pb-20">
+    <main className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
 
-      <section>
-        <div className="home-reference-banner home-hero-shell">
-          {heroPoster ? (
-            <img src={heroPoster.image_url} alt={heroPoster.title} className="home-reference-banner-image" />
-          ) : (
-            <div className="home-reference-banner-fallback">{t.noPoster}</div>
-          )}
-          <div className="home-reference-banner-overlay" />
-          <div className="container-shell home-reference-banner-content">
-            <div className="home-hero-grid">
-              <div className="home-hero-copy">
-                <p className="kicker home-reference-subtitle text-white">{t.heroKicker}</p>
-                <h1 className="home-reference-title mt-4 max-w-4xl text-white">{t.heroTitle}</h1>
-                <p className="home-reference-body mt-5 max-w-3xl text-white/90">{t.heroDesc}</p>
-                <div className="home-reference-actions mt-7">
-                  <Link href="/products" className="btn home-hero-btn-primary">
-                    {t.ctaProducts}
-                  </Link>
-                  <Link href="/contact" className="btn home-reference-btn-secondary">
-                    {t.ctaContact}
-                  </Link>
-                </div>
-              </div>
-              <div className="home-hero-panel">
-                <p className="home-hero-panel-kicker">Factory Snapshot</p>
-                <div className="home-hero-metric-list">
-                  {t.metrics.map((metric) => (
-                    <article key={metric.label} className="home-hero-metric">
-                      <p className="home-hero-metric-value">{metric.value}</p>
-                      <p className="home-hero-metric-label">{metric.label}</p>
-                    </article>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero Carousel */}
+      <HeroCarousel />
 
-      <section className="home-wide-band home-wide-band-white page-section">
-        <div className="home-full-bleed-shell py-12">
-          <div className="factory-section-head">
-            <p className="kicker page-reference-subtitle">{ref.sectionTitle}</p>
-            <h2 className="factory-home-title mt-2 text-[#6a3524]">{ref.sectionLead}</h2>
-          </div>
-          <div className="factory-cert-grid mt-6">
-            {ref.items.map((item) => (
-              <article key={item.title} className="factory-cert-card">
-                <h3 className="card-title-standard text-[#6a3524]">{item.title}</h3>
-                <p className="page-reference-body mt-4 text-[#7d4f3e]">{item.body}</p>
-              </article>
+      {/* Main Products Section */}
+      <section className="py-12 md:py-16 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-3">{t.mainProducts}</h2>
+          <p className="text-gray-600 text-center mb-10 max-w-3xl mx-auto">{t.mainProductsDesc}</p>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            {featuredProducts.map((product) => (
+              <Link
+                key={product.product_id}
+                href={`/products/${encodeURIComponent(product.product_id)}`}
+                className="group"
+              >
+                <div className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                  <div className="aspect-[3/4] overflow-hidden bg-gray-100">
+                    <img
+                      src={product.image}
+                      alt={resolveDisplayTitle(product)}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="p-3 md:p-4">
+                    <h3 className="text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-blue-600">
+                      {resolveHomeProductTitle(product)}
+                    </h3>
+                    <p className="text-xs text-gray-500 mt-1 line-clamp-2">
+                      {product.product_id}
+                    </p>
+                  </div>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="home-wide-band home-wide-band-soft page-section">
-        <div className="home-full-bleed-shell py-12">
-          <div className="factory-section-head">
-            <p className="kicker page-reference-subtitle">{t.certificates}</p>
-            <h2 className="factory-home-title mt-2 text-[#6a3524]">{t.certificatesTitle}</h2>
-          </div>
-          <div className="home-trust-grid mt-6">
-            <div className="home-trust-visual">
-              <h3 className="factory-home-card-title text-[#6a3524]">{t.galleryTitle}</h3>
-              <div className="factory-detail-grid mt-5">
-                {factoryImages.slice(0, 3).map((img) => (
-                  <article key={img.id} className="factory-detail-card">
-                    <img src={img.image_url} alt={img.title} className="factory-detail-image" />
-                    <div className="factory-detail-caption">
-                      <p className="factory-home-body text-white">{img.title}</p>
-                    </div>
-                  </article>
+      {/* About + Video Section */}
+      <section className="py-12 md:py-16 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+            {/* Video */}
+            <div className="order-2 lg:order-1">
+              <div className="aspect-video bg-black rounded-lg overflow-hidden shadow-xl">
+                <video
+                  src="/media/home/factory-video.mp4"
+                  controls
+                  poster="/media/home/banner-2.png"
+                  className="w-full h-full"
+                />
+              </div>
+            </div>
+
+            {/* About Content */}
+            <div className="order-1 lg:order-2">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">{t.aboutTitle}</h2>
+              <p className="text-gray-600 leading-relaxed mb-6">{t.aboutDesc}</p>
+
+              <div className="grid grid-cols-2 gap-4 mb-6">
+                {t.aboutStats.map((stat, idx) => (
+                  <div key={idx} className="text-center p-4 bg-white rounded-lg shadow-sm">
+                    <p className="text-2xl md:text-3xl font-bold text-amber-600">{stat.value}</p>
+                    <p className="text-sm text-gray-600">{stat.label}</p>
+                  </div>
                 ))}
               </div>
-            </div>
-            <div className="factory-cert-grid home-trust-cards">
-              {t.certificatesList.map((item) => (
-                <article key={item.code} className="factory-cert-card">
-                  <div className="factory-cert-code">{item.code}</div>
-                  <h3 className="factory-home-card-title mt-4 text-[#6a3524]">{item.title}</h3>
-                  <p className="factory-home-body mt-3 text-[#7d4f3e]">{item.body}</p>
-                </article>
-              ))}
+
+              <Link
+                href="/contact"
+                className="inline-block px-6 py-3 bg-amber-500 text-white font-semibold rounded hover:bg-amber-600 transition-colors"
+              >
+                Contact Us
+              </Link>
             </div>
           </div>
-          <div className="factory-capability-grid mt-6">
-            {t.capability.map((item) => (
-              <article key={item.label} className="factory-capability-card">
-                <p className="factory-capability-label">{item.label}</p>
-                <p className="factory-home-body mt-2 text-[#7d4f3e]">{item.value}</p>
-              </article>
+        </div>
+      </section>
+
+      {/* Factory Gallery */}
+      <section className="py-12 md:py-16 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-3">{t.factoryTitle}</h2>
+          <p className="text-gray-600 text-center mb-10">{t.factoryDesc}</p>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="col-span-2 row-span-2">
+              <img src="/media/home/factory-1.jpg" alt="Factory" className="w-full h-full object-cover rounded-lg" />
+            </div>
+            <div>
+              <img src="/media/home/factory-2.jpg" alt="Factory" className="w-full h-40 md:h-48 object-cover rounded-lg" />
+            </div>
+            <div>
+              <img src="/media/home/factory-3.jpg" alt="Factory" className="w-full h-40 md:h-48 object-cover rounded-lg" />
+            </div>
+            <div>
+              <img src="/media/home/factory-4.jpg" alt="Factory" className="w-full h-40 md:h-48 object-cover rounded-lg" />
+            </div>
+            <div>
+              <img src="/media/home/factory-5.jpg" alt="Factory" className="w-full h-40 md:h-48 object-cover rounded-lg" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Certificates */}
+      <section className="py-12 md:py-16 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-3">{t.certTitle}</h2>
+          <p className="text-gray-600 text-center mb-10">{t.certDesc}</p>
+
+          <div className="flex flex-wrap justify-center gap-6 md:gap-10">
+            {['BSCI', 'SEDEX', 'ISO 9001', 'OEKO-TEX'].map((cert, idx) => (
+              <div key={idx} className="bg-white px-8 py-6 rounded-lg shadow-sm flex items-center justify-center min-w-[150px]">
+                <span className="text-xl font-bold text-gray-800">{cert}</span>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="home-wide-band home-wide-band-plain page-section">
-        <div className="home-full-bleed-shell py-12">
-          <div className="factory-section-head">
-            <p className="kicker page-reference-subtitle">{t.products}</p>
-            <h2 className="factory-home-title mt-2 text-[#6a3524]">{t.productsDesc}</h2>
-          </div>
-          <div className="home-product-flow mt-6">
-            <HomeProductCarousel items={featuredShowcase} />
-            <div className="home-product-side">
-              <div className="home-category-panel rounded-[34px] px-7 py-10 md:px-10">
-                <h2 className="home-reference-subtitle max-w-4xl text-[#5e3120]">
-                  {lang === "zh" ? "核心品类与量产方向" : lang === "es" ? "Categorias clave y enfoque de produccion" : "Core categories and production focus"}
-                </h2>
-                <p className="home-reference-body mt-4 max-w-3xl text-[#7d4f3e]">{t.categoryDesc}</p>
-                <div className="category-rows mt-8">
-                  {categories.length === 0 ? (
-                    <div className="home-reference-body text-[#7d4f3e]">{t.noCategory}</div>
-                  ) : (
-                    categories.map((item) => (
-                      <Link
-                        key={item.category}
-                        href={`/products?category=${encodeURIComponent(item.category)}`}
-                        className="category-row"
-                      >
-                        <span className="home-reference-body">{item.category}</span>
-                        <span className="home-reference-body">{item.count}</span>
-                      </Link>
-                    ))
-                  )}
-                </div>
+      {/* Services */}
+      <section className="py-12 md:py-16 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-3">{t.serviceTitle}</h2>
+          <p className="text-gray-600 text-center mb-10">{t.serviceDesc}</p>
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            {t.services.map((service, idx) => (
+              <div key={idx} className="text-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                <div className="text-4xl mb-4">{service.icon}</div>
+                <h3 className="text-lg font-semibold mb-2">{service.title}</h3>
+                <p className="text-sm text-gray-600">{service.desc}</p>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="home-wide-band home-wide-band-dark page-section">
-        <div className="home-full-bleed-shell py-12">
-          <div className="factory-cta-band home-cta-band">
-            <div>
-              <h2 className="factory-home-title text-white">
-                {lang === "zh" ? "带着品类、数量和时间节点开始沟通" : lang === "es" ? "Inicia la conversacion con categoria, volumen y timing" : "Start the conversation with category, volume, and launch timing"}
-              </h2>
-              <p className="factory-home-body mt-3 max-w-2xl text-white/82">{t.contactBody}</p>
-            </div>
-            <div className="factory-cta-actions">
-              <Link href="/contact" className="btn btn-primary">
-                {t.inquire}
+      {/* Product Categories */}
+      <section className="py-12 md:py-16 bg-gray-900">
+        <div className="container mx-auto px-4 md:px-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-white">Product Categories</h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {categories.slice(0, 8).map((cat) => (
+              <Link
+                key={cat.category}
+                href={`/products?category=${encodeURIComponent(cat.category)}`}
+                className="bg-gray-800 p-6 text-center rounded-lg hover:bg-gray-700 transition-colors group"
+              >
+                <span className="text-white font-medium group-hover:text-amber-400">{cat.category}</span>
+                <span className="block text-sm text-gray-400 mt-1">{cat.count} items</span>
               </Link>
-              <Link href="/payments" className="btn factory-cta-secondary">
-                {t.paidSample}
-              </Link>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="page-section">
-        <div className="home-full-bleed-shell">
-          <div className="home-bottom-feature">
-            <img
-              src="/media/custom/home-bottom-oem.png"
-              alt="DiYaSi OEM and ODM factory introduction"
-              className="home-bottom-feature-image"
-            />
-            <div className="home-bottom-feature-overlay" />
-            <div className="home-bottom-feature-copy">
-              <p className="kicker text-white/85">OEM / ODM</p>
-              <h2 className="home-reference-title mt-3 max-w-3xl text-white">
-                {lang === "zh"
-                  ? "20+ 年经验的内衣工厂配合 OEM / ODM 开发与量产"
-                  : lang === "es"
-                    ? "OEM / ODM con mas de 20 anos de experiencia en fabrica"
-                    : "20+ years of factory experience for OEM / ODM development"}
-              </h2>
-              <p className="home-reference-body mt-4 max-w-3xl text-white/88">
-                {lang === "zh"
-                  ? "设计、打样、生产与出货由同一工厂体系执行，支持多款式开发与稳定交付。"
-                  : lang === "es"
-                    ? "Diseno, muestreo, produccion y embarque dentro de un mismo sistema de fabrica para estilos multiples y entrega estable."
-                    : "Design, sampling, production, and shipment are handled within one factory system for multi-style development and stable delivery."}
-              </p>
-            </div>
+      {/* Contact CTA */}
+      <section className="py-16 md:py-24 bg-amber-500">
+        <div className="container mx-auto px-4 md:px-6 text-center">
+          <h2 className="text-2xl md:text-4xl font-bold text-white mb-4">{t.contactTitle}</h2>
+          <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">{t.contactDesc}</p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="/contact"
+              className="px-8 py-4 bg-white text-amber-600 font-semibold rounded hover:bg-gray-100 transition-colors"
+            >
+              Send Message
+            </Link>
+            <Link
+              href="/products"
+              className="px-8 py-4 border-2 border-white text-white font-semibold rounded hover:bg-white hover:text-amber-600 transition-colors"
+            >
+              View Products
+            </Link>
           </div>
         </div>
       </section>
