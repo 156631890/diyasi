@@ -192,39 +192,17 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
       </div>
 
       <div className="home-full-bleed-shell py-9">
-        <section className="grid gap-8 lg:grid-cols-[1.05fr_0.72fr_0.72fr_1.15fr]">
+        <section className="grid gap-8 lg:grid-cols-[1.05fr_1fr_1.1fr] lg:gap-12">
           <div className="pr-4">
             <p className="font-[Arial] text-[24px] font-bold leading-none text-[#5a2f1e]">YiWu DiYaSi</p>
             <p className="mt-3 max-w-md font-[Arial] text-[14px] leading-[1.8] text-[#7c6357]">{t.brandDesc}</p>
           </div>
 
-          <div>
-            <p className="site-footer-heading">{t.quickTitle}</p>
-            <div className="mt-3 grid gap-2.5">
-              {t.quickItems.map((item) => (
-                <Link key={item.href} href={item.href} className="site-footer-link">
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <p className="site-footer-heading">{t.productTitle}</p>
-            <div className="mt-3 grid gap-2.5">
-              {t.productItems.map((item) => (
-                <Link key={item.href} href={item.href} className="site-footer-link">
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div className="grid gap-6">
+          <div className="grid gap-8 sm:grid-cols-2">
             <div>
-              <p className="site-footer-heading">{t.supportTitle}</p>
+              <p className="site-footer-heading">{t.quickTitle}</p>
               <div className="mt-3 grid gap-2.5">
-                {t.supportItems.map((item) => (
+                {t.quickItems.map((item) => (
                   <Link key={item.href} href={item.href} className="site-footer-link">
                     {item.label}
                   </Link>
@@ -232,15 +210,26 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
               </div>
             </div>
             <div>
-              <p className="site-footer-heading">{t.contactTitle}</p>
+              <p className="site-footer-heading">{t.productTitle}</p>
               <div className="mt-3 grid gap-2.5">
-                {t.contactRows.map((row) => (
-                  <div key={row.label} className="site-footer-contact-row">
-                    <p className="site-footer-label site-footer-contact-key">{row.label}</p>
-                    <p className="site-footer-contact-value">{row.value}</p>
-                  </div>
+                {t.productItems.map((item) => (
+                  <Link key={item.href} href={item.href} className="site-footer-link">
+                    {item.label}
+                  </Link>
                 ))}
               </div>
+            </div>
+          </div>
+
+          <div>
+            <p className="site-footer-heading">{t.contactTitle}</p>
+            <div className="mt-3 grid gap-2.5">
+              {t.contactRows.map((row) => (
+                <div key={row.label} className="site-footer-contact-row">
+                  <p className="site-footer-label site-footer-contact-key">{row.label}</p>
+                  <p className="site-footer-contact-value">{row.value}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
