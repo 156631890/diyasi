@@ -9,6 +9,7 @@ import {
   isInStock,
   isLowMoq,
   isOemReady,
+  resolveDisplayProductId,
   resolveDisplayTitle,
   resolveHoverImage,
   resolvePrimaryImage,
@@ -261,6 +262,7 @@ export default function ProductCatalogView({ products, categories, copy }: Produ
             <section className="catalog-grid-clean mt-6">
               {visibleProducts.map((product) => {
                 const displayTitle = resolveDisplayTitle(product);
+                const displayProductId = resolveDisplayProductId(product);
                 const primaryImage = resolvePrimaryImage(product);
                 const hoverImage = resolveHoverImage(product);
                 const href = `/products/${encodeURIComponent(product.product_id)}`;
@@ -290,6 +292,7 @@ export default function ProductCatalogView({ products, categories, copy }: Produ
                       <Link href={href}>
                         <h2 className="catalog-card-clean-title">{displayTitle}</h2>
                       </Link>
+                      <p className="catalog-card-clean-category mt-2">{displayProductId}</p>
                     </div>
                   </article>
                 );

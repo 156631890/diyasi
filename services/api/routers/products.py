@@ -20,6 +20,28 @@ from services.gemini_image import GeminiImageError, generate_image
 router = APIRouter(prefix="/products", tags=["products"])
 
 
+def legacy_alibaba_to_dys(product_id: str) -> str:
+    if not product_id.startswith("ALI-"):
+        return product_id
+    normalized = "".join(ch for ch in product_id[4:] if ch.isalnum())
+    return f"DYS-{normalized}" if normalized else "DYS"
+
+
+def lookup_product_by_any_id(db: Session, product_id: str) -> Product | None:
+    product = db.query(Product).filter(Product.product_id == product_id).first()
+    if product:
+        return product
+
+    if product_id.startswith("ALI-"):
+        return db.query(Product).filter(Product.product_id == legacy_alibaba_to_dys(product_id)).first()
+
+    if product_id.startswith("DYS-"):
+        legacy_id = f"ALI-{product_id[4:]}"
+        return db.query(Product).filter(Product.product_id == legacy_id).first()
+
+    return None
+
+
 @router.get("/", response_model=list[ProductOut])
 def list_products(db: Session = Depends(get_db)) -> list[Product]:
     return db.query(Product).order_by(Product.created_at.desc()).all()
@@ -67,7 +89,7 @@ def import_products(payload: list[ProductCreate], db: Session = Depends(get_db))
 
 @router.patch("/{product_id}", response_model=ProductOut)
 def update_product(product_id: str, payload: ProductUpdate, db: Session = Depends(get_db)) -> Product:
-    product = db.query(Product).filter(Product.product_id == product_id).first()
+    product = lookup_product_by_any_id(db, product_id)
     if not product:
         raise HTTPException(status_code=404, detail="Product not found.")
 
@@ -80,7 +102,7 @@ def update_product(product_id: str, payload: ProductUpdate, db: Session = Depend
 
 @router.delete("/{product_id}")
 def delete_product(product_id: str, db: Session = Depends(get_db)) -> dict:
-    product = db.query(Product).filter(Product.product_id == product_id).first()
+    product = lookup_product_by_any_id(db, product_id)
     if not product:
         raise HTTPException(status_code=404, detail="Product not found.")
     db.delete(product)
@@ -124,7 +146,7 @@ async def generate_product_image(
     payload: ImageRequest,
     db: Session = Depends(get_db),
 ) -> ImageResponse:
-    product = db.query(Product).filter(Product.product_id == product_id).first()
+    product = lookup_product_by_any_id(db, product_id)
     if not product:
         raise HTTPException(status_code=404, detail="Product not found.")
 
@@ -147,7 +169,7 @@ async def generate_product_image(
 
 @router.get("/{product_id}", response_model=ProductOut)
 def get_product(product_id: str, db: Session = Depends(get_db)) -> Product:
-    product = db.query(Product).filter(Product.product_id == product_id).first()
+    product = lookup_product_by_any_id(db, product_id)
     if not product:
         raise HTTPException(status_code=404, detail="Product not found.")
     return product

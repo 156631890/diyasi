@@ -2,11 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import HeroCarousel from "@/components/HeroCarousel";
-import { safeFetchJson } from "@/lib/api";
 import { fallbackCatalogCategories } from "@/lib/catalog";
-import { getCatalogProducts } from "@/lib/catalog-source";
+import { getCatalogCategories, getCatalogProducts } from "@/lib/catalog-source";
 import { SiteLang } from "@/lib/i18n";
-import { resolveDisplayTitle, resolvePrimaryImage, topFamily, type DisplayProduct } from "@/lib/product-display";
+import { resolveDisplayProductId, resolveDisplayTitle, resolvePrimaryImage, topFamily, type DisplayProduct } from "@/lib/product-display";
 import { buildMetadata } from "@/lib/seo";
 import { getServerLang } from "@/lib/server-lang";
 
@@ -138,7 +137,8 @@ const copy: Record<SiteLang, {
 };
 
 async function getCategories(): Promise<ProductCategory[]> {
-  return safeFetchJson<ProductCategory[]>("/products/categories", fallbackCatalogCategories);
+  const categories = await getCatalogCategories();
+  return categories.length > 0 ? categories : fallbackCatalogCategories;
 }
 
 async function getFeaturedShowcase(): Promise<DisplayProductWithImage[]> {
@@ -207,7 +207,7 @@ export default async function HomePage() {
                       {resolveHomeProductTitle(product)}
                     </h3>
                     <p className="text-xs text-gray-500 mt-1 line-clamp-2">
-                      {product.product_id}
+                      {resolveDisplayProductId(product)}
                     </p>
                   </div>
                 </div>

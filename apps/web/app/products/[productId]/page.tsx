@@ -9,6 +9,7 @@ import { getCatalogProductById, getCatalogProducts } from "@/lib/catalog-source"
 import {
   buildGalleryImages,
   DisplayProduct,
+  resolveDisplayProductId,
   resolveDisplayDescription,
   resolveDisplayTitle,
   resolvePrice,
@@ -146,6 +147,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
 
   const typedProduct = product as DisplayProduct;
   const displayTitle = resolveDisplayTitle(typedProduct);
+  const displayProductId = resolveDisplayProductId(typedProduct);
   const displayDescription = resolveDisplayDescription(typedProduct);
   const price = resolvePrice(typedProduct);
   const priceText = resolvePriceText(typedProduct);
@@ -169,7 +171,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
     name: displayTitle,
     description: displayDescription,
     image: galleryImages.map((image) => (image.startsWith("http") ? image : absoluteUrl(image))),
-    sku: typedProduct.product_id,
+    sku: displayProductId,
     category: typedProduct.category,
     brand: {
       "@type": "Brand",
@@ -209,6 +211,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
             <p className="catalog-detail-kicker">
               {t.collectionLabel} / {family}
             </p>
+            <p className="catalog-detail-category">{displayProductId}</p>
             <p className="catalog-detail-category">{typedProduct.category}</p>
             <h1 className="catalog-detail-title">{displayTitle}</h1>
             <div className="catalog-detail-intro">

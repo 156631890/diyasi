@@ -17,6 +17,11 @@ SHOP_PRODUCTS_URL = "https://diyasiapparel.en.alibaba.com/search/product?scene=a
 USER_AGENT = "facebookexternalhit/1.1"
 DEFAULT_API_BASE = "http://127.0.0.1:8010"
 
+
+def alibaba_to_dys_product_id(raw_id: str | int) -> str:
+    normalized = re.sub(r"[^A-Za-z0-9]+", "", str(raw_id).strip())
+    return f"DYS-{normalized}" if normalized else "DYS"
+
 # Clean up a few shop category names that are awkward when copied directly.
 CATEGORY_LABEL_OVERRIDES = {
     "Sanua Clothes": "Sauna Clothes",
@@ -233,7 +238,7 @@ def ensure_product_columns(cursor: sqlite3.Cursor) -> None:
 
 
 def build_product_payload(category: str, item: dict[str, Any]) -> dict[str, str]:
-    product_id = f"ALI-{item['id']}"
+    product_id = alibaba_to_dys_product_id(item["id"])
     subject = str(item.get("subject", "")).strip()
     price = extract_price_text(item)
     moq = str(item.get("moq", "")).strip()
@@ -276,7 +281,7 @@ def load_products_from_db(categories: list[str]) -> list[dict[str, str]]:
     ensure_product_columns(cursor)
     rows = cursor.execute(
         "SELECT product_id, product_name, category, fabric, color, size, moq, sample_time, production_time, description, image_url, gallery_images, price_text, price_from, detail_url "
-        f"FROM products WHERE product_id LIKE 'ALI-%' AND category IN ({','.join('?' for _ in categories)})",
+        f"FROM products WHERE (product_id LIKE 'ALI-%' OR detail_url LIKE '%alibaba.%') AND category IN ({','.join('?' for _ in categories)})",
         categories,
     ).fetchall()
     conn.close()

@@ -80,6 +80,19 @@ function mergeProducts(primary: CatalogProduct[], fallback: CatalogProduct[]): C
   });
 }
 
+function isImportedAlibabaProduct(product: CatalogProduct): boolean {
+  return (
+    product.product_id.startsWith("ALI-") ||
+    /^DYS-\d+$/i.test(product.product_id) ||
+    (product.detail_url || "").includes("alibaba.")
+  );
+}
+
+function preferAlibabaProducts(products: CatalogProduct[]): CatalogProduct[] {
+  const alibabaProducts = products.filter(isImportedAlibabaProduct);
+  return alibabaProducts.length > 0 ? alibabaProducts : products;
+}
+
 async function readImportedProducts(): Promise<CatalogProduct[] | null> {
   try {
     const raw = await readFile(dataFilePath(), "utf-8");
@@ -102,19 +115,20 @@ export async function getCatalogProducts(): Promise<CatalogProduct[]> {
   const importedProducts = await readImportedProducts();
   const apiProducts = await safeFetchJson<CatalogProduct[]>("/products/", []);
   if (apiProducts.length > 0) {
-    return importedProducts ? mergeProducts(apiProducts, importedProducts) : apiProducts;
+    const mergedProducts = importedProducts ? mergeProducts(apiProducts, importedProducts) : apiProducts;
+    return preferAlibabaProducts(mergedProducts);
   }
-  return importedProducts || fallbackCatalogProducts;
+  return importedProducts ? preferAlibabaProducts(importedProducts) : fallbackCatalogProducts;
 }
 
 export async function getCatalogCategories(): Promise<CatalogCategory[]> {
+  const importedProducts = await readImportedProducts();
   const apiCategories = await safeFetchJson<CatalogCategory[]>("/products/categories", []);
-  if (apiCategories.length > 0) {
+  if (!importedProducts && apiCategories.length > 0) {
     return apiCategories;
   }
-  const importedProducts = await readImportedProducts();
   if (importedProducts) {
-    return categoriesFromProducts(importedProducts);
+    return categoriesFromProducts(preferAlibabaProducts(importedProducts));
   }
   return fallbackCatalogCategories;
 }
@@ -133,7 +147,7 @@ export async function getCatalogProductById(productId: string): Promise<CatalogP
     return apiProduct;
   }
   if (importedProducts) {
-    return importedProducts.find((item) => item.product_id === productId) || null;
+    return preferAlibabaProducts(importedProducts).find((item) => item.product_id === productId) || null;
   }
   return fallbackCatalogProducts.find((item) => item.product_id === productId) || null;
 }

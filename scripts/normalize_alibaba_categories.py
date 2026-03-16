@@ -15,7 +15,7 @@ def main() -> None:
     updated = 0
     for source, target in CATEGORY_DISPLAY_MAP.items():
         result = cursor.execute(
-            "UPDATE products SET category = ?, updated_at = CURRENT_TIMESTAMP WHERE category = ? AND product_id LIKE 'ALI-%'",
+            "UPDATE products SET category = ?, updated_at = CURRENT_TIMESTAMP WHERE category = ? AND (product_id LIKE 'ALI-%' OR detail_url LIKE '%alibaba.%')",
             [target, source],
         )
         updated += result.rowcount

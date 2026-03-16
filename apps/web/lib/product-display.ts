@@ -117,6 +117,21 @@ export function topFamily(value: string): string {
   return value.split("/")[0]?.trim() || value;
 }
 
+export function resolveDisplayProductId(product: Pick<DisplayProduct, "product_id">): string {
+  const rawId = product.product_id.trim();
+  if (!rawId) {
+    return "";
+  }
+  if (rawId.startsWith("DYS-")) {
+    return rawId;
+  }
+  if (rawId.startsWith("ALI-")) {
+    const normalizedSuffix = rawId.slice(4).replace(/[^A-Za-z0-9]+/g, "");
+    return normalizedSuffix ? `DYS-${normalizedSuffix}` : "DYS";
+  }
+  return rawId;
+}
+
 export function resolvePrice(product: DisplayProduct): number {
   if (product.price_from) {
     const parsed = Number(product.price_from.replace(/[^\d.]/g, ""));
