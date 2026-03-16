@@ -1,12 +1,14 @@
-﻿"use client";
+"use client";
+
+import { FormEvent, useEffect, useState } from "react";
 
 import { API_BASE } from "@/lib/api";
 import { getClientLang } from "@/lib/client-lang";
-import Link from "next/link";
-import { FormEvent, useEffect, useState } from "react";
 
 type Lang = "en" | "zh" | "es";
-const contactWideImage = "/media/generated/wide/contact-wide-brief-floor.png";
+
+const mapEmbedUrl =
+  "https://www.google.com/maps?q=NO%2016%20DaShi%20Road%2C%20FoTang%20Town%2C%20Yiwu%2C%20Zhejiang%2C%20China&z=15&output=embed";
 
 export default function ContactPage() {
   const copy: Record<
@@ -14,21 +16,19 @@ export default function ContactPage() {
     {
       lead: string;
       title: string;
-      inquiry: string;
-      inquiryDesc: string;
-      inquiryNote: string;
-      processTitle: string;
-      processLead: string;
-      process: string[];
+      intro: string;
+      company: string;
+      companyLabel: string;
+      addressLabel: string;
+      addressLines: string[];
+      emailLabel: string;
+      mobileLabel: string;
       formTitle: string;
-      formLead: string;
-      paymentTitle: string;
-      paymentDesc: string;
-      paymentCta: string;
+      formIntro: string;
       submit: string;
       nameLabel: string;
-      emailLabel: string;
-      companyLabel: string;
+      emailFieldLabel: string;
+      companyFieldLabel: string;
       messageLabel: string;
       namePlaceholder: string;
       emailPlaceholder: string;
@@ -39,127 +39,92 @@ export default function ContactPage() {
       statusSubmitting: string;
       statusSubmitted: string;
       statusFailed: string;
-      leadTitle: string;
-      leadDesc: string;
-      visualTitle: string;
-      visualBody: string;
-      visualMetrics: Array<{ value: string; label: string }>;
-      visualImageAlt: string;
     }
   > = {
     en: {
-      lead: "Contact",
-      title: "Contact our factory for sampling, OEM / ODM, and bulk production planning",
-      inquiry: "Project Inquiry",
-      inquiryDesc: "Share category, quantity range, timing, and product priorities. We come back with clear next steps rather than generic replies.",
-      inquiryNote: "Include category, target quantity, timing, and price range so we can reply with sample and production options.",
-      processTitle: "Project details we need",
-      processLead: "Share the core commercial details below so we can prepare the right sample path and delivery plan.",
-      process: ["Target category and fabric direction", "Estimated quantity and market position", "Sample window and launch timing"],
-      formTitle: "Brief Form",
-      formLead: "Tell us the product category, quantity range, target market, and launch timing.",
-      paymentTitle: "Need to place a sample fee or launch deposit?",
-      paymentDesc: "Keep consultation and payment separate. Use the dedicated payments page once scope and stage are already aligned.",
-      paymentCta: "Open Payments",
-      submit: "Send Inquiry",
-      nameLabel: "Name",
+      lead: "Contact Us",
+      title: "Talk to our factory team about sampling, OEM / ODM, and production planning",
+      intro:
+        "Use this page the same way buyers contact a factory directly: review the core company details first, then send a clear inquiry with category, quantity, and timeline.",
+      company: "YiWu DiYaSi Dress Co.. LTD",
+      companyLabel: "Company",
+      addressLabel: "Company Adderss / Manufacturing Locations",
+      addressLines: ["NO 16 DaShi Road, FoTang Town, Yiwu, Zhejiang", "China"],
       emailLabel: "Email",
-      companyLabel: "Brand / Company",
-      messageLabel: "Project Scope",
-      namePlaceholder: "Name",
-      emailPlaceholder: "Email",
-      companyPlaceholder: "Company",
-      messagePlaceholder: "Describe your project scope",
+      mobileLabel: "Mobie / WhatsApp",
+      formTitle: "Send Your Inquiry",
+      formIntro:
+        "Tell us what you need and we will respond with MOQ, sample timing, and production guidance instead of a generic reply.",
+      submit: "Submit",
+      nameLabel: "Name",
+      emailFieldLabel: "Email",
+      companyFieldLabel: "Company Name",
+      messageLabel: "Message",
+      namePlaceholder: "Your name",
+      emailPlaceholder: "Your email",
+      companyPlaceholder: "Your company",
+      messagePlaceholder: "Tell us the product category, quantity, fabric direction, and delivery timing.",
       statusLabel: "Status",
       statusReady: "Ready",
       statusSubmitting: "Submitting...",
       statusSubmitted: "Submitted",
-      statusFailed: "Submission failed",
-      leadTitle: "Send a clear brief and we will respond with sample, MOQ, and lead-time details.",
-      leadDesc: "Our team replies with material suggestions, quantity planning, sample arrangement, and production timing for your project.",
-      visualTitle: "From first inquiry to sample planning",
-      visualBody: "The inquiry moves into category review, sample arrangement, and delivery scheduling once the project details are confirmed.",
-      visualMetrics: [
-        { value: "5-7", label: "days to first sample direction" },
-        { value: "20-30", label: "days for stable bulk timing" }
-      ],
-      visualImageAlt: "Brand development floor and showroom"
+      statusFailed: "Submission failed"
     },
     zh: {
-      lead: "联系",
-      title: "联系工厂，沟通打样、OEM / ODM 与大货计划",
-      inquiry: "项目咨询",
-      inquiryDesc: "请告诉我们品类、数量区间、时间节点和产品重点，我们会给出更明确的下一步，而不是泛泛而谈。",
-      inquiryNote: "请附上品类、目标数量、时间节点和价格区间，方便我们回复打样与生产方案。",
-      processTitle: "我们需要的项目信息",
-      processLead: "把下面这些商业信息说明白，我们就能更快安排样品路径和交付节奏。",
-      process: ["目标品类与面料方向", "预估数量与市场定位", "打样窗口与上市时间"],
-      formTitle: "项目 Brief",
-      formLead: "请直接填写产品品类、数量区间、目标市场和上市时间。",
-      paymentTitle: "如果需要支付打样费或启动定金",
-      paymentDesc: "请把咨询和支付动作分开。只有在范围和阶段已经明确后，再进入支付页面。",
-      paymentCta: "前往支付",
-      submit: "发送咨询",
-      nameLabel: "姓名",
+      lead: "联系我们",
+      title: "与工厂团队直接沟通打样、OEM / ODM 与生产计划",
+      intro: "这个页面按外贸工厂常见联系页重做，先展示核心公司信息，再提交明确询盘。",
+      company: "YiWu DiYaSi Dress Co.. LTD",
+      companyLabel: "公司名称",
+      addressLabel: "公司地址 / 生产地址",
+      addressLines: ["NO 16 DaShi Road, FoTang Town, Yiwu, Zhejiang", "China"],
       emailLabel: "邮箱",
-      companyLabel: "品牌 / 公司",
-      messageLabel: "项目范围",
-      namePlaceholder: "姓名",
-      emailPlaceholder: "邮箱",
-      companyPlaceholder: "公司名称",
-      messagePlaceholder: "请描述你的项目范围",
+      mobileLabel: "手机 / WhatsApp",
+      formTitle: "发送询盘",
+      formIntro: "请直接写明品类、数量、面料方向与交期，我们会回复 MOQ、打样和生产建议。",
+      submit: "提交",
+      nameLabel: "姓名",
+      emailFieldLabel: "邮箱",
+      companyFieldLabel: "公司名称",
+      messageLabel: "留言内容",
+      namePlaceholder: "请输入姓名",
+      emailPlaceholder: "请输入邮箱",
+      companyPlaceholder: "请输入公司名称",
+      messagePlaceholder: "请填写产品品类、数量、面料方向与交期要求。",
       statusLabel: "状态",
       statusReady: "待提交",
       statusSubmitting: "提交中...",
       statusSubmitted: "提交成功",
-      statusFailed: "提交失败",
-      leadTitle: "提交清晰 brief，我们会回复打样、MOQ 和交期安排。",
-      leadDesc: "团队会围绕面料方向、数量结构、打样计划和生产时间给出具体回复。",
-      visualTitle: "从第一次询盘进入打样计划",
-      visualBody: "清楚的项目信息可以让我们直接进入品类评估、样品安排和交付排期。",
-      visualMetrics: [
-        { value: "5-7", label: "天进入首轮打样方向" },
-        { value: "20-30", label: "天进入稳定大货节奏" }
-      ],
-      visualImageAlt: "品牌开发与展示空间"
+      statusFailed: "提交失败"
     },
     es: {
       lead: "Contacto",
-      title: "Contacta la fabrica para muestreo, OEM / ODM y planificacion de produccion",
-      inquiry: "Consulta de Proyecto",
-      inquiryDesc: "Comparte categoría, rango de volumen, timing y prioridades del producto. Respondemos con siguientes pasos claros, no con lenguaje genérico.",
-      inquiryNote: "Incluye categoria, cantidad objetivo, timing y rango de precio para responder con plan de muestra y produccion.",
-      processTitle: "Datos del proyecto que necesitamos",
-      processLead: "Comparte estos datos comerciales para preparar la ruta de muestra y el plan de entrega correctos.",
-      process: ["Categoría objetivo y dirección textil", "Volumen estimado y posición de mercado", "Ventana de muestra y fecha de lanzamiento"],
-      formTitle: "Brief del Proyecto",
-      formLead: "Indica categoria, volumen estimado, mercado objetivo y fecha de lanzamiento.",
-      paymentTitle: "¿Necesitas pagar muestra o depósito?",
-      paymentDesc: "Separa consulta y pago. Usa la página de pagos solo cuando alcance y etapa ya estén claros.",
-      paymentCta: "Abrir Pagos",
-      submit: "Enviar Consulta",
+      title: "Habla con nuestra fabrica sobre muestras, OEM / ODM y planificacion de produccion",
+      intro:
+        "La pagina sigue la estructura de contacto de una fabrica exportadora: primero los datos clave de la empresa y luego un formulario de consulta claro.",
+      company: "YiWu DiYaSi Dress Co.. LTD",
+      companyLabel: "Empresa",
+      addressLabel: "Direccion de empresa / ubicacion de fabrica",
+      addressLines: ["NO 16 DaShi Road, FoTang Town, Yiwu, Zhejiang", "China"],
+      emailLabel: "Email",
+      mobileLabel: "Movil / WhatsApp",
+      formTitle: "Enviar Consulta",
+      formIntro:
+        "Indica categoria, volumen, direccion textil y timing. Responderemos con MOQ, muestra y plan de produccion.",
+      submit: "Enviar",
       nameLabel: "Nombre",
-      emailLabel: "Correo",
-      companyLabel: "Marca / Empresa",
-      messageLabel: "Alcance del Proyecto",
-      namePlaceholder: "Nombre",
-      emailPlaceholder: "Correo",
-      companyPlaceholder: "Empresa",
-      messagePlaceholder: "Describe el alcance de tu proyecto",
+      emailFieldLabel: "Email",
+      companyFieldLabel: "Empresa",
+      messageLabel: "Mensaje",
+      namePlaceholder: "Tu nombre",
+      emailPlaceholder: "Tu email",
+      companyPlaceholder: "Tu empresa",
+      messagePlaceholder: "Comparte categoria, volumen, tejido y plazo de entrega.",
       statusLabel: "Estado",
       statusReady: "Listo",
       statusSubmitting: "Enviando...",
       statusSubmitted: "Enviado",
-      statusFailed: "Error de envío",
-      leadTitle: "Envia un brief claro y responderemos con muestra, MOQ y lead time.",
-      leadDesc: "El equipo responde sobre direccion de material, estructura de volumen, plan de muestreo y timing de produccion.",
-      visualTitle: "De la primera consulta al plan de muestra",
-      visualBody: "Un brief claro nos permite pasar directo a revision de categoria, muestra y programacion de entrega.",
-      visualMetrics: [
-        { value: "5-7", label: "días hacia la primera muestra" },
-        { value: "20-30", label: "días para ritmo estable de producción" }
-      ],
-      visualImageAlt: "Espacio de desarrollo y showroom de marca"
+      statusFailed: "Error de envio"
     }
   };
 
@@ -187,7 +152,7 @@ export default function ContactPage() {
         return;
       }
     } catch {
-      // fall through to failed state
+      // fall through
     }
     setStatus("failed");
   }
@@ -203,106 +168,140 @@ export default function ContactPage() {
 
   return (
     <main className="container-shell page-shell page-stack">
-      <section className="hero-panel page-hero overflow-hidden md:p-10 lg:p-12">
-        <div className="grid gap-8 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
-          <div className="page-copy-wide">
+      <section className="hero-panel overflow-hidden rounded-[34px] md:p-10 lg:p-12">
+        <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+          <div>
             <p className="kicker page-reference-subtitle">{t.lead}</p>
             <h1 className="section-title mt-2 text-[#6a3524]">{t.title}</h1>
+            <p className="page-reference-body mt-4 max-w-3xl text-[#7d4f3e]">{t.intro}</p>
           </div>
-          <div className="contact-aside">
-            <p className="text-xs uppercase tracking-[0.22em] text-[#8b6a2c]">{t.processTitle}</p>
-            <p className="page-reference-subtitle mt-4 text-[#6a3524]">{t.leadTitle}</p>
-            <p className="page-reference-body mt-3 text-[#7d4f3e]">{t.leadDesc}</p>
+          <div className="rounded-[26px] border border-[rgba(191,144,118,0.28)] bg-[rgba(255,251,246,0.96)] p-5 shadow-[0_20px_44px_rgba(143,91,62,0.12)]">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#b06a46]">{t.companyLabel}</p>
+            <p className="mt-3 text-[1.4rem] font-bold leading-tight text-[#5f3123]">{t.company}</p>
+            <div className="mt-5 space-y-4 text-sm leading-7 text-[#7d4f3e]">
+              <div>
+                <p className="font-semibold text-[#b06a46]">{t.addressLabel}</p>
+                {t.addressLines.map((line) => (
+                  <p key={line}>{line}</p>
+                ))}
+              </div>
+              <div>
+                <p className="font-semibold text-[#b06a46]">{t.emailLabel}</p>
+                <p>
+                  <a href="mailto:imbella.annie@diyasidress.com" className="hover:text-[#b15d39]">
+                    imbella.annie@diyasidress.com
+                  </a>
+                </p>
+                <p>
+                  <a href="mailto:imbella.vicky@diyasidress.com" className="hover:text-[#b15d39]">
+                    imbella.vicky@diyasidress.com
+                  </a>
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-[#b06a46]">{t.mobileLabel}</p>
+                <p>
+                  <a href="tel:+8618042579030" className="hover:text-[#b15d39]">
+                    +86 18042579030
+                  </a>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="contact-layout page-section">
-        <div className="contact-panel">
-          <div className="contact-inquiry-grid">
-            <div className="contact-inquiry-copy">
-              <div className="page-section-head">
-                <p className="kicker page-reference-subtitle">{t.inquiry}</p>
-                <h2 className="card-title-standard text-[#6a3524]">{t.inquiry}</h2>
-              </div>
-              <p className="page-reference-body page-copy mt-4 text-[#7d4f3e]">{t.inquiryDesc}</p>
-              <p className="contact-inquiry-note">{t.inquiryNote}</p>
-
-              <div className="contact-visual-anchor">
-                <div className="contact-visual-copy">
-                  <p className="contact-visual-kicker">Brief</p>
-                  <h3 className="page-reference-subtitle text-white">{t.visualTitle}</h3>
-                  <p className="page-reference-body mt-4 text-[#f3dfd3]">{t.visualBody}</p>
-                </div>
-                <div className="contact-visual-image-shell">
-                  <img src={contactWideImage} alt={t.visualImageAlt} className="contact-visual-image" />
-                </div>
-                <div className="contact-visual-metrics">
-                  {t.visualMetrics.map((item) => (
-                    <div key={item.label} className="contact-visual-metric">
-                      <p className="contact-visual-value">{item.value}</p>
-                      <p className="contact-visual-label">{item.label}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="contact-process-block">
-                <p className="text-xs uppercase tracking-[0.22em] text-[#8b6a2c]">{t.processTitle}</p>
-                <p className="page-reference-body mt-3 text-[#7d4f3e]">{t.processLead}</p>
-                <div className="mt-5 grid gap-3">
-                  {t.process.map((item, index) => (
-                    <div key={item} className="contact-process-item">
-                      <p className="contact-process-index">{String(index + 1).padStart(2, "0")}</p>
-                      <p className="contact-process-copy">{item}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <form className="contact-form-card" onSubmit={onSubmit}>
-              <div className="contact-form-head">
-                <p className="kicker page-reference-subtitle">{t.formTitle}</p>
-                <p className="page-reference-body page-copy mt-3 text-[#7d4f3e]">{t.formLead}</p>
-              </div>
-              <div className="contact-form-grid">
-                <label className="contact-field">
-                  <span className="contact-field-label">{t.nameLabel}</span>
-                  <input className="input" placeholder={t.namePlaceholder} required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
-                </label>
-                <label className="contact-field">
-                  <span className="contact-field-label">{t.emailLabel}</span>
-                  <input className="input" placeholder={t.emailPlaceholder} type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
-                </label>
-                <label className="contact-field contact-form-span">
-                  <span className="contact-field-label">{t.companyLabel}</span>
-                  <input className="input" placeholder={t.companyPlaceholder} value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} />
-                </label>
-                <label className="contact-field contact-form-span">
-                  <span className="contact-field-label">{t.messageLabel}</span>
-                  <textarea className="input min-h-40" placeholder={t.messagePlaceholder} required value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
-                </label>
-              </div>
-              <input type="text" className="hidden" tabIndex={-1} autoComplete="off" value={form.website} onChange={(e) => setForm({ ...form, website: e.target.value })} />
-              <div className="contact-form-actions">
-                <button className="btn btn-primary" type="submit">{t.submit}</button>
-                <p className="text-sm text-[#9d7d6f]">{t.statusLabel}: {statusText}</p>
-              </div>
-            </form>
+      <section className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+        <div className="overflow-hidden rounded-[30px] border border-[rgba(191,144,118,0.24)] bg-[linear-gradient(180deg,rgba(255,252,248,0.98),rgba(249,239,230,0.94))] shadow-[0_24px_56px_rgba(132,86,58,0.12)]">
+          <div className="border-b border-[rgba(191,144,118,0.2)] px-6 py-5">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#b06a46]">Google Maps</p>
+            <p className="mt-2 text-lg font-semibold text-[#5f3123]">{t.addressLabel}</p>
+          </div>
+          <div className="h-[320px] md:h-[420px]">
+            <iframe
+              title="YiWu DiYaSi map"
+              src={mapEmbedUrl}
+              className="h-full w-full border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
 
-        <section className="contact-payment-band">
-          <div>
-            <p className="kicker page-reference-subtitle text-[#f3d7a1]">{t.paymentTitle}</p>
-            <h2 className="page-reference-subtitle mt-3 text-white">{t.paymentTitle}</h2>
-            <p className="page-reference-body mt-3 max-w-2xl text-[#f3dfd3]">{t.paymentDesc}</p>
+        <form
+          className="rounded-[30px] border border-[rgba(191,144,118,0.24)] bg-[linear-gradient(180deg,rgba(255,252,248,0.99),rgba(250,240,231,0.98))] p-6 shadow-[0_24px_56px_rgba(132,86,58,0.12)] md:p-8"
+          onSubmit={onSubmit}
+        >
+          <div className="border-b border-[rgba(191,144,118,0.2)] pb-5">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#b06a46]">{t.lead}</p>
+            <h2 className="mt-2 text-[1.9rem] font-bold leading-tight text-[#5f3123]">{t.formTitle}</h2>
+            <p className="mt-3 text-sm leading-7 text-[#7d4f3e]">{t.formIntro}</p>
           </div>
-          <div className="contact-payment-actions">
-            <Link href="/payments" className="btn bg-white text-[#8d452d]">{t.paymentCta}</Link>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            <label className="grid gap-2">
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9d7d6f]">{t.nameLabel}</span>
+              <input
+                className="input"
+                placeholder={t.namePlaceholder}
+                required
+                value={form.name}
+                onChange={(event) => setForm({ ...form, name: event.target.value })}
+              />
+            </label>
+
+            <label className="grid gap-2">
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9d7d6f]">{t.emailFieldLabel}</span>
+              <input
+                className="input"
+                placeholder={t.emailPlaceholder}
+                type="email"
+                required
+                value={form.email}
+                onChange={(event) => setForm({ ...form, email: event.target.value })}
+              />
+            </label>
+
+            <label className="grid gap-2 md:col-span-2">
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9d7d6f]">{t.companyFieldLabel}</span>
+              <input
+                className="input"
+                placeholder={t.companyPlaceholder}
+                value={form.company}
+                onChange={(event) => setForm({ ...form, company: event.target.value })}
+              />
+            </label>
+
+            <label className="grid gap-2 md:col-span-2">
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9d7d6f]">{t.messageLabel}</span>
+              <textarea
+                className="input min-h-48"
+                placeholder={t.messagePlaceholder}
+                required
+                value={form.message}
+                onChange={(event) => setForm({ ...form, message: event.target.value })}
+              />
+            </label>
           </div>
-        </section>
+
+          <input
+            type="text"
+            className="hidden"
+            tabIndex={-1}
+            autoComplete="off"
+            value={form.website}
+            onChange={(event) => setForm({ ...form, website: event.target.value })}
+          />
+
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
+            <button className="btn btn-primary min-w-[160px]" type="submit">
+              {t.submit}
+            </button>
+            <p className="text-sm text-[#9d7d6f]">
+              {t.statusLabel}: {statusText}
+            </p>
+          </div>
+        </form>
       </section>
     </main>
   );
