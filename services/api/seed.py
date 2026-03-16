@@ -1,6 +1,9 @@
+import json
+from pathlib import Path
+
 from sqlalchemy.orm import Session
 
-from models import Lead, Product
+from models import Lead, Product, SEOArticle
 from services.lead_scoring import calculate_lead_score
 
 
@@ -213,6 +216,17 @@ DEFAULT_LEADS = [
 ]
 
 
+DATA_DIR = Path(__file__).resolve().parents[2] / "data"
+SEO_ARTICLES_PATH = DATA_DIR / "seo-articles.json"
+DRAFT_PREFIX = "draft::"
+
+
+def _load_seed_articles() -> list[dict]:
+    if not SEO_ARTICLES_PATH.exists():
+        return []
+    return json.loads(SEO_ARTICLES_PATH.read_text(encoding="utf-8"))
+
+
 def seed_if_empty(db: Session) -> None:
     existing_ids = {row[0] for row in db.query(Product.product_id).all()}
     if existing_ids and existing_ids.issubset(LEGACY_PRODUCT_IDS):
@@ -232,5 +246,23 @@ def seed_if_empty(db: Session) -> None:
         lead = Lead(**item)
         lead.score = calculate_lead_score(lead)
         db.add(lead)
+
+    existing_article_slugs = {row[0] for row in db.query(SEOArticle.slug).all()}
+    for item in _load_seed_articles():
+        slug = item["slug"]
+        if slug in existing_article_slugs:
+            continue
+        category = item.get("category", "manufacturer").strip() or "manufacturer"
+        if not item.get("is_published", True):
+            category = f"{DRAFT_PREFIX}{category}"
+        db.add(
+            SEOArticle(
+                title=item["title"].strip(),
+                slug=slug,
+                category=category,
+                excerpt=item.get("excerpt", ""),
+                body=item["body"],
+            )
+        )
 
     db.commit()
