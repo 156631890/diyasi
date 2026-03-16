@@ -195,7 +195,7 @@ export default async function HomePage() {
                 className="group"
               >
                 <div className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="aspect-[3/4] overflow-hidden bg-gray-100">
+                  <div className="aspect-[5/4] overflow-hidden bg-gray-100">
                     <img
                       src={product.image}
                       alt={resolveDisplayTitle(product)}
