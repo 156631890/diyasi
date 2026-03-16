@@ -319,8 +319,14 @@ export default async function HomePage() {
       </section>
 
       {/* Product Categories */}
-      <section className="py-12 md:py-16 bg-gray-900">
-        <div className="container mx-auto px-4 md:px-6">
+      <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,rgba(210,157,104,0.22),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(156,104,72,0.28),transparent_32%),linear-gradient(135deg,#241714_0%,#34221b_52%,#1e1512_100%)] py-12 md:py-16">
+        <div className="pointer-events-none absolute inset-0 opacity-25">
+          <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,228,201,0.72),transparent)]" />
+          <div className="absolute left-[8%] top-8 h-28 w-28 rounded-full border border-white/10" />
+          <div className="absolute right-[10%] top-16 h-40 w-40 rounded-full border border-white/10" />
+          <div className="absolute bottom-10 left-[24%] h-24 w-24 rounded-full border border-white/10" />
+        </div>
+        <div className="container relative mx-auto px-4 md:px-6">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-white">Product Categories</h2>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -339,23 +345,77 @@ export default async function HomePage() {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-16 md:py-24 bg-amber-500">
-        <div className="container mx-auto px-4 md:px-6 text-center">
-          <h2 className="text-2xl md:text-4xl font-bold text-white mb-4">{t.contactTitle}</h2>
-          <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">{t.contactDesc}</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/contact"
-              className="px-8 py-4 bg-white text-amber-600 font-semibold rounded hover:bg-gray-100 transition-colors"
-            >
-              Send Message
-            </Link>
-            <Link
-              href="/products"
-              className="px-8 py-4 border-2 border-white text-white font-semibold rounded hover:bg-white hover:text-amber-600 transition-colors"
-            >
-              View Products
-            </Link>
+      <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,rgba(255,243,228,0.42),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(191,114,75,0.24),transparent_28%),linear-gradient(135deg,#c9835e_0%,#bb714b_42%,#a45a3b_100%)] py-16 md:py-24">
+        <div className="pointer-events-none absolute inset-0 opacity-35">
+          <div className="absolute -left-12 top-8 h-40 w-40 rounded-full bg-white/10 blur-2xl" />
+          <div className="absolute right-0 top-0 h-48 w-48 rounded-full bg-[#f7d0b5]/20 blur-3xl" />
+          <div className="absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,245,236,0.8),transparent)]" />
+        </div>
+        <div className="container relative mx-auto px-4 md:px-6">
+          <div className="grid gap-8 overflow-hidden rounded-[28px] bg-white/10 p-6 shadow-[0_24px_60px_rgba(91,45,19,0.18)] backdrop-blur-sm md:p-8 lg:grid-cols-[1fr_1.15fr] lg:items-stretch">
+            <div className="relative min-h-[300px] overflow-hidden rounded-[24px] bg-[#f6dfcf]">
+              <iframe
+                title="YiWu DiYaSi location map"
+                src="https://www.google.com/maps?q=NO%2016%20DaShi%20Road%2C%20FoTang%20Town%2C%20Yiwu%2C%20Zhejiang%2C%20China&z=15&output=embed"
+                className="absolute inset-0 h-full w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              <div className="absolute bottom-5 left-5 rounded-2xl bg-white/88 px-4 py-3 shadow-lg">
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#b15d39]">Location</p>
+                <p className="mt-1 text-sm font-semibold text-[#6e3924]">FoTang Town, Yiwu, Zhejiang, China</p>
+              </div>
+            </div>
+
+            <div className="rounded-[24px] bg-[#fff7f1] p-6 text-[#6e3924] md:p-8">
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#c46d45]">Contact Us</p>
+              <h2 className="mt-3 text-2xl font-bold leading-tight md:text-4xl">YiWu DiYaSi Dress Co.. LTD</h2>
+              <div className="mt-6 space-y-5 text-sm leading-7 md:text-base">
+                <div>
+                  <p className="font-semibold text-[#b15d39]">Company Adderss / Manufacturing Locations:</p>
+                  <p>NO 16 DaShi Road ,FoTang Town ,Yiwu, Zhejiang</p>
+                  <p>China</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-[#b15d39]">Email:</p>
+                  <p>
+                    <a
+                      href="mailto:imbella.annie@diyasidress.com"
+                      className="underline decoration-[#d08b67] underline-offset-4 transition hover:text-[#b15d39]"
+                    >
+                      imbella.annie@diyasidress.com
+                    </a>
+                  </p>
+                  <p>
+                    <a
+                      href="mailto:imbella.vicky@diyasidress.com"
+                      className="underline decoration-[#d08b67] underline-offset-4 transition hover:text-[#b15d39]"
+                    >
+                      imbella.vicky@diyasidress.com
+                    </a>
+                  </p>
+                </div>
+                <div>
+                  <p className="font-semibold text-[#b15d39]">Mobie/whatsApp:</p>
+                  <p className="flex flex-wrap gap-4">
+                    <a
+                      href="tel:+8618042579030"
+                      className="underline decoration-[#d08b67] underline-offset-4 transition hover:text-[#b15d39]"
+                    >
+                      +86 18042579030
+                    </a>
+                    <a
+                      href="https://wa.me/8618042579030"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="underline decoration-[#d08b67] underline-offset-4 transition hover:text-[#b15d39]"
+                    >
+                      Open WhatsApp
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
