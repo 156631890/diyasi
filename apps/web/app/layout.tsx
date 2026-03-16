@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
-import "./globals.css";
-import TopNav from "@/components/TopNav";
+
 import SiteFooter from "@/components/SiteFooter";
+import TopNav from "@/components/TopNav";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/seo";
 import { getServerLang } from "@/lib/server-lang";
+
+import "./globals.css";
 
 const headingFont = Cormorant_Garamond({
   subsets: ["latin"],
@@ -60,6 +62,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const lang = getServerLang();
+
   const websiteJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -68,6 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     description: SITE_DESCRIPTION,
     inLanguage: ["en", "zh", "es"]
   };
+
   const organizationJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -81,88 +85,48 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     areaServed: "Worldwide",
     knowsLanguage: ["en", "zh", "es"]
   };
-  const localBusinessJsonLd = {
+
+  const clothingStoreJsonLd = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: SITE_NAME,
-    url: SITE_URL,
-    description: SITE_DESCRIPTION,
+    "@type": "ClothingStore",
+    name: "YiWu DiYaSi Dress CO., LTD",
+    alternateName: "义乌市迪亚斯服饰有限公司",
     image: `${SITE_URL}/media/generated/factory-capability-panorama.png`,
-    foundingDate: "2002",
-    email: "imbella.vicky@diyasidress.com",
+    "@id": SITE_URL,
+    url: SITE_URL,
     telephone: "+86-18042579030",
-    faxNumber: "+86-579-85569925",
     address: {
       "@type": "PostalAddress",
       streetAddress: "NO.16 DaShi Road, FoTang Town",
       addressLocality: "Yiwu",
       addressRegion: "Zhejiang",
+      postalCode: "322000",
       addressCountry: "CN"
     },
-    areaServed: ["North America", "Europe", "Asia", "Worldwide"],
-    knowsLanguage: ["en", "zh", "es"],
-    additionalProperty: [
-      {
-        "@type": "PropertyValue",
-        name: "Manufacturing Experience",
-        value: "23+ years"
-      },
-      {
-        "@type": "PropertyValue",
-        name: "First Sample Lead Time",
-        value: "5-7 days"
-      },
-      {
-        "@type": "PropertyValue",
-        name: "Bulk Production Lead Time",
-        value: "20-30 days"
-      },
-      {
-        "@type": "PropertyValue",
-        name: "MOQ per style and color",
-        value: "300-500 pcs"
-      },
-      {
-        "@type": "PropertyValue",
-        name: "Flexible MOQ",
-        value: "100-500 pcs/style"
-      },
-      {
-        "@type": "PropertyValue",
-        name: "Factory Size",
-        value: "20,000 m²"
-      },
-      {
-        "@type": "PropertyValue",
-        name: "Employees",
-        value: "100+"
-      },
-      {
-        "@type": "PropertyValue",
-        name: "Monthly Capacity",
-        value: "600,000+ pieces"
-      },
-      {
-        "@type": "PropertyValue",
-        name: "Export Markets",
-        value: "30+ countries"
-      }
-    ],
-    makesOffer: [
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Private-label underwear manufacturing"
-        }
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "OEM / ODM product development"
-        }
-      }
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 29.3068,
+      longitude: 120.0751
+    },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "09:00",
+      closes: "18:00"
+    },
+    description:
+      "YiWu DiYaSi Dress CO., LTD is a professional sustainable underwear manufacturer with 23+ years of experience. We specialize in eco-friendly fabrics, seamless technology, and OEM/ODM services for global brands.",
+    brand: {
+      "@type": "Brand",
+      name: "DiYaSi"
+    },
+    foundingDate: "2002",
+    knowsAbout: [
+      "Sustainable Underwear Manufacturing",
+      "Eco-friendly Fabrics",
+      "Seamless Lingerie Production",
+      "Cross-border E-commerce Supply Chain",
+      "Yiwu Sourcing"
     ]
   };
 
@@ -176,7 +140,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(clothingStoreJsonLd) }}
         />
         <TopNav initialLang={lang} />
         {children}
