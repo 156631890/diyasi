@@ -56,8 +56,6 @@ const copy: Record<SiteLang, {
   aboutStats: Array<{ value: string; label: string }>;
   factoryTitle: string;
   factoryDesc: string;
-  certTitle: string;
-  certDesc: string;
   serviceTitle: string;
   serviceDesc: string;
   services: Array<{ title: string; desc: string; icon: string }>;
@@ -79,8 +77,6 @@ const copy: Record<SiteLang, {
     ],
     factoryTitle: "Our Factory",
     factoryDesc: "Tour our state-of-the-art manufacturing facility",
-    certTitle: "Our Certificate",
-    certDesc: "Your trusted source for sustainable intimates. Our factory has certifications including BSCI, SEDEX, ISO 9001, and OEKO-TEX.",
     serviceTitle: "Our Service",
     serviceDesc: "Professional underwear manufacturer supplying OEM designs and supporting OEM orders.",
     services: [
@@ -106,8 +102,6 @@ const copy: Record<SiteLang, {
     ],
     factoryTitle: "我们的工厂",
     factoryDesc: "参观我们最先进的制造设施",
-    certTitle: "我们的证书",
-    certDesc: "您值得信赖的可持续内衣来源。我们的工厂拥有BSCI、SEDEX、ISO 9001和OEKO-TEX认证。",
     serviceTitle: "我们的服务",
     serviceDesc: "专业内衣制造商，提供OEM设计和OEM订单支持。",
     services: [
@@ -133,8 +127,6 @@ const copy: Record<SiteLang, {
     ],
     factoryTitle: "Nuestra Fábrica",
     factoryDesc: "Visite nuestras instalaciones de fabricación",
-    certTitle: "Nuestros Certificados",
-    certDesc: "Su fuente confiable de ropa interior sostenible. Certificaciones BSCI, SEDEX, ISO 9001, OEKO-TEX.",
     serviceTitle: "Nuestro Servicio",
     serviceDesc: "Fabricante profesional de ropa interior con diseños OEM.",
     services: [
@@ -360,40 +352,6 @@ export default async function HomePage() {
             <div>
               <img src="/media/home/factory-5.jpg" alt="Factory" className="w-full h-40 md:h-48 object-cover rounded-lg" />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Certificates */}
-      <section className="py-12 md:py-16 bg-gray-50">
-        <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-3">{t.certTitle}</h2>
-          <p className="text-gray-600 text-center mb-10">{t.certDesc}</p>
-
-          <div className="flex flex-wrap justify-center gap-6 md:gap-10">
-            {['BSCI', 'SEDEX', 'ISO 9001', 'OEKO-TEX'].map((cert, idx) => (
-              <div key={idx} className="bg-white px-8 py-6 rounded-lg shadow-sm flex items-center justify-center min-w-[150px]">
-                <span className="text-xl font-bold text-gray-800">{cert}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-3">{t.serviceTitle}</h2>
-          <p className="text-gray-600 text-center mb-10">{t.serviceDesc}</p>
-
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {t.services.map((service, idx) => (
-              <div key={idx} className="text-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-lg font-semibold mb-2">{service.title}</h3>
-                <p className="text-sm text-gray-600">{service.desc}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
