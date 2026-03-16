@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ReactNode } from "react";
 
 import HeroCarousel from "@/components/HeroCarousel";
 import { fallbackCatalogCategories } from "@/lib/catalog";
@@ -21,6 +22,16 @@ type ProductCategory = {
 };
 
 type DisplayProductWithImage = DisplayProduct & { image: string };
+
+function AdvantageIcon({ children }: { children: ReactNode }) {
+  return (
+    <div className="mb-5 flex h-20 items-center justify-center rounded-xl bg-[linear-gradient(135deg,#d8c2b0_0%,#c9ae98_100%)] text-[#5f3123]">
+      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[rgba(255,250,242,0.82)] shadow-[inset_0_0_0_1px_rgba(95,49,35,0.08)]">
+        {children}
+      </div>
+    </div>
+  );
+}
 
 function resolveHomeProductTitle(product: DisplayProduct): string {
   const family = topFamily(product.category);
@@ -212,6 +223,75 @@ export default async function HomePage() {
                   </div>
                 </div>
               </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[linear-gradient(180deg,#fff7dd_0%,#f4e2b8_55%,#ead09a_100%)] py-14 md:py-20">
+        <div className="container mx-auto px-4 text-center md:px-6">
+          <p className="text-3xl font-bold uppercase tracking-[0.14em] text-[#6a3524] md:text-4xl">OUR ADVANTAGES</p>
+          <p className="mx-auto mt-4 max-w-4xl text-base leading-7 text-[#7d4f3e] md:text-lg">
+            YiWu DiYaSi Dress CO., LTD. 23+ Years Professional Underwear Manufacturer for Supplying OEM Designs And
+            Support OEM Order.
+          </p>
+
+          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {[
+              {
+                title: "24H Design Service",
+                desc: "We transform your initial idea into a professional design concept and provide a solution within 24 hours.",
+                icon: (
+                  <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M4 16.5V20h3.5L18 9.5 14.5 6 4 16.5Z" />
+                    <path d="M13.5 7 17 10.5" />
+                    <path d="M8 20h12" />
+                  </svg>
+                )
+              },
+              {
+                title: "7 Day Sample Delivery",
+                desc: "Your custom-made samples will be ready for your evaluation in just 7 days, accelerating your time to market.",
+                icon: (
+                  <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <rect x="4" y="5" width="16" height="15" rx="2.5" />
+                    <path d="M8 3v4M16 3v4M4 10h16" />
+                    <path d="M10 14h4l-3 4" />
+                  </svg>
+                )
+              },
+              {
+                title: "Flexible Customization",
+                desc: "Low MOQ starts from 100pcs per SKU, providing the flexibility you need to grow your brand with minimal risk.",
+                icon: (
+                  <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M6 8.5C6 6.57 7.57 5 9.5 5c1.14 0 2.15.54 2.79 1.39A3.47 3.47 0 0 1 15.5 5C17.43 5 19 6.57 19 8.5c0 3.57-7 8.5-7 8.5s-6-4.93-6-8.5Z" />
+                    <path d="M8 19h8" />
+                  </svg>
+                )
+              },
+              {
+                title: "Express Delivery",
+                desc: "Our strategic location and reliable logistics network ensure your orders are delivered swiftly and securely.",
+                icon: (
+                  <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M3 7h11v8H3z" />
+                    <path d="M14 10h3l3 3v2h-6z" />
+                    <circle cx="7.5" cy="18" r="1.5" />
+                    <circle cx="17.5" cy="18" r="1.5" />
+                    <path d="M5 18H4m16 0h-1" />
+                  </svg>
+                )
+              }
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="flex h-full flex-col rounded-2xl border border-[rgba(163,116,80,0.18)] bg-[rgba(255,250,242,0.88)] p-5 text-left shadow-[0_18px_34px_rgba(125,79,62,0.10)] backdrop-blur"
+              >
+                <AdvantageIcon>{item.icon}</AdvantageIcon>
+                <h3 className="text-lg font-bold text-[#5f3123]">{item.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-[#7d4f3e]">{item.desc}</p>
+              </div>
             ))}
           </div>
         </div>
