@@ -17,6 +17,9 @@ export default function ContactPage() {
       lead: string;
       title: string;
       intro: string;
+      ctaLead: string;
+      ctaTitle: string;
+      ctaLines: string[];
       company: string;
       companyLabel: string;
       addressLabel: string;
@@ -46,6 +49,12 @@ export default function ContactPage() {
       title: "Talk to our factory team about sampling, OEM / ODM, and production planning",
       intro:
         "Use this page the same way buyers contact a factory directly: review the core company details first, then send a clear inquiry with category, quantity, and timeline.",
+      ctaLead: "GET IN TOUCH",
+      ctaTitle: "Don't wait to grow your brand.",
+      ctaLines: [
+        "Contact us NOW for a quick quote and sampling consultation.",
+        "Please complete the form below, and our project manager will get back to you within 18 hours."
+      ],
       company: "YiWu DiYaSi Dress Co.. LTD",
       companyLabel: "Company",
       addressLabel: "Company Adderss / Manufacturing Locations",
@@ -74,6 +83,12 @@ export default function ContactPage() {
       lead: "联系我们",
       title: "与工厂团队直接沟通打样、OEM / ODM 与生产计划",
       intro: "这个页面按外贸工厂常见联系页重做，先展示核心公司信息，再提交明确询盘。",
+      ctaLead: "GET IN TOUCH",
+      ctaTitle: "Don't wait to grow your brand.",
+      ctaLines: [
+        "Contact us NOW for a quick quote and sampling consultation.",
+        "Please complete the form below, and our project manager will get back to you within 18 hours."
+      ],
       company: "YiWu DiYaSi Dress Co.. LTD",
       companyLabel: "公司名称",
       addressLabel: "公司地址 / 生产地址",
@@ -102,6 +117,12 @@ export default function ContactPage() {
       title: "Habla con nuestra fabrica sobre muestras, OEM / ODM y planificacion de produccion",
       intro:
         "La pagina sigue la estructura de contacto de una fabrica exportadora: primero los datos clave de la empresa y luego un formulario de consulta claro.",
+      ctaLead: "GET IN TOUCH",
+      ctaTitle: "Don't wait to grow your brand.",
+      ctaLines: [
+        "Contact us NOW for a quick quote and sampling consultation.",
+        "Please complete the form below, and our project manager will get back to you within 18 hours."
+      ],
       company: "YiWu DiYaSi Dress Co.. LTD",
       companyLabel: "Empresa",
       addressLabel: "Direccion de empresa / ubicacion de fabrica",
@@ -168,49 +189,6 @@ export default function ContactPage() {
 
   return (
     <main className="container-shell page-shell page-stack">
-      <section className="hero-panel overflow-hidden rounded-[34px] md:p-10 lg:p-12">
-        <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
-          <div>
-            <p className="kicker page-reference-subtitle">{t.lead}</p>
-            <h1 className="section-title mt-2 text-[#6a3524]">{t.title}</h1>
-            <p className="page-reference-body mt-4 max-w-3xl text-[#7d4f3e]">{t.intro}</p>
-          </div>
-          <div className="rounded-[26px] border border-[rgba(191,144,118,0.28)] bg-[rgba(255,251,246,0.96)] p-5 shadow-[0_20px_44px_rgba(143,91,62,0.12)]">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#b06a46]">{t.companyLabel}</p>
-            <p className="mt-3 text-[1.4rem] font-bold leading-tight text-[#5f3123]">{t.company}</p>
-            <div className="mt-5 space-y-4 text-sm leading-7 text-[#7d4f3e]">
-              <div>
-                <p className="font-semibold text-[#b06a46]">{t.addressLabel}</p>
-                {t.addressLines.map((line) => (
-                  <p key={line}>{line}</p>
-                ))}
-              </div>
-              <div>
-                <p className="font-semibold text-[#b06a46]">{t.emailLabel}</p>
-                <p>
-                  <a href="mailto:imbella.annie@diyasidress.com" className="hover:text-[#b15d39]">
-                    imbella.annie@diyasidress.com
-                  </a>
-                </p>
-                <p>
-                  <a href="mailto:imbella.vicky@diyasidress.com" className="hover:text-[#b15d39]">
-                    imbella.vicky@diyasidress.com
-                  </a>
-                </p>
-              </div>
-              <div>
-                <p className="font-semibold text-[#b06a46]">{t.mobileLabel}</p>
-                <p>
-                  <a href="tel:+8618042579030" className="hover:text-[#b15d39]">
-                    +86 18042579030
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
         <div className="overflow-hidden rounded-[30px] border border-[rgba(191,144,118,0.24)] bg-[linear-gradient(180deg,rgba(255,252,248,0.98),rgba(249,239,230,0.94))] shadow-[0_24px_56px_rgba(132,86,58,0.12)]">
           <div className="border-b border-[rgba(191,144,118,0.2)] px-6 py-5">
@@ -302,6 +280,55 @@ export default function ContactPage() {
             </p>
           </div>
         </form>
+      </section>
+
+      <section className="hero-panel overflow-hidden rounded-[34px] md:p-10 lg:p-12">
+        <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+          <div>
+            <p className="kicker page-reference-subtitle">{t.ctaLead || t.lead}</p>
+            <h1 className="section-title mt-2 text-[#6a3524]">{t.ctaTitle || t.title}</h1>
+            <div className="mt-4 max-w-3xl space-y-3">
+              {(t.ctaLines?.length ? t.ctaLines : [t.intro]).map((line) => (
+                <p key={line} className="page-reference-body text-[#7d4f3e]">
+                  {line}
+                </p>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-[26px] border border-[rgba(191,144,118,0.28)] bg-[rgba(255,251,246,0.96)] p-5 shadow-[0_20px_44px_rgba(143,91,62,0.12)]">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#b06a46]">{t.companyLabel}</p>
+            <p className="mt-3 text-[1.4rem] font-bold leading-tight text-[#5f3123]">{t.company}</p>
+            <div className="mt-5 space-y-4 text-sm leading-7 text-[#7d4f3e]">
+              <div>
+                <p className="font-semibold text-[#b06a46]">{t.addressLabel}</p>
+                {t.addressLines.map((line) => (
+                  <p key={line}>{line}</p>
+                ))}
+              </div>
+              <div>
+                <p className="font-semibold text-[#b06a46]">{t.emailLabel}</p>
+                <p>
+                  <a href="mailto:imbella.annie@diyasidress.com" className="hover:text-[#b15d39]">
+                    imbella.annie@diyasidress.com
+                  </a>
+                </p>
+                <p>
+                  <a href="mailto:imbella.vicky@diyasidress.com" className="hover:text-[#b15d39]">
+                    imbella.vicky@diyasidress.com
+                  </a>
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-[#b06a46]">{t.mobileLabel}</p>
+                <p>
+                  <a href="tel:+8618042579030" className="hover:text-[#b15d39]">
+                    +86 18042579030
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   );
