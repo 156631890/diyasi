@@ -12,13 +12,13 @@ interface HeroSlide {
 
 const slides: HeroSlide[] = [
   {
-    src: "/media/home/banner-3.jpg",
+    src: "/media/home/banner-2-2-3.jpg",
     alt: "YiWu DiYaSi",
     title: "Professional OEM/ODM Underwear Manufacturer",
     desc: "Specializing in seamless underwear, bras, shapewear, and activewear since 2002"
   },
   {
-    src: "/media/home/banner-3.jpg",
+    src: "/media/home/banner-2-2-3.jpg",
     alt: "YiWu DiYaSi",
     title: "Quality Manufacturing for Global Brands",
     desc: "23+ years of expertise delivering exceptional private-label production"
@@ -39,7 +39,7 @@ export default function HeroCarousel() {
   const prevSlide = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section className="relative w-full h-[450px] md:h-[550px] overflow-hidden bg-gray-900">
+    <section className="relative w-full aspect-[12/5] min-h-[240px] md:min-h-[420px] overflow-hidden bg-gray-900">
       {/* Slides */}
       {slides.map((slide, index) => (
         <div
