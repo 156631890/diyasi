@@ -1,14 +1,16 @@
 "use client";
 
-import { API_BASE } from "@/lib/api";
-import CheckoutStatusView from "@/components/CheckoutStatusView";
-import { getClientLang } from "@/lib/client-lang";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
+
+import CheckoutStatusView from "@/components/CheckoutStatusView";
+import { API_BASE } from "@/lib/api";
+import { getClientLang } from "@/lib/client-lang";
 
 export default function CheckoutCancelPage() {
   const params = useSearchParams();
   const ref = params.get("ref") || "ORD-MOCK";
+  const source = params.get("source") || "mock";
   const [syncState, setSyncState] = useState("Syncing...");
   const [lang, setLang] = useState<"en" | "zh" | "es">("en");
 
@@ -17,19 +19,22 @@ export default function CheckoutCancelPage() {
   }, []);
 
   useEffect(() => {
-    async function updateStatus() {
+    async function syncOrderStatus() {
       const failedCopy =
         lang === "zh"
           ? "订单状态同步失败"
           : lang === "es"
-            ? "Falló la sincronización del estado"
+            ? "Fallo la sincronizacion del estado"
             : "Order status sync failed";
 
       try {
         const response = await fetch(`${API_BASE}/orders/${encodeURIComponent(ref)}/status`, {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ status: "cancelled", notes: "mock checkout cancelled" })
+          body: JSON.stringify({
+            status: "cancelled",
+            notes: source === "paypal" ? "paypal checkout cancelled" : "mock checkout cancelled"
+          })
         });
 
         if (!response.ok) {
@@ -49,8 +54,8 @@ export default function CheckoutCancelPage() {
       }
     }
 
-    void updateStatus();
-  }, [lang, ref]);
+    void syncOrderStatus();
+  }, [lang, ref, source]);
 
   return <CheckoutStatusView mode="cancel" refCode={ref} syncState={syncState} lang={lang} />;
 }

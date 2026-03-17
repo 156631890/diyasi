@@ -1,14 +1,16 @@
 "use client";
 
-import { API_BASE } from "@/lib/api";
-import CheckoutStatusView from "@/components/CheckoutStatusView";
-import { getClientLang } from "@/lib/client-lang";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
+
+import CheckoutStatusView from "@/components/CheckoutStatusView";
+import { API_BASE } from "@/lib/api";
+import { getClientLang } from "@/lib/client-lang";
 
 export default function CheckoutSuccessPage() {
   const params = useSearchParams();
   const ref = params.get("ref") || "ORD-MOCK";
+  const source = params.get("source") || "mock";
   const [syncState, setSyncState] = useState("Syncing...");
   const [lang, setLang] = useState<"en" | "zh" | "es">("en");
 
@@ -17,13 +19,38 @@ export default function CheckoutSuccessPage() {
   }, []);
 
   useEffect(() => {
-    async function updateStatus() {
+    async function syncOrderStatus() {
       const failedCopy =
         lang === "zh"
           ? "订单状态同步失败"
           : lang === "es"
-            ? "Falló la sincronización del estado"
+            ? "Fallo la sincronizacion del estado"
             : "Order status sync failed";
+
+      if (source === "paypal") {
+        try {
+          const response = await fetch(`${API_BASE}/orders/${encodeURIComponent(ref)}`, {
+            cache: "no-store"
+          });
+
+          if (!response.ok) {
+            setSyncState(failedCopy);
+            return;
+          }
+
+          setSyncState(
+            lang === "zh"
+              ? "PayPal 付款已完成并同步到订单"
+              : lang === "es"
+                ? "El pago de PayPal ya esta sincronizado"
+                : "PayPal payment captured and synced"
+          );
+          return;
+        } catch {
+          setSyncState(failedCopy);
+          return;
+        }
+      }
 
       try {
         const response = await fetch(`${API_BASE}/orders/${encodeURIComponent(ref)}/status`, {
@@ -49,8 +76,8 @@ export default function CheckoutSuccessPage() {
       }
     }
 
-    void updateStatus();
-  }, [lang, ref]);
+    void syncOrderStatus();
+  }, [lang, ref, source]);
 
   return <CheckoutStatusView mode="success" refCode={ref} syncState={syncState} lang={lang} />;
 }
