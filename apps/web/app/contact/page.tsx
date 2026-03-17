@@ -8,7 +8,7 @@ import { getClientLang } from "@/lib/client-lang";
 type Lang = "en" | "zh" | "es";
 
 const mapEmbedUrl =
-  "https://www.google.com/maps?q=NO%2016%20DaShi%20Road%2C%20FoTang%20Town%2C%20Yiwu%2C%20Zhejiang%2C%20China&z=15&output=embed";
+  "https://www.google.com/maps?hl=en&gl=US&q=No.%2016%20Dashi%20Road%2C%20Fotang%20Town%2C%20Yiwu%2C%20Zhejiang%2C%20China&z=15&output=embed";
 
 export default function ContactPage() {
   const copy: Record<
@@ -57,8 +57,8 @@ export default function ContactPage() {
       ],
       company: "YiWu DiYaSi Dress Co.. LTD",
       companyLabel: "Company",
-      addressLabel: "Company Adderss / Manufacturing Locations",
-      addressLines: ["NO 16 DaShi Road, FoTang Town, Yiwu, Zhejiang", "China"],
+      addressLabel: "Company Address / Manufacturing Location",
+      addressLines: ["No. 16 Dashi Road, Fotang Town, Yiwu, Zhejiang", "China"],
       emailLabel: "Email",
       mobileLabel: "Mobie / WhatsApp",
       formTitle: "Send Your Inquiry",
@@ -92,7 +92,7 @@ export default function ContactPage() {
       company: "YiWu DiYaSi Dress Co.. LTD",
       companyLabel: "公司名称",
       addressLabel: "公司地址 / 生产地址",
-      addressLines: ["NO 16 DaShi Road, FoTang Town, Yiwu, Zhejiang", "China"],
+      addressLines: ["No. 16 Dashi Road, Fotang Town, Yiwu, Zhejiang", "China"],
       emailLabel: "邮箱",
       mobileLabel: "手机 / WhatsApp",
       formTitle: "发送询盘",
@@ -126,7 +126,7 @@ export default function ContactPage() {
       company: "YiWu DiYaSi Dress Co.. LTD",
       companyLabel: "Empresa",
       addressLabel: "Direccion de empresa / ubicacion de fabrica",
-      addressLines: ["NO 16 DaShi Road, FoTang Town, Yiwu, Zhejiang", "China"],
+      addressLines: ["No. 16 Dashi Road, Fotang Town, Yiwu, Zhejiang", "China"],
       emailLabel: "Email",
       mobileLabel: "Movil / WhatsApp",
       formTitle: "Enviar Consulta",
@@ -190,19 +190,71 @@ export default function ContactPage() {
   return (
     <main className="container-shell page-shell page-stack">
       <section className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-        <div className="overflow-hidden rounded-[30px] border border-[rgba(191,144,118,0.24)] bg-[linear-gradient(180deg,rgba(255,252,248,0.98),rgba(249,239,230,0.94))] shadow-[0_24px_56px_rgba(132,86,58,0.12)]">
-          <div className="border-b border-[rgba(191,144,118,0.2)] px-6 py-5">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#b06a46]">Google Maps</p>
-            <p className="mt-2 text-lg font-semibold text-[#5f3123]">{t.addressLabel}</p>
+        <div className="grid gap-8">
+          <div className="rounded-[30px] border border-[rgba(191,144,118,0.24)] bg-[linear-gradient(180deg,rgba(255,252,248,0.99),rgba(250,240,231,0.98))] p-6 shadow-[0_24px_56px_rgba(132,86,58,0.12)] md:p-8">
+            <div className="border-b border-[rgba(191,144,118,0.2)] pb-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#b06a46]">{t.companyLabel}</p>
+              <h2 className="mt-2 text-[1.9rem] font-bold leading-tight text-[#5f3123]">{t.company}</h2>
+            </div>
+            <div className="mt-6 space-y-4 text-sm leading-7 text-[#7d4f3e]">
+              <div>
+                <p className="font-semibold text-[#b06a46]">{t.addressLabel}</p>
+                {t.addressLines.map((line) => (
+                  <p key={line}>{line}</p>
+                ))}
+              </div>
+              <div>
+                <p className="font-semibold text-[#b06a46]">{t.emailLabel}</p>
+                <p>
+                  <a
+                    href="mailto:imbella.annie@diyasidress.com"
+                    className="underline decoration-[#d08b67] underline-offset-4 transition hover:text-[#b15d39]"
+                  >
+                    imbella.annie@diyasidress.com
+                  </a>
+                </p>
+                <p>
+                  <a
+                    href="mailto:imbella.vicky@diyasidress.com"
+                    className="underline decoration-[#d08b67] underline-offset-4 transition hover:text-[#b15d39]"
+                  >
+                    imbella.vicky@diyasidress.com
+                  </a>
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-[#b06a46]">{t.mobileLabel}</p>
+                <p className="flex flex-wrap gap-4">
+                  <a href="tel:+8618042579030" className="hover:text-[#b15d39]">
+                    +86 18042579030
+                  </a>
+                  <a
+                    href="https://wa.me/8618042579030"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline decoration-[#d08b67] underline-offset-4 transition hover:text-[#b15d39]"
+                  >
+                    Open WhatsApp
+                  </a>
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="h-[320px] md:h-[420px]">
-            <iframe
-              title="YiWu DiYaSi map"
-              src={mapEmbedUrl}
-              className="h-full w-full border-0"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+
+          <div className="overflow-hidden rounded-[30px] border border-[rgba(191,144,118,0.24)] bg-[linear-gradient(180deg,rgba(255,252,248,0.98),rgba(249,239,230,0.94))] shadow-[0_24px_56px_rgba(132,86,58,0.12)]">
+            <div className="border-b border-[rgba(191,144,118,0.2)] px-6 py-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#b06a46]">Google Maps</p>
+              <p className="mt-2 text-lg font-semibold text-[#5f3123]">{t.addressLabel}</p>
+            </div>
+            <div className="h-[320px] md:h-[420px]">
+              <iframe
+                title="YiWu DiYaSi map"
+                src={mapEmbedUrl}
+                className="h-full w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
           </div>
         </div>
 
@@ -308,21 +360,38 @@ export default function ContactPage() {
               <div>
                 <p className="font-semibold text-[#b06a46]">{t.emailLabel}</p>
                 <p>
-                  <a href="mailto:imbella.annie@diyasidress.com" className="hover:text-[#b15d39]">
+                  <a
+                    href="mailto:imbella.annie@diyasidress.com"
+                    className="underline decoration-[#d08b67] underline-offset-4 transition hover:text-[#b15d39]"
+                  >
                     imbella.annie@diyasidress.com
                   </a>
                 </p>
                 <p>
-                  <a href="mailto:imbella.vicky@diyasidress.com" className="hover:text-[#b15d39]">
+                  <a
+                    href="mailto:imbella.vicky@diyasidress.com"
+                    className="underline decoration-[#d08b67] underline-offset-4 transition hover:text-[#b15d39]"
+                  >
                     imbella.vicky@diyasidress.com
                   </a>
                 </p>
               </div>
               <div>
                 <p className="font-semibold text-[#b06a46]">{t.mobileLabel}</p>
-                <p>
-                  <a href="tel:+8618042579030" className="hover:text-[#b15d39]">
+                <p className="flex flex-wrap gap-4">
+                  <a
+                    href="tel:+8618042579030"
+                    className="underline decoration-[#d08b67] underline-offset-4 transition hover:text-[#b15d39]"
+                  >
                     +86 18042579030
+                  </a>
+                  <a
+                    href="https://wa.me/8618042579030"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline decoration-[#d08b67] underline-offset-4 transition hover:text-[#b15d39]"
+                  >
+                    Open WhatsApp
                   </a>
                 </p>
               </div>

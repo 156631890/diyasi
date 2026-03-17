@@ -394,14 +394,14 @@ export default async function HomePage() {
             <div className="relative min-h-[300px] overflow-hidden rounded-[24px] bg-[#f6dfcf]">
               <iframe
                 title="YiWu DiYaSi location map"
-                src="https://www.google.com/maps?q=NO%2016%20DaShi%20Road%2C%20FoTang%20Town%2C%20Yiwu%2C%20Zhejiang%2C%20China&z=15&output=embed"
+                src="https://www.google.com/maps?hl=en&gl=US&q=No.%2016%20Dashi%20Road%2C%20Fotang%20Town%2C%20Yiwu%2C%20Zhejiang%2C%20China&z=15&output=embed"
                 className="absolute inset-0 h-full w-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
               <div className="absolute bottom-5 left-5 rounded-2xl bg-white/88 px-4 py-3 shadow-lg">
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#b15d39]">Location</p>
-                <p className="mt-1 text-sm font-semibold text-[#6e3924]">FoTang Town, Yiwu, Zhejiang, China</p>
+                <p className="mt-1 text-sm font-semibold text-[#6e3924]">Fotang Town, Yiwu, Zhejiang, China</p>
               </div>
             </div>
 
@@ -410,8 +410,8 @@ export default async function HomePage() {
               <h2 className="mt-3 text-2xl font-bold leading-tight md:text-4xl">YiWu DiYaSi Dress Co.. LTD</h2>
               <div className="mt-6 space-y-5 text-sm leading-7 md:text-base">
                 <div>
-                  <p className="font-semibold text-[#b15d39]">Company Adderss / Manufacturing Locations:</p>
-                  <p>NO 16 DaShi Road ,FoTang Town ,Yiwu, Zhejiang</p>
+                  <p className="font-semibold text-[#b15d39]">Company Address / Manufacturing Location:</p>
+                  <p>No. 16 Dashi Road, Fotang Town, Yiwu, Zhejiang</p>
                   <p>China</p>
                 </div>
                 <div>
