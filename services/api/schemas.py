@@ -5,6 +5,7 @@ from pydantic import BaseModel, Field
 
 
 class ProductBase(BaseModel):
+    model_number: str = ""
     product_name: str
     category: str
     fabric: str = ""
@@ -21,6 +22,7 @@ class ProductCreate(ProductBase):
 
 
 class ProductUpdate(BaseModel):
+    model_number: Optional[str] = None
     product_name: Optional[str] = None
     category: Optional[str] = None
     fabric: Optional[str] = None
@@ -218,12 +220,22 @@ class OrderCreateRequest(BaseModel):
     customer_name: str = ""
     customer_email: str = ""
     source: str = "mock_checkout"
+    currency: str = "USD"
+    paypal_order_id: str = ""
+    paypal_capture_id: str = ""
     notes: str = ""
 
 
 class OrderStatusUpdateRequest(BaseModel):
     status: str
     notes: str = ""
+    customer_name: Optional[str] = None
+    customer_email: Optional[str] = None
+    source: Optional[str] = None
+    currency: Optional[str] = None
+    paypal_order_id: Optional[str] = None
+    paypal_capture_id: Optional[str] = None
+    total_amount_usd: Optional[float] = None
 
 
 class OrderOut(BaseModel):
@@ -236,6 +248,9 @@ class OrderOut(BaseModel):
     customer_name: str
     customer_email: str
     source: str
+    currency: str
+    paypal_order_id: str
+    paypal_capture_id: str
     notes: str
     created_at: datetime
     updated_at: datetime

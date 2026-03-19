@@ -1,5 +1,6 @@
 export type CatalogProduct = {
   product_id: string;
+  model_number?: string;
   product_name: string;
   category: string;
   fabric: string;

@@ -11,6 +11,7 @@ class Product(Base):
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
     product_id: Mapped[str] = mapped_column(String(80), unique=True, index=True)
+    model_number: Mapped[str] = mapped_column(String(120), default="")
     product_name: Mapped[str] = mapped_column(String(255), index=True)
     category: Mapped[str] = mapped_column(String(120), index=True)
     fabric: Mapped[str] = mapped_column(String(120), default="")
@@ -117,6 +118,9 @@ class Order(Base):
     customer_name: Mapped[str] = mapped_column(String(255), default="")
     customer_email: Mapped[str] = mapped_column(String(255), default="")
     source: Mapped[str] = mapped_column(String(120), default="mock_checkout")
+    currency: Mapped[str] = mapped_column(String(12), default="USD")
+    paypal_order_id: Mapped[str] = mapped_column(String(120), default="")
+    paypal_capture_id: Mapped[str] = mapped_column(String(120), default="")
     notes: Mapped[str] = mapped_column(Text, default="")
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
     updated_at: Mapped[datetime] = mapped_column(

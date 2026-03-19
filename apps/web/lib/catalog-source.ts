@@ -6,6 +6,7 @@ import { fallbackCatalogCategories, fallbackCatalogProducts } from "@/lib/catalo
 
 export type CatalogProduct = {
   product_id: string;
+  model_number?: string;
   product_name: string;
   category: string;
   fabric: string;
@@ -65,6 +66,7 @@ function normalizeProducts(products: CatalogProduct[]): CatalogProduct[] {
   return products.map((product) => ({
     ...product,
     category: categoryDisplayMap[product.category] || product.category,
+    model_number: product.model_number || "",
     gallery_images: Array.isArray(product.gallery_images) ? product.gallery_images : [],
     price_text: product.price_text || "",
     price_from: product.price_from || "",

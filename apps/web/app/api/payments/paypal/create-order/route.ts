@@ -93,6 +93,8 @@ export async function POST(request: NextRequest) {
           customer_name: payload.customerName || "",
           customer_email: payload.customerEmail || "",
           source: "paypal_checkout",
+          currency: "USD",
+          paypal_order_id: paypalOrder.id,
           notes: `PayPal order ${paypalOrder.id}`
         }),
         cache: "no-store"
@@ -103,7 +105,9 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       orderId: paypalOrder.id,
-      orderRef
+      orderRef,
+      currency: "USD",
+      total
     });
   } catch (error) {
     return NextResponse.json(

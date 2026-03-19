@@ -1,5 +1,6 @@
 export type DisplayProduct = {
   product_id: string;
+  model_number?: string;
   product_name: string;
   category: string;
   fabric: string;
@@ -117,7 +118,11 @@ export function topFamily(value: string): string {
   return value.split("/")[0]?.trim() || value;
 }
 
-export function resolveDisplayProductId(product: Pick<DisplayProduct, "product_id">): string {
+export function resolveDisplayProductId(product: Pick<DisplayProduct, "product_id" | "model_number">): string {
+  const modelNumber = (product.model_number || "").trim();
+  if (modelNumber) {
+    return modelNumber;
+  }
   const rawId = product.product_id.trim();
   if (!rawId) {
     return "";

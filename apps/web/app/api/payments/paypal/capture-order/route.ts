@@ -23,6 +23,7 @@ type PayPalCaptureResponse = {
     reference_id?: string;
     description?: string;
     amount?: {
+      currency_code?: string;
       value?: string;
     };
     payments?: {
@@ -63,6 +64,7 @@ export async function POST(request: NextRequest) {
     const payerName = [capturePayload.payer?.name?.given_name, capturePayload.payer?.name?.surname].filter(Boolean).join(" ");
     const payerEmail = capturePayload.payer?.email_address || "";
     const totalAmount = Number(purchaseUnit?.amount?.value || 0);
+    const currency = purchaseUnit?.amount?.currency_code || "USD";
     const backend = process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8010";
     const captureNote = `PayPal capture ${capture?.id || "unknown"} (${capture?.status || capturePayload.status || "completed"})`;
 
@@ -81,7 +83,17 @@ export async function POST(request: NextRequest) {
         await fetch(`${backend}/orders/${encodeURIComponent(orderRef)}/status`, {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ status: "paid", notes: captureNote }),
+          body: JSON.stringify({
+            status: "paid",
+            notes: captureNote,
+            customer_name: payerName,
+            customer_email: payerEmail,
+            source: "paypal_checkout",
+            currency,
+            paypal_order_id: payload.orderId,
+            paypal_capture_id: capture?.id || "",
+            total_amount_usd: totalAmount
+          }),
           cache: "no-store"
         });
       } else {
@@ -98,6 +110,9 @@ export async function POST(request: NextRequest) {
             customer_name: payerName,
             customer_email: payerEmail,
             source: "paypal_checkout",
+            currency,
+            paypal_order_id: payload.orderId,
+            paypal_capture_id: capture?.id || "",
             notes: captureNote
           }),
           cache: "no-store"
@@ -111,7 +126,9 @@ export async function POST(request: NextRequest) {
       status: capturePayload.status || capture?.status || "COMPLETED",
       orderRef,
       captureId: capture?.id || "",
-      payerEmail
+      payerEmail,
+      amount: totalAmount,
+      currency
     });
   } catch (error) {
     return NextResponse.json(

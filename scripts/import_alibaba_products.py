@@ -226,6 +226,7 @@ def _sqlite_columns(cursor: sqlite3.Cursor, table_name: str) -> set[str]:
 
 def ensure_product_columns(cursor: sqlite3.Cursor) -> None:
     required = {
+        "model_number": "ALTER TABLE products ADD COLUMN model_number TEXT NOT NULL DEFAULT ''",
         "gallery_images": "ALTER TABLE products ADD COLUMN gallery_images TEXT NOT NULL DEFAULT '[]'",
         "price_text": "ALTER TABLE products ADD COLUMN price_text TEXT NOT NULL DEFAULT ''",
         "price_from": "ALTER TABLE products ADD COLUMN price_from TEXT NOT NULL DEFAULT ''",
@@ -237,8 +238,54 @@ def ensure_product_columns(cursor: sqlite3.Cursor) -> None:
             cursor.execute(sql)
 
 
+def extract_model_number(item: dict[str, Any]) -> str:
+    direct_keys = (
+        "modelNumber",
+        "model_number",
+        "modelNo",
+        "model_no",
+        "model",
+    )
+    for key in direct_keys:
+        value = item.get(key)
+        if isinstance(value, str) and value.strip():
+            return value.strip()
+
+    attribute_lists = (
+        item.get("attributes"),
+        item.get("productAttrs"),
+        item.get("productAttributes"),
+        item.get("salePropertyList"),
+    )
+    for attributes in attribute_lists:
+        if not isinstance(attributes, list):
+            continue
+        for attribute in attributes:
+            if not isinstance(attribute, dict):
+                continue
+            label = str(
+                attribute.get("name")
+                or attribute.get("attrName")
+                or attribute.get("key")
+                or attribute.get("label")
+                or ""
+            ).strip()
+            if label.lower() != "model number":
+                continue
+            value = str(
+                attribute.get("value")
+                or attribute.get("attrValue")
+                or attribute.get("text")
+                or ""
+            ).strip()
+            if value:
+                return value
+    return ""
+
+
 def build_product_payload(category: str, item: dict[str, Any]) -> dict[str, str]:
     product_id = alibaba_to_dys_product_id(item["id"])
+    model_number = extract_model_number(item)
     subject = str(item.get("subject", "")).strip()
     price = extract_price_text(item)
     moq = str(item.get("moq", "")).strip()
@@ -249,6 +296,7 @@ def build_product_payload(category: str, item: dict[str, Any]) -> dict[str, str]
 
     return {
         "product_id": product_id,
+        "model_number": model_number,
         "product_name": subject,
         "category": display_category(category),
         "fabric": extract_fabric(subject),
@@ -280,7 +328,7 @@ def load_products_from_db(categories: list[str]) -> list[dict[str, str]]:
     cursor = conn.cursor()
     ensure_product_columns(cursor)
     rows = cursor.execute(
-        "SELECT product_id, product_name, category, fabric, color, size, moq, sample_time, production_time, description, image_url, gallery_images, price_text, price_from, detail_url "
+        "SELECT product_id, model_number, product_name, category, fabric, color, size, moq, sample_time, production_time, description, image_url, gallery_images, price_text, price_from, detail_url "
         f"FROM products WHERE (product_id LIKE 'ALI-%' OR detail_url LIKE '%alibaba.%') AND category IN ({','.join('?' for _ in categories)})",
         categories,
     ).fetchall()
@@ -291,6 +339,7 @@ def load_products_from_db(categories: list[str]) -> list[dict[str, str]]:
         restored.append(
             {
                 "product_id": row["product_id"],
+                "model_number": row["model_number"] or "",
                 "product_name": row["product_name"],
                 "category": row["category"],
                 "fabric": row["fabric"] or "",
@@ -372,12 +421,13 @@ def import_direct_db(products: list[dict[str, str]]) -> dict[str, int]:
                 cursor.execute(
                     """
                     UPDATE products
-                    SET product_name = ?, category = ?, fabric = ?, color = ?, size = ?, moq = ?,
+                    SET model_number = ?, product_name = ?, category = ?, fabric = ?, color = ?, size = ?, moq = ?,
                         sample_time = ?, production_time = ?, description = ?, image_url = ?,
                         gallery_images = ?, price_text = ?, price_from = ?, detail_url = ?, updated_at = ?
                     WHERE product_id = ?
                     """,
                     [
+                        item.get("model_number", ""),
                         item["product_name"],
                         item["category"],
                         item["fabric"],
@@ -401,13 +451,14 @@ def import_direct_db(products: list[dict[str, str]]) -> dict[str, int]:
             cursor.execute(
                 """
                 INSERT INTO products (
-                    product_id, product_name, category, fabric, color, size, moq,
+                    product_id, model_number, product_name, category, fabric, color, size, moq,
                     sample_time, production_time, description, image_url, gallery_images,
                     price_text, price_from, detail_url, created_at, updated_at
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """,
                 [
                     item["product_id"],
+                    item.get("model_number", ""),
                     item["product_name"],
                     item["category"],
                     item["fabric"],

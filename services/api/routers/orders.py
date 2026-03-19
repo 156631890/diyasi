@@ -42,6 +42,20 @@ def update_order_status(order_ref: str, payload: OrderStatusUpdateRequest, db: S
     order.status = payload.status
     if payload.notes:
         order.notes = payload.notes
+    if payload.customer_name is not None:
+        order.customer_name = payload.customer_name
+    if payload.customer_email is not None:
+        order.customer_email = payload.customer_email
+    if payload.source is not None:
+        order.source = payload.source
+    if payload.currency is not None:
+        order.currency = payload.currency
+    if payload.paypal_order_id is not None:
+        order.paypal_order_id = payload.paypal_order_id
+    if payload.paypal_capture_id is not None:
+        order.paypal_capture_id = payload.paypal_capture_id
+    if payload.total_amount_usd is not None:
+        order.total_amount_usd = payload.total_amount_usd
     db.commit()
     db.refresh(order)
     return order
