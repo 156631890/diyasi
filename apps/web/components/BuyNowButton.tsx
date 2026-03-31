@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import Link from "next/link";
 
 type BuyNowButtonProps = {
   title: string;
@@ -17,31 +17,13 @@ export default function BuyNowButton({
   className = "btn btn-primary",
   label = "Continue to Payment"
 }: BuyNowButtonProps) {
-  const [loading, setLoading] = useState(false);
-
-  async function onCheckout() {
-    setLoading(true);
-    try {
-      const response = await fetch("/api/payments/checkout", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ title, unitAmountUsd, quantity })
-      });
-      const payload = (await response.json()) as { checkoutUrl?: string; detail?: string };
-      if (!response.ok || !payload.checkoutUrl) {
-        throw new Error(payload.detail || "Checkout failed.");
-      }
-      window.location.href = payload.checkoutUrl;
-    } catch (err) {
-      alert((err as Error).message);
-    } finally {
-      setLoading(false);
-    }
-  }
+  const href = `/payments?product_title=${encodeURIComponent(title)}&product_amount=${encodeURIComponent(
+    String(unitAmountUsd)
+  )}&product_qty=${encodeURIComponent(String(quantity))}`;
 
   return (
-    <button type="button" className={className} onClick={onCheckout} disabled={loading}>
-      {loading ? "Opening Checkout..." : label}
-    </button>
+    <Link href={href} className={className}>
+      {label}
+    </Link>
   );
 }

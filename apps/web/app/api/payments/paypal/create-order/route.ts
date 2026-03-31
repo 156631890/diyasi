@@ -14,6 +14,10 @@ type CreateOrderRequest = {
 
 type PayPalCreateOrderResponse = {
   id: string;
+  links?: Array<{
+    href?: string;
+    rel?: string;
+  }>;
 };
 
 export async function POST(request: NextRequest) {
@@ -32,6 +36,11 @@ export async function POST(request: NextRequest) {
   const amount = Math.max(1, Number(payload.unitAmountUsd || 0));
   const total = Number((amount * quantity).toFixed(2));
   const orderRef = `PP-${Date.now()}`;
+  const returnUrl = new URL("/checkout/paypal", request.url);
+  returnUrl.searchParams.set("ref", orderRef);
+  const cancelUrl = new URL("/checkout/cancel", request.url);
+  cancelUrl.searchParams.set("ref", orderRef);
+  cancelUrl.searchParams.set("source", "paypal");
 
   try {
     const paypalResponse = await paypalRequest("/v2/checkout/orders", {
@@ -41,6 +50,10 @@ export async function POST(request: NextRequest) {
       },
       body: JSON.stringify({
         intent: "CAPTURE",
+        application_context: {
+          return_url: returnUrl.toString(),
+          cancel_url: cancelUrl.toString()
+        },
         purchase_units: [
           {
             reference_id: orderRef,
@@ -77,6 +90,7 @@ export async function POST(request: NextRequest) {
     }
 
     const paypalOrder = (await paypalResponse.json()) as PayPalCreateOrderResponse;
+    const approvalUrl = paypalOrder.links?.find((link) => link.rel === "approve")?.href || "";
     const backend = process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8010";
 
     try {
@@ -107,7 +121,8 @@ export async function POST(request: NextRequest) {
       orderId: paypalOrder.id,
       orderRef,
       currency: "USD",
-      total
+      total,
+      approvalUrl
     });
   } catch (error) {
     return NextResponse.json(

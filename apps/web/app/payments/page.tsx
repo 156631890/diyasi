@@ -18,6 +18,7 @@ const copy: Record<
   {
     eyebrow: string;
     title: string;
+    titleFromProduct: string;
     desc: string;
     infoTitle: string;
     infoBody: string;
@@ -33,6 +34,7 @@ const copy: Record<
   en: {
     eyebrow: "Secure Checkout",
     title: "Buyer payment page for sample fees and OEM launch deposits",
+    titleFromProduct: "Dear customer, please choose PayPal to complete payment.",
     desc: "Keep the payment flow clear: select the project stage, select the payment method, and complete PayPal verification with server-side confirmation before the order is marked paid.",
     infoTitle: "Why this layout",
     infoBody: "This page is intentionally simple for independent-site checkout. It avoids visual noise, keeps the payment choices obvious, and makes audit screenshots easier to capture.",
@@ -50,6 +52,7 @@ const copy: Record<
   zh: {
     eyebrow: "\u5b89\u5168\u6536\u94f6\u53f0",
     title: "\u7528\u4e00\u4e2a\u7b80\u6d01\u7684\u9875\u9762\u5b8c\u6210\u6253\u6837\u8d39\u4e0e OEM \u542f\u52a8\u5b9a\u91d1\u652f\u4ed8",
+    titleFromProduct: "\u4eb2\u7231\u7684\u5ba2\u6237\uff0c\u8bf7\u9009\u62e9 PayPal \u5b8c\u6210\u652f\u4ed8\u3002",
     desc: "\u8ba9\u4ed8\u6b3e\u6d41\u7a0b\u4fdd\u6301\u6e05\u695a\uff1a\u5148\u9009\u62e9\u9879\u76ee\u9636\u6bb5\uff0c\u518d\u9009\u62e9\u652f\u4ed8\u65b9\u5f0f\uff0c\u6700\u540e\u5728 PayPal \u4e2d\u5b8c\u6210\u9a8c\u8bc1\uff0c\u5e76\u7531\u670d\u52a1\u7aef\u786e\u8ba4\u5230\u8d26\u540e\u518d\u5165\u5e93\u3002",
     infoTitle: "\u8fd9\u4e2a\u5e03\u5c40\u7684\u76ee\u7684",
     infoBody: "\u8fd9\u4e2a\u6536\u94f6\u53f0\u662f\u4e3a\u72ec\u7acb\u7ad9\u4ed8\u6b3e\u573a\u666f\u8bbe\u8ba1\u7684\uff0c\u5c3d\u91cf\u51cf\u5c11\u89c6\u89c9\u5e72\u6270\uff0c\u8ba9\u4e70\u5bb6\u80fd\u4e00\u773c\u770b\u6e05\u652f\u4ed8\u9009\u62e9\uff0c\u4e5f\u66f4\u9002\u5408\u5ba1\u6838\u622a\u56fe\u3002",
@@ -67,6 +70,7 @@ const copy: Record<
   es: {
     eyebrow: "Checkout Seguro",
     title: "Una pagina limpia para cobrar muestras y depositos OEM",
+    titleFromProduct: "Estimado cliente, por favor elija PayPal para completar el pago.",
     desc: "Mantiene el flujo claro: elegir etapa del proyecto, elegir metodo de pago y completar PayPal con verificacion del servidor antes de marcar el pedido como pagado.",
     infoTitle: "Por que este diseno",
     infoBody: "Esta pagina esta pensada para checkout de sitio independiente. Reduce ruido visual, aclara el metodo de pago y facilita capturas para auditoria.",
@@ -83,10 +87,36 @@ const copy: Record<
   }
 };
 
-export default function PaymentsPage() {
+export default function PaymentsPage({
+  searchParams
+}: {
+  searchParams?: {
+    product_title?: string;
+    product_amount?: string;
+    product_qty?: string;
+  };
+}) {
   const lang = getServerLang();
   const t = copy[lang];
   const clientId = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID || "";
+  const productTitle = searchParams?.product_title ? decodeURIComponent(searchParams.product_title) : "";
+  const productAmount = Number(searchParams?.product_amount || "0");
+  const productQty = Math.max(1, Math.floor(Number(searchParams?.product_qty || "1")));
+  const productItem =
+    productTitle && Number.isFinite(productAmount) && productAmount > 0
+      ? {
+          tag: lang === "zh" ? "产品" : lang === "es" ? "Producto" : "Product",
+          title: productTitle,
+          amount: Number(productAmount.toFixed(2)),
+          desc:
+            lang === "zh"
+              ? `来自产品页面的 PayPal 收款入口，数量 ${productQty}。`
+              : lang === "es"
+                ? `Entrada de cobro PayPal desde la pagina de producto, cantidad ${productQty}.`
+                : `PayPal checkout entry from the product page, quantity ${productQty}.`
+        }
+      : null;
+  const paymentItems = productItem ? [productItem, ...t.items] : t.items;
 
   return (
     <main className="min-h-screen bg-[linear-gradient(180deg,#fffaf6_0%,#f7ede4_100%)]">
@@ -94,8 +124,25 @@ export default function PaymentsPage() {
         <section className="rounded-[34px] border border-[rgba(191,144,118,0.18)] bg-[radial-gradient(circle_at_top_left,rgba(255,232,214,0.8),transparent_30%),linear-gradient(135deg,#fff8f1_0%,#fdf0e4_48%,#f5e0cf_100%)] p-7 shadow-[0_30px_80px_rgba(142,88,58,0.1)] md:p-10">
           <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#b56e49]">{t.eyebrow}</p>
-            <h1 className="mt-3 text-3xl font-semibold leading-tight text-[#5f3123] md:text-5xl">{t.title}</h1>
+            <h1 className="mt-3 text-3xl font-semibold leading-tight text-[#5f3123] md:text-5xl">
+              {productItem ? t.titleFromProduct : t.title}
+            </h1>
             <p className="mt-4 text-base leading-8 text-[#7d4f3e] md:text-lg">{t.desc}</p>
+            {productItem ? (
+              <div className="mt-6 rounded-[20px] border border-[rgba(191,144,118,0.18)] bg-white/80 p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#b56e49]">
+                  {lang === "zh" ? "来自产品页面" : lang === "es" ? "Desde la pagina de producto" : "From product page"}
+                </p>
+                <p className="mt-2 text-lg font-semibold text-[#5f3123]">{productItem.title}</p>
+                <p className="mt-1 text-sm leading-6 text-[#7d4f3e]">
+                  {lang === "zh"
+                    ? `数量 ${productQty}，金额 $${productItem.amount.toFixed(2)}。`
+                    : lang === "es"
+                      ? `Cantidad ${productQty}, importe $${productItem.amount.toFixed(2)}.`
+                      : `Quantity ${productQty}, amount $${productItem.amount.toFixed(2)}.`}
+                </p>
+              </div>
+            ) : null}
           </div>
         </section>
 
@@ -117,7 +164,7 @@ export default function PaymentsPage() {
           </aside>
 
           <PayPalPaymentsPanel
-            items={t.items}
+            items={paymentItems}
             clientId={clientId}
             loadingLabel={t.loadingLabel}
             unavailableLabel={t.unavailableLabel}
