@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { LANG_LABELS, SiteLang } from "@/lib/i18n";
 
@@ -82,6 +82,7 @@ export default function TopNav({ initialLang }: TopNavProps) {
   const router = useRouter();
   const pathname = usePathname();
   const [lang, setLang] = useState<SiteLang>(initialLang);
+  const [isCompact, setIsCompact] = useState(false);
   const t = labels[lang];
 
   const primaryLinks: LinkItem[] = [
@@ -106,10 +107,20 @@ export default function TopNav({ initialLang }: TopNavProps) {
     router.refresh();
   }
 
+  useEffect(() => {
+    const updateCompactState = () => {
+      setIsCompact(window.scrollY > 40);
+    };
+
+    updateCompactState();
+    window.addEventListener("scroll", updateCompactState, { passive: true });
+    return () => window.removeEventListener("scroll", updateCompactState);
+  }, []);
+
   return (
-    <header className="top-nav-shell sticky top-0 z-30 backdrop-blur-xl">
+    <header className={`top-nav-shell sticky top-0 z-30 backdrop-blur-xl ${isCompact ? "top-nav-shell-compact" : ""}`}>
       <div className="top-nav-meta-shell hidden lg:block">
-        <div className="container-shell flex items-center justify-between py-2 text-xs">
+        <div className="container-shell top-nav-wide-shell flex items-center justify-between py-2 text-xs">
           <p className="top-nav-meta-copy font-semibold tracking-wide">{t.companyTag}</p>
           <div className="flex items-center gap-1">
             {secondaryLinks.map((item) => (
@@ -132,12 +143,18 @@ export default function TopNav({ initialLang }: TopNavProps) {
         </div>
       </div>
 
-      <div className="container-shell flex items-center justify-between py-3">
+      <div className="container-shell top-nav-wide-shell flex items-center justify-between py-3">
         <Link href="/" className="flex items-center gap-3">
-          <span className="top-nav-brand-badge grid h-10 w-10 place-items-center rounded-full text-xs font-bold text-white">
+          <span
+            className={`top-nav-brand-badge grid place-items-center rounded-full text-xs font-bold text-white ${
+              isCompact ? "top-nav-brand-badge-compact" : ""
+            }`}
+          >
             DYS
           </span>
-          <span className="top-nav-brand-name heading-font text-xl font-semibold tracking-wide">YiWu DiYaSi</span>
+          <span className={`top-nav-brand-name heading-font font-semibold tracking-wide ${isCompact ? "text-lg" : "text-xl"}`}>
+            YiWu DiYaSi
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-4 text-sm lg:flex xl:gap-6">

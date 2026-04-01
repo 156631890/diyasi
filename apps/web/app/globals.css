@@ -48,6 +48,10 @@ a {
   padding: 0 1.5rem;
 }
 
+.top-nav-wide-shell {
+  max-width: 1380px;
+}
+
 .card {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -470,6 +474,22 @@ a {
   box-shadow: 0 12px 30px rgba(142, 92, 68, 0.08);
 }
 
+.top-nav-shell,
+.top-nav-brand-badge,
+.top-nav-brand-name {
+  transition:
+    transform 0.24s ease,
+    padding 0.24s ease,
+    width 0.24s ease,
+    height 0.24s ease,
+    box-shadow 0.24s ease,
+    font-size 0.24s ease;
+}
+
+.top-nav-shell-compact {
+  box-shadow: 0 8px 20px rgba(142, 92, 68, 0.06);
+}
+
 .top-nav-meta-shell {
   border-bottom: 1px solid rgba(154, 97, 70, 0.12);
   background: rgba(255, 248, 241, 0.78);
@@ -482,6 +502,13 @@ a {
 .top-nav-brand-badge {
   background: linear-gradient(135deg, #b86743 0%, #8d452d 100%);
   box-shadow: 0 12px 24px rgba(158, 86, 55, 0.2);
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.top-nav-brand-badge-compact {
+  height: 2.125rem;
+  width: 2.125rem;
 }
 
 .top-nav-brand-name {

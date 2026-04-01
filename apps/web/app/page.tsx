@@ -23,6 +23,11 @@ type ProductCategory = {
 
 type DisplayProductWithImage = DisplayProduct & { image: string };
 
+type FeaturedShowcase = {
+  women: DisplayProductWithImage[];
+  men: DisplayProductWithImage[];
+};
+
 function AdvantageIcon({ children }: { children: ReactNode }) {
   return (
     <div className="mb-5 flex h-20 items-center justify-center rounded-xl bg-[linear-gradient(135deg,#d8c2b0_0%,#c9ae98_100%)] text-[#5f3123]">
@@ -76,7 +81,7 @@ const copy: Record<SiteLang, {
       { value: "600K+", label: "Monthly Output" }
     ],
     factoryTitle: "Our Factory",
-    factoryDesc: "Tour our state-of-the-art manufacturing facility",
+    factoryDesc: "Discover our integrated manufacturing hub, balancing advanced technology, skilled craftsmanship, and seamless global logistics.",
     serviceTitle: "Our Service",
     serviceDesc: "Professional underwear manufacturer supplying OEM designs and supporting OEM orders.",
     services: [
@@ -144,25 +149,33 @@ async function getCategories(): Promise<ProductCategory[]> {
   return categories.length > 0 ? categories : fallbackCatalogCategories;
 }
 
-async function getFeaturedShowcase(): Promise<DisplayProductWithImage[]> {
+function collectFamilyProducts(products: DisplayProduct[], family: string, limit: number): DisplayProduct[] {
+  return products.filter((item) => topFamily(item.category) === family).slice(0, limit);
+}
+
+async function getFeaturedShowcase(): Promise<FeaturedShowcase> {
   const products = (await getCatalogProducts()) as DisplayProduct[];
-  const targetFamilies = ["Women's Panties", "Bras", "Men's Underwear", "Activewear"];
-  const selected = targetFamilies
-    .map((family) => products.find((item) => topFamily(item.category) === family))
-    .filter((item): item is DisplayProduct => Boolean(item));
+  const womenSource = collectFamilyProducts(products, "Women's Panties", 4);
+  const menSource = collectFamilyProducts(products, "Men's Underwear", 4);
 
-  const source = selected.length >= 8 ? selected.slice(0, 8) : products.slice(0, 8);
-
-  return source.map((product) => ({
+  const women = (womenSource.length > 0 ? womenSource : products.slice(0, 4)).map((product) => ({
     ...product,
     image: resolvePrimaryImage(product)
   }));
+  const men = (menSource.length > 0 ? menSource : products.slice(4, 8)).map((product) => ({
+    ...product,
+    image: resolvePrimaryImage(product)
+  }));
+
+  return { women, men };
 }
 
 export default async function HomePage() {
   const lang = getServerLang();
   const t = copy[lang];
-  const [categories, featuredProducts] = await Promise.all([
+  const womenLabel = lang === "zh" ? "\u5973\u58eb\u5185\u8863" : lang === "es" ? "Ropa Interior de Mujer" : "Women's Panties";
+  const menLabel = lang === "zh" ? "\u7537\u58eb\u5185\u8863" : lang === "es" ? "Ropa Interior de Hombre" : "Men's Underwear";
+  const [categories, featuredShowcase] = await Promise.all([
     getCategories(),
     getFeaturedShowcase()
   ]);
@@ -190,32 +203,70 @@ export default async function HomePage() {
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-3">{t.mainProducts}</h2>
           <p className="text-gray-600 text-center mb-10 max-w-3xl mx-auto">{t.mainProductsDesc}</p>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-            {featuredProducts.map((product) => (
-              <Link
-                key={product.product_id}
-                href={`/products/${encodeURIComponent(product.product_id)}`}
-                className="group"
-              >
-                <div className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="aspect-[5/4] overflow-hidden bg-gray-100">
-                    <img
-                      src={product.image}
-                      alt={resolveDisplayTitle(product)}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="p-3 md:p-4">
-                    <h3 className="text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-blue-600">
-                      {resolveHomeProductTitle(product)}
-                    </h3>
-                    <p className="text-xs text-gray-500 mt-1 line-clamp-2">
-                      {resolveDisplayProductId(product)}
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            ))}
+          <div className="space-y-10">
+            <div>
+              <div className="mb-4 flex items-end justify-between gap-4">
+                <h3 className="text-lg font-semibold text-[#6a3524] md:text-xl">{womenLabel}</h3>
+                <div className="h-px flex-1 bg-[linear-gradient(90deg,rgba(191,144,118,0.34),transparent)]" />
+              </div>
+              <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+                {featuredShowcase.women.map((product) => (
+                  <Link
+                    key={product.product_id}
+                    href={`/products/${encodeURIComponent(product.product_id)}`}
+                    className="group"
+                  >
+                    <div className="overflow-hidden rounded-lg border border-gray-200 bg-white transition-shadow hover:shadow-lg">
+                      <div className="aspect-[4/5] overflow-hidden bg-gray-100">
+                        <img
+                          src={product.image}
+                          alt={resolveDisplayTitle(product)}
+                          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                      </div>
+                      <div className="p-3 md:p-4">
+                        <h4 className="text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-blue-600">
+                          {resolveHomeProductTitle(product)}
+                        </h4>
+                        <p className="mt-1 text-xs text-gray-500 line-clamp-2">{resolveDisplayProductId(product)}</p>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <div className="mb-4 flex items-end justify-between gap-4">
+                <h3 className="text-lg font-semibold text-[#6a3524] md:text-xl">{menLabel}</h3>
+                <div className="h-px flex-1 bg-[linear-gradient(90deg,rgba(191,144,118,0.34),transparent)]" />
+              </div>
+              <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+                {featuredShowcase.men.map((product) => (
+                  <Link
+                    key={product.product_id}
+                    href={`/products/${encodeURIComponent(product.product_id)}`}
+                    className="group"
+                  >
+                    <div className="overflow-hidden rounded-lg border border-gray-200 bg-white transition-shadow hover:shadow-lg">
+                      <div className="aspect-[4/5] overflow-hidden bg-gray-100">
+                        <img
+                          src={product.image}
+                          alt={resolveDisplayTitle(product)}
+                          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                      </div>
+                      <div className="p-3 md:p-4">
+                        <h4 className="text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-blue-600">
+                          {resolveHomeProductTitle(product)}
+                        </h4>
+                        <p className="mt-1 text-xs text-gray-500 line-clamp-2">{resolveDisplayProductId(product)}</p>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -299,7 +350,7 @@ export default async function HomePage() {
                 <video
                   src="/media/home/factory-video.mp4"
                   controls
-                  poster="/media/home/banner-2.png"
+                  poster="/media/generated/wide/factory-wide-production-line.png"
                   className="w-full h-full"
                 />
               </div>
@@ -357,25 +408,25 @@ export default async function HomePage() {
       </section>
 
       {/* Product Categories */}
-      <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,rgba(210,157,104,0.22),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(156,104,72,0.28),transparent_32%),linear-gradient(135deg,#241714_0%,#34221b_52%,#1e1512_100%)] py-12 md:py-16">
+      <section className="relative overflow-hidden bg-[linear-gradient(180deg,#fff7dd_0%,#f4e2b8_55%,#ead09a_100%)] py-12 md:py-16">
         <div className="pointer-events-none absolute inset-0 opacity-25">
-          <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,228,201,0.72),transparent)]" />
-          <div className="absolute left-[8%] top-8 h-28 w-28 rounded-full border border-white/10" />
-          <div className="absolute right-[10%] top-16 h-40 w-40 rounded-full border border-white/10" />
-          <div className="absolute bottom-10 left-[24%] h-24 w-24 rounded-full border border-white/10" />
+          <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.8),transparent)]" />
+          <div className="absolute left-[8%] top-8 h-28 w-28 rounded-full border border-white/40" />
+          <div className="absolute right-[10%] top-16 h-40 w-40 rounded-full border border-white/30" />
+          <div className="absolute bottom-10 left-[24%] h-24 w-24 rounded-full border border-white/30" />
         </div>
         <div className="container relative mx-auto px-4 md:px-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-white">Product Categories</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-[#6a3524]">Product Categories</h2>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {categories.slice(0, 8).map((cat) => (
               <Link
                 key={cat.category}
                 href={`/products?category=${encodeURIComponent(cat.category)}`}
-                className="bg-gray-800 p-6 text-center rounded-lg hover:bg-gray-700 transition-colors group"
+                className="group rounded-lg border border-[rgba(163,116,80,0.18)] bg-[rgba(255,250,242,0.88)] p-6 text-center shadow-[0_18px_34px_rgba(125,79,62,0.10)] transition-transform transition-shadow hover:-translate-y-1 hover:shadow-[0_22px_42px_rgba(125,79,62,0.14)]"
               >
-                <span className="text-white font-medium group-hover:text-amber-400">{cat.category}</span>
-                <span className="block text-sm text-gray-400 mt-1">{cat.count} items</span>
+                <span className="text-[#5f3123] font-medium transition-colors group-hover:text-[#9e5637]">{cat.category}</span>
+                <span className="block text-sm text-[#7d4f3e] mt-1">{cat.count} items</span>
               </Link>
             ))}
           </div>
@@ -383,72 +434,49 @@ export default async function HomePage() {
       </section>
 
       {/* Contact CTA */}
-      <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,rgba(255,243,228,0.42),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(191,114,75,0.24),transparent_28%),linear-gradient(135deg,#c9835e_0%,#bb714b_42%,#a45a3b_100%)] py-16 md:py-24">
-        <div className="pointer-events-none absolute inset-0 opacity-35">
-          <div className="absolute -left-12 top-8 h-40 w-40 rounded-full bg-white/10 blur-2xl" />
-          <div className="absolute right-0 top-0 h-48 w-48 rounded-full bg-[#f7d0b5]/20 blur-3xl" />
-          <div className="absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,245,236,0.8),transparent)]" />
-        </div>
-        <div className="container relative mx-auto px-4 md:px-6">
-          <div className="grid gap-8 overflow-hidden rounded-[28px] bg-white/10 p-6 shadow-[0_24px_60px_rgba(91,45,19,0.18)] backdrop-blur-sm md:p-8 lg:grid-cols-[1fr_1.15fr] lg:items-stretch">
-            <div className="relative min-h-[300px] overflow-hidden rounded-[24px] bg-[#f6dfcf]">
-              <iframe
-                title="YiWu DiYaSi location map"
-                src="https://www.google.com/maps?hl=en&gl=US&q=No.%2016%20Dashi%20Road%2C%20Fotang%20Town%2C%20Yiwu%2C%20Zhejiang%2C%20China&z=15&output=embed"
-                className="absolute inset-0 h-full w-full border-0"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-              <div className="absolute bottom-5 left-5 rounded-2xl bg-white/88 px-4 py-3 shadow-lg">
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#b15d39]">Location</p>
-                <p className="mt-1 text-sm font-semibold text-[#6e3924]">Fotang Town, Yiwu, Zhejiang, China</p>
-              </div>
-            </div>
-
-            <div className="rounded-[24px] bg-[#fff7f1] p-6 text-[#6e3924] md:p-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#c46d45]">Contact Us</p>
-              <h2 className="mt-3 text-2xl font-bold leading-tight md:text-4xl">YiWu DiYaSi Dress Co.. LTD</h2>
-              <div className="mt-6 space-y-5 text-sm leading-7 md:text-base">
+      <section className="relative overflow-hidden py-8 md:py-12">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="relative min-h-[520px] overflow-hidden rounded-[30px] shadow-[0_24px_60px_rgba(91,45,19,0.18)] md:min-h-[620px]">
+            <iframe
+              title="YiWu DiYaSi location map"
+              src="https://www.google.com/maps?hl=en&gl=US&q=No.%2016%20Dashi%20Road%2C%20Fotang%20Town%2C%20Yiwu%2C%20Zhejiang%2C%20China&z=15&output=embed"
+              className="absolute inset-0 h-full w-full border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,250,245,0.03)_0%,rgba(255,250,245,0.04)_55%,rgba(255,250,245,0.12)_100%)]" />
+            <div className="absolute bottom-5 left-5 w-[min(92vw,520px)] rounded-[24px] border border-white/35 bg-[rgba(255,247,241,0.6)] px-5 py-5 text-[#6e3924] shadow-[0_18px_44px_rgba(91,45,19,0.18)] backdrop-blur-md md:bottom-7 md:left-7 md:w-[min(86vw,560px)] md:px-6 md:py-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#b15d39]">Contact</p>
+              <div className="mt-4 space-y-4 text-sm leading-6 md:text-base">
                 <div>
-                  <p className="font-semibold text-[#b15d39]">Company Address / Manufacturing Location:</p>
-                  <p>No. 16 Dashi Road, Fotang Town, Yiwu, Zhejiang</p>
-                  <p>China</p>
+                  <p className="font-semibold text-[#b15d39]">Address</p>
+                  <p className="mt-1">NO.16 DaShi Road ,FoTang Town ,Yiwu, Zhejiang, China</p>
+                </div>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <p className="font-semibold text-[#b15d39]">Fax</p>
+                    <p className="mt-1">+86-579-85569925</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-[#b15d39]">Mobie / WhatsApp</p>
+                    <p className="mt-1">
+                      <a
+                        href="tel:+8618042579030"
+                        className="underline decoration-[#d08b67] underline-offset-4 transition hover:text-[#b15d39]"
+                      >
+                        +86 18042579030
+                      </a>
+                    </p>
+                  </div>
                 </div>
                 <div>
-                  <p className="font-semibold text-[#b15d39]">Email:</p>
-                  <p>
+                  <p className="font-semibold text-[#b15d39]">Email</p>
+                  <p className="mt-1">
                     <a
-                      href="mailto:imbella.annie@diyasidress.com"
+                      href="mailto:w18042579030@gmail.com"
                       className="underline decoration-[#d08b67] underline-offset-4 transition hover:text-[#b15d39]"
                     >
-                      imbella.annie@diyasidress.com
-                    </a>
-                  </p>
-                  <p>
-                    <a
-                      href="mailto:imbella.vicky@diyasidress.com"
-                      className="underline decoration-[#d08b67] underline-offset-4 transition hover:text-[#b15d39]"
-                    >
-                      imbella.vicky@diyasidress.com
-                    </a>
-                  </p>
-                </div>
-                <div>
-                  <p className="font-semibold text-[#b15d39]">Mobie/whatsApp:</p>
-                  <p className="flex flex-wrap gap-4">
-                    <a
-                      href="tel:+8618042579030"
-                      className="underline decoration-[#d08b67] underline-offset-4 transition hover:text-[#b15d39]"
-                    >
-                      +86 18042579030
-                    </a>
-                    <a
-                      href="https://wa.me/8618042579030"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="underline decoration-[#d08b67] underline-offset-4 transition hover:text-[#b15d39]"
-                    >
-                      Open WhatsApp
+                      w18042579030@gmail.com
                     </a>
                   </p>
                 </div>
