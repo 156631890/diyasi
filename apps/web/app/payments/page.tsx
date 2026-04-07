@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 
 import PayPalPaymentsPanel from "@/components/PayPalPaymentsPanel";
@@ -51,7 +51,7 @@ const copy: Record<
     loadingLabel: "Loading PayPal checkout...",
     unavailableLabel: "PayPal is not available on this device or browser.",
     missingConfigLabel:
-      "PayPal production credentials are not configured in the payment backend. Check the Railway service env vars, then redeploy the frontend."
+      "PayPal production credentials are not configured in the running server. If you just updated .env.local, restart Next.js, then hard refresh this page."
   },
   zh: {
     eyebrow: "安全收银台",

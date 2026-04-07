@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
 
@@ -235,7 +235,7 @@ export default function PayPalPaymentsPanel({
       setMessage(
         configChecked
           ? missingConfigLabel
-          : "Checking the payment backend for PayPal config. If this keeps failing, restart Next.js and hard refresh the page."
+          : "Checking the running server for PayPal config. If this keeps failing, restart Next.js and hard refresh the page."
       );
       return;
     }
@@ -254,10 +254,10 @@ export default function PayPalPaymentsPanel({
   }
 
   const configStateLabel = effectiveClientId
-    ? "Payment backend: PayPal config detected."
+    ? "Running server: PayPal config detected."
     : configChecked
-      ? "Payment backend: PayPal config is missing."
-      : "Payment backend: checking PayPal config...";
+      ? "Running server: PayPal config is missing."
+      : "Running server: checking PayPal config...";
 
   return (
     <>

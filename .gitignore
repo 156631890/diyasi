@@ -16,3 +16,6 @@ data/generated/
 .npm-cache/
 apps/web/.npm-cache/
 *.log
+
+.vercel
+.env*.local
