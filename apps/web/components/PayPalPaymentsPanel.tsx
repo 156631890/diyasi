@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 type PaymentItem = {
   title: string;
@@ -25,71 +25,18 @@ type PayPalNamespace = {
   }) => PayPalButtonInstance;
 };
 
-type Method = "card" | "paypal";
-
 declare global {
   interface Window {
     paypal?: PayPalNamespace;
   }
 }
 
-function BankCardIcon() {
-  return (
-    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8">
-      <rect x="3" y="5" width="18" height="14" rx="2.5" />
-      <path d="M3 10h18" />
-      <path d="M7 15h3" />
-    </svg>
-  );
-}
-
 function PayPalIcon() {
   return (
-    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
       <path d="M7.2 4h6.3c2.7 0 4.7 1.8 4.2 4.5-.5 2.9-2.8 4.3-5.7 4.3H9.5l-.9 5.2H5.2L7.2 4Zm3 6.4h2c1.6 0 2.8-.6 3.1-2.1.2-1.2-.6-1.9-2.1-1.9h-2.6l-.4 4Z" />
       <path d="M10.3 9.3h4.4c2.1 0 3.6 1.4 3.2 3.6-.4 2.4-2.4 3.7-4.8 3.7h-1.8l-.6 3.4H7.9l1.1-6.3h2.1c1.3 0 2.5-.4 2.8-1.8.2-1-.5-1.5-1.7-1.5H9.8l.5-1.1Z" opacity=".7" />
     </svg>
-  );
-}
-
-function MethodOption({
-  id,
-  checked,
-  title,
-  desc,
-  icon,
-  onChange
-}: {
-  id: Method;
-  checked: boolean;
-  title: string;
-  desc: string;
-  icon: ReactNode;
-  onChange: (value: Method) => void;
-}) {
-  return (
-    <label
-      className={`flex cursor-pointer items-center gap-4 rounded-[20px] border p-4 transition ${
-        checked
-          ? "border-[#df7c44] bg-[#fff2e8] shadow-[0_14px_28px_rgba(223,124,68,0.15)]"
-          : "border-[rgba(191,144,118,0.22)] bg-white hover:border-[#d9a07a]"
-      }`}
-    >
-      <input
-        type="radio"
-        name="payment-method"
-        checked={checked}
-        onChange={() => onChange(id)}
-        className="h-4 w-4 accent-[#df7c44]"
-      />
-      <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[rgba(223,124,68,0.12)] text-[#bf6536]">
-        {icon}
-      </div>
-      <div className="min-w-0 flex-1">
-        <p className="text-base font-semibold text-[#5f3123]">{title}</p>
-        <p className="mt-1 text-sm leading-6 text-[#7d4f3e]">{desc}</p>
-      </div>
-    </label>
   );
 }
 
@@ -107,7 +54,6 @@ export default function PayPalPaymentsPanel({
   missingConfigLabel: string;
 }) {
   const [selectedTitle, setSelectedTitle] = useState(items[0]?.title || "");
-  const [selectedMethod, setSelectedMethod] = useState<Method>("paypal");
   const [sdkReady, setSdkReady] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [pendingOpen, setPendingOpen] = useState(false);
@@ -119,9 +65,11 @@ export default function PayPalPaymentsPanel({
     () => items.find((item) => item.title === selectedTitle) || items[0],
     [items, selectedTitle]
   );
-
   useEffect(() => {
-    if (!clientId) return;
+    if (!clientId) {
+      return;
+    }
+
     if (window.paypal) {
       setSdkReady(true);
       return;
@@ -230,7 +178,6 @@ export default function PayPalPaymentsPanel({
       buttons.close?.();
     };
   }, [modalOpen, sdkReady, selectedItem, unavailableLabel]);
-
   useEffect(() => {
     if (!pendingOpen || !sdkReady) {
       return;
@@ -245,11 +192,6 @@ export default function PayPalPaymentsPanel({
     setMessage("");
 
     if (!selectedItem) return;
-
-    if (selectedMethod === "card") {
-      setMessage("Bank card gateway is not connected yet. Please use PayPal for live payment.");
-      return;
-    }
 
     if (!clientId) {
       setMessage(missingConfigLabel);
@@ -268,16 +210,15 @@ export default function PayPalPaymentsPanel({
   if (!selectedItem) {
     return null;
   }
-
   return (
     <>
       <section className="rounded-[30px] border border-[rgba(191,144,118,0.18)] bg-white/94 p-6 shadow-[0_22px_50px_rgba(132,86,58,0.1)] md:p-8">
         <div className="flex items-start justify-between gap-4">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#b56e49]">Checkout</p>
-            <h2 className="mt-3 text-[1.9rem] font-bold leading-tight text-[#5f3123]">{"\u8bf7\u9009\u62e9\u652f\u4ed8\u65b9\u5f0f"}</h2>
+            <h2 className="mt-3 text-[1.9rem] font-bold leading-tight text-[#5f3123]">{"请选择 PayPal 收款"}</h2>
           </div>
-          <div className="rounded-full bg-[rgba(223,124,68,0.1)] px-4 py-2 text-sm font-semibold text-[#bf6536]">USD</div>
+          <div className="rounded-full bg-[rgba(223,124,68,0.1)] px-4 py-2 text-sm font-semibold text-[#bf6536]">PayPal</div>
         </div>
 
         <div className="mt-6 grid gap-3">
@@ -316,23 +257,16 @@ export default function PayPalPaymentsPanel({
             <p className="text-3xl font-semibold text-[#8d452d]">${selectedItem.amount}</p>
           </div>
 
-          <div className="mt-5 grid gap-3">
-            <MethodOption
-              id="card"
-              checked={selectedMethod === "card"}
-              title="Bank Card"
-              desc="Reserved for a future card gateway integration."
-              icon={<BankCardIcon />}
-              onChange={setSelectedMethod}
-            />
-            <MethodOption
-              id="paypal"
-              checked={selectedMethod === "paypal"}
-              title="PayPal"
-              desc="Open PayPal popup verification and confirm payment on the server before marking the order as paid."
-              icon={<PayPalIcon />}
-              onChange={setSelectedMethod}
-            />
+          <div className="mt-5 flex items-center gap-4 rounded-[20px] border border-[rgba(191,144,118,0.22)] bg-white p-4">
+            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[rgba(223,124,68,0.12)] text-[#bf6536]">
+              <PayPalIcon />
+            </div>
+            <div className="min-w-0 flex-1">
+              <p className="text-base font-semibold text-[#5f3123]">PayPal</p>
+              <p className="mt-1 text-sm leading-6 text-[#7d4f3e]">
+                Open PayPal checkout, then confirm payment on the server before the order is marked as paid.
+              </p>
+            </div>
           </div>
 
           <button
@@ -340,7 +274,7 @@ export default function PayPalPaymentsPanel({
             onClick={onProceed}
             className="mt-6 inline-flex w-full items-center justify-center rounded-[18px] bg-[#e67e3d] px-6 py-4 text-lg font-semibold text-white shadow-[0_18px_36px_rgba(230,126,61,0.28)] transition hover:bg-[#d46a29]"
           >
-            {"\u7acb\u5373\u652f\u4ed8"}
+            {"立即支付"}
           </button>
 
           {message ? <p className="mt-4 text-sm leading-6 text-[#b14d2c]">{message}</p> : null}

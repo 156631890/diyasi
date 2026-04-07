@@ -33,57 +33,62 @@ const copy: Record<
 > = {
   en: {
     eyebrow: "Secure Checkout",
-    title: "Buyer payment page for sample fees and OEM launch deposits",
-    titleFromProduct: "Dear customer, please choose PayPal to complete payment.",
-    desc: "Keep the payment flow clear: select the project stage, select the payment method, and complete PayPal verification with server-side confirmation before the order is marked paid.",
+    title: "Live PayPal checkout for deposits and sample fees",
+    titleFromProduct: "Please complete this payment with PayPal.",
+    desc:
+      "This checkout is live-only: choose a project stage, review the amount, and complete PayPal payment with server-side capture before the order is marked paid.",
     infoTitle: "Why this layout",
-    infoBody: "This page is intentionally simple for independent-site checkout. It avoids visual noise, keeps the payment choices obvious, and makes audit screenshots easier to capture.",
+    infoBody:
+      "This page is intentionally focused on a single live payment flow so buyers can complete checkout quickly and your team can verify payment records easily.",
     supportTitle: "Need a custom amount?",
-    supportBody: "If the buyer needs a custom quote, split deposit, or combined invoice, confirm the brief first and then direct them to the matching payment stage.",
+    supportBody:
+      "If a buyer needs a custom quote, split deposit, or combined invoice, confirm the brief first and then direct them to the correct payment stage.",
     supportCta: "Contact Sales",
     items: [
       { tag: "Sample", title: "Sample Development Fee", amount: 199, desc: "Used for paid sampling before material sourcing and pattern work begin." },
       { tag: "Launch", title: "OEM Launch Deposit", amount: 500, desc: "Used once scope, pricing, and sample direction are confirmed for production launch." }
     ],
-    loadingLabel: "Loading PayPal...",
+    loadingLabel: "Loading PayPal checkout...",
     unavailableLabel: "PayPal is not available on this device or browser.",
-    missingConfigLabel: "PayPal is not configured yet. Add NEXT_PUBLIC_PAYPAL_CLIENT_ID, PAYPAL_CLIENT_ID, and PAYPAL_CLIENT_SECRET."
+    missingConfigLabel:
+      "PayPal production credentials are not configured. Set NEXT_PUBLIC_PAYPAL_CLIENT_ID, PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET, and PAYPAL_ENV=live."
   },
   zh: {
-    eyebrow: "\u5b89\u5168\u6536\u94f6\u53f0",
-    title: "\u7528\u4e00\u4e2a\u7b80\u6d01\u7684\u9875\u9762\u5b8c\u6210\u6253\u6837\u8d39\u4e0e OEM \u542f\u52a8\u5b9a\u91d1\u652f\u4ed8",
-    titleFromProduct: "\u4eb2\u7231\u7684\u5ba2\u6237\uff0c\u8bf7\u9009\u62e9 PayPal \u5b8c\u6210\u652f\u4ed8\u3002",
-    desc: "\u8ba9\u4ed8\u6b3e\u6d41\u7a0b\u4fdd\u6301\u6e05\u695a\uff1a\u5148\u9009\u62e9\u9879\u76ee\u9636\u6bb5\uff0c\u518d\u9009\u62e9\u652f\u4ed8\u65b9\u5f0f\uff0c\u6700\u540e\u5728 PayPal \u4e2d\u5b8c\u6210\u9a8c\u8bc1\uff0c\u5e76\u7531\u670d\u52a1\u7aef\u786e\u8ba4\u5230\u8d26\u540e\u518d\u5165\u5e93\u3002",
-    infoTitle: "\u8fd9\u4e2a\u5e03\u5c40\u7684\u76ee\u7684",
-    infoBody: "\u8fd9\u4e2a\u6536\u94f6\u53f0\u662f\u4e3a\u72ec\u7acb\u7ad9\u4ed8\u6b3e\u573a\u666f\u8bbe\u8ba1\u7684\uff0c\u5c3d\u91cf\u51cf\u5c11\u89c6\u89c9\u5e72\u6270\uff0c\u8ba9\u4e70\u5bb6\u80fd\u4e00\u773c\u770b\u6e05\u652f\u4ed8\u9009\u62e9\uff0c\u4e5f\u66f4\u9002\u5408\u5ba1\u6838\u622a\u56fe\u3002",
-    supportTitle: "\u9700\u8981\u81ea\u5b9a\u4e49\u91d1\u989d\uff1f",
-    supportBody: "\u5982\u679c\u4e70\u5bb6\u9700\u8981\u5b9a\u5236\u62a5\u4ef7\uff0c\u5206\u9636\u6bb5\u5b9a\u91d1\uff0c\u6216\u5408\u5e76\u8d26\u5355\uff0c\u53ef\u4ee5\u5148\u6c9f\u901a\u9700\u6c42\uff0c\u518d\u8fdb\u5165\u5bf9\u5e94\u7684\u4ed8\u6b3e\u9636\u6bb5\u3002",
-    supportCta: "\u8054\u7cfb\u9500\u552e",
+    eyebrow: "安全收银台",
+    title: "使用 PayPal 正式收款完成打样费与 OEM 启动定金支付",
+    titleFromProduct: "请使用 PayPal 完成这笔正式收款。",
+    desc: "这是正式收款页：先选择项目阶段，确认金额，再通过 PayPal 完成支付，服务端捕获成功后才标记为已付款。",
+    infoTitle: "这个布局的目的",
+    infoBody: "这个页面只保留一条正式收款路径，方便买家快速完成付款，也方便团队核对订单与回款记录。",
+    supportTitle: "需要自定义金额？",
+    supportBody: "如果买家需要定制报价、分阶段定金或合并账单，请先确认需求，再进入对应的付款阶段。",
+    supportCta: "联系销售",
     items: [
-      { tag: "\u6253\u6837", title: "\u6253\u6837\u5f00\u53d1\u8d39", amount: 199, desc: "\u7528\u4e8e\u4ed8\u8d39\u6253\u6837\uff0c\u5728\u9762\u6599\u5f00\u53d1\u548c\u7248\u578b\u5236\u4f5c\u524d\u786e\u8ba4\u652f\u4ed8\u3002" },
-      { tag: "\u542f\u52a8", title: "OEM \u542f\u52a8\u5b9a\u91d1", amount: 500, desc: "\u7528\u4e8e\u62a5\u4ef7\u3001\u8303\u56f4\u548c\u6253\u6837\u65b9\u5411\u786e\u8ba4\u540e\u7684\u9879\u76ee\u542f\u52a8\u3002" }
+      { tag: "打样", title: "打样开发费", amount: 199, desc: "用于付费打样，在面料开发和版型制作前确认支付。" },
+      { tag: "启动", title: "OEM 启动定金", amount: 500, desc: "用于报价、范围和打样方向确认后的项目启动。" }
     ],
-    loadingLabel: "PayPal \u52a0\u8f7d\u4e2d...",
-    unavailableLabel: "\u5f53\u524d\u8bbe\u5907\u6216\u6d4f\u89c8\u5668\u6682\u4e0d\u652f\u6301 PayPal\u3002",
-    missingConfigLabel: "PayPal \u5c1a\u672a\u914d\u7f6e\uff0c\u8bf7\u586b\u5199 NEXT_PUBLIC_PAYPAL_CLIENT_ID\u3001PAYPAL_CLIENT_ID \u548c PAYPAL_CLIENT_SECRET\u3002"
+    loadingLabel: "PayPal 加载中...",
+    unavailableLabel: "当前设备或浏览器暂不支持 PayPal。",
+    missingConfigLabel: "PayPal 正式收款尚未配置，请填写 NEXT_PUBLIC_PAYPAL_CLIENT_ID、PAYPAL_CLIENT_ID、PAYPAL_CLIENT_SECRET，并将 PAYPAL_ENV 设为 live。"
   },
   es: {
     eyebrow: "Checkout Seguro",
-    title: "Una pagina limpia para cobrar muestras y depositos OEM",
-    titleFromProduct: "Estimado cliente, por favor elija PayPal para completar el pago.",
-    desc: "Mantiene el flujo claro: elegir etapa del proyecto, elegir metodo de pago y completar PayPal con verificacion del servidor antes de marcar el pedido como pagado.",
+    title: "Checkout oficial de PayPal para depositos y muestras",
+    titleFromProduct: "Complete este pago con PayPal.",
+    desc: "Esta pagina es solo para cobro en vivo: elija la etapa, revise el importe y complete PayPal con captura en servidor antes de marcar el pedido como pagado.",
     infoTitle: "Por que este diseno",
-    infoBody: "Esta pagina esta pensada para checkout de sitio independiente. Reduce ruido visual, aclara el metodo de pago y facilita capturas para auditoria.",
+    infoBody: "Esta pagina mantiene un unico flujo de pago en vivo para que el comprador complete el checkout rapido y el equipo pueda auditar el cobro facilmente.",
     supportTitle: "Necesitas un importe personalizado?",
-    supportBody: "Si el comprador necesita una cotizacion especial, un deposito parcial o una factura combinada, confirma el brief primero y luego usa la etapa de pago correcta.",
+    supportBody: "Si el comprador necesita una cotizacion especial, un deposito parcial o una factura combinada, confirma primero el brief y luego dirige al cliente a la etapa correcta.",
     supportCta: "Contactar Ventas",
     items: [
       { tag: "Muestra", title: "Tarifa de Desarrollo de Muestra", amount: 199, desc: "Para muestra pagada antes de materiales y patron." },
       { tag: "Inicio", title: "Deposito de Lanzamiento OEM", amount: 500, desc: "Para iniciar el proyecto cuando alcance, precio y direccion de muestra ya estan confirmados." }
     ],
-    loadingLabel: "Cargando PayPal...",
+    loadingLabel: "Cargando checkout de PayPal...",
     unavailableLabel: "PayPal no esta disponible en este dispositivo o navegador.",
-    missingConfigLabel: "PayPal no esta configurado todavia. Agrega NEXT_PUBLIC_PAYPAL_CLIENT_ID, PAYPAL_CLIENT_ID y PAYPAL_CLIENT_SECRET."
+    missingConfigLabel:
+      "Las credenciales de produccion de PayPal no estan configuradas. Agrega NEXT_PUBLIC_PAYPAL_CLIENT_ID, PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET y PAYPAL_ENV=live."
   }
 };
 
@@ -102,6 +107,7 @@ export default function PaymentsPage({
   const productTitle = searchParams?.product_title ? decodeURIComponent(searchParams.product_title) : "";
   const productAmount = Number(searchParams?.product_amount || "0");
   const productQty = Math.max(1, Math.floor(Number(searchParams?.product_qty || "1")));
+
   const productItem =
     productTitle && Number.isFinite(productAmount) && productAmount > 0
       ? {
@@ -178,7 +184,6 @@ export default function PaymentsPage({
 
 export const metadata: Metadata = buildMetadata({
   title: "Payments",
-  description:
-    "Pay sample development fees and OEM launch deposits for YiWu DiYaSi projects once scope, timing, and production stage are confirmed.",
+  description: "Live PayPal checkout for sample development fees and OEM launch deposits.",
   path: "/payments"
 });
