@@ -101,6 +101,7 @@ export default function PaymentsPage({
     product_title?: string;
     product_amount?: string;
     product_qty?: string;
+    product_shipping_usd?: string;
   };
 }) {
   const lang = getServerLang();
@@ -109,22 +110,23 @@ export default function PaymentsPage({
   const productTitle = searchParams?.product_title ? decodeURIComponent(searchParams.product_title) : "";
   const productAmount = Number(searchParams?.product_amount || "0");
   const productQty = Math.max(1, Math.floor(Number(searchParams?.product_qty || "1")));
+  const productShippingUsd = Number(searchParams?.product_shipping_usd || String(SAMPLE_SHIPPING_FEE_USD));
 
   const productItem =
     productTitle && Number.isFinite(productAmount) && productAmount > 0
       ? {
           tag: lang === "zh" ? "产品" : lang === "es" ? "Producto" : "Product",
           title: productTitle,
-          amount: Number((productAmount + SAMPLE_SHIPPING_FEE_USD).toFixed(2)),
+          amount: Number((productAmount + productShippingUsd).toFixed(2)),
           desc:
             lang === "zh"
-              ? `来自产品页面的 PayPal 收款入口，数量 ${productQty}，含 20 美金运费。`
+              ? `来自产品页面的 PayPal 收款入口，数量 ${productQty}，样品价 $${productAmount.toFixed(2)}，物流费 $${productShippingUsd.toFixed(2)}。`
               : lang === "es"
-                ? `Entrada de cobro PayPal desde la pagina de producto, cantidad ${productQty}.`
-                : `PayPal checkout entry from the product page, quantity ${productQty}, including $20 shipping.`
+                ? `Entrada de cobro PayPal desde la pagina de producto, cantidad ${productQty}, precio de muestra $${productAmount.toFixed(2)} y envio $${productShippingUsd.toFixed(2)}.`
+                : `PayPal checkout entry from the product page, quantity ${productQty}, sample price $${productAmount.toFixed(2)} and shipping $${productShippingUsd.toFixed(2)}.`
         }
       : null;
-  const paymentItems = productItem ? [productItem, ...t.items] : t.items;
+  const paymentItems = productItem ? [productItem] : t.items;
 
   return (
     <main className="min-h-screen bg-[linear-gradient(180deg,#fffaf6_0%,#f7ede4_100%)]">
@@ -144,10 +146,10 @@ export default function PaymentsPage({
                 <p className="mt-2 text-lg font-semibold text-[#5f3123]">{productItem.title}</p>
                 <p className="mt-1 text-sm leading-6 text-[#7d4f3e]">
                   {lang === "zh"
-                    ? `数量 ${productQty}，金额 $${productItem.amount.toFixed(2)}。`
+                    ? `数量 ${productQty}，样品价 $${productAmount.toFixed(2)}，物流费 $${productShippingUsd.toFixed(2)}，合计 $${productItem.amount.toFixed(2)}。`
                     : lang === "es"
-                      ? `Cantidad ${productQty}, importe $${productItem.amount.toFixed(2)}.`
-                      : `Quantity ${productQty}, amount $${productItem.amount.toFixed(2)}.`}
+                      ? `Cantidad ${productQty}, precio de muestra $${productAmount.toFixed(2)}, envio $${productShippingUsd.toFixed(2)} y total $${productItem.amount.toFixed(2)}.`
+                      : `Quantity ${productQty}, sample price $${productAmount.toFixed(2)}, shipping $${productShippingUsd.toFixed(2)}, total $${productItem.amount.toFixed(2)}.`}
                 </p>
               </div>
             ) : null}
@@ -189,4 +191,6 @@ export const metadata: Metadata = buildMetadata({
   description: "Live PayPal checkout for sample development fees and OEM launch deposits.",
   path: "/payments"
 });
+
+
 

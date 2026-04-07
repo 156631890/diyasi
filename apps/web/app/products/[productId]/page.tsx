@@ -227,7 +227,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
           </div>
 
           <div className="catalog-detail-actions">
-            <BuyNowButton title={`${displayTitle} - ${t.paidSample}`} unitAmountUsd={price} />
+            <BuyNowButton title={`${displayTitle} - ${t.paidSample}`} unitAmountUsd={price} shippingFeeUsd={20} />
             <Link href="/contact" className="btn btn-soft">
               {t.quote}
             </Link>
@@ -317,3 +317,4 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
     </main>
   );
 }
+
