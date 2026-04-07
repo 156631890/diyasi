@@ -13,6 +13,8 @@ type PaymentItem = {
   tag: string;
 };
 
+const SAMPLE_SHIPPING_FEE_USD = 20;
+
 const copy: Record<
   SiteLang,
   {
@@ -45,7 +47,7 @@ const copy: Record<
       "If a buyer needs a custom quote, split deposit, or combined invoice, confirm the brief first and then direct them to the correct payment stage.",
     supportCta: "Contact Sales",
     items: [
-      { tag: "Sample", title: "Sample Development Fee", amount: 199, desc: "Used for paid sampling before material sourcing and pattern work begin." },
+      { tag: "Sample", title: "Sample Development Fee", amount: 199 + SAMPLE_SHIPPING_FEE_USD, desc: "Used for paid sampling before material sourcing and pattern work begin. Includes $20 shipping." },
       { tag: "Launch", title: "OEM Launch Deposit", amount: 500, desc: "Used once scope, pricing, and sample direction are confirmed for production launch." }
     ],
     loadingLabel: "Loading PayPal checkout...",
@@ -64,7 +66,7 @@ const copy: Record<
     supportBody: "如果买家需要定制报价、分阶段定金或合并账单，请先确认需求，再进入对应的付款阶段。",
     supportCta: "联系销售",
     items: [
-      { tag: "打样", title: "打样开发费", amount: 199, desc: "用于付费打样，在面料开发和版型制作前确认支付。" },
+      { tag: "打样", title: "打样开发费", amount: 199 + SAMPLE_SHIPPING_FEE_USD, desc: "用于付费打样，在面料开发和版型制作前确认支付，含 20 美金运费。" },
       { tag: "启动", title: "OEM 启动定金", amount: 500, desc: "用于报价、范围和打样方向确认后的项目启动。" }
     ],
     loadingLabel: "PayPal 加载中...",
@@ -82,7 +84,7 @@ const copy: Record<
     supportBody: "Si el comprador necesita una cotizacion especial, un deposito parcial o una factura combinada, confirma primero el brief y luego dirige al cliente a la etapa correcta.",
     supportCta: "Contactar Ventas",
     items: [
-      { tag: "Muestra", title: "Tarifa de Desarrollo de Muestra", amount: 199, desc: "Para muestra pagada antes de materiales y patron." },
+      { tag: "Muestra", title: "Tarifa de Desarrollo de Muestra", amount: 199 + SAMPLE_SHIPPING_FEE_USD, desc: "Para muestra pagada antes de materiales y patron. Incluye 20 USD de envio." },
       { tag: "Inicio", title: "Deposito de Lanzamiento OEM", amount: 500, desc: "Para iniciar el proyecto cuando alcance, precio y direccion de muestra ya estan confirmados." }
     ],
     loadingLabel: "Cargando checkout de PayPal...",
@@ -113,13 +115,13 @@ export default function PaymentsPage({
       ? {
           tag: lang === "zh" ? "产品" : lang === "es" ? "Producto" : "Product",
           title: productTitle,
-          amount: Number(productAmount.toFixed(2)),
+          amount: Number((productAmount + SAMPLE_SHIPPING_FEE_USD).toFixed(2)),
           desc:
             lang === "zh"
-              ? `来自产品页面的 PayPal 收款入口，数量 ${productQty}。`
+              ? `来自产品页面的 PayPal 收款入口，数量 ${productQty}，含 20 美金运费。`
               : lang === "es"
                 ? `Entrada de cobro PayPal desde la pagina de producto, cantidad ${productQty}.`
-                : `PayPal checkout entry from the product page, quantity ${productQty}.`
+                : `PayPal checkout entry from the product page, quantity ${productQty}, including $20 shipping.`
         }
       : null;
   const paymentItems = productItem ? [productItem, ...t.items] : t.items;
@@ -187,3 +189,4 @@ export const metadata: Metadata = buildMetadata({
   description: "Live PayPal checkout for sample development fees and OEM launch deposits.",
   path: "/payments"
 });
+
