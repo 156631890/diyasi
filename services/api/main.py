@@ -4,7 +4,20 @@ from fastapi.middleware.cors import CORSMiddleware
 from config import settings
 from database import Base, SessionLocal, engine
 from migrations import run_migrations
-from routers import analytics, chatbot, crm, health, inquiries, leads, media, orders, outreach, products, seo
+from routers import (
+    analytics,
+    chatbot,
+    crm,
+    health,
+    inquiries,
+    leads,
+    media,
+    orders,
+    outreach,
+    payments,
+    products,
+    seo,
+)
 from seed import seed_if_empty
 
 app = FastAPI(
@@ -44,3 +57,4 @@ app.include_router(chatbot.router)
 app.include_router(inquiries.router)
 app.include_router(media.router)
 app.include_router(orders.router)
+app.include_router(payments.router)

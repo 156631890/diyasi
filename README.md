@@ -144,6 +144,9 @@ BACKEND_CORS_ORIGINS=https://www.chuangrongapparel.com,https://chuangrongapparel
 SMTP_MOCK_MODE=true
 GEMINI_API_KEY=<your-key-if-needed>
 GEMINI_MODEL=gemini-3.1-flash-image-preview
+PAYPAL_CLIENT_ID=<your-paypal-live-client-id>
+PAYPAL_CLIENT_SECRET=<your-paypal-live-client-secret>
+PAYPAL_ENV=live
 ```
 
 6. Deploy the service.
@@ -166,6 +169,8 @@ NEXT_PUBLIC_BACKEND_URL=https://<your-railway-domain>
 ```
 
 Then redeploy the frontend.
+
+The frontend now proxies PayPal checkout through the backend, so Vercel does not need the PayPal secret variables directly.
 
 ### Current product import behavior
 

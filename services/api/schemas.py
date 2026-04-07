@@ -257,3 +257,23 @@ class OrderOut(BaseModel):
 
     class Config:
         from_attributes = True
+
+
+class PayPalCreateOrderRequest(BaseModel):
+    title: str
+    unitAmountUsd: float
+    quantity: int = 1
+    customerName: str = ""
+    customerEmail: str = ""
+    siteUrl: str = ""
+
+
+class PayPalCaptureOrderRequest(BaseModel):
+    orderId: str
+    orderRef: str = ""
+
+
+class PayPalConfigOut(BaseModel):
+    clientId: str
+    env: str
+    productionReady: bool

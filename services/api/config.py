@@ -7,6 +7,10 @@ class Settings:
     database_url: str = os.getenv("DATABASE_URL", "sqlite:///./lead_engine.db")
     gemini_api_key: str = os.getenv("GEMINI_API_KEY", "")
     gemini_model: str = os.getenv("GEMINI_MODEL", "gemini-3.1-flash-image-preview")
+    paypal_client_id: str = os.getenv("PAYPAL_CLIENT_ID", "")
+    paypal_client_secret: str = os.getenv("PAYPAL_CLIENT_SECRET", "")
+    paypal_env: str = os.getenv("PAYPAL_ENV", "sandbox").strip().lower()
+    frontend_site_url: str = os.getenv("FRONTEND_SITE_URL", "http://localhost:3000")
     cors_origins_raw: str = os.getenv(
         "BACKEND_CORS_ORIGINS", "http://localhost:3000,http://127.0.0.1:3000"
     )

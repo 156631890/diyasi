@@ -235,7 +235,7 @@ export default function PayPalPaymentsPanel({
       setMessage(
         configChecked
           ? missingConfigLabel
-          : "Checking the running server for PayPal config. If this keeps failing, restart Next.js and hard refresh the page."
+          : "Checking the payment backend for PayPal config. If this keeps failing, restart Next.js and hard refresh the page."
       );
       return;
     }
@@ -254,10 +254,10 @@ export default function PayPalPaymentsPanel({
   }
 
   const configStateLabel = effectiveClientId
-    ? "Running server: PayPal config detected."
+    ? "Payment backend: PayPal config detected."
     : configChecked
-      ? "Running server: PayPal config is missing."
-      : "Running server: checking PayPal config...";
+      ? "Payment backend: PayPal config is missing."
+      : "Payment backend: checking PayPal config...";
 
   return (
     <>
