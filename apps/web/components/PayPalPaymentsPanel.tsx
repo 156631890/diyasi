@@ -59,14 +59,51 @@ export default function PayPalPaymentsPanel({
   const [pendingOpen, setPendingOpen] = useState(false);
   const [message, setMessage] = useState("");
   const [paypalError, setPayPalError] = useState("");
+  const [runtimeClientId, setRuntimeClientId] = useState("");
+  const [configChecked, setConfigChecked] = useState(false);
   const paypalContainerRef = useRef<HTMLDivElement | null>(null);
 
   const selectedItem = useMemo(
     () => items.find((item) => item.title === selectedTitle) || items[0],
     [items, selectedTitle]
   );
+  const effectiveClientId = runtimeClientId || clientId;
+
   useEffect(() => {
-    if (!clientId) {
+    let cancelled = false;
+
+    async function loadRuntimeConfig() {
+      try {
+        const response = await fetch("/api/payments/paypal/config", {
+          cache: "no-store"
+        });
+
+        if (!response.ok) {
+          return;
+        }
+
+        const payload = (await response.json()) as { clientId?: string };
+        if (!cancelled && payload.clientId) {
+          setRuntimeClientId(payload.clientId.trim());
+        }
+      } catch {
+        // Keep using the server-rendered value if the runtime probe is unavailable.
+      } finally {
+        if (!cancelled) {
+          setConfigChecked(true);
+        }
+      }
+    }
+
+    void loadRuntimeConfig();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!effectiveClientId) {
       return;
     }
 
@@ -83,13 +120,13 @@ export default function PayPalPaymentsPanel({
     }
 
     const script = document.createElement("script");
-    script.src = `https://www.paypal.com/sdk/js?client-id=${encodeURIComponent(clientId)}&currency=USD&intent=capture&components=buttons`;
+    script.src = `https://www.paypal.com/sdk/js?client-id=${encodeURIComponent(effectiveClientId)}&currency=USD&intent=capture&components=buttons`;
     script.async = true;
     script.dataset.paypalSdk = "true";
     script.onload = () => setSdkReady(true);
     script.onerror = () => {
       setPendingOpen(false);
-      setPayPalError("Failed to load PayPal SDK.");
+      setPayPalError("Failed to load the PayPal SDK.");
     };
     document.body.appendChild(script);
 
@@ -97,7 +134,7 @@ export default function PayPalPaymentsPanel({
       script.onload = null;
       script.onerror = null;
     };
-  }, [clientId]);
+  }, [effectiveClientId]);
 
   useEffect(() => {
     if (!modalOpen || !sdkReady || !window.paypal || !paypalContainerRef.current || !selectedItem) {
@@ -171,13 +208,14 @@ export default function PayPalPaymentsPanel({
     }
 
     void buttons.render(paypalContainerRef.current).catch((renderError: Error) => {
-      setPayPalError(renderError.message || "Unable to render PayPal button.");
+      setPayPalError(renderError.message || "Unable to render the PayPal button.");
     });
 
     return () => {
       buttons.close?.();
     };
   }, [modalOpen, sdkReady, selectedItem, unavailableLabel]);
+
   useEffect(() => {
     if (!pendingOpen || !sdkReady) {
       return;
@@ -193,8 +231,12 @@ export default function PayPalPaymentsPanel({
 
     if (!selectedItem) return;
 
-    if (!clientId) {
-      setMessage(missingConfigLabel);
+    if (!effectiveClientId) {
+      setMessage(
+        configChecked
+          ? missingConfigLabel
+          : "Checking the running server for PayPal config. If this keeps failing, restart Next.js and hard refresh the page."
+      );
       return;
     }
 
@@ -210,13 +252,21 @@ export default function PayPalPaymentsPanel({
   if (!selectedItem) {
     return null;
   }
+
+  const configStateLabel = effectiveClientId
+    ? "Running server: PayPal config detected."
+    : configChecked
+      ? "Running server: PayPal config is missing."
+      : "Running server: checking PayPal config...";
+
   return (
     <>
       <section className="rounded-[30px] border border-[rgba(191,144,118,0.18)] bg-white/94 p-6 shadow-[0_22px_50px_rgba(132,86,58,0.1)] md:p-8">
         <div className="flex items-start justify-between gap-4">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#b56e49]">Checkout</p>
-            <h2 className="mt-3 text-[1.9rem] font-bold leading-tight text-[#5f3123]">{"请选择 PayPal 收款"}</h2>
+            <h2 className="mt-3 text-[1.9rem] font-bold leading-tight text-[#5f3123]">Choose PayPal payment</h2>
+            <p className="mt-2 text-sm leading-6 text-[#7d4f3e]">{configStateLabel}</p>
           </div>
           <div className="rounded-full bg-[rgba(223,124,68,0.1)] px-4 py-2 text-sm font-semibold text-[#bf6536]">PayPal</div>
         </div>
@@ -274,7 +324,7 @@ export default function PayPalPaymentsPanel({
             onClick={onProceed}
             className="mt-6 inline-flex w-full items-center justify-center rounded-[18px] bg-[#e67e3d] px-6 py-4 text-lg font-semibold text-white shadow-[0_18px_36px_rgba(230,126,61,0.28)] transition hover:bg-[#d46a29]"
           >
-            {"立即支付"}
+            Pay now
           </button>
 
           {message ? <p className="mt-4 text-sm leading-6 text-[#b14d2c]">{message}</p> : null}

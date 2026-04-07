@@ -51,7 +51,7 @@ const copy: Record<
     loadingLabel: "Loading PayPal checkout...",
     unavailableLabel: "PayPal is not available on this device or browser.",
     missingConfigLabel:
-      "PayPal production credentials are not configured. Set NEXT_PUBLIC_PAYPAL_CLIENT_ID, PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET, and PAYPAL_ENV=live."
+      "PayPal production credentials are not configured in the running server. If you just updated .env.local, restart Next.js, then hard refresh this page."
   },
   zh: {
     eyebrow: "安全收银台",
