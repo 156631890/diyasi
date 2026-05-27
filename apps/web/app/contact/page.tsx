@@ -13,20 +13,22 @@ const directContact = {
   location: "No. 16 Dashi Road, Fotang Town, Yiwu, Zhejiang, China"
 };
 
+const initialForm = {
+  name: "",
+  email: "",
+  whatsapp: "",
+  brandStage: "",
+  channel: "",
+  productDirection: "",
+  budget: "",
+  timeline: "",
+  notes: "",
+  website: ""
+};
+
 export default function ContactPage() {
   const [status, setStatus] = useState<"ready" | "submitting" | "submitted" | "failed">("ready");
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    whatsapp: "",
-    brandStage: "",
-    channel: "",
-    productDirection: "",
-    budget: "",
-    timeline: "",
-    notes: "",
-    website: ""
-  });
+  const [form, setForm] = useState(initialForm);
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -57,18 +59,7 @@ export default function ContactPage() {
       });
       if (response.ok) {
         setStatus("submitted");
-        setForm({
-          name: "",
-          email: "",
-          whatsapp: "",
-          brandStage: "",
-          channel: "",
-          productDirection: "",
-          budget: "",
-          timeline: "",
-          notes: "",
-          website: ""
-        });
+        setForm(initialForm);
         return;
       }
     } catch {
@@ -143,6 +134,7 @@ export default function ContactPage() {
                 <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8f6b5b]">Brand Stage</span>
                 <select
                   className="input"
+                  required
                   value={form.brandStage}
                   onChange={(event) => setForm({ ...form, brandStage: event.target.value })}
                 >
@@ -159,6 +151,7 @@ export default function ContactPage() {
                 <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8f6b5b]">Sales Channel</span>
                 <select
                   className="input"
+                  required
                   value={form.channel}
                   onChange={(event) => setForm({ ...form, channel: event.target.value })}
                 >
@@ -177,6 +170,7 @@ export default function ContactPage() {
                 </span>
                 <select
                   className="input"
+                  required
                   value={form.productDirection}
                   onChange={(event) => setForm({ ...form, productDirection: event.target.value })}
                 >
@@ -193,6 +187,7 @@ export default function ContactPage() {
                 <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8f6b5b]">Budget Range</span>
                 <select
                   className="input"
+                  required
                   value={form.budget}
                   onChange={(event) => setForm({ ...form, budget: event.target.value })}
                 >
@@ -209,6 +204,7 @@ export default function ContactPage() {
                 <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8f6b5b]">Launch Timing</span>
                 <select
                   className="input"
+                  required
                   value={form.timeline}
                   onChange={(event) => setForm({ ...form, timeline: event.target.value })}
                 >
@@ -246,7 +242,9 @@ export default function ContactPage() {
               <button className="platform-btn platform-btn-dark" type="submit">
                 Send Recommendation Request
               </button>
-              <p className="text-sm text-[#8f6b5b]">Status: {statusText}</p>
+              <p className="text-sm text-[#8f6b5b]" role="status">
+                Status: {statusText}
+              </p>
             </div>
           </form>
 
