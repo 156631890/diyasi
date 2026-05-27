@@ -35,20 +35,20 @@ const copy: Record<
 > = {
   en: {
     eyebrow: "Secure Checkout",
-    title: "Live PayPal checkout for deposits and sample fees",
-    titleFromProduct: "Please complete this payment with PayPal.",
+    title: "PayPal checkout for Starter Kit and launch deposits",
+    titleFromProduct: "Complete your custom Starter Kit payment with PayPal.",
     desc:
-      "This checkout is live-only: choose a project stage, review the amount, and complete PayPal payment with server-side capture before the order is marked paid.",
-    infoTitle: "Why this layout",
+      "Use this live checkout only after your Starter Kit recommendation, quote, or launch deposit has been confirmed by the Diyasi team.",
+    infoTitle: "How this fits the launch path",
     infoBody:
-      "This page is intentionally focused on a single live payment flow so buyers can complete checkout quickly and your team can verify payment records easily.",
+      "The payment step comes after validation planning, so each payment is tied to a practical Starter Kit, recommendation, or next launch stage.",
     supportTitle: "Need a custom amount?",
     supportBody:
-      "If a buyer needs a custom quote, split deposit, or combined invoice, confirm the brief first and then direct them to the correct payment stage.",
-    supportCta: "Contact Sales",
+      "If your quote, kit path, or launch deposit is not listed, send the launch brief first and Diyasi will confirm the correct payment stage.",
+    supportCta: "Request Recommendation",
     items: [
-      { tag: "Sample", title: "Sample Development Fee", amount: 199 + SAMPLE_SHIPPING_FEE_USD, desc: "Used for paid sampling before material sourcing and pattern work begin. Includes $20 shipping." },
-      { tag: "Launch", title: "OEM Launch Deposit", amount: 500, desc: "Used once scope, pricing, and sample direction are confirmed for production launch." }
+      { tag: "Starter Kit", title: "Starter Kit Reservation", amount: 199 + SAMPLE_SHIPPING_FEE_USD, desc: "Used for a confirmed Starter Kit path before product and packaging validation begins. Includes $20 shipping." },
+      { tag: "Launch", title: "Launch Validation Deposit", amount: 500, desc: "Used after the recommendation is confirmed and the next validation or reorder stage is ready to begin." }
     ],
     loadingLabel: "Loading PayPal checkout...",
     unavailableLabel: "PayPal is not available on this device or browser.",
@@ -57,17 +57,17 @@ const copy: Record<
   },
   zh: {
     eyebrow: "安全收银台",
-    title: "使用 PayPal 正式收款完成打样费与 OEM 启动定金支付",
-    titleFromProduct: "请使用 PayPal 完成这笔正式收款。",
-    desc: "这是正式收款页：先选择项目阶段，确认金额，再通过 PayPal 完成支付，服务端捕获成功后才标记为已付款。",
-    infoTitle: "这个布局的目的",
-    infoBody: "这个页面只保留一条正式收款路径，方便买家快速完成付款，也方便团队核对订单与回款记录。",
+    title: "使用 PayPal 支付 Starter Kit 与启动验证定金",
+    titleFromProduct: "请使用 PayPal 完成这笔 Starter Kit 相关付款。",
+    desc: "请在 Diyasi 已确认 Starter Kit 推荐、报价或启动定金后，再使用此正式收款页完成支付。",
+    infoTitle: "它在启动路径中的位置",
+    infoBody: "付款发生在验证规划之后，每一笔付款都应对应清晰的 Starter Kit、推荐方案或下一步启动阶段。",
     supportTitle: "需要自定义金额？",
-    supportBody: "如果买家需要定制报价、分阶段定金或合并账单，请先确认需求，再进入对应的付款阶段。",
-    supportCta: "联系销售",
+    supportBody: "如果你的报价、套装路径或启动定金不在列表中，请先提交启动 brief，Diyasi 会确认正确的付款阶段。",
+    supportCta: "获取推荐",
     items: [
-      { tag: "打样", title: "打样开发费", amount: 199 + SAMPLE_SHIPPING_FEE_USD, desc: "用于付费打样，在面料开发和版型制作前确认支付，含 20 美金运费。" },
-      { tag: "启动", title: "OEM 启动定金", amount: 500, desc: "用于报价、范围和打样方向确认后的项目启动。" }
+      { tag: "Starter Kit", title: "Starter Kit 预留付款", amount: 199 + SAMPLE_SHIPPING_FEE_USD, desc: "用于已确认的 Starter Kit 路径，在产品与包装验证开始前支付，含 20 美金运费。" },
+      { tag: "启动", title: "启动验证定金", amount: 500, desc: "用于推荐方案确认后，进入下一步验证或复购路径。" }
     ],
     loadingLabel: "PayPal 加载中...",
     unavailableLabel: "当前设备或浏览器暂不支持 PayPal。",
@@ -75,17 +75,17 @@ const copy: Record<
   },
   es: {
     eyebrow: "Checkout Seguro",
-    title: "Checkout oficial de PayPal para depositos y muestras",
-    titleFromProduct: "Complete este pago con PayPal.",
-    desc: "Esta pagina es solo para cobro en vivo: elija la etapa, revise el importe y complete PayPal con captura en servidor antes de marcar el pedido como pagado.",
-    infoTitle: "Por que este diseno",
-    infoBody: "Esta pagina mantiene un unico flujo de pago en vivo para que el comprador complete el checkout rapido y el equipo pueda auditar el cobro facilmente.",
+    title: "Checkout PayPal para Starter Kits y depositos de lanzamiento",
+    titleFromProduct: "Complete este pago de Starter Kit con PayPal.",
+    desc: "Use este checkout solo despues de que el equipo Diyasi confirme la recomendacion, cotizacion o deposito de lanzamiento.",
+    infoTitle: "Como encaja en el lanzamiento",
+    infoBody: "El pago ocurre despues de la planificacion de validacion, para que cada cobro corresponda a un Starter Kit, recomendacion o siguiente etapa clara.",
     supportTitle: "Necesitas un importe personalizado?",
-    supportBody: "Si el comprador necesita una cotizacion especial, un deposito parcial o una factura combinada, confirma primero el brief y luego dirige al cliente a la etapa correcta.",
-    supportCta: "Contactar Ventas",
+    supportBody: "Si tu cotizacion, kit o deposito no aparece aqui, envia primero el brief de lanzamiento y Diyasi confirmara la etapa correcta de pago.",
+    supportCta: "Solicitar recomendacion",
     items: [
-      { tag: "Muestra", title: "Tarifa de Desarrollo de Muestra", amount: 199 + SAMPLE_SHIPPING_FEE_USD, desc: "Para muestra pagada antes de materiales y patron. Incluye 20 USD de envio." },
-      { tag: "Inicio", title: "Deposito de Lanzamiento OEM", amount: 500, desc: "Para iniciar el proyecto cuando alcance, precio y direccion de muestra ya estan confirmados." }
+      { tag: "Starter Kit", title: "Reserva de Starter Kit", amount: 199 + SAMPLE_SHIPPING_FEE_USD, desc: "Para una ruta Starter Kit confirmada antes de validar producto y empaque. Incluye 20 USD de envio." },
+      { tag: "Lanzamiento", title: "Deposito de validacion de lanzamiento", amount: 500, desc: "Para avanzar despues de confirmar la recomendacion y la siguiente etapa de validacion o recompra." }
     ],
     loadingLabel: "Cargando checkout de PayPal...",
     unavailableLabel: "PayPal no esta disponible en este dispositivo o navegador.",
@@ -115,15 +115,15 @@ export default function PaymentsPage({
   const productItem =
     productTitle && Number.isFinite(productAmount) && productAmount > 0
       ? {
-          tag: lang === "zh" ? "产品" : lang === "es" ? "Producto" : "Product",
+          tag: lang === "zh" ? "启动套装" : lang === "es" ? "Starter Kit" : "Starter Kit",
           title: productTitle,
           amount: Number((productAmount + productShippingUsd).toFixed(2)),
           desc:
             lang === "zh"
-              ? `来自产品页面的 PayPal 收款入口，数量 ${productQty}，样品价 $${productAmount.toFixed(2)}，物流费 $${productShippingUsd.toFixed(2)}。`
+              ? `来自确认报价的 PayPal 收款入口，数量 ${productQty}，项目金额 $${productAmount.toFixed(2)}，物流费 $${productShippingUsd.toFixed(2)}。`
               : lang === "es"
-                ? `Entrada de cobro PayPal desde la pagina de producto, cantidad ${productQty}, precio de muestra $${productAmount.toFixed(2)} y envio $${productShippingUsd.toFixed(2)}.`
-                : `PayPal checkout entry from the product page, quantity ${productQty}, sample price $${productAmount.toFixed(2)} and shipping $${productShippingUsd.toFixed(2)}.`
+                ? `Entrada de cobro PayPal desde una cotizacion confirmada, cantidad ${productQty}, importe $${productAmount.toFixed(2)} y envio $${productShippingUsd.toFixed(2)}.`
+                : `PayPal checkout entry from a confirmed quote, quantity ${productQty}, project amount $${productAmount.toFixed(2)} and shipping $${productShippingUsd.toFixed(2)}.`
         }
       : null;
   const paymentItems = productItem ? [productItem] : t.items;
@@ -141,15 +141,15 @@ export default function PaymentsPage({
             {productItem ? (
               <div className="mt-6 rounded-[20px] border border-[rgba(191,144,118,0.18)] bg-white/80 p-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#b56e49]">
-                  {lang === "zh" ? "来自产品页面" : lang === "es" ? "Desde la pagina de producto" : "From product page"}
+                  {lang === "zh" ? "来自确认报价" : lang === "es" ? "Desde una cotizacion confirmada" : "From confirmed quote"}
                 </p>
                 <p className="mt-2 text-lg font-semibold text-[#5f3123]">{productItem.title}</p>
                 <p className="mt-1 text-sm leading-6 text-[#7d4f3e]">
                   {lang === "zh"
-                    ? `数量 ${productQty}，样品价 $${productAmount.toFixed(2)}，物流费 $${productShippingUsd.toFixed(2)}，合计 $${productItem.amount.toFixed(2)}。`
+                    ? `数量 ${productQty}，项目金额 $${productAmount.toFixed(2)}，物流费 $${productShippingUsd.toFixed(2)}，合计 $${productItem.amount.toFixed(2)}。`
                     : lang === "es"
-                      ? `Cantidad ${productQty}, precio de muestra $${productAmount.toFixed(2)}, envio $${productShippingUsd.toFixed(2)} y total $${productItem.amount.toFixed(2)}.`
-                      : `Quantity ${productQty}, sample price $${productAmount.toFixed(2)}, shipping $${productShippingUsd.toFixed(2)}, total $${productItem.amount.toFixed(2)}.`}
+                      ? `Cantidad ${productQty}, importe $${productAmount.toFixed(2)}, envio $${productShippingUsd.toFixed(2)} y total $${productItem.amount.toFixed(2)}.`
+                      : `Quantity ${productQty}, project amount $${productAmount.toFixed(2)}, shipping $${productShippingUsd.toFixed(2)}, total $${productItem.amount.toFixed(2)}.`}
                 </p>
               </div>
             ) : null}
@@ -188,7 +188,7 @@ export default function PaymentsPage({
 
 export const metadata: Metadata = buildMetadata({
   title: "Payments",
-  description: "Live PayPal checkout for sample development fees and OEM launch deposits.",
+  description: "Live PayPal checkout for confirmed Starter Kit reservations, launch validation deposits, and custom Diyasi founder payments.",
   path: "/payments"
 });
 

@@ -46,7 +46,7 @@ const copy: Record<
       noteBody: "Our team will continue from this paid stage. If product category, quantity range, or delivery timing changes, contact us to update the project plan.",
       briefTitle: "Stage Summary",
       briefBody: "This payment matches the current stage and supports the next step in sample execution or project launch.",
-      primaryCta: "View Products",
+      primaryCta: "View Starter Kits",
       secondaryCta: "Start a Conversation"
     },
     cancel: {
@@ -61,7 +61,7 @@ const copy: Record<
       noteBody: "Check product category, expected volume, sample timing, and launch plan before starting payment again.",
       briefTitle: "Stage Summary",
       briefBody: "Return after confirming the brief so the payment matches the correct sample or launch stage.",
-      primaryCta: "View Products",
+      primaryCta: "View Starter Kits",
       secondaryCta: "Start a Conversation"
     }
   },
@@ -78,7 +78,7 @@ const copy: Record<
       noteBody: "团队会从当前已支付阶段继续推进。如果品类、数量区间或交付时间有变动，请直接联系团队更新项目安排。",
       briefTitle: "阶段说明",
       briefBody: "这笔付款对应当前项目阶段，可继续进入打样执行或项目启动准备。",
-      primaryCta: "查看产品",
+      primaryCta: "查看启动套装",
       secondaryCta: "开始沟通"
     },
     cancel: {
@@ -93,7 +93,7 @@ const copy: Record<
       noteBody: "请先检查产品品类、预估数量、打样时间和上市计划，再重新进入支付流程。",
       briefTitle: "阶段说明",
       briefBody: "确认项目 brief 后，再返回处理对应的打样费或启动定金。",
-      primaryCta: "查看产品",
+      primaryCta: "查看启动套装",
       secondaryCta: "开始沟通"
     }
   },
@@ -110,7 +110,7 @@ const copy: Record<
       noteBody: "El equipo seguira desde esta etapa pagada. Si cambian categoria, volumen o timing, contactanos para actualizar el proyecto.",
       briefTitle: "Resumen de Etapa",
       briefBody: "Este pago corresponde a la etapa actual y permite avanzar hacia muestra o preparacion de lanzamiento.",
-      primaryCta: "Ver Productos",
+      primaryCta: "Ver Starter Kits",
       secondaryCta: "Iniciar Conversacion"
     },
     cancel: {
@@ -125,7 +125,7 @@ const copy: Record<
       noteBody: "Revisa categoria, volumen estimado, timing de muestra y plan de lanzamiento antes de reiniciar el pago.",
       briefTitle: "Resumen de Etapa",
       briefBody: "Vuelve despues de confirmar el brief para que el pago coincida con la etapa correcta de muestra o lanzamiento.",
-      primaryCta: "Ver Productos",
+      primaryCta: "Ver Starter Kits",
       secondaryCta: "Iniciar Conversacion"
     }
   }
@@ -169,7 +169,7 @@ export default function CheckoutStatusView({ mode, refCode, syncState, lang }: C
           <p className="kicker">{t.noteTitle}</p>
           <p className="mt-4 max-w-3xl text-lg leading-8 text-[#4f607d]">{t.noteBody}</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/products" className="btn btn-primary">
+            <Link href="/starter-kits" className="btn btn-primary">
               {t.primaryCta}
             </Link>
             <Link href="/contact" className="btn btn-soft">

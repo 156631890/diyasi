@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Contact",
+  title: "Starter Kit Recommendation Request",
   description:
-    "Contact YiWu DiYaSi for underwear sampling, OEM / ODM development, MOQ discussion, and bulk production planning.",
+    "Share your audience, channel, style direction, budget, and launch timeline so Diyasi can recommend a practical underwear Starter Kit and validation path.",
   path: "/contact"
 });
 
