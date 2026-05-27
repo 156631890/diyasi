@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
+import { platformNav } from "@/lib/founder-platform";
 import { LANG_LABELS, SiteLang } from "@/lib/i18n";
 
 type LinkItem = { href: string; label: string };
@@ -36,8 +37,8 @@ const labels: Record<
     contact: "Contact",
     payments: "Payments",
     admin: "Admin",
-    cta: "Start a Conversation",
-    companyTag: "Underwear Factory for Wholesalers, Retailers, and DTC Brands"
+    cta: "Get Starter Kit Recommendation",
+    companyTag: "Founder launch system for startup underwear brands"
   },
   zh: {
     home: "首页",
@@ -85,21 +86,7 @@ export default function TopNav({ initialLang }: TopNavProps) {
   const [isCompact, setIsCompact] = useState(false);
   const t = labels[lang];
 
-  const primaryLinks: LinkItem[] = [
-    { href: "/", label: t.home },
-    { href: "/products", label: t.products },
-    { href: "/oem-odm", label: t.oem },
-    { href: "/blog", label: t.blog },
-    { href: "/about", label: t.about },
-    { href: "/contact", label: t.contact }
-  ];
-
-  const secondaryLinks: LinkItem[] = [
-    { href: "/sustainability", label: t.sustainability },
-    { href: "/factory", label: t.factory },
-    { href: "/payments", label: t.payments },
-    { href: "/admin", label: t.admin }
-  ];
+  const primaryLinks: LinkItem[] = platformNav;
 
   function onLanguageChange(nextLang: SiteLang) {
     setLang(nextLang);
@@ -123,11 +110,6 @@ export default function TopNav({ initialLang }: TopNavProps) {
         <div className="container-shell top-nav-wide-shell flex items-center justify-between py-2 text-xs">
           <p className="top-nav-meta-copy font-semibold tracking-wide">{t.companyTag}</p>
           <div className="flex items-center gap-1">
-            {secondaryLinks.map((item) => (
-              <Link key={item.href} href={item.href} className={linkClass(pathname, item.href)}>
-                {item.label}
-              </Link>
-            ))}
             <select
               className="top-nav-select ml-2 rounded-full px-3 py-1 text-xs"
               value={lang}
@@ -153,7 +135,7 @@ export default function TopNav({ initialLang }: TopNavProps) {
             DYS
           </span>
           <span className={`top-nav-brand-name heading-font font-semibold tracking-wide ${isCompact ? "text-lg" : "text-xl"}`}>
-            YiWu DiYaSi
+            DIYASI
           </span>
         </Link>
 
@@ -176,13 +158,6 @@ export default function TopNav({ initialLang }: TopNavProps) {
 
       <div className="container-shell pb-3 lg:hidden">
         <div className="flex items-center justify-between gap-2">
-          <div className="flex gap-2">
-            {secondaryLinks.map((item) => (
-              <Link key={item.href} href={item.href} className={linkClass(pathname, item.href)}>
-                {item.label}
-              </Link>
-            ))}
-          </div>
           <select
             className="top-nav-select rounded-full px-3 py-1 text-xs"
             value={lang}

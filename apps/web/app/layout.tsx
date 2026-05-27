@@ -29,13 +29,13 @@ export const metadata: Metadata = {
   },
   description: SITE_DESCRIPTION,
   keywords: [
-    "underwear manufacturer",
-    "private label underwear factory",
-    "OEM ODM underwear",
-    "bra manufacturer",
-    "shapewear manufacturer",
-    "activewear manufacturer",
-    "China underwear factory"
+    "start underwear brand",
+    "underwear starter kit",
+    "private label underwear starter kit",
+    "launch underwear brand",
+    "DTC underwear brand",
+    "low MOQ underwear launch",
+    "ready stock underwear testing"
   ],
   authors: [{ name: SITE_NAME }],
   creator: SITE_NAME,
@@ -116,18 +116,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       closes: "18:00"
     },
     description:
-      "YiWu DiYaSi Dress CO., LTD is a professional sustainable underwear manufacturer with 23+ years of experience. We specialize in eco-friendly fabrics, seamless technology, and OEM/ODM services for global brands.",
+      "Diyasi supports startup underwear founders with Starter Kits, ready-stock validation, packaging direction, fulfillment proof, and gradual scaling into private-label production.",
     brand: {
       "@type": "Brand",
       name: "DiYaSi"
     },
     foundingDate: "2002",
     knowsAbout: [
-      "Sustainable Underwear Manufacturing",
-      "Eco-friendly Fabrics",
-      "Seamless Lingerie Production",
-      "Cross-border E-commerce Supply Chain",
-      "Yiwu Sourcing"
+      "Underwear Brand Starter Kits",
+      "DTC Brand Launch",
+      "Ready Stock Product Testing",
+      "Private Label Underwear",
+      "Founder Validation Systems"
     ]
   };
 

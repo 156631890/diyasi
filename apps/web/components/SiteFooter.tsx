@@ -29,32 +29,31 @@ const copy: Record<SiteLang, FooterCopy> = {
   en: {
     eyebrow: "YiWu DiYaSi",
     brandDesc:
-      "Underwear factory supporting wholesalers, retailers, and DTC brands with private-label development and stable delivery.",
-    ctaTitle: "Wholesale, retail, and DTC underwear production with clear MOQ and delivery timing",
+      "Diyasi helps startup founders, creators, boutiques, and DTC stores launch underwear brands with Starter Kits, ready-stock testing, packaging direction, and fulfillment support.",
+    ctaTitle: "Get a Starter Kit recommendation before you invest in bulk inventory",
     ctaDesc:
-      "Browse product categories, send your requirements, and start sampling or OEM / ODM production with the factory team.",
-    ctaPrimary: "Start a Conversation",
-    ctaSecondary: "View Categories",
+      "Share your audience, channel, style direction, budget, and launch timeline. Diyasi will recommend a practical Starter Kit and validation path.",
+    ctaPrimary: "Get Starter Kit Recommendation",
+    ctaSecondary: "View Starter Kits",
     quickTitle: "Quick Links",
     quickItems: [
       { href: "/", label: "Home" },
-      { href: "/about", label: "About Us" },
-      { href: "/factory", label: "Factory" },
-      { href: "/contact", label: "Contact" }
+      { href: "/starter-kits", label: "Starter Kits" },
+      { href: "/validation-system", label: "Validation System" },
+      { href: "/brand-quiz", label: "Brand Quiz" }
     ],
-    productTitle: "Products",
+    productTitle: "Platform",
     productItems: [
-      { href: "/products?category=Women's%20Panties", label: "Women's Panties" },
-      { href: "/products?category=Bras", label: "Bras" },
-      { href: "/products?category=Men%20Underwear", label: "Men Underwear" },
-      { href: "/products?category=Gym%20%26%20Sports%20Wear", label: "Activewear" }
+      { href: "/founder-academy", label: "Founder Academy" },
+      { href: "/fulfillment-proof", label: "Fulfillment Proof" },
+      { href: "/comparison-hub", label: "Comparison Hub" },
+      { href: "/contact", label: "Contact" }
     ],
     supportTitle: "Support",
     supportItems: [
-      { href: "/oem-odm", label: "OEM / ODM" },
       { href: "/payments", label: "Payments" },
-      { href: "/blog", label: "Journal" },
-      { href: "/sustainability", label: "Sustainability" }
+      { href: "/privacy-policy", label: "Privacy Policy" },
+      { href: "/return-policy", label: "Return Policy" }
     ],
     contactTitle: "Contact Us",
     contactRows: [
@@ -183,7 +182,7 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
               <Link href="/contact" className="btn btn-primary site-footer-btn-primary">
                 {t.ctaPrimary}
               </Link>
-              <Link href="/products" className="btn site-footer-btn-secondary">
+              <Link href="/starter-kits" className="btn site-footer-btn-secondary">
                 {t.ctaSecondary}
               </Link>
             </div>
