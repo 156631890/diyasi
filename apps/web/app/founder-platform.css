@@ -50,6 +50,7 @@
   letter-spacing: 0;
   color: #101010;
   text-wrap: balance;
+  overflow-wrap: break-word;
 }
 
 .platform-hero h1 {
@@ -339,7 +340,8 @@
   }
 
   .platform-hero h1 {
-    font-size: clamp(2.6rem, 13vw, 4rem);
+    font-size: 2.45rem;
+    line-height: 1.02;
   }
 
   .platform-grid-4,

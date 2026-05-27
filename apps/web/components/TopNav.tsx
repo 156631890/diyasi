@@ -71,6 +71,7 @@ export default function TopNav({ initialLang }: TopNavProps) {
           <p className="top-nav-meta-copy font-semibold tracking-wide">{t.companyTag}</p>
           <div className="flex items-center gap-1">
             <select
+              aria-label="Select language"
               className="top-nav-select ml-2 rounded-full px-3 py-1 text-xs"
               value={lang}
               onChange={(e) => onLanguageChange(e.target.value as SiteLang)}
@@ -119,6 +120,7 @@ export default function TopNav({ initialLang }: TopNavProps) {
       <div className="container-shell pb-3 lg:hidden">
         <div className="flex items-center justify-between gap-2">
           <select
+            aria-label="Select language"
             className="top-nav-select rounded-full px-3 py-1 text-xs"
             value={lang}
             onChange={(e) => onLanguageChange(e.target.value as SiteLang)}
