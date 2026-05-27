@@ -12,61 +12,21 @@ type LinkItem = { href: string; label: string };
 const labels: Record<
   SiteLang,
   {
-    home: string;
-    about: string;
-    products: string;
-    oem: string;
-    sustainability: string;
-    factory: string;
-    blog: string;
-    contact: string;
-    payments: string;
-    admin: string;
     cta: string;
     companyTag: string;
   }
 > = {
   en: {
-    home: "Home",
-    about: "About",
-    products: "Products",
-    oem: "OEM / ODM",
-    sustainability: "Sustainability",
-    factory: "Factory",
-    blog: "Journal",
-    contact: "Contact",
-    payments: "Payments",
-    admin: "Admin",
     cta: "Get Starter Kit Recommendation",
     companyTag: "Founder launch system for startup underwear brands"
   },
   zh: {
-    home: "首页",
-    about: "关于我们",
-    products: "产品",
-    oem: "OEM / ODM",
-    sustainability: "可持续",
-    factory: "工厂",
-    blog: "文章",
-    contact: "联系",
-    payments: "支付",
-    admin: "后台",
-    cta: "开始沟通",
-    companyTag: "服务批发商、零售商与 DTC 品牌的内衣工厂"
+    cta: "获取 Starter Kit 推荐",
+    companyTag: "面向初创内衣品牌的创始人启动系统"
   },
   es: {
-    home: "Inicio",
-    about: "Nosotros",
-    products: "Productos",
-    oem: "OEM / ODM",
-    sustainability: "Sostenibilidad",
-    factory: "Fabrica",
-    blog: "Journal",
-    contact: "Contacto",
-    payments: "Pagos",
-    admin: "Admin",
-    cta: "Iniciar Conversacion",
-    companyTag: "Fabrica de ropa interior para mayoristas, retailers y marcas DTC"
+    cta: "Recibir recomendacion de Starter Kit",
+    companyTag: "Sistema de lanzamiento para marcas startup de ropa interior"
   }
 };
 

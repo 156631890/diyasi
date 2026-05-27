@@ -92,7 +92,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@type": "ClothingStore",
     name: "YiWu DiYaSi Dress CO., LTD",
     alternateName: "义乌市迪亚斯服饰有限公司",
-    image: `${SITE_URL}/media/generated/factory-capability-panorama.png`,
+    image: `${SITE_URL}/media/generated/founder-platform/home-hero-founder-kit.png`,
     "@id": SITE_URL,
     url: SITE_URL,
     telephone: "+86-18042579030",
