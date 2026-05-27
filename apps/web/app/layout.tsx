@@ -7,6 +7,7 @@ import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/seo";
 import { getServerLang } from "@/lib/server-lang";
 
 import "./globals.css";
+import "./founder-platform.css";
 
 const headingFont = Cormorant_Garamond({
   subsets: ["latin"],
