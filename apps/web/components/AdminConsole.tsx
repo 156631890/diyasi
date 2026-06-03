@@ -48,6 +48,23 @@ type AdminConsoleProps = {
   lang: SiteLang;
 };
 
+type OrderRow = {
+  ref: string;
+  title: string;
+  status: string;
+  total: number;
+  unit: number;
+  quantity: number;
+  notes: string;
+  customerName: string;
+  customerEmail: string;
+  source: string;
+  updatedAt: string;
+  createdAt: string;
+};
+
+const ORDER_STATUS_OPTIONS = ["pending", "paid", "cancelled", "failed", "refunded", "in_progress", "production", "shipped", "delivered"] as const;
+
 const tabs: Record<SiteLang, Record<Tab, string>> = {
   en: {
     products: "Products",
@@ -113,6 +130,29 @@ const emptyMedia: MediaForm = {
   aspect_ratio: "16:9",
   prompt: ""
 };
+
+function asString(value: unknown): string {
+  if (typeof value === "string") return value;
+  if (value === null || value === undefined) return "";
+  return String(value);
+}
+
+function asNumber(value: unknown): number {
+  if (typeof value === "number" && Number.isFinite(value)) return value;
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : 0;
+}
+
+function orderStatusClass(status: string): string {
+  const normalized = status.toLowerCase();
+  if (normalized === "paid") return "bg-emerald-100 text-emerald-700";
+  if (normalized === "pending") return "bg-amber-100 text-amber-700";
+  if (normalized === "cancelled" || normalized === "failed") return "bg-rose-100 text-rose-700";
+  if (normalized === "refunded") return "bg-slate-200 text-slate-700";
+  if (normalized === "shipped" || normalized === "delivered") return "bg-sky-100 text-sky-700";
+  if (normalized === "production" || normalized === "in_progress") return "bg-indigo-100 text-indigo-700";
+  return "bg-slate-100 text-slate-700";
+}
 
 function asError(error: unknown): string {
   return error instanceof Error ? error.message : String(error);
@@ -195,6 +235,8 @@ export default function AdminConsole({ lang }: AdminConsoleProps) {
 
   const [orderRef, setOrderRef] = useState("");
   const [orderStatus, setOrderStatus] = useState("pending");
+  const [orderStatusInput, setOrderStatusInput] = useState("");
+  const [orderNotes, setOrderNotes] = useState("");
   const [leadId, setLeadId] = useState("");
   const [leadStatus, setLeadStatus] = useState("new");
   const [chatQuestion, setChatQuestion] = useState("");
@@ -213,6 +255,34 @@ export default function AdminConsole({ lang }: AdminConsoleProps) {
     }),
     [products, categories, articles, media, orders, leads, inquiries, outreach]
   );
+
+  const recentOrders = useMemo<OrderRow[]>(() => {
+    const normalized = orders.map((entry) => {
+      const row = entry as Record<string, unknown>;
+      return {
+        ref: asString(row.order_ref),
+        title: asString(row.title),
+        status: asString(row.status) || "pending",
+        total: asNumber(row.total_amount_usd),
+        unit: asNumber(row.unit_amount_usd),
+        quantity: Math.max(1, Math.floor(asNumber(row.quantity) || 1)),
+        notes: asString(row.notes),
+        customerName: asString(row.customer_name),
+        customerEmail: asString(row.customer_email),
+        source: asString(row.source),
+        updatedAt: asString(row.updated_at),
+        createdAt: asString(row.created_at)
+      };
+    });
+
+    return normalized
+      .sort((left, right) => {
+        const leftStamp = Date.parse(left.updatedAt || left.createdAt || "") || 0;
+        const rightStamp = Date.parse(right.updatedAt || right.createdAt || "") || 0;
+        return rightStamp - leftStamp;
+      })
+      .slice(0, 12);
+  }, [orders]);
 
   async function refreshAll(): Promise<void> {
     const [p, c, a, m, o, l, i, out, an] = await Promise.all([
@@ -529,21 +599,120 @@ export default function AdminConsole({ lang }: AdminConsoleProps) {
         ) : null}
 
         {active === "orders" ? (
-          <div className="mt-6 rounded-2xl border border-slate-200 p-5">
-            <h2 className="heading-font text-3xl font-semibold text-[#122744]">Order Status Update</h2>
-            <p className="mt-2 text-sm text-slate-600">Use order ref from checkout mock flow.</p>
-            <div className="mt-3 grid gap-3 md:grid-cols-[1fr_220px_auto]">
-              <input className="input" placeholder="ORD-..." value={orderRef} onChange={(e) => setOrderRef(e.target.value)} />
-              <select className="input" value={orderStatus} onChange={(e) => setOrderStatus(e.target.value)}>
-                <option value="pending">pending</option>
-                <option value="paid">paid</option>
-                <option value="cancelled">cancelled</option>
-                <option value="failed">failed</option>
-                <option value="refunded">refunded</option>
-              </select>
-              <button className="btn btn-primary" type="button" onClick={() => void run("Order updated.", async () => {
-                await request(`/orders/${encodeURIComponent(orderRef)}/status`, { method: "PATCH", body: JSON.stringify({ status: orderStatus }) });
-              })}>Update</button>
+          <div className="mt-6 grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">
+            <div className="rounded-2xl border border-slate-200 p-5">
+              <div className="flex items-center justify-between gap-3">
+                <div>
+                  <h2 className="heading-font text-3xl font-semibold text-[#122744]">Recent Orders</h2>
+                  <p className="mt-2 text-sm text-slate-600">Showing the most recent {recentOrders.length} orders.</p>
+                </div>
+                <button className="btn btn-soft" type="button" onClick={() => void run("Orders refreshed.", refreshAll)}>
+                  Refresh
+                </button>
+              </div>
+
+              {recentOrders.length === 0 ? (
+                <p className="mt-4 text-sm text-slate-600">No orders yet.</p>
+              ) : (
+                <div className="mt-4 grid gap-3">
+                  {recentOrders.map((order) => (
+                    <button
+                      key={order.ref || `${order.title}-${order.createdAt}`}
+                      type="button"
+                      onClick={() => {
+                        setOrderRef(order.ref);
+                        setOrderStatus(order.status || "pending");
+                        setOrderStatusInput("");
+                        setOrderNotes(order.notes || "");
+                      }}
+                      className="flex w-full flex-col gap-3 rounded-2xl border border-slate-200 p-4 text-left transition hover:border-slate-300"
+                    >
+                      <div className="flex flex-wrap items-center justify-between gap-3">
+                        <div>
+                          <p className="text-xs uppercase tracking-widest text-slate-500">Order Ref</p>
+                          <p className="mt-1 text-lg font-semibold text-[#102949]">{order.ref || "-"}</p>
+                        </div>
+                        <span className={`rounded-full px-3 py-1 text-xs font-semibold ${orderStatusClass(order.status)}`}>
+                          {order.status || "pending"}
+                        </span>
+                      </div>
+                      <div className="grid gap-3 text-sm text-slate-600 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
+                        <div>
+                          <p className="text-xs uppercase tracking-widest text-slate-500">Title</p>
+                          <p className="mt-1 text-slate-700">{order.title || "-"}</p>
+                        </div>
+                        <div>
+                          <p className="text-xs uppercase tracking-widest text-slate-500">Total</p>
+                          <p className="mt-1 text-slate-700">${order.total.toFixed(2)}</p>
+                          <p className="text-xs text-slate-500">
+                            ${order.unit.toFixed(2)} x {order.quantity}
+                          </p>
+                        </div>
+                        <div>
+                          <p className="text-xs uppercase tracking-widest text-slate-500">Customer</p>
+                          <p className="mt-1 text-slate-700">{order.customerName || "-"}</p>
+                          <p className="text-xs text-slate-500">{order.customerEmail || ""}</p>
+                        </div>
+                      </div>
+                      <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500">
+                        <span>Source: {order.source || "-"}</span>
+                        <span>{order.updatedAt || order.createdAt || ""}</span>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div className="rounded-2xl border border-slate-200 p-5">
+              <h2 className="heading-font text-3xl font-semibold text-[#122744]">Order Status Update</h2>
+              <p className="mt-2 text-sm text-slate-600">Select a recent order to prefill or enter the order reference manually.</p>
+              <div className="mt-4 grid gap-3">
+                <input
+                  className="input"
+                  placeholder="ORD-..."
+                  value={orderRef}
+                  onChange={(e) => setOrderRef(e.target.value)}
+                />
+                <select className="input" value={orderStatus} onChange={(e) => setOrderStatus(e.target.value)}>
+                  {ORDER_STATUS_OPTIONS.map((status) => (
+                    <option key={status} value={status}>
+                      {status}
+                    </option>
+                  ))}
+                </select>
+                <input
+                  className="input"
+                  placeholder="custom status (optional)"
+                  value={orderStatusInput}
+                  onChange={(e) => setOrderStatusInput(e.target.value)}
+                />
+                <textarea
+                  className="input min-h-24"
+                  placeholder="Add internal notes (optional)"
+                  value={orderNotes}
+                  onChange={(e) => setOrderNotes(e.target.value)}
+                />
+                <button
+                  className="btn btn-primary"
+                  type="button"
+                  onClick={() =>
+                    void run("Order updated.", async () => {
+                      const status = orderStatusInput.trim() || orderStatus;
+                      if (!orderRef.trim()) {
+                        throw new Error("Order ref is required.");
+                      }
+                      await request(`/orders/${encodeURIComponent(orderRef)}/status`, {
+                        method: "PATCH",
+                        body: JSON.stringify({ status, notes: orderNotes })
+                      });
+                      setOrderStatusInput("");
+                    })
+                  }
+                >
+                  Update
+                </button>
+              </div>
             </div>
           </div>
         ) : null}

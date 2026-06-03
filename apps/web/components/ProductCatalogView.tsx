@@ -13,6 +13,7 @@ import {
   resolveDisplayTitle,
   resolveHoverImage,
   resolvePrimaryImage,
+  resolvePriceText,
   splitCategory,
   topFamily
 } from "@/lib/product-display";
@@ -28,6 +29,17 @@ type ProductCatalogCopy = {
   noImage: string;
   quote: string;
   paidSample: string;
+  compare: string;
+  compareTray: string;
+  compareOpen: string;
+  compareClear: string;
+  compareRemove: string;
+  compareLimit: string;
+  compareEmpty: string;
+  compareMOQ: string;
+  comparePrice: string;
+  compareCategory: string;
+  compareOEM: string;
   items: string;
   viewDetails: string;
   browseAll: string;
@@ -114,6 +126,8 @@ export default function ProductCatalogView({ products, categories, copy }: Produ
   const [query, setQuery] = useState("");
   const [quickFilter, setQuickFilter] = useState<"all" | "in_stock" | "oem" | "low_moq">("all");
   const [visibleCount, setVisibleCount] = useState(INITIAL_PAGE_SIZE);
+  const [compareIds, setCompareIds] = useState<string[]>([]);
+  const [compareOpen, setCompareOpen] = useState(false);
 
   const deferredFamily = useDeferredValue(selectedFamily);
   const deferredCategory = useDeferredValue(selectedCategory);
@@ -145,6 +159,7 @@ export default function ProductCatalogView({ products, categories, copy }: Produ
   }, [deferredCategory, deferredFamily, deferredQuery, deferredQuickFilter, sortedProducts]);
 
   const visibleProducts = filteredProducts.slice(0, visibleCount);
+  const compareProducts = useMemo(() => sortedProducts.filter((product) => compareIds.includes(product.product_id)), [compareIds, sortedProducts]);
 
   function handleFamilyClick(family: string) {
     setSelectedFamily(family);
@@ -155,6 +170,18 @@ export default function ProductCatalogView({ products, categories, copy }: Produ
   function handleCategoryClick(category: string) {
     setSelectedCategory(category);
     setVisibleCount(INITIAL_PAGE_SIZE);
+  }
+
+  function toggleCompare(productId: string) {
+    setCompareIds((current) => {
+      if (current.includes(productId)) {
+        return current.filter((item) => item !== productId);
+      }
+      if (current.length >= 4) {
+        return current;
+      }
+      return [...current, productId];
+    });
   }
 
   return (
