@@ -235,7 +235,7 @@ export default function PayPalPaymentsPanel({
       setMessage(
         configChecked
           ? missingConfigLabel
-          : "Checking the running server for PayPal config. If this keeps failing, restart Next.js and hard refresh the page."
+          : loadingLabel
       );
       return;
     }
@@ -253,12 +253,6 @@ export default function PayPalPaymentsPanel({
     return null;
   }
 
-  const configStateLabel = effectiveClientId
-    ? "Running server: PayPal config detected."
-    : configChecked
-      ? "Running server: PayPal config is missing."
-      : "Running server: checking PayPal config...";
-
   return (
     <>
       <section className="rounded-[30px] border border-[rgba(191,144,118,0.18)] bg-white/94 p-6 shadow-[0_22px_50px_rgba(132,86,58,0.1)] md:p-8">
@@ -266,7 +260,9 @@ export default function PayPalPaymentsPanel({
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#b56e49]">Checkout</p>
             <h2 className="mt-3 text-[1.9rem] font-bold leading-tight text-[#5f3123]">Choose PayPal payment</h2>
-            <p className="mt-2 text-sm leading-6 text-[#7d4f3e]">{configStateLabel}</p>
+            <p className="mt-2 text-sm leading-6 text-[#7d4f3e]">
+              Use this payment page only after your sample fee or deposit amount has been confirmed.
+            </p>
           </div>
           <div className="rounded-full bg-[rgba(223,124,68,0.1)] px-4 py-2 text-sm font-semibold text-[#bf6536]">PayPal</div>
         </div>

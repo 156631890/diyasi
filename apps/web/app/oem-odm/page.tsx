@@ -141,14 +141,8 @@ export default function OemOdmPage() {
         <p className="page-reference-body page-copy-wide mt-3 text-[#fff0e5]">{t.desc}</p>
         <div className="mt-6 flex flex-wrap gap-3">
           <Link
-            href="/payments"
-            className="btn border border-[#ffe2cf] bg-[#fff7f1] text-[#8d452d] hover:bg-[#ffe9db]"
-          >
-            {t.pay}
-          </Link>
-          <Link
             href="/contact"
-            className="btn border border-[#f7cdb1] bg-transparent text-[#fff7f0] hover:bg-white/12"
+            className="btn border border-[#ffe2cf] bg-[#fff7f1] text-[#8d452d] hover:bg-[#ffe9db]"
           >
             {t.call}
           </Link>

@@ -458,7 +458,7 @@ export default async function HomePage() {
                     <p className="mt-1">+86-579-85569925</p>
                   </div>
                   <div>
-                    <p className="font-semibold text-[#b15d39]">Mobie / WhatsApp</p>
+                    <p className="font-semibold text-[#b15d39]">Mobile / WhatsApp</p>
                     <p className="mt-1">
                       <a
                         href="tel:+8618042579030"

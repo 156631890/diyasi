@@ -52,8 +52,6 @@ const copy: Record<SiteLang, FooterCopy> = {
     supportTitle: "Support",
     supportItems: [
       { href: "/oem-odm", label: "OEM / ODM" },
-      { href: "/payments", label: "Payments" },
-      { href: "/blog", label: "Journal" },
       { href: "/sustainability", label: "Sustainability" }
     ],
     contactTitle: "Contact Us",
@@ -95,8 +93,6 @@ const copy: Record<SiteLang, FooterCopy> = {
     supportTitle: "支持",
     supportItems: [
       { href: "/oem-odm", label: "OEM / ODM" },
-      { href: "/payments", label: "支付" },
-      { href: "/blog", label: "文章" },
       { href: "/sustainability", label: "可持续" }
     ],
     contactTitle: "联系我们",
@@ -140,8 +136,6 @@ const copy: Record<SiteLang, FooterCopy> = {
     supportTitle: "Soporte",
     supportItems: [
       { href: "/oem-odm", label: "OEM / ODM" },
-      { href: "/payments", label: "Pagos" },
-      { href: "/blog", label: "Journal" },
       { href: "/sustainability", label: "Sostenibilidad" }
     ],
     contactTitle: "Contacto",

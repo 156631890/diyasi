@@ -25,7 +25,7 @@ const copy: Record<
     kicker: "Journal",
     title: "Factory articles on sourcing, MOQ, quality control, and launch planning",
     desc: "Read practical articles on product development, sampling, compliance, and delivery planning for underwear programs.",
-    noArticle: "No articles yet. Create or generate articles in Admin SEO.",
+    noArticle: "Journal articles are being prepared and will be published after editorial review.",
     readMore: "Read",
     leadTitle: "Factory articles on sourcing, MOQ, production timing, and quality control",
     leadDesc: "These posts cover supplier selection, MOQ planning, production timing, and common issues in OEM / ODM underwear projects."
@@ -34,7 +34,7 @@ const copy: Record<
     kicker: "文章",
     title: "围绕 sourcing、MOQ、质量控制与上市节奏的工厂文章",
     desc: "这里集中展示与产品开发、打样推进、合规准备和交付计划相关的实用内容。",
-    noArticle: "暂时还没有文章，可以在后台 SEO 模块创建或生成。",
+    noArticle: "文章正在整理中，完成审核后会发布。",
     readMore: "阅读",
     leadTitle: "写给正在比较工厂、交期和质量预期的采购团队",
     leadDesc: "文章重点覆盖 sourcing 选择、MOQ 结构、生产节奏，以及 OEM / ODM 项目中的常见问题。"
@@ -43,7 +43,7 @@ const copy: Record<
     kicker: "Journal",
     title: "Articulos de fabrica sobre sourcing, MOQ, control de calidad y lanzamientos",
     desc: "Consulta contenido practico sobre desarrollo de producto, muestreo, compliance y planificacion de entrega.",
-    noArticle: "Aún no hay artículos. Crea contenido desde Admin SEO.",
+    noArticle: "Los artículos se publicarán después de la revisión editorial.",
     readMore: "Leer",
     leadTitle: "Contenido para compradores que comparan fabrica, timing y calidad",
     leadDesc: "Los articulos se enfocan en decisiones de sourcing, estructura de MOQ, tiempos de produccion y problemas comunes en proyectos OEM / ODM."
@@ -112,9 +112,15 @@ export default async function BlogPage() {
 }
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
-export const metadata: Metadata = buildMetadata({
+export const metadata: Metadata = {
+  ...buildMetadata({
   title: "Journal",
   description:
     "Factory articles on sourcing, MOQ, quality control, compliance, and launch planning for underwear programs.",
   path: "/blog"
-});
+  }),
+  robots: {
+    index: false,
+    follow: true
+  }
+};

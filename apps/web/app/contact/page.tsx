@@ -55,12 +55,12 @@ export default function ContactPage() {
         "Contact us NOW for a quick quote and sampling consultation.",
         "Please complete the form below, and our project manager will get back to you within 18 hours."
       ],
-      company: "YiWu DiYaSi Dress Co.. LTD",
+      company: "YiWu DiYaSi Dress Co., Ltd.",
       companyLabel: "Company",
       addressLabel: "Company Address / Manufacturing Location",
       addressLines: ["No. 16 Dashi Road, Fotang Town, Yiwu, Zhejiang", "China"],
       emailLabel: "Email",
-      mobileLabel: "Mobie / WhatsApp",
+      mobileLabel: "Mobile / WhatsApp",
       formTitle: "Send Your Inquiry",
       formIntro:
         "Tell us what you need and we will respond with MOQ, sample timing, and production guidance instead of a generic reply.",
@@ -89,7 +89,7 @@ export default function ContactPage() {
         "Contact us NOW for a quick quote and sampling consultation.",
         "Please complete the form below, and our project manager will get back to you within 18 hours."
       ],
-      company: "YiWu DiYaSi Dress Co.. LTD",
+      company: "YiWu DiYaSi Dress Co., Ltd.",
       companyLabel: "公司名称",
       addressLabel: "公司地址 / 生产地址",
       addressLines: ["No. 16 Dashi Road, Fotang Town, Yiwu, Zhejiang", "China"],
@@ -123,7 +123,7 @@ export default function ContactPage() {
         "Contact us NOW for a quick quote and sampling consultation.",
         "Please complete the form below, and our project manager will get back to you within 18 hours."
       ],
-      company: "YiWu DiYaSi Dress Co.. LTD",
+      company: "YiWu DiYaSi Dress Co., Ltd.",
       companyLabel: "Empresa",
       addressLabel: "Direccion de empresa / ubicacion de fabrica",
       addressLines: ["No. 16 Dashi Road, Fotang Town, Yiwu, Zhejiang", "China"],

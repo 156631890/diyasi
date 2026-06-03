@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const SITE_NAME = "YiWu DiYaSi Dress CO., LTD";
+export const SITE_NAME = "YiWu DiYaSi Dress Co., Ltd.";
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.yiwudiyasidress.com";
 export const SITE_DESCRIPTION =
   "Private-label underwear, bras, shapewear, and activewear manufacturing for wholesalers, retailers, and DTC brands.";

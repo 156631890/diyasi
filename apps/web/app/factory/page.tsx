@@ -598,8 +598,8 @@ export default async function FactoryPage() {
           <Link href="/contact" className="btn btn-primary">
             {t.inquire}
           </Link>
-          <Link href="/payments" className="btn factory-cta-secondary">
-            {t.paidSample}
+          <Link href="/contact" className="btn factory-cta-secondary">
+            {t.inquire}
           </Link>
         </div>
       </section>

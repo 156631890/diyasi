@@ -1,6 +1,17 @@
 import AdminConsole from "@/components/AdminConsole";
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { notFound } from "next/navigation";
 import { SiteLang } from "@/lib/i18n";
 import { getServerLang } from "@/lib/server-lang";
+
+export const metadata: Metadata = {
+  title: "Admin",
+  robots: {
+    index: false,
+    follow: false
+  }
+};
 
 const copy: Record<SiteLang, { kicker: string; title: string; desc: string }> = {
   en: {
@@ -20,7 +31,32 @@ const copy: Record<SiteLang, { kicker: string; title: string; desc: string }> = 
   }
 };
 
+function isAuthorized(): boolean {
+  const username = process.env.ADMIN_USERNAME;
+  const password = process.env.ADMIN_PASSWORD;
+
+  if (!username || !password) {
+    return false;
+  }
+
+  const authorization = headers().get("authorization");
+  if (!authorization?.startsWith("Basic ")) {
+    return false;
+  }
+
+  const decoded = Buffer.from(authorization.slice("Basic ".length), "base64").toString("utf8");
+  const separator = decoded.indexOf(":");
+  const suppliedUsername = separator >= 0 ? decoded.slice(0, separator) : "";
+  const suppliedPassword = separator >= 0 ? decoded.slice(separator + 1) : "";
+
+  return suppliedUsername === username && suppliedPassword === password;
+}
+
 export default function AdminPage() {
+  if (!isAuthorized()) {
+    notFound();
+  }
+
   const lang = getServerLang();
   const t = copy[lang];
   return (

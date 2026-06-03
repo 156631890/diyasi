@@ -80,7 +80,7 @@ const copy: Record<
     cta2: "View Factory",
     milestone: "Milestones",
     journey: "Our Growth Journey",
-    noVisual: "Generate hero visual from Admin media library.",
+    noVisual: "Factory visual coming soon.",
     values: [
       { title: "Sustainable Material Commitment", text: "We prioritize premium sustainable fabrics that deliver comfort, durability, and responsible sourcing." },
       { title: "Precision Production Discipline", text: "From knitting and cutting to inline inspection, every step is controlled for consistency at scale." },

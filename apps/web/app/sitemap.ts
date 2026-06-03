@@ -12,7 +12,7 @@ async function getArticleSlugs(): Promise<string[]> {
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
-  const basePaths = ["", "/about", "/products", "/oem-odm", "/sustainability", "/factory", "/blog", "/contact", "/payments"];
+  const basePaths = ["", "/about", "/products", "/oem-odm", "/sustainability", "/factory", "/contact"];
   const staticUrls = basePaths.map((path) => ({
     url: `${SITE_URL}${path}`,
     lastModified: now,

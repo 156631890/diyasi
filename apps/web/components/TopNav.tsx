@@ -89,16 +89,13 @@ export default function TopNav({ initialLang }: TopNavProps) {
     { href: "/", label: t.home },
     { href: "/products", label: t.products },
     { href: "/oem-odm", label: t.oem },
-    { href: "/blog", label: t.blog },
     { href: "/about", label: t.about },
     { href: "/contact", label: t.contact }
   ];
 
   const secondaryLinks: LinkItem[] = [
     { href: "/sustainability", label: t.sustainability },
-    { href: "/factory", label: t.factory },
-    { href: "/payments", label: t.payments },
-    { href: "/admin", label: t.admin }
+    { href: "/factory", label: t.factory }
   ];
 
   function onLanguageChange(nextLang: SiteLang) {

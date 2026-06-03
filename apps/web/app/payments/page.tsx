@@ -35,25 +35,25 @@ const copy: Record<
 > = {
   en: {
     eyebrow: "Secure Checkout",
-    title: "Live PayPal checkout for deposits and sample fees",
+    title: "Secure Sample & Deposit Payment",
     titleFromProduct: "Please complete this payment with PayPal.",
     desc:
-      "This checkout is live-only: choose a project stage, review the amount, and complete PayPal payment with server-side capture before the order is marked paid.",
-    infoTitle: "Why this layout",
+      "This page is intended for confirmed sample fees, deposits, and order-specific payment links shared after quotation.",
+    infoTitle: "Before you pay",
     infoBody:
-      "This page is intentionally focused on a single live payment flow so buyers can complete checkout quickly and your team can verify payment records easily.",
+      "Please complete payment only after our team confirms your sample scope, product details, and payment amount.",
     supportTitle: "Need a custom amount?",
     supportBody:
       "If a buyer needs a custom quote, split deposit, or combined invoice, confirm the brief first and then direct them to the correct payment stage.",
     supportCta: "Contact Sales",
     items: [
       { tag: "Sample", title: "Sample Development Fee", amount: 199 + SAMPLE_SHIPPING_FEE_USD, desc: "Used for paid sampling before material sourcing and pattern work begin. Includes $20 shipping." },
-      { tag: "Launch", title: "OEM Launch Deposit", amount: 500, desc: "Used once scope, pricing, and sample direction are confirmed for production launch." }
+      { tag: "Deposit", title: "Order-Specific Deposit", amount: 500, desc: "Used only after project scope, pricing, and sample direction are confirmed." }
     ],
     loadingLabel: "Loading PayPal checkout...",
     unavailableLabel: "PayPal is not available on this device or browser.",
     missingConfigLabel:
-      "PayPal production credentials are not configured in the running server. If you just updated .env.local, restart Next.js, then hard refresh this page."
+      "PayPal checkout is temporarily unavailable. Please contact our team for a confirmed payment link."
   },
   zh: {
     eyebrow: "安全收银台",
@@ -186,11 +186,17 @@ export default function PaymentsPage({
   );
 }
 
-export const metadata: Metadata = buildMetadata({
-  title: "Payments",
-  description: "Live PayPal checkout for sample development fees and OEM launch deposits.",
-  path: "/payments"
-});
+export const metadata: Metadata = {
+  ...buildMetadata({
+    title: "Payments",
+    description: "Secure PayPal checkout for confirmed sample development fees and order-specific deposits.",
+    path: "/payments"
+  }),
+  robots: {
+    index: false,
+    follow: false
+  }
+};
 
 
 
