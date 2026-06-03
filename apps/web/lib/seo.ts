@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-export const SITE_NAME = "Diyasi Founder Launch System";
+export const SITE_NAME = "YiWu DiYaSi Dress CO., LTD";
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.yiwudiyasidress.com";
 export const SITE_DESCRIPTION =
-  "Diyasi helps startup founders, creators, boutiques, and DTC stores validate and launch underwear brands through Starter Kits, ready-stock testing, packaging direction, and gradual scaling.";
+  "Private-label underwear, bras, shapewear, and activewear manufacturing for wholesalers, retailers, and DTC brands.";
 
 export function absoluteUrl(path = "/"): string {
   return new URL(path, SITE_URL).toString();

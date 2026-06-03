@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import { platformNav } from "@/lib/founder-platform";
 import { LANG_LABELS, SiteLang } from "@/lib/i18n";
 
 type LinkItem = { href: string; label: string };
@@ -12,21 +11,61 @@ type LinkItem = { href: string; label: string };
 const labels: Record<
   SiteLang,
   {
+    home: string;
+    about: string;
+    products: string;
+    oem: string;
+    sustainability: string;
+    factory: string;
+    blog: string;
+    contact: string;
+    payments: string;
+    admin: string;
     cta: string;
     companyTag: string;
   }
 > = {
   en: {
-    cta: "Get Starter Kit Recommendation",
-    companyTag: "Founder launch system for startup underwear brands"
+    home: "Home",
+    about: "About",
+    products: "Products",
+    oem: "OEM / ODM",
+    sustainability: "Sustainability",
+    factory: "Factory",
+    blog: "Journal",
+    contact: "Contact",
+    payments: "Payments",
+    admin: "Admin",
+    cta: "Start a Conversation",
+    companyTag: "Underwear Factory for Wholesalers, Retailers, and DTC Brands"
   },
   zh: {
-    cta: "获取 Starter Kit 推荐",
-    companyTag: "面向初创内衣品牌的创始人启动系统"
+    home: "首页",
+    about: "关于我们",
+    products: "产品",
+    oem: "OEM / ODM",
+    sustainability: "可持续",
+    factory: "工厂",
+    blog: "文章",
+    contact: "联系",
+    payments: "支付",
+    admin: "后台",
+    cta: "开始沟通",
+    companyTag: "服务批发商、零售商与 DTC 品牌的内衣工厂"
   },
   es: {
-    cta: "Recibir recomendacion de Starter Kit",
-    companyTag: "Sistema de lanzamiento para marcas startup de ropa interior"
+    home: "Inicio",
+    about: "Nosotros",
+    products: "Productos",
+    oem: "OEM / ODM",
+    sustainability: "Sostenibilidad",
+    factory: "Fabrica",
+    blog: "Journal",
+    contact: "Contacto",
+    payments: "Pagos",
+    admin: "Admin",
+    cta: "Iniciar Conversacion",
+    companyTag: "Fabrica de ropa interior para mayoristas, retailers y marcas DTC"
   }
 };
 
@@ -46,7 +85,21 @@ export default function TopNav({ initialLang }: TopNavProps) {
   const [isCompact, setIsCompact] = useState(false);
   const t = labels[lang];
 
-  const primaryLinks: LinkItem[] = platformNav;
+  const primaryLinks: LinkItem[] = [
+    { href: "/", label: t.home },
+    { href: "/products", label: t.products },
+    { href: "/oem-odm", label: t.oem },
+    { href: "/blog", label: t.blog },
+    { href: "/about", label: t.about },
+    { href: "/contact", label: t.contact }
+  ];
+
+  const secondaryLinks: LinkItem[] = [
+    { href: "/sustainability", label: t.sustainability },
+    { href: "/factory", label: t.factory },
+    { href: "/payments", label: t.payments },
+    { href: "/admin", label: t.admin }
+  ];
 
   function onLanguageChange(nextLang: SiteLang) {
     setLang(nextLang);
@@ -70,8 +123,12 @@ export default function TopNav({ initialLang }: TopNavProps) {
         <div className="container-shell top-nav-wide-shell flex items-center justify-between py-2 text-xs">
           <p className="top-nav-meta-copy font-semibold tracking-wide">{t.companyTag}</p>
           <div className="flex items-center gap-1">
+            {secondaryLinks.map((item) => (
+              <Link key={item.href} href={item.href} className={linkClass(pathname, item.href)}>
+                {item.label}
+              </Link>
+            ))}
             <select
-              aria-label="Select language"
               className="top-nav-select ml-2 rounded-full px-3 py-1 text-xs"
               value={lang}
               onChange={(e) => onLanguageChange(e.target.value as SiteLang)}
@@ -96,7 +153,7 @@ export default function TopNav({ initialLang }: TopNavProps) {
             DYS
           </span>
           <span className={`top-nav-brand-name heading-font font-semibold tracking-wide ${isCompact ? "text-lg" : "text-xl"}`}>
-            DIYASI
+            YiWu DiYaSi
           </span>
         </Link>
 
@@ -119,8 +176,14 @@ export default function TopNav({ initialLang }: TopNavProps) {
 
       <div className="container-shell pb-3 lg:hidden">
         <div className="flex items-center justify-between gap-2">
+          <div className="flex gap-2">
+            {secondaryLinks.map((item) => (
+              <Link key={item.href} href={item.href} className={linkClass(pathname, item.href)}>
+                {item.label}
+              </Link>
+            ))}
+          </div>
           <select
-            aria-label="Select language"
             className="top-nav-select rounded-full px-3 py-1 text-xs"
             value={lang}
             onChange={(e) => onLanguageChange(e.target.value as SiteLang)}

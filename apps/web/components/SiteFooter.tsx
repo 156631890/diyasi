@@ -29,31 +29,32 @@ const copy: Record<SiteLang, FooterCopy> = {
   en: {
     eyebrow: "YiWu DiYaSi",
     brandDesc:
-      "Diyasi helps startup founders, creators, boutiques, and DTC stores launch underwear brands with Starter Kits, ready-stock testing, packaging direction, and fulfillment support.",
-    ctaTitle: "Get a Starter Kit recommendation before you invest in bulk inventory",
+      "Underwear factory supporting wholesalers, retailers, and DTC brands with private-label development and stable delivery.",
+    ctaTitle: "Wholesale, retail, and DTC underwear production with clear MOQ and delivery timing",
     ctaDesc:
-      "Share your audience, channel, style direction, budget, and launch timeline. Diyasi will recommend a practical Starter Kit and validation path.",
-    ctaPrimary: "Get Starter Kit Recommendation",
-    ctaSecondary: "View Starter Kits",
+      "Browse product categories, send your requirements, and start sampling or OEM / ODM production with the factory team.",
+    ctaPrimary: "Start a Conversation",
+    ctaSecondary: "View Categories",
     quickTitle: "Quick Links",
     quickItems: [
       { href: "/", label: "Home" },
-      { href: "/starter-kits", label: "Starter Kits" },
-      { href: "/validation-system", label: "Validation System" },
-      { href: "/brand-quiz", label: "Brand Quiz" }
-    ],
-    productTitle: "Platform",
-    productItems: [
-      { href: "/founder-academy", label: "Founder Academy" },
-      { href: "/fulfillment-proof", label: "Fulfillment Proof" },
-      { href: "/comparison-hub", label: "Comparison Hub" },
+      { href: "/about", label: "About Us" },
+      { href: "/factory", label: "Factory" },
       { href: "/contact", label: "Contact" }
+    ],
+    productTitle: "Products",
+    productItems: [
+      { href: "/products?category=Women's%20Panties", label: "Women's Panties" },
+      { href: "/products?category=Bras", label: "Bras" },
+      { href: "/products?category=Men%20Underwear", label: "Men Underwear" },
+      { href: "/products?category=Gym%20%26%20Sports%20Wear", label: "Activewear" }
     ],
     supportTitle: "Support",
     supportItems: [
+      { href: "/oem-odm", label: "OEM / ODM" },
       { href: "/payments", label: "Payments" },
-      { href: "/privacy-policy", label: "Privacy Policy" },
-      { href: "/return-policy", label: "Return Policy" }
+      { href: "/blog", label: "Journal" },
+      { href: "/sustainability", label: "Sustainability" }
     ],
     contactTitle: "Contact Us",
     contactRows: [
@@ -64,38 +65,39 @@ const copy: Record<SiteLang, FooterCopy> = {
     ],
     rights: "All rights reserved.",
     bottomLinks: [
+      { href: "/about", label: "About US" },
       { href: "/contact", label: "Contact" },
-      { href: "/comparison-hub", label: "Comparison Hub" },
       { href: "/privacy-policy", label: "Privacy Policy" },
       { href: "/return-policy", label: "Return Policy" }
     ]
   },
   zh: {
-    eyebrow: "Diyasi",
-    brandDesc: "Diyasi helps startup founders, creators, boutiques, and DTC stores launch underwear brands with Starter Kits, ready-stock testing, packaging direction, and fulfillment support.",
-    ctaTitle: "Get a Starter Kit recommendation before you invest in bulk inventory",
-    ctaDesc: "Share your audience, channel, style direction, budget, and launch timeline. Diyasi will recommend a practical Starter Kit and validation path.",
-    ctaPrimary: "Get Starter Kit Recommendation",
-    ctaSecondary: "View Starter Kits",
+    eyebrow: "义乌谛雅思",
+    brandDesc: "服务批发商、零售商与 DTC 品牌的内衣工厂，支持贴牌开发与稳定交付。",
+    ctaTitle: "提供清晰 MOQ、打样节奏与交期安排的内衣制造合作",
+    ctaDesc: "查看产品分类、提交项目需求，或直接发起询盘，推进打样与 OEM / ODM 合作。",
+    ctaPrimary: "开始洽谈",
+    ctaSecondary: "查看分类",
     quickTitle: "快捷导航",
     quickItems: [
-      { href: "/", label: "Home" },
-      { href: "/starter-kits", label: "Starter Kits" },
-      { href: "/validation-system", label: "Validation System" },
-      { href: "/brand-quiz", label: "Brand Quiz" }
+      { href: "/", label: "首页" },
+      { href: "/about", label: "关于我们" },
+      { href: "/factory", label: "工厂" },
+      { href: "/contact", label: "联系" }
     ],
-    productTitle: "Platform",
+    productTitle: "产品分类",
     productItems: [
-      { href: "/founder-academy", label: "Founder Academy" },
-      { href: "/fulfillment-proof", label: "Fulfillment Proof" },
-      { href: "/comparison-hub", label: "Comparison Hub" },
-      { href: "/contact", label: "Contact" }
+      { href: "/products?category=Women's%20Panties", label: "女士内裤" },
+      { href: "/products?category=Bras", label: "文胸" },
+      { href: "/products?category=Men%20Underwear", label: "男士内裤" },
+      { href: "/products?category=Gym%20%26%20Sports%20Wear", label: "运动系列" }
     ],
-    supportTitle: "Support",
+    supportTitle: "支持",
     supportItems: [
-      { href: "/payments", label: "Payments" },
-      { href: "/privacy-policy", label: "Privacy Policy" },
-      { href: "/return-policy", label: "Return Policy" }
+      { href: "/oem-odm", label: "OEM / ODM" },
+      { href: "/payments", label: "支付" },
+      { href: "/blog", label: "文章" },
+      { href: "/sustainability", label: "可持续" }
     ],
     contactTitle: "联系我们",
     contactRows: [
@@ -106,40 +108,41 @@ const copy: Record<SiteLang, FooterCopy> = {
     ],
     rights: "保留所有权利。",
     bottomLinks: [
-      { href: "/contact", label: "Contact" },
-      { href: "/comparison-hub", label: "Comparison Hub" },
-      { href: "/privacy-policy", label: "Privacy Policy" },
-      { href: "/return-policy", label: "Return Policy" }
+      { href: "/about", label: "关于我们" },
+      { href: "/contact", label: "联系" },
+      { href: "/privacy-policy", label: "隐私政策" },
+      { href: "/return-policy", label: "退换政策" }
     ]
   },
   es: {
-    eyebrow: "Diyasi",
+    eyebrow: "YiWu DiYaSi",
     brandDesc:
-      "Diyasi ayuda a founders, creators, boutiques y tiendas DTC a lanzar marcas de ropa interior con Starter Kits, pruebas con ready stock, direccion de packaging y soporte de fulfillment.",
-    ctaTitle: "Recibe una recomendacion de Starter Kit antes de invertir en inventario grande",
+      "Fabrica de ropa interior para mayoristas, retailers y marcas DTC con desarrollo private-label y entrega estable.",
+    ctaTitle: "Produccion de ropa interior para mayoristas, retail y marcas DTC con MOQ y entrega claros",
     ctaDesc:
-      "Comparte audiencia, canal, direccion de estilo, presupuesto y calendario. Diyasi recomendara un Starter Kit practico y una ruta de validacion.",
-    ctaPrimary: "Recibir recomendacion de Starter Kit",
-    ctaSecondary: "Ver Starter Kits",
+      "Revisa categorias, envia tu brief de proyecto o avanza a una consulta directa para muestreo y OEM / ODM.",
+    ctaPrimary: "Iniciar Conversacion",
+    ctaSecondary: "Ver Categorias",
     quickTitle: "Enlaces Rapidos",
     quickItems: [
       { href: "/", label: "Inicio" },
-      { href: "/starter-kits", label: "Starter Kits" },
-      { href: "/validation-system", label: "Sistema de Validacion" },
-      { href: "/brand-quiz", label: "Brand Quiz" }
-    ],
-    productTitle: "Platform",
-    productItems: [
-      { href: "/founder-academy", label: "Founder Academy" },
-      { href: "/fulfillment-proof", label: "Fulfillment Proof" },
-      { href: "/comparison-hub", label: "Comparison Hub" },
+      { href: "/about", label: "Nosotros" },
+      { href: "/factory", label: "Fabrica" },
       { href: "/contact", label: "Contacto" }
+    ],
+    productTitle: "Productos",
+    productItems: [
+      { href: "/products?category=Women's%20Panties", label: "Panties Mujer" },
+      { href: "/products?category=Bras", label: "Bras" },
+      { href: "/products?category=Men%20Underwear", label: "Underwear Hombre" },
+      { href: "/products?category=Gym%20%26%20Sports%20Wear", label: "Activewear" }
     ],
     supportTitle: "Soporte",
     supportItems: [
+      { href: "/oem-odm", label: "OEM / ODM" },
       { href: "/payments", label: "Pagos" },
-      { href: "/privacy-policy", label: "Privacy Policy" },
-      { href: "/return-policy", label: "Return Policy" }
+      { href: "/blog", label: "Journal" },
+      { href: "/sustainability", label: "Sostenibilidad" }
     ],
     contactTitle: "Contacto",
     contactRows: [
@@ -150,8 +153,8 @@ const copy: Record<SiteLang, FooterCopy> = {
     ],
     rights: "Todos los derechos reservados.",
     bottomLinks: [
-      { href: "/contact", label: "Contacto" },
-      { href: "/comparison-hub", label: "Comparison Hub" },
+      { href: "/about", label: "About US" },
+      { href: "/contact", label: "Contact" },
       { href: "/privacy-policy", label: "Privacy Policy" },
       { href: "/return-policy", label: "Return Policy" }
     ]
@@ -180,7 +183,7 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
               <Link href="/contact" className="btn btn-primary site-footer-btn-primary">
                 {t.ctaPrimary}
               </Link>
-              <Link href="/starter-kits" className="btn site-footer-btn-secondary">
+              <Link href="/products" className="btn site-footer-btn-secondary">
                 {t.ctaSecondary}
               </Link>
             </div>
@@ -195,7 +198,7 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
             <p className="mt-3 max-w-md font-[Arial] text-[14px] leading-[1.8] text-[#7c6357]">{t.brandDesc}</p>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-2">
             <div>
               <p className="site-footer-heading">{t.quickTitle}</p>
               <div className="mt-3 grid gap-2.5">
@@ -210,16 +213,6 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
               <p className="site-footer-heading">{t.productTitle}</p>
               <div className="mt-3 grid gap-2.5">
                 {t.productItems.map((item) => (
-                  <Link key={item.href} href={item.href} className="site-footer-link">
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-            <div>
-              <p className="site-footer-heading">{t.supportTitle}</p>
-              <div className="mt-3 grid gap-2.5">
-                {t.supportItems.map((item) => (
                   <Link key={item.href} href={item.href} className="site-footer-link">
                     {item.label}
                   </Link>
