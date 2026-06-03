@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import BuyNowButton from "@/components/BuyNowButton";
 import ProductGallery from "@/components/ProductGallery";
 import ProductInquiryForm from "@/components/ProductInquiryForm";
 import { getCatalogProductById, getCatalogProducts } from "@/lib/catalog-source";
@@ -31,6 +32,7 @@ const copy: Record<
   {
     back: string;
     quote: string;
+    paidSample: string;
     overview: string;
     category: string;
     fabric: string;
@@ -52,6 +54,7 @@ const copy: Record<
   en: {
     back: "Back to Products",
     quote: "Start a Conversation",
+    paidSample: "Paid Sample",
     overview: "Product Specifications",
     category: "Category",
     fabric: "Fabric",
@@ -72,6 +75,7 @@ const copy: Record<
   zh: {
     back: "返回产品列表",
     quote: "发起询盘",
+    paidSample: "付费打样",
     overview: "产品规格",
     category: "分类",
     fabric: "面料",
@@ -92,6 +96,7 @@ const copy: Record<
   es: {
     back: "Volver a Productos",
     quote: "Iniciar Consulta",
+    paidSample: "Muestra Pagada",
     overview: "Especificaciones del Producto",
     category: "Categoria",
     fabric: "Tejido",
@@ -340,7 +345,12 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
           </div>
 
           <div className="catalog-detail-actions">
-            <Link href="/contact" className="btn btn-primary">
+            <BuyNowButton
+              title={`${displayTitle} - ${t.paidSample}`}
+              unitAmountUsd={price}
+              label={t.paidSample}
+            />
+            <Link href="/contact" className="btn btn-soft">
               {t.quote}
             </Link>
           </div>
