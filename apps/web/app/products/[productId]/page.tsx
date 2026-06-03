@@ -10,14 +10,21 @@ import {
   DisplayProduct,
   resolveDisplayProductId,
   resolveDisplayDescription,
+  resolveCustomizationText,
   resolveDisplayTitle,
+  resolveMoqText,
   resolvePrice,
   resolvePriceText,
+  resolveProductionTimeText,
+  resolveSampleTimeText,
+  resolveSuitableFor,
+  resolvePrimaryImage,
   topFamily
 } from "@/lib/product-display";
 import { buildBreadcrumbJsonLd, buildMetadata, absoluteUrl } from "@/lib/seo";
 import { SiteLang } from "@/lib/i18n";
 import { getServerLang } from "@/lib/server-lang";
+import { launchCollections, moqTiers, qualitySteps } from "@/lib/site-info";
 
 const copy: Record<
   SiteLang,
@@ -108,10 +115,35 @@ type ProductDetailPageProps = {
   params: { productId: string };
 };
 
+type LaunchCollection = (typeof launchCollections)[number];
+
+function findCollection(slug: string): LaunchCollection | undefined {
+  return launchCollections.find((item) => item.slug === slug);
+}
+
+function productMatchesCollection(product: DisplayProduct, collection: LaunchCollection): boolean {
+  const family = topFamily(product.category);
+  const haystack = [product.product_name, product.category, product.description, product.fabric].join(" ").toLowerCase();
+  const familyMatches = family === collection.family;
+  if (!familyMatches) {
+    return false;
+  }
+  return collection.match ? haystack.includes(collection.match) : true;
+}
+
 export async function generateMetadata({ params }: ProductDetailPageProps): Promise<Metadata> {
-  const product = await getCatalogProductById(decodeURIComponent(params.productId));
+  const decodedId = decodeURIComponent(params.productId);
+  const product = await getCatalogProductById(decodedId);
+  const collection = findCollection(decodedId);
 
   if (!product) {
+    if (collection) {
+      return buildMetadata({
+        title: `${collection.title} Manufacturer`,
+        description: collection.desc,
+        path: `/products/${collection.slug}`
+      });
+    }
     return buildMetadata({
       title: "Product not found",
       description: "This product page is not available.",
@@ -135,9 +167,82 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
   const [product, allProducts] = await Promise.all([getCatalogProductById(productId), getCatalogProducts()]);
   const lang = getServerLang();
   const t = copy[lang];
+  const collection = findCollection(productId);
 
   if (!product) {
-    notFound();
+    if (!collection) {
+      notFound();
+    }
+
+    const categoryProducts = (allProducts as DisplayProduct[]).filter((item) => productMatchesCollection(item, collection));
+    const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+      { name: "Home", path: "/" },
+      { name: "Products", path: "/products" },
+      { name: collection.title, path: `/products/${collection.slug}` }
+    ]);
+    const collectionPageJsonLd = {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: collection.title,
+      description: collection.desc,
+      url: absoluteUrl(`/products/${collection.slug}`)
+    };
+
+    return (
+      <main className="container-shell page-shell-tight">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd) }} />
+
+        <section className="catalog-intro">
+          <p className="catalog-intro-kicker">Launch-Ready Collection</p>
+          <div className="catalog-intro-row">
+            <div className="catalog-intro-copy">
+              <h1 className="catalog-intro-title">{collection.title}</h1>
+              <p className="page-reference-body mt-3 text-[#7d4f3e]">{collection.desc}</p>
+            </div>
+            <div className="catalog-meta">
+              <p className="catalog-meta-count">{categoryProducts.length} items</p>
+              <p className="page-reference-body text-[#9d7d6f]">Fixed category URL</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="catalog-grid-clean mt-8">
+          {categoryProducts.map((item) => {
+            const displayTitle = resolveDisplayTitle(item);
+            const image = resolvePrimaryImage(item);
+            return (
+              <article key={item.product_id} className="catalog-card-clean">
+                <Link href={`/products/${encodeURIComponent(item.product_id)}`} className="catalog-card-clean-media">
+                  {image ? (
+                    <img src={image} alt={displayTitle} className="catalog-card-clean-image catalog-card-clean-image-primary" />
+                  ) : (
+                    <div className="catalog-card-clean-fallback">{t.noImage}</div>
+                  )}
+                </Link>
+                <div className="catalog-card-clean-copy">
+                  <Link href={`/products/${encodeURIComponent(item.product_id)}`}>
+                    <h2 className="catalog-card-clean-title">{displayTitle}</h2>
+                  </Link>
+                  <p className="catalog-card-clean-category mt-2">{resolveDisplayProductId(item)}</p>
+                </div>
+              </article>
+            );
+          })}
+        </section>
+
+        <section className="mt-10 rounded-lg border border-[#ead7c8] bg-[#fffaf5] p-6">
+          <h2 className="card-title-standard text-[#6a3524]">MOQ and development route</h2>
+          <div className="mt-4 grid gap-3 md:grid-cols-2">
+            {moqTiers.map((item) => (
+              <p key={item.label} className="text-sm leading-6 text-[#7d4f3e]">
+                <strong className="text-[#5a2f1e]">{item.label}:</strong> {item.value}
+              </p>
+            ))}
+          </div>
+        </section>
+      </main>
+    );
   }
 
   const typedProduct = product as DisplayProduct;
@@ -148,6 +253,19 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
   const priceText = resolvePriceText(typedProduct);
   const family = topFamily(typedProduct.category);
   const galleryImages = buildGalleryImages(typedProduct);
+  const customizationOptions = resolveCustomizationText();
+  const suitableFor = resolveSuitableFor(typedProduct);
+  const specRows = [
+    { label: t.category, value: typedProduct.category },
+    { label: t.fabric, value: typedProduct.fabric || "Fabric can be confirmed during sampling." },
+    { label: t.color, value: typedProduct.color || "Stock colors and custom colors available by project." },
+    { label: t.size, value: typedProduct.size || "XS to XL; extended size range can be reviewed by project." },
+    { label: t.moq, value: resolveMoqText(typedProduct) },
+    { label: t.sampleTime, value: resolveSampleTimeText(typedProduct) },
+    { label: t.productionTime, value: resolveProductionTimeText(typedProduct) },
+    { label: "Packaging", value: "Custom label, hangtag, polybag, gift box, barcode sticker, and carton mark available." },
+    { label: "Payment", value: "Sample fee, deposit, and balance before shipment after quotation confirmation." }
+  ];
   const relatedProducts = allProducts
     .filter((item) => item.product_id !== typedProduct.product_id)
     .sort((left, right) => {
@@ -230,36 +348,58 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
           <div className="catalog-detail-panel">
             <h2 className="catalog-detail-panel-title">{t.overview}</h2>
             <dl className="catalog-detail-specs">
-              <div>
-                <dt>{t.category}</dt>
-                <dd>{typedProduct.category}</dd>
-              </div>
-              <div>
-                <dt>{t.fabric}</dt>
-                <dd>{typedProduct.fabric || "-"}</dd>
-              </div>
-              <div>
-                <dt>{t.color}</dt>
-                <dd>{typedProduct.color || "-"}</dd>
-              </div>
-              <div>
-                <dt>{t.size}</dt>
-                <dd>{typedProduct.size || "-"}</dd>
-              </div>
-              <div>
-                <dt>{t.moq}</dt>
-                <dd>{typedProduct.moq || "-"}</dd>
-              </div>
-              <div>
-                <dt>{t.sampleTime}</dt>
-                <dd>{typedProduct.sample_time || "-"}</dd>
-              </div>
-              <div>
-                <dt>{t.productionTime}</dt>
-                <dd>{typedProduct.production_time || "-"}</dd>
-              </div>
+              {specRows.map((row) => (
+                <div key={row.label}>
+                  <dt>{row.label}</dt>
+                  <dd>{row.value}</dd>
+                </div>
+              ))}
             </dl>
           </div>
+
+          <section className="catalog-detail-panel">
+            <h2 className="catalog-detail-panel-title">Key Features</h2>
+            <ul className="grid gap-2 text-sm leading-7 text-[#7d4f3e]">
+              <li>Fabric hand feel and stretch direction reviewed before sampling.</li>
+              <li>Fit, coverage, waistband, gusset, and logo placement can be adjusted by project.</li>
+              <li>Private label packaging route can be aligned before bulk production.</li>
+              <li>Suitable for repeat production after fit and pre-production sample approval.</li>
+            </ul>
+          </section>
+
+          <section className="catalog-detail-panel">
+            <h2 className="catalog-detail-panel-title">Customization Options</h2>
+            <div className="chip-list">
+              {customizationOptions.map((item) => (
+                <span key={item} className="chip">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </section>
+
+          <section className="catalog-detail-panel">
+            <h2 className="catalog-detail-panel-title">Quality Control</h2>
+            <div className="grid gap-3">
+              {qualitySteps.map((item) => (
+                <article key={item.title} className="rounded border border-[rgba(191,144,118,0.24)] bg-white p-4">
+                  <h3 className="font-semibold text-[#5f3123]">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-[#7d4f3e]">{item.desc}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="catalog-detail-panel">
+            <h2 className="catalog-detail-panel-title">Suitable For</h2>
+            <div className="chip-list">
+              {suitableFor.map((item) => (
+                <span key={item} className="chip">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </section>
 
           <ProductInquiryForm productName={displayTitle} category={typedProduct.category} />
         </div>

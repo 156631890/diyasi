@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const SITE_NAME = "YiWu DiYaSi Dress Co., Ltd.";
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.yiwudiyasidress.com";
 export const SITE_DESCRIPTION =
-  "Private-label underwear, bras, shapewear, and activewear manufacturing for wholesalers, retailers, and DTC brands.";
+  "Private label intimates manufacturer for DTC, retail, and wholesale brands, covering fabric selection, fit sampling, custom labels, packaging, bulk production, and global delivery.";
 
 export function absoluteUrl(path = "/"): string {
   return new URL(path, SITE_URL).toString();

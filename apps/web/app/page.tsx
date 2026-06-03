@@ -1,491 +1,354 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ReactNode } from "react";
 
 import HeroCarousel from "@/components/HeroCarousel";
-import { fallbackCatalogCategories } from "@/lib/catalog";
-import { getCatalogCategories, getCatalogProducts } from "@/lib/catalog-source";
-import { SiteLang } from "@/lib/i18n";
-import { resolveDisplayProductId, resolveDisplayTitle, resolvePrimaryImage, topFamily, type DisplayProduct } from "@/lib/product-display";
+import { getCatalogProducts } from "@/lib/catalog-source";
+import {
+  resolveDisplayProductId,
+  resolveDisplayTitle,
+  resolvePrimaryImage,
+  topFamily,
+  type DisplayProduct
+} from "@/lib/product-display";
 import { buildMetadata } from "@/lib/seo";
-import { getServerLang } from "@/lib/server-lang";
+import {
+  companyInfo,
+  launchCollections,
+  moqTiers,
+  privateLabelOptions,
+  qualitySteps,
+  sampleAndLeadTimes,
+  trustStats
+} from "@/lib/site-info";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Private Label Underwear Manufacturer",
-  description: "YiWu DiYaSi manufactures underwear, bras, shapewear, and activewear for wholesalers, retailers, and DTC brands.",
+  title: "Private Label Intimates Manufacturer",
+  description:
+    "YiWu DiYaSi helps DTC, retail, and wholesale underwear brands develop private label intimates from fabric selection and fit sampling to packaging and bulk delivery.",
   path: "/"
 });
 
-type ProductCategory = {
-  category: string;
-  count: number;
-};
-
-type DisplayProductWithImage = DisplayProduct & { image: string };
-
-type FeaturedShowcase = {
-  women: DisplayProductWithImage[];
-  men: DisplayProductWithImage[];
-};
-
-function AdvantageIcon({ children }: { children: ReactNode }) {
-  return (
-    <div className="mb-5 flex h-20 items-center justify-center rounded-xl bg-[linear-gradient(135deg,#d8c2b0_0%,#c9ae98_100%)] text-[#5f3123]">
-      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[rgba(255,250,242,0.82)] shadow-[inset_0_0_0_1px_rgba(95,49,35,0.08)]">
-        {children}
-      </div>
-    </div>
-  );
-}
-
-function resolveHomeProductTitle(product: DisplayProduct): string {
-  const family = topFamily(product.category);
-  if (family === "Women's Panties") return "Women's Panties";
-  if (family === "Bras") return "Bras";
-  if (family === "Men's Underwear") return "Men's Underwear";
-  if (family === "Activewear") return "Activewear";
-  return resolveDisplayTitle(product)
-    .replace(/\b(?:women's|womens|men's|mens)\b/gi, "")
-    .replace(/\b(?:underwear|panties|bra|bras|activewear|wear)\b/gi, "")
-    .replace(/\s{2,}/g, " ")
-    .trim();
-}
-
-const copy: Record<SiteLang, {
-  heroTitle: string;
-  heroDesc: string;
-  mainProducts: string;
-  mainProductsDesc: string;
-  aboutTitle: string;
-  aboutDesc: string;
-  aboutStats: Array<{ value: string; label: string }>;
-  factoryTitle: string;
-  factoryDesc: string;
-  serviceTitle: string;
-  serviceDesc: string;
-  services: Array<{ title: string; desc: string; icon: string }>;
-  contactTitle: string;
-  contactDesc: string;
-}> = {
-  en: {
-    heroTitle: "Professional OEM/ODM Underwear Manufacturer",
-    heroDesc: "Specializing in seamless underwear, bras, shapewear, and activewear since 2002",
-    mainProducts: "Main Products",
-    mainProductsDesc: "We have sufficient ready-to-ship stock products with varieties of designs and colors to satisfy your needs.",
-    aboutTitle: "About YiWu DiYaSi",
-    aboutDesc: "Founded in 2002, YiWu DiYaSi is located in Yiwu City, Zhejiang Province — China's renowned hub for underwear manufacturing. With over 20,000㎡ of factory space and more than 100 skilled employees, we are a modern factory specializing in the design, development, and production of women's underwear, bras, period underwear, and shapewear. We provide full-service OEM and ODM solutions to global brands.",
-    aboutStats: [
-      { value: "23+", label: "Years Experience" },
-      { value: "20,000㎡", label: "Factory Space" },
-      { value: "100+", label: "Skilled Employees" },
-      { value: "600K+", label: "Monthly Output" }
-    ],
-    factoryTitle: "Our Factory",
-    factoryDesc: "Discover our integrated manufacturing hub, balancing advanced technology, skilled craftsmanship, and seamless global logistics.",
-    serviceTitle: "Our Service",
-    serviceDesc: "Professional underwear manufacturer supplying OEM designs and supporting OEM orders.",
-    services: [
-      { title: "Customized Logo", desc: "MOQ: 500PCS, Lead Time 14-24 Days", icon: "🏷️" },
-      { title: "Customized Design", desc: "MOQ: 1000PCS, Lead Time 60 Days", icon: "✏️" },
-      { title: "Customized Package", desc: "MOQ: 1000PCS, Lead Time 14-21 Days", icon: "📦" }
-    ],
-    contactTitle: "Contact Us",
-    contactDesc: "If you are interested in our products and looking for wholesale, or looking to customize your design, please leave a message here."
+const dtcSolutions = [
+  {
+    title: "For New Brands",
+    desc: "Start with practical MOQ planning, stock fabric samples, label options, and packaging choices before committing to a full OEM route."
   },
-  zh: {
-    heroTitle: "专业 OEM/ODM 内衣制造商",
-    heroDesc: "自2002年起专注于无缝内衣、文胸、塑形衣和运动服饰",
-    mainProducts: "主要产品",
-    mainProductsDesc: "我们有充足的现货产品，款式和颜色多样，满足您的需求。",
-    aboutTitle: "关于迪雅斯",
-    aboutDesc: "义乌迪雅斯成立于2002年，位于浙江省义乌市——中国知名的内衣制造中心。拥有超过20,000平方米的工厂空间和100多名熟练员工，我们是一家现代化工厂，专业从事女士内衣、文胸、经期内衣和塑形衣的设计、开发和生产。我们为全球品牌提供全方位的OEM和ODM解决方案。",
-    aboutStats: [
-      { value: "23+", label: "年经验" },
-      { value: "20,000㎡", label: "工厂面积" },
-      { value: "100+", label: "熟练员工" },
-      { value: "60万+", label: "月产量" }
-    ],
-    factoryTitle: "我们的工厂",
-    factoryDesc: "参观我们最先进的制造设施",
-    serviceTitle: "我们的服务",
-    serviceDesc: "专业内衣制造商，提供OEM设计和OEM订单支持。",
-    services: [
-      { title: "定制Logo", desc: "起订量:500件，交期14-24天", icon: "🏷️" },
-      { title: "定制设计", desc: "起订量:1000件，交期60天", icon: "✏️" },
-      { title: "定制包装", desc: "起订量:1000件，交期14-21天", icon: "📦" }
-    ],
-    contactTitle: "联系我们",
-    contactDesc: "如果您对我们的产品感兴趣，寻求批发或定制设计，请在此留言。"
+  {
+    title: "For Growing Brands",
+    desc: "Move from early sales to stable replenishment with clearer size grading, repeatable fit blocks, and controlled production windows."
   },
-  es: {
-    heroTitle: "Fabricante Profesional de Ropa Interior OEM/ODM",
-    heroDesc: "Especializados en ropa interior sin costuras, sostenes y ropa deportiva desde 2002",
-    mainProducts: "Productos Principales",
-    mainProductsDesc: "Tenemos suficientes productos stock con variedad de diseños y colores.",
-    aboutTitle: "Sobre YiWu DiYaSi",
-    aboutDesc: "Fundada en 2002, YiWu DiYaSi se encuentra en Yiwu, provincia de Zhejiang. Con más de 20,000㎡ de fábrica y más de 100 empleados especializados, somos una fábrica moderna especializada en diseño y producción de ropa interior.",
-    aboutStats: [
-      { value: "23+", label: "Años Experiencia" },
-      { value: "20,000㎡", label: "Espacio Fábrica" },
-      { value: "100+", label: "Empleados" },
-      { value: "600K+", label: "Producción Mensual" }
-    ],
-    factoryTitle: "Nuestra Fábrica",
-    factoryDesc: "Visite nuestras instalaciones de fabricación",
-    serviceTitle: "Nuestro Servicio",
-    serviceDesc: "Fabricante profesional de ropa interior con diseños OEM.",
-    services: [
-      { title: "Logo Personalizado", desc: "MOQ: 500 unidades, 14-24 días", icon: "🏷️" },
-      { title: "Diseño Personalizado", desc: "MOQ: 1000 unidades, 60 días", icon: "✏️" },
-      { title: "Empaque Personalizado", desc: "MOQ: 1000 unidades, 14-21 días", icon: "📦" }
-    ],
-    contactTitle: "Contáctenos",
-    contactDesc: "Si está interesado en nuestros productos, deje un mensaje aquí."
+  {
+    title: "For Retailers",
+    desc: "Build category programs around reliable quality, barcode-ready packaging, carton marks, and delivery dates aligned with retail cycles."
+  },
+  {
+    title: "For Wholesale Buyers",
+    desc: "Source launch-ready underwear, bras, shapewear, homewear, and activewear with factory-direct communication and practical quantity planning."
   }
-};
+];
 
-async function getCategories(): Promise<ProductCategory[]> {
-  const categories = await getCatalogCategories();
-  return categories.length > 0 ? categories : fallbackCatalogCategories;
+const developmentSteps = [
+  "Project brief",
+  "Fabric direction",
+  "Sample development",
+  "Fit approval",
+  "Packaging mockup",
+  "Bulk production",
+  "Final QC",
+  "Global delivery"
+];
+
+const faqs = [
+  {
+    q: "What MOQ should a new underwear brand expect?",
+    a: "Ready stock can start lower when available. Private label and full OEM programs depend on label, fabric, color, size range, and packaging complexity."
+  },
+  {
+    q: "How long does sample development take?",
+    a: `${sampleAndLeadTimes.stockFabricSample}; custom color and new pattern projects need more time before approval.`
+  },
+  {
+    q: "Can you support custom packaging?",
+    a: "Yes. We support custom waistband, care label, heat transfer logo, hangtag, polybag, gift box, barcode sticker, and carton marks."
+  },
+  {
+    q: "Do you provide certifications?",
+    a: "BSCI, SEDEX, ISO 9001, and OEKO-TEX related documents can be prepared for buyer review upon request. Certificate numbers and validity should be checked against the latest documents."
+  }
+];
+
+function collectionImage(index: number): string {
+  const images = [
+    "/media/home/banner-1.jpg",
+    "/media/home/banner-2.png",
+    "/media/home/banner-2-2-3.jpg",
+    "/media/home/banner-3.jpg",
+    "/media/home/factory-1.jpg",
+    "/media/home/factory-2.jpg",
+    "/media/home/factory-3.jpg",
+    "/media/home/factory-4.jpg"
+  ];
+  return images[index % images.length];
 }
 
-function collectFamilyProducts(products: DisplayProduct[], family: string, limit: number): DisplayProduct[] {
-  return products.filter((item) => topFamily(item.category) === family).slice(0, limit);
-}
-
-async function getFeaturedShowcase(): Promise<FeaturedShowcase> {
+async function getFeaturedProducts(): Promise<DisplayProduct[]> {
   const products = (await getCatalogProducts()) as DisplayProduct[];
-  const womenSource = collectFamilyProducts(products, "Women's Panties", 4);
-  const menSource = collectFamilyProducts(products, "Men's Underwear", 4);
-
-  const women = (womenSource.length > 0 ? womenSource : products.slice(0, 4)).map((product) => ({
-    ...product,
-    image: resolvePrimaryImage(product)
-  }));
-  const men = (menSource.length > 0 ? menSource : products.slice(4, 8)).map((product) => ({
-    ...product,
-    image: resolvePrimaryImage(product)
-  }));
-
-  return { women, men };
+  const families = ["Women's Panties", "Bras", "Men's Underwear", "Activewear"];
+  return families
+    .flatMap((family) => products.filter((product) => topFamily(product.category) === family).slice(0, 2))
+    .slice(0, 8);
 }
 
 export default async function HomePage() {
-  const lang = getServerLang();
-  const t = copy[lang];
-  const womenLabel = lang === "zh" ? "\u5973\u58eb\u5185\u8863" : lang === "es" ? "Ropa Interior de Mujer" : "Women's Panties";
-  const menLabel = lang === "zh" ? "\u7537\u58eb\u5185\u8863" : lang === "es" ? "Ropa Interior de Hombre" : "Men's Underwear";
-  const [categories, featuredShowcase] = await Promise.all([
-    getCategories(),
-    getFeaturedShowcase()
-  ]);
+  const featuredProducts = await getFeaturedProducts();
 
   const organizationJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "YiWu DiYaSi Dress CO., LTD",
+    name: companyInfo.name,
     url: "https://www.yiwudiyasidress.com",
-    description: "Premium sustainable underwear manufacturing partner.",
-    areaServed: "Worldwide",
-    knowsLanguage: ["en", "zh", "es"]
+    description:
+      "Private label intimates manufacturer for DTC, retail, and wholesale brands, covering fabric selection, sampling, custom packaging, bulk production, and delivery.",
+    foundingDate: companyInfo.establishedYear,
+    email: companyInfo.emailPrimary,
+    telephone: companyInfo.phone,
+    areaServed: "Worldwide"
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a
+      }
+    }))
   };
 
   return (
     <main className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
-      {/* Hero Carousel */}
       <HeroCarousel />
 
-      {/* Main Products Section */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-3">{t.mainProducts}</h2>
-          <p className="text-gray-600 text-center mb-10 max-w-3xl mx-auto">{t.mainProductsDesc}</p>
-
-          <div className="space-y-10">
-            <div>
-              <div className="mb-4 flex items-end justify-between gap-4">
-                <h3 className="text-lg font-semibold text-[#6a3524] md:text-xl">{womenLabel}</h3>
-                <div className="h-px flex-1 bg-[linear-gradient(90deg,rgba(191,144,118,0.34),transparent)]" />
-              </div>
-              <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
-                {featuredShowcase.women.map((product) => (
-                  <Link
-                    key={product.product_id}
-                    href={`/products/${encodeURIComponent(product.product_id)}`}
-                    className="group"
-                  >
-                    <div className="overflow-hidden rounded-lg border border-gray-200 bg-white transition-shadow hover:shadow-lg">
-                      <div className="aspect-[4/5] overflow-hidden bg-gray-100">
-                        <img
-                          src={product.image}
-                          alt={resolveDisplayTitle(product)}
-                          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        />
-                      </div>
-                      <div className="p-3 md:p-4">
-                        <h4 className="text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-blue-600">
-                          {resolveHomeProductTitle(product)}
-                        </h4>
-                        <p className="mt-1 text-xs text-gray-500 line-clamp-2">{resolveDisplayProductId(product)}</p>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <div className="mb-4 flex items-end justify-between gap-4">
-                <h3 className="text-lg font-semibold text-[#6a3524] md:text-xl">{menLabel}</h3>
-                <div className="h-px flex-1 bg-[linear-gradient(90deg,rgba(191,144,118,0.34),transparent)]" />
-              </div>
-              <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
-                {featuredShowcase.men.map((product) => (
-                  <Link
-                    key={product.product_id}
-                    href={`/products/${encodeURIComponent(product.product_id)}`}
-                    className="group"
-                  >
-                    <div className="overflow-hidden rounded-lg border border-gray-200 bg-white transition-shadow hover:shadow-lg">
-                      <div className="aspect-[4/5] overflow-hidden bg-gray-100">
-                        <img
-                          src={product.image}
-                          alt={resolveDisplayTitle(product)}
-                          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        />
-                      </div>
-                      <div className="p-3 md:p-4">
-                        <h4 className="text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-blue-600">
-                          {resolveHomeProductTitle(product)}
-                        </h4>
-                        <p className="mt-1 text-xs text-gray-500 line-clamp-2">{resolveDisplayProductId(product)}</p>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
+      <section className="border-y border-[#ead7c8] bg-[#fffaf5] py-5">
+        <div className="container mx-auto grid gap-3 px-4 md:grid-cols-3 md:px-6 xl:grid-cols-6">
+          {trustStats.map((stat) => (
+            <article key={stat.label} className="rounded border border-[#ead7c8] bg-white px-4 py-3">
+              <p className="text-lg font-bold text-[#5a2f1e]">{stat.value}</p>
+              <p className="mt-1 text-xs uppercase tracking-[0.16em] text-[#9d7d6f]">{stat.label}</p>
+            </article>
+          ))}
         </div>
       </section>
 
-      <section className="bg-[linear-gradient(180deg,#fff7dd_0%,#f4e2b8_55%,#ead09a_100%)] py-14 md:py-20">
-        <div className="container mx-auto px-4 text-center md:px-6">
-          <p className="text-3xl font-bold uppercase tracking-[0.14em] text-[#6a3524] md:text-4xl">OUR ADVANTAGES</p>
-          <p className="mx-auto mt-4 max-w-4xl text-base leading-7 text-[#7d4f3e] md:text-lg">
-            YiWu DiYaSi Dress CO., LTD. 23+ Years Professional Underwear Manufacturer for Supplying OEM Designs And
-            Support OEM Order.
-          </p>
-
-          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {[
-              {
-                title: "24H Design Service",
-                desc: "We transform your initial idea into a professional design concept and provide a solution within 24 hours.",
-                icon: (
-                  <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8">
-                    <path d="M4 16.5V20h3.5L18 9.5 14.5 6 4 16.5Z" />
-                    <path d="M13.5 7 17 10.5" />
-                    <path d="M8 20h12" />
-                  </svg>
-                )
-              },
-              {
-                title: "7 Day Sample Delivery",
-                desc: "Your custom-made samples will be ready for your evaluation in just 7 days, accelerating your time to market.",
-                icon: (
-                  <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8">
-                    <rect x="4" y="5" width="16" height="15" rx="2.5" />
-                    <path d="M8 3v4M16 3v4M4 10h16" />
-                    <path d="M10 14h4l-3 4" />
-                  </svg>
-                )
-              },
-              {
-                title: "Flexible Customization",
-                desc: "Low MOQ starts from 100pcs per SKU, providing the flexibility you need to grow your brand with minimal risk.",
-                icon: (
-                  <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8">
-                    <path d="M6 8.5C6 6.57 7.57 5 9.5 5c1.14 0 2.15.54 2.79 1.39A3.47 3.47 0 0 1 15.5 5C17.43 5 19 6.57 19 8.5c0 3.57-7 8.5-7 8.5s-6-4.93-6-8.5Z" />
-                    <path d="M8 19h8" />
-                  </svg>
-                )
-              },
-              {
-                title: "Express Delivery",
-                desc: "Our strategic location and reliable logistics network ensure your orders are delivered swiftly and securely.",
-                icon: (
-                  <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8">
-                    <path d="M3 7h11v8H3z" />
-                    <path d="M14 10h3l3 3v2h-6z" />
-                    <circle cx="7.5" cy="18" r="1.5" />
-                    <circle cx="17.5" cy="18" r="1.5" />
-                    <path d="M5 18H4m16 0h-1" />
-                  </svg>
-                )
-              }
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="flex h-full flex-col rounded-2xl border border-[rgba(163,116,80,0.18)] bg-[rgba(255,250,242,0.88)] p-5 text-left shadow-[0_18px_34px_rgba(125,79,62,0.10)] backdrop-blur"
-              >
-                <AdvantageIcon>{item.icon}</AdvantageIcon>
-                <h3 className="text-lg font-bold text-[#5f3123]">{item.title}</h3>
+      <section className="py-14 md:py-20">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-3xl">
+            <p className="kicker">DTC Brand Solutions</p>
+            <h2 className="section-title mt-2 text-[#6a3524]">Manufacturing support for each stage of brand growth</h2>
+            <p className="page-reference-body mt-4 text-[#7d4f3e]">
+              The site is built around factory execution, not generic product listings. Buyers can evaluate category fit,
+              MOQ route, packaging needs, quality control, and launch timing before starting a project.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {dtcSolutions.map((item) => (
+              <article key={item.title} className="rounded-lg border border-[#ead7c8] bg-[#fffaf5] p-5">
+                <h3 className="text-lg font-bold text-[#5a2f1e]">{item.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-[#7d4f3e]">{item.desc}</p>
-              </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* About + Video Section */}
-      <section className="py-12 md:py-16 bg-gray-50">
+      <section className="bg-[#fff7ef] py-14 md:py-20">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-            {/* Video */}
-            <div className="order-2 lg:order-1">
-              <div className="aspect-video bg-black rounded-lg overflow-hidden shadow-xl">
-                <video
-                  src="/media/home/factory-video.mp4"
-                  controls
-                  poster="/media/generated/wide/factory-wide-production-line.png"
-                  className="w-full h-full"
-                />
+          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-3xl">
+              <p className="kicker">Launch-Ready Collections</p>
+              <h2 className="section-title mt-2 text-[#6a3524]">Core product lines for private label underwear programs</h2>
+            </div>
+            <Link href="/products" className="btn btn-primary">
+              View All Products
+            </Link>
+          </div>
+          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {launchCollections.map((item, index) => (
+              <Link key={item.slug} href={item.href} className="group overflow-hidden rounded-lg border border-[#ead7c8] bg-white">
+                <div className="aspect-[4/3] overflow-hidden bg-[#f4e4d6]">
+                  <img
+                    src={collectionImage(index)}
+                    alt={item.title}
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-5">
+                  <h3 className="text-lg font-bold text-[#5a2f1e]">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-[#7d4f3e]">{item.desc}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-14 md:py-20">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div>
+              <p className="kicker">Private Label Customization</p>
+              <h2 className="section-title mt-2 text-[#6a3524]">Labels, packaging, and retail-ready details for DTC launches</h2>
+              <p className="page-reference-body mt-4 text-[#7d4f3e]">
+                Packaging is not an afterthought for underwear brands. We align product construction, logo placement,
+                care labels, packaging format, barcode stickers, and carton marks before bulk production starts.
+              </p>
+              <div className="mt-6">
+                <Link href="/packaging" className="btn btn-soft">
+                  Explore Packaging Options
+                </Link>
               </div>
             </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {privateLabelOptions.map((item) => (
+                <article key={item} className="rounded border border-[#ead7c8] bg-[#fffaf5] px-4 py-3 text-sm font-semibold text-[#5a2f1e]">
+                  {item}
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
-            {/* About Content */}
-            <div className="order-1 lg:order-2">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">{t.aboutTitle}</h2>
-              <p className="text-gray-600 leading-relaxed mb-6">{t.aboutDesc}</p>
+      <section className="bg-[#f7eee6] py-14 md:py-20">
+        <div className="container mx-auto px-4 md:px-6">
+          <p className="kicker">Development Process</p>
+          <h2 className="section-title mt-2 max-w-3xl text-[#6a3524]">From product brief to approved shipment</h2>
+          <div className="mt-8 grid gap-4 md:grid-cols-4">
+            {developmentSteps.map((step, index) => (
+              <article key={step} className="rounded-lg border border-[#dfc8b8] bg-white p-5">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#b06a46]">{String(index + 1).padStart(2, "0")}</p>
+                <h3 className="mt-4 text-base font-bold text-[#5a2f1e]">{step}</h3>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                {t.aboutStats.map((stat, idx) => (
-                  <div key={idx} className="text-center p-4 bg-white rounded-lg shadow-sm">
-                    <p className="text-2xl md:text-3xl font-bold text-amber-600">{stat.value}</p>
-                    <p className="text-sm text-gray-600">{stat.label}</p>
-                  </div>
+      <section className="py-14 md:py-20">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+            <div className="aspect-video overflow-hidden rounded-lg bg-black shadow-xl">
+              <video src="/media/home/factory-video.mp4" controls poster="/media/home/factory-1.jpg" className="h-full w-full" />
+            </div>
+            <div>
+              <p className="kicker">Real Factory & QC</p>
+              <h2 className="section-title mt-2 text-[#6a3524]">Factory photos, production checks, and buyer review documents</h2>
+              <p className="page-reference-body mt-4 text-[#7d4f3e]">
+                About and factory pages now prioritize existing factory media and buyer-verifiable information. Certificate
+                documents are described as available for buyer review, because certificate numbers and validity must be
+                checked against the latest real documents.
+              </p>
+              <div className="mt-5 grid gap-3">
+                {qualitySteps.map((item) => (
+                  <article key={item.title} className="rounded border border-[#ead7c8] bg-[#fffaf5] p-4">
+                    <h3 className="font-bold text-[#5a2f1e]">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-[#7d4f3e]">{item.desc}</p>
+                  </article>
                 ))}
               </div>
-
-              <Link
-                href="/contact"
-                className="inline-block px-6 py-3 bg-amber-500 text-white font-semibold rounded hover:bg-amber-600 transition-colors"
-              >
-                Contact Us
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Factory Gallery */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-3">{t.factoryTitle}</h2>
-          <p className="text-gray-600 text-center mb-10">{t.factoryDesc}</p>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="col-span-2 row-span-2">
-              <img src="/media/home/factory-1.jpg" alt="Factory" className="w-full h-full object-cover rounded-lg" />
-            </div>
-            <div>
-              <img src="/media/home/factory-2.jpg" alt="Factory" className="w-full h-40 md:h-48 object-cover rounded-lg" />
-            </div>
-            <div>
-              <img src="/media/home/factory-3.jpg" alt="Factory" className="w-full h-40 md:h-48 object-cover rounded-lg" />
-            </div>
-            <div>
-              <img src="/media/home/factory-4.jpg" alt="Factory" className="w-full h-40 md:h-48 object-cover rounded-lg" />
-            </div>
-            <div>
-              <img src="/media/home/factory-5.jpg" alt="Factory" className="w-full h-40 md:h-48 object-cover rounded-lg" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Product Categories */}
-      <section className="relative overflow-hidden bg-[linear-gradient(180deg,#fff7dd_0%,#f4e2b8_55%,#ead09a_100%)] py-12 md:py-16">
-        <div className="pointer-events-none absolute inset-0 opacity-25">
-          <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.8),transparent)]" />
-          <div className="absolute left-[8%] top-8 h-28 w-28 rounded-full border border-white/40" />
-          <div className="absolute right-[10%] top-16 h-40 w-40 rounded-full border border-white/30" />
-          <div className="absolute bottom-10 left-[24%] h-24 w-24 rounded-full border border-white/30" />
-        </div>
-        <div className="container relative mx-auto px-4 md:px-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-[#6a3524]">Product Categories</h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {categories.slice(0, 8).map((cat) => (
-              <Link
-                key={cat.category}
-                href={`/products?category=${encodeURIComponent(cat.category)}`}
-                className="group rounded-lg border border-[rgba(163,116,80,0.18)] bg-[rgba(255,250,242,0.88)] p-6 text-center shadow-[0_18px_34px_rgba(125,79,62,0.10)] transition-transform transition-shadow hover:-translate-y-1 hover:shadow-[0_22px_42px_rgba(125,79,62,0.14)]"
-              >
-                <span className="text-[#5f3123] font-medium transition-colors group-hover:text-[#9e5637]">{cat.category}</span>
-                <span className="block text-sm text-[#7d4f3e] mt-1">{cat.count} items</span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact CTA */}
-      <section className="relative overflow-hidden py-8 md:py-12">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="relative min-h-[520px] overflow-hidden rounded-[30px] shadow-[0_24px_60px_rgba(91,45,19,0.18)] md:min-h-[620px]">
-            <iframe
-              title="YiWu DiYaSi location map"
-              src="https://www.google.com/maps?hl=en&gl=US&q=No.%2016%20Dashi%20Road%2C%20Fotang%20Town%2C%20Yiwu%2C%20Zhejiang%2C%20China&z=15&output=embed"
-              className="absolute inset-0 h-full w-full border-0"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,250,245,0.03)_0%,rgba(255,250,245,0.04)_55%,rgba(255,250,245,0.12)_100%)]" />
-            <div className="absolute bottom-5 left-5 w-[min(92vw,520px)] rounded-[24px] border border-white/35 bg-[rgba(255,247,241,0.6)] px-5 py-5 text-[#6e3924] shadow-[0_18px_44px_rgba(91,45,19,0.18)] backdrop-blur-md md:bottom-7 md:left-7 md:w-[min(86vw,560px)] md:px-6 md:py-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#b15d39]">Contact</p>
-              <div className="mt-4 space-y-4 text-sm leading-6 md:text-base">
-                <div>
-                  <p className="font-semibold text-[#b15d39]">Address</p>
-                  <p className="mt-1">NO.16 DaShi Road ,FoTang Town ,Yiwu, Zhejiang, China</p>
-                </div>
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div>
-                    <p className="font-semibold text-[#b15d39]">Fax</p>
-                    <p className="mt-1">+86-579-85569925</p>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-[#b15d39]">Mobile / WhatsApp</p>
-                    <p className="mt-1">
-                      <a
-                        href="tel:+8618042579030"
-                        className="underline decoration-[#d08b67] underline-offset-4 transition hover:text-[#b15d39]"
-                      >
-                        +86 18042579030
-                      </a>
-                    </p>
-                  </div>
-                </div>
-                <div>
-                  <p className="font-semibold text-[#b15d39]">Email</p>
-                  <p className="mt-1">
-                    <a
-                      href="mailto:w18042579030@gmail.com"
-                      className="underline decoration-[#d08b67] underline-offset-4 transition hover:text-[#b15d39]"
-                    >
-                      w18042579030@gmail.com
-                    </a>
-                  </p>
-                </div>
+              <div className="mt-6">
+                <Link href="/factory" className="btn btn-primary">
+                  View Factory & Quality
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      {featuredProducts.length > 0 ? (
+        <section className="bg-[#fff7ef] py-14 md:py-20">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+              <div>
+                <p className="kicker">Core Product Examples</p>
+                <h2 className="section-title mt-2 text-[#6a3524]">Clean product titles for professional buyer review</h2>
+              </div>
+              <Link href="/products" className="btn btn-soft">
+                Browse Catalogue
+              </Link>
+            </div>
+            <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
+              {featuredProducts.map((product) => {
+                const image = resolvePrimaryImage(product);
+                return (
+                  <Link key={product.product_id} href={`/products/${encodeURIComponent(product.product_id)}`} className="group rounded-lg border border-[#ead7c8] bg-white">
+                    <div className="aspect-[4/5] overflow-hidden rounded-t-lg bg-[#f4e4d6]">
+                      {image ? (
+                        <img src={image} alt={resolveDisplayTitle(product)} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                      ) : null}
+                    </div>
+                    <div className="p-4">
+                      <h3 className="text-sm font-bold leading-5 text-[#5a2f1e]">{resolveDisplayTitle(product)}</h3>
+                      <p className="mt-2 text-xs text-[#9d7d6f]">{resolveDisplayProductId(product)}</p>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      <section className="py-14 md:py-20">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+            <div>
+              <p className="kicker">FAQ</p>
+              <h2 className="section-title mt-2 text-[#6a3524]">Questions buyers usually ask before sampling</h2>
+            </div>
+            <div className="grid gap-4">
+              {faqs.map((item) => (
+                <article key={item.q} className="rounded-lg border border-[#ead7c8] bg-[#fffaf5] p-5">
+                  <h3 className="font-bold text-[#5a2f1e]">{item.q}</h3>
+                  <p className="mt-2 text-sm leading-7 text-[#7d4f3e]">{item.a}</p>
+                </article>
+              ))}
+              <article className="rounded-lg border border-[#ead7c8] bg-white p-5">
+                <h3 className="font-bold text-[#5a2f1e]">MOQ planning reference</h3>
+                <div className="mt-3 grid gap-2">
+                  {moqTiers.map((item) => (
+                    <p key={item.label} className="text-sm leading-6 text-[#7d4f3e]">
+                      <strong className="text-[#5a2f1e]">{item.label}:</strong> {item.value}
+                    </p>
+                  ))}
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#5a2f1e] py-14 text-white md:py-20">
+        <div className="container mx-auto flex flex-col gap-6 px-4 md:flex-row md:items-center md:justify-between md:px-6">
+          <div className="max-w-3xl">
+            <p className="kicker text-[#f3d7a1]">Final CTA</p>
+            <h2 className="heading-font mt-2 text-4xl font-semibold">Start your private label underwear project</h2>
+            <p className="mt-4 text-sm leading-7 text-white/82">
+              Send category, target market, estimated quantity, private label needs, packaging plan, and launch date.
+            </p>
+          </div>
+          <Link href="/contact" className="btn bg-white text-[#5a2f1e] hover:bg-[#f4d4bd]">
+            Contact Factory Team
+          </Link>
+        </div>
+      </section>
     </main>
   );
 }

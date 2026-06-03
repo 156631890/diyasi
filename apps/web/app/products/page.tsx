@@ -3,13 +3,14 @@ import type { Metadata } from "next";
 import ProductCatalogView from "@/components/ProductCatalogView";
 import { getCatalogCategories, getCatalogProducts } from "@/lib/catalog-source";
 import { SiteLang } from "@/lib/i18n";
+import { resolveDisplayTitle } from "@/lib/product-display";
 import { absoluteUrl, buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { getServerLang } from "@/lib/server-lang";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Products",
+  title: "Launch-Ready Intimates Collections",
   description:
-    "Private-label underwear, bras, shapewear, and activewear catalogue for wholesalers, retailers, and DTC brands.",
+    "Launch-ready underwear, bras, shapewear, activewear, period underwear, men's underwear, and loungewear collections for private label brands.",
   path: "/products"
 });
 
@@ -56,8 +57,8 @@ const copy: Record<
 > = {
   en: {
     kicker: "Products",
-    title: "Underwear, bras, shapewear, and activewear",
-    desc: "",
+    title: "Launch-ready intimates collections for private label brands",
+    desc: "Browse cleaned product titles and fixed collection paths designed for DTC, retail, and wholesale buyer review.",
     all: "All",
     noProducts: "No products found in this category yet.",
     noImage: "Image coming soon",
@@ -181,7 +182,7 @@ export default async function ProductsPage() {
       "@type": "ListItem",
       position: index + 1,
       url: absoluteUrl(`/products/${encodeURIComponent(product.product_id)}`),
-      name: product.product_name
+      name: resolveDisplayTitle(product)
     }))
   };
   const collectionPageJsonLd = {

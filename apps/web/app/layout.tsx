@@ -5,6 +5,7 @@ import SiteFooter from "@/components/SiteFooter";
 import TopNav from "@/components/TopNav";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/seo";
 import { getServerLang } from "@/lib/server-lang";
+import { companyInfo } from "@/lib/site-info";
 
 import "./globals.css";
 
@@ -20,6 +21,8 @@ const bodyFont = Manrope({
   variable: "--font-body"
 });
 
+const defaultImage = `${SITE_URL}/media/home/factory-1.jpg`;
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -28,9 +31,10 @@ export const metadata: Metadata = {
   },
   description: SITE_DESCRIPTION,
   keywords: [
-    "underwear manufacturer",
-    "private label underwear factory",
-    "OEM ODM underwear",
+    "private label underwear manufacturer",
+    "private label intimates manufacturer",
+    "OEM ODM underwear factory",
+    "custom underwear packaging",
     "bra manufacturer",
     "shapewear manufacturer",
     "activewear manufacturer",
@@ -51,12 +55,14 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     type: "website",
     url: SITE_URL,
-    siteName: SITE_NAME
+    siteName: SITE_NAME,
+    images: [defaultImage]
   },
   twitter: {
     card: "summary_large_image",
     title: SITE_NAME,
-    description: SITE_DESCRIPTION
+    description: SITE_DESCRIPTION,
+    images: [defaultImage]
   }
 };
 
@@ -75,58 +81,31 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const organizationJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: SITE_NAME,
+    name: companyInfo.name,
+    alternateName: companyInfo.shortName,
     url: SITE_URL,
+    image: defaultImage,
     description: SITE_DESCRIPTION,
-    foundingDate: "2002",
-    email: "imbella.vicky@diyasidress.com",
-    telephone: "+86-18042579030",
-    faxNumber: "+86-579-85569925",
+    foundingDate: companyInfo.establishedYear,
+    email: companyInfo.emailPrimary,
+    telephone: companyInfo.phone,
+    faxNumber: companyInfo.fax,
     areaServed: "Worldwide",
-    knowsLanguage: ["en", "zh", "es"]
-  };
-
-  const clothingStoreJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ClothingStore",
-    name: "YiWu DiYaSi Dress CO., LTD",
-    alternateName: "义乌市迪亚斯服饰有限公司",
-    image: `${SITE_URL}/media/generated/factory-capability-panorama.png`,
-    "@id": SITE_URL,
-    url: SITE_URL,
-    telephone: "+86-18042579030",
+    knowsLanguage: ["en", "zh", "es"],
     address: {
       "@type": "PostalAddress",
-      streetAddress: "NO.16 DaShi Road, FoTang Town",
+      streetAddress: "No. 16 Dashi Road, Fotang Town",
       addressLocality: "Yiwu",
       addressRegion: "Zhejiang",
       postalCode: "322000",
       addressCountry: "CN"
     },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 29.3068,
-      longitude: 120.0751
-    },
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      opens: "09:00",
-      closes: "18:00"
-    },
-    description:
-      "YiWu DiYaSi Dress CO., LTD is a professional sustainable underwear manufacturer with 23+ years of experience. We specialize in eco-friendly fabrics, seamless technology, and OEM/ODM services for global brands.",
-    brand: {
-      "@type": "Brand",
-      name: "DiYaSi"
-    },
-    foundingDate: "2002",
     knowsAbout: [
-      "Sustainable Underwear Manufacturing",
-      "Eco-friendly Fabrics",
-      "Seamless Lingerie Production",
-      "Cross-border E-commerce Supply Chain",
-      "Yiwu Sourcing"
+      "Private label underwear manufacturing",
+      "OEM ODM intimates development",
+      "Underwear fabric selection",
+      "Custom labels and packaging",
+      "Underwear quality control"
     ]
   };
 
@@ -134,14 +113,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang={lang}>
       <body className={`${headingFont.variable} ${bodyFont.variable}`}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(clothingStoreJsonLd) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
         <TopNav initialLang={lang} />
         {children}
         <SiteFooter initialLang={lang} />

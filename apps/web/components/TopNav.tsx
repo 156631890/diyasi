@@ -14,13 +14,12 @@ const labels: Record<
     home: string;
     about: string;
     products: string;
-    oem: string;
+    privateLabel: string;
     sustainability: string;
     factory: string;
-    blog: string;
+    fabrics: string;
+    resources: string;
     contact: string;
-    payments: string;
-    admin: string;
     cta: string;
     companyTag: string;
   }
@@ -29,43 +28,40 @@ const labels: Record<
     home: "Home",
     about: "About",
     products: "Products",
-    oem: "OEM / ODM",
+    privateLabel: "Private Label",
     sustainability: "Sustainability",
-    factory: "Factory",
-    blog: "Journal",
+    factory: "Factory & Quality",
+    fabrics: "Fabrics",
+    resources: "Resources",
     contact: "Contact",
-    payments: "Payments",
-    admin: "Admin",
-    cta: "Start a Conversation",
-    companyTag: "Underwear Factory for Wholesalers, Retailers, and DTC Brands"
+    cta: "Start a Project",
+    companyTag: "Private label intimates manufacturer for DTC, retail, and wholesale brands"
   },
   zh: {
-    home: "首页",
-    about: "关于我们",
-    products: "产品",
-    oem: "OEM / ODM",
-    sustainability: "可持续",
-    factory: "工厂",
-    blog: "文章",
-    contact: "联系",
-    payments: "支付",
-    admin: "后台",
-    cta: "开始沟通",
-    companyTag: "服务批发商、零售商与 DTC 品牌的内衣工厂"
+    home: "\u9996\u9875",
+    about: "\u5173\u4e8e\u6211\u4eec",
+    products: "\u4ea7\u54c1",
+    privateLabel: "\u8d34\u724c\u5b9a\u5236",
+    sustainability: "\u53ef\u6301\u7eed",
+    factory: "\u5de5\u5382\u4e0e\u8d28\u91cf",
+    fabrics: "\u9762\u6599",
+    resources: "\u8d44\u6e90",
+    contact: "\u8054\u7cfb",
+    cta: "\u53d1\u8d77\u9879\u76ee",
+    companyTag: "\u9762\u5411 DTC\u3001\u96f6\u552e\u548c\u6279\u53d1\u54c1\u724c\u7684\u5185\u8863\u8d34\u724c\u5de5\u5382"
   },
   es: {
     home: "Inicio",
     about: "Nosotros",
     products: "Productos",
-    oem: "OEM / ODM",
+    privateLabel: "Private Label",
     sustainability: "Sostenibilidad",
-    factory: "Fabrica",
-    blog: "Journal",
+    factory: "Fabrica y Calidad",
+    fabrics: "Tejidos",
+    resources: "Recursos",
     contact: "Contacto",
-    payments: "Pagos",
-    admin: "Admin",
-    cta: "Iniciar Conversacion",
-    companyTag: "Fabrica de ropa interior para mayoristas, retailers y marcas DTC"
+    cta: "Iniciar Proyecto",
+    companyTag: "Fabricante private label de intimates para marcas DTC, retail y wholesale"
   }
 };
 
@@ -88,14 +84,17 @@ export default function TopNav({ initialLang }: TopNavProps) {
   const primaryLinks: LinkItem[] = [
     { href: "/", label: t.home },
     { href: "/products", label: t.products },
-    { href: "/oem-odm", label: t.oem },
+    { href: "/oem-odm", label: t.privateLabel },
+    { href: "/factory", label: t.factory },
+    { href: "/fabrics", label: t.fabrics },
+    { href: "/resources", label: t.resources },
     { href: "/about", label: t.about },
     { href: "/contact", label: t.contact }
   ];
 
   const secondaryLinks: LinkItem[] = [
     { href: "/sustainability", label: t.sustainability },
-    { href: "/factory", label: t.factory }
+    { href: "/contact", label: t.cta }
   ];
 
   function onLanguageChange(nextLang: SiteLang) {
@@ -128,7 +127,7 @@ export default function TopNav({ initialLang }: TopNavProps) {
             <select
               className="top-nav-select ml-2 rounded-full px-3 py-1 text-xs"
               value={lang}
-              onChange={(e) => onLanguageChange(e.target.value as SiteLang)}
+              onChange={(event) => onLanguageChange(event.target.value as SiteLang)}
             >
               {(Object.keys(LANG_LABELS) as SiteLang[]).map((value) => (
                 <option key={value} value={value}>
@@ -154,13 +153,9 @@ export default function TopNav({ initialLang }: TopNavProps) {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-4 text-sm lg:flex xl:gap-6">
+        <nav className="hidden items-center gap-3 text-sm lg:flex xl:gap-4">
           {primaryLinks.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`${linkClass(pathname, item.href)} nav-link-primary`}
-            >
+            <Link key={item.href} href={item.href} className={`${linkClass(pathname, item.href)} nav-link-primary`}>
               {item.label}
             </Link>
           ))}
@@ -183,7 +178,7 @@ export default function TopNav({ initialLang }: TopNavProps) {
           <select
             className="top-nav-select rounded-full px-3 py-1 text-xs"
             value={lang}
-            onChange={(e) => onLanguageChange(e.target.value as SiteLang)}
+            onChange={(event) => onLanguageChange(event.target.value as SiteLang)}
           >
             {(Object.keys(LANG_LABELS) as SiteLang[]).map((value) => (
               <option key={value} value={value}>

@@ -1,131 +1,83 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { SiteLang } from "@/lib/i18n";
 import { absoluteUrl, buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
-import { getServerLang } from "@/lib/server-lang";
+import { fabricOptions, privateLabelOptions, sampleAndLeadTimes } from "@/lib/site-info";
 
 export const metadata: Metadata = buildMetadata({
-  title: "OEM / ODM",
+  title: "Private Label Underwear Development",
   description:
-    "Explore YiWu DiYaSi OEM / ODM workflow from product planning and material development to sampling, production, and shipment.",
+    "Private label underwear development from fabric selection and reference sample review to fit sampling, packaging mockup, bulk production, QC, and delivery.",
   path: "/oem-odm"
 });
 
-type WorkflowBlock = {
-  title: string;
-  items: string[];
-};
-
-const copy: Record<
-  SiteLang,
+const workflow = [
   {
-    kicker: string;
-    title: string;
-    desc: string;
-    pay: string;
-    call: string;
-    sectionTitle: string;
-    workflow: WorkflowBlock[];
-  }
-> = {
-  en: {
-    kicker: "OEM / ODM",
-    title: "From concept to shipment, executed in one manufacturing system",
-    desc: "We handle product planning, material development, fit engineering, and mass production for global underwear brands in one factory system.",
-    pay: "Open Payments Page",
-    call: "Book Development Call",
-    sectionTitle: "Execution flow with fewer handoffs",
-    workflow: [
-      {
-        title: "Product Planning",
-        items: ["Category and market positioning", "Target cost and quality benchmark", "Silhouette and fit direction"]
-      },
-      {
-        title: "Material Development",
-        items: ["Sustainable fabric options", "Color and trim coordination", "Labeling and packaging requirements"]
-      },
-      {
-        title: "Sampling & Fit",
-        items: ["Prototype in 5-7 days", "Fit review with visual feedback", "Pattern optimization for production"]
-      },
-      {
-        title: "Production & Delivery",
-        items: ["Line scheduling and QC checkpoints", "Bulk production management", "Shipment and replenishment planning"]
-      }
+    title: "Product Planning",
+    items: [
+      "Category and target market review",
+      "Reference sample or moodboard review",
+      "Target retail price and quality benchmark",
+      "Quantity, size range, and launch timing"
     ]
   },
-  zh: {
-    kicker: "OEM / ODM",
-    title: "从产品概念到出货交付，统一在一个制造系统里完成",
-    desc: "我们把产品规划、面料开发、版型优化和量产执行整合成一条连贯流程，服务全球内衣品牌。",
-    pay: "打开支付页面",
-    call: "预约开发沟通",
-    sectionTitle: "更少交接的执行流程",
-    workflow: [
-      {
-        title: "产品规划",
-        items: ["明确品类与市场定位", "确定目标成本与质量标准", "梳理版型与穿着方向"]
-      },
-      {
-        title: "面料开发",
-        items: ["筛选可持续面料方案", "协调颜色与辅料", "确认标签与包装要求"]
-      },
-      {
-        title: "打样与版型优化",
-        items: ["5-7 天完成首版样衣", "根据反馈快速调整", "为量产做好版型稳定化"]
-      },
-      {
-        title: "量产与交付",
-        items: ["排产与质检节点控制", "大货进度管理", "出货与补货节奏规划"]
-      }
+  {
+    title: "Material Development",
+    items: [
+      "Cotton, modal, bamboo, recycled nylon, seamless yarn, and spandex blends",
+      "Hand feel, stretch, recovery, breathability, and transparency review",
+      "Color direction and trim coordination",
+      "Certification and buyer document requirements"
     ]
   },
-  es: {
-    kicker: "OEM / ODM",
-    title: "Del concepto al envío dentro de un solo sistema de manufactura",
-    desc: "Integramos plan de producto, desarrollo de material, ajuste de patrón y producción masiva en un flujo práctico para marcas globales.",
-    pay: "Abrir Pagos",
-    call: "Iniciar Conversación",
-    sectionTitle: "Flujo de ejecución con menos handoffs",
-    workflow: [
-      {
-        title: "Plan de Producto",
-        items: ["Posicionamiento por categoría", "Objetivo de costo y calidad", "Dirección de fit y silueta"]
-      },
-      {
-        title: "Desarrollo de Material",
-        items: ["Opciones de tejido sostenible", "Coordinación de color y trims", "Requisitos de empaque y etiqueta"]
-      },
-      {
-        title: "Muestra y Ajuste",
-        items: ["Prototipo en 5-7 días", "Revisión de fit con feedback", "Optimización de patrón para producción"]
-      },
-      {
-        title: "Producción y Entrega",
-        items: ["Plan de línea y control de calidad", "Gestión de producción masiva", "Plan de envío y reposición"]
-      }
+  {
+    title: "Sampling & Fit",
+    items: [
+      sampleAndLeadTimes.stockFabricSample,
+      sampleAndLeadTimes.customColorSample,
+      sampleAndLeadTimes.newPatternSample,
+      "Fit review, size grading, and correction round",
+      "Pre-production sample before bulk approval"
+    ]
+  },
+  {
+    title: "Private Label Packaging",
+    items: [
+      "Custom waistband and care label",
+      "Heat transfer logo placement",
+      "Hangtag and polybag mockup",
+      "Gift box, barcode / SKU sticker, carton mark",
+      "Packing rule and retail-ready presentation"
+    ]
+  },
+  {
+    title: "Production & QC",
+    items: [
+      "Line scheduling and material preparation",
+      "Incoming fabric inspection",
+      "Inline production inspection",
+      "Final inspection and packaging review",
+      sampleAndLeadTimes.bulkLeadTime
     ]
   }
-};
+];
 
 export default function OemOdmPage() {
-  const lang = getServerLang();
-  const t = copy[lang];
   const breadcrumbJsonLd = buildBreadcrumbJsonLd([
     { name: "Home", path: "/" },
-    { name: "OEM / ODM", path: "/oem-odm" }
+    { name: "Private Label", path: "/oem-odm" }
   ]);
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "OEM / ODM Underwear Manufacturing",
-    description: t.desc,
+    name: "Private Label Underwear Development",
+    description:
+      "Private label underwear development from fabric selection and reference sample review to fit sampling, packaging mockup, bulk production, QC, and delivery.",
     provider: {
       "@type": "Organization",
-      name: "YiWu DiYaSi Dress CO., LTD"
+      name: "YiWu DiYaSi Dress Co., Ltd."
     },
-    serviceType: "OEM / ODM manufacturing",
+    serviceType: "Private label underwear manufacturing",
     areaServed: "Worldwide",
     url: absoluteUrl("/oem-odm")
   };
@@ -136,26 +88,31 @@ export default function OemOdmPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
 
       <section className="home-cta-band page-hero rounded-[34px] shadow-[0_32px_90px_rgba(121,72,47,0.18)] md:px-10 lg:px-12">
-        <p className="kicker page-reference-subtitle text-[#ffd7ba]">{t.kicker}</p>
-        <h1 className="heading-font mt-2 text-5xl font-semibold text-[#fff7f0]">{t.title}</h1>
-        <p className="page-reference-body page-copy-wide mt-3 text-[#fff0e5]">{t.desc}</p>
+        <p className="kicker page-reference-subtitle text-[#ffd7ba]">Private Label Services</p>
+        <h1 className="heading-font mt-2 text-5xl font-semibold text-[#fff7f0]">
+          Private label underwear development from fabric to final delivery
+        </h1>
+        <p className="page-reference-body page-copy-wide mt-3 text-[#fff0e5]">
+          We help brands move from product idea, reference sample, fabric selection, fit approval, custom label, and
+          packaging mockup into bulk production and global delivery.
+        </p>
         <div className="mt-6 flex flex-wrap gap-3">
-          <Link
-            href="/contact"
-            className="btn border border-[#ffe2cf] bg-[#fff7f1] text-[#8d452d] hover:bg-[#ffe9db]"
-          >
-            {t.call}
+          <Link href="/contact" className="btn border border-[#ffe2cf] bg-[#fff7f1] text-[#8d452d] hover:bg-[#ffe9db]">
+            Book Development Call
+          </Link>
+          <Link href="/packaging" className="btn border border-[#ffe2cf] text-[#fff7f1] hover:bg-[#fff7f1] hover:text-[#8d452d]">
+            View Packaging Options
           </Link>
         </div>
       </section>
 
       <section className="page-section">
         <div className="page-section-head">
-          <p className="kicker page-reference-subtitle">{t.kicker}</p>
-          <h2 className="page-reference-subtitle mt-2 text-[#6a3524]">{t.sectionTitle}</h2>
+          <p className="kicker page-reference-subtitle">Execution Flow</p>
+          <h2 className="page-reference-subtitle mt-2 text-[#6a3524]">A practical development route with fewer handoffs</h2>
         </div>
         <div className="mt-8 space-y-8">
-          {t.workflow.map((block, index) => (
+          {workflow.map((block, index) => (
             <article key={block.title} className="process-row">
               <div className="process-index">{String(index + 1).padStart(2, "0")}</div>
               <div className="process-copy">
@@ -170,6 +127,31 @@ export default function OemOdmPage() {
               </div>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="editorial-strip page-section">
+        <div className="grid gap-8 lg:grid-cols-2">
+          <div>
+            <p className="kicker page-reference-subtitle">Fabric Options</p>
+            <div className="chip-list mt-4">
+              {fabricOptions.map((item) => (
+                <span key={item} className="chip">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div>
+            <p className="kicker page-reference-subtitle">Packaging Options</p>
+            <div className="chip-list mt-4">
+              {privateLabelOptions.map((item) => (
+                <span key={item} className="chip">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
     </main>
