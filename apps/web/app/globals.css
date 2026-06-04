@@ -3496,6 +3496,212 @@ a {
   flex-wrap: wrap;
 }
 
+.visual-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(340px, 1.1fr);
+  gap: 2rem;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid #d9e2dc;
+  border-radius: 8px;
+  background: #fffdf8;
+  padding: clamp(1.5rem, 3vw, 3rem);
+}
+
+.visual-hero-dark {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: #162520;
+}
+
+.visual-hero-copy {
+  max-width: 680px;
+}
+
+.visual-hero-media {
+  overflow: hidden;
+  min-height: 320px;
+  aspect-ratio: 16 / 10;
+  border-radius: 8px;
+  background: #e8eee9;
+}
+
+.visual-hero-image,
+.resource-card-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.factory-hero-stats,
+.resource-hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.factory-hero-stats span,
+.resource-hero-pills span {
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 999px;
+  padding: 0.58rem 0.86rem;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.resource-hero-pills span {
+  border-color: #c9d8d2;
+  color: #0f5f55;
+  background: #eef6f3;
+}
+
+.service-step-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.service-step-card,
+.fabric-guide-card,
+.resource-card,
+.project-input-item {
+  border: 1px solid #d9e2dc;
+  border-radius: 8px;
+  background: #fffdf8;
+}
+
+.service-step-card,
+.fabric-guide-card {
+  padding: 1.35rem;
+}
+
+.service-step-head,
+.factory-cert-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.service-step-icon {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.service-step-index {
+  color: #0f5f55;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.split-proof-band {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: 1.4rem;
+  align-items: start;
+  border-top: 1px solid #d9e2dc;
+  border-bottom: 1px solid #d9e2dc;
+}
+
+.project-input-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.project-input-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem;
+  color: #1d2521;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.project-input-item img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.fabric-guide-facts {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 1rem;
+  border-top: 1px solid #d9e2dc;
+  padding-top: 1rem;
+  color: #5f6b66;
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+.fabric-guide-facts strong {
+  color: #1d2521;
+}
+
+.resource-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.resource-card {
+  overflow: hidden;
+  background: #fff;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-3px);
+  border-color: #aac5bc;
+  box-shadow: 0 18px 42px rgba(15, 95, 85, 0.1);
+}
+
+.resource-card-media {
+  display: block;
+  aspect-ratio: 5 / 3;
+  overflow: hidden;
+  background: #e8eee9;
+}
+
+.resource-card-copy {
+  padding: 1.1rem;
+}
+
+.resource-card-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: #0f5f55;
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.resource-card-kicker img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.resource-card-link {
+  display: inline-flex;
+  margin-top: 1.05rem;
+  color: #0f5f55;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-color: #b97853;
+  text-underline-offset: 4px;
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
   .luxury-features-grid {
@@ -3518,6 +3724,16 @@ a {
 
   .luxury-stats-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .visual-hero,
+  .split-proof-band {
+    grid-template-columns: 1fr;
+  }
+
+  .service-step-grid,
+  .resource-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -3565,6 +3781,20 @@ a {
 
   .luxury-btn {
     width: 100%;
+  }
+
+  .visual-hero {
+    padding: 1.25rem;
+  }
+
+  .visual-hero-media {
+    min-height: 240px;
+  }
+
+  .service-step-grid,
+  .resource-card-grid,
+  .project-input-grid {
+    grid-template-columns: 1fr;
   }
 }
 

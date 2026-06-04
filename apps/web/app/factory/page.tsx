@@ -62,6 +62,12 @@ const factoryPhotos = [
   { src: "/media/home/factory-5.jpg", title: "QC and Packing Area" }
 ];
 
+const qualityIcons = [
+  "/media/generated/icons/fabric-swatch.png",
+  "/media/generated/icons/factory-line.png",
+  "/media/generated/icons/qc-check.png"
+];
+
 export default function FactoryPage() {
   const breadcrumbJsonLd = buildBreadcrumbJsonLd([
     { name: "Home", path: "/" },
@@ -81,13 +87,31 @@ export default function FactoryPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }} />
 
-      <section className="dark-band page-hero rounded-[34px] shadow-[0_32px_90px_rgba(121,72,47,0.18)] md:px-10 lg:px-12">
-        <p className="kicker page-reference-subtitle text-[#d7eee8]">Factory & Quality</p>
-        <h1 className="heading-font mt-2 text-5xl font-semibold">Factory capability with a practical QC system</h1>
-        <p className="page-reference-body page-copy-wide mt-3 text-[#fff0e5]">
-          {companyInfo.name} supports private label underwear, bras, shapewear, activewear, and loungewear programs
-          with sampling, bulk production, quality control, packaging coordination, and export delivery.
-        </p>
+      <section className="visual-hero visual-hero-dark page-hero">
+        <div className="visual-hero-copy">
+          <p className="kicker page-reference-subtitle text-[#d7eee8]">Factory & Quality</p>
+          <h1 className="heading-font mt-2 text-5xl font-semibold text-white">Factory capability with a practical QC system</h1>
+          <p className="page-reference-body mt-4 text-white/82">
+            {companyInfo.name} supports private label underwear, bras, shapewear, activewear, and loungewear programs
+            with sampling, bulk production, quality control, packaging coordination, and export delivery.
+          </p>
+          <div className="factory-hero-stats mt-7">
+            <span>{companyInfo.factoryArea}</span>
+            <span>{companyInfo.monthlyCapacity}</span>
+            <span>{companyInfo.employees}</span>
+          </div>
+        </div>
+        <div className="visual-hero-media">
+          <img
+            src="/media/generated/wide/factory-wide-production-line.png"
+            alt="Underwear factory production line with textile machinery"
+            width={1600}
+            height={720}
+            decoding="async"
+            fetchPriority="high"
+            className="visual-hero-image"
+          />
+        </div>
       </section>
 
       <section className="page-section company-overview-grid">
@@ -165,7 +189,15 @@ export default function FactoryPage() {
         <div className="factory-custom-grid mt-6">
           {qualitySteps.map((item, index) => (
             <article key={item.title} className="factory-custom-card">
-              <div className="factory-custom-icon">{String(index + 1).padStart(2, "0")}</div>
+              <img
+                src={qualityIcons[index] || "/media/generated/icons/qc-check.png"}
+                alt=""
+                width={64}
+                height={64}
+                loading="lazy"
+                decoding="async"
+                className="service-step-icon"
+              />
               <h3 className="card-title-standard mt-4 text-[#1d2521]">{item.title}</h3>
               <p className="page-reference-body mt-3 text-[#5f6b66]">{item.desc}</p>
             </article>
@@ -181,7 +213,17 @@ export default function FactoryPage() {
         <div className="factory-cert-grid mt-6">
           {certifications.map((item) => (
             <article key={item.code} className="factory-cert-card">
-              <div className="factory-cert-code">{item.code}</div>
+              <div className="factory-cert-head">
+                <img
+                  src="/media/generated/icons/certificate-document.png"
+                  alt=""
+                  width={56}
+                  height={56}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div className="factory-cert-code">{item.code}</div>
+              </div>
               <h3 className="card-title-standard mt-4 text-[#1d2521]">{item.title}</h3>
               <p className="page-reference-body mt-3 text-[#5f6b66]">{item.desc}</p>
             </article>
