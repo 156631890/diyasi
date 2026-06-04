@@ -82,7 +82,7 @@ export default function FactoryPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }} />
 
       <section className="dark-band page-hero rounded-[34px] shadow-[0_32px_90px_rgba(121,72,47,0.18)] md:px-10 lg:px-12">
-        <p className="kicker page-reference-subtitle text-[#f3d7a1]">Factory & Quality</p>
+        <p className="kicker page-reference-subtitle text-[#d7eee8]">Factory & Quality</p>
         <h1 className="heading-font mt-2 text-5xl font-semibold">Factory capability with a practical QC system</h1>
         <p className="page-reference-body page-copy-wide mt-3 text-[#fff0e5]">
           {companyInfo.name} supports private label underwear, bras, shapewear, activewear, and loungewear programs
@@ -94,7 +94,7 @@ export default function FactoryPage() {
         <article className="company-overview-card">
           <div className="page-section-head">
             <p className="kicker page-reference-subtitle">Factory Overview</p>
-            <h2 className="card-title-standard text-[#6a3524]">Core information for buyer review</h2>
+            <h2 className="card-title-standard text-[#1d2521]">Core information for buyer review</h2>
           </div>
           <div className="company-overview-list">
             {overview.map((item) => (
@@ -120,7 +120,7 @@ export default function FactoryPage() {
 
           <article className="company-overview-card">
             <p className="kicker page-reference-subtitle">Contact</p>
-            <div className="mt-4 grid gap-2 text-sm leading-6 text-[#7d4f3e]">
+            <div className="mt-4 grid gap-2 text-sm leading-6 text-[#5f6b66]">
               <p>{companyInfo.emailPrimary}</p>
               <p>{companyInfo.phone}</p>
               <p>{companyInfo.address}</p>
@@ -137,8 +137,8 @@ export default function FactoryPage() {
         </div>
         <div className="factory-story-copy">
           <p className="kicker page-reference-subtitle">Production System</p>
-          <h2 className="card-title-standard mt-3 text-[#6a3524]">From sample approval to repeat production</h2>
-          <p className="page-reference-body page-copy mt-4 text-[#7d4f3e]">
+          <h2 className="card-title-standard mt-3 text-[#1d2521]">From sample approval to repeat production</h2>
+          <p className="page-reference-body page-copy mt-4 text-[#5f6b66]">
             We align product brief, fabric direction, sample route, size range, packaging needs, QC standard, and delivery
             schedule before the order moves into bulk production.
           </p>
@@ -153,14 +153,14 @@ export default function FactoryPage() {
       <section className="page-section">
         <div className="factory-section-head">
           <p className="kicker page-reference-subtitle">Quality Control System</p>
-          <h2 className="card-title-standard mt-2 text-[#6a3524]">Three inspection stages buyers can understand</h2>
+          <h2 className="card-title-standard mt-2 text-[#1d2521]">Three inspection stages buyers can understand</h2>
         </div>
         <div className="factory-custom-grid mt-6">
           {qualitySteps.map((item, index) => (
             <article key={item.title} className="factory-custom-card">
               <div className="factory-custom-icon">{String(index + 1).padStart(2, "0")}</div>
-              <h3 className="card-title-standard mt-4 text-[#6a3524]">{item.title}</h3>
-              <p className="page-reference-body mt-3 text-[#7d4f3e]">{item.desc}</p>
+              <h3 className="card-title-standard mt-4 text-[#1d2521]">{item.title}</h3>
+              <p className="page-reference-body mt-3 text-[#5f6b66]">{item.desc}</p>
             </article>
           ))}
         </div>
@@ -169,14 +169,14 @@ export default function FactoryPage() {
       <section className="page-section">
         <div className="factory-section-head">
           <p className="kicker page-reference-subtitle">Certifications</p>
-          <h2 className="card-title-standard mt-2 text-[#6a3524]">Compliance documents available for buyer review</h2>
+          <h2 className="card-title-standard mt-2 text-[#1d2521]">Compliance documents available for buyer review</h2>
         </div>
         <div className="factory-cert-grid mt-6">
           {certifications.map((item) => (
             <article key={item.code} className="factory-cert-card">
               <div className="factory-cert-code">{item.code}</div>
-              <h3 className="card-title-standard mt-4 text-[#6a3524]">{item.title}</h3>
-              <p className="page-reference-body mt-3 text-[#7d4f3e]">{item.desc}</p>
+              <h3 className="card-title-standard mt-4 text-[#1d2521]">{item.title}</h3>
+              <p className="page-reference-body mt-3 text-[#5f6b66]">{item.desc}</p>
             </article>
           ))}
         </div>
@@ -185,7 +185,7 @@ export default function FactoryPage() {
       <section className="page-section">
         <div className="factory-section-head">
           <p className="kicker page-reference-subtitle">Factory Photos</p>
-          <h2 className="card-title-standard mt-2 text-[#6a3524]">Real factory media currently available on the site</h2>
+          <h2 className="card-title-standard mt-2 text-[#1d2521]">Real factory media currently available on the site</h2>
         </div>
         <div className="factory-detail-grid mt-6">
           {factoryPhotos.map((img) => (
@@ -202,7 +202,7 @@ export default function FactoryPage() {
       <section className="page-section">
         <div className="factory-section-head">
           <p className="kicker page-reference-subtitle">Product Lines</p>
-          <h2 className="card-title-standard mt-2 text-[#6a3524]">Categories for recurring private label orders</h2>
+          <h2 className="card-title-standard mt-2 text-[#1d2521]">Categories for recurring private label orders</h2>
         </div>
         <div className="factory-product-rows mt-6">
           {launchCollections.slice(0, 4).map((item, index) => (
@@ -218,7 +218,7 @@ export default function FactoryPage() {
 
       <section className="factory-cta-band page-section">
         <div>
-          <p className="kicker page-reference-subtitle text-[#f3d7a1]">Start an Inquiry</p>
+          <p className="kicker page-reference-subtitle text-[#d7eee8]">Start an Inquiry</p>
           <h2 className="card-title-standard mt-3 text-white">Send your category, MOQ range, target market, and launch timing</h2>
           <p className="page-reference-body mt-3 max-w-2xl text-white/82">
             We will respond with sample route, production assumptions, packaging checklist, and next-step information.

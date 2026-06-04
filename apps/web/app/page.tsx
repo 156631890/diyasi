@@ -135,12 +135,12 @@ export default async function HomePage() {
 
       <HeroCarousel />
 
-      <section className="border-y border-[#ead7c8] bg-[#fffaf5] py-5">
+      <section className="border-y border-[#d9e2dc] bg-[#fffdf8] py-5">
         <div className="container mx-auto grid gap-3 px-4 md:grid-cols-3 md:px-6 xl:grid-cols-6">
           {trustStats.map((stat) => (
-            <article key={stat.label} className="rounded border border-[#ead7c8] bg-white px-4 py-3">
-              <p className="text-lg font-bold text-[#5a2f1e]">{stat.value}</p>
-              <p className="mt-1 text-xs uppercase tracking-[0.16em] text-[#9d7d6f]">{stat.label}</p>
+            <article key={stat.label} className="rounded border border-[#d9e2dc] bg-white px-4 py-3">
+              <p className="text-lg font-bold text-[#1d2521]">{stat.value}</p>
+              <p className="mt-1 text-xs uppercase tracking-normal text-[#7d8a85]">{stat.label}</p>
             </article>
           ))}
         </div>
@@ -150,29 +150,29 @@ export default async function HomePage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl">
             <p className="kicker">DTC Brand Solutions</p>
-            <h2 className="section-title mt-2 text-[#6a3524]">Manufacturing support for each stage of brand growth</h2>
-            <p className="page-reference-body mt-4 text-[#7d4f3e]">
+            <h2 className="section-title mt-2 text-[#1d2521]">Manufacturing support for each stage of brand growth</h2>
+            <p className="page-reference-body mt-4 text-[#5f6b66]">
               The site is built around factory execution, not generic product listings. Buyers can evaluate category fit,
               MOQ route, packaging needs, quality control, and launch timing before starting a project.
             </p>
           </div>
           <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {dtcSolutions.map((item) => (
-              <article key={item.title} className="rounded-lg border border-[#ead7c8] bg-[#fffaf5] p-5">
-                <h3 className="text-lg font-bold text-[#5a2f1e]">{item.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-[#7d4f3e]">{item.desc}</p>
+              <article key={item.title} className="rounded-lg border border-[#d9e2dc] bg-[#fffdf8] p-5">
+                <h3 className="text-lg font-bold text-[#1d2521]">{item.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-[#5f6b66]">{item.desc}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-[#fff7ef] py-14 md:py-20">
+      <section className="bg-[#f1f5f1] py-14 md:py-20">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl">
               <p className="kicker">Launch-Ready Collections</p>
-              <h2 className="section-title mt-2 text-[#6a3524]">Core product lines for private label underwear programs</h2>
+              <h2 className="section-title mt-2 text-[#1d2521]">Core product lines for private label underwear programs</h2>
             </div>
             <Link href="/products" className="btn btn-primary">
               View All Products
@@ -180,8 +180,8 @@ export default async function HomePage() {
           </div>
           <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {launchCollections.map((item, index) => (
-              <Link key={item.slug} href={item.href} className="group overflow-hidden rounded-lg border border-[#ead7c8] bg-white">
-                <div className="aspect-[4/3] overflow-hidden bg-[#f4e4d6]">
+              <Link key={item.slug} href={item.href} className="group overflow-hidden rounded-lg border border-[#d9e2dc] bg-white">
+                <div className="aspect-[4/3] overflow-hidden bg-[#e8eee9]">
                   <img
                     src={collectionImage(index)}
                     alt={item.title}
@@ -189,8 +189,8 @@ export default async function HomePage() {
                   />
                 </div>
                 <div className="p-5">
-                  <h3 className="text-lg font-bold text-[#5a2f1e]">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-[#7d4f3e]">{item.desc}</p>
+                  <h3 className="text-lg font-bold text-[#1d2521]">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-[#5f6b66]">{item.desc}</p>
                 </div>
               </Link>
             ))}
@@ -203,8 +203,8 @@ export default async function HomePage() {
           <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div>
               <p className="kicker">Private Label Customization</p>
-              <h2 className="section-title mt-2 text-[#6a3524]">Labels, packaging, and retail-ready details for DTC launches</h2>
-              <p className="page-reference-body mt-4 text-[#7d4f3e]">
+              <h2 className="section-title mt-2 text-[#1d2521]">Labels, packaging, and retail-ready details for DTC launches</h2>
+              <p className="page-reference-body mt-4 text-[#5f6b66]">
                 Packaging is not an afterthought for underwear brands. We align product construction, logo placement,
                 care labels, packaging format, barcode stickers, and carton marks before bulk production starts.
               </p>
@@ -216,7 +216,7 @@ export default async function HomePage() {
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
               {privateLabelOptions.map((item) => (
-                <article key={item} className="rounded border border-[#ead7c8] bg-[#fffaf5] px-4 py-3 text-sm font-semibold text-[#5a2f1e]">
+                <article key={item} className="rounded border border-[#d9e2dc] bg-[#fffdf8] px-4 py-3 text-sm font-semibold text-[#1d2521]">
                   {item}
                 </article>
               ))}
@@ -225,15 +225,15 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="bg-[#f7eee6] py-14 md:py-20">
+      <section className="bg-[#e8eee9] py-14 md:py-20">
         <div className="container mx-auto px-4 md:px-6">
           <p className="kicker">Development Process</p>
-          <h2 className="section-title mt-2 max-w-3xl text-[#6a3524]">From product brief to approved shipment</h2>
+          <h2 className="section-title mt-2 max-w-3xl text-[#1d2521]">From product brief to approved shipment</h2>
           <div className="mt-8 grid gap-4 md:grid-cols-4">
             {developmentSteps.map((step, index) => (
-              <article key={step} className="rounded-lg border border-[#dfc8b8] bg-white p-5">
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#b06a46]">{String(index + 1).padStart(2, "0")}</p>
-                <h3 className="mt-4 text-base font-bold text-[#5a2f1e]">{step}</h3>
+              <article key={step} className="rounded-lg border border-[#d9e2dc] bg-white p-5">
+                <p className="text-xs font-bold uppercase tracking-normal text-[#0f5f55]">{String(index + 1).padStart(2, "0")}</p>
+                <h3 className="mt-4 text-base font-bold text-[#1d2521]">{step}</h3>
               </article>
             ))}
           </div>
@@ -248,17 +248,17 @@ export default async function HomePage() {
             </div>
             <div>
               <p className="kicker">Real Factory & QC</p>
-              <h2 className="section-title mt-2 text-[#6a3524]">Factory photos, production checks, and buyer review documents</h2>
-              <p className="page-reference-body mt-4 text-[#7d4f3e]">
+              <h2 className="section-title mt-2 text-[#1d2521]">Factory photos, production checks, and buyer review documents</h2>
+              <p className="page-reference-body mt-4 text-[#5f6b66]">
                 About and factory pages now prioritize existing factory media and buyer-verifiable information. Certificate
                 documents are described as available for buyer review, because certificate numbers and validity must be
                 checked against the latest real documents.
               </p>
               <div className="mt-5 grid gap-3">
                 {qualitySteps.map((item) => (
-                  <article key={item.title} className="rounded border border-[#ead7c8] bg-[#fffaf5] p-4">
-                    <h3 className="font-bold text-[#5a2f1e]">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-[#7d4f3e]">{item.desc}</p>
+                  <article key={item.title} className="rounded border border-[#d9e2dc] bg-[#fffdf8] p-4">
+                    <h3 className="font-bold text-[#1d2521]">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-[#5f6b66]">{item.desc}</p>
                   </article>
                 ))}
               </div>
@@ -273,12 +273,12 @@ export default async function HomePage() {
       </section>
 
       {featuredProducts.length > 0 ? (
-        <section className="bg-[#fff7ef] py-14 md:py-20">
+        <section className="bg-[#f1f5f1] py-14 md:py-20">
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div>
                 <p className="kicker">Core Product Examples</p>
-                <h2 className="section-title mt-2 text-[#6a3524]">Clean product titles for professional buyer review</h2>
+                <h2 className="section-title mt-2 text-[#1d2521]">Clean product titles for professional buyer review</h2>
               </div>
               <Link href="/products" className="btn btn-soft">
                 Browse Catalogue
@@ -288,15 +288,15 @@ export default async function HomePage() {
               {featuredProducts.map((product) => {
                 const image = resolvePrimaryImage(product);
                 return (
-                  <Link key={product.product_id} href={`/products/${encodeURIComponent(product.product_id)}`} className="group rounded-lg border border-[#ead7c8] bg-white">
-                    <div className="aspect-[4/5] overflow-hidden rounded-t-lg bg-[#f4e4d6]">
+                  <Link key={product.product_id} href={`/products/${encodeURIComponent(product.product_id)}`} className="group rounded-lg border border-[#d9e2dc] bg-white">
+                    <div className="aspect-[4/5] overflow-hidden rounded-t-lg bg-[#e8eee9]">
                       {image ? (
                         <img src={image} alt={resolveDisplayTitle(product)} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
                       ) : null}
                     </div>
                     <div className="p-4">
-                      <h3 className="text-sm font-bold leading-5 text-[#5a2f1e]">{resolveDisplayTitle(product)}</h3>
-                      <p className="mt-2 text-xs text-[#9d7d6f]">{resolveDisplayProductId(product)}</p>
+                      <h3 className="text-sm font-bold leading-5 text-[#1d2521]">{resolveDisplayTitle(product)}</h3>
+                      <p className="mt-2 text-xs text-[#7d8a85]">{resolveDisplayProductId(product)}</p>
                     </div>
                   </Link>
                 );
@@ -311,21 +311,21 @@ export default async function HomePage() {
           <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
             <div>
               <p className="kicker">FAQ</p>
-              <h2 className="section-title mt-2 text-[#6a3524]">Questions buyers usually ask before sampling</h2>
+              <h2 className="section-title mt-2 text-[#1d2521]">Questions buyers usually ask before sampling</h2>
             </div>
             <div className="grid gap-4">
               {faqs.map((item) => (
-                <article key={item.q} className="rounded-lg border border-[#ead7c8] bg-[#fffaf5] p-5">
-                  <h3 className="font-bold text-[#5a2f1e]">{item.q}</h3>
-                  <p className="mt-2 text-sm leading-7 text-[#7d4f3e]">{item.a}</p>
+                <article key={item.q} className="rounded-lg border border-[#d9e2dc] bg-[#fffdf8] p-5">
+                  <h3 className="font-bold text-[#1d2521]">{item.q}</h3>
+                  <p className="mt-2 text-sm leading-7 text-[#5f6b66]">{item.a}</p>
                 </article>
               ))}
-              <article className="rounded-lg border border-[#ead7c8] bg-white p-5">
-                <h3 className="font-bold text-[#5a2f1e]">MOQ planning reference</h3>
+              <article className="rounded-lg border border-[#d9e2dc] bg-white p-5">
+                <h3 className="font-bold text-[#1d2521]">MOQ planning reference</h3>
                 <div className="mt-3 grid gap-2">
                   {moqTiers.map((item) => (
-                    <p key={item.label} className="text-sm leading-6 text-[#7d4f3e]">
-                      <strong className="text-[#5a2f1e]">{item.label}:</strong> {item.value}
+                    <p key={item.label} className="text-sm leading-6 text-[#5f6b66]">
+                      <strong className="text-[#1d2521]">{item.label}:</strong> {item.value}
                     </p>
                   ))}
                 </div>
@@ -335,16 +335,16 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="bg-[#5a2f1e] py-14 text-white md:py-20">
+      <section className="bg-[#162520] py-14 text-white md:py-20">
         <div className="container mx-auto flex flex-col gap-6 px-4 md:flex-row md:items-center md:justify-between md:px-6">
           <div className="max-w-3xl">
-            <p className="kicker text-[#f3d7a1]">Final CTA</p>
+            <p className="kicker text-[#d7eee8]">Final CTA</p>
             <h2 className="heading-font mt-2 text-4xl font-semibold">Start your private label underwear project</h2>
             <p className="mt-4 text-sm leading-7 text-white/82">
               Send category, target market, estimated quantity, private label needs, packaging plan, and launch date.
             </p>
           </div>
-          <Link href="/contact" className="btn bg-white text-[#5a2f1e] hover:bg-[#f4d4bd]">
+          <Link href="/contact" className="btn bg-white text-[#1d2521] hover:bg-[#dce9e5]">
             Contact Factory Team
           </Link>
         </div>

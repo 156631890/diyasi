@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
 
@@ -258,13 +258,13 @@ export default function PayPalPaymentsPanel({
       <section className="rounded-[30px] border border-[rgba(191,144,118,0.18)] bg-white/94 p-6 shadow-[0_22px_50px_rgba(132,86,58,0.1)] md:p-8">
         <div className="flex items-start justify-between gap-4">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#b56e49]">Checkout</p>
-            <h2 className="mt-3 text-[1.9rem] font-bold leading-tight text-[#5f3123]">Choose PayPal payment</h2>
-            <p className="mt-2 text-sm leading-6 text-[#7d4f3e]">
+            <p className="text-xs font-semibold uppercase tracking-normal text-[#0f5f55]">Checkout</p>
+            <h2 className="mt-3 text-[1.9rem] font-bold leading-tight text-[#1d2521]">Choose PayPal payment</h2>
+            <p className="mt-2 text-sm leading-6 text-[#5f6b66]">
               Use this payment page only after your sample fee or deposit amount has been confirmed.
             </p>
           </div>
-          <div className="rounded-full bg-[rgba(223,124,68,0.1)] px-4 py-2 text-sm font-semibold text-[#bf6536]">PayPal</div>
+          <div className="rounded-full bg-[rgba(223,124,68,0.1)] px-4 py-2 text-sm font-semibold text-[#0f5f55]">PayPal</div>
         </div>
 
         <div className="mt-6 grid gap-3">
@@ -283,11 +283,11 @@ export default function PayPalPaymentsPanel({
               >
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#b56e49]">{item.tag}</p>
-                    <h3 className="mt-2 text-lg font-semibold text-[#5f3123]">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-[#7d4f3e]">{item.desc}</p>
+                    <p className="text-xs font-semibold uppercase tracking-normal text-[#0f5f55]">{item.tag}</p>
+                    <h3 className="mt-2 text-lg font-semibold text-[#1d2521]">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-[#5f6b66]">{item.desc}</p>
                   </div>
-                  <p className="text-3xl font-semibold text-[#8d452d]">${item.amount}</p>
+                  <p className="text-3xl font-semibold text-[#0f5f55]">${item.amount}</p>
                 </div>
               </button>
             );
@@ -297,19 +297,19 @@ export default function PayPalPaymentsPanel({
         <div className="mt-6 rounded-[24px] bg-[linear-gradient(180deg,#fff9f3_0%,#fff0e4_100%)] p-5">
           <div className="flex items-baseline justify-between gap-4">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#b56e49]">Order Summary</p>
-              <p className="mt-2 text-lg font-semibold text-[#5f3123]">{selectedItem.title}</p>
+              <p className="text-xs font-semibold uppercase tracking-normal text-[#0f5f55]">Order Summary</p>
+              <p className="mt-2 text-lg font-semibold text-[#1d2521]">{selectedItem.title}</p>
             </div>
-            <p className="text-3xl font-semibold text-[#8d452d]">${selectedItem.amount}</p>
+            <p className="text-3xl font-semibold text-[#0f5f55]">${selectedItem.amount}</p>
           </div>
 
           <div className="mt-5 flex items-center gap-4 rounded-[20px] border border-[rgba(191,144,118,0.22)] bg-white p-4">
-            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[rgba(223,124,68,0.12)] text-[#bf6536]">
+            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[rgba(223,124,68,0.12)] text-[#0f5f55]">
               <PayPalIcon />
             </div>
             <div className="min-w-0 flex-1">
-              <p className="text-base font-semibold text-[#5f3123]">PayPal</p>
-              <p className="mt-1 text-sm leading-6 text-[#7d4f3e]">
+              <p className="text-base font-semibold text-[#1d2521]">PayPal</p>
+              <p className="mt-1 text-sm leading-6 text-[#5f6b66]">
                 Open PayPal checkout, then confirm payment on the server before the order is marked as paid.
               </p>
             </div>
@@ -332,13 +332,13 @@ export default function PayPalPaymentsPanel({
           <div className="w-full max-w-lg rounded-[28px] bg-white p-6 shadow-[0_28px_80px_rgba(42,23,12,0.28)] md:p-8">
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#b56e49]">PayPal Checkout</p>
-                <h3 className="mt-2 text-2xl font-bold text-[#5f3123]">{selectedItem.title}</h3>
+                <p className="text-xs font-semibold uppercase tracking-normal text-[#0f5f55]">PayPal Checkout</p>
+                <h3 className="mt-2 text-2xl font-bold text-[#1d2521]">{selectedItem.title}</h3>
               </div>
               <button
                 type="button"
                 onClick={() => setModalOpen(false)}
-                className="rounded-full border border-[rgba(191,144,118,0.2)] px-3 py-1 text-sm text-[#7d4f3e]"
+                className="rounded-full border border-[rgba(191,144,118,0.2)] px-3 py-1 text-sm text-[#5f6b66]"
               >
                 Close
               </button>
@@ -346,11 +346,11 @@ export default function PayPalPaymentsPanel({
 
             <div className="mt-6 rounded-[22px] bg-[linear-gradient(180deg,#fffaf5_0%,#fff1e6_100%)] p-5">
               <div className="flex items-center justify-between gap-4">
-                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#b56e49]">Amount</p>
-                <p className="text-3xl font-semibold text-[#8d452d]">${selectedItem.amount}</p>
+                <p className="text-sm font-semibold uppercase tracking-normal text-[#0f5f55]">Amount</p>
+                <p className="text-3xl font-semibold text-[#0f5f55]">${selectedItem.amount}</p>
               </div>
               <div ref={paypalContainerRef} className="mt-5 min-h-[48px]" />
-              {!sdkReady ? <p className="mt-3 text-sm text-[#7d4f3e]">{loadingLabel}</p> : null}
+              {!sdkReady ? <p className="mt-3 text-sm text-[#5f6b66]">{loadingLabel}</p> : null}
               {paypalError ? <p className="mt-3 text-sm text-[#b14d2c]">{paypalError}</p> : null}
             </div>
           </div>

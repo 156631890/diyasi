@@ -107,11 +107,11 @@ export default async function BlogDetailPage({ params }: Props) {
         <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
           <div>
             <p className="kicker page-reference-subtitle">{t.kicker}</p>
-            <h1 className="section-title mt-2 text-[#6a3524]">{article.title}</h1>
+            <h1 className="section-title mt-2 text-[#1d2521]">{article.title}</h1>
             <p className="page-reference-body mt-4 max-w-3xl text-[#51627d]">{article.excerpt}</p>
           </div>
           <div className="contact-aside">
-            <p className="text-xs uppercase tracking-[0.22em] text-[#8b6a2c]">{article.category}</p>
+            <p className="text-xs uppercase tracking-normal text-[#0f5f55]">{article.category}</p>
             <p className="page-reference-subtitle mt-4 text-[#44546d]">{t.lead}</p>
           </div>
         </div>

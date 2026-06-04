@@ -50,8 +50,8 @@ export default function FabricsPage() {
 
       <section className="hero-panel page-hero md:p-10 lg:p-12">
         <p className="kicker page-reference-subtitle">Fabrics</p>
-        <h1 className="section-title mt-2 text-[#6a3524]">Underwear fabric options for private label collections</h1>
-        <p className="page-reference-body page-copy-wide mt-4 text-[#7d4f3e]">
+        <h1 className="section-title mt-2 text-[#1d2521]">Underwear fabric options for private label collections</h1>
+        <p className="page-reference-body page-copy-wide mt-4 text-[#5f6b66]">
           Fabric selection affects hand feel, fit, MOQ, sample timing, wash performance, and final price. We help buyers
           choose the right material route before sample development starts.
         </p>
@@ -60,9 +60,9 @@ export default function FabricsPage() {
       <section className="page-section">
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {fabricDetails.map((item) => (
-            <article key={item.title} className="rounded-lg border border-[#ead7c8] bg-[#fffaf5] p-5">
-              <h2 className="card-title-standard text-[#6a3524]">{item.title}</h2>
-              <p className="page-reference-body mt-3 text-[#7d4f3e]">{item.desc}</p>
+            <article key={item.title} className="rounded-lg border border-[#d9e2dc] bg-[#fffdf8] p-5">
+              <h2 className="card-title-standard text-[#1d2521]">{item.title}</h2>
+              <p className="page-reference-body mt-3 text-[#5f6b66]">{item.desc}</p>
             </article>
           ))}
         </div>
@@ -71,7 +71,7 @@ export default function FabricsPage() {
       <section className="editorial-strip page-section">
         <div className="page-copy-wide">
           <p className="kicker page-reference-subtitle">Material Review</p>
-          <h2 className="card-title-standard mt-2 text-[#6a3524]">What to confirm before sampling</h2>
+          <h2 className="card-title-standard mt-2 text-[#1d2521]">What to confirm before sampling</h2>
           <div className="chip-list mt-5">
             {fabricOptions.map((item) => (
               <span key={item} className="chip">

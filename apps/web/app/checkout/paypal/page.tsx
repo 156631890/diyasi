@@ -61,7 +61,7 @@ export default function CheckoutPaypalPage() {
     <main className="container-shell py-16">
       <section className="card max-w-2xl p-8">
         <p className="kicker">PayPal Checkout</p>
-        <h1 className="heading-font mt-2 text-4xl font-semibold text-[#6a3524]">Finalizing payment</h1>
+        <h1 className="heading-font mt-2 text-4xl font-semibold text-[#1d2521]">Finalizing payment</h1>
         <p className="mt-3 text-[#51627d]">{status}</p>
         {error ? <p className="mt-4 text-sm text-[#b14d2c]">{error}</p> : null}
         {error ? (

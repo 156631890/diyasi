@@ -68,13 +68,13 @@ export default function AboutPage() {
         <div className="grid items-center gap-8 lg:grid-cols-2">
           <div className="page-copy-wide">
             <p className="kicker page-reference-subtitle">About {companyInfo.shortName}</p>
-            <h1 className="section-title mt-3 text-[#6a3524]">An underwear factory built for private label growth</h1>
-            <p className="page-reference-body mt-4 text-[#7d4f3e]">
+            <h1 className="section-title mt-3 text-[#1d2521]">An underwear factory built for private label growth</h1>
+            <p className="page-reference-body mt-4 text-[#5f6b66]">
               {companyInfo.name} is located in Yiwu, Zhejiang, China. We support underwear brands, retailers,
               wholesalers, and sourcing teams with product development, sampling, custom labels, packaging coordination,
               bulk production, and global delivery.
             </p>
-            <p className="page-reference-body mt-4 text-[#7d4f3e]">
+            <p className="page-reference-body mt-4 text-[#5f6b66]">
               The factory focuses on women's underwear, men's underwear, bras and bralettes, seamless underwear,
               shapewear, activewear, period underwear, loungewear, and related private label programs.
             </p>
@@ -100,9 +100,9 @@ export default function AboutPage() {
       <section className="page-section">
         <div className="grid gap-4 md:grid-cols-3 xl:grid-cols-6">
           {trustStats.map((stat) => (
-            <article key={stat.label} className="rounded-lg border border-[#ead7c8] bg-[#fffaf5] p-4">
-              <p className="text-lg font-bold text-[#5a2f1e]">{stat.value}</p>
-              <p className="mt-1 text-xs uppercase tracking-[0.16em] text-[#9d7d6f]">{stat.label}</p>
+            <article key={stat.label} className="rounded-lg border border-[#d9e2dc] bg-[#fffdf8] p-4">
+              <p className="text-lg font-bold text-[#1d2521]">{stat.value}</p>
+              <p className="mt-1 text-xs uppercase tracking-normal text-[#7d8a85]">{stat.label}</p>
             </article>
           ))}
         </div>
@@ -111,8 +111,8 @@ export default function AboutPage() {
       <section className="about-principles">
         {promises.map((item) => (
           <article key={item.title} className="editorial-column">
-            <h2 className="page-reference-subtitle text-[#6a3524]">{item.title}</h2>
-            <p className="page-reference-body mt-4 text-[#7d4f3e]">{item.text}</p>
+            <h2 className="page-reference-subtitle text-[#1d2521]">{item.title}</h2>
+            <p className="page-reference-body mt-4 text-[#5f6b66]">{item.text}</p>
           </article>
         ))}
       </section>
@@ -120,8 +120,8 @@ export default function AboutPage() {
       <section className="page-section editorial-strip">
         <div className="page-copy-wide">
           <p className="kicker page-reference-subtitle">Our Timeline</p>
-          <h2 className="card-title-standard mt-2 text-[#6a3524]">A practical manufacturing story</h2>
-          <p className="page-reference-body mt-3 max-w-3xl text-[#7d4f3e]">
+          <h2 className="card-title-standard mt-2 text-[#1d2521]">A practical manufacturing story</h2>
+          <p className="page-reference-body mt-3 max-w-3xl text-[#5f6b66]">
             The timeline uses conservative public-facing milestones. Certificate numbers, audit dates, and document
             validity should be shown only after the latest real files are confirmed.
           </p>

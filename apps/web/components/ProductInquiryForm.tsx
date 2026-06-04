@@ -161,7 +161,7 @@ export default function ProductInquiryForm({ productName, category }: ProductInq
     <form className="product-inquiry-card" onSubmit={onSubmit}>
       <div>
         <p className="kicker page-reference-subtitle">{t.title}</p>
-        <p className="page-reference-body mt-3 text-[#7d4f3e]">{t.desc}</p>
+        <p className="page-reference-body mt-3 text-[#5f6b66]">{t.desc}</p>
       </div>
 
       <div className="product-inquiry-grid">
@@ -229,7 +229,7 @@ export default function ProductInquiryForm({ productName, category }: ProductInq
         <button className="btn btn-primary" type="submit">
           {t.submit}
         </button>
-        <p className="page-reference-body text-[#9d7d6f]">Status: {statusText}</p>
+        <p className="page-reference-body text-[#7d8a85]">Status: {statusText}</p>
       </div>
     </form>
   );

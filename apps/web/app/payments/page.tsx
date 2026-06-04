@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import PayPalPaymentsPanel from "@/components/PayPalPaymentsPanel";
@@ -133,18 +133,18 @@ export default function PaymentsPage({
       <div className="mx-auto max-w-6xl px-4 py-10 md:px-6 lg:py-14">
         <section className="rounded-[34px] border border-[rgba(191,144,118,0.18)] bg-[radial-gradient(circle_at_top_left,rgba(255,232,214,0.8),transparent_30%),linear-gradient(135deg,#fff8f1_0%,#fdf0e4_48%,#f5e0cf_100%)] p-7 shadow-[0_30px_80px_rgba(142,88,58,0.1)] md:p-10">
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#b56e49]">{t.eyebrow}</p>
-            <h1 className="mt-3 text-3xl font-semibold leading-tight text-[#5f3123] md:text-5xl">
+            <p className="text-xs font-semibold uppercase tracking-normal text-[#0f5f55]">{t.eyebrow}</p>
+            <h1 className="mt-3 text-3xl font-semibold leading-tight text-[#1d2521] md:text-5xl">
               {productItem ? t.titleFromProduct : t.title}
             </h1>
-            <p className="mt-4 text-base leading-8 text-[#7d4f3e] md:text-lg">{t.desc}</p>
+            <p className="mt-4 text-base leading-8 text-[#5f6b66] md:text-lg">{t.desc}</p>
             {productItem ? (
               <div className="mt-6 rounded-[20px] border border-[rgba(191,144,118,0.18)] bg-white/80 p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#b56e49]">
+                <p className="text-xs font-semibold uppercase tracking-normal text-[#0f5f55]">
                   {lang === "zh" ? "来自产品页面" : lang === "es" ? "Desde la pagina de producto" : "From product page"}
                 </p>
-                <p className="mt-2 text-lg font-semibold text-[#5f3123]">{productItem.title}</p>
-                <p className="mt-1 text-sm leading-6 text-[#7d4f3e]">
+                <p className="mt-2 text-lg font-semibold text-[#1d2521]">{productItem.title}</p>
+                <p className="mt-1 text-sm leading-6 text-[#5f6b66]">
                   {lang === "zh"
                     ? `数量 ${productQty}，样品价 $${productAmount.toFixed(2)}，物流费 $${productShippingUsd.toFixed(2)}，合计 $${productItem.amount.toFixed(2)}。`
                     : lang === "es"
@@ -158,15 +158,15 @@ export default function PaymentsPage({
 
         <section className="mt-8 grid gap-6 lg:grid-cols-[0.88fr_1.12fr]">
           <aside className="rounded-[30px] border border-[rgba(191,144,118,0.18)] bg-white/92 p-6 shadow-[0_22px_50px_rgba(132,86,58,0.1)] md:p-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#b56e49]">{t.infoTitle}</p>
-            <p className="mt-4 text-base leading-8 text-[#7d4f3e]">{t.infoBody}</p>
+            <p className="text-xs font-semibold uppercase tracking-normal text-[#0f5f55]">{t.infoTitle}</p>
+            <p className="mt-4 text-base leading-8 text-[#5f6b66]">{t.infoBody}</p>
 
             <div className="mt-8 rounded-[24px] bg-[linear-gradient(180deg,#fff8f2_0%,#fff0e4_100%)] p-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#b56e49]">{t.supportTitle}</p>
-              <p className="mt-3 text-sm leading-7 text-[#7d4f3e]">{t.supportBody}</p>
+              <p className="text-xs font-semibold uppercase tracking-normal text-[#0f5f55]">{t.supportTitle}</p>
+              <p className="mt-3 text-sm leading-7 text-[#5f6b66]">{t.supportBody}</p>
               <Link
                 href="/contact"
-                className="mt-5 inline-flex rounded-[16px] border border-[rgba(217,119,69,0.22)] px-4 py-3 text-sm font-semibold text-[#b95f33] transition hover:bg-[rgba(230,126,61,0.08)]"
+                className="mt-5 inline-flex rounded-[16px] border border-[rgba(217,119,69,0.22)] px-4 py-3 text-sm font-semibold text-[#0f5f55] transition hover:bg-[rgba(230,126,61,0.08)]"
               >
                 {t.supportCta}
               </Link>

@@ -140,11 +140,11 @@ export default function CheckoutStatusView({ mode, refCode, syncState, lang }: C
         <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
           <div>
             <p className="kicker">{t.kicker}</p>
-            <h1 className="section-title mt-2 text-[#6a3524]">{t.title}</h1>
+            <h1 className="section-title mt-2 text-[#1d2521]">{t.title}</h1>
             <p className="mt-4 max-w-3xl text-lg leading-8 text-[#51627d]">{t.desc}</p>
           </div>
           <div className="contact-aside">
-            <p className="text-xs uppercase tracking-[0.22em] text-[#8b6a2c]">{t.kicker}</p>
+            <p className="text-xs uppercase tracking-normal text-[#0f5f55]">{t.kicker}</p>
             <p className="mt-4 text-lg leading-8 text-[#44546d]">{t.asideTitle}</p>
             <p className="mt-3 leading-8 text-[#5d6e89]">{t.asideDesc}</p>
           </div>
@@ -179,7 +179,7 @@ export default function CheckoutStatusView({ mode, refCode, syncState, lang }: C
         </article>
 
         <aside className="dark-band rounded-[28px] px-6 py-7">
-          <p className="kicker text-[#f3d7a1]">{t.briefTitle}</p>
+          <p className="kicker text-[#d7eee8]">{t.briefTitle}</p>
           <p className="mt-4 text-lg leading-8 text-[#d9e4f4]">{t.briefBody}</p>
         </aside>
       </section>

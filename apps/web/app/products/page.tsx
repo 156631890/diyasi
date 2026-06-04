@@ -207,13 +207,13 @@ export default async function ProductsPage() {
         <div className="catalog-intro-row">
           <div className="catalog-intro-copy">
             <h1 className="catalog-intro-title">{t.title}</h1>
-            {t.desc ? <p className="page-reference-body mt-3 text-[#7d4f3e]">{t.desc}</p> : null}
+            {t.desc ? <p className="page-reference-body mt-3 text-[#5f6b66]">{t.desc}</p> : null}
           </div>
           <div className="catalog-meta">
             <p className="catalog-meta-count">
               {products.length} {t.items}
             </p>
-            <p className="page-reference-body text-[#9d7d6f]">{t.topLevelLabel}</p>
+            <p className="page-reference-body text-[#7d8a85]">{t.topLevelLabel}</p>
           </div>
         </div>
       </section>

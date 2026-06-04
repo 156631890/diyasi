@@ -282,7 +282,7 @@ export default function ProductCatalogView({ products, categories, copy }: Produ
 
         {filteredProducts.length === 0 ? (
           <section className="catalog-grid-clean mt-6">
-            <div className="card p-5 text-[#7d4f3e]">{copy.noProducts}</div>
+            <div className="card p-5 text-[#5f6b66]">{copy.noProducts}</div>
           </section>
         ) : (
           <>

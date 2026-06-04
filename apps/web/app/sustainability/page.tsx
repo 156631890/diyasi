@@ -109,21 +109,21 @@ export default function SustainabilityPage() {
 
       <section className="hero-panel page-hero md:p-10 lg:p-12">
         <p className="kicker page-reference-subtitle">{t.kicker}</p>
-        <h1 className="section-title mt-2 text-[#6a3524]">{t.title}</h1>
-        <p className="page-reference-body page-copy-wide mt-4 text-[#7d4f3e]">{t.desc}</p>
+        <h1 className="section-title mt-2 text-[#1d2521]">{t.title}</h1>
+        <p className="page-reference-body page-copy-wide mt-4 text-[#5f6b66]">{t.desc}</p>
       </section>
 
       <section className="page-section">
         <div className="page-section-head">
           <p className="kicker page-reference-subtitle">{t.kicker}</p>
-          <h2 className="card-title-standard mt-2 text-[#6a3524]">{t.sectionTitle}</h2>
+          <h2 className="card-title-standard mt-2 text-[#1d2521]">{t.sectionTitle}</h2>
         </div>
         <div className="mt-8 grid gap-8 md:grid-cols-3">
           {t.strategy.map((item, index) => (
             <article key={item.title} className="editorial-column">
-              <p className="text-sm uppercase tracking-[0.22em] text-[#8b6a2c]">{String(index + 1).padStart(2, "0")}</p>
-              <h2 className="card-title-standard mt-4 text-[#6a3524]">{item.title}</h2>
-              <p className="page-reference-body mt-4 text-[#7d4f3e]">{item.copy}</p>
+              <p className="text-sm uppercase tracking-normal text-[#0f5f55]">{String(index + 1).padStart(2, "0")}</p>
+              <h2 className="card-title-standard mt-4 text-[#1d2521]">{item.title}</h2>
+              <p className="page-reference-body mt-4 text-[#5f6b66]">{item.copy}</p>
             </article>
           ))}
         </div>
@@ -132,7 +132,7 @@ export default function SustainabilityPage() {
       <section className="editorial-strip page-section">
         <div className="page-copy-wide">
           <p className="kicker page-reference-subtitle">{t.kicker}</p>
-          <p className="page-reference-body mt-3 text-[#7d4f3e]">{t.closing}</p>
+          <p className="page-reference-body mt-3 text-[#5f6b66]">{t.closing}</p>
         </div>
       </section>
     </main>

@@ -117,7 +117,7 @@ export default function TopNav({ initialLang }: TopNavProps) {
     <header className={`top-nav-shell sticky top-0 z-30 backdrop-blur-xl ${isCompact ? "top-nav-shell-compact" : ""}`}>
       <div className="top-nav-meta-shell hidden lg:block">
         <div className="container-shell top-nav-wide-shell flex items-center justify-between py-2 text-xs">
-          <p className="top-nav-meta-copy font-semibold tracking-wide">{t.companyTag}</p>
+          <p className="top-nav-meta-copy font-semibold tracking-normal">{t.companyTag}</p>
           <div className="flex items-center gap-1">
             {secondaryLinks.map((item) => (
               <Link key={item.href} href={item.href} className={linkClass(pathname, item.href)}>
@@ -148,7 +148,7 @@ export default function TopNav({ initialLang }: TopNavProps) {
           >
             DYS
           </span>
-          <span className={`top-nav-brand-name heading-font font-semibold tracking-wide ${isCompact ? "text-lg" : "text-xl"}`}>
+          <span className={`top-nav-brand-name heading-font font-semibold tracking-normal ${isCompact ? "text-lg" : "text-xl"}`}>
             YiWu DiYaSi
           </span>
         </Link>

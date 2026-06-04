@@ -116,10 +116,10 @@ export default function ContactPage() {
     <main className="container-shell page-shell page-stack">
       <section className="hero-panel page-hero md:p-10 lg:p-12">
         <p className="kicker page-reference-subtitle">Start Your Private Label Project</p>
-        <h1 className="section-title mt-2 text-[#6a3524]">
+        <h1 className="section-title mt-2 text-[#1d2521]">
           Start your private label underwear project with a factory team that understands sampling, fit, and production
         </h1>
-        <p className="page-reference-body page-copy-wide mt-4 text-[#7d4f3e]">
+        <p className="page-reference-body page-copy-wide mt-4 text-[#5f6b66]">
           Share your product category, target market, quantity, private label needs, packaging direction, and launch
           date. We will respond with a practical MOQ, sampling, and production route.
         </p>
@@ -129,16 +129,16 @@ export default function ContactPage() {
         <div className="grid gap-8">
           <div className="rounded-[30px] border border-[rgba(191,144,118,0.24)] bg-[linear-gradient(180deg,rgba(255,252,248,0.99),rgba(250,240,231,0.98))] p-6 shadow-[0_24px_56px_rgba(132,86,58,0.12)] md:p-8">
             <div className="border-b border-[rgba(191,144,118,0.2)] pb-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#b06a46]">Company</p>
-              <h2 className="mt-2 text-[1.9rem] font-bold leading-tight text-[#5f3123]">{companyInfo.name}</h2>
+              <p className="text-xs font-semibold uppercase tracking-normal text-[#0f5f55]">Company</p>
+              <h2 className="mt-2 text-[1.9rem] font-bold leading-tight text-[#1d2521]">{companyInfo.name}</h2>
             </div>
-            <div className="mt-6 space-y-4 text-sm leading-7 text-[#7d4f3e]">
+            <div className="mt-6 space-y-4 text-sm leading-7 text-[#5f6b66]">
               <div>
-                <p className="font-semibold text-[#b06a46]">Company Address / Manufacturing Location</p>
+                <p className="font-semibold text-[#0f5f55]">Company Address / Manufacturing Location</p>
                 <p>{companyInfo.address}</p>
               </div>
               <div>
-                <p className="font-semibold text-[#b06a46]">Email</p>
+                <p className="font-semibold text-[#0f5f55]">Email</p>
                 <p>
                   <a href={`mailto:${companyInfo.emailPrimary}`} className="underline decoration-[#d08b67] underline-offset-4 transition hover:text-[#b15d39]">
                     {companyInfo.emailPrimary}
@@ -151,7 +151,7 @@ export default function ContactPage() {
                 </p>
               </div>
               <div>
-                <p className="font-semibold text-[#b06a46]">Mobile / WhatsApp</p>
+                <p className="font-semibold text-[#0f5f55]">Mobile / WhatsApp</p>
                 <p className="flex flex-wrap gap-4">
                   <a href={companyInfo.phoneHref} className="hover:text-[#b15d39]">
                     {companyInfo.phone}
@@ -182,9 +182,9 @@ export default function ContactPage() {
           onSubmit={onSubmit}
         >
           <div className="border-b border-[rgba(191,144,118,0.2)] pb-5">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#b06a46]">Project Inquiry</p>
-            <h2 className="mt-2 text-[1.9rem] font-bold leading-tight text-[#5f3123]">Send Your Project Brief</h2>
-            <p className="mt-3 text-sm leading-7 text-[#7d4f3e]">
+            <p className="text-xs font-semibold uppercase tracking-normal text-[#0f5f55]">Project Inquiry</p>
+            <h2 className="mt-2 text-[1.9rem] font-bold leading-tight text-[#1d2521]">Send Your Project Brief</h2>
+            <p className="mt-3 text-sm leading-7 text-[#5f6b66]">
               Complete the details below so the first reply can include useful MOQ, sample timing, packaging, and
               production guidance.
             </p>
@@ -192,27 +192,27 @@ export default function ContactPage() {
 
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             <label className="grid gap-2">
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9d7d6f]">Name</span>
+              <span className="text-xs font-semibold uppercase tracking-normal text-[#7d8a85]">Name</span>
               <input className="input" required value={form.name} onChange={(event) => setForm({ ...form, name: event.target.value })} />
             </label>
 
             <label className="grid gap-2">
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9d7d6f]">Email</span>
+              <span className="text-xs font-semibold uppercase tracking-normal text-[#7d8a85]">Email</span>
               <input className="input" type="email" required value={form.email} onChange={(event) => setForm({ ...form, email: event.target.value })} />
             </label>
 
             <label className="grid gap-2">
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9d7d6f]">Company / Brand Name</span>
+              <span className="text-xs font-semibold uppercase tracking-normal text-[#7d8a85]">Company / Brand Name</span>
               <input className="input" value={form.company} onChange={(event) => setForm({ ...form, company: event.target.value })} />
             </label>
 
             <label className="grid gap-2">
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9d7d6f]">Country / Target Market</span>
+              <span className="text-xs font-semibold uppercase tracking-normal text-[#7d8a85]">Country / Target Market</span>
               <input className="input" value={form.country} onChange={(event) => setForm({ ...form, country: event.target.value })} />
             </label>
 
             <label className="grid gap-2">
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9d7d6f]">Product Category</span>
+              <span className="text-xs font-semibold uppercase tracking-normal text-[#7d8a85]">Product Category</span>
               <select className="input" value={form.category} onChange={(event) => setForm({ ...form, category: event.target.value })}>
                 <option value="">Select category</option>
                 {productCategories.map((item) => (
@@ -224,7 +224,7 @@ export default function ContactPage() {
             </label>
 
             <label className="grid gap-2">
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9d7d6f]">Estimated Quantity</span>
+              <span className="text-xs font-semibold uppercase tracking-normal text-[#7d8a85]">Estimated Quantity</span>
               <select className="input" value={form.quantity} onChange={(event) => setForm({ ...form, quantity: event.target.value })}>
                 <option value="">Select quantity</option>
                 {quantityOptions.map((item) => (
@@ -236,7 +236,7 @@ export default function ContactPage() {
             </label>
 
             <label className="grid gap-2">
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9d7d6f]">Do you need private label?</span>
+              <span className="text-xs font-semibold uppercase tracking-normal text-[#7d8a85]">Do you need private label?</span>
               <select className="input" value={form.privateLabel} onChange={(event) => setForm({ ...form, privateLabel: event.target.value })}>
                 <option value="">Select option</option>
                 {privateLabelOptions.map((item) => (
@@ -248,15 +248,15 @@ export default function ContactPage() {
             </label>
 
             <label className="grid gap-2">
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9d7d6f]">Target Launch Date</span>
+              <span className="text-xs font-semibold uppercase tracking-normal text-[#7d8a85]">Target Launch Date</span>
               <input className="input" type="date" value={form.launchDate} onChange={(event) => setForm({ ...form, launchDate: event.target.value })} />
             </label>
 
             <fieldset className="grid gap-3 md:col-span-2">
-              <legend className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9d7d6f]">Do you need custom packaging?</legend>
+              <legend className="text-xs font-semibold uppercase tracking-normal text-[#7d8a85]">Do you need custom packaging?</legend>
               <div className="grid gap-2 sm:grid-cols-2">
                 {packagingOptions.map((item) => (
-                  <label key={item} className="flex items-center gap-2 rounded border border-[#ead7c8] bg-white px-3 py-2 text-sm text-[#5a2f1e]">
+                  <label key={item} className="flex items-center gap-2 rounded border border-[#d9e2dc] bg-white px-3 py-2 text-sm text-[#1d2521]">
                     <input type="checkbox" checked={form.packaging.includes(item)} onChange={() => togglePackaging(item)} />
                     {item}
                   </label>
@@ -265,20 +265,20 @@ export default function ContactPage() {
             </fieldset>
 
             <label className="grid gap-2 md:col-span-2">
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9d7d6f]">Upload Reference Image</span>
+              <span className="text-xs font-semibold uppercase tracking-normal text-[#7d8a85]">Upload Reference Image</span>
               <input
                 className="input pt-2"
                 type="file"
                 accept="image/*,.pdf"
                 onChange={(event) => setForm({ ...form, referenceFile: event.target.files?.[0]?.name || "" })}
               />
-              <span className="text-xs leading-5 text-[#9d7d6f]">
+              <span className="text-xs leading-5 text-[#7d8a85]">
                 The form sends the file name with your inquiry. Attachments can be shared by email or WhatsApp after the first reply.
               </span>
             </label>
 
             <label className="grid gap-2 md:col-span-2">
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9d7d6f]">Message</span>
+              <span className="text-xs font-semibold uppercase tracking-normal text-[#7d8a85]">Message</span>
               <textarea
                 className="input min-h-44"
                 required
@@ -302,7 +302,7 @@ export default function ContactPage() {
             <button className="btn btn-primary min-w-[180px]" type="submit">
               Submit Project Brief
             </button>
-            <p className="text-sm text-[#9d7d6f]">Status: {statusText}</p>
+            <p className="text-sm text-[#7d8a85]">Status: {statusText}</p>
           </div>
         </form>
       </section>

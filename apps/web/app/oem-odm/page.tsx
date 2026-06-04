@@ -97,10 +97,10 @@ export default function OemOdmPage() {
           packaging mockup into bulk production and global delivery.
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
-          <Link href="/contact" className="btn border border-[#ffe2cf] bg-[#fff7f1] text-[#8d452d] hover:bg-[#ffe9db]">
+          <Link href="/contact" className="btn border border-[#ffe2cf] bg-[#fff7f1] text-[#0f5f55] hover:bg-[#ffe9db]">
             Book Development Call
           </Link>
-          <Link href="/packaging" className="btn border border-[#ffe2cf] text-[#fff7f1] hover:bg-[#fff7f1] hover:text-[#8d452d]">
+          <Link href="/packaging" className="btn border border-[#ffe2cf] text-[#fff7f1] hover:bg-[#fff7f1] hover:text-[#0f5f55]">
             View Packaging Options
           </Link>
         </div>
@@ -109,15 +109,15 @@ export default function OemOdmPage() {
       <section className="page-section">
         <div className="page-section-head">
           <p className="kicker page-reference-subtitle">Execution Flow</p>
-          <h2 className="page-reference-subtitle mt-2 text-[#6a3524]">A practical development route with fewer handoffs</h2>
+          <h2 className="page-reference-subtitle mt-2 text-[#1d2521]">A practical development route with fewer handoffs</h2>
         </div>
         <div className="mt-8 space-y-8">
           {workflow.map((block, index) => (
             <article key={block.title} className="process-row">
               <div className="process-index">{String(index + 1).padStart(2, "0")}</div>
               <div className="process-copy">
-                <h2 className="page-reference-subtitle text-[#6a3524]">{block.title}</h2>
-                <ul className="page-reference-body mt-4 grid gap-3 text-[#7d4f3e] md:grid-cols-2">
+                <h2 className="page-reference-subtitle text-[#1d2521]">{block.title}</h2>
+                <ul className="page-reference-body mt-4 grid gap-3 text-[#5f6b66] md:grid-cols-2">
                   {block.items.map((item) => (
                     <li key={item} className="process-bullet">
                       {item}

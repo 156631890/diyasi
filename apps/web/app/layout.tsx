@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { Manrope, Outfit } from "next/font/google";
 
 import SiteFooter from "@/components/SiteFooter";
 import TopNav from "@/components/TopNav";
@@ -9,9 +9,9 @@ import { companyInfo } from "@/lib/site-info";
 
 import "./globals.css";
 
-const headingFont = Cormorant_Garamond({
+const headingFont = Outfit({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["500", "600", "700", "800"],
   variable: "--font-heading"
 });
 

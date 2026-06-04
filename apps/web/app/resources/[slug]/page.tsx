@@ -94,19 +94,19 @@ export default function ResourceDetailPage({ params }: Props) {
 
       <section className="hero-panel page-hero md:p-10 lg:p-12">
         <p className="kicker page-reference-subtitle">{article.keyword}</p>
-        <h1 className="section-title mt-2 text-[#6a3524]">{article.title}</h1>
-        <p className="page-reference-body page-copy-wide mt-4 text-[#7d4f3e]">{article.desc}</p>
+        <h1 className="section-title mt-2 text-[#1d2521]">{article.title}</h1>
+        <p className="page-reference-body page-copy-wide mt-4 text-[#5f6b66]">{article.desc}</p>
       </section>
 
       <article className="page-section">
         <div className="grid gap-5">
           {sections.map((section, index) => (
-            <section key={section.title} className="rounded-lg border border-[#ead7c8] bg-[#fffaf5] p-6">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#b06a46]">
+            <section key={section.title} className="rounded-lg border border-[#d9e2dc] bg-[#fffdf8] p-6">
+              <p className="text-xs font-bold uppercase tracking-normal text-[#0f5f55]">
                 {String(index + 1).padStart(2, "0")}
               </p>
-              <h2 className="card-title-standard mt-3 text-[#6a3524]">{section.title}</h2>
-              <p className="page-reference-body mt-3 text-[#7d4f3e]">{section.body}</p>
+              <h2 className="card-title-standard mt-3 text-[#1d2521]">{section.title}</h2>
+              <p className="page-reference-body mt-3 text-[#5f6b66]">{section.body}</p>
             </section>
           ))}
         </div>
@@ -114,7 +114,7 @@ export default function ResourceDetailPage({ params }: Props) {
 
       <section className="factory-cta-band page-section">
         <div>
-          <p className="kicker page-reference-subtitle text-[#f3d7a1]">Buyer Guide</p>
+          <p className="kicker page-reference-subtitle text-[#d7eee8]">Buyer Guide</p>
           <h2 className="card-title-standard mt-3 text-white">Apply this guide to your project brief</h2>
           <p className="page-reference-body mt-3 max-w-2xl text-white/82">
             Send product category, target market, estimated quantity, fabric direction, packaging needs, and launch timing.

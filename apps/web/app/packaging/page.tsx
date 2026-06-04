@@ -38,8 +38,8 @@ export default function PackagingPage() {
 
       <section className="hero-panel page-hero md:p-10 lg:p-12">
         <p className="kicker page-reference-subtitle">Private Label Packaging</p>
-        <h1 className="section-title mt-2 text-[#6a3524]">Custom labels and packaging for underwear brands</h1>
-        <p className="page-reference-body page-copy-wide mt-4 text-[#7d4f3e]">
+        <h1 className="section-title mt-2 text-[#1d2521]">Custom labels and packaging for underwear brands</h1>
+        <p className="page-reference-body page-copy-wide mt-4 text-[#5f6b66]">
           Packaging decisions should be made before bulk production, not after. We help brands align label position,
           care label content, hangtag, polybag, gift box, barcode sticker, and carton mark early in the development route.
         </p>
@@ -48,9 +48,9 @@ export default function PackagingPage() {
       <section className="page-section">
         <div className="grid gap-5 md:grid-cols-3">
           {packagingRoutes.map((item) => (
-            <article key={item.title} className="rounded-lg border border-[#ead7c8] bg-[#fffaf5] p-5">
-              <h2 className="card-title-standard text-[#6a3524]">{item.title}</h2>
-              <p className="page-reference-body mt-3 text-[#7d4f3e]">{item.desc}</p>
+            <article key={item.title} className="rounded-lg border border-[#d9e2dc] bg-[#fffdf8] p-5">
+              <h2 className="card-title-standard text-[#1d2521]">{item.title}</h2>
+              <p className="page-reference-body mt-3 text-[#5f6b66]">{item.desc}</p>
             </article>
           ))}
         </div>
@@ -59,7 +59,7 @@ export default function PackagingPage() {
       <section className="editorial-strip page-section">
         <div className="page-copy-wide">
           <p className="kicker page-reference-subtitle">Packaging Options</p>
-          <h2 className="card-title-standard mt-2 text-[#6a3524]">Options buyers can combine by project</h2>
+          <h2 className="card-title-standard mt-2 text-[#1d2521]">Options buyers can combine by project</h2>
           <div className="chip-list mt-5">
             {privateLabelOptions.map((item) => (
               <span key={item} className="chip">

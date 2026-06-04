@@ -203,11 +203,11 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
           <div className="catalog-intro-row">
             <div className="catalog-intro-copy">
               <h1 className="catalog-intro-title">{collection.title}</h1>
-              <p className="page-reference-body mt-3 text-[#7d4f3e]">{collection.desc}</p>
+              <p className="page-reference-body mt-3 text-[#5f6b66]">{collection.desc}</p>
             </div>
             <div className="catalog-meta">
               <p className="catalog-meta-count">{categoryProducts.length} items</p>
-              <p className="page-reference-body text-[#9d7d6f]">Fixed category URL</p>
+              <p className="page-reference-body text-[#7d8a85]">Fixed category URL</p>
             </div>
           </div>
         </section>
@@ -236,12 +236,12 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
           })}
         </section>
 
-        <section className="mt-10 rounded-lg border border-[#ead7c8] bg-[#fffaf5] p-6">
-          <h2 className="card-title-standard text-[#6a3524]">MOQ and development route</h2>
+        <section className="mt-10 rounded-lg border border-[#d9e2dc] bg-[#fffdf8] p-6">
+          <h2 className="card-title-standard text-[#1d2521]">MOQ and development route</h2>
           <div className="mt-4 grid gap-3 md:grid-cols-2">
             {moqTiers.map((item) => (
-              <p key={item.label} className="text-sm leading-6 text-[#7d4f3e]">
-                <strong className="text-[#5a2f1e]">{item.label}:</strong> {item.value}
+              <p key={item.label} className="text-sm leading-6 text-[#5f6b66]">
+                <strong className="text-[#1d2521]">{item.label}:</strong> {item.value}
               </p>
             ))}
           </div>
@@ -369,7 +369,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
 
           <section className="catalog-detail-panel">
             <h2 className="catalog-detail-panel-title">Key Features</h2>
-            <ul className="grid gap-2 text-sm leading-7 text-[#7d4f3e]">
+            <ul className="grid gap-2 text-sm leading-7 text-[#5f6b66]">
               <li>Fabric hand feel and stretch direction reviewed before sampling.</li>
               <li>Fit, coverage, waistband, gusset, and logo placement can be adjusted by project.</li>
               <li>Private label packaging route can be aligned before bulk production.</li>
@@ -393,8 +393,8 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
             <div className="grid gap-3">
               {qualitySteps.map((item) => (
                 <article key={item.title} className="rounded border border-[rgba(191,144,118,0.24)] bg-white p-4">
-                  <h3 className="font-semibold text-[#5f3123]">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-[#7d4f3e]">{item.desc}</p>
+                  <h3 className="font-semibold text-[#1d2521]">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-[#5f6b66]">{item.desc}</p>
                 </article>
               ))}
             </div>
@@ -422,7 +422,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
               <p className="catalog-group-kicker">{family}</p>
               <h2 className="catalog-group-title">{t.relatedTitle}</h2>
             </div>
-            <p className="page-reference-body text-[#9d7d6f]">{t.relatedDesc}</p>
+            <p className="page-reference-body text-[#7d8a85]">{t.relatedDesc}</p>
           </div>
           <div className="catalog-related-grid">
             {relatedProducts.map((item) => {

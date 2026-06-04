@@ -99,10 +99,10 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
           <section className="site-footer-panel grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
             <div>
               <p className="kicker text-[#9e5637]">{t.eyebrow}</p>
-              <h2 className="mt-2 font-[Arial] text-[26px] font-bold leading-[1.2] text-[#5a2f1e]">
+              <h2 className="mt-2 font-[Arial] text-[26px] font-bold leading-[1.2] text-[#1d2521]">
                 {t.ctaTitle}
               </h2>
-              <p className="mt-3 max-w-3xl font-[Arial] text-[14px] leading-[1.8] text-[#7c6357]">
+              <p className="mt-3 max-w-3xl font-[Arial] text-[14px] leading-[1.8] text-[#5f6b66]">
                 {t.ctaDesc}
               </p>
             </div>
@@ -121,8 +121,8 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
       <div className="home-full-bleed-shell py-9">
         <section className="grid gap-8 lg:grid-cols-[1.05fr_1fr_1fr_1.15fr] lg:gap-10">
           <div className="pr-4">
-            <p className="font-[Arial] text-[24px] font-bold leading-none text-[#5a2f1e]">YiWu DiYaSi</p>
-            <p className="mt-3 max-w-md font-[Arial] text-[14px] leading-[1.8] text-[#7c6357]">{t.brandDesc}</p>
+            <p className="font-[Arial] text-[24px] font-bold leading-none text-[#1d2521]">YiWu DiYaSi</p>
+            <p className="mt-3 max-w-md font-[Arial] text-[14px] leading-[1.8] text-[#5f6b66]">{t.brandDesc}</p>
           </div>
 
           <div>
@@ -168,7 +168,7 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
 
       <div className="border-t border-[rgba(154,97,70,0.18)]">
         <div className="home-full-bleed-shell flex flex-col gap-3 py-4 md:flex-row md:items-center md:justify-between">
-          <p className="font-[Arial] text-[12px] text-[#9d7d6f]">
+          <p className="font-[Arial] text-[12px] text-[#7d8a85]">
             (c) {year} {companyInfo.name}. {t.rights}
           </p>
           <div className="flex flex-wrap items-center gap-4">
