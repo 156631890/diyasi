@@ -88,10 +88,28 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="grid gap-3">
-            <img src="/media/home/factory-1.jpg" alt="YiWu DiYaSi factory exterior and production site" className="rounded-lg object-cover shadow-xl" />
+            <img
+              src="/media/home/factory-1.jpg"
+              alt="YiWu DiYaSi factory exterior and production site"
+              loading="lazy"
+              decoding="async"
+              className="rounded-lg object-cover shadow-xl"
+            />
             <div className="grid grid-cols-2 gap-3">
-              <img src="/media/home/factory-2.jpg" alt="Factory production area" className="h-40 w-full rounded-lg object-cover" />
-              <img src="/media/home/factory-3.jpg" alt="Factory inspection and production details" className="h-40 w-full rounded-lg object-cover" />
+              <img
+                src="/media/home/factory-2.jpg"
+                alt="Factory production area"
+                loading="lazy"
+                decoding="async"
+                className="h-40 w-full rounded-lg object-cover"
+              />
+              <img
+                src="/media/home/factory-3.jpg"
+                alt="Factory inspection and production details"
+                loading="lazy"
+                decoding="async"
+                className="h-40 w-full rounded-lg object-cover"
+              />
             </div>
           </div>
         </div>

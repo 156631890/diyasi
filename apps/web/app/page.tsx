@@ -22,9 +22,9 @@ import {
 } from "@/lib/site-info";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Private Label Intimates Manufacturer",
+  title: "Private Label Underwear Manufacturer",
   description:
-    "YiWu DiYaSi helps DTC, retail, and wholesale underwear brands develop private label intimates from fabric selection and fit sampling to packaging and bulk delivery.",
+    "YiWu DiYaSi helps brands, retailers, and wholesale underwear buyers develop private label collections from fabric selection and fit sampling to packaging and bulk delivery.",
   path: "/"
 });
 
@@ -108,7 +108,7 @@ export default async function HomePage() {
     name: companyInfo.name,
     url: "https://www.yiwudiyasidress.com",
     description:
-      "Private label intimates manufacturer for DTC, retail, and wholesale brands, covering fabric selection, sampling, custom packaging, bulk production, and delivery.",
+      "Private label underwear manufacturer for brands, retailers, and wholesale buyers, covering fabric selection, sampling, custom packaging, bulk production, and delivery.",
     foundingDate: companyInfo.establishedYear,
     email: companyInfo.emailPrimary,
     telephone: companyInfo.phone,
@@ -185,6 +185,8 @@ export default async function HomePage() {
                   <img
                     src={collectionImage(index)}
                     alt={item.title}
+                    loading="lazy"
+                    decoding="async"
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
@@ -244,7 +246,14 @@ export default async function HomePage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
             <div className="aspect-video overflow-hidden rounded-lg bg-black shadow-xl">
-              <video src="/media/home/factory-video.mp4" controls poster="/media/home/factory-1.jpg" className="h-full w-full" />
+              <video
+                src="/media/home/factory-video.mp4"
+                controls
+                preload="none"
+                playsInline
+                poster="/media/home/factory-1.jpg"
+                className="h-full w-full"
+              />
             </div>
             <div>
               <p className="kicker">Real Factory & QC</p>
@@ -291,7 +300,13 @@ export default async function HomePage() {
                   <Link key={product.product_id} href={`/products/${encodeURIComponent(product.product_id)}`} className="group rounded-lg border border-[#d9e2dc] bg-white">
                     <div className="aspect-[4/5] overflow-hidden rounded-t-lg bg-[#e8eee9]">
                       {image ? (
-                        <img src={image} alt={resolveDisplayTitle(product)} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                        <img
+                          src={image}
+                          alt={resolveDisplayTitle(product)}
+                          loading="lazy"
+                          decoding="async"
+                          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
                       ) : null}
                     </div>
                     <div className="p-4">

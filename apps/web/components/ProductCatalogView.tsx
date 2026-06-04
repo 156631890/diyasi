@@ -4,16 +4,7 @@ import Link from "next/link";
 import { useDeferredValue, useMemo, useState } from "react";
 
 import {
-  DisplayProduct,
   familyOrder,
-  isInStock,
-  isLowMoq,
-  isOemReady,
-  resolveDisplayProductId,
-  resolveDisplayTitle,
-  resolveHoverImage,
-  resolvePrimaryImage,
-  resolvePriceText,
   splitCategory,
   topFamily
 } from "@/lib/product-display";
@@ -59,8 +50,21 @@ type ProductCatalogCopy = {
   close: string;
 };
 
+export type ProductCatalogItem = {
+  product_id: string;
+  displayId: string;
+  title: string;
+  category: string;
+  searchText: string;
+  primaryImage: string;
+  hoverImage: string;
+  inStock: boolean;
+  oemReady: boolean;
+  lowMoq: boolean;
+};
+
 type ProductCatalogViewProps = {
-  products: DisplayProduct[];
+  products: ProductCatalogItem[];
   categories: ProductCategory[];
   copy: ProductCatalogCopy;
 };
@@ -87,7 +91,7 @@ function sortCategories(categories: ProductCategory[]): ProductCategory[] {
   });
 }
 
-function sortProducts(products: DisplayProduct[]): DisplayProduct[] {
+function sortProducts(products: ProductCatalogItem[]): ProductCatalogItem[] {
   return [...products].sort((left, right) => {
     const leftParts = splitCategory(left.category);
     const rightParts = splitCategory(right.category);
@@ -102,7 +106,7 @@ function sortProducts(products: DisplayProduct[]): DisplayProduct[] {
     if (left.category !== right.category) {
       return left.category.localeCompare(right.category);
     }
-    return left.product_name.localeCompare(right.product_name);
+    return left.title.localeCompare(right.title);
   });
 }
 
@@ -145,15 +149,12 @@ export default function ProductCatalogView({ products, categories, copy }: Produ
     return sortedProducts.filter((product) => {
       const byFamily = deferredFamily === "all" || topFamily(product.category) === deferredFamily;
       const byCategory = deferredCategory === "all" || product.category === deferredCategory;
-      const searchable = [product.product_name, product.category, product.fabric, product.description, product.moq || ""]
-        .join(" ")
-        .toLowerCase();
-      const byQuery = !deferredQuery || searchable.includes(deferredQuery);
+      const byQuery = !deferredQuery || product.searchText.includes(deferredQuery);
       const byQuickFilter =
         deferredQuickFilter === "all" ||
-        (deferredQuickFilter === "in_stock" && isInStock(product)) ||
-        (deferredQuickFilter === "oem" && isOemReady(product)) ||
-        (deferredQuickFilter === "low_moq" && isLowMoq(product));
+        (deferredQuickFilter === "in_stock" && product.inStock) ||
+        (deferredQuickFilter === "oem" && product.oemReady) ||
+        (deferredQuickFilter === "low_moq" && product.lowMoq);
       return byFamily && byCategory && byQuery && byQuickFilter;
     });
   }, [deferredCategory, deferredFamily, deferredQuery, deferredQuickFilter, sortedProducts]);
@@ -287,28 +288,34 @@ export default function ProductCatalogView({ products, categories, copy }: Produ
         ) : (
           <>
             <section className="catalog-grid-clean mt-6">
-              {visibleProducts.map((product) => {
-                const displayTitle = resolveDisplayTitle(product);
-                const displayProductId = resolveDisplayProductId(product);
-                const primaryImage = resolvePrimaryImage(product);
-                const hoverImage = resolveHoverImage(product);
+              {visibleProducts.map((product, index) => {
+                const primaryLoading: "eager" | "lazy" = index < 4 ? "eager" : "lazy";
+                const primaryFetchPriority: "high" | "auto" = index < 4 ? "high" : "auto";
                 const href = `/products/${encodeURIComponent(product.product_id)}`;
 
                 return (
                   <article key={product.product_id} className="catalog-card-clean">
                     <Link href={href} className="catalog-card-clean-media">
-                      {primaryImage ? (
+                      {product.primaryImage ? (
                         <div className="catalog-card-clean-media-stack">
                           <img
-                            src={primaryImage}
-                            alt={displayTitle}
+                            src={product.primaryImage}
+                            alt={product.title}
+                            loading={primaryLoading}
+                            decoding="async"
+                            fetchPriority={primaryFetchPriority}
                             className="catalog-card-clean-image catalog-card-clean-image-primary"
                           />
-                          <img
-                            src={hoverImage}
-                            alt={`${displayTitle} alternate view`}
-                            className="catalog-card-clean-image catalog-card-clean-image-secondary"
-                          />
+                          {product.hoverImage ? (
+                            <img
+                              src={product.hoverImage}
+                              alt={`${product.title} alternate view`}
+                              loading="lazy"
+                              decoding="async"
+                              fetchPriority="low"
+                              className="catalog-card-clean-image catalog-card-clean-image-secondary"
+                            />
+                          ) : null}
                         </div>
                       ) : (
                         <div className="catalog-card-clean-fallback">{copy.noImage}</div>
@@ -317,9 +324,9 @@ export default function ProductCatalogView({ products, categories, copy }: Produ
 
                     <div className="catalog-card-clean-copy">
                       <Link href={href}>
-                        <h2 className="catalog-card-clean-title">{displayTitle}</h2>
+                        <h2 className="catalog-card-clean-title">{product.title}</h2>
                       </Link>
-                      <p className="catalog-card-clean-category mt-2">{displayProductId}</p>
+                      <p className="catalog-card-clean-category mt-2">{product.displayId}</p>
                     </div>
                   </article>
                 );

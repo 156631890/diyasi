@@ -132,7 +132,14 @@ export default function FactoryPage() {
       <section className="factory-story-shell page-section">
         <div className="factory-video-panel">
           <div className="factory-video-cover">
-            <video src="/media/home/factory-video.mp4" controls poster="/media/home/factory-1.jpg" className="h-full w-full object-cover" />
+            <video
+              src="/media/home/factory-video.mp4"
+              controls
+              preload="none"
+              playsInline
+              poster="/media/home/factory-1.jpg"
+              className="h-full w-full object-cover"
+            />
           </div>
         </div>
         <div className="factory-story-copy">
@@ -190,7 +197,7 @@ export default function FactoryPage() {
         <div className="factory-detail-grid mt-6">
           {factoryPhotos.map((img) => (
             <article key={img.src} className="factory-detail-card">
-              <img src={img.src} alt={img.title} className="factory-detail-image" />
+              <img src={img.src} alt={img.title} loading="lazy" decoding="async" className="factory-detail-image" />
               <div className="factory-detail-caption">
                 <p className="page-reference-body text-white">{img.title}</p>
               </div>
@@ -207,7 +214,13 @@ export default function FactoryPage() {
         <div className="factory-product-rows mt-6">
           {launchCollections.slice(0, 4).map((item, index) => (
             <Link key={item.slug} href={item.href} className="factory-product-tile">
-              <img src={factoryPhotos[index % factoryPhotos.length].src} alt={item.title} className="factory-product-image" />
+              <img
+                src={factoryPhotos[index % factoryPhotos.length].src}
+                alt={item.title}
+                loading="lazy"
+                decoding="async"
+                className="factory-product-image"
+              />
               <div className="factory-product-caption">
                 <p className="card-title-standard text-white">{item.title}</p>
               </div>

@@ -35,7 +35,7 @@ const labels: Record<
     resources: "Resources",
     contact: "Contact",
     cta: "Start a Project",
-    companyTag: "Private label intimates manufacturer for DTC, retail, and wholesale brands"
+    companyTag: "Private label underwear manufacturer for brands, retailers, and wholesale buyers"
   },
   zh: {
     home: "\u9996\u9875",
@@ -54,14 +54,14 @@ const labels: Record<
     home: "Inicio",
     about: "Nosotros",
     products: "Productos",
-    privateLabel: "Private Label",
+    privateLabel: "Marca Propia",
     sustainability: "Sostenibilidad",
-    factory: "Fabrica y Calidad",
+    factory: "F\u00e1brica y Calidad",
     fabrics: "Tejidos",
     resources: "Recursos",
     contact: "Contacto",
     cta: "Iniciar Proyecto",
-    companyTag: "Fabricante private label de intimates para marcas DTC, retail y wholesale"
+    companyTag: "Fabricante de ropa interior para marca propia, retail y mayoristas"
   }
 };
 
@@ -100,6 +100,7 @@ export default function TopNav({ initialLang }: TopNavProps) {
   function onLanguageChange(nextLang: SiteLang) {
     setLang(nextLang);
     document.cookie = `site_lang=${nextLang}; Path=/; Max-Age=31536000; SameSite=Lax`;
+    document.documentElement.lang = nextLang;
     router.refresh();
   }
 
@@ -127,6 +128,7 @@ export default function TopNav({ initialLang }: TopNavProps) {
             <select
               className="top-nav-select ml-2 rounded-full px-3 py-1 text-xs"
               value={lang}
+              aria-label="Select language"
               onChange={(event) => onLanguageChange(event.target.value as SiteLang)}
             >
               {(Object.keys(LANG_LABELS) as SiteLang[]).map((value) => (
@@ -178,6 +180,7 @@ export default function TopNav({ initialLang }: TopNavProps) {
           <select
             className="top-nav-select rounded-full px-3 py-1 text-xs"
             value={lang}
+            aria-label="Select language"
             onChange={(event) => onLanguageChange(event.target.value as SiteLang)}
           >
             {(Object.keys(LANG_LABELS) as SiteLang[]).map((value) => (

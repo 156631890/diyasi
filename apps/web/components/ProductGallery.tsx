@@ -16,7 +16,13 @@ export default function ProductGallery({ productName, images, emptyLabel }: Prod
     <div className="catalog-gallery">
       <div className="catalog-detail-media">
         {activeImage ? (
-          <img src={activeImage} alt={productName} className="catalog-detail-image" />
+          <img
+            src={activeImage}
+            alt={productName}
+            decoding="async"
+            fetchPriority="high"
+            className="catalog-detail-image"
+          />
         ) : (
           <div className="catalog-detail-fallback">{emptyLabel}</div>
         )}
@@ -31,7 +37,13 @@ export default function ProductGallery({ productName, images, emptyLabel }: Prod
               className={`catalog-gallery-thumb ${index === activeIndex ? "catalog-gallery-thumb-active" : ""}`}
               onClick={() => setActiveIndex(index)}
             >
-              <img src={image} alt={`${productName} view ${index + 1}`} className="catalog-gallery-thumb-image" />
+              <img
+                src={image}
+                alt={`${productName} view ${index + 1}`}
+                loading="lazy"
+                decoding="async"
+                className="catalog-gallery-thumb-image"
+              />
             </button>
           ))}
         </div>

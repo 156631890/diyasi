@@ -40,7 +40,7 @@ export default function HomeProductCarousel({ items }: HomeProductCarouselProps)
       <div className="home-product-carousel-track">
         {currentSlide.map((item) => (
           <Link key={item.link} href={item.link} className="factory-product-tile">
-            <img src={item.image} alt={item.title} className="factory-product-image" />
+            <img src={item.image} alt={item.title} loading="lazy" decoding="async" className="factory-product-image" />
             <div className="factory-product-caption">
               <p className="factory-home-title text-white">{item.title}</p>
             </div>

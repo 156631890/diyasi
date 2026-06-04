@@ -220,7 +220,13 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
               <article key={item.product_id} className="catalog-card-clean">
                 <Link href={`/products/${encodeURIComponent(item.product_id)}`} className="catalog-card-clean-media">
                   {image ? (
-                    <img src={image} alt={displayTitle} className="catalog-card-clean-image catalog-card-clean-image-primary" />
+                    <img
+                      src={image}
+                      alt={displayTitle}
+                      loading="lazy"
+                      decoding="async"
+                      className="catalog-card-clean-image catalog-card-clean-image-primary"
+                    />
                   ) : (
                     <div className="catalog-card-clean-fallback">{t.noImage}</div>
                   )}
@@ -436,6 +442,8 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                       <img
                         src={relatedImages[0]}
                         alt={resolveDisplayTitle(relatedProduct)}
+                        loading="lazy"
+                        decoding="async"
                         className="catalog-related-image"
                       />
                     ) : (

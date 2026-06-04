@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
 
-import ProductCatalogView from "@/components/ProductCatalogView";
-import { getCatalogCategories, getCatalogProducts } from "@/lib/catalog-source";
+import ProductCatalogView, { type ProductCatalogItem } from "@/components/ProductCatalogView";
+import { getCatalogCategories, getCatalogProducts, type CatalogProduct } from "@/lib/catalog-source";
 import { SiteLang } from "@/lib/i18n";
-import { resolveDisplayTitle } from "@/lib/product-display";
+import {
+  isInStock,
+  isLowMoq,
+  isOemReady,
+  resolveDisplayProductId,
+  resolveDisplayTitle,
+  resolveHoverImage,
+  resolvePrimaryImage
+} from "@/lib/product-display";
 import { absoluteUrl, buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { getServerLang } from "@/lib/server-lang";
 
@@ -171,10 +179,41 @@ const copy: Record<
   }
 };
 
+function toCatalogItem(product: CatalogProduct): ProductCatalogItem {
+  const title = resolveDisplayTitle(product);
+  const displayId = resolveDisplayProductId(product);
+  const primaryImage = resolvePrimaryImage(product);
+  const hoverCandidate = resolveHoverImage(product);
+
+  return {
+    product_id: product.product_id,
+    displayId,
+    title,
+    category: product.category,
+    searchText: [
+      title,
+      displayId,
+      product.product_name,
+      product.category,
+      product.fabric,
+      product.moq || "",
+      product.model_number || ""
+    ]
+      .join(" ")
+      .toLowerCase(),
+    primaryImage,
+    hoverImage: hoverCandidate !== primaryImage ? hoverCandidate : "",
+    inStock: isInStock(product),
+    oemReady: isOemReady(product),
+    lowMoq: isLowMoq(product)
+  };
+}
+
 export default async function ProductsPage() {
   const lang = getServerLang();
   const t = copy[lang];
   const [products, categories] = await Promise.all([getCatalogProducts(), getCatalogCategories()]);
+  const catalogProducts = products.map(toCatalogItem);
   const itemListJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -218,7 +257,7 @@ export default async function ProductsPage() {
         </div>
       </section>
 
-      <ProductCatalogView products={products} categories={categories} copy={t} />
+      <ProductCatalogView products={catalogProducts} categories={categories} copy={t} />
     </main>
   );
 }
