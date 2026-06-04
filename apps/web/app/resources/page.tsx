@@ -2,18 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
-import { resourceArticles } from "@/lib/site-info";
+import { resourceArticles } from "@/lib/resource-articles";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Underwear Manufacturing Resources",
+  title: "Underwear Manufacturing News",
   description:
-    "Buyer resources for private label underwear brands covering MOQ, fabrics, packaging, sample development, quality control, and OEM vs ODM manufacturing.",
+    "Startup-focused underwear and yoga wear manufacturing news for EU and US buyers covering quotation, unit cost, fabric, sizing, QC, MOQ, and private label preparation.",
   path: "/resources"
 });
-
-function resourceCover(slug: string): string {
-  return `/media/generated/resources/${slug}.png`;
-}
 
 export default function ResourcesPage() {
   const breadcrumbJsonLd = buildBreadcrumbJsonLd([
@@ -27,16 +23,16 @@ export default function ResourcesPage() {
 
       <section className="visual-hero page-hero">
         <div className="visual-hero-copy">
-          <p className="kicker page-reference-subtitle">Resources</p>
-          <h1 className="section-title mt-2 text-[#1d2521]">Private label underwear sourcing guides</h1>
+          <p className="kicker page-reference-subtitle">News & Buyer Guides</p>
+          <h1 className="section-title mt-2 text-[#1d2521]">Startup sourcing news for underwear and yoga wear buyers</h1>
           <p className="page-reference-body mt-4 text-[#5f6b66]">
-            Practical buying guides for DTC brands, retailers, Amazon private label sellers, boutique buyers, and
-            wholesale teams comparing underwear factories, MOQ routes, fabric choices, packaging, and QC systems.
+            Practical News articles for European and North American startup brands comparing underwear factories,
+            quotation details, fabric choices, unit cost, sizing, private label packaging, and QC decisions.
           </p>
           <div className="resource-hero-pills mt-7">
-            <span>MOQ</span>
-            <span>Fabrics</span>
-            <span>Packaging</span>
+            <span>Quotes</span>
+            <span>Unit Cost</span>
+            <span>Fabric</span>
             <span>QC</span>
           </div>
         </div>
@@ -58,8 +54,8 @@ export default function ResourcesPage() {
           <article key={article.slug} className="resource-card">
             <Link href={`/resources/${article.slug}`} className="resource-card-media" aria-label={article.title}>
               <img
-                src={resourceCover(article.slug)}
-                alt=""
+                src={article.coverImage}
+                alt={article.title}
                 width={1200}
                 height={720}
                 loading="lazy"
@@ -72,6 +68,7 @@ export default function ResourcesPage() {
                 <img src="/media/generated/icons/resource-guide.png" alt="" width={34} height={34} loading="lazy" decoding="async" />
                 <p>{article.keyword}</p>
               </div>
+              <p className="resource-card-date">{article.publishedAt}</p>
               <h2 className="card-title-standard mt-3 text-[#1d2521]">{article.title}</h2>
               <p className="page-reference-body mt-3 text-[#5f6b66]">{article.desc}</p>
               <Link href={`/resources/${article.slug}`} className="resource-card-link">

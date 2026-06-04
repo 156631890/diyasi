@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
-import { moqTiers, privateLabelOptions, qualitySteps, resourceArticles, sampleAndLeadTimes } from "@/lib/site-info";
+import { resourceArticles, type ResourceArticleBlock } from "@/lib/resource-articles";
+import { absoluteUrl, buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 
 type Props = { params: { slug: string } };
 
@@ -32,84 +32,119 @@ export function generateMetadata({ params }: Props): Metadata {
   });
 }
 
-function guideSections(slug: string) {
-  if (slug.includes("moq")) {
-    return moqTiers.map((tier) => ({
-      title: tier.label,
-      body: tier.value
-    }));
+function publishedIso(value: string): string {
+  const parsed = Date.parse(value);
+  return Number.isNaN(parsed) ? value : new Date(parsed).toISOString();
+}
+
+function renderArticleBlock(block: ResourceArticleBlock, index: number) {
+  if (block.type === "heading") {
+    return (
+      <h2 key={`${block.type}-${index}`} className="news-article-heading">
+        {block.text}
+      </h2>
+    );
   }
-  if (slug.includes("packaging")) {
-    return privateLabelOptions.map((option) => ({
-      title: option,
-      body: "Confirm artwork, placement, size, material, barcode needs, and packing method before bulk production starts."
-    }));
+  if (block.type === "paragraph") {
+    return (
+      <p key={`${block.type}-${index}`} className="news-article-paragraph">
+        {block.text}
+      </p>
+    );
   }
-  if (slug.includes("quality")) {
-    return qualitySteps.map((step) => ({ title: step.title, body: step.desc }));
+  if (block.type === "faqQuestion") {
+    return (
+      <h3 key={`${block.type}-${index}`} className="news-article-faq-question">
+        {block.text}
+      </h3>
+    );
   }
-  if (slug.includes("sample")) {
-    return [
-      { title: "Stock Fabric Sample", body: sampleAndLeadTimes.stockFabricSample },
-      { title: "Custom Color Sample", body: sampleAndLeadTimes.customColorSample },
-      { title: "New Pattern Sample", body: sampleAndLeadTimes.newPatternSample },
-      { title: "Bulk Lead Time", body: sampleAndLeadTimes.bulkLeadTime }
-    ];
+  if (block.type === "callout" || block.type === "cta") {
+    return (
+      <section key={`${block.type}-${index}`} className={`news-article-callout ${block.type === "cta" ? "news-article-callout-cta" : ""}`}>
+        <p>{block.text}</p>
+      </section>
+    );
   }
-  if (slug.includes("fabric")) {
-    return [
-      { title: "Comfort Target", body: "Clarify hand feel, stretch, coverage, and breathability before fabric selection." },
-      { title: "Price Positioning", body: "Fabric route should match the brand's target retail price and margin structure." },
-      { title: "Sampling Route", body: "Stock fabric samples move fastest; custom color and new construction require more planning." }
-    ];
+  if (block.type === "image") {
+    return (
+      <figure key={`${block.type}-${index}`} className="news-article-figure">
+        <img src={block.src} alt={block.alt} width={1200} height={800} loading="lazy" decoding="async" />
+        <figcaption>{block.caption}</figcaption>
+      </figure>
+    );
   }
-  if (slug.includes("oem-vs-odm")) {
-    return [
-      { title: "OEM Route", body: "Best when the buyer provides clear design, fit, fabric, and packaging requirements." },
-      { title: "ODM Route", body: "Best when the buyer wants to start from proven factory styles and customize brand details." },
-      { title: "Hybrid Route", body: "Often practical for DTC launches: proven base product, custom label, selected fabric, and custom packaging." }
-    ];
-  }
-  return [
-    { title: "Define Product Direction", body: "Start with category, target customer, fabric expectation, retail positioning, and launch timing." },
-    { title: "Plan Sampling", body: "Confirm what needs to be tested: fit, fabric feel, logo position, packaging, and size range." },
-    { title: "Prepare Bulk Production", body: "Move to production only after MOQ, color, size ratio, packaging, QC standard, and delivery schedule are aligned." }
-  ];
+  return (
+    <div key={`${block.type}-${index}`} className="news-article-table-wrap">
+      <table className="news-article-table">
+        <tbody>
+          {block.rows.map((row, rowIndex) => (
+            <tr key={rowIndex}>
+              {row.map((cell, cellIndex) => (
+                <td key={`${rowIndex}-${cellIndex}`}>{cell}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
 }
 
 export default function ResourceDetailPage({ params }: Props) {
   const article = getArticle(params.slug);
   if (!article) notFound();
 
-  const sections = guideSections(article.slug);
   const breadcrumbJsonLd = buildBreadcrumbJsonLd([
     { name: "Home", path: "/" },
     { name: "Resources", path: "/resources" },
     { name: article.title, path: `/resources/${article.slug}` }
   ]);
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.desc,
+    datePublished: publishedIso(article.publishedAt),
+    image: article.images.map((image) => absoluteUrl(image.src)),
+    author: {
+      "@type": "Organization",
+      name: "YiWu DiYaSi Dress Co., Ltd."
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "YiWu DiYaSi Dress Co., Ltd."
+    },
+    mainEntityOfPage: absoluteUrl(`/resources/${article.slug}`)
+  };
 
   return (
     <main className="container-shell page-shell page-stack">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
 
-      <section className="hero-panel page-hero md:p-10 lg:p-12">
-        <p className="kicker page-reference-subtitle">{article.keyword}</p>
-        <h1 className="section-title mt-2 text-[#1d2521]">{article.title}</h1>
-        <p className="page-reference-body page-copy-wide mt-4 text-[#5f6b66]">{article.desc}</p>
+      <section className="visual-hero page-hero">
+        <div className="visual-hero-copy">
+          <p className="kicker page-reference-subtitle">{article.keyword}</p>
+          <h1 className="section-title mt-2 text-[#1d2521]">{article.title}</h1>
+          <p className="resource-card-date mt-4">{article.publishedAt}</p>
+          <p className="page-reference-body mt-4 text-[#5f6b66]">{article.desc}</p>
+        </div>
+        <div className="visual-hero-media">
+          <img
+            src={article.coverImage}
+            alt={article.title}
+            width={1200}
+            height={800}
+            decoding="async"
+            fetchPriority="high"
+            className="visual-hero-image"
+          />
+        </div>
       </section>
 
-      <article className="page-section">
-        <div className="grid gap-5">
-          {sections.map((section, index) => (
-            <section key={section.title} className="rounded-lg border border-[#d9e2dc] bg-[#fffdf8] p-6">
-              <p className="text-xs font-bold uppercase tracking-normal text-[#0f5f55]">
-                {String(index + 1).padStart(2, "0")}
-              </p>
-              <h2 className="card-title-standard mt-3 text-[#1d2521]">{section.title}</h2>
-              <p className="page-reference-body mt-3 text-[#5f6b66]">{section.body}</p>
-            </section>
-          ))}
-        </div>
+      <article className="news-article-body page-section">
+        {article.blocks.map((block, index) => renderArticleBlock(block, index))}
       </article>
 
       <section className="factory-cta-band page-section">

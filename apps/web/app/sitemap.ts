@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
 import { safeFetchJson } from "@/lib/api";
 import { getCatalogProducts } from "@/lib/catalog-source";
+import { resourceArticles } from "@/lib/resource-articles";
 import { SITE_URL } from "@/lib/seo";
-import { launchCollections, resourceArticles } from "@/lib/site-info";
+import { launchCollections } from "@/lib/site-info";
 
 type Article = { slug: string };
 
