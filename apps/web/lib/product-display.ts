@@ -255,7 +255,8 @@ const TITLE_FILLER_WORDS = new Set([
 ]);
 
 function isThirdPartyProductImage(value: string): boolean {
-  return /alicdn\.com|alibaba\.com/i.test(value);
+  // Allow all images to render normally, including alicdn and alibaba source images.
+  return false;
 }
 
 function detectFabric(value: string): string {
