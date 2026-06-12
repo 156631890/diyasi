@@ -235,7 +235,11 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                   <Link href={`/products/${encodeURIComponent(item.product_id)}`}>
                     <h2 className="catalog-card-clean-title">{displayTitle}</h2>
                   </Link>
-                  <p className="catalog-card-clean-category mt-2">{resolveDisplayProductId(item)}</p>
+                  <div className="mt-3 flex items-center justify-between">
+                    <span className="inline-block rounded-full bg-[#f3f7f4] px-2.5 py-1 text-[11px] font-semibold text-[#57635e]">
+                      {resolveDisplayProductId(item)}
+                    </span>
+                  </div>
                 </div>
               </article>
             );
@@ -398,9 +402,9 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
             <h2 className="catalog-detail-panel-title">Quality Control</h2>
             <div className="grid gap-3">
               {qualitySteps.map((item) => (
-                <article key={item.title} className="rounded border border-[rgba(191,144,118,0.24)] bg-white p-4">
-                  <h3 className="font-semibold text-[#1d2521]">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-[#5f6b66]">{item.desc}</p>
+                <article key={item.title} className="rounded-xl border-l-4 border-l-[#0e5b51] border border-[#d9e2dc]/80 bg-white p-5 shadow-sm hover:shadow-md transition-shadow duration-300">
+                  <h3 className="font-bold text-[#17201c]">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-[#57635e]">{item.desc}</p>
                 </article>
               ))}
             </div>

@@ -326,8 +326,13 @@ export default function ProductCatalogView({ products, categories, copy }: Produ
                       <Link href={href}>
                         <h2 className="catalog-card-clean-title">{product.title}</h2>
                       </Link>
-                      <p className="catalog-card-clean-category mt-2">{product.displayId}</p>
+                      <div className="mt-3 flex items-center justify-between">
+                        <span className="inline-block rounded-full bg-[#f3f7f4] px-2.5 py-1 text-[11px] font-semibold text-[#57635e]">
+                          {product.displayId}
+                        </span>
+                      </div>
                     </div>
+
                   </article>
                 );
               })}

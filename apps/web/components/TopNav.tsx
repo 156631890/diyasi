@@ -40,18 +40,18 @@ const labels: Record<
     companyTag: "Private label underwear manufacturer for brands, retailers, and wholesale buyers"
   },
   zh: {
-    home: "\u9996\u9875",
-    about: "\u5173\u4e8e\u6211\u4eec",
-    products: "\u4ea7\u54c1",
-    privateLabel: "\u8d34\u724c\u5b9a\u5236",
-    sustainability: "\u53ef\u6301\u7eed",
-    factory: "\u5de5\u5382\u4e0e\u8d28\u91cf",
-    fabrics: "\u9762\u6599",
-    resources: "\u8d44\u6e90",
-    journal: "\u535a\u5ba2",
-    contact: "\u8054\u7cfb",
-    cta: "\u53d1\u8d77\u9879\u76ee",
-    companyTag: "\u9762\u5411 DTC\u3001\u96f6\u552e\u548c\u6279\u53d1\u54c1\u724c\u7684\u5185\u8863\u8d34\u724c\u5de5\u5382"
+    home: "首页",
+    about: "关于我们",
+    products: "产品",
+    privateLabel: "贴牌定制",
+    sustainability: "可持续",
+    factory: "工厂与质量",
+    fabrics: "面料",
+    resources: "资源",
+    journal: "博客",
+    contact: "联系",
+    cta: "发起项目",
+    companyTag: "面向 DTC、零售和批发品牌的内衣贴牌工厂"
   },
   es: {
     home: "Inicio",
@@ -59,13 +59,13 @@ const labels: Record<
     products: "Productos",
     privateLabel: "Marca Propia",
     sustainability: "Sostenibilidad",
-    factory: "F\u00e1brica y Calidad",
+    factory: "Fábrica y Calidad",
     fabrics: "Tejidos",
     resources: "Recursos",
     journal: "Blog",
     contact: "Contacto",
     cta: "Iniciar Proyecto",
-    companyTag: "Fabricante de ropa interior para marca propia, retail y mayoristas"
+    companyTag: "Fabricante de ropa interior for marca propia, retail y mayoristas"
   }
 };
 
@@ -83,6 +83,7 @@ export default function TopNav({ initialLang }: TopNavProps) {
   const pathname = usePathname();
   const [lang, setLang] = useState<SiteLang>(initialLang);
   const [isCompact, setIsCompact] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = labels[lang];
 
   const primaryLinks: LinkItem[] = [
@@ -106,6 +107,7 @@ export default function TopNav({ initialLang }: TopNavProps) {
     setLang(nextLang);
     document.cookie = `site_lang=${nextLang}; Path=/; Max-Age=31536000; SameSite=Lax`;
     document.documentElement.lang = nextLang;
+    setIsMenuOpen(false);
     router.refresh();
   }
 
@@ -119,8 +121,21 @@ export default function TopNav({ initialLang }: TopNavProps) {
     return () => window.removeEventListener("scroll", updateCompactState);
   }, []);
 
+  // Prevent scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
+
   return (
     <header className={`top-nav-shell sticky top-0 z-30 backdrop-blur-xl ${isCompact ? "top-nav-shell-compact" : ""}`}>
+      {/* Desktop Top Meta Bar */}
       <div className="top-nav-meta-shell hidden lg:block">
         <div className="container-shell top-nav-wide-shell flex items-center justify-between py-2 text-xs">
           <p className="top-nav-meta-copy font-semibold tracking-normal">{t.companyTag}</p>
@@ -146,8 +161,9 @@ export default function TopNav({ initialLang }: TopNavProps) {
         </div>
       </div>
 
+      {/* Main Nav Bar */}
       <div className="container-shell top-nav-wide-shell flex items-center justify-between py-3">
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3" onClick={() => setIsMenuOpen(false)}>
           <span
             className={`top-nav-brand-badge grid place-items-center rounded-full text-xs font-bold text-white ${
               isCompact ? "top-nav-brand-badge-compact" : ""
@@ -160,6 +176,7 @@ export default function TopNav({ initialLang }: TopNavProps) {
           </span>
         </Link>
 
+        {/* Desktop Primary Links */}
         <nav aria-label="Main navigation" className="hidden items-center gap-3 text-sm lg:flex xl:gap-4">
           {primaryLinks.map((item) => (
             <Link key={item.href} href={item.href} className={`${linkClass(pathname, item.href)} nav-link-primary`}>
@@ -168,41 +185,86 @@ export default function TopNav({ initialLang }: TopNavProps) {
           ))}
         </nav>
 
+        {/* Desktop CTA */}
         <Link href="/contact" className="btn btn-primary top-nav-cta hidden text-sm lg:inline-flex">
           {t.cta}
         </Link>
+
+        {/* Mobile Hamburger Button */}
+        <button
+          type="button"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-[#d9e2dc] bg-[#fffdf8] text-[#1d2521] shadow-sm transition hover:bg-[#eef3ee] lg:hidden"
+          onClick={() => setIsMenuOpen((current) => !current)}
+          aria-expanded={isMenuOpen}
+          aria-label="Toggle navigation menu"
+        >
+          {isMenuOpen ? (
+            // Close SVG Icon
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="h-5 w-5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            // Menu SVG Icon
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="h-5 w-5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          )}
+        </button>
       </div>
 
-      <div className="container-shell pb-3 lg:hidden">
-        <div className="flex items-center justify-between gap-2">
-          <div className="flex gap-2">
-            {secondaryLinks.map((item) => (
-              <Link key={item.href} href={item.href} className={linkClass(pathname, item.href)}>
+      {/* Mobile Drawer Overlay */}
+      {isMenuOpen && (
+        <div className="fixed inset-x-0 bottom-0 top-[60px] z-50 glass-panel flex flex-col p-6 overflow-y-auto lg:hidden">
+          {/* Mobile Primary Links */}
+          <nav className="flex flex-col gap-4 text-lg font-bold text-[#1d2521]" aria-label="Mobile navigation">
+            {primaryLinks.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`pb-2 border-b border-[#d9e2dc]/40 ${linkClass(pathname, item.href)}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
                 {item.label}
               </Link>
             ))}
-          </div>
-          <select
-            className="top-nav-select rounded-full px-3 py-1 text-xs"
-            value={lang}
-            aria-label="Select language"
-            onChange={(event) => onLanguageChange(event.target.value as SiteLang)}
-          >
-            {(Object.keys(LANG_LABELS) as SiteLang[]).map((value) => (
-              <option key={value} value={value}>
-                {LANG_LABELS[value]}
-              </option>
-            ))}
-          </select>
-        </div>
-        <nav className="mt-2 flex gap-2 overflow-x-auto whitespace-nowrap text-xs">
-          {primaryLinks.map((item) => (
-            <Link key={item.href} href={item.href} className={linkClass(pathname, item.href)}>
-              {item.label}
+          </nav>
+
+          {/* Mobile Secondary & CTA */}
+          <div className="mt-8 flex flex-col gap-5">
+            <Link
+              href="/sustainability"
+              className="text-sm font-semibold text-[#5f6b66] hover:text-[#0e5b51]"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t.sustainability}
             </Link>
-          ))}
-        </nav>
-      </div>
+            <Link
+              href="/contact"
+              className="btn btn-primary w-full text-center py-3.5 text-sm"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t.cta}
+            </Link>
+
+            {/* Mobile Language Switcher */}
+            <div className="mt-6 flex items-center justify-between border-t border-[#d9e2dc]/60 pt-6">
+              <span className="text-sm font-semibold text-[#5f6b66]">Language / 语言 / Idioma</span>
+              <select
+                className="top-nav-select rounded-full px-4 py-2 text-sm bg-white border border-[#d9e2dc]"
+                value={lang}
+                aria-label="Select language"
+                onChange={(event) => onLanguageChange(event.target.value as SiteLang)}
+              >
+                {(Object.keys(LANG_LABELS) as SiteLang[]).map((value) => (
+                  <option key={value} value={value}>
+                    {LANG_LABELS[value]}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
