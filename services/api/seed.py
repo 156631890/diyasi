@@ -218,6 +218,7 @@ DEFAULT_LEADS = [
 
 DATA_DIR = Path(__file__).resolve().parents[2] / "data"
 SEO_ARTICLES_PATH = DATA_DIR / "seo-articles.json"
+ALIBABA_PRODUCTS_PATH = DATA_DIR / "alibaba-products.json"
 DRAFT_PREFIX = "draft::"
 
 
@@ -227,14 +228,34 @@ def _load_seed_articles() -> list[dict]:
     return json.loads(SEO_ARTICLES_PATH.read_text(encoding="utf-8"))
 
 
+def _load_seed_products() -> list[dict]:
+    if not ALIBABA_PRODUCTS_PATH.exists():
+        return DEFAULT_PRODUCTS
+    try:
+        with open(ALIBABA_PRODUCTS_PATH, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            # Ensure gallery_images is serialized as a string if it's a list
+            for item in data:
+                if "gallery_images" in item and isinstance(item["gallery_images"], list):
+                    item["gallery_images"] = json.dumps(item["gallery_images"], ensure_ascii=False)
+            return data
+    except Exception as e:
+        print(f"Error loading alibaba-products.json: {e}")
+        return DEFAULT_PRODUCTS
+
+
 def seed_if_empty(db: Session) -> None:
     existing_ids = {row[0] for row in db.query(Product.product_id).all()}
-    if existing_ids and existing_ids.issubset(LEGACY_PRODUCT_IDS):
+    mock_ids = {item["product_id"] for item in DEFAULT_PRODUCTS}
+    has_mock_products = any(pid in mock_ids for pid in existing_ids)
+    
+    if has_mock_products or (existing_ids and existing_ids.issubset(LEGACY_PRODUCT_IDS)):
         db.query(Product).delete()
         db.commit()
         existing_ids = set()
 
-    for item in DEFAULT_PRODUCTS:
+    products_to_seed = _load_seed_products()
+    for item in products_to_seed:
         if item["product_id"] in existing_ids:
             continue
         db.add(Product(**item))

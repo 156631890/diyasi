@@ -156,6 +156,34 @@ export function resolvePriceText(product: DisplayProduct): string {
   return `$${Math.max(price - 20, 0)}-${price + 40}`;
 }
 
+function getCategoryImageFallback(category: string): [string, string] {
+  const normalized = keyCategory(category || "");
+  if (categoryImagePairs[normalized]) {
+    return categoryImagePairs[normalized];
+  }
+  
+  if (normalized.startsWith("women's panties")) {
+    return categoryImagePairs["women's panties / general"];
+  }
+  if (normalized.startsWith("bras")) {
+    return categoryImagePairs["bras / seamless bra set"];
+  }
+  if (normalized.startsWith("activewear") || normalized.startsWith("gym & sports wear")) {
+    return categoryImagePairs["activewear / yoga clothing"];
+  }
+  if (normalized.startsWith("men")) {
+    return categoryImagePairs["men's underwear"];
+  }
+  if (normalized.startsWith("shapewear")) {
+    return categoryImagePairs["shapewear"];
+  }
+  if (normalized.startsWith("homewear") || normalized.startsWith("home wear")) {
+    return categoryImagePairs["homewear"];
+  }
+  
+  return ["/media/home/banner-1.jpg", "/media/home/banner-2.png"];
+}
+
 export function resolvePrimaryImage(product: DisplayProduct): string {
   const galleryImage = product.gallery_images?.find((image) => !isThirdPartyProductImage(image));
   if (galleryImage) {
@@ -164,7 +192,11 @@ export function resolvePrimaryImage(product: DisplayProduct): string {
   if (product.image_url && !isThirdPartyProductImage(product.image_url)) {
     return product.image_url;
   }
-  return categoryImagePairs[keyCategory(product.category)]?.[0] || fallbackProductImages[product.product_id] || "";
+  const fallback = fallbackProductImages[product.product_id];
+  if (fallback) {
+    return fallback;
+  }
+  return getCategoryImageFallback(product.category)[0];
 }
 
 export function resolveHoverImage(product: DisplayProduct): string {
@@ -172,7 +204,7 @@ export function resolveHoverImage(product: DisplayProduct): string {
   if (galleryImage) {
     return galleryImage;
   }
-  return categoryImagePairs[keyCategory(product.category)]?.[1] || resolvePrimaryImage(product);
+  return getCategoryImageFallback(product.category)[1];
 }
 
 export function buildGalleryImages(product: DisplayProduct): string[] {
