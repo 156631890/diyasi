@@ -77,18 +77,18 @@ const faqs = [
   }
 ];
 
-function collectionImage(index: number): string {
-  const images = [
-    "/media/home/banner-1.jpg",
-    "/media/home/banner-2.png",
-    "/media/home/banner-2-2-3.jpg",
-    "/media/home/banner-3.jpg",
-    "/media/home/factory-1.jpg",
-    "/media/home/factory-2.jpg",
-    "/media/home/factory-3.jpg",
-    "/media/home/factory-4.jpg"
-  ];
-  return images[index % images.length];
+function collectionImage(slug: string): string {
+  const images: Record<string, string> = {
+    "womens-panties": "/media/generated/products/womens-panties.png",
+    "seamless-underwear": "/media/generated/products/seamless-women-brief.png",
+    "bras": "/media/generated/products/supportive-sports-bra.png",
+    "shapewear": "/media/generated/products/shapewear.png",
+    "mens-underwear": "/media/generated/products/men-seamless-boxer.png",
+    "period-underwear": "/media/generated/products/period-underwear.png",
+    "activewear": "/media/generated/products/high-waist-yoga-leggings.png",
+    "homewear": "/media/generated/products/homewear.png"
+  };
+  return images[slug] || "/media/home/banner-1.jpg";
 }
 
 async function getFeaturedProducts(): Promise<DisplayProduct[]> {
@@ -131,54 +131,58 @@ export default async function HomePage() {
           ))}
         </div>
       </section>
-
-      <section className="py-14 md:py-20">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl">
             <p className="kicker">DTC Brand Solutions</p>
-            <h2 className="section-title mt-2 text-[#1d2521]">Manufacturing support for each stage of brand growth</h2>
-            <p className="page-reference-body mt-4 text-[#5f6b66]">
+            <h2 className="section-title mt-2 font-semibold text-[#1d2521]">
+              Manufacturing support for each stage of <span className="gradient-text">brand growth</span>
+            </h2>
+            <p className="page-reference-body mt-4 text-[#5f6b66] text-base leading-relaxed">
               The site is built around factory execution, not generic product listings. Buyers can evaluate category fit,
               MOQ route, packaging needs, quality control, and launch timing before starting a project.
             </p>
           </div>
-          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {dtcSolutions.map((item) => (
-              <article key={item.title} className="rounded-lg border border-[#d9e2dc] bg-[#fffdf8] p-5">
-                <h3 className="text-lg font-bold text-[#1d2521]">{item.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-[#5f6b66]">{item.desc}</p>
+              <article key={item.title} className="card p-6 glow-hover border-[#d9e2dc]/80 bg-white">
+                <h3 className="text-lg font-bold text-[#1d2521] border-b border-[#d9e2dc]/40 pb-3 mb-3">{item.title}</h3>
+                <p className="text-sm leading-relaxed text-[#5f6b66]">{item.desc}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-[#f1f5f1] py-14 md:py-20">
+      <section className="bg-gradient-to-b from-[#f3f7f4] to-[#e8eee9] py-16 md:py-24 border-y border-[#d9e2dc]/60">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-3xl">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-2xl">
               <p className="kicker">Launch-Ready Collections</p>
-              <h2 className="section-title mt-2 text-[#1d2521]">Core product lines for private label underwear programs</h2>
+              <h2 className="section-title mt-2 font-semibold text-[#1d2521]">
+                Core product lines for <span className="gradient-text">private label</span> programs
+              </h2>
             </div>
-            <Link href="/products" className="btn btn-primary">
+            <Link href="/products" className="btn btn-primary shadow-md">
               View All Products
             </Link>
           </div>
-          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {launchCollections.map((item, index) => (
-              <Link key={item.slug} href={item.href} className="group overflow-hidden rounded-lg border border-[#d9e2dc] bg-white">
-                <div className="aspect-[4/3] overflow-hidden bg-[#e8eee9]">
+          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {launchCollections.map((item) => (
+              <Link key={item.slug} href={item.href} className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-[#d9e2dc] bg-white transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+                <div className="aspect-[1.35/1] overflow-hidden bg-[#f0f4f1] relative">
                   <img
-                    src={collectionImage(index)}
+                    src={collectionImage(item.slug)}
                     alt={item.title}
                     loading="lazy"
                     decoding="async"
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-                <div className="p-5">
-                  <h3 className="text-lg font-bold text-[#1d2521]">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-[#5f6b66]">{item.desc}</p>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold text-[#1d2521] group-hover:text-[#0e5b51] transition-colors duration-300">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-[#57635e]">{item.desc}</p>
                 </div>
               </Link>
             ))}
@@ -213,51 +217,55 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="bg-[#e8eee9] py-14 md:py-20">
+      <section className="bg-gradient-to-b from-[#e5efec] to-[#f3f7f4] py-16 md:py-24 border-y border-[#d9e2dc]/50">
         <div className="container mx-auto px-4 md:px-6">
           <p className="kicker">Development Process</p>
-          <h2 className="section-title mt-2 max-w-3xl text-[#1d2521]">From product brief to approved shipment</h2>
-          <div className="mt-8 grid gap-4 md:grid-cols-4">
+          <h2 className="section-title mt-2 max-w-3xl font-semibold text-[#17201c]">
+            From product brief to <span className="gradient-text">approved shipment</span>
+          </h2>
+          <div className="mt-10 grid gap-6 md:grid-cols-4">
             {developmentSteps.map((step, index) => (
-              <article key={step} className="rounded-lg border border-[#d9e2dc] bg-white p-5">
-                <p className="text-xs font-bold uppercase tracking-normal text-[#0f5f55]">{String(index + 1).padStart(2, "0")}</p>
-                <h3 className="mt-4 text-base font-bold text-[#1d2521]">{step}</h3>
+              <article key={step} className="card p-6 glow-hover border-[#d9e2dc]/80 bg-white">
+                <p className="text-sm font-extrabold uppercase tracking-widest text-[#b27037]">{String(index + 1).padStart(2, "0")}</p>
+                <h3 className="mt-4 text-lg font-bold text-[#17201c]">{step}</h3>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-14 md:py-20">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-            <div className="aspect-video overflow-hidden rounded-lg bg-black shadow-xl">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div className="aspect-video overflow-hidden rounded-2xl bg-black shadow-2xl hover:shadow-[0_20px_50px_rgba(14,91,81,0.25)] transition-shadow duration-500">
               <video
                 src="/media/home/factory-video.mp4"
                 controls
                 preload="none"
                 playsInline
                 poster="/media/home/factory-1.jpg"
-                className="h-full w-full"
+                className="h-full w-full object-cover"
               />
             </div>
             <div>
               <p className="kicker">Real Factory & QC</p>
-              <h2 className="section-title mt-2 text-[#1d2521]">Factory photos, production checks, and buyer review documents</h2>
-              <p className="page-reference-body mt-4 text-[#5f6b66]">
+              <h2 className="section-title mt-2 font-semibold text-[#17201c]">
+                Factory photos, production checks, and buyer review
+              </h2>
+              <p className="page-reference-body mt-4 text-[#57635e] text-base leading-relaxed">
                 About and factory pages now prioritize existing factory media and buyer-verifiable information. Certificate
                 documents are described as available for buyer review, because certificate numbers and validity must be
                 checked against the latest real documents.
               </p>
-              <div className="mt-5 grid gap-3">
+              <div className="mt-6 grid gap-4">
                 {qualitySteps.map((item) => (
-                  <article key={item.title} className="rounded border border-[#d9e2dc] bg-[#fffdf8] p-4">
-                    <h3 className="font-bold text-[#1d2521]">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-[#5f6b66]">{item.desc}</p>
+                  <article key={item.title} className="rounded-xl border-l-4 border-l-[#0e5b51] border border-[#d9e2dc]/80 bg-white p-5 shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <h3 className="font-bold text-[#17201c]">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-[#57635e]">{item.desc}</p>
                   </article>
                 ))}
               </div>
-              <div className="mt-6">
+              <div className="mt-8">
                 <Link href="/factory" className="btn btn-primary">
                   View Factory & Quality
                 </Link>
@@ -268,36 +276,43 @@ export default async function HomePage() {
       </section>
 
       {featuredProducts.length > 0 ? (
-        <section className="bg-[#f1f5f1] py-14 md:py-20">
+        <section className="bg-gradient-to-b from-[#f3f7f4] to-white py-16 md:py-24 border-t border-[#d9e2dc]/60">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
               <div>
                 <p className="kicker">Core Product Examples</p>
-                <h2 className="section-title mt-2 text-[#1d2521]">Clean product titles for professional buyer review</h2>
+                <h2 className="section-title mt-2 font-semibold text-[#17201c]">
+                  Clean product titles for <span className="gradient-text">professional review</span>
+                </h2>
               </div>
-              <Link href="/products" className="btn btn-soft">
+              <Link href="/products" className="btn btn-soft shadow-sm">
                 Browse Catalogue
               </Link>
             </div>
-            <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
+            <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-4">
               {featuredProducts.map((product) => {
                 const image = resolvePrimaryImage(product);
                 return (
-                  <Link key={product.product_id} href={`/products/${encodeURIComponent(product.product_id)}`} className="group rounded-lg border border-[#d9e2dc] bg-white">
-                    <div className="aspect-[4/5] overflow-hidden rounded-t-lg bg-[#e8eee9]">
+                  <Link key={product.product_id} href={`/products/${encodeURIComponent(product.product_id)}`} className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-[#d9e2dc]/80 bg-white transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+                    <div className="aspect-[4/5] overflow-hidden bg-[#f0f4f1] relative">
                       {image ? (
                         <img
                           src={image}
                           alt={resolveDisplayTitle(product)}
                           loading="lazy"
                           decoding="async"
-                          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
                         />
                       ) : null}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
-                    <div className="p-4">
-                      <h3 className="text-sm font-bold leading-5 text-[#1d2521]">{resolveDisplayTitle(product)}</h3>
-                      <p className="mt-2 text-xs text-[#7d8a85]">{resolveDisplayProductId(product)}</p>
+                    <div className="p-5 flex-grow flex flex-col justify-between">
+                      <h3 className="text-sm font-bold leading-snug text-[#17201c] group-hover:text-[#0e5b51] transition-colors duration-300 line-clamp-2">{resolveDisplayTitle(product)}</h3>
+                      <div className="mt-4 flex items-center justify-between">
+                        <span className="inline-block rounded-full bg-[#f3f7f4] px-2.5 py-1 text-[11px] font-semibold text-[#57635e]">
+                          {resolveDisplayProductId(product)}
+                        </span>
+                      </div>
                     </div>
                   </Link>
                 );
