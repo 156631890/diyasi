@@ -5,9 +5,9 @@ import { absoluteUrl, buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { getServerLang } from "@/lib/server-lang";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Sustainability",
+  title: "Sustainable Underwear Manufacturing — Eco-Friendly Intimate Apparel",
   description:
-    "See how YiWu DiYaSi approaches sustainable materials, waste reduction, and longer product life across sampling and bulk production.",
+    "Our commitment to sustainable underwear manufacturing: recycled fabrics, water-saving dyeing, reduced packaging waste. OEKO-TEX certified eco-friendly intimate apparel production.",
   path: "/sustainability"
 });
 

@@ -110,17 +110,12 @@ export default async function BlogPage() {
     </main>
   );
 }
+
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
-export const metadata: Metadata = {
-  ...buildMetadata({
-  title: "Journal",
+export const metadata: Metadata = buildMetadata({
+  title: "Underwear Industry Journal — Manufacturing Insights & Trends",
   description:
-    "Factory articles on sourcing, MOQ, quality control, compliance, and launch planning for underwear programs.",
+    "Stay updated with the latest underwear manufacturing insights, private label tips, fabric innovations, and industry trends from YiWu DiYaSi's expert team.",
   path: "/blog"
-  }),
-  robots: {
-    index: false,
-    follow: true
-  }
-};
+});

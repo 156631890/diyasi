@@ -5,9 +5,9 @@ import { buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { resourceArticles } from "@/lib/resource-articles";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Underwear Manufacturing News",
+  title: "Underwear Manufacturing Resources & Sourcing Guides",
   description:
-    "Startup-focused underwear and yoga wear manufacturing news for EU and US buyers covering quotation, unit cost, fabric, sizing, QC, MOQ, and private label preparation.",
+    "Expert guides on underwear manufacturing: sourcing, fabric selection, sizing, QC, MOQ planning, private label packaging, and cost optimization for intimate apparel brands.",
   path: "/resources"
 });
 

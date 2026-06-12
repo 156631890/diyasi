@@ -5,9 +5,9 @@ import { absoluteUrl, buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { fabricOptions, privateLabelOptions, sampleAndLeadTimes } from "@/lib/site-info";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Private Label Underwear Development",
+  title: "Private Label Underwear OEM/ODM Development Services",
   description:
-    "Private label underwear development from fabric selection and reference sample review to fit sampling, packaging mockup, bulk production, QC, and delivery.",
+    "End-to-end private label underwear development: custom design, fabric sourcing, sampling, branding, and production. Low MOQ from 500 pcs. Free tech pack consultation.",
   path: "/oem-odm"
 });
 

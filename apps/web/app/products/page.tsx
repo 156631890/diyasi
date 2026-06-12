@@ -16,9 +16,9 @@ import { absoluteUrl, buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { getServerLang } from "@/lib/server-lang";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Launch-Ready Intimates Collections",
+  title: "Wholesale Underwear Collections — Launch-Ready Intimates Catalog",
   description:
-    "Launch-ready underwear, bras, shapewear, activewear, period underwear, men's underwear, and loungewear collections for private label brands.",
+    "Browse our wholesale underwear catalog: seamless panties, bras, shapewear, period underwear, activewear, and more. Ready stock from 100 pcs, private label from 500 pcs.",
   path: "/products"
 });
 

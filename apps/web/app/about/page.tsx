@@ -5,9 +5,9 @@ import { absoluteUrl, buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { companyInfo, trustStats } from "@/lib/site-info";
 
 export const metadata: Metadata = buildMetadata({
-  title: "About YiWu DiYaSi",
+  title: "About YiWu DiYaSi — China Underwear Manufacturer Since 2002",
   description:
-    "Learn about YiWu DiYaSi Dress Co., Ltd., a Yiwu underwear manufacturer supporting private label, OEM, ODM, retail, wholesale, and DTC intimates programs.",
+    "Learn about YiWu DiYaSi Dress Co., Ltd., a leading private label underwear manufacturer in China since 2002. 20,000 sq m factory, 600,000+ pcs monthly capacity, BSCI & OEKO-TEX certified.",
   path: "/about"
 });
 

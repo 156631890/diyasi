@@ -19,6 +19,7 @@ const labels: Record<
     factory: string;
     fabrics: string;
     resources: string;
+    journal: string;
     contact: string;
     cta: string;
     companyTag: string;
@@ -33,6 +34,7 @@ const labels: Record<
     factory: "Factory & Quality",
     fabrics: "Fabrics",
     resources: "Resources",
+    journal: "Journal",
     contact: "Contact",
     cta: "Start a Project",
     companyTag: "Private label underwear manufacturer for brands, retailers, and wholesale buyers"
@@ -46,6 +48,7 @@ const labels: Record<
     factory: "\u5de5\u5382\u4e0e\u8d28\u91cf",
     fabrics: "\u9762\u6599",
     resources: "\u8d44\u6e90",
+    journal: "\u535a\u5ba2",
     contact: "\u8054\u7cfb",
     cta: "\u53d1\u8d77\u9879\u76ee",
     companyTag: "\u9762\u5411 DTC\u3001\u96f6\u552e\u548c\u6279\u53d1\u54c1\u724c\u7684\u5185\u8863\u8d34\u724c\u5de5\u5382"
@@ -59,6 +62,7 @@ const labels: Record<
     factory: "F\u00e1brica y Calidad",
     fabrics: "Tejidos",
     resources: "Recursos",
+    journal: "Blog",
     contact: "Contacto",
     cta: "Iniciar Proyecto",
     companyTag: "Fabricante de ropa interior para marca propia, retail y mayoristas"
@@ -88,6 +92,7 @@ export default function TopNav({ initialLang }: TopNavProps) {
     { href: "/factory", label: t.factory },
     { href: "/fabrics", label: t.fabrics },
     { href: "/resources", label: t.resources },
+    { href: "/blog", label: t.journal },
     { href: "/about", label: t.about },
     { href: "/contact", label: t.contact }
   ];
@@ -155,7 +160,7 @@ export default function TopNav({ initialLang }: TopNavProps) {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-3 text-sm lg:flex xl:gap-4">
+        <nav aria-label="Main navigation" className="hidden items-center gap-3 text-sm lg:flex xl:gap-4">
           {primaryLinks.map((item) => (
             <Link key={item.href} href={item.href} className={`${linkClass(pathname, item.href)} nav-link-primary`}>
               {item.label}

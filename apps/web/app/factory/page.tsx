@@ -5,9 +5,9 @@ import { absoluteUrl, buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { companyInfo, launchCollections, qualitySteps } from "@/lib/site-info";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Factory & Quality",
+  title: "Factory Tour & Quality Control — BSCI Certified Underwear Production",
   description:
-    "Review YiWu DiYaSi factory overview, production capability, quality control system, certifications for buyer review, and real factory photos.",
+    "Tour our 20,000 sq m underwear factory in YiWu, China. ISO 9001, BSCI, SEDEX, OEKO-TEX certified. 15+ production lines, 3-stage QC system, 600,000+ pcs monthly capacity.",
   path: "/factory"
 });
 

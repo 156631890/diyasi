@@ -14,24 +14,29 @@ async function getArticleSlugs(): Promise<string[]> {
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
+  const corePaths = ["/products", "/oem-odm", "/factory", "/contact", "/about"];
+  const secondaryPaths = ["/fabrics", "/packaging", "/sustainability", "/resources"];
   const basePaths = [
     "",
-    "/about",
-    "/products",
-    "/oem-odm",
-    "/factory",
-    "/fabrics",
-    "/packaging",
-    "/resources",
-    "/sustainability",
-    "/contact"
+    ...corePaths,
+    ...secondaryPaths,
+    "/blog",
+    "/privacy-policy",
+    "/return-policy"
   ];
-  const staticUrls = basePaths.map((path) => ({
-    url: `${SITE_URL}${path}`,
-    lastModified: now,
-    changeFrequency: "weekly" as const,
-    priority: path === "" ? 1 : 0.8
-  }));
+  const staticUrls = basePaths.map((path) => {
+    let priority = 0.5;
+    if (path === "") priority = 1.0;
+    else if (corePaths.includes(path)) priority = 0.9;
+    else if (secondaryPaths.includes(path)) priority = 0.8;
+    else if (path === "/blog") priority = 0.7;
+    return {
+      url: `${SITE_URL}${path}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority,
+    };
+  });
 
   const slugs = await getArticleSlugs();
   const products = await getCatalogProducts();
@@ -45,19 +50,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${SITE_URL}/resources/${article.slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
-    priority: 0.7
+    priority: 0.6
   }));
   const blogUrls = slugs.map((slug) => ({
     url: `${SITE_URL}/blog/${slug}`,
     lastModified: now,
     changeFrequency: "weekly" as const,
-    priority: 0.7
+    priority: 0.6
   }));
   const productUrls = products.map((product) => ({
     url: `${SITE_URL}/products/${encodeURIComponent(product.product_id)}`,
     lastModified: now,
     changeFrequency: "weekly" as const,
-    priority: 0.7
+    priority: 0.6
   }));
 
   return [...staticUrls, ...categoryUrls, ...resourceUrls, ...blogUrls, ...productUrls];

@@ -5,9 +5,9 @@ import { buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { fabricOptions } from "@/lib/site-info";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Underwear Fabrics",
+  title: "Underwear Fabrics Guide — Cotton, Modal, Bamboo, Recycled Nylon",
   description:
-    "Underwear fabric guide covering cotton, modal, bamboo, recycled nylon, seamless yarn, spandex blends, and leakproof lining options for private label brands.",
+    "Explore our underwear fabric options: organic cotton, modal, bamboo viscose, recycled nylon, seamless yarn, and leakproof lining. Sustainable sourcing for intimate apparel brands.",
   path: "/fabrics"
 });
 

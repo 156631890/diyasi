@@ -44,7 +44,13 @@ export const metadata: Metadata = {
   creator: SITE_NAME,
   publisher: SITE_NAME,
   alternates: {
-    canonical: SITE_URL
+    canonical: SITE_URL,
+    languages: {
+      'en': SITE_URL,
+      'zh': SITE_URL,
+      'es': SITE_URL,
+      'x-default': SITE_URL,
+    },
   },
   robots: {
     index: true,

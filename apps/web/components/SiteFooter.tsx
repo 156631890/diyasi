@@ -80,7 +80,8 @@ const serviceLinks = [
   { href: "/oem-odm", label: "Private Label Services" },
   { href: "/packaging", label: "Custom Labels & Packaging" },
   { href: "/fabrics", label: "Fabrics" },
-  { href: "/resources", label: "Resources" }
+  { href: "/resources", label: "Resources" },
+  { href: "/blog", label: "Journal" }
 ];
 
 const bottomLinks = [

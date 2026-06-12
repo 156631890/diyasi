@@ -102,19 +102,6 @@ async function getFeaturedProducts(): Promise<DisplayProduct[]> {
 export default async function HomePage() {
   const featuredProducts = await getFeaturedProducts();
 
-  const organizationJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: companyInfo.name,
-    url: "https://www.yiwudiyasidress.com",
-    description:
-      "Private label underwear manufacturer for brands, retailers, and wholesale buyers, covering fabric selection, sampling, custom packaging, bulk production, and delivery.",
-    foundingDate: companyInfo.establishedYear,
-    email: companyInfo.emailPrimary,
-    telephone: companyInfo.phone,
-    areaServed: "Worldwide"
-  };
-
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -130,7 +117,6 @@ export default async function HomePage() {
 
   return (
     <main className="min-h-screen bg-white">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       <HeroCarousel />

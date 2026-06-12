@@ -14,6 +14,10 @@ type Article = {
   excerpt: string;
   body: string;
   is_published: boolean;
+  published_at?: string;
+  created_at?: string;
+  updated_at?: string;
+  cover_image?: string;
 };
 
 type Props = { params: { slug: string } };
@@ -75,6 +79,9 @@ export default async function BlogDetailPage({ params }: Props) {
   const article = await getArticle(params.slug);
   if (!article) notFound();
 
+  const datePublished = article.published_at || article.created_at;
+  const dateModified = article.updated_at || article.published_at;
+
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -82,6 +89,9 @@ export default async function BlogDetailPage({ params }: Props) {
     description: article.excerpt,
     articleSection: article.category,
     url: absoluteUrl(`/blog/${article.slug}`),
+    ...(datePublished && { datePublished }),
+    ...(dateModified && { dateModified }),
+    ...(article.cover_image && { image: article.cover_image }),
     author: {
       "@type": "Organization",
       name: "YiWu DiYaSi Dress CO., LTD"

@@ -31,7 +31,7 @@ export const resourceArticles: ResourceArticle[] = [
         "title":  "How to Get an Accurate Underwear and Yoga Wear Manufacturing Quote",
         "keyword":  "OEM/ODM Quotation Guide",
         "category":  "OEM/ODM Quotation Guide",
-        "publishedAt":  "May 19, 2026",
+        "publishedAt":  "January 6, 2026",
         "desc":  "European and US startup founders preparing an underwear or yoga wear sourcing inquiry should treat accurate manufacturing quotation as a production and commercial decision, not as a styling preference. The goal is to receive a...",
         "coverImage":  "/media/news/batch4/accurate-underwear-yoga-wear-manufacturing-quote/cover.jpg",
         "images":  [
@@ -261,7 +261,7 @@ export const resourceArticles: ResourceArticle[] = [
         "title":  "What Affects Unit Cost in Custom Underwear Manufacturing?",
         "keyword":  "OEM/ODM Cost Planning",
         "category":  "OEM/ODM Cost Planning",
-        "publishedAt":  "May 19, 2026",
+        "publishedAt":  "January 22, 2026",
         "desc":  "Startup underwear brands comparing factory quotations before a first order should treat unit cost in custom underwear manufacturing as a production and commercial decision, not as a styling preference. The goal is to understand...",
         "coverImage":  "/media/news/batch4/unit-cost-custom-underwear-manufacturing/cover.jpg",
         "images":  [
@@ -491,7 +491,7 @@ export const resourceArticles: ResourceArticle[] = [
         "title":  "Traceless vs Seamless Underwear: Which Is Better for Yoga Brands?",
         "keyword":  "Seamless and Traceless Underwear Trends",
         "category":  "Seamless and Traceless Underwear Trends",
-        "publishedAt":  "May 19, 2026",
+        "publishedAt":  "February 9, 2026",
         "desc":  "Wellness, studio and activewear startup brands developing underwear to wear under leggings or yoga shorts should treat traceless versus seamless underwear for yoga brands as a production and commercial decision, not as a styling...",
         "coverImage":  "/media/news/batch4/traceless-vs-seamless-underwear-yoga-brands/cover.jpg",
         "images":  [
@@ -721,7 +721,7 @@ export const resourceArticles: ResourceArticle[] = [
         "title":  "Lace Underwear OEM Guide for Boutique Lingerie Brands",
         "keyword":  "Lace Underwear OEM Guide",
         "category":  "Lace Underwear OEM Guide",
-        "publishedAt":  "May 19, 2026",
+        "publishedAt":  "February 26, 2026",
         "desc":  "Boutique lingerie founders and small DTC brands planning a first lace underwear collection should treat lace underwear OEM development as a production and commercial decision, not as a styling preference. The goal is to develop...",
         "coverImage":  "/media/news/batch4/lace-underwear-oem-guide-boutique-lingerie-brands/cover.jpg",
         "images":  [
@@ -951,7 +951,7 @@ export const resourceArticles: ResourceArticle[] = [
         "title":  "Cotton Underwear OEM Guide for Daily Basics Startups",
         "keyword":  "Cotton Underwear OEM Guide",
         "category":  "Cotton Underwear OEM Guide",
-        "publishedAt":  "May 19, 2026",
+        "publishedAt":  "March 16, 2026",
         "desc":  "Startup brands building daily basics for men, women or family underwear lines should treat cotton underwear OEM development as a production and commercial decision, not as a styling preference. The goal is to turn a basic cotton...",
         "coverImage":  "/media/news/batch4/cotton-underwear-oem-guide-daily-basics-startups/cover.jpg",
         "images":  [
@@ -1181,7 +1181,7 @@ export const resourceArticles: ResourceArticle[] = [
         "title":  "Waistband Customization for Men\u0027s Boxer Briefs and Private Label Underwear",
         "keyword":  "Private Label Underwear Customization",
         "category":  "Private Label Underwear Customization",
-        "publishedAt":  "May 19, 2026",
+        "publishedAt":  "March 30, 2026",
         "desc":  "Men\u0027s underwear startups and DTC brands planning branded boxer briefs should treat waistband customization for men\u0027s boxer briefs as a production and commercial decision, not as a styling preference. The goal is to choose...",
         "coverImage":  "/media/news/batch4/waistband-customization-mens-boxer-briefs-private-label/cover.jpg",
         "images":  [
@@ -1411,7 +1411,7 @@ export const resourceArticles: ResourceArticle[] = [
         "title":  "Gusset Construction in Women\u0027s Underwear: Comfort, Fit and QC Points",
         "keyword":  "Women\u0027s Underwear Fit and QC",
         "category":  "Women\u0027s Underwear Fit and QC",
-        "publishedAt":  "May 19, 2026",
+        "publishedAt":  "April 13, 2026",
         "desc":  "Women\u0027s underwear and wellness brands that want better comfort and fewer fit complaints should treat gusset construction in women\u0027s underwear as a production and commercial decision, not as a styling preference. The goal is to...",
         "coverImage":  "/media/news/batch4/gusset-construction-womens-underwear-comfort-qc/cover.jpg",
         "images":  [
@@ -1641,7 +1641,7 @@ export const resourceArticles: ResourceArticle[] = [
         "title":  "Sports Bra Support Levels: How Small Brands Should Choose Fabric and Structure",
         "keyword":  "Yoga Wear and Activewear Manufacturing",
         "category":  "Yoga Wear and Activewear Manufacturing",
-        "publishedAt":  "May 19, 2026",
+        "publishedAt":  "April 28, 2026",
         "desc":  "Small yoga, wellness and activewear brands developing their first sports bra or yoga set should treat sports bra support levels as a production and commercial decision, not as a styling preference. The goal is to match support...",
         "coverImage":  "/media/news/batch4/sports-bra-support-levels-small-yoga-brands/cover.jpg",
         "images":  [
@@ -1871,7 +1871,7 @@ export const resourceArticles: ResourceArticle[] = [
         "title":  "Reorder Planning After a Low MOQ First Run",
         "keyword":  "Startup Underwear Reorder Strategy",
         "category":  "Startup Underwear Reorder Strategy",
-        "publishedAt":  "May 19, 2026",
+        "publishedAt":  "May 12, 2026",
         "desc":  "Startup brands that have tested a small underwear or yoga wear order and need to decide what to produce next should treat reorder planning after a low MOQ first run as a production and commercial decision, not as a styling...",
         "coverImage":  "/media/news/batch4/reorder-planning-after-low-moq-first-run/cover.jpg",
         "images":  [
@@ -2101,7 +2101,7 @@ export const resourceArticles: ResourceArticle[] = [
         "title":  "US vs EU Underwear Size and Labeling Preparation for Startup Brands",
         "keyword":  "Underwear Size and Label Preparation",
         "category":  "Underwear Size and Label Preparation",
-        "publishedAt":  "May 19, 2026",
+        "publishedAt":  "May 26, 2026",
         "desc":  "Underwear and activewear startups preparing products for European and US ecommerce channels should treat US and EU size and labeling preparation as a production and commercial decision, not as a styling preference. The goal is to...",
         "coverImage":  "/media/news/batch4/us-eu-underwear-size-labeling-preparation-startup-brands/cover.jpg",
         "images":  [

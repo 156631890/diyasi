@@ -118,10 +118,38 @@ export default function ResourceDetailPage({ params }: Props) {
     mainEntityOfPage: absoluteUrl(`/resources/${article.slug}`)
   };
 
+  const faqs: { q: string; a: string }[] = [];
+  for (let i = 0; i < article.blocks.length - 1; i++) {
+    const block = article.blocks[i];
+    const nextBlock = article.blocks[i + 1];
+    if (block.type === "faqQuestion" && nextBlock.type === "paragraph") {
+      faqs.push({
+        q: block.text,
+        a: nextBlock.text,
+      });
+    }
+  }
+
+  const faqJsonLd = faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a
+      }
+    }))
+  } : null;
+
   return (
     <main className="container-shell page-shell page-stack">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+      {faqJsonLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
 
       <section className="visual-hero page-hero">
         <div className="visual-hero-copy">
