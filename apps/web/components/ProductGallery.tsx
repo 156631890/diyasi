@@ -18,7 +18,7 @@ export default function ProductGallery({ productName, images, emptyLabel }: Prod
         {activeImage ? (
           <img
             src={activeImage}
-            alt={productName}
+            alt={`${productName} - Custom Underwear OEM/ODM Manufacture`}
             decoding="async"
             fetchPriority="high"
             className="catalog-detail-image"
@@ -39,7 +39,7 @@ export default function ProductGallery({ productName, images, emptyLabel }: Prod
             >
               <img
                 src={image}
-                alt={`${productName} view ${index + 1}`}
+                alt={`${productName} thumbnail view ${index + 1} - YiWu DiYaSi Sourcing`}
                 loading="lazy"
                 decoding="async"
                 className="catalog-gallery-thumb-image"
