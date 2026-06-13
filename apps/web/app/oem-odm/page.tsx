@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { absoluteUrl, buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
-import { fabricOptions, privateLabelOptions, sampleAndLeadTimes } from "@/lib/site-info";
+import { sampleAndLeadTimes } from "@/lib/site-info";
 import { getServerLang } from "@/lib/server-lang";
 import { SiteLang } from "@/lib/i18n";
 
@@ -18,6 +18,17 @@ type WorkflowBlock = {
   icon: string;
   title: string;
   items: string[];
+};
+
+type ProjectInputItem = {
+  icon: string;
+  text: string;
+};
+
+type ShowcaseItem = {
+  name: string;
+  desc: string;
+  icon: string;
 };
 
 const copy: Record<
@@ -36,7 +47,9 @@ const copy: Record<
     fabricKicker: string;
     packagingKicker: string;
     workflow: WorkflowBlock[];
-    projectInputs: string[];
+    projectInputs: ProjectInputItem[];
+    fabrics: ShowcaseItem[];
+    packaging: ShowcaseItem[];
   }
 > = {
   en: {
@@ -108,12 +121,28 @@ const copy: Record<
       }
     ],
     projectInputs: [
-      "Target category and reference style",
-      "Fabric direction and hand feel expectation",
-      "Logo, label, waistband, or artwork files",
-      "Size range, color plan, and launch quantity",
-      "Packaging route and retail channel needs",
-      "Sampling deadline and target delivery window"
+      { icon: "/media/generated/icons/input-style.png", text: "Target category and reference style" },
+      { icon: "/media/generated/icons/input-fabric.png", text: "Fabric direction and hand feel expectation" },
+      { icon: "/media/generated/icons/input-artwork.png", text: "Logo, label, waistband, or artwork files" },
+      { icon: "/media/generated/icons/input-quantity.png", text: "Size range, color plan, and launch quantity" },
+      { icon: "/media/generated/icons/input-channel.png", text: "Packaging route and retail channel needs" },
+      { icon: "/media/generated/icons/input-timeline.png", text: "Sampling deadline and target delivery window" }
+    ],
+    fabrics: [
+      { name: "Cotton / Organic Cotton", desc: "Breathable, natural organic fibers for everyday comfort.", icon: "/media/generated/icons/fabric-cotton.png" },
+      { name: "Modal / Lenzing Modal", desc: "Ultra-soft, silky feel with excellent moisture absorption.", icon: "/media/generated/icons/fabric-modal.png" },
+      { name: "Bamboo Fiber", desc: "Naturally antibacterial, cooling, and eco-friendly.", icon: "/media/generated/icons/fabric-bamboo.png" },
+      { name: "Recycled Nylon", desc: "Sustainable, durable, and smooth stretch performance.", icon: "/media/generated/icons/fabric-nylon.png" },
+      { name: "Seamless Yarn", desc: "Perfect for no-show comfort and engineered compression.", icon: "/media/generated/icons/fabric-seamless.png" },
+      { name: "Leakproof Lining", desc: "Absorbent, multi-layered barrier for period protection.", icon: "/media/generated/icons/fabric-leakproof.png" }
+    ],
+    packaging: [
+      { name: "Custom Waistband", desc: "Woven Jacquard or printed elastic bands with your brand logo.", icon: "/media/generated/icons/sample-hanger.png" },
+      { name: "Heat Transfer Label", desc: "Tagless comfort with screen-printed care labels inside.", icon: "/media/generated/icons/input-artwork.png" },
+      { name: "Custom Hangtag", desc: "Premium cardstock hangtags with plastic or cotton strings.", icon: "/media/generated/icons/planning.png" },
+      { name: "Premium Zip Bag", desc: "Frosted or clear EVA/PE zipper bags with custom artwork.", icon: "/media/generated/icons/input-channel.png" },
+      { name: "Custom Gift Box", desc: "Rigid or folding cardboard boxes for premium retail packaging.", icon: "/media/generated/icons/packaging-box.png" },
+      { name: "Barcode & Carton Mark", desc: "Retail-ready SKU barcodes, sticker marks, and shipping specs.", icon: "/media/generated/icons/qc-check.png" }
     ]
   },
   zh: {
@@ -185,12 +214,28 @@ const copy: Record<
       }
     ],
     projectInputs: [
-      "目标品类和参考款式",
-      "面料材质要求和手感预期",
-      "Logo、洗水唛、腰带或设计图档",
-      "尺码范围、颜色方案及首期起订量",
-      "包装要求及零售渠道配送需求",
-      "打样截止时间及目标交期窗口"
+      { icon: "/media/generated/icons/input-style.png", text: "目标品类和参考款式" },
+      { icon: "/media/generated/icons/input-fabric.png", text: "面料材质要求和手感预期" },
+      { icon: "/media/generated/icons/input-artwork.png", text: "Logo、洗水唛、腰带或设计图档" },
+      { icon: "/media/generated/icons/input-quantity.png", text: "尺码范围、颜色方案及首期起订量" },
+      { icon: "/media/generated/icons/input-channel.png", text: "包装要求及零售渠道配送需求" },
+      { icon: "/media/generated/icons/input-timeline.png", text: "打样截止时间及目标交期窗口" }
+    ],
+    fabrics: [
+      { name: "纯棉 / 有机棉", desc: "天然有机纤维，吸湿透气，亲肤舒适，适合日常穿着。", icon: "/media/generated/icons/fabric-cotton.png" },
+      { name: "莫代尔 / 兰精莫代尔", desc: "手感超柔滑，宛如真丝，垂顺性好，吸湿性能优异。", icon: "/media/generated/icons/fabric-modal.png" },
+      { name: "竹纤维", desc: "天然抗菌抑菌，清凉透气，绿色环保可持续材质。", icon: "/media/generated/icons/fabric-bamboo.png" },
+      { name: "再生尼龙", desc: "环保可持续，高强度耐磨，表面细腻光滑，极佳弹性。", icon: "/media/generated/icons/fabric-nylon.png" },
+      { name: "无缝针织纱", desc: "无侧缝一体成型，极佳包裹感与弹力，适合零感内衣。", icon: "/media/generated/icons/fabric-seamless.png" },
+      { name: "防漏涂层/吸水层", desc: "多层防漏工艺，吸水量大，干爽不闷热，专为生理期开发。", icon: "/media/generated/icons/fabric-leakproof.png" }
+    ],
+    packaging: [
+      { name: "专属定制提花腰带", desc: "提花织造或印花弹力松紧带，印刻您的品牌标志性设计。", icon: "/media/generated/icons/sample-hanger.png" },
+      { name: "无缝无感热转印洗水唛", desc: "免缝线无感舒适度，大货高清晰度丝网印刷内标。", icon: "/media/generated/icons/input-artwork.png" },
+      { name: "高质感纸制/卡纸吊牌", desc: "可定制特种纸、卡纸厚度，搭配棉绳或塑料绳扣。", icon: "/media/generated/icons/planning.png" },
+      { name: "定制磨砂拉链袋/PE包装袋", desc: "EVA或PE材质，可定制排气孔和单色/彩色图案。", icon: "/media/generated/icons/input-channel.png" },
+      { name: "高档精美包装礼盒", desc: "折叠纸盒或天地盖硬纸盒，提升品牌零售溢价感。", icon: "/media/generated/icons/packaging-box.png" },
+      { name: "SKU条形码与外箱贴纸", desc: "合规条码、尺码标以及符合全球亚马逊/海外仓唛头。", icon: "/media/generated/icons/qc-check.png" }
     ]
   },
   es: {
@@ -262,12 +307,28 @@ const copy: Record<
       }
     ],
     projectInputs: [
-      "Categoría objetivo y estilo de referencia",
-      "Dirección del tejido y expectativa de tacto",
-      "Archivos de logotipo, etiqueta, elástico o diseño",
-      "Rango de tallas, plan de color y cantidad de lanzamiento",
-      "Ruta de empaque y necesidades del canal minorista",
-      "Plazo límite para muestras y ventana de entrega"
+      { icon: "/media/generated/icons/input-style.png", text: "Categoría objetivo y estilo de referencia" },
+      { icon: "/media/generated/icons/input-fabric.png", text: "Dirección del tejido y expectativa de tacto" },
+      { icon: "/media/generated/icons/input-artwork.png", text: "Archivos de logotipo, etiqueta, elástico o diseño" },
+      { icon: "/media/generated/icons/input-quantity.png", text: "Rango de tallas, plan de color y cantidad de lanzamiento" },
+      { icon: "/media/generated/icons/input-channel.png", text: "Ruta de empaque y necesidades del canal minorista" },
+      { icon: "/media/generated/icons/input-timeline.png", text: "Plazo límite para muestras y ventana de entrega" }
+    ],
+    fabrics: [
+      { name: "Algodón / Algodón Orgánico", desc: "Fibras naturales y transpirables para comodidad diaria.", icon: "/media/generated/icons/fabric-cotton.png" },
+      { name: "Modal / Lenzing Modal", desc: "Tacto ultra suave y sedoso con excelente absorción de humedad.", icon: "/media/generated/icons/fabric-modal.png" },
+      { name: "Fibra de Bambú", desc: "Naturalmente antibacteriano, fresco y ecológico.", icon: "/media/generated/icons/fabric-bamboo.png" },
+      { name: "Nailon Reciclado", desc: "Sostenible, duradero y con estiramiento suave.", icon: "/media/generated/icons/fabric-nylon.png" },
+      { name: "Hilo sin Costuras", desc: "Perfecto para confort sin costuras y compresión diseñada.", icon: "/media/generated/icons/fabric-seamless.png" },
+      { name: "Forro Antifugas", desc: "Barrera absorbente de múltiples capas para protección de periodo.", icon: "/media/generated/icons/fabric-leakproof.png" }
+    ],
+    packaging: [
+      { name: "Pretina Personalizada", desc: "Bandas elásticas tejidas en jacquard o impresas con su logotipo.", icon: "/media/generated/icons/sample-hanger.png" },
+      { name: "Etiqueta Termotransferible", desc: "Comodidad sin etiquetas mediante impresión serigráfica de cuidado.", icon: "/media/generated/icons/input-artwork.png" },
+      { name: "Etiqueta Colgante", desc: "Etiquetas de cartón premium con hilos de plástico o algodón.", icon: "/media/generated/icons/planning.png" },
+      { name: "Bolsa de Cierre Premium", desc: "Bolsas de cremallera EVA/PE esmeriladas o transparentes.", icon: "/media/generated/icons/input-channel.png" },
+      { name: "Caja de Regalo a Medida", desc: "Cajas de cartón rígidas o plegables para empaque minorista premium.", icon: "/media/generated/icons/packaging-box.png" },
+      { name: "Código de Barras y Marca", desc: "Código de barras SKU listo para venta y especificaciones de envío.", icon: "/media/generated/icons/qc-check.png" }
     ]
   }
 };
@@ -369,36 +430,49 @@ export default function OemOdmPage() {
         </div>
         <div className="project-input-grid">
           {t.projectInputs.map((item) => (
-            <article key={item} className="project-input-item">
-              <img src="/media/generated/icons/resource-guide.png" alt="" width={44} height={44} loading="lazy" decoding="async" />
-              <p>{item}</p>
+            <article key={item.text} className="project-input-item-new">
+              <div className="project-input-icon-wrap">
+                <img src={item.icon} alt="" className="project-input-icon" loading="lazy" decoding="async" />
+              </div>
+              <p className="project-input-text">{item.text}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="editorial-strip page-section">
-        <div className="grid gap-8 lg:grid-cols-2">
-          <div>
-            <p className="kicker page-reference-subtitle">Fabric Options</p>
-            <div className="chip-list mt-4">
-              {fabricOptions.map((item) => (
-                <span key={item} className="chip">
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-          <div>
-            <p className="kicker page-reference-subtitle">Packaging Options</p>
-            <div className="chip-list mt-4">
-              {privateLabelOptions.map((item) => (
-                <span key={item} className="chip">
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
+      <section className="page-section">
+        <div className="page-section-head">
+          <p className="kicker page-reference-subtitle">{t.fabricKicker}</p>
+          <h2 className="page-reference-subtitle mt-2 text-[#1d2521]">Premium Material Options</h2>
+        </div>
+        <div className="editorial-showcase-grid mt-8">
+          {t.fabrics.map((item) => (
+            <article key={item.name} className="showcase-card">
+              <div className="showcase-icon-wrap">
+                <img src={item.icon} alt={item.name} className="showcase-icon" loading="lazy" decoding="async" />
+              </div>
+              <h3 className="showcase-title">{item.name}</h3>
+              <p className="showcase-desc">{item.desc}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="page-section">
+        <div className="page-section-head">
+          <p className="kicker page-reference-subtitle">{t.packagingKicker}</p>
+          <h2 className="page-reference-subtitle mt-2 text-[#1d2521]">Branded Packaging & Trims</h2>
+        </div>
+        <div className="editorial-showcase-grid mt-8">
+          {t.packaging.map((item) => (
+            <article key={item.name} className="showcase-card">
+              <div className="showcase-icon-wrap">
+                <img src={item.icon} alt={item.name} className="showcase-icon" loading="lazy" decoding="async" />
+              </div>
+              <h3 className="showcase-title">{item.name}</h3>
+              <p className="showcase-desc">{item.desc}</p>
+            </article>
+          ))}
         </div>
       </section>
     </main>
