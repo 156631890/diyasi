@@ -69,6 +69,9 @@ export const metadata: Metadata = {
     title: SITE_NAME,
     description: SITE_DESCRIPTION,
     images: [defaultImage]
+  },
+  verification: {
+    google: "hDSPhnbzMVua4_hudRRSdKZclQDNa0GG3Z36Kg0smXQ"
   }
 };
 
