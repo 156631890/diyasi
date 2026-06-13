@@ -24,7 +24,13 @@ export function buildMetadata({
     title,
     description,
     alternates: {
-      canonical: url
+      canonical: url,
+      languages: {
+        en: url,
+        zh: url,
+        es: url,
+        "x-default": url
+      }
     },
     openGraph: {
       title,

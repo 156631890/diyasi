@@ -52,6 +52,9 @@ const copy: Record<
     overviewLabel: string;
     overviewIntro: string;
     referencePrice: string;
+    inStock: string;
+    oemReady: string;
+    lowMoq: string;
   }
 > = {
   en: {
@@ -73,7 +76,10 @@ const copy: Record<
     collectionLabel: "Collection",
     overviewLabel: "Overview",
     overviewIntro: "A focused product brief for brand, retail, and private label development.",
-    referencePrice: "Reference Price"
+    referencePrice: "Reference Price",
+    inStock: "In Stock",
+    oemReady: "OEM Ready",
+    lowMoq: "Low MOQ"
   },
   zh: {
     back: "返回产品列表",
@@ -94,7 +100,10 @@ const copy: Record<
     collectionLabel: "系列",
     overviewLabel: "概览",
     overviewIntro: "面向品牌、零售与贴牌开发的精简产品信息。",
-    referencePrice: "参考价格"
+    referencePrice: "参考价格",
+    inStock: "有现货",
+    oemReady: "支持贴牌",
+    lowMoq: "小起订量"
   },
   es: {
     back: "Volver a Productos",
@@ -115,7 +124,10 @@ const copy: Record<
     collectionLabel: "Coleccion",
     overviewLabel: "Resumen",
     overviewIntro: "Un resumen de producto pensado para desarrollo de marca, retail y private label.",
-    referencePrice: "Precio de Referencia"
+    referencePrice: "Precio de Referencia",
+    inStock: "En Stock",
+    oemReady: "Soporta OEM",
+    lowMoq: "Bajo MOQ"
   }
 };
 
