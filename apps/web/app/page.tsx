@@ -48,14 +48,46 @@ const dtcSolutions = [
 ];
 
 const developmentSteps = [
-  "Project brief",
-  "Fabric direction",
-  "Sample development",
-  "Fit approval",
-  "Packaging mockup",
-  "Bulk production",
-  "Final QC",
-  "Global delivery"
+  {
+    title: "Project Brief",
+    desc: "Submit your category, reference styles, target quantities, and brand specifications to start the project planning.",
+    icon: "/media/generated/icons/planning.png"
+  },
+  {
+    title: "Fabric Direction",
+    desc: "Select from our premium cotton, modal, bamboo, nylon, or seamless yarns with customized hand-feel and weight options.",
+    icon: "/media/generated/icons/input-fabric.png"
+  },
+  {
+    title: "Sample Development",
+    desc: "We build patterns and sew initial physical samples using stock fabric or custom colors to check details and trim compatibility.",
+    icon: "/media/generated/icons/sample-hanger.png"
+  },
+  {
+    title: "Fit Approval",
+    desc: "Conduct detailed fitting trials, coordinate correction rounds, perform size grading, and confirm pre-production approval.",
+    icon: "/media/generated/icons/input-style.png"
+  },
+  {
+    title: "Packaging Mockup",
+    desc: "Design waistbands, tagless heat-transfer care labels, hangtags, custom polybags, gift boxes, and barcode stickers.",
+    icon: "/media/generated/icons/packaging-box.png"
+  },
+  {
+    title: "Bulk Production",
+    desc: "Schedule production lines, prepare materials, perform sewing, and execute final assembly with dedicated project timelines.",
+    icon: "/media/generated/icons/input-quantity.png"
+  },
+  {
+    title: "Final QC",
+    desc: "Conduct systematic inspections of dimensions, stitching strength, waistband stretch, trim security, and clean presentation.",
+    icon: "/media/generated/icons/qc-check.png"
+  },
+  {
+    title: "Global Delivery",
+    desc: "Pack according to specific retail carton marks, organize cargo logistics, and ship via ocean, air, or express channels.",
+    icon: "/media/generated/icons/input-channel.png"
+  }
 ];
 
 const faqs = [
@@ -223,11 +255,23 @@ export default async function HomePage() {
           <h2 className="section-title mt-2 max-w-3xl font-semibold text-[#17201c]">
             From product brief to <span className="gradient-text">approved shipment</span>
           </h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-4">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 md:grid-cols-4">
             {developmentSteps.map((step, index) => (
-              <article key={step} className="card p-6 glow-hover border-[#d9e2dc]/80 bg-white">
-                <p className="text-sm font-extrabold uppercase tracking-widest text-[#b27037]">{String(index + 1).padStart(2, "0")}</p>
-                <h3 className="mt-4 text-lg font-bold text-[#17201c]">{step}</h3>
+              <article key={step.title} className="fabric-guide-card relative pt-8">
+                <span className="absolute top-5 right-5 text-xs font-extrabold uppercase tracking-widest text-[#b27037]">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div className="showcase-icon-wrap">
+                  <img
+                    src={step.icon}
+                    alt={step.title}
+                    className="showcase-icon"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <h3 className="text-lg font-bold text-[#17201c] mt-2">{step.title}</h3>
+                <p className="mt-2 text-xs leading-relaxed text-[#57635e]">{step.desc}</p>
               </article>
             ))}
           </div>
