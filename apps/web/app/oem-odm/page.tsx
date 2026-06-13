@@ -335,21 +335,25 @@ export default function OemOdmPage() {
           <p className="kicker page-reference-subtitle">{t.flowKicker}</p>
           <h2 className="page-reference-subtitle mt-2 text-[#1d2521]">{t.flowTitle}</h2>
         </div>
-        <div className="service-step-grid mt-8">
+        <div className="service-flow-stack mt-8">
           {t.workflow.map((block, index) => (
-            <article key={block.title} className="service-step-card">
-              <div className="service-step-head">
-                <img src={block.icon} alt="" width={64} height={64} loading="lazy" decoding="async" className="service-step-icon" />
-                <span className="service-step-index">{String(index + 1).padStart(2, "0")}</span>
+            <article key={block.title} className="service-flow-card">
+              <div className="service-flow-aside">
+                <span className="service-flow-number">{String(index + 1).padStart(2, "0")}</span>
+                <div className="service-flow-icon-wrap">
+                  <img src={block.icon} alt="" className="service-flow-icon" />
+                </div>
               </div>
-              <h2 className="card-title-standard mt-5 text-[#1d2521]">{block.title}</h2>
-              <ul className="page-reference-body mt-4 grid gap-3 text-[#5f6b66]">
-                {block.items.map((item) => (
-                  <li key={item} className="process-bullet">
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <div className="service-flow-content">
+                <h3 className="service-flow-title">{block.title}</h3>
+                <ul className="service-flow-list">
+                  {block.items.map((item) => (
+                    <li key={item}>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </article>
           ))}
         </div>

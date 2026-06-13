@@ -3601,6 +3601,129 @@ a {
   background: #eef6f3;
 }
 
+/* Premium Service Flow Layout */
+.service-flow-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.service-flow-card {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--panel-radius-lg);
+  background: var(--surface);
+  box-shadow: var(--panel-shadow-soft);
+  transition: transform 0.4s var(--ease-smooth), box-shadow 0.4s var(--ease-smooth), border-color 0.4s var(--ease-smooth);
+  align-items: center;
+}
+
+.service-flow-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(14, 91, 81, 0.25);
+  box-shadow: var(--panel-shadow);
+}
+
+.service-flow-aside {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.service-flow-number {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--brand);
+  opacity: 0.85;
+  letter-spacing: -0.05em;
+}
+
+.service-flow-icon-wrap {
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #fdfcf9 0%, var(--brand-soft) 100%);
+  border: 1px solid rgba(14, 91, 81, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 2px 4px rgba(255,255,255,0.8), 0 4px 12px rgba(14, 91, 81, 0.03);
+}
+
+.service-flow-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  transition: transform 0.5s var(--ease-smooth);
+}
+
+.service-flow-card:hover .service-flow-icon {
+  transform: scale(1.1) rotate(2deg);
+}
+
+.service-flow-content {
+  flex-grow: 1;
+}
+
+.service-flow-title {
+  font-family: Arial, "Helvetica Neue", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 0.75rem 0;
+}
+
+.service-flow-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-flow-list li {
+  font-family: var(--font-body), sans-serif;
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.5;
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.service-flow-list li::before {
+  content: "•";
+  color: var(--accent);
+  font-size: 1.1rem;
+  position: absolute;
+  left: 0;
+  top: -1px;
+}
+
+@media (max-width: 992px) {
+  .service-flow-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .service-flow-aside {
+    width: 100%;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 1rem;
+  }
+
+  .service-flow-list {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
+
 .service-step-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
