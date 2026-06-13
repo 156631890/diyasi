@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import BuyNowButton from "@/components/BuyNowButton";
+import CompareButton from "@/components/CompareButton";
 import ProductGallery from "@/components/ProductGallery";
 import ProductInquiryForm from "@/components/ProductInquiryForm";
 import { getCatalogProductById, getCatalogProducts } from "@/lib/catalog-source";
@@ -55,6 +56,9 @@ const copy: Record<
     inStock: string;
     oemReady: string;
     lowMoq: string;
+    addCompare: string;
+    removeCompare: string;
+    compareLimit: string;
   }
 > = {
   en: {
@@ -79,7 +83,10 @@ const copy: Record<
     referencePrice: "Reference Price",
     inStock: "In Stock",
     oemReady: "OEM Ready",
-    lowMoq: "Low MOQ"
+    lowMoq: "Low MOQ",
+    addCompare: "Compare Product",
+    removeCompare: "Remove Compare",
+    compareLimit: "You can compare up to 4 products at a time."
   },
   zh: {
     back: "返回产品列表",
@@ -103,7 +110,10 @@ const copy: Record<
     referencePrice: "参考价格",
     inStock: "有现货",
     oemReady: "支持贴牌",
-    lowMoq: "小起订量"
+    lowMoq: "小起订量",
+    addCompare: "对比产品",
+    removeCompare: "取消对比",
+    compareLimit: "一次最多可以对比 4 个产品。"
   },
   es: {
     back: "Volver a Productos",
@@ -127,7 +137,10 @@ const copy: Record<
     referencePrice: "Precio de Referencia",
     inStock: "En Stock",
     oemReady: "Soporta OEM",
-    lowMoq: "Bajo MOQ"
+    lowMoq: "Bajo MOQ",
+    addCompare: "Comparar producto",
+    removeCompare: "Eliminar de comparación",
+    compareLimit: "Puedes comparar hasta 4 productos a la vez."
   }
 };
 
@@ -404,10 +417,17 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
               title={`${displayTitle} - ${t.paidSample}`}
               unitAmountUsd={price}
               label={t.paidSample}
+              className="btn btn-primary flex-1"
             />
-            <Link href="/contact" className="btn btn-soft">
+            <Link href="/contact" className="btn btn-soft flex-1">
               {t.quote}
             </Link>
+            <CompareButton
+              productId={typedProduct.product_id}
+              addLabel={t.addCompare}
+              removeLabel={t.removeCompare}
+              limitMessage={t.compareLimit}
+            />
           </div>
 
           <div className="catalog-detail-panel">

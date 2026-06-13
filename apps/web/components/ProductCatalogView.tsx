@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useDeferredValue, useMemo, useState } from "react";
+import { useDeferredValue, useMemo, useState, useEffect, useRef } from "react";
 
 import {
   familyOrder,
@@ -135,6 +135,30 @@ export default function ProductCatalogView({ products, categories, copy }: Produ
   const [visibleCount, setVisibleCount] = useState(INITIAL_PAGE_SIZE);
   const [compareIds, setCompareIds] = useState<string[]>([]);
   const [compareOpen, setCompareOpen] = useState(false);
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("diyasi_compare_ids");
+      if (saved) {
+        setCompareIds(JSON.parse(saved));
+      }
+    } catch (e) {
+      console.error("Failed to load compare items", e);
+    }
+  }, []);
+
+  const isMounted = useRef(false);
+  useEffect(() => {
+    if (isMounted.current) {
+      try {
+        localStorage.setItem("diyasi_compare_ids", JSON.stringify(compareIds));
+      } catch (e) {
+        console.error("Failed to save compare items", e);
+      }
+    } else {
+      isMounted.current = true;
+    }
+  }, [compareIds]);
 
   const deferredFamily = useDeferredValue(selectedFamily);
   const deferredCategory = useDeferredValue(selectedCategory);
