@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 const heroSlide = {
@@ -13,14 +14,13 @@ const heroSlide = {
 export default function HeroCarousel() {
   return (
     <section className="relative aspect-[12/5] min-h-[460px] w-full overflow-hidden bg-[#162520] md:min-h-[590px]">
-      <img
+      <Image
         src={heroSlide.src}
         alt={heroSlide.alt}
-        width={1920}
-        height={800}
-        decoding="async"
-        fetchPriority="high"
-        className="absolute inset-0 h-full w-full object-cover object-center"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center"
       />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,28,24,0.88)_0%,rgba(16,44,38,0.68)_46%,rgba(16,44,38,0.12)_100%)]" />
       <div className="absolute inset-x-0 bottom-0 h-28 bg-[linear-gradient(180deg,rgba(11,28,24,0)_0%,rgba(11,28,24,0.36)_100%)]" />

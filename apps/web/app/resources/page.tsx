@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -37,13 +38,12 @@ export default function ResourcesPage() {
           </div>
         </div>
         <div className="visual-hero-media">
-          <img
+          <Image
             src="/media/generated/pages/buyer-resource-desk.jpg"
             alt="Underwear buyer sourcing desk with fabric swatches, packaging sample, notebook, and QC documents"
             width={1600}
             height={1000}
-            decoding="async"
-            fetchPriority="high"
+            priority
             className="visual-hero-image"
           />
         </div>

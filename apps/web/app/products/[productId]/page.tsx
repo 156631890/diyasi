@@ -237,7 +237,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                   {image ? (
                     <img
                       src={image}
-                      alt={displayTitle}
+                      alt={`${displayTitle} - Custom Underwear Manufacture`}
                       loading="lazy"
                       decoding="async"
                       className="catalog-card-clean-image catalog-card-clean-image-primary"
@@ -490,7 +490,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                     {relatedImages[0] ? (
                       <img
                         src={relatedImages[0]}
-                        alt={resolveDisplayTitle(relatedProduct)}
+                        alt={`${resolveDisplayTitle(relatedProduct)} - Private Label Underwear`}
                         loading="lazy"
                         decoding="async"
                         className="catalog-related-image"

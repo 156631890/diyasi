@@ -226,8 +226,12 @@ export default function ProductInquiryForm({ productName, category }: ProductInq
       />
 
       <div className="product-inquiry-actions">
-        <button className="btn btn-primary" type="submit">
-          {t.submit}
+        <button
+          className="btn btn-primary disabled:opacity-60 disabled:cursor-not-allowed"
+          type="submit"
+          disabled={status === "submitting" || status === "submitted"}
+        >
+          {status === "submitting" ? t.submitting : status === "submitted" ? t.submitted : t.submit}
         </button>
         <p className="page-reference-body text-[#7d8a85]">Status: {statusText}</p>
       </div>

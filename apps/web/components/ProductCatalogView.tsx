@@ -304,7 +304,7 @@ export default function ProductCatalogView({ products, categories, copy }: Produ
                           <div className="catalog-card-clean-media-stack">
                             <img
                               src={product.primaryImage}
-                              alt={product.title}
+                              alt={`${product.title} - Custom Private Label Underwear Manufacturer`}
                               loading={primaryLoading}
                               decoding="async"
                               fetchPriority={primaryFetchPriority}
@@ -313,7 +313,7 @@ export default function ProductCatalogView({ products, categories, copy }: Produ
                             {product.hoverImage ? (
                               <img
                                 src={product.hoverImage}
-                                alt={`${product.title} alternate view`}
+                                alt={`${product.title} - OEM/ODM Underwear Production alternate view`}
                                 loading="lazy"
                                 decoding="async"
                                 fetchPriority="low"
@@ -431,7 +431,7 @@ export default function ProductCatalogView({ products, categories, copy }: Produ
                 {compareProducts.map((item) => (
                   <div key={item.product_id} className="relative flex items-center gap-2 rounded-lg border border-[#d9e2dc] bg-white p-1.5 pr-8">
                     {item.primaryImage ? (
-                      <img src={item.primaryImage} alt="" className="h-10 w-10 rounded object-cover" />
+                      <img src={item.primaryImage} alt={`${item.title} - Sourcing Compare`} className="h-10 w-10 rounded object-cover" />
                     ) : (
                       <div className="h-10 w-10 rounded bg-gray-100 flex items-center justify-center text-[8px] text-gray-400">No Img</div>
                     )}
@@ -507,7 +507,7 @@ export default function ProductCatalogView({ products, categories, copy }: Produ
                       <th key={item.product_id} className="py-4 px-3 font-bold text-center">
                         <div className="flex flex-col items-center gap-2">
                           {item.primaryImage ? (
-                            <img src={item.primaryImage} alt="" className="h-24 w-20 rounded object-cover shadow-sm mx-auto" />
+                            <img src={item.primaryImage} alt={`${item.title} - Sourcing Specification Compare`} className="h-24 w-20 rounded object-cover shadow-sm mx-auto" />
                           ) : (
                             <div className="h-24 w-20 rounded bg-gray-100 flex items-center justify-center text-xs text-gray-400 mx-auto">No Image</div>
                           )}
