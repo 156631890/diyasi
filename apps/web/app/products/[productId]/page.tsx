@@ -20,7 +20,10 @@ import {
   resolveSampleTimeText,
   resolveSuitableFor,
   resolvePrimaryImage,
-  topFamily
+  topFamily,
+  isInStock,
+  isOemReady,
+  isLowMoq
 } from "@/lib/product-display";
 import { buildBreadcrumbJsonLd, buildMetadata, absoluteUrl } from "@/lib/seo";
 import { SiteLang } from "@/lib/i18n";
@@ -232,11 +235,41 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                   )}
                 </Link>
                 <div className="catalog-card-clean-copy">
+                  <p className="catalog-card-clean-category">{item.category}</p>
                   <Link href={`/products/${encodeURIComponent(item.product_id)}`}>
                     <h2 className="catalog-card-clean-title">{displayTitle}</h2>
                   </Link>
-                  <div className="mt-3 flex items-center justify-between">
-                    <span className="inline-block rounded-full bg-[#f3f7f4] px-2.5 py-1 text-[11px] font-semibold text-[#57635e]">
+                  
+                  {item.fabric ? (
+                    <p className="catalog-card-clean-fabric mt-1.5 text-[12px] text-[#5f6b66] truncate">
+                      {item.fabric}
+                    </p>
+                  ) : null}
+
+                  <div className="catalog-card-clean-tags mt-2">
+                    {isInStock(item) && (
+                      <span className="catalog-card-tag">{t.inStock || "In Stock"}</span>
+                    )}
+                    {isOemReady(item) && (
+                      <span className="catalog-card-tag">{t.oemReady || "OEM Ready"}</span>
+                    )}
+                    {isLowMoq(item) && (
+                      <span className="catalog-card-tag">{t.lowMoq || "Low MOQ"}</span>
+                    )}
+                  </div>
+
+                  <div className="catalog-card-clean-bottom mt-3 border-t border-[#d9e2dc]/40 pt-2.5">
+                    <div className="flex flex-col">
+                      <span className="catalog-card-clean-price font-bold text-[#0e5b51]">
+                        {resolvePriceText(item)}
+                      </span>
+                      {item.moq && (
+                        <span className="text-[10px] text-[#7d8a85] mt-0.5">
+                          MOQ: {item.moq}
+                        </span>
+                      )}
+                    </div>
+                    <span className="inline-block rounded bg-[#f3f7f4] px-2 py-0.5 text-[10px] font-mono text-[#57635e]">
                       {resolveDisplayProductId(item)}
                     </span>
                   </div>

@@ -10,7 +10,8 @@ import {
   resolveDisplayProductId,
   resolveDisplayTitle,
   resolveHoverImage,
-  resolvePrimaryImage
+  resolvePrimaryImage,
+  resolvePriceText
 } from "@/lib/product-display";
 import { absoluteUrl, buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { getServerLang } from "@/lib/server-lang";
@@ -205,7 +206,10 @@ function toCatalogItem(product: CatalogProduct): ProductCatalogItem {
     hoverImage: hoverCandidate !== primaryImage ? hoverCandidate : "",
     inStock: isInStock(product),
     oemReady: isOemReady(product),
-    lowMoq: isLowMoq(product)
+    lowMoq: isLowMoq(product),
+    moq: product.moq,
+    fabric: product.fabric,
+    priceText: resolvePriceText(product)
   };
 }
 

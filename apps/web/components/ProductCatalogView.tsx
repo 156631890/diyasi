@@ -61,6 +61,9 @@ export type ProductCatalogItem = {
   inStock: boolean;
   oemReady: boolean;
   lowMoq: boolean;
+  moq?: string;
+  fabric?: string;
+  priceText?: string;
 };
 
 type ProductCatalogViewProps = {
@@ -295,44 +298,103 @@ export default function ProductCatalogView({ products, categories, copy }: Produ
 
                 return (
                   <article key={product.product_id} className="catalog-card-clean">
-                    <Link href={href} className="catalog-card-clean-media">
-                      {product.primaryImage ? (
-                        <div className="catalog-card-clean-media-stack">
-                          <img
-                            src={product.primaryImage}
-                            alt={product.title}
-                            loading={primaryLoading}
-                            decoding="async"
-                            fetchPriority={primaryFetchPriority}
-                            className="catalog-card-clean-image catalog-card-clean-image-primary"
-                          />
-                          {product.hoverImage ? (
+                    <div className="relative overflow-hidden rounded-[calc(var(--panel-radius)-2px)]">
+                      <Link href={href} className="catalog-card-clean-media">
+                        {product.primaryImage ? (
+                          <div className="catalog-card-clean-media-stack">
                             <img
-                              src={product.hoverImage}
-                              alt={`${product.title} alternate view`}
-                              loading="lazy"
+                              src={product.primaryImage}
+                              alt={product.title}
+                              loading={primaryLoading}
                               decoding="async"
-                              fetchPriority="low"
-                              className="catalog-card-clean-image catalog-card-clean-image-secondary"
+                              fetchPriority={primaryFetchPriority}
+                              className="catalog-card-clean-image catalog-card-clean-image-primary"
                             />
-                          ) : null}
-                        </div>
-                      ) : (
-                        <div className="catalog-card-clean-fallback">{copy.noImage}</div>
-                      )}
-                    </Link>
+                            {product.hoverImage ? (
+                              <img
+                                src={product.hoverImage}
+                                alt={`${product.title} alternate view`}
+                                loading="lazy"
+                                decoding="async"
+                                fetchPriority="low"
+                                className="catalog-card-clean-image catalog-card-clean-image-secondary"
+                              />
+                            ) : null}
+                          </div>
+                        ) : (
+                          <div className="catalog-card-clean-fallback">{copy.noImage}</div>
+                        )}
+                      </Link>
+
+                      {/* Comparison Checkbox */}
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          toggleCompare(product.product_id);
+                        }}
+                        className={`absolute top-2.5 right-2.5 z-10 flex h-7 w-7 items-center justify-center rounded-full border bg-white/95 shadow-sm backdrop-blur-[2px] transition-all hover:scale-105 active:scale-95 ${
+                          compareIds.includes(product.product_id)
+                            ? "border-[#0e5b51] text-[#0e5b51] bg-[#eef6f4]"
+                            : "border-gray-200 text-gray-400 hover:text-[#0e5b51] hover:border-[#0e5b51]"
+                        }`}
+                        title={copy.compare}
+                      >
+                        {compareIds.includes(product.product_id) ? (
+                          <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                          </svg>
+                        ) : (
+                          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                          </svg>
+                        )}
+                      </button>
+                    </div>
 
                     <div className="catalog-card-clean-copy">
+                      <p className="catalog-card-clean-category">{product.category}</p>
                       <Link href={href}>
                         <h2 className="catalog-card-clean-title">{product.title}</h2>
                       </Link>
-                      <div className="mt-3 flex items-center justify-between">
-                        <span className="inline-block rounded-full bg-[#f3f7f4] px-2.5 py-1 text-[11px] font-semibold text-[#57635e]">
+                      
+                      {product.fabric ? (
+                        <p className="catalog-card-clean-fabric mt-1.5 text-[12px] text-[#5f6b66] truncate">
+                          {product.fabric}
+                        </p>
+                      ) : null}
+
+                      <div className="catalog-card-clean-tags mt-2">
+                        {product.inStock && (
+                          <span className="catalog-card-tag">{copy.inStock}</span>
+                        )}
+                        {product.oemReady && (
+                          <span className="catalog-card-tag">{copy.oemReady}</span>
+                        )}
+                        {product.lowMoq && (
+                          <span className="catalog-card-tag">{copy.lowMoq}</span>
+                        )}
+                      </div>
+
+                      <div className="catalog-card-clean-bottom mt-3 border-t border-[#d9e2dc]/40 pt-2.5">
+                        <div className="flex flex-col">
+                          {product.priceText && (
+                            <span className="catalog-card-clean-price font-bold text-[#0e5b51]">
+                              {product.priceText}
+                            </span>
+                          )}
+                          {product.moq && (
+                            <span className="text-[10px] text-[#7d8a85] mt-0.5">
+                              MOQ: {product.moq}
+                            </span>
+                          )}
+                        </div>
+                        <span className="inline-block rounded bg-[#f3f7f4] px-2 py-0.5 text-[10px] font-mono text-[#57635e]">
                           {product.displayId}
                         </span>
                       </div>
                     </div>
-
                   </article>
                 );
               })}
@@ -352,6 +414,196 @@ export default function ProductCatalogView({ products, categories, copy }: Produ
           </>
         )}
       </div>
+
+      {/* Product Comparison Tray */}
+      {compareIds.length > 0 && (
+        <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-[#d9e2dc] bg-white/95 shadow-[0_-10px_30px_rgba(0,0,0,0.08)] backdrop-blur-md transition-all duration-300">
+          <div className="container mx-auto px-4 py-4 md:px-6">
+            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+              <div className="flex items-center gap-3">
+                <h3 className="text-sm font-bold text-[#1d2521] uppercase tracking-wider">{copy.compareTray}</h3>
+                <span className="rounded-full bg-[#0e5b51] px-2.5 py-0.5 text-xs font-bold text-white">
+                  {compareIds.length} / 4
+                </span>
+              </div>
+              
+              <div className="flex flex-wrap items-center gap-3">
+                {compareProducts.map((item) => (
+                  <div key={item.product_id} className="relative flex items-center gap-2 rounded-lg border border-[#d9e2dc] bg-white p-1.5 pr-8">
+                    {item.primaryImage ? (
+                      <img src={item.primaryImage} alt="" className="h-10 w-10 rounded object-cover" />
+                    ) : (
+                      <div className="h-10 w-10 rounded bg-gray-100 flex items-center justify-center text-[8px] text-gray-400">No Img</div>
+                    )}
+                    <div className="flex flex-col max-w-[120px] md:max-w-[150px]">
+                      <span className="truncate text-xs font-bold text-[#1d2521]">{item.title}</span>
+                      <span className="text-[10px] text-[#7d8a85] font-mono">{item.displayId}</span>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => toggleCompare(item.product_id)}
+                      className="absolute right-1.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-red-500"
+                    >
+                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+                  </div>
+                ))}
+
+                {compareIds.length < 4 && (
+                  <div className="hidden lg:flex h-12 items-center justify-center rounded-lg border border-dashed border-gray-300 bg-[#fffdf8] px-4 text-xs text-gray-400">
+                    {copy.compareLimit}
+                  </div>
+                )}
+              </div>
+
+              <div className="flex items-center gap-2 border-t border-gray-100 pt-3 md:border-0 md:pt-0">
+                <button
+                  type="button"
+                  onClick={() => setCompareOpen(true)}
+                  className="btn btn-primary text-xs"
+                >
+                  {copy.compareOpen}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setCompareIds([])}
+                  className="btn btn-soft text-xs"
+                >
+                  {copy.compareClear}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Comparison Modal Modal */}
+      {compareOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+          <div className="relative w-full max-w-4xl rounded-2xl bg-white shadow-2xl overflow-hidden max-h-[90vh] flex flex-col animate-fade-in">
+            {/* Header */}
+            <div className="flex items-center justify-between border-b border-[#d9e2dc] bg-[#fffdf8] px-6 py-4">
+              <h3 className="text-lg font-bold text-[#1d2521]">{copy.compareTray}</h3>
+              <button
+                type="button"
+                onClick={() => setCompareOpen(false)}
+                className="rounded-full p-1.5 hover:bg-gray-100 text-gray-500 transition-colors"
+              >
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Table content */}
+            <div className="overflow-auto p-6 flex-1">
+              <table className="w-full table-fixed border-collapse text-left text-sm text-[#1d2521]">
+                <thead>
+                  <tr className="border-b border-[#d9e2dc]">
+                    <th className="w-1/5 py-4 font-bold text-[#7d8a85] uppercase tracking-wider text-xs">Features</th>
+                    {compareProducts.map((item) => (
+                      <th key={item.product_id} className="py-4 px-3 font-bold text-center">
+                        <div className="flex flex-col items-center gap-2">
+                          {item.primaryImage ? (
+                            <img src={item.primaryImage} alt="" className="h-24 w-20 rounded object-cover shadow-sm mx-auto" />
+                          ) : (
+                            <div className="h-24 w-20 rounded bg-gray-100 flex items-center justify-center text-xs text-gray-400 mx-auto">No Image</div>
+                          )}
+                          <span className="block text-xs font-bold line-clamp-2 mt-1">{item.title}</span>
+                          <span className="block text-[10px] text-gray-400 font-mono">{item.displayId}</span>
+                        </div>
+                      </th>
+                    ))}
+                    {/* Empty slots */}
+                    {Array.from({ length: 4 - compareProducts.length }).map((_, idx) => (
+                      <th key={`empty-th-${idx}`} className="py-4 px-3 text-center text-gray-300 text-xs font-normal border-l border-gray-100">
+                        Empty Slot
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-gray-100 hover:bg-[#fffdf8]">
+                    <td className="py-3 font-bold text-gray-500 text-xs">{copy.compareCategory}</td>
+                    {compareProducts.map((item) => (
+                      <td key={`cat-${item.product_id}`} className="py-3 px-3 text-center text-xs text-[#5f6b66]">{item.category}</td>
+                    ))}
+                    {Array.from({ length: 4 - compareProducts.length }).map((_, idx) => (
+                      <td key={`empty-cat-${idx}`} className="py-3 px-3 border-l border-gray-100"></td>
+                    ))}
+                  </tr>
+                  <tr className="border-b border-gray-100 hover:bg-[#fffdf8]">
+                    <td className="py-3 font-bold text-gray-500 text-xs">{copy.comparePrice}</td>
+                    {compareProducts.map((item) => (
+                      <td key={`price-${item.product_id}`} className="py-3 px-3 text-center text-xs font-bold text-[#0e5b51]">{item.priceText || "-"}</td>
+                    ))}
+                    {Array.from({ length: 4 - compareProducts.length }).map((_, idx) => (
+                      <td key={`empty-price-${idx}`} className="py-3 px-3 border-l border-gray-100"></td>
+                    ))}
+                  </tr>
+                  <tr className="border-b border-gray-100 hover:bg-[#fffdf8]">
+                    <td className="py-3 font-bold text-gray-500 text-xs">{copy.compareMOQ}</td>
+                    {compareProducts.map((item) => (
+                      <td key={`moq-${item.product_id}`} className="py-3 px-3 text-center text-xs font-medium text-gray-700">{item.moq || "-"}</td>
+                    ))}
+                    {Array.from({ length: 4 - compareProducts.length }).map((_, idx) => (
+                      <td key={`empty-moq-${idx}`} className="py-3 px-3 border-l border-gray-100"></td>
+                    ))}
+                  </tr>
+                  <tr className="border-b border-gray-100 hover:bg-[#fffdf8]">
+                    <td className="py-3 font-bold text-gray-500 text-xs">Fabric</td>
+                    {compareProducts.map((item) => (
+                      <td key={`fab-${item.product_id}`} className="py-3 px-3 text-center text-xs text-[#5f6b66]">{item.fabric || "-"}</td>
+                    ))}
+                    {Array.from({ length: 4 - compareProducts.length }).map((_, idx) => (
+                      <td key={`empty-fab-${idx}`} className="py-3 px-3 border-l border-gray-100"></td>
+                    ))}
+                  </tr>
+                  <tr className="border-b border-gray-100 hover:bg-[#fffdf8]">
+                    <td className="py-3 font-bold text-gray-500 text-xs">{copy.compareOEM}</td>
+                    {compareProducts.map((item) => (
+                      <td key={`oem-${item.product_id}`} className="py-3 px-3 text-center text-xs">
+                        {item.oemReady ? (
+                          <span className="inline-block rounded bg-green-50 px-2 py-0.5 text-[10px] font-bold text-green-700">Supported</span>
+                        ) : (
+                          <span className="inline-block rounded bg-gray-50 px-2 py-0.5 text-[10px] text-gray-400">No</span>
+                        )}
+                      </td>
+                    ))}
+                    {Array.from({ length: 4 - compareProducts.length }).map((_, idx) => (
+                      <td key={`empty-oem-${idx}`} className="py-3 px-3 border-l border-gray-100"></td>
+                    ))}
+                  </tr>
+                  <tr className="hover:bg-[#fffdf8]">
+                    <td className="py-4 font-bold text-gray-500 text-xs">Action</td>
+                    {compareProducts.map((item) => (
+                      <td key={`act-${item.product_id}`} className="py-4 px-3 text-center">
+                        <div className="flex flex-col gap-2 items-center">
+                          <Link href={`/products/${encodeURIComponent(item.product_id)}`} className="btn btn-soft text-[10px] py-1 px-3">
+                            {copy.viewDetails}
+                          </Link>
+                          <button
+                            type="button"
+                            onClick={() => toggleCompare(item.product_id)}
+                            className="text-[10px] text-red-500 hover:underline"
+                          >
+                            {copy.compareRemove}
+                          </button>
+                        </div>
+                      </td>
+                    ))}
+                    {Array.from({ length: 4 - compareProducts.length }).map((_, idx) => (
+                      <td key={`empty-act-${idx}`} className="py-4 px-3 border-l border-gray-100"></td>
+                    ))}
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
