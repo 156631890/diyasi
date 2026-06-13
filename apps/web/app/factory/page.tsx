@@ -270,7 +270,7 @@ const copy: Record<
 
 const qualityIcons = [
   "/media/generated/icons/fabric-swatch.png",
-  "/media/generated/icons/factory-line.png",
+  "/media/generated/icons/sample-hanger.png",
   "/media/generated/icons/qc-check.png"
 ];
 
@@ -395,16 +395,16 @@ export default function FactoryPage() {
         <div className="factory-custom-grid mt-6">
           {qualitySteps.map((item, index) => (
             <article key={item.title} className="factory-custom-card">
-              <img
-                src={qualityIcons[index] || "/media/generated/icons/qc-check.png"}
-                alt=""
-                width={64}
-                height={64}
-                loading="lazy"
-                decoding="async"
-                className="service-step-icon"
-              />
-              <h3 className="card-title-standard mt-4 text-[#1d2521]">{item.title}</h3>
+              <div className="showcase-icon-wrap">
+                <img
+                  src={qualityIcons[index] || "/media/generated/icons/qc-check.png"}
+                  alt={item.title}
+                  className="showcase-icon"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 className="card-title-standard mt-2 text-[#1d2521]">{item.title}</h3>
               <p className="page-reference-body mt-3 text-[#5f6b66]">{item.desc}</p>
             </article>
           ))}
@@ -420,14 +420,15 @@ export default function FactoryPage() {
           {t.certifications.map((item) => (
             <article key={item.code} className="factory-cert-card">
               <div className="factory-cert-head">
-                <img
-                  src="/media/generated/icons/certificate-document.png"
-                  alt=""
-                  width={56}
-                  height={56}
-                  loading="lazy"
-                  decoding="async"
-                />
+                <div className="showcase-icon-wrap mb-0">
+                  <img
+                    src="/media/generated/icons/qc-check.png"
+                    alt={item.code}
+                    className="showcase-icon"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
                 <div className="factory-cert-code">{item.code}</div>
               </div>
               <h3 className="card-title-standard mt-4 text-[#1d2521]">{item.title}</h3>

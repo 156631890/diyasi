@@ -2114,22 +2114,47 @@ a {
 }
 
 .factory-cert-grid,
-.factory-custom-grid,
 .factory-news-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 1.25rem;
+}
+
+.factory-custom-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
 }
 
 .factory-cert-card,
 .factory-custom-card,
 .factory-news-card {
   border: 1px solid var(--line);
-  background: rgba(255, 250, 245, 0.95);
-  min-height: 340px;
-  padding: 1.6rem;
-  border-radius: var(--panel-radius);
+  background: var(--surface);
+  padding: 1.75rem;
+  border-radius: var(--panel-radius-lg);
   box-shadow: var(--panel-shadow-soft);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s var(--ease-smooth), box-shadow 0.4s var(--ease-smooth), border-color 0.4s var(--ease-smooth);
+}
+
+.factory-cert-card:hover,
+.factory-custom-card:hover,
+.factory-news-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(14, 91, 81, 0.25);
+  box-shadow: var(--panel-shadow);
+}
+
+@media (max-width: 992px) {
+  .factory-cert-grid,
+  .factory-news-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .factory-custom-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .factory-cert-code,
@@ -3731,7 +3756,6 @@ a {
 }
 
 .service-step-card,
-.fabric-guide-card,
 .resource-card,
 .project-input-item {
   border: 1px solid #d9e2dc;
@@ -3739,9 +3763,25 @@ a {
   background: #fffdf8;
 }
 
-.service-step-card,
-.fabric-guide-card {
+.service-step-card {
   padding: 1.35rem;
+}
+
+.fabric-guide-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--panel-radius-lg);
+  background: var(--surface);
+  box-shadow: var(--panel-shadow-soft);
+  transition: transform 0.4s var(--ease-smooth), box-shadow 0.4s var(--ease-smooth), border-color 0.4s var(--ease-smooth);
+}
+
+.fabric-guide-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(14, 91, 81, 0.25);
+  box-shadow: var(--panel-shadow);
 }
 
 .service-step-head,
