@@ -87,8 +87,8 @@ const copy: Record<
   }
 };
 
-export default function SustainabilityPage() {
-  const lang = getServerLang();
+export default async function SustainabilityPage() {
+  const lang = await getServerLang();
   const t = copy[lang];
   const breadcrumbJsonLd = buildBreadcrumbJsonLd([
     { name: "Home", path: "/" },

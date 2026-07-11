@@ -1,19 +1,20 @@
 import Link from "next/link";
 
 type Props = {
-  searchParams: {
+  searchParams: Promise<{
     ref?: string;
     title?: string;
     amount?: string;
     qty?: string;
-  };
+  }>;
 };
 
-export default function CheckoutMockPage({ searchParams }: Props) {
-  const ref = searchParams.ref || "ORD-MOCK";
-  const title = searchParams.title || "Service Order";
-  const amount = Number(searchParams.amount || "0");
-  const qty = Number(searchParams.qty || "1");
+export default async function CheckoutMockPage({ searchParams }: Props) {
+  const { ref: queryRef, title: queryTitle, amount: queryAmount, qty: queryQty } = await searchParams;
+  const ref = queryRef || "ORD-MOCK";
+  const title = queryTitle || "Service Order";
+  const amount = Number(queryAmount || "0");
+  const qty = Number(queryQty || "1");
   const total = Math.max(0, amount * Math.max(1, qty));
 
   return (

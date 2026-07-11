@@ -108,6 +108,8 @@ export default function PayPalPaymentsPanel({
     }
 
     if (window.paypal) {
+      // The external SDK may already be available when this effect attaches.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSdkReady(true);
       return;
     }
@@ -198,6 +200,8 @@ export default function PayPalPaymentsPanel({
         }
       });
     } catch (error) {
+      // Surface synchronous external SDK initialization failures to the checkout UI.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setPayPalError(error instanceof Error ? error.message : "Unable to initialize PayPal.");
       return;
     }
@@ -221,6 +225,8 @@ export default function PayPalPaymentsPanel({
       return;
     }
 
+    // Opening after the SDK load transition preserves the buyer's original action.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setPendingOpen(false);
     setMessage("");
     setModalOpen(true);

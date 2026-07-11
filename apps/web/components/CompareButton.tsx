@@ -19,6 +19,8 @@ export default function CompareButton({
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // Rendering only after hydration prevents a localStorage-dependent SSR mismatch.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
     try {
       const saved = localStorage.getItem("diyasi_compare_ids");

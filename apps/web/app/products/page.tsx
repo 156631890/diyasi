@@ -214,7 +214,7 @@ function toCatalogItem(product: CatalogProduct): ProductCatalogItem {
 }
 
 export default async function ProductsPage() {
-  const lang = getServerLang();
+  const lang = await getServerLang();
   const t = copy[lang];
   const [products, categories] = await Promise.all([getCatalogProducts(), getCatalogCategories()]);
   const catalogProducts = products.map(toCatalogItem);

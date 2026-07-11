@@ -51,7 +51,7 @@ const copy: Record<
 };
 
 export default async function BlogPage() {
-  const lang = getServerLang();
+  const lang = await getServerLang();
   const t = copy[lang];
   const articles = await getArticles();
   const lead = articles[0] || null;

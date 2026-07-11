@@ -161,8 +161,8 @@ const copy: Record<
   }
 };
 
-export default function AboutPage() {
-  const lang = getServerLang();
+export default async function AboutPage() {
+  const lang = await getServerLang();
   const t = copy[lang];
 
   const breadcrumbJsonLd = buildBreadcrumbJsonLd([

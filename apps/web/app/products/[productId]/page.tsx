@@ -145,7 +145,7 @@ const copy: Record<
 };
 
 type ProductDetailPageProps = {
-  params: { productId: string };
+  params: Promise<{ productId: string }>;
 };
 
 type LaunchCollection = (typeof launchCollections)[number];
@@ -165,7 +165,8 @@ function productMatchesCollection(product: DisplayProduct, collection: LaunchCol
 }
 
 export async function generateMetadata({ params }: ProductDetailPageProps): Promise<Metadata> {
-  const decodedId = decodeURIComponent(params.productId);
+  const { productId } = await params;
+  const decodedId = decodeURIComponent(productId);
   const product = await getCatalogProductById(decodedId);
   const collection = findCollection(decodedId);
 
@@ -180,7 +181,7 @@ export async function generateMetadata({ params }: ProductDetailPageProps): Prom
     return buildMetadata({
       title: "Product not found",
       description: "This product page is not available.",
-      path: `/products/${params.productId}`
+      path: `/products/${productId}`
     });
   }
 
@@ -196,9 +197,10 @@ export async function generateMetadata({ params }: ProductDetailPageProps): Prom
 }
 
 export default async function ProductDetailPage({ params }: ProductDetailPageProps) {
-  const productId = decodeURIComponent(params.productId);
+  const { productId: rawProductId } = await params;
+  const productId = decodeURIComponent(rawProductId);
   const [product, allProducts] = await Promise.all([getCatalogProductById(productId), getCatalogProducts()]);
-  const lang = getServerLang();
+  const lang = await getServerLang();
   const t = copy[lang];
   const collection = findCollection(productId);
 

@@ -139,8 +139,8 @@ const copy: Record<
   }
 };
 
-export default function PackagingPage() {
-  const lang = getServerLang();
+export default async function PackagingPage() {
+  const lang = await getServerLang();
   const t = copy[lang];
 
   const breadcrumbJsonLd = buildBreadcrumbJsonLd([

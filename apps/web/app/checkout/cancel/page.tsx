@@ -15,6 +15,8 @@ export default function CheckoutCancelPage() {
   const [lang, setLang] = useState<"en" | "zh" | "es">("en");
 
   useEffect(() => {
+    // The client-only locale is read after hydration to avoid an SSR mismatch.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLang(getClientLang());
   }, []);
 

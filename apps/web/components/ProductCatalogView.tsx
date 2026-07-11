@@ -140,6 +140,8 @@ export default function ProductCatalogView({ products, categories, copy }: Produ
     try {
       const saved = localStorage.getItem("diyasi_compare_ids");
       if (saved) {
+        // Hydrate the browser-only comparison list after mount.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setCompareIds(JSON.parse(saved));
       }
     } catch (e) {

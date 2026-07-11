@@ -200,8 +200,8 @@ const copy: Record<
   }
 };
 
-export default function FabricsPage() {
-  const lang = getServerLang();
+export default async function FabricsPage() {
+  const lang = await getServerLang();
   const t = copy[lang];
 
   const breadcrumbJsonLd = buildBreadcrumbJsonLd([

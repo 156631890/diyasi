@@ -20,7 +20,7 @@ type Article = {
   cover_image?: string;
 };
 
-type Props = { params: { slug: string } };
+type Props = { params: Promise<{ slug: string }> };
 
 async function getArticle(slug: string): Promise<Article | null> {
   return safeFetchJson<Article | null>(`/seo/articles/${slug}`, null);
@@ -56,13 +56,14 @@ const copy: Record<
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const article = await getArticle(params.slug);
+  const { slug } = await params;
+  const article = await getArticle(slug);
 
   if (!article) {
     return buildMetadata({
       title: "Article not found",
       description: "This journal page is not available.",
-      path: `/blog/${params.slug}`
+      path: `/blog/${slug}`
     });
   }
 
@@ -74,9 +75,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function BlogDetailPage({ params }: Props) {
-  const lang = getServerLang();
+  const { slug } = await params;
+  const lang = await getServerLang();
   const t = copy[lang];
-  const article = await getArticle(params.slug);
+  const article = await getArticle(slug);
   if (!article) notFound();
 
   const datePublished = article.published_at || article.created_at;

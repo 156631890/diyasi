@@ -8,10 +8,5 @@
     "start": "npm --prefix web run start",
     "lint": "npm --prefix web run lint",
     "postinstall": "npm --prefix web install"
-  },
-  "dependencies": {
-    "next": "^14.2.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
   }
 }

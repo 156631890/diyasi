@@ -274,8 +274,8 @@ const qualityIcons = [
   "/media/generated/icons/qc-check.png"
 ];
 
-export default function FactoryPage() {
-  const lang = getServerLang();
+export default async function FactoryPage() {
+  const lang = await getServerLang();
   const t = copy[lang];
 
   const breadcrumbJsonLd = buildBreadcrumbJsonLd([

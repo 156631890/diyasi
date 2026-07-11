@@ -75,8 +75,8 @@ export const metadata: Metadata = {
   }
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const lang = getServerLang();
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const lang = await getServerLang();
 
   const websiteJsonLd = {
     "@context": "https://schema.org",

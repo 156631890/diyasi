@@ -94,23 +94,24 @@ const copy: Record<
   }
 };
 
-export default function PaymentsPage({
+export default async function PaymentsPage({
   searchParams
 }: {
-  searchParams?: {
+  searchParams: Promise<{
     product_title?: string;
     product_amount?: string;
     product_qty?: string;
     product_shipping_usd?: string;
-  };
+  }>;
 }) {
-  const lang = getServerLang();
+  const resolvedSearchParams = await searchParams;
+  const lang = await getServerLang();
   const t = copy[lang];
   const clientId = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID || "";
-  const productTitle = searchParams?.product_title ? decodeURIComponent(searchParams.product_title) : "";
-  const productAmount = Number(searchParams?.product_amount || "0");
-  const productQty = Math.max(1, Math.floor(Number(searchParams?.product_qty || "1")));
-  const productShippingUsd = Number(searchParams?.product_shipping_usd || String(SAMPLE_SHIPPING_FEE_USD));
+  const productTitle = resolvedSearchParams.product_title ? decodeURIComponent(resolvedSearchParams.product_title) : "";
+  const productAmount = Number(resolvedSearchParams.product_amount || "0");
+  const productQty = Math.max(1, Math.floor(Number(resolvedSearchParams.product_qty || "1")));
+  const productShippingUsd = Number(resolvedSearchParams.product_shipping_usd || String(SAMPLE_SHIPPING_FEE_USD));
 
   const productItem =
     productTitle && Number.isFinite(productAmount) && productAmount > 0

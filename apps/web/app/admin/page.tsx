@@ -31,7 +31,7 @@ const copy: Record<SiteLang, { kicker: string; title: string; desc: string }> = 
   }
 };
 
-function isAuthorized(): boolean {
+async function isAuthorized(): Promise<boolean> {
   const username = process.env.ADMIN_USERNAME;
   const password = process.env.ADMIN_PASSWORD;
 
@@ -39,7 +39,7 @@ function isAuthorized(): boolean {
     return false;
   }
 
-  const authorization = headers().get("authorization");
+  const authorization = (await headers()).get("authorization");
   if (!authorization?.startsWith("Basic ")) {
     return false;
   }
@@ -52,12 +52,12 @@ function isAuthorized(): boolean {
   return suppliedUsername === username && suppliedPassword === password;
 }
 
-export default function AdminPage() {
-  if (!isAuthorized()) {
+export default async function AdminPage() {
+  if (!(await isAuthorized())) {
     notFound();
   }
 
-  const lang = getServerLang();
+  const lang = await getServerLang();
   const t = copy[lang];
   return (
     <main>

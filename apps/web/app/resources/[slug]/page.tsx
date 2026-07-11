@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { resourceArticles, type ResourceArticleBlock } from "@/lib/resource-articles";
 import { absoluteUrl, buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 
-type Props = { params: { slug: string } };
+type Props = { params: Promise<{ slug: string }> };
 
 function getArticle(slug: string) {
   return resourceArticles.find((article) => article.slug === slug);
@@ -15,13 +15,14 @@ export function generateStaticParams() {
   return resourceArticles.map((article) => ({ slug: article.slug }));
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const article = getArticle(params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const article = getArticle(slug);
   if (!article) {
     return buildMetadata({
       title: "Resource not found",
       description: "This resource guide is not available.",
-      path: `/resources/${params.slug}`
+      path: `/resources/${slug}`
     });
   }
 
@@ -91,8 +92,9 @@ function renderArticleBlock(block: ResourceArticleBlock, index: number) {
   );
 }
 
-export default function ResourceDetailPage({ params }: Props) {
-  const article = getArticle(params.slug);
+export default async function ResourceDetailPage({ params }: Props) {
+  const { slug } = await params;
+  const article = getArticle(slug);
   if (!article) notFound();
 
   const breadcrumbJsonLd = buildBreadcrumbJsonLd([

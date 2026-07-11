@@ -333,8 +333,8 @@ const copy: Record<
   }
 };
 
-export default function OemOdmPage() {
-  const lang = getServerLang();
+export default async function OemOdmPage() {
+  const lang = await getServerLang();
   const t = copy[lang];
 
   const breadcrumbJsonLd = buildBreadcrumbJsonLd([
