@@ -32,6 +32,16 @@ const reviewedProducts = [
 ] as const;
 
 const reviewedProductIds = reviewedProducts.map((product) => product.id);
+const spanishAcquisitionPaths = [
+  "/es",
+  "/es/productos/ropa-interior-marca-privada",
+  "/es/minimo-pedido-ropa-interior",
+  "/es/ropa-interior-sin-costuras",
+  "/es/fabricante-ropa-interior-china",
+  "/es/empaque-personalizado",
+  "/es/fabrica-y-control-de-calidad",
+  "/es/contacto"
+];
 
 afterEach(() => {
   vi.unstubAllGlobals();
@@ -47,6 +57,7 @@ test("sitemap contains only deterministic, curated public content", async () => 
   expect(paths).toContain("/");
   expect(paths).toContain("/products/seamless-underwear");
   expect(paths).toContain(`/resources/${resourceArticles[0].slug}`);
+  expect(paths).toEqual(expect.arrayContaining(spanishAcquisitionPaths));
   expect(paths).not.toContain("/admin");
   expect(productIds.length).toBeGreaterThan(0);
   expect(productIds.length).toBeLessThanOrEqual(50);
@@ -82,6 +93,7 @@ test("indexable content defines a reviewed product search surface", () => {
   expect(indexableContent.paths).not.toContain("/admin");
   expect(indexableContent.paths).not.toContain("/checkout");
   expect(indexableContent.paths).not.toContain("/payments");
+  expect(indexableContent.paths).toEqual(expect.arrayContaining(spanishAcquisitionPaths));
 });
 
 test("sitemap implementation does not fetch runtime content or generate dates", async () => {

@@ -60,7 +60,7 @@ test("unmapped paths have no Spanish counterpart", () => {
   expect(localeHref("en", "/about")).toBe("/about");
 });
 
-test("page metadata omits language alternates until public counterparts exist", () => {
+test("page metadata includes language alternates for reciprocal public counterparts", () => {
   const metadata = buildMetadata({
     title: "Contact",
     description: "Contact YiWu DiYaSi Dress Co., Ltd.",
@@ -68,9 +68,13 @@ test("page metadata omits language alternates until public counterparts exist", 
   });
 
   expect(metadata.alternates).toEqual({
-    canonical: "https://www.yiwudiyasidress.com/contact"
+    canonical: "https://www.yiwudiyasidress.com/contact",
+    languages: {
+      en: "https://www.yiwudiyasidress.com/contact",
+      es: "https://www.yiwudiyasidress.com/es/contacto",
+      "x-default": "https://www.yiwudiyasidress.com/contact"
+    }
   });
-  expect(metadata.alternates?.languages).toBeUndefined();
 });
 
 test("root metadata uses shared canonical and MOQ policy data", async () => {

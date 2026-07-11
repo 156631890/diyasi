@@ -25,7 +25,15 @@ const pageEntries: IndexableContentEntry[] = [
   { path: "/sustainability", lastModified: reviewedAt, changeFrequency: "monthly", priority: 0.8 },
   { path: "/resources", lastModified: reviewedAt, changeFrequency: "monthly", priority: 0.8 },
   { path: "/privacy-policy", lastModified: reviewedAt, changeFrequency: "monthly", priority: 0.5 },
-  { path: "/return-policy", lastModified: reviewedAt, changeFrequency: "monthly", priority: 0.5 }
+  { path: "/return-policy", lastModified: reviewedAt, changeFrequency: "monthly", priority: 0.5 },
+  { path: "/es", lastModified: reviewedAt, changeFrequency: "weekly", priority: 1 },
+  { path: "/es/productos/ropa-interior-marca-privada", lastModified: reviewedAt, changeFrequency: "weekly", priority: 0.9 },
+  { path: "/es/minimo-pedido-ropa-interior", lastModified: reviewedAt, changeFrequency: "weekly", priority: 0.9 },
+  { path: "/es/ropa-interior-sin-costuras", lastModified: reviewedAt, changeFrequency: "weekly", priority: 0.9 },
+  { path: "/es/fabricante-ropa-interior-china", lastModified: reviewedAt, changeFrequency: "weekly", priority: 0.9 },
+  { path: "/es/empaque-personalizado", lastModified: reviewedAt, changeFrequency: "monthly", priority: 0.8 },
+  { path: "/es/fabrica-y-control-de-calidad", lastModified: reviewedAt, changeFrequency: "weekly", priority: 0.9 },
+  { path: "/es/contacto", lastModified: reviewedAt, changeFrequency: "weekly", priority: 0.9 }
 ];
 
 const collectionEntries = launchCollections.map((collection) => ({

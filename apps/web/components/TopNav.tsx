@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { LANG_LABELS, SiteLang } from "@/lib/i18n";
+import { localeHref, localeSwitchHref } from "@/lib/locale-routes";
 
 type LinkItem = { href: string; label: string };
 
@@ -85,8 +86,11 @@ export default function TopNav({ initialLang }: TopNavProps) {
   const [isCompact, setIsCompact] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = labels[lang];
+  const localizedHref = (englishPath: string) => (lang === "es" ? localeHref("es", englishPath) : englishPath);
+  const homeHref = localizedHref("/") ?? "/";
+  const contactHref = localizedHref("/contact") ?? "/contact";
 
-  const primaryLinks: LinkItem[] = [
+  const primaryLinks = [
     { href: "/", label: t.home },
     { href: "/products", label: t.products },
     { href: "/oem-odm", label: t.privateLabel },
@@ -96,18 +100,29 @@ export default function TopNav({ initialLang }: TopNavProps) {
     { href: "/blog", label: t.journal },
     { href: "/about", label: t.about },
     { href: "/contact", label: t.contact }
-  ];
+  ]
+    .map((item) => ({ ...item, href: localizedHref(item.href) }))
+    .filter((item): item is LinkItem => Boolean(item.href));
 
-  const secondaryLinks: LinkItem[] = [
+  const secondaryLinks = [
     { href: "/sustainability", label: t.sustainability },
     { href: "/contact", label: t.cta }
-  ];
+  ]
+    .map((item) => ({ ...item, href: localizedHref(item.href) }))
+    .filter((item): item is LinkItem => Boolean(item.href));
 
   function onLanguageChange(nextLang: SiteLang) {
     setLang(nextLang);
     document.cookie = `site_lang=${nextLang}; Path=/; Max-Age=31536000; SameSite=Lax`;
     document.documentElement.lang = nextLang;
     setIsMenuOpen(false);
+    const targetPath = localeSwitchHref(nextLang === "es" ? "es" : "en", pathname);
+
+    if (targetPath && targetPath !== pathname) {
+      router.push(targetPath);
+      return;
+    }
+
     router.refresh();
   }
 
@@ -163,7 +178,7 @@ export default function TopNav({ initialLang }: TopNavProps) {
 
       {/* Main Nav Bar */}
       <div className="container-shell top-nav-wide-shell flex items-center justify-between py-3">
-        <Link href="/" className="flex items-center gap-3" onClick={() => setIsMenuOpen(false)}>
+        <Link href={homeHref} className="flex items-center gap-3" onClick={() => setIsMenuOpen(false)}>
           <span
             className={`top-nav-brand-badge grid place-items-center rounded-full text-xs font-bold text-white ${
               isCompact ? "top-nav-brand-badge-compact" : ""
@@ -186,7 +201,7 @@ export default function TopNav({ initialLang }: TopNavProps) {
         </nav>
 
         {/* Desktop CTA */}
-        <Link href="/contact" className="btn btn-primary top-nav-cta hidden text-sm lg:inline-flex">
+        <Link href={contactHref} className="btn btn-primary top-nav-cta hidden text-sm lg:inline-flex">
           {t.cta}
         </Link>
 
@@ -231,15 +246,17 @@ export default function TopNav({ initialLang }: TopNavProps) {
 
           {/* Mobile Secondary & CTA */}
           <div className="mt-8 flex flex-col gap-5">
+            {lang !== "es" ? (
+              <Link
+                href="/sustainability"
+                className="text-sm font-semibold text-[#5f6b66] hover:text-[#0e5b51]"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t.sustainability}
+              </Link>
+            ) : null}
             <Link
-              href="/sustainability"
-              className="text-sm font-semibold text-[#5f6b66] hover:text-[#0e5b51]"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t.sustainability}
-            </Link>
-            <Link
-              href="/contact"
+              href={contactHref}
               className="btn btn-primary w-full text-center py-3.5 text-sm"
               onClick={() => setIsMenuOpen(false)}
             >

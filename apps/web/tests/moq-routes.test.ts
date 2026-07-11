@@ -69,7 +69,7 @@ test("policy consumers reuse MOQ routes and retain only the canonical host", asy
   expect(layoutSource).toMatch(/additionalProperty:\s*moqRoutes\.map/);
   expect(llmsSource).toMatch(/import\s*{\s*moqRoutes\s*}\s*from\s*"@\/lib\/moq-routes"/);
   expect(llmsSource).toMatch(/\.\.\.moqRoutes\.map/);
-  expect(localeRoutesSource).not.toMatch(/\balternatesFor\b/);
+  expect(localeRoutesSource).toMatch(/export function alternatesFor/);
   expect(vercelConfig.installCommand).toBe("npm ci");
   expect(vercelConfig.redirects).toContainEqual({
     source: "/:path*",

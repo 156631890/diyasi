@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { alternatesFor } from "./locale-routes";
 import { canonicalUrl, SITE_DESCRIPTION, SITE_NAME } from "./site-config";
 
 export { SITE_DESCRIPTION, SITE_NAME, SITE_ORIGIN } from "./site-config";
@@ -19,12 +20,20 @@ export function buildMetadata({
   path?: string;
 }): Metadata {
   const url = absoluteUrl(path);
+  const localeAlternates = alternatesFor(path);
 
   return {
     title,
     description,
     alternates: {
-      canonical: url
+      canonical: url,
+      ...(localeAlternates
+        ? {
+            languages: Object.fromEntries(
+              Object.entries(localeAlternates).map(([locale, localePath]) => [locale, absoluteUrl(localePath)])
+            )
+          }
+        : {})
     },
     openGraph: {
       title,

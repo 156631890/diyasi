@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { SiteLang } from "@/lib/i18n";
+import { localeHref } from "@/lib/locale-routes";
 import { companyInfo, launchCollections } from "@/lib/site-info";
 
 type SiteFooterProps = {
@@ -55,12 +56,12 @@ const copy: Record<SiteLang, FooterCopy> = {
   es: {
     eyebrow: "YiWu DiYaSi",
     brandDesc:
-      "Fabricante private label de intimates para marcas DTC, retail y wholesale, desde tejido y muestra hasta empaque custom y entrega bulk.",
-    ctaTitle: "Inicia tu proyecto private label con un equipo de fabrica real",
+      "Fabricante de ropa interior de marca propia para marcas DTC, minoristas y mayoristas, desde la selección del tejido y las muestras hasta el empaque personalizado y la producción.",
+    ctaTitle: "Inicie su proyecto de ropa interior de marca propia con un equipo de fábrica",
     ctaDesc:
-      "Envia categoria, mercado objetivo, cantidad, empaque y timing. Responderemos con una ruta practica de muestra y MOQ.",
-    ctaPrimary: "Iniciar Proyecto",
-    ctaSecondary: "Ver Colecciones",
+      "Envíe su categoría, mercado objetivo, rango de cantidad, necesidades de empaque y fecha de lanzamiento. Responderemos con una ruta práctica de muestras y MOQ.",
+    ctaPrimary: "Solicitar cotización",
+    ctaSecondary: "Ver colecciones",
     quickTitle: "Empresa",
     productTitle: "Colecciones",
     supportTitle: "Servicios",
@@ -89,9 +90,34 @@ const bottomLinks = [
   { href: "/return-policy", label: "Return Policy" }
 ];
 
+const spanishLinkLabels: Readonly<Record<string, string>> = {
+  "/factory": "Fábrica y calidad",
+  "/contact": "Contacto",
+  "/oem-odm": "Servicios de marca propia",
+  "/packaging": "Etiquetas y empaque personalizados"
+};
+
 export default function SiteFooter({ initialLang }: SiteFooterProps) {
   const t = copy[initialLang];
   const year = new Date().getFullYear();
+  const localizedHref = (englishPath: string) => (initialLang === "es" ? localeHref("es", englishPath) : englishPath);
+  const localizeLinks = (links: ReadonlyArray<{ href: string; label: string }>) =>
+    links
+      .map((item) => ({
+        ...item,
+        href: localizedHref(item.href),
+        label: initialLang === "es" ? spanishLinkLabels[item.href] ?? item.label : item.label
+      }))
+      .filter((item): item is { href: string; label: string } => Boolean(item.href));
+  const localizedCompanyLinks = localizeLinks(companyLinks);
+  const localizedServiceLinks = localizeLinks(serviceLinks);
+  const localizedBottomLinks = localizeLinks(bottomLinks);
+  const localizedCollectionLinks: Array<{ href: string; label: string }> =
+    initialLang === "es"
+      ? [{ href: localeHref("es", "/products")!, label: "Productos" }]
+      : launchCollections.slice(0, 6).map(({ href, title }) => ({ href, label: title }));
+  const contactHref = localizedHref("/contact") ?? "/contact";
+  const productsHref = localizedHref("/products") ?? "/products";
 
   return (
     <footer className="site-footer-shell mt-16">
@@ -108,10 +134,10 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
               </p>
             </div>
             <div className="flex flex-wrap gap-3 lg:justify-end">
-              <Link href="/contact" className="btn btn-primary site-footer-btn-primary">
+              <Link href={contactHref} className="btn btn-primary site-footer-btn-primary">
                 {t.ctaPrimary}
               </Link>
-              <Link href="/products" className="btn site-footer-btn-secondary">
+              <Link href={productsHref} className="btn site-footer-btn-secondary">
                 {t.ctaSecondary}
               </Link>
             </div>
@@ -129,7 +155,7 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
           <div>
             <p className="site-footer-heading">{t.quickTitle}</p>
             <div className="mt-3 grid gap-2.5">
-              {companyLinks.map((item) => (
+              {localizedCompanyLinks.map((item) => (
                 <Link key={item.href} href={item.href} className="site-footer-link">
                   {item.label}
                 </Link>
@@ -140,9 +166,9 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
           <div>
             <p className="site-footer-heading">{t.productTitle}</p>
             <div className="mt-3 grid gap-2.5">
-              {launchCollections.slice(0, 6).map((item) => (
+              {localizedCollectionLinks.map((item) => (
                 <Link key={item.href} href={item.href} className="site-footer-link">
-                  {item.title}
+                  {item.label}
                 </Link>
               ))}
             </div>
@@ -151,7 +177,7 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
           <div>
             <p className="site-footer-heading">{t.supportTitle}</p>
             <div className="mt-3 grid gap-2.5">
-              {serviceLinks.map((item) => (
+              {localizedServiceLinks.map((item) => (
                 <Link key={item.href} href={item.href} className="site-footer-link">
                   {item.label}
                 </Link>
@@ -173,7 +199,7 @@ export default function SiteFooter({ initialLang }: SiteFooterProps) {
             (c) {year} {companyInfo.name}. {t.rights}
           </p>
           <div className="flex flex-wrap items-center gap-4">
-            {bottomLinks.map((item) => (
+            {localizedBottomLinks.map((item) => (
               <Link key={item.href} href={item.href} className="site-footer-bottom-link">
                 {item.label}
               </Link>
