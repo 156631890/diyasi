@@ -250,6 +250,7 @@ test("all public URLs use the canonical www origin", () => {
 test("Spanish routes have explicit public URLs", () => {
   expect(localeHref("es", "/")).toBe("/es");
   expect(localeHref("es", "/contact")).toBe("/es/contacto");
+  expect(localeHref("es", "/about")).toBeUndefined();
   expect(localeHref("en", "/contact")).toBe("/contact");
 });
 ```
@@ -274,7 +275,7 @@ test("MOQ routes remain distinct commercial paths", () => {
 
 - [ ] **Step 2: Run the policy tests and confirm they fail.**
 
-Run: `npm test -- --run apps/web/tests/site-config.test.ts apps/web/tests/moq-routes.test.ts`
+Run: `npm test -- --run tests/site-config.test.ts tests/moq-routes.test.ts`
 
 Expected: FAIL because the new modules do not exist.
 
@@ -309,20 +310,21 @@ const spanishRoutes: Record<string, string> = {
   "/contact": "/es/contacto"
 };
 
-export function localeHref(locale: PublicLocale, englishPath: string): string {
-  return locale === "es" ? spanishRoutes[englishPath] ?? "/es" : englishPath;
+export function localeHref(locale: PublicLocale, englishPath: string): string | undefined {
+  return locale === "es" ? spanishRoutes[englishPath] : englishPath;
 }
 
 export function alternatesFor(englishPath: string) {
+  const spanishPath = localeHref("es", englishPath);
   return {
     en: canonicalUrl(englishPath),
-    es: canonicalUrl(localeHref("es", englishPath)),
+    ...(spanishPath ? { es: canonicalUrl(spanishPath) } : {}),
     "x-default": canonicalUrl(englishPath)
   };
 }
 ```
 
-Import `canonicalUrl` inside the module. Create `apps/web/lib/moq-routes.ts` with these exact public boundaries:
+Import `canonicalUrl` inside the module. Never map an unsupported English page to `/es`; it has no equivalent until a real counterpart is added. Create `apps/web/lib/moq-routes.ts` with these exact public boundaries:
 
 ```ts
 export const moqRoutes = [
@@ -362,7 +364,7 @@ Update `vercel.json` so the controllable apex host redirects to the canonical ho
 Run:
 
 ```powershell
-npm test -- --run apps/web/tests/site-config.test.ts apps/web/tests/moq-routes.test.ts
+npm test -- --run tests/site-config.test.ts tests/moq-routes.test.ts
 npm run lint
 npm run build
 ```
@@ -407,7 +409,7 @@ test("sitemap uses explicit approved paths", () => {
 
 - [ ] **Step 2: Run the test and confirm it fails.**
 
-Run: `npm test -- --run apps/web/tests/indexable-content.test.ts`
+Run: `npm test -- --run tests/indexable-content.test.ts`
 
 Expected: FAIL because `indexable-content.ts` is absent.
 
@@ -474,7 +476,7 @@ Remove `safeFetchJson` and `getCatalogProducts` from `apps/web/app/sitemap.ts`. 
 Run:
 
 ```powershell
-npm test -- --run apps/web/tests/indexable-content.test.ts
+npm test -- --run tests/indexable-content.test.ts
 npm run lint
 npm run build
 ```
@@ -533,7 +535,7 @@ test("Spanish launch set has eight unique acquisition routes", () => {
 
 - [ ] **Step 2: Run the test and confirm it fails.**
 
-Run: `npm test -- --run apps/web/tests/localized-pages.test.ts`
+Run: `npm test -- --run tests/localized-pages.test.ts`
 
 Expected: FAIL because the Spanish content module does not exist.
 
@@ -597,7 +599,7 @@ Pass counterpart paths on English home, products, OEM/ODM, packaging, factory, a
 Run:
 
 ```powershell
-npm test -- --run apps/web/tests/localized-pages.test.ts apps/web/tests/site-config.test.ts
+npm test -- --run tests/localized-pages.test.ts tests/site-config.test.ts
 npm run lint
 npm run build
 ```
@@ -652,7 +654,7 @@ test("WhatsApp links preserve page and project context", () => {
 
 - [ ] **Step 2: Run the test and confirm it fails.**
 
-Run: `npm test -- --run apps/web/tests/conversion-events.test.ts`
+Run: `npm test -- --run tests/conversion-events.test.ts`
 
 Expected: FAIL because `conversion-events.ts` does not exist.
 
@@ -715,7 +717,7 @@ Remove the public paid-sample purchase action from homepage-linked product cards
 Run:
 
 ```powershell
-npm test -- --run apps/web/tests/conversion-events.test.ts apps/web/tests/moq-routes.test.ts
+npm test -- --run tests/conversion-events.test.ts tests/moq-routes.test.ts
 npm run lint
 npm run build
 ```
@@ -874,7 +876,7 @@ test("every buyer resource has facts, FAQ, and a conversion route", () => {
 
 - [ ] **Step 2: Run the test and confirm it fails on missing structural fields.**
 
-Run: `npm test -- --run apps/web/tests/resources.test.ts`
+Run: `npm test -- --run tests/resources.test.ts`
 
 Expected: FAIL for any article without the required visible fact table, FAQ, or CTA block.
 
@@ -895,7 +897,7 @@ Add the resources hub, the low-MOQ route, each collection page, the Spanish home
 Run:
 
 ```powershell
-npm test -- --run apps/web/tests/resources.test.ts
+npm test -- --run tests/resources.test.ts
 npm run lint
 npm run build
 ```
@@ -936,7 +938,7 @@ test("protected routes cover every primary acquisition surface", () => {
 
 - [ ] **Step 2: Run the test and confirm it fails.**
 
-Run: `npm test -- --run apps/web/tests/seo-contract.test.ts`
+Run: `npm test -- --run tests/seo-contract.test.ts`
 
 Expected: FAIL because `protectedRoutes` does not yet exist.
 
@@ -1015,7 +1017,7 @@ test("release workflow gates the web quality contract", async () => {
 
 - [ ] **Step 2: Run the test and confirm it fails.**
 
-Run: `npm test -- --run apps/web/tests/release-docs.test.ts`
+Run: `npm test -- --run tests/release-docs.test.ts`
 
 Expected: FAIL because the quality workflow does not exist.
 
@@ -1093,7 +1095,7 @@ NEXT_PUBLIC_BACKEND_URL=https://your-api.up.railway.app
 Run:
 
 ```powershell
-npm test -- --run apps/web/tests/release-docs.test.ts
+npm test -- --run tests/release-docs.test.ts
 npm run lint
 npm test
 npm run build
