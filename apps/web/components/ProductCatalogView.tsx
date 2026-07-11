@@ -19,7 +19,6 @@ type ProductCatalogCopy = {
   noProducts: string;
   noImage: string;
   quote: string;
-  paidSample: string;
   compare: string;
   compareTray: string;
   compareOpen: string;
@@ -27,8 +26,6 @@ type ProductCatalogCopy = {
   compareRemove: string;
   compareLimit: string;
   compareEmpty: string;
-  compareMOQ: string;
-  comparePrice: string;
   compareCategory: string;
   compareOEM: string;
   items: string;
@@ -41,12 +38,10 @@ type ProductCatalogCopy = {
   loadMore: string;
   searchLabel: string;
   searchPlaceholder: string;
-  moqLabel: string;
-  priceLabel: string;
   quickView: string;
   inStock: string;
   oemReady: string;
-  lowMoq: string;
+  projectConfirmation: string;
   close: string;
 };
 
@@ -60,10 +55,7 @@ export type ProductCatalogItem = {
   hoverImage: string;
   inStock: boolean;
   oemReady: boolean;
-  lowMoq: boolean;
-  moq?: string;
   fabric?: string;
-  priceText?: string;
 };
 
 type ProductCatalogViewProps = {
@@ -131,7 +123,7 @@ export default function ProductCatalogView({ products, categories, copy }: Produ
   const [selectedFamily, setSelectedFamily] = useState<string>("all");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [query, setQuery] = useState("");
-  const [quickFilter, setQuickFilter] = useState<"all" | "in_stock" | "oem" | "low_moq">("all");
+  const [quickFilter, setQuickFilter] = useState<"all" | "in_stock" | "oem">("all");
   const [visibleCount, setVisibleCount] = useState(INITIAL_PAGE_SIZE);
   const [compareIds, setCompareIds] = useState<string[]>([]);
   const [compareOpen, setCompareOpen] = useState(false);
@@ -182,8 +174,7 @@ export default function ProductCatalogView({ products, categories, copy }: Produ
       const byQuickFilter =
         deferredQuickFilter === "all" ||
         (deferredQuickFilter === "in_stock" && product.inStock) ||
-        (deferredQuickFilter === "oem" && product.oemReady) ||
-        (deferredQuickFilter === "low_moq" && product.lowMoq);
+        (deferredQuickFilter === "oem" && product.oemReady);
       return byFamily && byCategory && byQuery && byQuickFilter;
     });
   }, [deferredCategory, deferredFamily, deferredQuery, deferredQuickFilter, sortedProducts]);
@@ -272,15 +263,14 @@ export default function ProductCatalogView({ products, categories, copy }: Produ
             {[
               ["all", copy.all],
               ["in_stock", copy.inStock],
-              ["oem", copy.oemReady],
-              ["low_moq", copy.lowMoq]
+              ["oem", copy.oemReady]
             ].map(([value, label]) => (
               <button
                 key={value}
                 type="button"
                 className={`catalog-quick-pill ${quickFilter === value ? "catalog-quick-pill-active" : ""}`}
                 onClick={() => {
-                  setQuickFilter(value as "all" | "in_stock" | "oem" | "low_moq");
+                  setQuickFilter(value as "all" | "in_stock" | "oem");
                   setVisibleCount(INITIAL_PAGE_SIZE);
                 }}
               >
@@ -398,24 +388,12 @@ export default function ProductCatalogView({ products, categories, copy }: Produ
                         {product.oemReady && (
                           <span className="catalog-card-tag">{copy.oemReady}</span>
                         )}
-                        {product.lowMoq && (
-                          <span className="catalog-card-tag">{copy.lowMoq}</span>
-                        )}
                       </div>
 
                       <div className="catalog-card-clean-bottom mt-3 border-t border-[#d9e2dc]/40 pt-2.5">
-                        <div className="flex flex-col">
-                          {product.priceText && (
-                            <span className="catalog-card-clean-price font-bold text-[#0e5b51]">
-                              {product.priceText}
-                            </span>
-                          )}
-                          {product.moq && (
-                            <span className="text-[10px] text-[#7d8a85] mt-0.5">
-                              MOQ: {product.moq}
-                            </span>
-                          )}
-                        </div>
+                        <Link href="/contact" className="catalog-card-clean-link">
+                          {copy.quote}
+                        </Link>
                         <span className="inline-block rounded bg-[#f3f7f4] px-2 py-0.5 text-[10px] font-mono text-[#57635e]">
                           {product.displayId}
                         </span>
@@ -561,30 +539,23 @@ export default function ProductCatalogView({ products, categories, copy }: Produ
                     ))}
                   </tr>
                   <tr className="border-b border-gray-100 hover:bg-[#fffdf8]">
-                    <td className="py-3 font-bold text-gray-500 text-xs">{copy.comparePrice}</td>
-                    {compareProducts.map((item) => (
-                      <td key={`price-${item.product_id}`} className="py-3 px-3 text-center text-xs font-bold text-[#0e5b51]">{item.priceText || "-"}</td>
-                    ))}
-                    {Array.from({ length: 4 - compareProducts.length }).map((_, idx) => (
-                      <td key={`empty-price-${idx}`} className="py-3 px-3 border-l border-gray-100"></td>
-                    ))}
-                  </tr>
-                  <tr className="border-b border-gray-100 hover:bg-[#fffdf8]">
-                    <td className="py-3 font-bold text-gray-500 text-xs">{copy.compareMOQ}</td>
-                    {compareProducts.map((item) => (
-                      <td key={`moq-${item.product_id}`} className="py-3 px-3 text-center text-xs font-medium text-gray-700">{item.moq || "-"}</td>
-                    ))}
-                    {Array.from({ length: 4 - compareProducts.length }).map((_, idx) => (
-                      <td key={`empty-moq-${idx}`} className="py-3 px-3 border-l border-gray-100"></td>
-                    ))}
-                  </tr>
-                  <tr className="border-b border-gray-100 hover:bg-[#fffdf8]">
                     <td className="py-3 font-bold text-gray-500 text-xs">Fabric</td>
                     {compareProducts.map((item) => (
                       <td key={`fab-${item.product_id}`} className="py-3 px-3 text-center text-xs text-[#5f6b66]">{item.fabric || "-"}</td>
                     ))}
                     {Array.from({ length: 4 - compareProducts.length }).map((_, idx) => (
                       <td key={`empty-fab-${idx}`} className="py-3 px-3 border-l border-gray-100"></td>
+                    ))}
+                  </tr>
+                  <tr className="border-b border-gray-100 hover:bg-[#fffdf8]">
+                    <td className="py-3 font-bold text-gray-500 text-xs">{copy.inStock}</td>
+                    {compareProducts.map((item) => (
+                      <td key={`availability-${item.product_id}`} className="py-3 px-3 text-center text-xs text-[#5f6b66]">
+                        {item.inStock ? copy.inStock : copy.projectConfirmation}
+                      </td>
+                    ))}
+                    {Array.from({ length: 4 - compareProducts.length }).map((_, idx) => (
+                      <td key={`empty-availability-${idx}`} className="py-3 px-3 border-l border-gray-100"></td>
                     ))}
                   </tr>
                   <tr className="border-b border-gray-100 hover:bg-[#fffdf8]">
@@ -609,6 +580,9 @@ export default function ProductCatalogView({ products, categories, copy }: Produ
                         <div className="flex flex-col gap-2 items-center">
                           <Link href={`/products/${encodeURIComponent(item.product_id)}`} className="btn btn-soft text-[10px] py-1 px-3">
                             {copy.viewDetails}
+                          </Link>
+                          <Link href="/contact" className="catalog-card-clean-link">
+                            {copy.quote}
                           </Link>
                           <button
                             type="button"

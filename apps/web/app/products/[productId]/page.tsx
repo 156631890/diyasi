@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import BuyNowButton from "@/components/BuyNowButton";
 import CompareButton from "@/components/CompareButton";
 import ProductGallery from "@/components/ProductGallery";
 import ProductInquiryForm from "@/components/ProductInquiryForm";
 import { getCatalogProductById, getCatalogProducts } from "@/lib/catalog-source";
+import { getIndexableProduct } from "@/lib/indexable-products";
 import {
   buildGalleryImages,
   DisplayProduct,
@@ -14,33 +14,28 @@ import {
   resolveDisplayDescription,
   resolveCustomizationText,
   resolveDisplayTitle,
-  resolveMoqText,
-  resolvePrice,
-  resolvePriceText,
   resolveProductionTimeText,
   resolveSampleTimeText,
   resolveSuitableFor,
   resolvePrimaryImage,
   topFamily,
   isInStock,
-  isOemReady,
-  isLowMoq
+  isOemReady
 } from "@/lib/product-display";
 import { buildBreadcrumbJsonLd, buildMetadata, absoluteUrl } from "@/lib/seo";
 import { SiteLang } from "@/lib/i18n";
+import { moqRoutes } from "@/lib/moq-routes";
 import { getServerLang } from "@/lib/server-lang";
-import { launchCollections, moqTiers, qualitySteps } from "@/lib/site-info";
+import { launchCollections, qualitySteps } from "@/lib/site-info";
 
 const copy: Record<
   SiteLang,
   {
     back: string;
     quote: string;
-    paidSample: string;
     overview: string;
     category: string;
     fabric: string;
-    moq: string;
     sampleTime: string;
     productionTime: string;
     color: string;
@@ -52,10 +47,8 @@ const copy: Record<
     collectionLabel: string;
     overviewLabel: string;
     overviewIntro: string;
-    referencePrice: string;
     inStock: string;
     oemReady: string;
-    lowMoq: string;
     addCompare: string;
     removeCompare: string;
     compareLimit: string;
@@ -64,11 +57,9 @@ const copy: Record<
   en: {
     back: "Back to Products",
     quote: "Start a Conversation",
-    paidSample: "Paid Sample",
     overview: "Product Specifications",
     category: "Category",
     fabric: "Fabric",
-    moq: "MOQ",
     sampleTime: "Sample Time",
     productionTime: "Production Time",
     color: "Color",
@@ -80,10 +71,8 @@ const copy: Record<
     collectionLabel: "Collection",
     overviewLabel: "Overview",
     overviewIntro: "A focused product brief for brand, retail, and private label development.",
-    referencePrice: "Reference Price",
     inStock: "In Stock",
     oemReady: "OEM Ready",
-    lowMoq: "Low MOQ",
     addCompare: "Compare Product",
     removeCompare: "Remove Compare",
     compareLimit: "You can compare up to 4 products at a time."
@@ -91,11 +80,9 @@ const copy: Record<
   zh: {
     back: "返回产品列表",
     quote: "发起询盘",
-    paidSample: "付费打样",
     overview: "产品规格",
     category: "分类",
     fabric: "面料",
-    moq: "起订量",
     sampleTime: "打样时间",
     productionTime: "生产周期",
     color: "颜色",
@@ -107,10 +94,8 @@ const copy: Record<
     collectionLabel: "系列",
     overviewLabel: "概览",
     overviewIntro: "面向品牌、零售与贴牌开发的精简产品信息。",
-    referencePrice: "参考价格",
     inStock: "有现货",
     oemReady: "支持贴牌",
-    lowMoq: "小起订量",
     addCompare: "对比产品",
     removeCompare: "取消对比",
     compareLimit: "一次最多可以对比 4 个产品。"
@@ -118,11 +103,9 @@ const copy: Record<
   es: {
     back: "Volver a Productos",
     quote: "Iniciar Consulta",
-    paidSample: "Muestra Pagada",
     overview: "Especificaciones del Producto",
     category: "Categoria",
     fabric: "Tejido",
-    moq: "MOQ",
     sampleTime: "Tiempo de Muestra",
     productionTime: "Tiempo de Produccion",
     color: "Color",
@@ -134,10 +117,8 @@ const copy: Record<
     collectionLabel: "Coleccion",
     overviewLabel: "Resumen",
     overviewIntro: "Un resumen de producto pensado para desarrollo de marca, retail y private label.",
-    referencePrice: "Precio de Referencia",
     inStock: "En Stock",
     oemReady: "Soporta OEM",
-    lowMoq: "Bajo MOQ",
     addCompare: "Comparar producto",
     removeCompare: "Eliminar de comparación",
     compareLimit: "Puedes comparar hasta 4 productos a la vez."
@@ -186,14 +167,17 @@ export async function generateMetadata({ params }: ProductDetailPageProps): Prom
   }
 
   const typedProduct = product as DisplayProduct;
-  const title = resolveDisplayTitle(typedProduct);
+  const reviewedProduct = getIndexableProduct(typedProduct.product_id);
+  const title = reviewedProduct?.title || resolveDisplayTitle(typedProduct);
   const description = resolveDisplayDescription(typedProduct);
 
-  return buildMetadata({
+  const metadata = buildMetadata({
     title,
     description,
     path: `/products/${encodeURIComponent(typedProduct.product_id)}`
   });
+
+  return reviewedProduct ? metadata : { ...metadata, robots: { index: false, follow: true } };
 }
 
 export default async function ProductDetailPage({ params }: ProductDetailPageProps) {
@@ -280,22 +264,9 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                     {isOemReady(item) && (
                       <span className="catalog-card-tag">{t.oemReady || "OEM Ready"}</span>
                     )}
-                    {isLowMoq(item) && (
-                      <span className="catalog-card-tag">{t.lowMoq || "Low MOQ"}</span>
-                    )}
                   </div>
 
                   <div className="catalog-card-clean-bottom mt-3 border-t border-[#d9e2dc]/40 pt-2.5">
-                    <div className="flex flex-col">
-                      <span className="catalog-card-clean-price font-bold text-[#0e5b51]">
-                        {resolvePriceText(item)}
-                      </span>
-                      {item.moq && (
-                        <span className="text-[10px] text-[#7d8a85] mt-0.5">
-                          MOQ: {item.moq}
-                        </span>
-                      )}
-                    </div>
                     <span className="inline-block rounded bg-[#f3f7f4] px-2 py-0.5 text-[10px] font-mono text-[#57635e]">
                       {resolveDisplayProductId(item)}
                     </span>
@@ -309,33 +280,37 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
         <section className="mt-10 rounded-lg border border-[#d9e2dc] bg-[#fffdf8] p-6">
           <h2 className="card-title-standard text-[#1d2521]">MOQ and development route</h2>
           <div className="mt-4 grid gap-3 md:grid-cols-2">
-            {moqTiers.map((item) => (
+            {moqRoutes.map((item) => (
               <p key={item.label} className="text-sm leading-6 text-[#5f6b66]">
                 <strong className="text-[#1d2521]">{item.label}:</strong> {item.value}
               </p>
             ))}
           </div>
+          <p className="mt-3 text-sm leading-6 text-[#5f6b66]">Final MOQ, availability, and timing are confirmed for each project.</p>
         </section>
       </main>
     );
   }
 
   const typedProduct = product as DisplayProduct;
-  const displayTitle = resolveDisplayTitle(typedProduct);
+  const reviewedProduct = getIndexableProduct(typedProduct.product_id);
+  const displayTitle = reviewedProduct?.title || resolveDisplayTitle(typedProduct);
   const displayProductId = resolveDisplayProductId(typedProduct);
   const displayDescription = resolveDisplayDescription(typedProduct);
-  const price = resolvePrice(typedProduct);
-  const priceText = resolvePriceText(typedProduct);
   const family = topFamily(typedProduct.category);
   const galleryImages = buildGalleryImages(typedProduct);
   const customizationOptions = resolveCustomizationText();
   const suitableFor = resolveSuitableFor(typedProduct);
+  const moqRoute = reviewedProduct ? moqRoutes.find((item) => item.id === reviewedProduct.route) : undefined;
+  const reviewedCollection = reviewedProduct ? findCollection(reviewedProduct.collectionSlug) : undefined;
+  const commercialContext = moqRoute
+    ? `${moqRoute.label}: ${moqRoute.value}. ${moqRoute.summary} Final MOQ, availability, and timing are confirmed for each project.`
+    : null;
   const specRows = [
     { label: t.category, value: typedProduct.category },
     { label: t.fabric, value: typedProduct.fabric || "Fabric can be confirmed during sampling." },
     { label: t.color, value: typedProduct.color || "Stock colors and custom colors available by project." },
     { label: t.size, value: typedProduct.size || "XS to XL; extended size range can be reviewed by project." },
-    { label: t.moq, value: resolveMoqText(typedProduct) },
     { label: t.sampleTime, value: resolveSampleTimeText(typedProduct) },
     { label: t.productionTime, value: resolveProductionTimeText(typedProduct) },
     { label: "Packaging", value: "Custom label, hangtag, polybag, gift box, barcode sticker, and carton mark available." },
@@ -361,16 +336,10 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
     image: galleryImages.map((image) => (image.startsWith("http") ? image : absoluteUrl(image))),
     sku: displayProductId,
     category: typedProduct.category,
+    material: typedProduct.fabric || undefined,
     brand: {
       "@type": "Brand",
       name: "YiWu DiYaSi"
-    },
-    offers: {
-      "@type": "Offer",
-      priceCurrency: "USD",
-      price: price,
-      availability: "https://schema.org/InStock",
-      url: absoluteUrl(`/products/${encodeURIComponent(typedProduct.product_id)}`)
     }
   };
 
@@ -407,20 +376,15 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
               <p className="catalog-detail-intro-text">{t.overviewIntro}</p>
             </div>
             <p className="catalog-detail-desc">{displayDescription}</p>
-          </div>
-
-          <div className="catalog-detail-price-row">
-            <p className="catalog-detail-price-label">{t.referencePrice}</p>
-            <p className="catalog-detail-price">{priceText}</p>
+            {commercialContext ? <p className="catalog-detail-intro-text">{commercialContext}</p> : null}
+            {reviewedCollection ? (
+              <Link href={reviewedCollection.href} className="catalog-card-clean-link">
+                {reviewedCollection.title}
+              </Link>
+            ) : null}
           </div>
 
           <div className="catalog-detail-actions">
-            <BuyNowButton
-              title={`${displayTitle} - ${t.paidSample}`}
-              unitAmountUsd={price}
-              label={t.paidSample}
-              className="btn btn-primary flex-1"
-            />
             <Link href="/contact" className="btn btn-soft flex-1">
               {t.quote}
             </Link>

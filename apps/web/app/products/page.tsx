@@ -5,13 +5,11 @@ import { getCatalogCategories, getCatalogProducts, type CatalogProduct } from "@
 import { SiteLang } from "@/lib/i18n";
 import {
   isInStock,
-  isLowMoq,
   isOemReady,
   resolveDisplayProductId,
   resolveDisplayTitle,
   resolveHoverImage,
-  resolvePrimaryImage,
-  resolvePriceText
+  resolvePrimaryImage
 } from "@/lib/product-display";
 import { absoluteUrl, buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { getServerLang } from "@/lib/server-lang";
@@ -19,7 +17,7 @@ import { getServerLang } from "@/lib/server-lang";
 export const metadata: Metadata = buildMetadata({
   title: "Wholesale Underwear Collections — Launch-Ready Intimates Catalog",
   description:
-    "Browse our wholesale underwear catalog: seamless panties, bras, shapewear, period underwear, activewear, and more. Ready stock from 100 pcs, private label from 500 pcs.",
+    "Browse our wholesale underwear catalog: seamless panties, bras, shapewear, period underwear, activewear, and more. Project requirements, availability, and timing are confirmed before quotation.",
   path: "/products"
 });
 
@@ -33,7 +31,6 @@ const copy: Record<
     noProducts: string;
     noImage: string;
     quote: string;
-    paidSample: string;
     compare: string;
     compareTray: string;
     compareOpen: string;
@@ -41,8 +38,6 @@ const copy: Record<
     compareRemove: string;
     compareLimit: string;
     compareEmpty: string;
-    compareMOQ: string;
-    comparePrice: string;
     compareCategory: string;
     compareOEM: string;
     items: string;
@@ -55,12 +50,10 @@ const copy: Record<
     loadMore: string;
     searchLabel: string;
     searchPlaceholder: string;
-    moqLabel: string;
-    priceLabel: string;
     quickView: string;
     inStock: string;
     oemReady: string;
-    lowMoq: string;
+    projectConfirmation: string;
     close: string;
   }
 > = {
@@ -72,16 +65,13 @@ const copy: Record<
     noProducts: "No products found in this category yet.",
     noImage: "Image coming soon",
     quote: "Start a Conversation",
-    paidSample: "Paid Sample",
     compare: "Compare",
     compareTray: "Product comparison",
     compareOpen: "Open comparison",
     compareClear: "Clear",
     compareRemove: "Remove",
     compareLimit: "Compare up to 4 products.",
-    compareEmpty: "Select products to compare MOQ, price range, category, and OEM readiness.",
-    compareMOQ: "MOQ",
-    comparePrice: "Price",
+    compareEmpty: "Select products to compare category, fabric, availability, and OEM readiness.",
     compareCategory: "Category",
     compareOEM: "OEM",
     items: "items",
@@ -93,13 +83,11 @@ const copy: Record<
     subcategoryLabel: "Filters",
     loadMore: "Load more",
     searchLabel: "Search",
-    searchPlaceholder: "Search by product name, fabric, or MOQ",
-    moqLabel: "MOQ",
-    priceLabel: "Range",
+    searchPlaceholder: "Search by product name or fabric",
     quickView: "Quick View",
     inStock: "In Stock",
     oemReady: "OEM Ready",
-    lowMoq: "Low MOQ",
+    projectConfirmation: "MOQ, availability, and timing are confirmed for each project.",
     close: "Close"
   },
   zh: {
@@ -110,16 +98,13 @@ const copy: Record<
     noProducts: "当前分类下暂无产品。",
     noImage: "图片即将更新",
     quote: "发起询盘",
-    paidSample: "付费打样",
     compare: "对比",
     compareTray: "产品对比",
     compareOpen: "打开对比",
     compareClear: "清空",
     compareRemove: "移除",
     compareLimit: "最多可对比 4 款产品。",
-    compareEmpty: "选择产品后，可比较 MOQ、价格区间、分类和 OEM 支持。",
-    compareMOQ: "MOQ",
-    comparePrice: "价格",
+    compareEmpty: "选择产品后，可比较分类、面料、可用性和 OEM 支持。",
     compareCategory: "分类",
     compareOEM: "OEM",
     items: "款",
@@ -131,13 +116,11 @@ const copy: Record<
     subcategoryLabel: "筛选",
     loadMore: "加载更多",
     searchLabel: "搜索",
-    searchPlaceholder: "按产品名、面料或 MOQ 搜索",
-    moqLabel: "MOQ",
-    priceLabel: "价格区间",
+    searchPlaceholder: "按产品名或面料搜索",
     quickView: "快速预览",
     inStock: "有现货",
     oemReady: "可 OEM",
-    lowMoq: "低 MOQ",
+    projectConfirmation: "起订量、可用性和交期将在每个项目中确认。",
     close: "关闭"
   },
   es: {
@@ -148,16 +131,13 @@ const copy: Record<
     noProducts: "Todavia no hay productos en esta categoria.",
     noImage: "Imagen pendiente",
     quote: "Iniciar Consulta",
-    paidSample: "Muestra Pagada",
     compare: "Comparar",
     compareTray: "Comparacion de productos",
     compareOpen: "Abrir comparacion",
     compareClear: "Limpiar",
     compareRemove: "Quitar",
     compareLimit: "Compara hasta 4 productos.",
-    compareEmpty: "Selecciona productos para comparar MOQ, rango de precio, categoria y soporte OEM.",
-    compareMOQ: "MOQ",
-    comparePrice: "Precio",
+    compareEmpty: "Selecciona productos para comparar categoria, tejido, disponibilidad y soporte OEM.",
     compareCategory: "Categoria",
     compareOEM: "OEM",
     items: "articulos",
@@ -169,13 +149,11 @@ const copy: Record<
     subcategoryLabel: "Filtros",
     loadMore: "Cargar mas",
     searchLabel: "Buscar",
-    searchPlaceholder: "Buscar por nombre, tejido o MOQ",
-    moqLabel: "MOQ",
-    priceLabel: "Rango",
+    searchPlaceholder: "Buscar por nombre o tejido",
     quickView: "Vista Rapida",
     inStock: "En Stock",
     oemReady: "OEM Disponible",
-    lowMoq: "MOQ Bajo",
+    projectConfirmation: "El MOQ, la disponibilidad y el plazo se confirman para cada proyecto.",
     close: "Cerrar"
   }
 };
@@ -197,7 +175,6 @@ function toCatalogItem(product: CatalogProduct): ProductCatalogItem {
       product.product_name,
       product.category,
       product.fabric,
-      product.moq || "",
       product.model_number || ""
     ]
       .join(" ")
@@ -206,10 +183,7 @@ function toCatalogItem(product: CatalogProduct): ProductCatalogItem {
     hoverImage: hoverCandidate !== primaryImage ? hoverCandidate : "",
     inStock: isInStock(product),
     oemReady: isOemReady(product),
-    lowMoq: isLowMoq(product),
-    moq: product.moq,
-    fabric: product.fabric,
-    priceText: resolvePriceText(product)
+    fabric: product.fabric
   };
 }
 
@@ -251,6 +225,7 @@ export default async function ProductsPage() {
           <div className="catalog-intro-copy">
             <h1 className="catalog-intro-title">{t.title}</h1>
             {t.desc ? <p className="page-reference-body mt-3 text-[#5f6b66]">{t.desc}</p> : null}
+            <p className="page-reference-body mt-3 text-[#5f6b66]">{t.projectConfirmation}</p>
           </div>
           <div className="catalog-meta">
             <p className="catalog-meta-count">
