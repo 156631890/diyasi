@@ -220,6 +220,8 @@ git commit -m "chore: establish diyasi quality baseline"
 
 ## Task 2: Centralize the Canonical Origin, Locale Counterparts, and MOQ Paths
 
+> **Implemented correction:** Keep the approved Spanish counterpart map private to route policy until Task 4 renders those routes. Do not provide a hreflang/alternate helper before then, and never fall back from an unsupported English path to `/es`. `canonicalUrl` accepts only safe single-slash root-relative paths.
+
 **Files:**
 - Create: `apps/web/lib/site-config.ts`
 - Create: `apps/web/lib/locale-routes.ts`
@@ -232,7 +234,7 @@ git commit -m "chore: establish diyasi quality baseline"
 - Create: `apps/web/tests/site-config.test.ts`
 - Create: `apps/web/tests/moq-routes.test.ts`
 
-- [ ] **Step 1: Write failing origin, locale, and MOQ policy tests.**
+- [x] **Step 1: Write failing origin, locale, and MOQ policy tests.**
 
 Create `apps/web/tests/site-config.test.ts`:
 
@@ -273,13 +275,13 @@ test("MOQ routes remain distinct commercial paths", () => {
 });
 ```
 
-- [ ] **Step 2: Run the policy tests and confirm they fail.**
+- [x] **Step 2: Run the policy tests and confirm they fail.**
 
 Run: `npm test -- --run tests/site-config.test.ts tests/moq-routes.test.ts`
 
 Expected: FAIL because the new modules do not exist.
 
-- [ ] **Step 3: Add the single source of truth modules.**
+- [x] **Step 3: Add the single source of truth modules.**
 
 Create `apps/web/lib/site-config.ts`:
 
@@ -290,6 +292,9 @@ export const SITE_DESCRIPTION =
   "Low-MOQ private-label underwear supplier for startup brands, retailers, and wholesale buyers.";
 
 export function canonicalUrl(path = "/"): string {
+  if (!path.startsWith("/") || path.startsWith("//") || path.startsWith("/\\")) {
+    throw new Error("canonicalUrl path must be root-relative and begin with a single '/'.");
+  }
   return new URL(path, SITE_ORIGIN).toString();
 }
 ```
@@ -314,17 +319,9 @@ export function localeHref(locale: PublicLocale, englishPath: string): string | 
   return locale === "es" ? spanishRoutes[englishPath] : englishPath;
 }
 
-export function alternatesFor(englishPath: string) {
-  const spanishPath = localeHref("es", englishPath);
-  return {
-    en: canonicalUrl(englishPath),
-    ...(spanishPath ? { es: canonicalUrl(spanishPath) } : {}),
-    "x-default": canonicalUrl(englishPath)
-  };
-}
 ```
 
-Import `canonicalUrl` inside the module. Never map an unsupported English page to `/es`; it has no equivalent until a real counterpart is added. Create `apps/web/lib/moq-routes.ts` with these exact public boundaries:
+Do not add `alternatesFor` until Task 4 has rendered and verified the Spanish paths. Never map an unsupported English page to `/es`; it has no equivalent until a real counterpart is added. Create `apps/web/lib/moq-routes.ts` with these exact public boundaries:
 
 ```ts
 export const moqRoutes = [
@@ -337,7 +334,7 @@ export const moqRoutes = [
 
 Replace the `SITE_URL`, `SITE_NAME`, and `SITE_DESCRIPTION` constants in `apps/web/lib/seo.ts` with re-exports from `site-config.ts`. Replace repeated public MOQ strings in `site-info.ts`, the layout JSON-LD, and `llms.txt` with the shared route data. Do not include `www.diyasiunderwear.com` anywhere in the new modules.
 
-- [ ] **Step 4: Add the host redirect.**
+- [x] **Step 4: Add the host redirect.**
 
 Update `vercel.json` so the controllable apex host redirects to the canonical host:
 
@@ -351,7 +348,7 @@ Update `vercel.json` so the controllable apex host redirects to the canonical ho
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "yiwudiyasidress.com" }],
+      "has": [{ "type": "host", "value": "^yiwudiyasidress\\.com$" }],
       "destination": "https://www.yiwudiyasidress.com/:path*",
       "permanent": true
     }
@@ -359,7 +356,7 @@ Update `vercel.json` so the controllable apex host redirects to the canonical ho
 }
 ```
 
-- [ ] **Step 5: Run policy tests, lint, and build.**
+- [x] **Step 5: Run policy tests, lint, and build.**
 
 Run:
 
@@ -371,7 +368,7 @@ npm run build
 
 Expected: policy tests pass, no lint errors, and the build still renders every existing page.
 
-- [ ] **Step 6: Commit canonical and commercial policy.**
+- [x] **Step 6: Commit canonical and commercial policy.**
 
 ```powershell
 git add apps/web/lib/site-config.ts apps/web/lib/locale-routes.ts apps/web/lib/moq-routes.ts apps/web/lib/seo.ts apps/web/lib/site-info.ts apps/web/app/layout.tsx apps/web/app/llms.txt/route.ts apps/web/tests/site-config.test.ts apps/web/tests/moq-routes.test.ts vercel.json
