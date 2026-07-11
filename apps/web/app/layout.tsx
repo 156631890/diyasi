@@ -3,8 +3,9 @@ import { Manrope, Outfit } from "next/font/google";
 
 import SiteFooter from "@/components/SiteFooter";
 import TopNav from "@/components/TopNav";
-import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/seo";
+import { absoluteUrl, SITE_DESCRIPTION, SITE_NAME, SITE_ORIGIN } from "@/lib/seo";
 import { getServerLang } from "@/lib/server-lang";
+import { moqRoutes } from "@/lib/moq-routes";
 import { companyInfo } from "@/lib/site-info";
 
 import "./globals.css";
@@ -21,10 +22,10 @@ const bodyFont = Manrope({
   variable: "--font-body"
 });
 
-const defaultImage = `${SITE_URL}/media/home/factory-1.jpg`;
+const defaultImage = absoluteUrl("/media/home/factory-1.jpg");
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
+  metadataBase: new URL(SITE_ORIGIN),
   title: {
     default: SITE_NAME,
     template: `%s | ${SITE_NAME}`
@@ -44,13 +45,7 @@ export const metadata: Metadata = {
   creator: SITE_NAME,
   publisher: SITE_NAME,
   alternates: {
-    canonical: SITE_URL,
-    languages: {
-      'en': SITE_URL,
-      'zh': SITE_URL,
-      'es': SITE_URL,
-      'x-default': SITE_URL,
-    },
+    canonical: SITE_ORIGIN
   },
   robots: {
     index: true,
@@ -60,7 +55,7 @@ export const metadata: Metadata = {
     title: SITE_NAME,
     description: SITE_DESCRIPTION,
     type: "website",
-    url: SITE_URL,
+    url: SITE_ORIGIN,
     siteName: SITE_NAME,
     images: [defaultImage]
   },
@@ -82,7 +77,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: SITE_NAME,
-    url: SITE_URL,
+    url: SITE_ORIGIN,
     description: SITE_DESCRIPTION,
     inLanguage: ["en", "zh", "es"]
   };
@@ -92,7 +87,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     "@type": "Organization",
     name: companyInfo.name,
     alternateName: companyInfo.shortName,
-    url: SITE_URL,
+    url: SITE_ORIGIN,
     image: defaultImage,
     description: SITE_DESCRIPTION,
     foundingDate: companyInfo.establishedYear,
@@ -101,6 +96,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     faxNumber: companyInfo.fax,
     areaServed: "Worldwide",
     knowsLanguage: ["en", "zh", "es"],
+    additionalProperty: moqRoutes.map((route) => ({
+      "@type": "PropertyValue",
+      name: route.label,
+      value: route.value,
+      description: route.summary
+    })),
     address: {
       "@type": "PostalAddress",
       streetAddress: "No. 16 Dashi Road, Fotang Town",

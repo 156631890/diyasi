@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 
-export const SITE_NAME = "YiWu DiYaSi Dress Co., Ltd.";
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.yiwudiyasidress.com";
-export const SITE_DESCRIPTION =
-  "Private label intimates manufacturer for DTC, retail, and wholesale brands, covering fabric selection, fit sampling, custom labels, packaging, bulk production, and global delivery.";
+import { canonicalUrl, SITE_DESCRIPTION, SITE_NAME } from "./site-config";
+
+export { SITE_DESCRIPTION, SITE_NAME, SITE_ORIGIN } from "./site-config";
+export { SITE_ORIGIN as SITE_URL } from "./site-config";
 
 export function absoluteUrl(path = "/"): string {
-  return new URL(path, SITE_URL).toString();
+  return canonicalUrl(path);
 }
 
 export function buildMetadata({
@@ -24,13 +24,7 @@ export function buildMetadata({
     title,
     description,
     alternates: {
-      canonical: url,
-      languages: {
-        en: url,
-        zh: url,
-        es: url,
-        "x-default": url
-      }
+      canonical: url
     },
     openGraph: {
       title,

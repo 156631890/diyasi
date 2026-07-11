@@ -1,5 +1,8 @@
+import { moqRoutes } from "./moq-routes";
+import { SITE_NAME } from "./site-config";
+
 export const companyInfo = {
-  name: "YiWu DiYaSi Dress Co., Ltd.",
+  name: SITE_NAME,
   shortName: "YiWu DiYaSi",
   establishedYear: "2002",
   factoryArea: "20,000 sq m",
@@ -24,12 +27,7 @@ export const trustStats = [
   { value: "OEKO-TEX", label: "Material Review Support" }
 ];
 
-export const moqTiers = [
-  { label: "Ready Stock MOQ", value: "from 100 pcs per style when available" },
-  { label: "Private Label MOQ", value: "500 pcs per style for logo label or waistband programs" },
-  { label: "Custom Color MOQ", value: "1,000 pcs per color depending on fabric and dyeing route" },
-  { label: "Full OEM MOQ", value: "1,000-3,000 pcs per style depending on pattern, fabric, and packaging" }
-];
+export const moqTiers = moqRoutes.map(({ label, value }) => ({ label, value }));
 
 export const sampleAndLeadTimes = {
   stockFabricSample: "5-7 days for stock fabric sample",

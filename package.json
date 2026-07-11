@@ -12,5 +12,8 @@
     "start": "npm run start --workspace apps/web",
     "lint": "npm run lint --workspace apps/web",
     "test": "npm run test --workspace apps/web"
+  },
+  "devDependencies": {
+    "next": "16.2.10"
   }
 }
