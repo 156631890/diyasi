@@ -51,12 +51,16 @@
 
 **Files:**
 - Modify: `package.json`
+- Modify: `apps/package.json`
 - Modify: `apps/web/package.json`
 - Modify: `apps/web/package-lock.json`
 - Create: `apps/web/eslint.config.mjs`
 - Create: `apps/web/vitest.config.ts`
 - Create: `apps/web/tests/setup.test.ts`
+- Create: `apps/web/tests/checkout-mock-route.test.ts`
 - Modify: `apps/web/lib/server-lang.ts`
+- Modify: `apps/web/next-env.d.ts`
+- Modify: `apps/web/tsconfig.json`
 - Modify: `apps/web/app/layout.tsx`
 - Modify: `apps/web/app/admin/page.tsx`
 - Modify: `apps/web/app/about/page.tsx`
@@ -71,8 +75,15 @@
 - Modify: `apps/web/app/products/[productId]/page.tsx`
 - Modify: `apps/web/app/resources/[slug]/page.tsx`
 - Modify: `apps/web/app/sustainability/page.tsx`
+- Modify: `apps/web/app/checkout/mock/page.tsx`
+- Modify: `apps/web/app/checkout/cancel/page.tsx`
+- Modify: `apps/web/app/checkout/paypal/page.tsx`
+- Modify: `apps/web/app/checkout/success/page.tsx`
+- Modify: `apps/web/components/CompareButton.tsx`
+- Modify: `apps/web/components/PayPalPaymentsPanel.tsx`
+- Modify: `apps/web/components/ProductCatalogView.tsx`
 
-- [ ] **Step 1: Add a failing Vitest smoke test and test commands.**
+- [x] **Step 1: Add a failing Vitest smoke test and test commands.**
 
 Add this script block to `apps/web/package.json`:
 
@@ -94,8 +105,7 @@ Add this root script block to `package.json`:
   "build": "npm run build --workspace apps/web",
   "start": "npm run start --workspace apps/web",
   "lint": "npm run lint --workspace apps/web",
-  "test": "npm run test --workspace apps/web",
-  "verify:seo": "node apps/web/scripts/verify-seo.mjs"
+  "test": "npm run test --workspace apps/web"
 }
 ```
 
@@ -109,13 +119,13 @@ test("test runner is configured", () => {
 });
 ```
 
-- [ ] **Step 2: Run the new test command and confirm the expected failure.**
+- [x] **Step 2: Run the new test command and confirm the expected failure.**
 
 Run: `npm test`
 
 Expected: FAIL because Vitest is not installed and the `test` script does not yet exist in the lockfile.
 
-- [ ] **Step 3: Install the supported framework and quality dependencies.**
+- [x] **Step 3: Install the supported framework and quality dependencies.**
 
 Run:
 
@@ -155,7 +165,7 @@ export default defineConfig({
 });
 ```
 
-- [ ] **Step 4: Migrate request-time APIs required by Next.js 16.**
+- [x] **Step 4: Migrate request-time APIs required by Next.js 16.**
 
 Make `getServerLang` asynchronous and use the locale header first:
 
@@ -184,9 +194,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 ```
 
-Apply the same promise resolution to `productId`, `searchParams`, and `headers()` calls in the listed route files.
+Apply the same promise resolution to `productId`, `searchParams`, and `headers()` calls in the listed route files. This includes `/checkout/mock`, which must await its order query parameters once before calculating the fallback order data; add a regression test for the async route contract.
 
-- [ ] **Step 5: Run the framework migration checks.**
+Keep the flat ESLint core-web-vitals rules intact. If the upgraded rule detects pre-existing browser-storage hydration or third-party PayPal SDK transition code, use only narrow, documented line-level suppressions after confirming the failure; do not lower the rule globally.
+
+- [x] **Step 5: Run the framework migration checks.**
 
 Run:
 
@@ -199,10 +211,10 @@ npm audit --omit=dev --audit-level=high
 
 Expected: tests and lint pass without prompts; build passes; the production dependency audit has no high or critical finding. If the audit still reports a framework advisory, stop and diagnose the installed version before continuing.
 
-- [ ] **Step 6: Commit the foundation.**
+- [x] **Step 6: Commit the foundation.**
 
 ```powershell
-git add package.json package-lock.json apps/web/package.json apps/web/package-lock.json apps/web/eslint.config.mjs apps/web/vitest.config.ts apps/web/tests/setup.test.ts apps/web/lib/server-lang.ts apps/web/app
+git add package.json package-lock.json apps/package.json apps/web/package.json apps/web/package-lock.json apps/web/eslint.config.mjs apps/web/vitest.config.ts apps/web/tests apps/web/lib/server-lang.ts apps/web/next-env.d.ts apps/web/tsconfig.json apps/web/app apps/web/components
 git commit -m "chore: establish diyasi quality baseline"
 ```
 
@@ -942,6 +954,12 @@ Export `protectedRoutes` from `indexable-content.ts` by reading the same list at
 6. For `/es` pages, require canonical `/es...` and an English plus Spanish `hreflang` pair.
 
 Write a `.artifacts/diyasi-seo-verification.json` report containing base URL, commit SHA, checked routes, sitemap SHA-256, and timestamp. Add `.artifacts/` to `.gitignore`.
+
+Add the root command only now that its target exists:
+
+```json
+"verify:seo": "node apps/web/scripts/verify-seo.mjs"
+```
 
 - [ ] **Step 4: Run local verifier and a negative test.**
 
