@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import ResourceQuoteLink from "@/components/ResourceQuoteLink";
 import { resourceArticles, type ResourceArticleBlock } from "@/lib/resource-articles";
 import { absoluteUrl, buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 
@@ -185,9 +185,7 @@ export default async function ResourceDetailPage({ params }: Props) {
             Send product category, target market, estimated quantity, fabric direction, packaging needs, and launch timing.
           </p>
         </div>
-        <Link href="/contact" className="btn btn-primary">
-          Start a Project
-        </Link>
+        <ResourceQuoteLink resourceSlug={article.slug} />
       </section>
     </main>
   );

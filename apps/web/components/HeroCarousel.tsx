@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import WhatsAppLink from "@/components/WhatsAppLink";
+
 const heroSlide = {
   src: "/media/home/banner-2-3-4-1.jpg",
   alt: "YiWu DiYaSi underwear factory and private label manufacturing",
@@ -34,17 +36,17 @@ export default function HeroCarousel() {
             <p className="max-w-2xl text-base leading-8 text-white/88 md:text-lg">{heroSlide.desc}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                href="/contact"
+                href="#low-moq-routes"
                 className="rounded-lg bg-white px-5 py-3 text-sm font-bold text-[#173e38] shadow-[0_18px_38px_rgba(0,0,0,0.2)] transition hover:-translate-y-0.5 hover:bg-[#e7f2ef]"
               >
-                Start a Private Label Project
+                Find Your Low-MOQ Route
               </Link>
-              <Link
-                href="/products"
+              <WhatsAppLink
+                page="homepage"
                 className="rounded-lg border border-white/70 px-5 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#173e38]"
               >
-                View Launch-Ready Collections
-              </Link>
+                Discuss on WhatsApp
+              </WhatsAppLink>
             </div>
           </div>
         </div>

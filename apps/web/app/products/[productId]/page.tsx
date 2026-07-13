@@ -385,7 +385,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
           </div>
 
           <div className="catalog-detail-actions">
-            <Link href="/contact" className="btn btn-soft flex-1">
+            <Link href={`/contact?source=product&productId=${encodeURIComponent(typedProduct.product_id)}`} className="btn btn-soft flex-1">
               {t.quote}
             </Link>
             <CompareButton

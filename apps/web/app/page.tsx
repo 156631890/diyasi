@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import HeroCarousel from "@/components/HeroCarousel";
+import ProjectRouteSelector from "@/components/ProjectRouteSelector";
+import QuoteFlow from "@/components/QuoteFlow";
 import { getCatalogProducts } from "@/lib/catalog-source";
 import {
   resolveDisplayProductId,
@@ -151,7 +153,18 @@ export default async function HomePage() {
     <main className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
-      <HeroCarousel />
+       <HeroCarousel />
+
+       <section id="low-moq-routes" className="border-b border-[#d9e2dc] bg-[#f3f7f4] py-14 md:py-20">
+         <div className="container mx-auto px-4 md:px-6">
+           <div className="max-w-3xl">
+             <p className="kicker">Low-MOQ Project Routes</p>
+             <h2 className="section-title mt-2 text-[#1d2521]">Choose the route that matches your first production run</h2>
+             <p className="page-reference-body mt-4 text-[#5f6b66]">Select a route to carry it into the project quotation below. Final availability and MOQ are confirmed against materials, components, and timing.</p>
+           </div>
+           <div className="mt-8"><ProjectRouteSelector scrollTargetId="quote-flow" /></div>
+         </div>
+       </section>
 
       <section className="border-y border-[#d9e2dc] bg-[#fffdf8] py-5">
         <div className="container mx-auto grid gap-3 px-4 md:grid-cols-3 md:px-6 xl:grid-cols-6">
@@ -395,18 +408,14 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="bg-[#162520] py-14 text-white md:py-20">
-        <div className="container mx-auto flex flex-col gap-6 px-4 md:flex-row md:items-center md:justify-between md:px-6">
+      <section id="quote-flow" className="bg-[#f3f7f4] py-14 md:py-20">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl">
-            <p className="kicker text-[#d7eee8]">Final CTA</p>
-            <h2 className="heading-font mt-2 text-4xl font-semibold">Start your private label underwear project</h2>
-            <p className="mt-4 text-sm leading-7 text-white/82">
-              Send category, target market, estimated quantity, private label needs, packaging plan, and launch date.
-            </p>
+            <p className="kicker">Start a Project</p>
+            <h2 className="section-title mt-2 text-[#1d2521]">Build a practical quotation brief</h2>
+            <p className="page-reference-body mt-4 text-[#5f6b66]">Share the route, quantity, market, and development details needed for a useful first reply.</p>
           </div>
-          <Link href="/contact" className="btn bg-white text-[#1d2521] hover:bg-[#dce9e5]">
-            Contact Factory Team
-          </Link>
+          <div className="mt-8 max-w-5xl"><QuoteFlow page="homepage" source="home" /></div>
         </div>
       </section>
     </main>
