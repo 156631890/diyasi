@@ -7,6 +7,7 @@ from migrations import run_migrations
 from routers import (
     analytics,
     chatbot,
+    conversions,
     crm,
     health,
     inquiries,
@@ -53,6 +54,7 @@ app.include_router(crm.router)
 app.include_router(seo.router)
 app.include_router(outreach.router)
 app.include_router(analytics.router)
+app.include_router(conversions.router)
 app.include_router(chatbot.router)
 app.include_router(inquiries.router)
 app.include_router(media.router)

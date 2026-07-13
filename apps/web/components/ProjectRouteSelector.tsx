@@ -13,7 +13,12 @@ type ProjectRouteSelectorProps = {
 
 export default function ProjectRouteSelector({ value, onChange, scrollTargetId }: ProjectRouteSelectorProps) {
   function selectRoute(route: ProjectRouteId) {
-    trackConversionEvent("low_moq_route_selected");
+    const locale = window.location.pathname === "/es" || window.location.pathname.startsWith("/es/") ? "es" : "en";
+    trackConversionEvent("low_moq_route_selected", {
+      path: window.location.pathname,
+      locale,
+      projectRoute: route
+    });
     onChange?.(route);
 
     if (scrollTargetId && typeof window !== "undefined") {

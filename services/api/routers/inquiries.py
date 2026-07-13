@@ -53,6 +53,13 @@ def create_inquiry(payload: InquiryCreate, request: Request, db: Session = Depen
         email=payload.email.strip(),
         company=payload.company.strip(),
         message=message,
+        country=payload.country.strip(),
+        category=payload.category.strip(),
+        quantity=payload.quantity.strip(),
+        project_route=payload.project_route.strip(),
+        private_label=payload.private_label.strip(),
+        packaging=payload.packaging.strip(),
+        launch_date=payload.launch_date.strip(),
     )
     db.add(inquiry)
     db.commit()

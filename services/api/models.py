@@ -85,8 +85,27 @@ class Inquiry(Base):
     email: Mapped[str] = mapped_column(String(255), index=True)
     company: Mapped[str] = mapped_column(String(255), default="")
     message: Mapped[str] = mapped_column(Text, default="")
+    country: Mapped[str] = mapped_column(String(80), default="")
+    category: Mapped[str] = mapped_column(String(120), default="")
+    quantity: Mapped[str] = mapped_column(String(80), default="")
+    project_route: Mapped[str] = mapped_column(String(40), default="")
+    private_label: Mapped[str] = mapped_column(String(255), default="")
+    packaging: Mapped[str] = mapped_column(String(255), default="")
+    launch_date: Mapped[str] = mapped_column(String(40), default="")
     status: Mapped[str] = mapped_column(String(40), default="new")
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+
+
+class ConversionEvent(Base):
+    __tablename__ = "conversion_events"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    name: Mapped[str] = mapped_column(String(80), index=True)
+    path: Mapped[str] = mapped_column(String(255), default="")
+    locale: Mapped[str] = mapped_column(String(8), default="en")
+    project_route: Mapped[str] = mapped_column(String(40), default="")
+    product_id: Mapped[str] = mapped_column(String(80), default="")
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, index=True)
 
 
 class MediaAsset(Base):

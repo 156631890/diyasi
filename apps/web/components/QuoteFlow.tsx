@@ -102,7 +102,20 @@ export default function QuoteFlow({ page, source = "contact", product, category 
       const response = await fetch(`${API_BASE}/inquiries/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: form.name, email: form.email, company: form.company, message: detailMessage(), website: form.website })
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          company: form.company,
+          message: detailMessage(),
+          website: form.website,
+          country: form.market,
+          category: form.category,
+          quantity: form.quantity,
+          project_route: form.projectRoute,
+          private_label: form.label,
+          packaging: form.packaging,
+          launch_date: form.timeline
+        })
       });
       if (response.ok) {
         trackConversionEvent("quote_submitted");

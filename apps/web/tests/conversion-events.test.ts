@@ -1,18 +1,20 @@
 import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 
-import { expect, test } from "vitest";
+import { afterEach, expect, test, vi } from "vitest";
 
 import {
   approvedConversionEvents,
   buildResourceQuoteHref,
   buildWhatsAppUrl,
   isApprovedConversionEvent,
-  resolveReviewedProductTitle
+  resolveReviewedProductTitle,
+  trackConversionEvent
 } from "@/lib/conversion-events";
 
 const resourceQuoteLinkPath = fileURLToPath(new URL("../components/ResourceQuoteLink.tsx", import.meta.url));
 const quoteFlowPath = fileURLToPath(new URL("../components/QuoteFlow.tsx", import.meta.url));
+const projectRouteSelectorPath = fileURLToPath(new URL("../components/ProjectRouteSelector.tsx", import.meta.url));
 
 test("conversion analytics exposes exactly the approved event whitelist", () => {
   expect(approvedConversionEvents).toEqual([
@@ -63,4 +65,109 @@ test("resource quote CTA tracks immediately and preserves the resource source", 
   expect(source).toContain('onClick={() => trackConversionEvent("resource_to_quote")}');
   expect(source).toContain("buildResourceQuoteHref(resourceSlug)");
   expect(quoteFlowSource).not.toContain('source === "resource"');
+});
+
+afterEach(() => {
+  vi.unstubAllGlobals();
+});
+
+test("conversion tracking sends only safe context through sendBeacon", () => {
+  const sendBeacon = vi.fn<(url: string, data: BodyInit | null) => boolean>(() => true);
+  const dispatchEvent = vi.fn();
+  vi.stubGlobal("window", { location: { pathname: "/es/contact" }, dispatchEvent });
+  vi.stubGlobal("navigator", { sendBeacon });
+  vi.stubGlobal("fetch", vi.fn());
+
+  trackConversionEvent("quote_started", { projectRoute: "private-label", productId: "DYS-1601642594802" });
+
+  expect(sendBeacon).toHaveBeenCalledOnce();
+  expect(sendBeacon.mock.calls[0][0]).toBe("http://127.0.0.1:8000/analytics/events");
+  expect(dispatchEvent).toHaveBeenCalledOnce();
+});
+
+test("conversion tracking drops invalid context before beacon transport", async () => {
+  const sendBeacon = vi.fn<(url: string, data: BodyInit | null) => boolean>(() => true);
+  vi.stubGlobal("window", { location: { pathname: "/es/contacto" }, dispatchEvent: vi.fn() });
+  vi.stubGlobal("navigator", { sendBeacon });
+
+  trackConversionEvent("quote_started", {
+    path: "https://attacker.example/contact?email=buyer@example.com",
+    locale: "fr",
+    projectRoute: "private-label<script>",
+    productId: "buyer@example.com"
+  });
+
+  const beaconBody = sendBeacon.mock.calls[0][1] as Blob;
+  await expect(beaconBody.text()).resolves.toBe(
+    JSON.stringify({ name: "quote_started", path: "/es/contacto", locale: "es" })
+  );
+});
+
+test("conversion tracking drops a phone-like path suffix before beacon transport", async () => {
+  const sendBeacon = vi.fn<(url: string, data: BodyInit | null) => boolean>(() => true);
+  vi.stubGlobal("window", { location: { pathname: "/contact/13800138000" }, dispatchEvent: vi.fn() });
+  vi.stubGlobal("navigator", { sendBeacon });
+
+  trackConversionEvent("quote_started");
+
+  const beaconBody = sendBeacon.mock.calls[0][1] as Blob;
+  await expect(beaconBody.text()).resolves.toBe(
+    JSON.stringify({ name: "quote_started", path: "/", locale: "en" })
+  );
+});
+
+test("conversion tracking normalizes cross-field product context", async () => {
+  const sendBeacon = vi.fn<(url: string, data: BodyInit | null) => boolean>(() => true);
+  vi.stubGlobal("window", { location: { pathname: "/products/DYS-1601642594802" }, dispatchEvent: vi.fn() });
+  vi.stubGlobal("navigator", { sendBeacon });
+
+  trackConversionEvent("quote_started", {
+    locale: "es",
+    projectRoute: "private-label",
+    productId: "DYS-1601642594802"
+  });
+
+  const beaconBody = sendBeacon.mock.calls[0][1] as Blob;
+  await expect(beaconBody.text()).resolves.toBe(
+    JSON.stringify({
+      name: "quote_started",
+      path: "/products/DYS-1601642594802",
+      locale: "en",
+      product_id: "DYS-1601642594802"
+    })
+  );
+});
+
+test("conversion tracking avoids event-specific payloads without required context", () => {
+  const sendBeacon = vi.fn<(url: string, data: BodyInit | null) => boolean>(() => true);
+  const dispatchEvent = vi.fn();
+  vi.stubGlobal("window", { location: { pathname: "/contact" }, dispatchEvent });
+  vi.stubGlobal("navigator", { sendBeacon });
+
+  trackConversionEvent("low_moq_route_selected");
+  trackConversionEvent("resource_to_quote");
+
+  expect(sendBeacon).not.toHaveBeenCalled();
+  expect(dispatchEvent).not.toHaveBeenCalled();
+});
+
+test("project route selection records route, page, and locale context", async () => {
+  const source = await readFile(projectRouteSelectorPath, "utf8");
+
+  expect(source).toContain('trackConversionEvent("low_moq_route_selected", {');
+  expect(source).toContain("path: window.location.pathname");
+  expect(source).toContain("locale,");
+  expect(source).toContain("projectRoute: route");
+});
+
+test("conversion tracking falls back to keepalive fetch without surfacing failures", async () => {
+  const fetch = vi.fn(() => Promise.reject(new Error("network unavailable")));
+  vi.stubGlobal("window", { location: { pathname: "/contact" }, dispatchEvent: vi.fn() });
+  vi.stubGlobal("navigator", { sendBeacon: vi.fn(() => false) });
+  vi.stubGlobal("fetch", fetch);
+
+  trackConversionEvent("quote_submitted");
+  await Promise.resolve();
+
+  expect(fetch).toHaveBeenCalledWith("http://127.0.0.1:8000/analytics/events", expect.objectContaining({ keepalive: true }));
 });
