@@ -459,7 +459,7 @@ export function resolveMoqText(product: DisplayProduct): string {
   }
   const family = topFamily(product.category);
   if (family === "Men's Underwear" || family === "Women's Panties" || family === "Bras") {
-    return "Ready stock from 100 pcs when available; private label from 500 pcs; full OEM quoted by project.";
+    return "Confirm the selected style's catalogue quantity and any separate label, fabric or packaging minimums in a written quotation.";
   }
   return "Private label MOQ depends on fabric, color, size range, and packaging route.";
 }

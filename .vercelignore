@@ -1,1 +1,13 @@
 .tmp
+.env*
+**/.env*
+.npm-cache
+**/.npm-cache
+.venv
+**/.venv
+**/__pycache__
+**/.pytest_cache
+**/*.db
+**/*.sqlite3
+**/*.log
+data/generated

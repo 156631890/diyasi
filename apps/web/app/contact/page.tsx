@@ -1,49 +1,104 @@
 "use client";
-
 import { Suspense } from "react";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-
 import QuoteFlow from "@/components/QuoteFlow";
 import WhatsAppLink from "@/components/WhatsAppLink";
 import { resolveReviewedProductTitle } from "@/lib/conversion-events";
 import { companyInfo } from "@/lib/site-info";
 
-const mapEmbedUrl =
-  "https://www.google.com/maps?hl=en&gl=US&q=No.%2016%20Dashi%20Road%2C%20Fotang%20Town%2C%20Yiwu%2C%20Zhejiang%2C%20China&z=15&output=embed";
-
 function ContactFlow() {
-  const searchParams = useSearchParams();
-  const source = searchParams.get("source") === "product" ? "product" : "contact";
-  const product = resolveReviewedProductTitle(searchParams.get("productId"));
-
-  return <QuoteFlow page="contact page" source={source} product={product} />;
+  const search = useSearchParams();
+  const product = resolveReviewedProductTitle(search.get("productId"));
+  return (
+    <QuoteFlow
+      key={product ?? "contact"}
+      page="contact page"
+      source={product ? "product" : "contact"}
+      product={product}
+      includeSamples={search.get("samples") === "1"}
+    />
+  );
 }
-
 export default function ContactPage() {
   return (
-    <main className="container-shell page-shell page-stack">
-      <section className="hero-panel page-hero md:p-10 lg:p-12">
-        <p className="kicker page-reference-subtitle">Start Your Private Label Project</p>
-        <h1 className="section-title mt-2 text-[#1d2521]">Get a practical production route before you commit to a larger order</h1>
-        <p className="page-reference-body page-copy-wide mt-4 text-[#5f6b66]">Tell us the product, quantity, target market, materials, branding, packaging, and timing. The factory team can then confirm the route that fits the project.</p>
-      </section>
-
-      <section className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-        <div className="grid gap-8">
-          <div className="card p-6 md:p-8">
-            <p className="kicker">Factory contact</p>
-            <h2 className="card-title-standard mt-2 text-[#1d2521]">{companyInfo.name}</h2>
-            <div className="mt-6 space-y-4 text-sm leading-7 text-[#5f6b66]">
-              <div><p className="font-semibold text-[#0f5f55]">Manufacturing location</p><p>{companyInfo.address}</p></div>
-              <div><p className="font-semibold text-[#0f5f55]">Email</p><a href={`mailto:${companyInfo.emailPrimary}`} className="underline decoration-[#d08b67] underline-offset-4">{companyInfo.emailPrimary}</a><br /><a href={`mailto:${companyInfo.emailSecondary}`} className="underline decoration-[#d08b67] underline-offset-4">{companyInfo.emailSecondary}</a></div>
-              <div><p className="font-semibold text-[#0f5f55]">WhatsApp</p><WhatsAppLink page="contact page" className="underline decoration-[#d08b67] underline-offset-4">{companyInfo.phone}</WhatsAppLink></div>
-            </div>
-          </div>
-          <div className="overflow-hidden rounded-lg border border-[#d9e2dc] bg-white">
-            <iframe title="YiWu DiYaSi map" src={mapEmbedUrl} className="h-[320px] w-full border-0 md:h-[420px]" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
-          </div>
+    <main id="main-content">
+      <section className="d-catalog-intro">
+        <div>
+          <nav className="d-breadcrumb" aria-label="Breadcrumb">
+            <Link href="/">Home</Link>
+            <span>/</span>
+            <span>Contact</span>
+          </nav>
+          <p className="d-eyebrow">A shared beginning</p>
+          <h1>Request underwear samples & a quote.</h1>
+          <p>
+            Tell us what you have in mind. A few starting details help us shape
+            a sample, a quotation and the next step for your collection.
+          </p>
         </div>
-        <Suspense fallback={<div className="card min-h-96 p-6" />}><ContactFlow /></Suspense>
+      </section>
+      <section className="d-contact-layout">
+        <aside>
+          <p className="d-eyebrow">A conversation with DIYASI</p>
+          <h2>
+            Small details.
+            <br />
+            <em>Beautiful possibilities.</em>
+          </h2>
+          <p>
+            Bring a style number, a fabric idea or a first sketch. We will
+            review your market, quantity, branding and packaging together.
+          </p>
+          <dl className="d-contact-facts">
+            <div>
+              <dt>Email the atelier</dt>
+              <dd>
+                <a href={"mailto:" + companyInfo.emailPrimary}>
+                  {companyInfo.emailPrimary}
+                </a>
+              </dd>
+            </div>
+            <div>
+              <dt>WhatsApp</dt>
+              <dd>
+                <WhatsAppLink page="contact page">
+                  {companyInfo.phone}
+                </WhatsAppLink>
+              </dd>
+            </div>
+            <div>
+              <dt>Find us in Yiwu</dt>
+              <dd>
+                {companyInfo.name}
+                <br />
+                {companyInfo.address}
+              </dd>
+            </div>
+          </dl>
+          <a
+            className="d-text-link"
+            href="https://www.google.com/maps/search/?api=1&query=No.%2016%20Dashi%20Road%2C%20Fotang%20Town%2C%20Yiwu%2C%20Zhejiang%2C%20China"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View location ↗
+          </a>
+          <div className="d-source-links">
+            <h3>Before you begin</h3>
+            <p>
+              Most listed catalogue styles start at 120 pieces, subject to
+              confirmation. Custom fabrics, colors, labels and packaging have
+              their own requirements.
+            </p>
+            <Link href="/resources/private-label-underwear-moq-guide">
+              Read the quantity guide ↗
+            </Link>
+          </div>
+        </aside>
+        <Suspense fallback={<p>Loading your project form…</p>}>
+          <ContactFlow />
+        </Suspense>
       </section>
     </main>
   );

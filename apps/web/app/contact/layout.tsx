@@ -3,8 +3,8 @@ import { buildMetadata, buildBreadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
 import { companyInfo } from "@/lib/site-info";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Contact Us — Request a Quote",
-  description: `Contact ${companyInfo.name} for private label underwear manufacturing quotes, OEM/ODM inquiries, and factory visits. Email: ${companyInfo.emailPrimary}, WhatsApp: ${companyInfo.phone}.`,
+  title: "Request Underwear Samples & a Manufacturing Quote",
+  description: "Request underwear samples or a private-label manufacturing quote from DIYASI. Send model numbers, quantities, sizes, branding and delivery requirements.",
   path: "/contact",
 });
 
@@ -17,7 +17,7 @@ export default function ContactLayout({ children }: { children: React.ReactNode 
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: companyInfo.name,
-    description: `Private label underwear manufacturer since ${companyInfo.establishedYear}`,
+    description: "Private-label underwear manufacturer in Yiwu, China",
     address: {
       "@type": "PostalAddress",
       streetAddress: companyInfo.address,

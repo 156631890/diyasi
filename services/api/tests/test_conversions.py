@@ -39,17 +39,17 @@ def client(tmp_path) -> Generator[TestClient, None, None]:
 def test_accepts_allowlisted_conversion_event_and_returns_actual_counts(client: TestClient) -> None:
     payload = {
         "name": "quote_started",
-        "path": "/products/DYS-1601642594802",
+        "path": "/products/lace-trim-cotton-brazilian-brief-ls006",
         "locale": "en",
-        "project_route": "ready-stock",
-        "product_id": "DYS-1601642594802",
+        "project_route": "private-label",
+        "product_id": "lace-trim-cotton-brazilian-brief-ls006",
     }
 
     response = client.post("/analytics/events", json=payload)
 
     assert response.status_code == 201
     assert response.json()["name"] == "quote_started"
-    assert response.json()["path"] == "/products/DYS-1601642594802"
+    assert response.json()["path"] == "/products/lace-trim-cotton-brazilian-brief-ls006"
 
     overview = client.get("/analytics/overview")
     assert overview.status_code == 200
@@ -119,16 +119,16 @@ def test_rejects_unapproved_public_path_patterns_without_persisting_rows(
     [
         {"name": "quote_started", "path": "/es/contacto", "locale": "en"},
         {"name": "quote_started", "path": "/contact", "locale": "es"},
-        {"name": "quote_started", "path": "/contact", "product_id": "DYS-1601642594802"},
+        {"name": "quote_started", "path": "/contact", "product_id": "lace-trim-cotton-brazilian-brief-ls006"},
         {
             "name": "quote_started",
-            "path": "/products/DYS-1601642594802",
-            "product_id": "DYS-1601700253074",
+            "path": "/products/lace-trim-cotton-brazilian-brief-ls006",
+            "product_id": "low-rise-cotton-bikini-brief-dys201",
         },
         {
             "name": "quote_started",
-            "path": "/products/DYS-1601642594802",
-            "project_route": "private-label",
+            "path": "/products/lace-trim-cotton-brazilian-brief-ls006",
+            "project_route": "ready-stock",
         },
     ],
 )

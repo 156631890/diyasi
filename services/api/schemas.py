@@ -4,48 +4,21 @@ from typing import Literal, Optional
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 
-_REVIEWED_PRODUCT_IDS = frozenset(
-    {
-        "DYS-1601642594802",
-        "DYS-1601700253074",
-        "DYS-1601668037716",
-        "DYS-1601700082173",
-        "DYS-1601560752382",
-        "DYS-1601421046806",
-        "DYS-1601603600505",
-        "DYS-1601663234376",
-        "DYS-1601682971804",
-        "DYS-1600455122336",
-        "DYS-1600285556699",
-        "DYS-1601707021411",
-    }
-)
-_REVIEWED_PRODUCT_ROUTES = {
-    "DYS-1601642594802": "ready-stock",
-    "DYS-1601700253074": "ready-stock",
-    "DYS-1601668037716": "private-label",
-    "DYS-1601700082173": "private-label",
-    "DYS-1601560752382": "private-label",
-    "DYS-1601421046806": "ready-stock",
-    "DYS-1601603600505": "ready-stock",
-    "DYS-1601663234376": "private-label",
-    "DYS-1601682971804": "private-label",
-    "DYS-1600455122336": "private-label",
-    "DYS-1600285556699": "private-label",
-    "DYS-1601707021411": "ready-stock",
-}
+from catalog import CATALOG_PRODUCTS
+
+_REVIEWED_PRODUCT_IDS = frozenset(p["product_id"] for p in CATALOG_PRODUCTS)
+_REVIEWED_PRODUCT_ROUTES = {product_id: "private-label" for product_id in _REVIEWED_PRODUCT_IDS}
 _STATIC_PUBLIC_PATHS = frozenset(
     {
         "/",
         "/products",
         "/products/womens-panties",
+        "/products/cotton-underwear",
+        "/products/lace-underwear",
+        "/products/thongs",
+        "/products/high-waist",
         "/products/seamless-underwear",
-        "/products/bras",
-        "/products/shapewear",
         "/products/mens-underwear",
-        "/products/period-underwear",
-        "/products/activewear",
-        "/products/homewear",
         "/oem-odm",
         "/factory",
         "/contact",
@@ -73,6 +46,7 @@ _APPROVED_ES_PATHS = frozenset(
 _RESOURCE_SLUGS = frozenset(
     {
         "accurate-underwear-yoga-wear-manufacturing-quote",
+        "private-label-underwear-moq-guide",
         "unit-cost-custom-underwear-manufacturing",
         "traceless-vs-seamless-underwear-yoga-brands",
         "lace-underwear-oem-guide-boutique-lingerie-brands",

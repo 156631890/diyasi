@@ -19,3 +19,4 @@ apps/web/.npm-cache/
 
 .vercel
 .env*.local
+.env*

@@ -14,6 +14,6 @@
     "test": "npm run test --workspace apps/web"
   },
   "devDependencies": {
-    "next": "16.2.10"
+    "next": "16.3.5"
   }
 }

@@ -1,30 +1,34 @@
 export const moqRoutes = [
   {
     id: "ready-stock",
-    title: "Ready-stock or mature style",
-    label: "Ready Stock MOQ",
-    value: "from 100 pcs per style when available",
-    summary: "Low MOQ is available only for ready-stock or mature styles when available."
+    title: "Existing style",
+    label: "Catalogue style quantity",
+    value: "Most listed styles: 120 pieces, subject to confirmation",
+    summary:
+      "Review the specific style's available sizes, colors and stock before ordering.",
   },
   {
     id: "private-label",
-    title: "Private label",
-    label: "Private Label MOQ",
-    value: "500 pcs per style for logo label or waistband programs",
-    summary: "Logo-label and waistband programs use a separate MOQ based on the required components."
+    title: "Your label",
+    label: "Private label quantity",
+    value: "Confirmed against labels, waistband and packaging",
+    summary:
+      "Choose an existing fit and review the minimums for your branding components.",
   },
   {
     id: "custom-color",
-    title: "Custom color",
-    label: "Custom Color MOQ",
-    value: "1,000 pcs per color depending on fabric and dyeing route",
-    summary: "Custom color MOQ depends on fabric, dyeing route, and color development."
+    title: "Your colors",
+    label: "Custom color quantity",
+    value: "Confirmed for the selected fabric and dyeing route",
+    summary:
+      "Fabric, dye lot and color development determine the custom-color minimum.",
   },
   {
     id: "full-oem",
-    title: "Full OEM",
-    label: "Full OEM MOQ",
-    value: "1,000-3,000 pcs per style depending on pattern, fabric, and packaging",
-    summary: "Full OEM MOQ depends on pattern, fabric, and packaging."
-  }
+    title: "Your own design",
+    label: "Full OEM quantity",
+    value: "Quoted against the complete development brief",
+    summary:
+      "Pattern, construction, materials and packaging are reviewed before a quantity is confirmed.",
+  },
 ] as const;

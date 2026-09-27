@@ -1,507 +1,364 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
-
-import CompareButton from "@/components/CompareButton";
+import { notFound, permanentRedirect } from "next/navigation";
+import CatalogPage, {
+  catalogMetadata,
+  type CatalogSearch,
+} from "@/components/CatalogPage";
+import ProductCard from "@/components/ProductCard";
 import ProductGallery from "@/components/ProductGallery";
 import ProductInquiryForm from "@/components/ProductInquiryForm";
-import { getCatalogProductById, getCatalogProducts } from "@/lib/catalog-source";
-import { getIndexableProduct } from "@/lib/indexable-products";
+import { SampleButton } from "@/components/SampleList";
+import JsonLd from "@/components/JsonLd";
+import BuyerGuidance from "@/components/BuyerGuidance";
+import { productBuyingGuide } from "@/lib/buyer-guidance";
+import { productSourceEvidence } from "@/lib/product-source-evidence";
 import {
-  buildGalleryImages,
-  DisplayProduct,
-  resolveDisplayProductId,
-  resolveDisplayDescription,
-  resolveCustomizationText,
-  resolveDisplayTitle,
-  resolveProductionTimeText,
-  resolveSampleTimeText,
-  resolveSuitableFor,
-  resolvePrimaryImage,
-  topFamily,
-  isInStock,
-  isOemReady
-} from "@/lib/product-display";
-import { buildBreadcrumbJsonLd, buildMetadata, absoluteUrl } from "@/lib/seo";
-import { SiteLang } from "@/lib/i18n";
-import { moqRoutes } from "@/lib/moq-routes";
-import { getServerLang } from "@/lib/server-lang";
-import { launchCollections, qualitySteps } from "@/lib/site-info";
-
-const copy: Record<
-  SiteLang,
-  {
-    back: string;
-    quote: string;
-    overview: string;
-    category: string;
-    fabric: string;
-    sampleTime: string;
-    productionTime: string;
-    color: string;
-    size: string;
-    noImage: string;
-    relatedTitle: string;
-    relatedDesc: string;
-    viewDetails: string;
-    collectionLabel: string;
-    overviewLabel: string;
-    overviewIntro: string;
-    inStock: string;
-    oemReady: string;
-    addCompare: string;
-    removeCompare: string;
-    compareLimit: string;
-  }
-> = {
-  en: {
-    back: "Back to Products",
-    quote: "Start a Conversation",
-    overview: "Product Specifications",
-    category: "Category",
-    fabric: "Fabric",
-    sampleTime: "Sample Time",
-    productionTime: "Production Time",
-    color: "Color",
-    size: "Size",
-    noImage: "Image coming soon",
-    relatedTitle: "Related products",
-    relatedDesc: "More styles from the same category or top-level product family.",
-    viewDetails: "View Details",
-    collectionLabel: "Collection",
-    overviewLabel: "Overview",
-    overviewIntro: "A focused product brief for brand, retail, and private label development.",
-    inStock: "In Stock",
-    oemReady: "OEM Ready",
-    addCompare: "Compare Product",
-    removeCompare: "Remove Compare",
-    compareLimit: "You can compare up to 4 products at a time."
-  },
-  zh: {
-    back: "返回产品列表",
-    quote: "发起询盘",
-    overview: "产品规格",
-    category: "分类",
-    fabric: "面料",
-    sampleTime: "打样时间",
-    productionTime: "生产周期",
-    color: "颜色",
-    size: "尺码",
-    noImage: "图片即将更新",
-    relatedTitle: "相关产品",
-    relatedDesc: "同类目或同一级产品线的更多款式。",
-    viewDetails: "查看详情",
-    collectionLabel: "系列",
-    overviewLabel: "概览",
-    overviewIntro: "面向品牌、零售与贴牌开发的精简产品信息。",
-    inStock: "有现货",
-    oemReady: "支持贴牌",
-    addCompare: "对比产品",
-    removeCompare: "取消对比",
-    compareLimit: "一次最多可以对比 4 个产品。"
-  },
-  es: {
-    back: "Volver a Productos",
-    quote: "Iniciar Consulta",
-    overview: "Especificaciones del Producto",
-    category: "Categoria",
-    fabric: "Tejido",
-    sampleTime: "Tiempo de Muestra",
-    productionTime: "Tiempo de Produccion",
-    color: "Color",
-    size: "Talla",
-    noImage: "Imagen pendiente",
-    relatedTitle: "Productos relacionados",
-    relatedDesc: "Mas estilos de la misma categoria o familia principal.",
-    viewDetails: "Ver Detalle",
-    collectionLabel: "Coleccion",
-    overviewLabel: "Resumen",
-    overviewIntro: "Un resumen de producto pensado para desarrollo de marca, retail y private label.",
-    inStock: "En Stock",
-    oemReady: "Soporta OEM",
-    addCompare: "Comparar producto",
-    removeCompare: "Eliminar de comparación",
-    compareLimit: "Puedes comparar hasta 4 productos a la vez."
-  }
-};
-
-type ProductDetailPageProps = {
+  catalogProducts,
+  getCatalogProductById,
+  legacyProductRedirects,
+} from "@/lib/catalog-source";
+import { findCollection } from "@/lib/collections";
+import { absoluteUrl, buildMetadata, buildBreadcrumbJsonLd } from "@/lib/seo";
+type Props = {
   params: Promise<{ productId: string }>;
+  searchParams?: Promise<CatalogSearch>;
 };
-
-type LaunchCollection = (typeof launchCollections)[number];
-
-function findCollection(slug: string): LaunchCollection | undefined {
-  return launchCollections.find((item) => item.slug === slug);
-}
-
-function productMatchesCollection(product: DisplayProduct, collection: LaunchCollection): boolean {
-  const family = topFamily(product.category);
-  const haystack = [product.product_name, product.category, product.description, product.fabric].join(" ").toLowerCase();
-  const familyMatches = family === collection.family;
-  if (!familyMatches) {
-    return false;
-  }
-  return collection.match ? haystack.includes(collection.match) : true;
-}
-
-export async function generateMetadata({ params }: ProductDetailPageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+  searchParams,
+}: Props): Promise<Metadata> {
   const { productId } = await params;
-  const decodedId = decodeURIComponent(productId);
-  const product = await getCatalogProductById(decodedId);
-  const collection = findCollection(decodedId);
-
-  if (!product) {
-    if (collection) {
-      return buildMetadata({
-        title: `${collection.title} Manufacturer`,
-        description: collection.desc,
-        path: `/products/${collection.slug}`
-      });
-    }
-    return buildMetadata({
-      title: "Product not found",
-      description: "This product page is not available.",
-      path: `/products/${productId}`
-    });
-  }
-
-  const typedProduct = product as DisplayProduct;
-  const reviewedProduct = getIndexableProduct(typedProduct.product_id);
-  const title = reviewedProduct?.title || resolveDisplayTitle(typedProduct);
-  const description = resolveDisplayDescription(typedProduct);
-
-  const metadata = buildMetadata({
-    title,
-    description,
-    path: `/products/${encodeURIComponent(typedProduct.product_id)}`
-  });
-
-  return reviewedProduct ? metadata : { ...metadata, robots: { index: false, follow: true } };
-}
-
-export default async function ProductDetailPage({ params }: ProductDetailPageProps) {
-  const { productId: rawProductId } = await params;
-  const productId = decodeURIComponent(rawProductId);
-  const [product, allProducts] = await Promise.all([getCatalogProductById(productId), getCatalogProducts()]);
-  const lang = await getServerLang();
-  const t = copy[lang];
   const collection = findCollection(productId);
-
-  if (!product) {
-    if (!collection) {
-      notFound();
-    }
-
-    const categoryProducts = (allProducts as DisplayProduct[]).filter((item) => productMatchesCollection(item, collection));
-    const breadcrumbJsonLd = buildBreadcrumbJsonLd([
-      { name: "Home", path: "/" },
-      { name: "Products", path: "/products" },
-      { name: collection.title, path: `/products/${collection.slug}` }
-    ]);
-    const collectionPageJsonLd = {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      name: collection.title,
-      description: collection.desc,
-      url: absoluteUrl(`/products/${collection.slug}`)
-    };
-
-    return (
-      <main className="container-shell page-shell-tight">
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd) }} />
-
-        <section className="catalog-intro">
-          <p className="catalog-intro-kicker">Launch-Ready Collection</p>
-          <div className="catalog-intro-row">
-            <div className="catalog-intro-copy">
-              <h1 className="catalog-intro-title">{collection.title}</h1>
-              <p className="page-reference-body mt-3 text-[#5f6b66]">{collection.desc}</p>
-            </div>
-            <div className="catalog-meta">
-              <p className="catalog-meta-count">{categoryProducts.length} items</p>
-              <p className="page-reference-body text-[#7d8a85]">Fixed category URL</p>
-            </div>
-          </div>
-        </section>
-
-        <section className="catalog-grid-clean mt-8">
-          {categoryProducts.map((item) => {
-            const displayTitle = resolveDisplayTitle(item);
-            const image = resolvePrimaryImage(item);
-            return (
-              <article key={item.product_id} className="catalog-card-clean">
-                <Link href={`/products/${encodeURIComponent(item.product_id)}`} className="catalog-card-clean-media">
-                  {image ? (
-                    <img
-                      src={image}
-                      alt={`${displayTitle} - Custom Underwear Manufacture`}
-                      loading="lazy"
-                      decoding="async"
-                      className="catalog-card-clean-image catalog-card-clean-image-primary"
-                    />
-                  ) : (
-                    <div className="catalog-card-clean-fallback">{t.noImage}</div>
-                  )}
-                </Link>
-                <div className="catalog-card-clean-copy">
-                  <p className="catalog-card-clean-category">{item.category}</p>
-                  <Link href={`/products/${encodeURIComponent(item.product_id)}`}>
-                    <h2 className="catalog-card-clean-title">{displayTitle}</h2>
-                  </Link>
-                  
-                  {item.fabric ? (
-                    <p className="catalog-card-clean-fabric mt-1.5 text-[12px] text-[#5f6b66] truncate">
-                      {item.fabric}
-                    </p>
-                  ) : null}
-
-                  <div className="catalog-card-clean-tags mt-2">
-                    {isInStock(item) && (
-                      <span className="catalog-card-tag">{t.inStock || "In Stock"}</span>
-                    )}
-                    {isOemReady(item) && (
-                      <span className="catalog-card-tag">{t.oemReady || "OEM Ready"}</span>
-                    )}
-                  </div>
-
-                  <div className="catalog-card-clean-bottom mt-3 border-t border-[#d9e2dc]/40 pt-2.5">
-                    <span className="inline-block rounded bg-[#f3f7f4] px-2 py-0.5 text-[10px] font-mono text-[#57635e]">
-                      {resolveDisplayProductId(item)}
-                    </span>
-                  </div>
-                </div>
-              </article>
-            );
-          })}
-        </section>
-
-        <section className="mt-10 rounded-lg border border-[#d9e2dc] bg-[#fffdf8] p-6">
-          <h2 className="card-title-standard text-[#1d2521]">MOQ and development route</h2>
-          <div className="mt-4 grid gap-3 md:grid-cols-2">
-            {moqRoutes.map((item) => (
-              <p key={item.label} className="text-sm leading-6 text-[#5f6b66]">
-                <strong className="text-[#1d2521]">{item.label}:</strong> {item.value}
-              </p>
-            ))}
-          </div>
-          <p className="mt-3 text-sm leading-6 text-[#5f6b66]">Final MOQ, availability, and timing are confirmed for each project.</p>
-        </section>
-      </main>
-    );
-  }
-
-  const typedProduct = product as DisplayProduct;
-  const reviewedProduct = getIndexableProduct(typedProduct.product_id);
-  const displayTitle = reviewedProduct?.title || resolveDisplayTitle(typedProduct);
-  const displayProductId = resolveDisplayProductId(typedProduct);
-  const displayDescription = resolveDisplayDescription(typedProduct);
-  const family = topFamily(typedProduct.category);
-  const galleryImages = buildGalleryImages(typedProduct);
-  const customizationOptions = resolveCustomizationText();
-  const suitableFor = resolveSuitableFor(typedProduct);
-  const moqRoute = reviewedProduct ? moqRoutes.find((item) => item.id === reviewedProduct.route) : undefined;
-  const reviewedCollection = reviewedProduct ? findCollection(reviewedProduct.collectionSlug) : undefined;
-  const commercialContext = moqRoute
-    ? `${moqRoute.label}: ${moqRoute.value}. ${moqRoute.summary} Final MOQ, availability, and timing are confirmed for each project.`
-    : null;
-  const specRows = [
-    { label: t.category, value: typedProduct.category },
-    { label: t.fabric, value: typedProduct.fabric || "Fabric can be confirmed during sampling." },
-    { label: t.color, value: typedProduct.color || "Stock colors and custom colors available by project." },
-    { label: t.size, value: typedProduct.size || "XS to XL; extended size range can be reviewed by project." },
-    { label: t.sampleTime, value: resolveSampleTimeText(typedProduct) },
-    { label: t.productionTime, value: resolveProductionTimeText(typedProduct) },
-    { label: "Packaging", value: "Custom label, hangtag, polybag, gift box, barcode sticker, and carton mark available." },
-    { label: "Payment", value: "Sample fee, deposit, and balance before shipment after quotation confirmation." }
-  ];
-  const relatedProducts = allProducts
-    .filter((item) => item.product_id !== typedProduct.product_id)
-    .sort((left, right) => {
-      const leftScore =
-        (left.category === typedProduct.category ? 2 : 0) + (topFamily(left.category) === family ? 1 : 0);
-      const rightScore =
-        (right.category === typedProduct.category ? 2 : 0) + (topFamily(right.category) === family ? 1 : 0);
-      return rightScore - leftScore || left.product_name.localeCompare(right.product_name);
-    })
-    .filter((item) => item.category === typedProduct.category || topFamily(item.category) === family)
-    .slice(0, 4);
-
-  const productJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: displayTitle,
-    description: displayDescription,
-    image: galleryImages.map((image) => (image.startsWith("http") ? image : absoluteUrl(image))),
-    sku: displayProductId,
-    category: typedProduct.category,
-    material: typedProduct.fabric || undefined,
-    brand: {
-      "@type": "Brand",
-      name: "YiWu DiYaSi"
-    }
+  if (collection)
+    return catalogMetadata((await searchParams) ?? {}, collection);
+  const p = await getCatalogProductById(productId);
+  if (!p)
+    return { title: "Style not found", robots: { index: false, follow: true } };
+  const meta = buildMetadata({
+    title: p.seo_title,
+    description: p.meta_description,
+    path: "/products/" + p.slug,
+  });
+  return {
+    ...meta,
+    title: { absolute: p.seo_title },
+    openGraph: {
+      ...meta.openGraph,
+      images: [{ url: absoluteUrl(p.image_url), alt: p.product_name }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: p.seo_title,
+      description: p.meta_description,
+      images: [absoluteUrl(p.image_url)],
+    },
   };
-
-  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
-    { name: "Home", path: "/" },
-    { name: "Products", path: "/products" },
-    { name: displayTitle, path: `/products/${encodeURIComponent(typedProduct.product_id)}` }
-  ]);
-
+}
+export default async function ProductPage({ params, searchParams }: Props) {
+  const { productId } = await params;
+  if (legacyProductRedirects[productId])
+    permanentRedirect("/products/" + legacyProductRedirects[productId]);
+  const collection = findCollection(productId);
+  if (collection)
+    return <CatalogPage collection={collection} search={await searchParams} />;
+  const p = await getCatalogProductById(productId);
+  if (!p) notFound();
+  const sourceEvidence = productSourceEvidence[p.model_number];
+  const parent = findCollection(p.collection)!;
+  const related = catalogProducts
+    .filter((x) => x.collection === p.collection && x.slug !== p.slug)
+    .sort((a, b) => Number(b.fit === p.fit) - Number(a.fit === p.fit) || Number(b.rise === p.rise) - Number(a.rise === p.rise))
+    .slice(0, 4);
+  const facts = [
+    ["Style number", p.model_number],
+    ["Composition", p.fabric],
+    ["Silhouette", p.fit + " · " + p.rise],
+    ["Size range", p.size],
+    ["Colors", p.color],
+    ["Starting quantity", p.moq],
+    ["Sampling", p.sample_time],
+    ["Bulk production", p.production_time],
+  ];
   return (
-    <main className="container-shell py-8 md:py-10">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
-
-      <div className="catalog-detail-back">
-        <Link href="/products" className="catalog-detail-back-link">
-          {t.back}
-        </Link>
-      </div>
-
-      <section className="catalog-detail-shell">
-        <ProductGallery productName={displayTitle} images={galleryImages} emptyLabel={t.noImage} />
-
-        <div className="catalog-detail-copy">
-          <div className="catalog-detail-header">
-            <p className="catalog-detail-kicker">
-              {t.collectionLabel} / {family}
-            </p>
-            <p className="catalog-detail-category">{displayProductId}</p>
-            <p className="catalog-detail-category">{typedProduct.category}</p>
-            <h1 className="catalog-detail-title">{displayTitle}</h1>
-            <div className="catalog-detail-intro">
-              <p className="catalog-detail-intro-label">{t.overviewLabel}</p>
-              <p className="catalog-detail-intro-text">{t.overviewIntro}</p>
+    <main id="main-content" className="d-detail">
+      {/* Quote-only styles have no published offer or reviews. Use ItemPage until
+          genuine, visible data meets Google's Product rich-result requirements. */}
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "ItemPage",
+          "@id": absoluteUrl("/products/" + p.slug) + "#webpage",
+          name: p.product_name,
+          description: p.description,
+          identifier: p.model_number,
+          isBasedOn: sourceEvidence
+            ? [p.source_urls[0], sourceEvidence.secondaryUrl]
+            : p.source_urls[0],
+          inLanguage: "en",
+          isPartOf: { "@id": absoluteUrl("/") + "#website" },
+          publisher: { "@id": absoluteUrl("/") + "#organization" },
+          image: p.gallery_images.map(absoluteUrl),
+          primaryImageOfPage: {
+            "@type": "ImageObject",
+            url: absoluteUrl(p.image_url),
+          },
+          url: absoluteUrl("/products/" + p.slug),
+        }}
+      />
+      <JsonLd
+        data={buildBreadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Collections", path: "/products" },
+          { name: parent.short, path: "/products/" + parent.slug },
+          { name: p.product_name, path: "/products/" + p.slug },
+        ])}
+      />
+      <nav className="d-breadcrumb" aria-label="Breadcrumb">
+        <Link href="/products">Collections</Link>
+        <span>/</span>
+        <Link href={"/products/" + parent.slug}>{parent.short}</Link>
+        <span>/</span>
+        <span>{p.model_number}</span>
+      </nav>
+      <section className="d-detail-grid">
+        <ProductGallery
+          productName={p.product_name}
+          images={p.gallery_images}
+        />
+        <div className="d-detail-copy">
+          <p className="d-eyebrow">
+            Private label &amp; wholesale · {p.model_number}
+          </p>
+          <h1>{p.product_name}</h1>
+          <p className="d-detail-description">{p.description}</p>
+          <p className="d-quote-price">
+            Made for your label. <span>Quoted for your order.</span>
+          </p>
+          <dl className="d-key-facts">
+            <div>
+              <dt>The fit</dt>
+              <dd>
+                {p.fit} · {p.rise}
+              </dd>
             </div>
-            <p className="catalog-detail-desc">{displayDescription}</p>
-            {commercialContext ? <p className="catalog-detail-intro-text">{commercialContext}</p> : null}
-            {reviewedCollection ? (
-              <Link href={reviewedCollection.href} className="catalog-card-clean-link">
-                {reviewedCollection.title}
-              </Link>
-            ) : null}
-          </div>
-
-          <div className="catalog-detail-actions">
-            <Link href={`/contact?source=product&productId=${encodeURIComponent(typedProduct.product_id)}`} className="btn btn-soft flex-1">
-              {t.quote}
-            </Link>
-            <CompareButton
-              productId={typedProduct.product_id}
-              addLabel={t.addCompare}
-              removeLabel={t.removeCompare}
-              limitMessage={t.compareLimit}
-            />
-          </div>
-
-          <div className="catalog-detail-panel">
-            <h2 className="catalog-detail-panel-title">{t.overview}</h2>
-            <dl className="catalog-detail-specs">
-              {specRows.map((row) => (
-                <div key={row.label}>
-                  <dt>{row.label}</dt>
-                  <dd>{row.value}</dd>
+            <div>
+              <dt>The feel</dt>
+              <dd>{p.material_label}</dd>
+            </div>
+            <div>
+              <dt>The starting point</dt>
+              <dd>{p.moq}</dd>
+            </div>
+          </dl>
+          <a className="d-button d-button-wide" href="#product-inquiry">
+            Request a sample & quotation <span aria-hidden="true">↗</span>
+          </a>
+          <div className="d-detail-sample"><SampleButton productId={p.slug} /></div>
+          <Link
+            className="d-text-link"
+            href={
+              "/contact?source=product&productId=" + encodeURIComponent(p.slug)
+            }
+          >
+            Talk about this style ↗
+          </Link>
+          <div className="d-accordions">
+            <details open>
+              <summary>Fabric, fit & details</summary>
+              <dl className="d-specs">
+                {facts.map(([label, value]) => (
+                  <div key={label}>
+                    <dt>{label}</dt>
+                    <dd>{value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </details>
+            <details>
+              <summary>Size guide for {p.model_number}</summary>
+              <p>
+                Listed sizes: {p.size}. The manufacturer&apos;s chart below is a
+                starting reference for this style. Confirm body measurements,
+                finished garment measurements and tolerances on the sample; size
+                labels do not establish a universal US or EU fit.
+              </p>
+              {sourceEvidence && (
+                <div className="d-source-size-reference">
+                  <p>{sourceEvidence.sizeChartNote}</p>
+                  <div className="d-source-size-scroll">
+                    <table>
+                      <caption>{p.model_number} manufacturer size-chart transcription</caption>
+                      <thead>
+                        <tr>
+                          <th scope="col">Size</th>
+                          <th scope="col">Waist (cm)</th>
+                          <th scope="col">{sourceEvidence.secondaryHeader}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {sourceEvidence.sizeRows.map((row) => (
+                          <tr key={row.size}>
+                            <th scope="row">{row.size}</th>
+                            <td>{row.waistCm}</td>
+                            <td>{row.secondaryCm}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
-              ))}
-            </dl>
+              )}
+              {p.size_chart_image && (
+                <a
+                  href={p.size_chart_image}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src={p.size_chart_image}
+                    alt={`${p.model_number} manufacturer size reference chart`}
+                    width={1000}
+                    height={1000}
+                    sizes="(max-width:700px) 100vw, 45vw"
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                      objectFit: "contain",
+                    }}
+                  />
+                  <span className="d-text-link">Open full-size chart ↗</span>
+                </a>
+              )}
+              <Link href="/resources/us-eu-underwear-size-labeling-preparation-startup-brands">
+                How to confirm sizes for your market ↗
+              </Link>
+            </details>
+            <details>
+              <summary>Make it your own</summary>
+              <p>
+                Discuss logo application, waistband artwork, care labels, colors
+                and packaging. Availability and minimum quantities depend on the
+                exact customization. Approve a physical sample and written
+                specification before bulk production.
+              </p>
+              <Link href="/packaging">Explore labels & packaging ↗</Link>
+            </details>
+            <details>
+              <summary>Sampling, delivery & care</summary>
+              <p>
+                Ask for current stock availability and a sample in the intended
+                fabric and size. Delivery timing starts after your
+                specifications are confirmed. Follow the care label approved for
+                the finished garment; heat and bleach may affect stretch fibers
+                and lace.
+              </p>
+              <Link href="/return-policy">Sample & order policy ↗</Link>
+            </details>
+            <details>
+              <summary>Sample costs & packaging</summary>
+              <p>
+                Sample fees, development charges and courier costs are quoted
+                for the selected style and destination. Confirm any sample-fee
+                credit against a bulk order in writing. Choose plain or branded
+                bags, hangtags, barcode labels or boxes with the team; component
+                minimums and print/setup charges are quoted separately.
+              </p>
+              <p>
+                Request a dated schedule showing sample approval, material and
+                artwork approval, production, inspection and dispatch. Freight
+                and customs time are additional to production time.
+              </p>
+              <Link href="/resources/underwear-sampling-costs-lead-times-packaging">
+                Sample and quotation checklist ↗
+              </Link>
+            </details>
           </div>
-
-          <section className="catalog-detail-panel">
-            <h2 className="catalog-detail-panel-title">Key Features</h2>
-            <ul className="grid gap-2 text-sm leading-7 text-[#5f6b66]">
-              <li>Fabric hand feel and stretch direction reviewed before sampling.</li>
-              <li>Fit, coverage, waistband, gusset, and logo placement can be adjusted by project.</li>
-              <li>Private label packaging route can be aligned before bulk production.</li>
-              <li>Suitable for repeat production after fit and pre-production sample approval.</li>
-            </ul>
-          </section>
-
-          <section className="catalog-detail-panel">
-            <h2 className="catalog-detail-panel-title">Customization Options</h2>
-            <div className="chip-list">
-              {customizationOptions.map((item) => (
-                <span key={item} className="chip">
-                  {item}
-                </span>
-              ))}
-            </div>
-          </section>
-
-          <section className="catalog-detail-panel">
-            <h2 className="catalog-detail-panel-title">Quality Control</h2>
-            <div className="grid gap-3">
-              {qualitySteps.map((item) => (
-                <article key={item.title} className="rounded-xl border-l-4 border-l-[#0e5b51] border border-[#d9e2dc]/80 bg-white p-5 shadow-sm hover:shadow-md transition-shadow duration-300">
-                  <h3 className="font-bold text-[#17201c]">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#57635e]">{item.desc}</p>
-                </article>
-              ))}
-            </div>
-          </section>
-
-          <section className="catalog-detail-panel">
-            <h2 className="catalog-detail-panel-title">Suitable For</h2>
-            <div className="chip-list">
-              {suitableFor.map((item) => (
-                <span key={item} className="chip">
-                  {item}
-                </span>
-              ))}
-            </div>
-          </section>
-
-          <ProductInquiryForm productName={displayTitle} category={typedProduct.category} />
         </div>
       </section>
-
-      {relatedProducts.length > 0 ? (
-        <section className="catalog-related-shell">
-          <div className="catalog-group-head">
-            <div>
-              <p className="catalog-group-kicker">{family}</p>
-              <h2 className="catalog-group-title">{t.relatedTitle}</h2>
-            </div>
-            <p className="page-reference-body text-[#7d8a85]">{t.relatedDesc}</p>
+      {p.detail_images.length > 0 && (
+        <details className="d-source-details">
+          <summary>
+            More style photographs & construction details{" "}
+            <span>{p.detail_images.length} images</span>
+          </summary>
+          <div>
+            {p.detail_images.map((src, i) => (
+              <Image
+                key={src}
+                src={src}
+                alt={`${p.product_name} — source construction or detail photograph ${i + 1}`}
+                width={800}
+                height={800}
+                sizes="(max-width:700px) 100vw, 50vw"
+                style={{ height: "auto" }}
+              />
+            ))}
           </div>
-          <div className="catalog-related-grid">
-            {relatedProducts.map((item) => {
-              const relatedProduct = item as DisplayProduct;
-              const relatedImages = buildGalleryImages(relatedProduct);
-
-              return (
-                <article key={item.product_id} className="catalog-related-card">
-                  <Link href={`/products/${encodeURIComponent(item.product_id)}`} className="catalog-related-media">
-                    {relatedImages[0] ? (
-                      <img
-                        src={relatedImages[0]}
-                        alt={`${resolveDisplayTitle(relatedProduct)} - Private Label Underwear`}
-                        loading="lazy"
-                        decoding="async"
-                        className="catalog-related-image"
-                      />
-                    ) : (
-                      <div className="catalog-card-clean-fallback">{t.noImage}</div>
-                    )}
-                  </Link>
-                  <div className="catalog-related-copy">
-                    <p className="catalog-card-clean-category">{item.category}</p>
-                    <h3 className="catalog-related-title">{resolveDisplayTitle(relatedProduct)}</h3>
-                    <Link
-                      href={`/products/${encodeURIComponent(item.product_id)}`}
-                      className="catalog-card-clean-link"
-                    >
-                      {t.viewDetails}
-                    </Link>
-                  </div>
-                </article>
-              );
-            })}
+        </details>
+      )}
+      <aside className="d-catalog-provenance" aria-label="Catalogue provenance">
+        <h2>Catalogue source and scope</h2>
+        <p>
+          DIYASI checked this model&apos;s listed specifications and photographs
+          against its <a href={p.source_urls[0]} target="_blank" rel="noopener noreferrer">original manufacturer listing</a> on {p.reviewed_at}.
+          This is a catalogue reference. Current availability, sample fees,
+          customization and final order specifications are confirmed in writing.
+        </p>
+        {sourceEvidence && (
+          <div className="d-catalog-source-comparison">
+            <h3>What the manufacturer listings establish</h3>
+            <p>{sourceEvidence.catalogueNote}</p>
+            <p>
+              Compare the <a href={p.source_urls[0]} target="_blank" rel="noopener noreferrer">underwear listing</a> and the <a href={sourceEvidence.secondaryUrl} target="_blank" rel="noopener noreferrer">related apparel listing</a>. These are two DIYASI-owned sources, not independent test reports or a current order quotation.
+            </p>
+          </div>
+        )}
+      </aside>
+      <BuyerGuidance guide={productBuyingGuide(p)} />
+      <section className="d-product-enquiry" id="product-inquiry">
+        <div>
+          <p className="d-eyebrow">Let’s begin with a sample</p>
+          <h2>
+            A small detail.
+            <br />
+            <em>A signature style.</em>
+          </h2>
+          <p>
+            Tell us about your market, planned quantity and branding. We’ll help
+            you turn this style into a clear production brief.
+          </p>
+          <p className="d-fineprint">
+            Catalogue information reviewed {p.reviewed_at}. Final
+            specifications, pricing and availability are confirmed in writing.
+          </p>
+        </div>
+        <ProductInquiryForm
+          productName={p.product_name + " · " + p.model_number}
+          category={
+            p.gender === "women" ? "Women's underwear" : "Men's underwear"
+          }
+        />
+      </section>
+      {related.length > 0 && (
+        <section className="d-related">
+          <div className="d-section-heading">
+            <div>
+              <p className="d-eyebrow">In good company</p>
+              <h2>You may also love</h2>
+            </div>
+            <Link href={"/products/" + parent.slug} className="d-text-link">
+              Explore the collection ↗
+            </Link>
+          </div>
+          <div className="d-product-grid">
+            {related.map((product) => (
+              <ProductCard key={product.slug} product={product} />
+            ))}
           </div>
         </section>
-      ) : null}
+      )}
     </main>
   );
 }
-

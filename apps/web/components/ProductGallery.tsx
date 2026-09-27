@@ -1,53 +1,45 @@
 "use client";
-
+import Image from "next/image";
 import { useState } from "react";
-
-type ProductGalleryProps = {
+export default function ProductGallery({
+  productName,
+  images,
+  emptyLabel = "No photograph available",
+}: {
   productName: string;
   images: string[];
-  emptyLabel: string;
-};
-
-export default function ProductGallery({ productName, images, emptyLabel }: ProductGalleryProps) {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const activeImage = images[activeIndex] || "";
-
+  emptyLabel?: string;
+}) {
+  const [selected, setSelected] = useState(0);
+  if (!images.length) return <div>{emptyLabel}</div>;
   return (
-    <div className="catalog-gallery">
-      <div className="catalog-detail-media">
-        {activeImage ? (
-          <img
-            src={activeImage}
-            alt={`${productName} - Custom Underwear OEM/ODM Manufacture`}
-            decoding="async"
-            fetchPriority="high"
-            className="catalog-detail-image"
-          />
-        ) : (
-          <div className="catalog-detail-fallback">{emptyLabel}</div>
-        )}
+    <div className="d-gallery">
+      <div className="d-gallery-main">
+        <Image
+          src={images[selected]}
+          alt={`${productName} — photograph ${selected + 1} of ${images.length}`}
+          fill
+          priority
+          sizes="(max-width: 800px) 100vw, 52vw"
+        />
       </div>
-
-      {images.length > 1 ? (
-        <div className="catalog-gallery-thumbs">
-          {images.map((image, index) => (
-            <button
-              key={`${image}-${index}`}
-              type="button"
-              className={`catalog-gallery-thumb ${index === activeIndex ? "catalog-gallery-thumb-active" : ""}`}
-              onClick={() => setActiveIndex(index)}
-            >
-              <img
-                src={image}
-                alt={`${productName} thumbnail view ${index + 1} - YiWu DiYaSi Sourcing`}
-                loading="lazy"
-                decoding="async"
-                className="catalog-gallery-thumb-image"
-              />
-            </button>
-          ))}
-        </div>
-      ) : null}
+      <div className="d-gallery-thumbs" aria-label="Product photographs">
+        {images.map((image, index) => (
+          <button
+            type="button"
+            key={image}
+            onClick={() => setSelected(index)}
+            aria-label={`Show product photograph ${index + 1}`}
+            aria-pressed={index === selected}
+          >
+            <Image src={image} alt="" width={88} height={88} sizes="88px" />
+          </button>
+        ))}
+      </div>
+      <p className="d-fineprint">
+        Original DIYASI style photographs. Confirm colors and measurements on
+        your sample.
+      </p>
     </div>
   );
 }

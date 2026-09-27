@@ -13,7 +13,7 @@ export function absoluteUrl(path = "/"): string {
 export function buildMetadata({
   title,
   description,
-  path = "/"
+  path = "/",
 }: {
   title: string;
   description: string;
@@ -30,23 +30,33 @@ export function buildMetadata({
       ...(localeAlternates
         ? {
             languages: Object.fromEntries(
-              Object.entries(localeAlternates).map(([locale, localePath]) => [locale, absoluteUrl(localePath)])
-            )
+              Object.entries(localeAlternates).map(([locale, localePath]) => [
+                locale,
+                absoluteUrl(localePath),
+              ]),
+            ),
           }
-        : {})
+        : {}),
     },
     openGraph: {
       title,
       description,
       url,
       siteName: SITE_NAME,
-      type: "website"
+      type: "website",
+      images: [
+        {
+          url: absoluteUrl("/media/editorial/cotton-lace-story.png"),
+          alt: "DIYASI cotton and lace materials",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
-      description
-    }
+      description,
+      images: [absoluteUrl("/media/editorial/cotton-lace-story.png")],
+    },
   };
 }
 
@@ -54,7 +64,7 @@ export function buildBreadcrumbJsonLd(
   items: Array<{
     name: string;
     path: string;
-  }>
+  }>,
 ) {
   return {
     "@context": "https://schema.org",
@@ -63,7 +73,7 @@ export function buildBreadcrumbJsonLd(
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      item: absoluteUrl(item.path)
-    }))
+      item: absoluteUrl(item.path),
+    })),
   };
 }

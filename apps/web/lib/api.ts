@@ -1,15 +1,15 @@
 export const API_BASE =
-  process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8000";
+  process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8010";
 
 export async function safeFetchJson<T>(
   path: string,
   fallback: T,
-  init?: RequestInit
+  init?: RequestInit,
 ): Promise<T> {
   try {
     const response = await fetch(`${API_BASE}${path}`, {
       cache: "no-store",
-      ...init
+      ...init,
     });
     if (!response.ok) {
       return fallback;
@@ -22,7 +22,7 @@ export async function safeFetchJson<T>(
 
 export async function apiGet<T>(path: string): Promise<T> {
   const response = await fetch(`${API_BASE}${path}`, {
-    cache: "no-store"
+    cache: "no-store",
   });
   if (!response.ok) {
     throw new Error(`GET ${path} failed: ${response.status}`);
@@ -32,12 +32,12 @@ export async function apiGet<T>(path: string): Promise<T> {
 
 export async function apiPost<T>(
   path: string,
-  body: Record<string, unknown> = {}
+  body: Record<string, unknown> = {},
 ): Promise<T> {
   const response = await fetch(`${API_BASE}${path}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(body)
+    body: JSON.stringify(body),
   });
   if (!response.ok) {
     const text = await response.text();
