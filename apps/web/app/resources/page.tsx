@@ -3,11 +3,13 @@ import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
 import { buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { resourceArticles } from "@/lib/resource-articles";
+import ContentFaq from "@/components/ContentFaq";
+import { catalogueFaq } from "@/lib/keyword-content";
 
 export const metadata = buildMetadata({
-  title: "Underwear Sourcing Guides & Private Label Journal",
+  title: "Underwear Sourcing Guides: Private Label Buyer Briefs",
   description:
-    "Practical guides to underwear fabrics, fit, sample approvals, MOQ, labels and production planning. Clear answers for private-label brands.",
+    "Use underwear sourcing guides to plan MOQ, fabrics, fit, samples, branding and production. Compare real DIYASI models and prepare a written private-label brief.",
   path: "/resources",
 });
 
@@ -25,7 +27,7 @@ export default function ResourcesPage() {
           <p className="d-eyebrow">Notes from the atelier</p>
           <h1>Underwear sourcing guides</h1>
           <p>
-            Plan your underwear order with guides to MOQ, manufacturing costs,
+            Use underwear sourcing guides to plan MOQ, manufacturing costs,
             fabrics, sizing, labels and sample approval. Use the checklists to
             prepare a brief and compare supplier quotations.
           </p>
@@ -58,6 +60,7 @@ export default function ResourcesPage() {
           ))}
         </div>
       </section>
+      <ContentFaq title="Underwear sourcing guide questions" items={catalogueFaq} />
     </main>
   );
 }
