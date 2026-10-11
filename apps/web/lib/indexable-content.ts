@@ -2,6 +2,7 @@ import { indexableProducts } from "./indexable-products";
 import { resourceArticles } from "./resource-articles";
 import { newsArticles } from "./news-articles";
 import { launchCollections } from "./site-info";
+import keywordPages from "@/data/keyword-pages.json";
 
 type ChangeFrequency = "weekly" | "monthly";
 
@@ -15,6 +16,8 @@ export type IndexableContentEntry = {
 const reviewedAt = "2026-09-17";
 const seoUpdatedAt = "2026-09-22";
 const collectionUpdatedAt = "2026-09-27";
+const keywordUpdatedAt = "2026-10-07";
+const keywordUpdatedPaths = new Set(keywordPages.map((page) => page.path));
 
 const pageEntries: IndexableContentEntry[] = [
   {
@@ -141,7 +144,7 @@ const pageEntries: IndexableContentEntry[] = [
 
 const collectionEntries = launchCollections.map((collection) => ({
   path: collection.href,
-  lastModified: collectionUpdatedAt,
+  lastModified: keywordUpdatedAt,
   changeFrequency: "weekly" as const,
   priority: 0.8,
 }));
@@ -179,7 +182,9 @@ export const indexableContent = {
   entries: [
     ...pageEntries.map((entry) => ({
       ...entry,
-      lastModified: ["/oem-odm", "/products"].includes(entry.path)
+      lastModified: keywordUpdatedPaths.has(entry.path)
+        ? keywordUpdatedAt
+        : ["/oem-odm", "/products"].includes(entry.path)
         ? collectionUpdatedAt
         : ["/privacy-policy", "/return-policy"].includes(entry.path)
           ? entry.lastModified
@@ -188,7 +193,7 @@ export const indexableContent = {
     ...collectionEntries,
     ...resourceEntries,
     ...newsEntries,
-    ...productEntries,
+    ...productEntries.map((entry) => ({ ...entry, lastModified: keywordUpdatedAt })),
   ],
   paths: [
     ...pageEntries,

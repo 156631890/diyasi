@@ -22,11 +22,11 @@ export type ServicePageContent = {
 };
 export const servicePages: Record<string, ServicePageContent> = {
   "oem-odm": {
-    title: "Private-label underwear manufacturer in Yiwu",
+    title: "White Label Underwear Manufacturer: OEM and ODM",
     eyebrow: "Private label & OEM",
-    metaTitle: "Private Label Underwear Manufacturer in Yiwu, China",
+    metaTitle: "White Label Underwear Manufacturer: OEM and ODM",
     description:
-      "Work with DIYASI in Yiwu, China on private-label women's and men's underwear. Compare real cotton, lace, seamless and boxer-brief styles before sampling, labeling and packaging.",
+      "Work with a white label underwear manufacturer on a reviewed catalogue base. Plan fit, logo, waistband, labels and packaging with DIYASI before sampling.",
     image: "/media/editorial/cotton-lace-story.png",
     imageAlt: "Cotton, lace and fabric details for collection planning",
     introTitle: "A thoughtful route from idea to underwear.",
@@ -92,11 +92,11 @@ export const servicePages: Record<string, ServicePageContent> = {
     ],
   },
   about: {
-    title: "About DIYASI: underwear made in Yiwu",
+    title: "DIYASI Yiwu Underwear Manufacturer: Company Profile",
     eyebrow: "The DIYASI story",
-    metaTitle: "About Our Yiwu Underwear Manufacturing Company",
+    metaTitle: "DIYASI Yiwu Underwear Manufacturer: Company Profile",
     description:
-      "Meet DIYASI, a Yiwu underwear manufacturer established in 2003. Explore our 28,000 m² facility, OEM/ODM development, quality control and small-batch options.",
+      "Meet DIYASI Yiwu underwear manufacturer and review the company address, catalogue and sourcing evidence. Catalogue MOQ is 120 pieces per style.",
     image: "/media/home/factory-1.jpg",
     imageAlt: "DIYASI factory premises in Yiwu",
     introTitle: "Underwear manufacturing in Yiwu since 2003.",
@@ -110,7 +110,7 @@ export const servicePages: Record<string, ServicePageContent> = {
       },
       {
         title: "OEM/ODM development",
-        body: "Our in-house R&D team supports material selection, pattern and sample development, labels and packaging. For suitable briefs, a prototype can be ready in around seven days. Actual sample timing and cost are confirmed after we review the design, fabric and components.",
+        body: "Our in-house R&D team supports material selection, pattern and sample development, labels and packaging. Sample guidance is 5–7 days after the team reviews the brief and material availability. Confirm the actual schedule, sample cost and any changes before proceeding.",
         link: ["Plan a private-label project", "/oem-odm"],
       },
       {
@@ -141,12 +141,12 @@ export const servicePages: Record<string, ServicePageContent> = {
     ],
     faqs: [
       [
-        "Can DIYASI make 100 pieces per style?",
-        "Some small-batch customization programs can start from 100 pieces per style. Most current catalogue styles list 120 pieces. The applicable MOQ depends on the chosen style, fabric, color, logo and packaging and is confirmed in a written quotation.",
+        "How does the 120-piece per-style MOQ work?",
+        "Catalogue MOQ is 120 pieces per style. Propose the size/color allocation for each model and confirm availability. Custom fabrics, logo components and packaging are reviewed separately in the written quotation.",
       ],
       [
-        "Is a prototype always ready in seven days?",
-        "No. Around seven days is possible for suitable briefs. New patterns, custom materials, colors and components can take longer; the team confirms the schedule and sample cost after reviewing your requirements.",
+        "Does the 5–7 day sample guidance cover every development request?",
+        "The team confirms the sample plan after reviewing the selected style, materials, artwork and changes. The 5–7 day guidance is a catalogue sample reference; confirm completion and shipping separately.",
       ],
       [
         "How are the three DIYASI websites related?",
@@ -173,11 +173,11 @@ export const servicePages: Record<string, ServicePageContent> = {
         caption: "Dispatch area · carton loading for shipment",
       },
     ],
-    title: "Underwear factory & quality control",
+    title: "How to Check Underwear Quality Stitching and Fit",
     eyebrow: "Our atelier · Yiwu, China",
-    metaTitle: "Underwear Factory in Yiwu, China & Quality Control",
+    metaTitle: "How to Check Underwear Quality Stitching and Fit",
     description:
-      "Review DIYASI's underwear sampling, fabric checks, fit approval and production inspection process. Plan product-specific quality requirements with the factory.",
+      "Learn how to check underwear quality stitching with seam, gusset, fit and packing checks. Review DIYASI factory photographs and request order-specific evidence.",
     image: "/media/home/factory-2.jpg",
     imageAlt: "DIYASI production and manufacturing workspace",
     introTitle: "Quality starts before the first stitch.",
@@ -254,11 +254,11 @@ export const servicePages: Record<string, ServicePageContent> = {
       "These links explain the standards. They do not establish that a specific DIYASI product or facility currently holds a certificate. Request current documents and verify their scope.",
   },
   fabrics: {
-    title: "Underwear fabrics: cotton, lace & seamless",
+    title: "Underwear Fabrics and Finishes: Cotton, Lace, Seamless",
     eyebrow: "Fabrics & finishes",
-    metaTitle: "Cotton, Lace & Seamless Underwear Fabric Guide",
+    metaTitle: "Underwear Fabrics and Finishes: Cotton, Lace, Seamless",
     description:
-      "Compare cotton-spandex, cotton-lace and polyamide-spandex underwear. Understand material composition, coverage and stitched or bonded cotton gussets before sampling.",
+      "Compare underwear fabrics and finishes using component composition and sample checks. Review DIYASI cotton-spandex, cotton-lace and polyamide-spandex references.",
     image: "/media/editorial/cotton-lace-story.png",
     imageAlt: "Illustrative cotton, lace and fabric still life",
     introTitle: "The right fabric starts with the right brief.",
@@ -317,11 +317,11 @@ export const servicePages: Record<string, ServicePageContent> = {
     ],
   },
   packaging: {
-    title: "Custom underwear labels & packaging",
+    title: "Custom Logo Underwear Packaging Manufacturer: Labels",
     eyebrow: "Labels & packaging",
-    metaTitle: "Custom Underwear Labels, Waistbands & Packaging",
+    metaTitle: "Custom Logo Underwear Packaging Manufacturer: Labels",
     description:
-      "Plan private-label underwear logos, waistbands, care labels, hangtags and packaging with DIYASI. Match your artwork and market requirements to the selected style.",
+      "Review a custom logo underwear packaging manufacturer brief with artwork, care labels, waistbands, barcodes and packed-sample approval for your selected style.",
     image: "/media/editorial/cotton-lace-story.png",
     imageAlt: "Material and finishing inspiration for an underwear collection",
     introTitle: "Small details make it your collection.",
@@ -377,11 +377,11 @@ export const servicePages: Record<string, ServicePageContent> = {
     ],
   },
   sustainability: {
-    title: "Responsible underwear sourcing",
+    title: "Responsible Underwear Sourcing: Material Evidence",
     eyebrow: "Responsible material decisions",
-    metaTitle: "Responsible Underwear Sourcing & Material Claims",
+    metaTitle: "Responsible Underwear Sourcing: Material Evidence",
     description:
-      "Make evidence-based underwear sourcing decisions. Review composition, recycled-content documentation, product testing, packaging and factory audit scope with DIYASI.",
+      "Plan responsible underwear sourcing using actual component specifications, order documents, material claims and the scope of any requested audits or tests.",
     image: "/media/editorial/cotton-lace-story.png",
     imageAlt: "Textile material study in ivory and muted rose",
     introTitle: "Start with evidence, then make the claim.",
