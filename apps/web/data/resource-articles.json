@@ -166,6 +166,10 @@
             "Destination, requested date and quoted trade term"
           ]
         ]
+      },
+      {
+        "title": "Build an underwear size and color allocation sheet",
+        "text": "Add your selected catalogue styles to the sample list, then enter the planned pieces and requested size and color allocations for each model. Download the sample brief as a CSV for your buying team. These are proposed quantities, not an approved assortment or an automatic MOQ calculation. Confirm each size/color combination, garment measurements, custom labels and packaging with the factory; attach the brief when discussing your request by email or chat. The temporary planning notes are not transferred automatically to the enquiry form."
       }
     ],
     "faq": [
@@ -180,7 +184,7 @@
         "https://www.diyasiunderwear.com/products"
       ]
     ],
-    "updatedAt": "2026-09-22"
+    "updatedAt": "2026-10-11"
   },
   {
     "slug": "unit-cost-custom-underwear-manufacturing",
