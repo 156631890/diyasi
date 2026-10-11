@@ -2,11 +2,11 @@
 
 Target: https://www.yiwudiyasidress.com, Vercel project diyasi-web (prj_WHM0RY5r9cDsgN05Jm35LwqUpLRs). Do not deploy the separate diyasi project. Goal: qualified underwear wholesale/private-label sample enquiries.
 
-## Release constraint
+## Production source reconciliation
 
-The production domain currently resolves to CLI deployment dpl_CaxtA5WJQmSP9hsWgzT4iWB36zPo (8 October). It exposes no Git SHA. GitHub main is an older design. The latest redesign branch is feat/diyasi-redesign-20260917 at 8c5a5957aa4c1be4b9ad22388e31fe39bf52014b (27 September).
+The October 8 production CLI deployment `dpl_CaxtA5WJQmSP9hsWgzT4iWB36zPo` was inspected through the authenticated Vercel Source interface on October 11. All 148 displayed application/configuration source files were read; the generated TypeScript build cache was excluded. No application source files from the September Git base were missing from that production tree. Vercel's Copy action strips final newlines and Unicode BOMs; those formatting differences were normalized before comparison.
 
-The production source tree contains five data files versus three in this checkout. Its file-list connector truncates the nested source tree. Package and Next config retrieved through the connector match the redesign content, but that does not establish whole-source equality. Browser access to deployment Source requires Vercel login. Personal-context and Library checks did not locate an authoritative October source archive. **Do not replace production with this September snapshot.** This PR is a tested implementation to rebase onto the actual production source, not a completed release.
+The recovered production version has 135 keyword-page configurations, 24 resource articles and 46 news articles. Its substantive source changes and three production WOFF2 fonts are restored before the buyer-tools commit. All 333 literal media references already exist in the checkout. The existing production quotation guide was preserved and received only the new planning section and modification date. The original source blocker is resolved; release and live verification are tracked below.
 
 ## Public research
 
@@ -41,5 +41,5 @@ No current search volume, traffic, rank or conversion uplift was measured. These
 - Existing 45 product records untouched. No source assets, styles, collection links, existing form fields or backend storage removed.
 - No dependencies, credentials, payment behavior, notification setup or server submission code changed.
 - React review: local component state, shared typed CSV functions, labelled inputs, invalid quantity feedback, native checkbox, scrollable comparison, mobile form stacking.
-- Desktop/mobile live interaction remains pending accurate-source reconciliation and release; do not mark this draft as live.
+- Tests and live verification must be repeated against the reconciled production source before marking the release complete.
 - REA deep process analysis was unavailable in this environment earlier. Public pages informed an original implementation; no REA runtime or competitor source added to the site.
