@@ -3,8 +3,8 @@ import { buildMetadata, buildBreadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
 import { companyInfo } from "@/lib/site-info";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Request Underwear Samples & a Manufacturing Quote",
-  description: "Request underwear samples or a private-label manufacturing quote from DIYASI. Send model numbers, quantities, sizes, branding and delivery requirements.",
+  title: "Request Underwear Samples and Quote: Your Brief",
+  description: "Request underwear samples and quote details from DIYASI. Send models, sizes, colors and artwork; MOQ 120 pieces per style, sample guidance 5–7 days.",
   path: "/contact",
 });
 
