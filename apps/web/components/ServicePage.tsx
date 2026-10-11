@@ -4,6 +4,7 @@ import JsonLd from "./JsonLd";
 import { buildBreadcrumbJsonLd } from "@/lib/seo";
 import type { ServicePageContent } from "@/lib/service-pages";
 import { serviceRelatedLinks } from "@/lib/buyer-guidance";
+import { serviceKeywordSections } from "@/lib/keyword-content";
 export default function ServicePage({
   page,
   path,
@@ -11,6 +12,8 @@ export default function ServicePage({
   page: ServicePageContent;
   path: string;
 }) {
+  const keywordContent = serviceKeywordSections[path];
+  const faqs = [...(page.faqs ?? []), ...(keywordContent?.faq ?? [])];
   return (
     <main id="main-content" className="d-service">
       <JsonLd
@@ -44,7 +47,7 @@ export default function ServicePage({
           {page.sections.map((s, i) => (
             <section key={s.title} className="d-service-section">
               <span>0{i + 1}</span>
-              <h2>{s.title}</h2>
+              <h2>{keywordContent?.headings[i] ?? s.title}</h2>
               <p>{s.body}</p>
               {s.items && (
                 <ul>
@@ -102,11 +105,11 @@ export default function ServicePage({
             ))}
           </aside>
         )}
-        {page.faqs && (
+        {faqs.length > 0 && (
           <section className="d-service-faq">
             <h2>A few useful answers.</h2>
             <div className="d-accordions">
-              {page.faqs.map(([q, a]) => (
+              {faqs.map(([q, a]) => (
                 <details key={q}>
                   <summary>{q}</summary>
                   <p>{a}</p>
@@ -117,7 +120,7 @@ export default function ServicePage({
               data={{
                 "@context": "https://schema.org",
                 "@type": "FAQPage",
-                mainEntity: page.faqs.map(([q, a]) => ({
+                mainEntity: faqs.map(([q, a]) => ({
                   "@type": "Question",
                   name: q,
                   acceptedAnswer: { "@type": "Answer", text: a },

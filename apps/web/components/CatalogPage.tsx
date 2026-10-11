@@ -5,6 +5,8 @@ import type { Metadata } from "next";
 import ProductCard from "./ProductCard";
 import JsonLd from "./JsonLd";
 import BuyerGuidance from "./BuyerGuidance";
+import ContentFaq from "./ContentFaq";
+import { catalogueFaq, keywordLink } from "@/lib/keyword-content";
 import { collectionBuyingGuides, moqGuide, sampleGuide } from "@/lib/buyer-guidance";
 import { catalogProducts } from "@/lib/catalog-source";
 import {
@@ -69,10 +71,10 @@ export function catalogMetadata(
     ? Number(first(search.page))
     : 1;
   const meta = buildMetadata({
-    title: `${collection ? collection.seoTitle : "Wholesale Underwear & Private Label Catalogue"}${page > 1 ? ` · Page ${page}` : ""}`,
+    title: `${collection ? collection.seoTitle : "Underwear Manufacturer China OEM: Catalogue"}${page > 1 ? ` · Page ${page}` : ""}`,
     description:
       collection?.description ??
-      "Source women's and men's underwear from DIYASI in Yiwu, China. Compare 45 cotton, lace and seamless styles, specifications and private-label sample options.",
+      "Compare an underwear manufacturer China OEM catalogue with 45 real DIYASI styles. Review materials, fit, size charts and private-label sample requirements.",
     path: path + (page > 1 ? `?page=${page}` : ""),
   });
   return {
@@ -102,7 +104,7 @@ export default function CatalogPage({
     if (n > 1) params.set("page", String(n));
     return path + (params.size ? "?" + params.toString() : "");
   };
-  const title = collection?.title ?? "Wholesale underwear for your brand";
+  const title = collection?.title ?? "Underwear Manufacturer China OEM: Catalogue";
   return (
     <main id="main-content" className="d-catalog">
       <JsonLd
@@ -150,7 +152,7 @@ export default function CatalogPage({
           <h1>{title}</h1>
           <p>
             {collection?.description ??
-              "Compare 45 women's and men's underwear styles for wholesale and private-label orders. Select by fabric, fit and construction, then request samples, a size/color mix and a quotation from our team in Yiwu, China."}
+              "Use the underwear manufacturer China OEM catalogue to compare 45 DIYASI women's and men's styles. Review fabric, fit and construction, then request samples, a size/color allocation and a written quotation."}
           </p>
         </div>
         {collection && (
@@ -280,10 +282,10 @@ export default function CatalogPage({
           </nav>
         )}
         {page === 1 && !q && <BuyerGuidance guide={collection ? collectionBuyingGuides[collection.slug] : {
-          heading: "From wholesale catalogue to approved sample",
+          heading: "Small batch underwear production China: from catalogue to sample",
           intro: "Use the catalogue to compare actual styles before committing to a production run. Most listed specifications start at 120 pieces per style, with mixed sizes and colors subject to confirmation; custom fabrics and branding can have separate minimums.",
           checks: ["Shortlist model numbers, sizes and colors against your target customer.", "Request sample fees, artwork charges, packaging costs and freight as separate quotation items.", "Approve measurements, fabric, labels and a delivery schedule in writing before bulk production."],
-          links: [moqGuide, sampleGuide, { label: "Factory and quality control", href: "/factory" }],
+          links: [moqGuide, sampleGuide, keywordLink("/factory"), keywordLink("/resources/120-pcs-moq-underwear-manufacturer"), keywordLink("/resources/yiwu-underwear-manufacturer")],
         }} />}
         <section className="d-catalog-note">
           <h2>A style is only the beginning.</h2>
@@ -293,9 +295,10 @@ export default function CatalogPage({
             production.
           </p>
           <Link href="/oem-odm" className="d-text-link">
-            Explore private label ↗
+            White label underwear manufacturer ↗
           </Link>
         </section>
+        {page === 1 && !q && <ContentFaq items={collection ? collectionBuyingGuides[collection.slug].faq ?? catalogueFaq : catalogueFaq} />}
       </section>
     </main>
   );

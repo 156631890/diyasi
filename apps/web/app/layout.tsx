@@ -22,12 +22,12 @@ import "./news/news.css";
 const headingFont = localFont({
   src: [
     {
-      path: "../public/fonts/cormorant-normal.ttf",
+      path: "../public/fonts/cormorant-normal.woff2",
       weight: "400 600",
       style: "normal",
     },
     {
-      path: "../public/fonts/cormorant-italic.ttf",
+      path: "../public/fonts/cormorant-italic.woff2",
       weight: "400 600",
       style: "italic",
     },
@@ -36,7 +36,7 @@ const headingFont = localFont({
   display: "swap",
 });
 const bodyFont = localFont({
-  src: "../public/fonts/manrope-normal.ttf",
+  src: "../public/fonts/manrope-normal.woff2",
   weight: "400 700",
   variable: "--font-body",
   display: "swap",

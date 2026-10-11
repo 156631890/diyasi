@@ -42,7 +42,7 @@ export async function GET() {
     "",
     "## Quantities",
     ...moqRoutes.map((r) => "- " + r.title + ": " + r.value + ". " + r.summary),
-    "Catalogue sample guidance is typically 5 to 7 days; confirm timing against materials and the sample brief.",
+    "Catalogue sample guidance is 5–7 days; confirm timing against materials and the sample brief. Courier delivery is confirmed separately.",
     "",
     "## Styles",
     ...catalogProducts.map(

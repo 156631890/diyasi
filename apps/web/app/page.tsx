@@ -8,19 +8,19 @@ import { productByModel } from "@/lib/collections";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Underwear Manufacturer in Yiwu, China | DIYASI",
+  title: "Low MOQ Underwear Manufacturer in Yiwu, China",
   description:
-    "Source cotton, lace and seamless underwear from DIYASI, a manufacturer in Yiwu, China. Explore women's and men's styles, private labels, samples and bulk orders.",
+    "Work with a low MOQ underwear manufacturer in Yiwu. Compare DIYASI cotton, lace, seamless and men's styles; MOQ 120 pieces per style, sample guidance 5–7 days.",
   path: "/",
 });
 const faqs = [
   {
-    question: "Can I put my own brand on these underwear styles?",
+    question: "What is OEM vs ODM underwear manufacturing?",
     answer:
-      "Yes. DIYASI can discuss logo application, waistbands, care labels and packaging for selected styles. Customization, quantities and available colors are confirmed against your sample brief.",
+      "An OEM brief identifies the brand-supplied pattern and specifications; an ODM starting point uses a selected manufacturer design with agreed changes. DIYASI reviews logo application, waistbands, care labels and packaging against your sample brief.",
   },
   {
-    question: "What is the minimum order for the catalogue styles?",
+    question: "How does mixed sizes colors MOQ underwear work?",
     answer:
       "Most current product specification tables list 120 pieces per style with mixed sizes and colors, subject to confirmation. Custom fabrics, colors, labels and packaging may require different quantities.",
   },
@@ -32,7 +32,7 @@ const faqs = [
   {
     question: "How long does sampling take?",
     answer:
-      "The source catalogue typically states 5 to 7 days for samples. The factory confirms the schedule after checking fabric availability, artwork and any pattern changes.",
+      "Sample guidance is 5–7 days. The factory confirms the schedule after checking fabric availability, artwork and any pattern changes; confirm courier delivery separately.",
   },
 ];
 export default function HomePage() {

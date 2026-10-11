@@ -8,7 +8,7 @@ export const companyInfo = {
   facilityAreaSquareMeters: 28000,
   monthlyCapacityPieces: 1000000,
   countriesServed: 30,
-  smallBatchMoqPerStyle: 100,
+  smallBatchMoqPerStyle: 120,
   address: "No. 16 Dashi Road, Fotang Town, Yiwu, Zhejiang, China",
   emailPrimary: "imbella.vicky@diyasidress.com",
   emailSecondary: "imbella.annie@diyasidress.com",
@@ -23,9 +23,9 @@ export const companyInfo = {
 export const moqTiers = moqRoutes.map(({ label, value }) => ({ label, value }));
 
 export const sampleAndLeadTimes = {
-  stockFabricSample: "5-7 days for stock fabric sample",
-  customColorSample: "10-15 days for custom color sample",
-  newPatternSample: "15-20 days for new pattern development",
+  stockFabricSample: "5–7 days; confirm against the sample brief",
+  customColorSample: "5–7 day catalogue sample guidance; confirm changes against the brief",
+  newPatternSample: "5–7 day catalogue sample guidance; confirm development feasibility and schedule",
   bulkLeadTime: "20-35 days depending on quantity and customization",
 };
 

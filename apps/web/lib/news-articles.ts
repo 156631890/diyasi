@@ -17,6 +17,7 @@ type NewsSourceArticle = {
   sections: Array<{ title: string; paragraphs: string[]; rows?: string[][] }>;
   reading: Array<{ label: string; href: string }>;
   references?: Array<{ label: string; href: string }>;
+  faq?: string[][];
 };
 export type NewsArticle = Omit<NewsSourceArticle, "coverImage"> & { coverImage: string };
 const sourceArticles: NewsSourceArticle[] = articles;

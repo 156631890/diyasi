@@ -12,6 +12,8 @@ import ProductInquiryForm from "@/components/ProductInquiryForm";
 import { SampleButton } from "@/components/SampleList";
 import JsonLd from "@/components/JsonLd";
 import BuyerGuidance from "@/components/BuyerGuidance";
+import ContentFaq from "@/components/ContentFaq";
+import { catalogueFaq, collectionKeywordGuides } from "@/lib/keyword-content";
 import { productBuyingGuide } from "@/lib/buyer-guidance";
 import { productSourceEvidence } from "@/lib/product-source-evidence";
 import {
@@ -131,7 +133,7 @@ export default async function ProductPage({ params, searchParams }: Props) {
           <p className="d-eyebrow">
             Private label &amp; wholesale · {p.model_number}
           </p>
-          <h1>{p.product_name}</h1>
+          <h1>{p.seo_heading}</h1>
           <p className="d-detail-description">{p.description}</p>
           <p className="d-quote-price">
             Made for your label. <span>Quoted for your order.</span>
@@ -359,6 +361,11 @@ export default async function ProductPage({ params, searchParams }: Props) {
           </div>
         </section>
       )}
+      <ContentFaq title={`${p.model_number} sample questions`} items={[
+        [`What should I confirm for ${p.seo_heading}?`, `Review the listed ${p.fit.toLowerCase()} fit, ${p.rise.toLowerCase()} rise and ${p.size} size range on the physical sample. Confirm the body and other component compositions separately; the final order specification and measurements require approval.`],
+        ...(collectionKeywordGuides[p.collection]?.faq.slice(0, 1) ?? []),
+        ...catalogueFaq,
+      ]} />
     </main>
   );
 }

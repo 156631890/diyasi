@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import {downloadCsv, makeCsv} from "@/lib/buyer-export";
+import {SITE_ORIGIN} from "@/lib/site-config";
 import Link from "next/link";
 import {
   createContext,
@@ -64,6 +66,7 @@ export default function ProductComparison({
 }) {
   const raw = useSyncExternalStore(subscribe, snapshot, () => "[]");
   const [notice, setNotice] = useState("");
+  const [differences, setDifferences] = useState(false);
   const dialog = useRef<HTMLDialogElement>(null);
   const ids = useMemo(() => {
     try {
@@ -139,6 +142,10 @@ export default function ProductComparison({
             Close comparison
           </button>
         </div>
+        <div style={{display: "flex", flexWrap: "wrap", gap: "1rem", alignItems: "center", marginBottom: "1rem"}}>
+          <label><input type="checkbox" checked={differences} onChange={e=>setDifferences(e.target.checked)}/> Show different values only</label>
+          <button type="button" className="d-button" disabled={!selected.length} onClick={()=>downloadCsv(makeCsv([["Model", "Product", "Fabric", "Fit", "Rise", "Listed sizes", "Listed starting quantity", "Product URL", "Status"], ...selected.map(p=>[p.model_number, p.product_name, p.fabric, p.fit, p.rise, p.size, p.moq, `${SITE_ORIGIN}/products/${p.slug}`, "Comparison draft; confirm measurements, sample costs, size/color mix and MOQ; no enquiry submitted"])]), "diyasi-style-comparison.csv")}>Download comparison (CSV) ↓</button>
+        </div>
         <div
           className="d-table-scroll"
           role="region"
@@ -177,7 +184,7 @@ export default function ProductComparison({
                   ["Sizes", "size"],
                   ["Starting quantity", "moq"],
                 ] as const
-              ).map(([label, field]) => (
+              ).filter(([,field]) => !differences || selected.length < 2 || new Set(selected.map(p=>p[field].trim())).size > 1).map(([label, field]) => (
                 <tr key={field}>
                   <th scope="row">{label}</th>
                   {selected.map((p) => (

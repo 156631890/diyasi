@@ -1,4 +1,6 @@
 import type { CatalogProduct } from "./catalog-source";
+import longtailLinks from "@/data/longtail-links.json";
+import { collectionKeywordGuides, existingResourceNewLinks, keywordLink, newResourceLinks, serviceKeywordSections, uniqueKeywordLinks } from "./keyword-content";
 
 export type BuyerLink = { label: string; href: string };
 export type BuyingGuide = {
@@ -6,6 +8,7 @@ export type BuyingGuide = {
   intro: string;
   checks: string[];
   links: BuyerLink[];
+  faq?: string[][];
 };
 const guide = (slug: string, label: string): BuyerLink => ({ label, href: `/resources/${slug}` });
 const model = (slug: string, label: string): BuyerLink => ({ label, href: `/products/${slug}` });
@@ -145,15 +148,33 @@ export const featuredProductGuides: Record<string, BuyingGuide> = {
   },
 };
 
+function productSupportTerm(product: CatalogProduct): string {
+  if (product.gender === "men") {
+    if (/boxer|long-leg/i.test(product.fit)) return "Men’s boxer briefs manufacturer OEM";
+    return /brief/i.test(product.fit) ? "Men’s briefs manufacturer OEM" : "Men’s trunks manufacturer";
+  }
+  if (product.collection === "lace-underwear") return "Lace underwear manufacturer private label";
+  if (product.collection === "seamless-underwear") return /thong/i.test(product.fit) ? "Seamless thong manufacturer" : "Seamless panties manufacturer OEM";
+  if (/boyshort|boxer/i.test(product.fit)) return "Boyshort underwear manufacturer";
+  if (/bikini/i.test(product.fit)) return "Bikini panties manufacturer OEM";
+  if (/thong|tanga|string/i.test(product.fit)) return "Thong underwear manufacturer OEM";
+  return /high/i.test(product.rise) ? "High waisted briefs manufacturer" : "Cotton briefs manufacturer";
+}
+
 export function productBuyingGuide(product: CatalogProduct): BuyingGuide {
   const featured = featuredProductGuides[product.model_number];
-  if (featured) return featured;
   const collection = collectionBuyingGuides[product.collection];
+  const heading = `${productSupportTerm(product)}: ${product.model_number} sample checks`;
+  if (featured) return {
+    ...featured,
+    heading,
+    links: uniqueKeywordLinks([keywordLink(`/products/${product.collection}`), ...featured.links, ...(collectionKeywordGuides[product.collection]?.links ?? [])]),
+  };
   return {
-    heading: `Sampling ${product.model_number} for your label`,
+    heading,
     intro: `Include model ${product.model_number} and its ${product.fit.toLowerCase()} silhouette in your quotation brief. The listed rise is ${product.rise.toLowerCase()}; confirm its measurements in the intended size before applying your branding.`,
     checks: collection.checks,
-    links: [{ label: "Compare styles in this collection", href: `/products/${product.collection}` }, ...collection.links.slice(0, 2)],
+    links: uniqueKeywordLinks([keywordLink(`/products/${product.collection}`), ...collection.links.slice(0, 2), ...(collectionKeywordGuides[product.collection]?.links ?? [])]),
   };
 }
 
@@ -182,3 +203,30 @@ export const serviceRelatedLinks: Record<string, BuyerLink[]> = {
   "/packaging": [waistbandGuide, sizeGuide, sampleGuide],
   "/sustainability": [{ label: "Fabric specifications and care", href: "/fabrics" }, { label: "Quality checks and document scope", href: "/factory" }, reorderGuide],
 };
+
+// Enrich only editorial text and links. Existing sampling and order actions
+// keep the same route handlers, components and parameters.
+for (const [slug, content] of Object.entries(collectionKeywordGuides)) {
+  const existing = collectionBuyingGuides[slug];
+  existing.heading = content.heading;
+  existing.links = uniqueKeywordLinks([...existing.links, ...content.links]);
+  existing.faq = content.faq;
+}
+for (const [slug, links] of Object.entries(resourceRelatedLinks)) {
+  resourceRelatedLinks[slug] = uniqueKeywordLinks([
+    ...links,
+    ...(existingResourceNewLinks[slug] ?? []).map((target) => keywordLink(`/resources/${target}`)),
+  ]);
+}
+Object.assign(resourceRelatedLinks, newResourceLinks);
+for (const { slug, links } of longtailLinks) {
+  const existing = resourceRelatedLinks[slug] ?? [];
+  const destinations = new Set(existing.map((link) => link.href));
+  resourceRelatedLinks[slug] = [
+    ...existing,
+    ...links.filter((link) => !destinations.has(link.href)),
+  ];
+}
+for (const [path, content] of Object.entries(serviceKeywordSections)) {
+  serviceRelatedLinks[path] = uniqueKeywordLinks([...(serviceRelatedLinks[path] ?? []), ...content.links]);
+}
