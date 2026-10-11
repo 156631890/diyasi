@@ -5,6 +5,8 @@ import { notFound } from "next/navigation";
 import JsonLd from "@/components/JsonLd";
 import ProductCard from "@/components/ProductCard";
 import NewsCard from "@/components/NewsCard";
+import ContentFaq from "@/components/ContentFaq";
+import { collectionKeywordGuides, keywordLink, uniqueKeywordLinks } from "@/lib/keyword-content";
 import { catalogProducts } from "@/lib/catalog-source";
 import { findNewsArticle, newsArticles, newsDate } from "@/lib/news-articles";
 import { absoluteUrl, buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
@@ -33,6 +35,11 @@ export default async function NewsDetailPage({ params }: Props) {
   const path = `/news/${article.slug}`;
   const related = article.models.map((model) => catalogProducts.find((product) => product.model_number === model)!);
   const sources = related.flatMap((product) => product.source_urls.map((url) => ({ label: `${product.model_number} original product specification`, url })));
+  const reading = uniqueKeywordLinks([
+    ...article.reading,
+    ...related.flatMap((product) => collectionKeywordGuides[product.collection]?.links ?? []),
+    ...related.slice(0, 2).map((product) => keywordLink(`/products/${product.slug}`)),
+  ]).filter((link) => link.href !== path);
   return (
     <main id="main-content">
       <JsonLd data={buildBreadcrumbJsonLd([
@@ -93,7 +100,7 @@ export default async function NewsDetailPage({ params }: Props) {
           ))}
           <section className="d-reading">
             <h2>Put your research to work</h2>
-            {article.reading.map(({ label, href }) => <Link key={href} className="d-text-link" href={href}>{label} ↗</Link>)}
+            {reading.map(({ label, href }) => <Link key={href} className="d-text-link" href={href}>{label} ↗</Link>)}
           </section>
           <section className="d-source-links">
             <h2>Product sources</h2>
@@ -104,6 +111,7 @@ export default async function NewsDetailPage({ params }: Props) {
             <h2>Further references</h2>
             {article.references.map(({ label, href }) => <a href={href} key={href} target="_blank" rel="noopener noreferrer">{label} ↗</a>)}
           </section>}
+          {article.faq && <ContentFaq items={article.faq} />}
           <section className="d-service-cta">
             <h2>A starting point for your collection.</h2>
             <p>Share your selected model numbers, intended market and sample requirements with the DIYASI team.</p>
