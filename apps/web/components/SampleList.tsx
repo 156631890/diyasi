@@ -8,6 +8,7 @@ import { parseSampleIds, SAMPLE_LIMIT, SAMPLE_STORAGE_KEY } from "@/lib/sample-l
 import { trackAnalyticsEvent } from "@/lib/analytics";
 import { SITE_ORIGIN } from "@/lib/site-config";
 import s from "./SampleList.module.css";
+import SampleBrief from "./SampleBrief";
 
 export type SampleProduct = { slug: string; product_name: string; model_number: string; image_url: string };
 const changeEvent = "diyasi-samples-changed";
@@ -69,6 +70,7 @@ export default function SampleList({ products, children }: { products: SamplePro
       {chosen.length ? <>
         <p>{spanish ? `${chosen.length} modelos seleccionados.` : `${chosen.length} selected ${chosen.length === 1 ? "style" : "styles"}. A starting point for our conversation.`}</p>
         <ul className={s.items}>{chosen.map(p => <li key={p.slug}><Image src={p.image_url} alt={p.product_name} width={82} height={100} /><div><span>{p.model_number}</span><h3><Link href={`/products/${p.slug}`} onClick={() => dialog.current?.close()}>{p.product_name}</Link></h3><button type="button" aria-label={`Remove ${p.model_number} from sample list`} onClick={() => toggle(p.slug)}>{spanish ? "Eliminar" : "Remove"}</button></div></li>)}</ul>
+        <SampleBrief products={chosen} spanish={spanish}/>
         <Link className="d-button d-button-wide" href={`${spanish ? "/es/contacto" : "/contact"}?samples=1&from=${encodeURIComponent(pathname)}#quote-form`} onClick={() => { dialog.current?.close(); trackAnalyticsEvent("sample_inquiry_started"); }}>{spanish ? "Solicitar estas muestras" : "Request these samples"} <span>↗</span></Link>
         <a className={s.whatsapp} href={whatsapp} target="_blank" rel="noopener noreferrer" onClick={() => trackAnalyticsEvent("whatsapp_started")}>{spanish ? "Hablar por WhatsApp" : "Discuss on WhatsApp"} ↗</a>
         <button className={s.clear} type="button" onClick={() => { save([]); setNotice(""); }}>{spanish ? "Vaciar lista" : "Clear sample list"}</button>
