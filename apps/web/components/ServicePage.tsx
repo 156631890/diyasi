@@ -27,6 +27,11 @@ export default function ServicePage({
           <p className="d-eyebrow">{page.eyebrow}</p>
           <h1>{page.title}</h1>
           <p>{page.description}</p>
+          {page.ctaLabel && (
+            <Link href="/contact#quote-form" className="d-button">
+              {page.ctaLabel} ↗
+            </Link>
+          )}
         </div>
         <div className="d-service-hero-photo">
           <Image
@@ -142,7 +147,7 @@ export default function ServicePage({
           we’ll help you work through the details.
         </p>
         <Link href="/contact#quote-form" className="d-button">
-          Start a conversation ↗
+          {page.ctaLabel ?? "Start a conversation"} ↗
         </Link>
       </section>
     </main>

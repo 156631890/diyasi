@@ -22,8 +22,8 @@ export default function HomeCollection({ products }: { products: CatalogProduct[
   return <div className={s.page}>
 
       <section className={s.hero}>
-        <Image src="/media/preview/softness-campaign.webp" alt="Concept still life of ivory cotton and lace in warm natural light" fill preload sizes="100vw" className={s.heroImage} />
-        <div className={s.heroCopy}><p className={s.eyebrow}>YIWU, CHINA · 120 PIECES PER STYLE</p><h1>Low MOQ underwear<br /><em>manufacturer.</em></h1><p>A low MOQ underwear manufacturer for your brand.<br />Cotton, lace and seamless styles. Sample guidance: 5–7 days.</p><a className={s.button} href="#collection">Explore the collection <span>↗</span></a><a className={s.heroSecondary} href={`${live}/oem-odm`}>White label underwear manufacturer ↗</a></div>
+        <Image src="/media/preview/softness-campaign.webp" alt="Concept still life of ivory cotton and lace in warm natural light" fill loading="eager" fetchPriority="high" sizes="100vw" className={s.heroImage} />
+        <div className={s.heroCopy}><p className={s.eyebrow}>YIWU, CHINA · 120 PIECES PER STYLE</p><h1>Low MOQ underwear<br /><em>manufacturer.</em></h1><p>A low MOQ underwear manufacturer for your brand.<br />Cotton, lace and seamless styles. Sample guidance: 5–7 days.</p><a className={s.button} href="#collection">Explore the collection <span>↗</span></a><a className={s.heroSecondary} href={`${live}/oem-odm`}>Private label underwear manufacturing ↗</a></div>
         <div className={s.heroCaption}><span>COTTON · LACE · SEAMLESS</span><span>THE MATERIAL MOOD / 01</span></div>
       </section>
       <div className={s.benefits}><span>Original DIYASI styles</span><span>Samples before production</span><span>Labels & packaging, your way</span></div>

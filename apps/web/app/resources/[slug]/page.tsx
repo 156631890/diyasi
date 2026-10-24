@@ -113,6 +113,14 @@ export default async function ResourceDetailPage({ params }: Props) {
         </aside>
         <article className="d-article-body">
           <p className="d-article-answer">{a.answer}</p>
+          {a.slug === "private-label-underwear-manufacturer" && (
+            <p>
+              Ready to develop your collection?{" "}
+              <Link href="/oem-odm" className="d-text-link">
+                Explore private-label underwear manufacturing ↗
+              </Link>
+            </p>
+          )}
           <figure className="d-article-photo">
             <Image
               src={a.coverImage}

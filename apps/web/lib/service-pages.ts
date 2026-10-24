@@ -9,6 +9,7 @@ export type ServicePageContent = {
   imageAlt: string;
   introTitle: string;
   intro: string;
+  ctaLabel?: string;
   sections: Array<{
     title: string;
     body: string;
@@ -22,16 +23,17 @@ export type ServicePageContent = {
 };
 export const servicePages: Record<string, ServicePageContent> = {
   "oem-odm": {
-    title: "White Label Underwear Manufacturer: OEM and ODM",
+    title: "Private Label Underwear Manufacturing",
     eyebrow: "Private label & OEM",
-    metaTitle: "White Label Underwear Manufacturer: OEM and ODM",
+    metaTitle: "Private Label Underwear Manufacturer",
     description:
-      "Work with a white label underwear manufacturer on a reviewed catalogue base. Plan fit, logo, waistband, labels and packaging with DIYASI before sampling.",
+      "Plan private-label underwear with DIYASI in Yiwu. Compare catalogue styles, fabrics, labels and packaging, then request samples and a confirmed quotation.",
     image: "/media/editorial/cotton-lace-story.png",
     imageAlt: "Cotton, lace and fabric details for collection planning",
     introTitle: "A thoughtful route from idea to underwear.",
     intro:
-      "Start with a style you can see, touch and evaluate. Our Yiwu team works with emerging brands, retailers and wholesale buyers to turn a fabric and fit direction into an approved sample and a written production brief.",
+      "Build your underwear collection from a reviewed catalogue style or an agreed development brief. Compare cotton, lace and seamless options, then confirm fit, materials, labels and packaging with our Yiwu team. Most listed styles start from 120 pieces per style; custom fabrics, colours and components may require different minimums. Request a sample review before confirming production.",
+    ctaLabel: "Request Samples & a Quote",
     sections: [
       {
         title: "Begin with a real style",
