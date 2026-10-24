@@ -2259,6 +2259,11 @@ em {
 .d-cookie-settings { display:block; width:100%; padding:12px 24px; background:#f5f0eb; color:#504540; text-decoration:underline; font-size:12px; }
 .d-factory-gallery { padding:40px 0; }
 .d-buyer-guidance { display:grid; grid-template-columns:1fr 1fr; gap:5vw; margin:50px 0; padding:36px 0; border-top:1px solid #ded4ca; }
+.d-sourcing-selection { margin:48px 0; padding:32px 0; border-top:1px solid var(--line); }
+.d-sourcing-selection h2 { font-family:var(--font-heading); font-size:clamp(28px,3.5vw,42px); line-height:1.15; margin-bottom:18px; }
+.d-sourcing-selection > p { max-width:900px; font-size:14px; line-height:1.85; margin:18px 0; }
+.d-sourcing-selection .d-table-scroll a { text-decoration:underline; text-underline-offset:3px; }
+.d-sourcing-selection > .d-button { margin-top:8px; }
 .d-detail > .d-buyer-guidance { margin:50px 6vw; }
 .d-buyer-guidance h2 { font-family:var(--font-heading); font-size:clamp(28px,3.5vw,42px); line-height:1.15; margin:10px 0 18px; }
 .d-buyer-guidance p,.d-buyer-guidance li { font-size:14px; line-height:1.85; }

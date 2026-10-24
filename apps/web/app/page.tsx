@@ -3,6 +3,7 @@ import Link from "next/link";
 import HomeCollection from "@/components/HomeCollection";
 import JsonLd from "@/components/JsonLd";
 import NewsCard from "@/components/NewsCard";
+import BuyerGuidance from "@/components/BuyerGuidance";
 import { newsArticles } from "@/lib/news-articles";
 import { productByModel } from "@/lib/collections";
 import { buildMetadata } from "@/lib/seo";
@@ -39,6 +40,23 @@ export default function HomePage() {
   return (
     <main id="main-content">
       <HomeCollection products={["LS006", "DYS201", "DYS323", "DYS219", "LS005", "DYS314", "DYS224", "M001"].map(productByModel)} />
+      <div className="d-section">
+        <BuyerGuidance guide={{
+          heading: "Source underwear from Yiwu, China, with a clear buying brief",
+          intro: "DIYASI is an underwear manufacturer in Yiwu serving brands, retailers and wholesale buyers. Start with actual catalogue models, compare their construction and measurements, then agree the sample and production specification with our team.",
+          checks: [
+            "Choose cotton, lace or laser-cut seamless styles, or compare men's briefs, trunks and boxer briefs.",
+            "Most listed styles start at 120 pieces per style. Confirm the size/color mix and separate minimums for custom fabric, labels, waistbands and packaging.",
+            "Send your target market, model numbers, quantity and branding brief to request sample costs and a written quotation.",
+          ],
+          links: [
+            { label: "Compare wholesale underwear styles", href: "/products" },
+            { label: "Private-label and custom underwear manufacturing", href: "/oem-odm" },
+            { label: "Review factory photographs and quality checks", href: "/factory" },
+            { label: "Request samples and a quotation", href: "/contact#quote-form" },
+          ],
+        }} />
+      </div>
       <section className="d-section d-home-news">
         <div className="d-section-heading">
           <div><p className="d-eyebrow">The latest from DIYASI</p><h2>News &amp; insights.</h2></div>

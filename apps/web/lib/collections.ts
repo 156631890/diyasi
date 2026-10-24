@@ -33,22 +33,22 @@ export const collections = [
   },
   {
     slug: "lace-underwear",
-    title: "Lace Underwear Manufacturer Private Label: Styles",
-    seoTitle: "Lace Underwear Manufacturer Private Label: Styles",
+    title: "Private Label Lingerie: Lace Underwear",
+    seoTitle: "Private Label Lingerie & Lace Underwear Manufacturer",
     short: "Lace",
     eyebrow: "The delicate details",
     description:
-      "Compare a lace underwear manufacturer private label range with cotton-rich bodies and separate lace blends. Review Brazilian briefs, V-waist briefs and thongs.",
+      "Build a private-label lingerie range with DIYASI lace-trim briefs and thongs. Compare cotton bodies, lace blends, fit and branding before requesting samples.",
     imageModel: "LS006",
   },
   {
     slug: "seamless-underwear",
-    title: "Seamless Underwear Manufacturer: OEM Styles",
-    seoTitle: "Seamless Underwear Manufacturer: OEM Styles",
+    title: "Seamless Underwear Manufacturer: Laser-Cut Styles",
+    seoTitle: "Seamless Underwear Manufacturer: Laser-Cut OEM",
     short: "Seamless",
     eyebrow: "Less is lovely",
     description:
-      "Choose a seamless underwear manufacturer by real cut edges, bonded or sewn cotton gussets and fit. Compare DIYASI polyamide-spandex briefs and thongs.",
+      "Source laser-cut seamless underwear from DIYASI. Compare bonded and sewn cotton gussets, briefs and thongs, then confirm samples, labels and order minimums.",
     imageModel: "DYS323",
   },
   {
@@ -73,8 +73,8 @@ export const collections = [
   },
   {
     slug: "mens-underwear",
-    title: "Men’s Underwear OEM Catalogue: Briefs and Trunks",
-    seoTitle: "Men’s Underwear OEM Catalogue: Briefs and Trunks",
+    title: "Men’s Underwear Wholesale & Private-Label Catalogue",
+    seoTitle: "Men’s Underwear Wholesale & Private-Label Styles",
     short: "For him",
     eyebrow: "Made for the everyday",
     description:

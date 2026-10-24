@@ -6,6 +6,8 @@ import ProductCard from "./ProductCard";
 import JsonLd from "./JsonLd";
 import BuyerGuidance from "./BuyerGuidance";
 import ContentFaq from "./ContentFaq";
+import SourcingSelection from "./SourcingSelection";
+import { sourcingSelections } from "@/lib/sourcing-selections";
 import { catalogueFaq, keywordLink } from "@/lib/keyword-content";
 import { collectionBuyingGuides, moqGuide, sampleGuide } from "@/lib/buyer-guidance";
 import { catalogProducts } from "@/lib/catalog-source";
@@ -71,10 +73,10 @@ export function catalogMetadata(
     ? Number(first(search.page))
     : 1;
   const meta = buildMetadata({
-    title: `${collection ? collection.seoTitle : "Underwear Manufacturer China OEM: Catalogue"}${page > 1 ? ` · Page ${page}` : ""}`,
+    title: `${collection ? collection.seoTitle : "Wholesale Underwear Manufacturer in China"}${page > 1 ? ` · Page ${page}` : ""}`,
     description:
       collection?.description ??
-      "Compare an underwear manufacturer China OEM catalogue with 45 real DIYASI styles. Review materials, fit, size charts and private-label sample requirements.",
+      "Source wholesale underwear from DIYASI in Yiwu, China. Compare 45 cotton, lace, seamless and men's styles, then request samples and a confirmed bulk quote.",
     path: path + (page > 1 ? `?page=${page}` : ""),
   });
   return {
@@ -104,7 +106,8 @@ export default function CatalogPage({
     if (n > 1) params.set("page", String(n));
     return path + (params.size ? "?" + params.toString() : "");
   };
-  const title = collection?.title ?? "Underwear Manufacturer China OEM: Catalogue";
+  const title = collection?.title ?? "Wholesale Underwear Manufacturer in China";
+  const selection = sourcingSelections[collection?.slug ?? "all"];
   return (
     <main id="main-content" className="d-catalog">
       <JsonLd
@@ -152,7 +155,7 @@ export default function CatalogPage({
           <h1>{title}</h1>
           <p>
             {collection?.description ??
-              "Use the underwear manufacturer China OEM catalogue to compare 45 DIYASI women's and men's styles. Review fabric, fit and construction, then request samples, a size/color allocation and a written quotation."}
+              "Compare 45 women's and men's underwear styles from DIYASI in Yiwu, China. Choose cotton, lace or laser-cut seamless construction, check each model's measurements and materials, then request samples and a written wholesale quotation. Most listed styles start at 120 pieces per style, subject to confirmation."}
           </p>
         </div>
         {collection && (
@@ -281,6 +284,7 @@ export default function CatalogPage({
             </div>
           </nav>
         )}
+        {page === 1 && !q && !search.sort && selection && <SourcingSelection selection={selection} />}
         {page === 1 && !q && <BuyerGuidance guide={collection ? collectionBuyingGuides[collection.slug] : {
           heading: "Small batch underwear production China: from catalogue to sample",
           intro: "Use the catalogue to compare actual styles before committing to a production run. Most listed specifications start at 120 pieces per style, with mixed sizes and colors subject to confirmation; custom fabrics and branding can have separate minimums.",
@@ -295,7 +299,7 @@ export default function CatalogPage({
             production.
           </p>
           <Link href="/oem-odm" className="d-text-link">
-            White label underwear manufacturer ↗
+            Private-label underwear manufacturing & customization ↗
           </Link>
         </section>
         {page === 1 && !q && <ContentFaq items={collection ? collectionBuyingGuides[collection.slug].faq ?? catalogueFaq : catalogueFaq} />}

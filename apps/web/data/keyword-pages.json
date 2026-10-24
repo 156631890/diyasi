@@ -23,14 +23,12 @@
   },
   {
     "path": "/resources/private-label-underwear-manufacturer",
-    "keyword": "private label underwear manufacturer",
-    "intent": "T",
-    "status": "新建",
+    "keyword": "private label underwear logo and packaging",
+    "intent": "I",
+    "status": "已优化",
     "changes": [
-      "新建完整采购指南",
-      "主词进入 title、H1、描述和首段",
-      "支撑词 H2、比较/审批表、底部 FAQ",
-      "真实型号、来源及专题/商品/指南内链"
+      "2026-10-24 DataForSEO 美国英语研究：按采购意图分工",
+      "更新真实采购说明、选型证据与内链；保留原有 URL 和产品功能"
     ],
     "support": [
       "white label underwear manufacturer",
@@ -41,7 +39,7 @@
       "white label vs private label underwear",
       "private label underwear manufacturers"
     ],
-    "longtail_updated_at": "2026-10-08"
+    "longtail_updated_at": "2026-10-24"
   },
   {
     "path": "/resources/custom-waistband-underwear-manufacturer",
@@ -131,14 +129,12 @@
   },
   {
     "path": "/resources/mens-underwear-manufacturer-private-label",
-    "keyword": "men's underwear manufacturer private label",
-    "intent": "T",
-    "status": "新建",
+    "keyword": "mens underwear manufacturers",
+    "intent": "C",
+    "status": "已优化",
     "changes": [
-      "新建完整采购指南",
-      "主词进入 title、H1、描述和首段",
-      "支撑词 H2、比较/审批表、底部 FAQ",
-      "真实型号、来源及专题/商品/指南内链"
+      "2026-10-24 DataForSEO 美国英语研究：按采购意图分工",
+      "更新真实采购说明、选型证据与内链；保留原有 URL 和产品功能"
     ],
     "support": [
       "men's briefs manufacturer oem",
@@ -149,7 +145,7 @@
       "mens boxer briefs with custom waistband",
       "mens underwear body vs pouch fabric"
     ],
-    "longtail_updated_at": "2026-10-08"
+    "longtail_updated_at": "2026-10-24"
   },
   {
     "path": "/resources/yiwu-underwear-manufacturer",
@@ -1668,29 +1664,27 @@
   },
   {
     "path": "/products/lace-underwear",
-    "keyword": "lace underwear manufacturer private label",
+    "keyword": "private label lingerie",
     "intent": "T",
-    "status": "优化",
+    "status": "已优化",
     "changes": [
-      "保留旧 URL、图片、目录筛选和分页",
-      "优化 title、H1、描述和首段",
-      "支撑词采购 H2、底部 FAQ",
-      "真实商品与新增指南内链"
+      "2026-10-24 DataForSEO 美国英语研究：按采购意图分工",
+      "更新真实采购说明、选型证据与内链；保留原有 URL 和产品功能"
     ],
-    "support": []
+    "support": [],
+    "longtail_updated_at": "2026-10-24"
   },
   {
     "path": "/products/seamless-underwear",
     "keyword": "seamless underwear manufacturer",
     "intent": "T",
-    "status": "优化",
+    "status": "已优化",
     "changes": [
-      "保留旧 URL、图片、目录筛选和分页",
-      "优化 title、H1、描述和首段",
-      "支撑词采购 H2、底部 FAQ",
-      "真实商品与新增指南内链"
+      "2026-10-24 DataForSEO 美国英语研究：按采购意图分工",
+      "更新真实采购说明、选型证据与内链；保留原有 URL 和产品功能"
     ],
-    "support": []
+    "support": [],
+    "longtail_updated_at": "2026-10-24"
   },
   {
     "path": "/products/thongs",
@@ -1746,16 +1740,15 @@
   },
   {
     "path": "/oem-odm",
-    "keyword": "white label underwear manufacturer",
+    "keyword": "private label underwear",
     "intent": "T",
-    "status": "优化",
+    "status": "已优化",
     "changes": [
-      "保留旧 URL、设计、图册和来源",
-      "优化 title、H1、描述、首段和采购 H2",
-      "底部 FAQ、数字一致性核对",
-      "专题、产品和指南关键词内链"
+      "2026-10-24 DataForSEO 美国英语研究：按采购意图分工",
+      "更新真实采购说明、选型证据与内链；保留原有 URL 和产品功能"
     ],
-    "support": []
+    "support": [],
+    "longtail_updated_at": "2026-10-24"
   },
   {
     "path": "/about",
@@ -1836,15 +1829,15 @@
   },
   {
     "path": "/products",
-    "keyword": "underwear manufacturer China OEM",
+    "keyword": "wholesale underwear manufacturers",
     "intent": "T",
-    "status": "优化",
+    "status": "已优化",
     "changes": [
-      "保留旧 URL、既有模块和交互",
-      "统一 title、H1、描述和首段的主词",
-      "相关主题 H2、FAQ及关键词内链"
+      "2026-10-24 DataForSEO 美国英语研究：按采购意图分工",
+      "更新真实采购说明、选型证据与内链；保留原有 URL 和产品功能"
     ],
-    "support": []
+    "support": [],
+    "longtail_updated_at": "2026-10-24"
   },
   {
     "path": "/resources",

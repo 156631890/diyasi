@@ -14,6 +14,7 @@ export type ServicePageContent = {
     title: string;
     body: string;
     items?: string[];
+    rows?: string[][];
     link?: string[];
   }>;
   sources?: string[][];
@@ -72,6 +73,18 @@ export const servicePages: Record<string, ServicePageContent> = {
           "Set an inspection and packing plan.",
           "Agree delivery terms and production milestones.",
         ],
+      },
+      {
+        title: "Custom underwear manufacturing: choose the order route",
+        body: "When comparing custom underwear manufacturers, separate a bulk brand order from single-piece gift printing. Start with a listed style or submit a development brief; DIYASI confirms the feasible changes, component minimums and sample cost before production.",
+        rows: [
+          ["Order route", "What you provide", "What needs confirmation"],
+          ["White-label catalogue base", "Model numbers, size/color mix, labels and packaging", "Available garment specification, branding method and component minimums"],
+          ["Private-label customization", "Selected fit, fabric or color changes, logo and waistband artwork", "Material availability, fit revisions, separate component minimums and sample approval"],
+          ["OEM development", "Your technical specification, measurements, pattern references and artwork", "Feasibility, development charges, grading, production quantity and schedule"],
+          ["ODM starting point", "Selected manufacturer design and a written list of changes", "The agreed design, final specification and responsibility for each approval"],
+        ],
+        link: ["Prepare the logo, labels and packaging brief", "/resources/private-label-underwear-manufacturer"],
       },
     ],
     faqs: [

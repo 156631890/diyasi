@@ -18,6 +18,12 @@ const seoUpdatedAt = "2026-09-22";
 const collectionUpdatedAt = "2026-09-27";
 const keywordUpdatedAt = "2026-10-07";
 const keywordUpdatedPaths = new Set(keywordPages.map((page) => page.path));
+// Record actual releases only; do not refresh every URL on each sitemap request.
+const sourcingUpdatedAt = "2026-10-24";
+const sourcingUpdatedPaths = new Set([
+  "/", "/products", "/oem-odm", "/resources",
+  "/products/lace-underwear", "/products/seamless-underwear", "/products/mens-underwear",
+]);
 
 const pageEntries: IndexableContentEntry[] = [
   {
@@ -144,7 +150,7 @@ const pageEntries: IndexableContentEntry[] = [
 
 const collectionEntries = launchCollections.map((collection) => ({
   path: collection.href,
-  lastModified: keywordUpdatedAt,
+  lastModified: sourcingUpdatedPaths.has(collection.href) ? sourcingUpdatedAt : keywordUpdatedAt,
   changeFrequency: "weekly" as const,
   priority: 0.8,
 }));
@@ -182,7 +188,9 @@ export const indexableContent = {
   entries: [
     ...pageEntries.map((entry) => ({
       ...entry,
-      lastModified: keywordUpdatedPaths.has(entry.path)
+      lastModified: sourcingUpdatedPaths.has(entry.path)
+        ? sourcingUpdatedAt
+        : keywordUpdatedPaths.has(entry.path)
         ? keywordUpdatedAt
         : ["/oem-odm", "/products"].includes(entry.path)
         ? collectionUpdatedAt

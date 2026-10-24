@@ -6,7 +6,7 @@ export type ContentLink = { label: string; href: string };
 // remain in their existing modules.
 const keywords = new Map(pages.map((page) => [page.path, page.keyword]));
 export function keywordLink(href: string, fallback?: string): ContentLink {
-  return { href, label: keywords.get(href) ?? fallback ?? href };
+  return { href, label: fallback ?? keywords.get(href) ?? href };
 }
 const resource = (slug: string) => `/resources/${slug}`;
 const collection = (slug: string) => `/products/${slug}`;
@@ -19,7 +19,7 @@ export const newResourceLinks: Record<string, ContentLink[]> = {
   "laser-cut-underwear-manufacturer": [collection("seamless-underwear"), resource("seamless-vs-no-show-underwear"), "/factory", product("bonded-brazilian-seamless-brief-dys323")].map((href) => keywordLink(href)),
   "underwear-manufacturer-for-startup-brands": [resource("120-pcs-moq-underwear-manufacturer"), resource("private-label-underwear-manufacturer"), resource("accurate-underwear-yoga-wear-manufacturing-quote"), product("essential-cotton-thong-dys224")].map((href) => keywordLink(href)),
   "underwear-sampling-lead-time-guide": [resource("underwear-sampling-costs-lead-times-packaging"), resource("accurate-underwear-yoga-wear-manufacturing-quote"), "/factory", product("mens-5-inch-modal-pouch-boxer-m005")].map((href) => keywordLink(href)),
-  "mens-underwear-manufacturer-private-label": [collection("mens-underwear"), collection("mens-boxer-briefs"), resource("custom-waistband-underwear-manufacturer"), product("mens-tagless-low-rise-brief-m001")].map((href) => keywordLink(href)),
+  "mens-underwear-manufacturer-private-label": ["/oem-odm", collection("mens-underwear"), collection("mens-boxer-briefs"), resource("custom-waistband-underwear-manufacturer"), product("mens-tagless-low-rise-brief-m001")].map((href) => keywordLink(href)),
   "yiwu-underwear-manufacturer": ["/about", "/factory", "/products", resource("120-pcs-moq-underwear-manufacturer"), product("low-rise-cotton-bikini-brief-dys201")].map((href) => keywordLink(href)),
   "high-waisted-briefs-manufacturer": [collection("high-waist"), collection("cotton-underwear"), resource("us-eu-underwear-size-labeling-preparation-startup-brands"), product("high-leg-cotton-high-waist-brief-dys219")].map((href) => keywordLink(href)),
   "bikini-vs-brazilian-underwear": [collection("womens-panties"), resource("cotton-vs-seamless-underwear-buyers-guide"), "/news/bikini-vs-brazilian-underwear-buying-notes", product("lace-trim-cotton-brazilian-brief-ls006")].map((href) => keywordLink(href)),
@@ -44,12 +44,12 @@ export const collectionKeywordGuides: Record<string, { heading: string; links: C
     faq: [["How do I distinguish a thong, tanga and string fit?", "Compare measured back-panel width, side coverage and rise on the selected sample. The tanga and string names should be supported by the actual pattern."], ["Can I mix sizes and colors in a cotton thong order?", "Catalogue MOQ is 120 pieces per style. Propose the allocation and confirm availability, branding and component requirements for that model."]],
   },
   "lace-underwear": {
-    heading: "Lace underwear manufacturer private label: approve body and trim",
+    heading: "Private-label lace underwear: approve body and trim",
     links: [resource("private-label-underwear-manufacturer"), resource("bikini-vs-brazilian-underwear")].map((href) => keywordLink(href)),
     faq: [["Can I select a lace boyshort manufacturer from these models?", "The current lace examples are Brazilian briefs, a V-waist brief and a thong. No lace boyshort is listed here; ask the team to review a separate development brief if required."], ["How should lace composition appear in a private-label brief?", "State body and lace blends separately. The listed LS006 and LS005 family uses a cotton-spandex body and a separate polyamide-spandex lace component; confirm the final order label."]],
   },
   "seamless-underwear": {
-    heading: "Seamless panties manufacturer OEM: bonded and sewn gussets",
+    heading: "Seamless underwear sourcing: bonded and sewn gussets",
     links: [resource("laser-cut-underwear-manufacturer"), resource("seamless-vs-no-show-underwear")].map((href) => keywordLink(href)),
     faq: [["What is the difference in seamless vs no-show underwear?", "Seamless describes aspects of construction; no-show describes an intended outcome beneath clothing. Check the actual edge, gusset, size and outer garment combination."], ["What should I check when selecting a seamless thong manufacturer?", "Review back width, front/back rise, gusset placement and attachment stability. Confirm the model’s construction and try the intended size before approving branding."]],
   },
@@ -64,7 +64,7 @@ export const collectionKeywordGuides: Record<string, { heading: string; links: C
     faq: [["Are high-waisted briefs automatically shapewear?", "No. Rise describes waist position. A shaping or compression claim needs a defined construction and supporting evidence for the actual garment."], ["What should I ask a plus size briefs manufacturer?", "Ask for finished waist, hip, rise and leg measurements and a reviewed size set. The listed size letters do not establish a universal US or EU plus-size fit."]],
   },
   "mens-underwear": {
-    heading: "Men’s briefs manufacturer OEM and men’s trunks manufacturer: pouch and leg",
+    heading: "Men’s private-label underwear: pouch, leg and waistband",
     links: [resource("mens-underwear-manufacturer-private-label"), resource("custom-waistband-underwear-manufacturer")].map((href) => keywordLink(href)),
     faq: [["Are the men’s styles entirely modal?", "No. These source records list polyester/spandex bodies with modal pouch components. Request exact component percentages for the final order label."], ["How do I compare trunks and boxer briefs?", "Specify measured inseam, leg opening, rise, pouch construction and fly. Names alone do not fix leg length or fit."]],
   },
@@ -77,7 +77,7 @@ export const collectionKeywordGuides: Record<string, { heading: string; links: C
 
 export const serviceKeywordSections: Record<string, { headings: string[]; faq: string[][]; links: ContentLink[] }> = {
   "/oem-odm": {
-    headings: ["White label underwear manufacturer: choose the catalogue base", "Custom waistband underwear manufacturer: logo and components", "OEM underwear sampling 5–7 days: approve the brief", "Small batch underwear production China: confirm the order"],
+    headings: ["White-label underwear: choose a catalogue base", "Private-label details: logo, waistband and packaging", "Approve the fit and sample specification", "Confirm the bulk order, MOQ and production plan"],
     links: [resource("private-label-underwear-manufacturer"), resource("120-pcs-moq-underwear-manufacturer"), resource("underwear-manufacturer-for-startup-brands")].map((href) => keywordLink(href)),
     faq: [["What is OEM vs ODM underwear manufacturing?", "An OEM brief identifies the brand-supplied pattern and specifications. An ODM starting point uses a selected manufacturer design with agreed changes. Confirm who supplies and approves each file, material and sample."]],
   },

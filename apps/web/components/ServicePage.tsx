@@ -54,6 +54,14 @@ export default function ServicePage({
               <span>0{i + 1}</span>
               <h2>{keywordContent?.headings[i] ?? s.title}</h2>
               <p>{s.body}</p>
+              {s.rows && (
+                <div className="d-table-scroll" tabIndex={0} role="region" aria-label={`${s.title} comparison`}>
+                  <table>
+                    <thead><tr>{s.rows[0].map((cell) => <th key={cell} scope="col">{cell}</th>)}</tr></thead>
+                    <tbody>{s.rows.slice(1).map((row) => <tr key={row[0]}>{row.map((cell, index) => index === 0 ? <th key={index} scope="row">{cell}</th> : <td key={index}>{cell}</td>)}</tr>)}</tbody>
+                  </table>
+                </div>
+              )}
               {s.items && (
                 <ul>
                   {s.items.map((item) => (

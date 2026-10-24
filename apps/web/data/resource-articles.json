@@ -676,18 +676,18 @@
   },
   {
     "slug": "mens-underwear-manufacturer-private-label",
-    "title": "Men’s Underwear Manufacturer Private Label: OEM Selection",
+    "title": "Men’s Underwear Manufacturers: Private-Label Buying Guide",
     "category": "Private label sourcing",
     "publishedAt": "2026-10-07",
-    "updatedAt": "2026-10-08",
-    "desc": "Compare a men's underwear manufacturer private label brief using real briefs, trunks and boxer briefs. Specify pouch, inseam, waistband and artwork.",
+    "updatedAt": "2026-10-24",
+    "desc": "Compare men’s underwear manufacturers using real briefs, trunks and boxer briefs. Prepare a wholesale brief for pouch, inseam, waistband, labels and samples.",
     "models": [
       "M001",
       "M004",
       "M005",
       "M005 Print"
     ],
-    "answer": "A men’s underwear manufacturer private label brief should distinguish the silhouette, pouch, leg and waistband before adding a brand logo. DIYASI’s catalogue includes briefs, trunks and boxer briefs in plain and printed variants. Their polyester/spandex bodies and modal pouch components must be described separately. Catalogue MOQ is 120 pieces per style; sampling guidance is 5–7 days after the brief is reviewed.",
+    "answer": "Compare men’s underwear manufacturers using the same model, size and branding requirements. This guide uses DIYASI briefs, trunks and boxer briefs to show what belongs in a private-label buying brief. Their polyester/spandex bodies and modal pouch components must be described separately. Most listed styles start at 120 pieces per style; custom fabric, print and waistband minimums need confirmation. Sample guidance is 5–7 days after brief and material review.",
     "sections": [
       {
         "title": "Men’s briefs manufacturer OEM: compact coverage",
@@ -751,6 +751,32 @@
           [
             "M005 boxer brief",
             "Confirm finished inseam, pouch and waistband on the sample"
+          ]
+        ]
+      },
+      {
+        "title": "Compare wholesale quotations on the same specification",
+        "text": "Ask each supplier to quote the same model or technical brief, quantity and size/color allocation. Separate garment costs from sample fees, waistband artwork, labels, packaging and freight. For a printed version, approve the print file and garment as a separate specification from the plain style. Confirm the actual production schedule after sample and material approval.",
+        "rows": [
+          [
+            "Quotation item",
+            "Record before choosing a supplier"
+          ],
+          [
+            "Garment",
+            "Model or pattern reference, quantity, size/color split and component fabrics"
+          ],
+          [
+            "Branding",
+            "Waistband method, artwork revision, labels and component minimums"
+          ],
+          [
+            "Sample",
+            "Selected size, finished measurements, revisions, fees and shipping"
+          ],
+          [
+            "Bulk approval",
+            "Approved sample, inspection criteria, packing plan and agreed delivery terms"
           ]
         ]
       }
@@ -1151,7 +1177,7 @@
     "title": "Seamless vs No-Show Underwear: Construction and Fit",
     "category": "Buyer selection guides",
     "publishedAt": "2026-10-07",
-    "updatedAt": "2026-10-08",
+    "updatedAt": "2026-10-24",
     "desc": "Compare seamless vs no-show underwear with a repeatable sample review. Separate construction, gusset attachment and visibility under intended clothing.",
     "models": [
       "DYS323",
@@ -1162,7 +1188,7 @@
     "sections": [
       {
         "title": "Seamless underwear manufacturer: identify seams and joins",
-        "text": "Inspect the whole garment, including the gusset and any panel joins. DYS323 uses a bonded cotton gusset; DYS314 uses a sewn cotton gusset. Both are listed with polyamide-spandex bodies. Record cut edges, attachment points and any stitching so the product description matches the sample.",
+        "text": "Inspect the whole garment, including the gusset and any panel joins. DYS323 uses a bonded cotton gusset; DYS314 uses a sewn cotton gusset. Both are listed with polyamide-spandex bodies. Record cut edges, attachment points and any stitching so the product description matches the sample. Laser cutting is an edge-finishing method; bonding is a joining method. A knitted-seamless construction requires a separate specification. Do not infer that production route from the laser-cut catalogue examples shown here.",
         "rows": [
           [
             "Term",
