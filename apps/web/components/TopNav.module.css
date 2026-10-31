@@ -6,3 +6,6 @@
 /* Keep the existing navigation style readable with the sourcing cluster. */
 .dropdown>div{max-height:70vh;overflow-y:auto}.desktop{gap:16px}.masthead{column-gap:20px}
 @media(min-width:801px) and (max-width:1250px){.desktop{display:none}.menuToggle{display:flex}.mobile{display:grid;grid-template-columns:1fr 1fr;padding:18px 22px;gap:4px 20px;background:#fbf9f5}.mobile a{padding:9px 0}}
+
+.languageMenu>div{left:auto;right:0;min-width:160px;max-width:calc(100vw - 36px)}
+.languageMenu summary{white-space:nowrap}

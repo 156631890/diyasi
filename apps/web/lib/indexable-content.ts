@@ -1,3 +1,4 @@
+import { translatedPaths } from "./sourcing-translations";
 import { sourcingGuides, guideDate } from "./sourcing-guides";
 import { manufacturerPages, sourcingUpdatedAt as manufacturerUpdatedAt } from "./manufacturer-pages";
 import { indexableProducts } from "./indexable-products";
@@ -21,10 +22,10 @@ const keywordUpdatedAt = "2026-10-07";
 // Preserve release dates already recorded for these static pages. Do not derive
 // dates from whichever keywords happen to be present or from the build clock.
 const staticPageDates: Readonly<Record<string, string>> = {
-  "/": "2026-10-24",
+  "/": "2026-10-31",
   "/products": "2026-10-24",
   "/oem-odm": "2026-10-24",
-  "/resources": "2026-10-24",
+  "/resources": "2026-10-31",
   "/about": "2026-10-07",
   "/factory": "2026-10-07",
   "/fabrics": "2026-10-07",
@@ -213,6 +214,7 @@ export const indexableContent = {
     ...manufacturerPages.map(p => ({path: `/manufacturers/${p.slug}`,lastModified:manufacturerUpdatedAt,changeFrequency:"monthly" as const,priority:0.8})),
     {path:"/guides",lastModified:guideDate,changeFrequency:"monthly",priority:0.8},
     ...sourcingGuides.map(g=>({path:`/guides/${g.slug}`,lastModified:guideDate,changeFrequency:"monthly" as const,priority:0.7})),
+    ...translatedPaths.map(path=>({path,lastModified:guideDate,changeFrequency:"monthly" as const,priority:0.7})),
     ...resourceEntries,
     ...newsEntries,
     ...productEntries,
@@ -224,6 +226,7 @@ export const indexableContent = {
     ...manufacturerPages.map(p => ({path: `/manufacturers/${p.slug}`,lastModified:manufacturerUpdatedAt,changeFrequency:"monthly" as const,priority:0.8})),
     {path:"/guides",lastModified:guideDate,changeFrequency:"monthly",priority:0.8},
     ...sourcingGuides.map(g=>({path:`/guides/${g.slug}`,lastModified:guideDate,changeFrequency:"monthly" as const,priority:0.7})),
+    ...translatedPaths.map(path=>({path,lastModified:guideDate,changeFrequency:"monthly" as const,priority:0.7})),
     ...resourceEntries,
     ...newsEntries,
     ...productEntries,

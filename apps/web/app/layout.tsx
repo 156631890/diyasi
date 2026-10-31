@@ -1,3 +1,4 @@
+import { headers } from "next/headers";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import SiteFooter from "@/components/SiteFooter";
@@ -93,8 +94,9 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const lang = await getServerLang();
+  const htmlLang = (await headers()).get("x-site-locale") ?? lang;
   return (
-    <html lang={lang} data-scroll-behavior="smooth">
+    <html lang={htmlLang} data-scroll-behavior="smooth">
       <body className={`${headingFont.variable} ${bodyFont.variable}`}>
         <JsonLd
           data={{
@@ -104,7 +106,7 @@ export default async function RootLayout({
             name: SITE_NAME,
             url: SITE_ORIGIN,
             description: SITE_DESCRIPTION,
-            inLanguage: ["en", "es"],
+            inLanguage: ["en", "es", "fr", "de", "it"],
             publisher: { "@id": ORGANIZATION_ID },
           }}
         />

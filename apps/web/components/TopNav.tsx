@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
+import { sourcingAlternates } from "@/lib/sourcing-locale-routes";
 import { localeHref, localeSwitchHref } from "@/lib/locale-routes";
 import type { SiteLang } from "@/lib/i18n";
 import { useSampleList } from "./SampleList";
@@ -14,6 +15,7 @@ function Icon({ type }: { type: "search" | "bag" | "menu" | "close" }) {
 
 export default function TopNav({ initialLang }: { initialLang: SiteLang }) {
   const pathname = usePathname();
+  const languageLinks = sourcingAlternates(pathname);
   const spanish = initialLang === "es";
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState(false);
@@ -50,7 +52,7 @@ export default function TopNav({ initialLang }: { initialLang: SiteLang }) {
         </nav>
       </div>
       <Link className={s.logo} href={spanish ? "/es" : "/"} aria-label={spanish ? "DIYASI Intimates, thoughtfully made — Inicio" : "DIYASI Intimates, thoughtfully made — Home"} onClick={closeMenu}>DIYASI<span>INTIMATES, THOUGHTFULLY MADE</span></Link>
-      <div className={s.actions}><Link className={s.language} href={localeSwitchHref(spanish ? "en" : "es", pathname) ?? (spanish ? "/" : "/es")} hrefLang={spanish ? "en" : "es"}>{spanish ? "EN" : "ES"}</Link><button ref={searchButton} type="button" aria-label={spanish ? "Buscar modelos" : "Search styles"} aria-expanded={search} aria-controls="d-style-search" onClick={() => setSearch(!search)}><Icon type="search" /></button><button type="button" aria-label={spanish ? "Lista de muestras, " + selected.length + " modelos" : "Sample list, " + selected.length + (selected.length === 1 ? " style" : " styles")} onClick={openSamples}><Icon type="bag" /><span className={s.sampleLabel}>{spanish ? "Muestras" : "Sample list"}</span><span className={s.count}>{selected.length}</span></button></div>
+      <div className={s.actions}>{languageLinks ? <details className={`${s.dropdown} ${s.languageMenu}`}><summary className={s.language} aria-label="Language">{pathname.match(/^\/(es|fr|de|it)\//)?.[1].toUpperCase() ?? "EN"} ⌄</summary><div>{Object.entries(languageLinks).filter(([l])=>l!=="x-default").map(([l,href])=><a key={l} href={href} hrefLang={l} lang={l}>{({en:"English",es:"Español",fr:"Français",de:"Deutsch",it:"Italiano"} as Record<string,string>)[l]}</a>)}</div></details> : <Link className={s.language} href={localeSwitchHref(spanish ? "en" : "es", pathname) ?? (spanish ? "/" : "/es")} hrefLang={spanish ? "en" : "es"}>{spanish ? "EN" : "ES"}</Link>}<button ref={searchButton} type="button" aria-label={spanish ? "Buscar modelos" : "Search styles"} aria-expanded={search} aria-controls="d-style-search" onClick={() => setSearch(!search)}><Icon type="search" /></button><button type="button" aria-label={spanish ? "Lista de muestras, " + selected.length + " modelos" : "Sample list, " + selected.length + (selected.length === 1 ? " style" : " styles")} onClick={openSamples}><Icon type="bag" /><span className={s.sampleLabel}>{spanish ? "Muestras" : "Sample list"}</span><span className={s.count}>{selected.length}</span></button></div>
     </div>
     {open && <nav className={s.mobile} id="d-mobile-nav" aria-label="Mobile navigation">{[["/manufacturers", "Manufacturers"], ...manufacturerPages.map(p=>[`/manufacturers/${p.slug}`,p.h1]), ...links, ["/guides", "Buying guides"], ["/oem-odm", spanish ? "Tu marca" : "Private label"], ["/factory", spanish ? "Fábrica y calidad" : "Factory & quality"], ["/resources", spanish ? "Guías" : "Buying guides"], ["/news", spanish ? "Noticias (EN)" : "News & journal"], ["/contact", spanish ? "Contacto" : "Request samples"]].map(([href,label]) => <Link key={href} href={local(href)} onClick={closeMenu}>{label}</Link>)}</nav>}
     {search && <form className={s.search} id="d-style-search" action="/products"><label htmlFor="d-search">{spanish ? "Encuentra tu próximo modelo" : "Find your next style"}</label><input id="d-search" name="q" placeholder="Cotton, Brazilian, LS006…" autoFocus required /><button type="submit">{spanish ? "Buscar" : "Search"} ↗</button></form>}

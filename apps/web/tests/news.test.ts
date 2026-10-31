@@ -5,7 +5,7 @@ import NewsDetailPage, { generateMetadata } from "@/app/news/[slug]/page";
 import sitemap from "@/app/sitemap";
 import { catalogProducts } from "@/lib/catalog-source";
 import { newsArticles } from "@/lib/news-articles";
-import { resourceArticles } from "@/lib/resource-articles";
+import { activeResourceArticles } from "@/lib/resource-articles";
 import { safeAnalyticsContext } from "@/lib/analytics";
 
 test("published news has real product references and images and is discoverable alongside existing guides", () => {
@@ -20,7 +20,7 @@ test("published news has real product references and images and is discoverable 
     expect(article.models.every((model) => catalogProducts.some((product) => product.model_number === model))).toBe(true);
     expect(article.reading.every((link) => paths.includes(link.href))).toBe(true);
   }
-  for (const article of resourceArticles) expect(paths).toContain(`/resources/${article.slug}`);
+  for (const article of activeResourceArticles) expect(paths).toContain(`/resources/${article.slug}`);
 });
 
 test("news metadata identifies each article and its actual image", async () => {

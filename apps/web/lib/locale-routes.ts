@@ -1,3 +1,4 @@
+import { sourcingAlternates } from "./sourcing-locale-routes";
 export type PublicLocale = "en" | "es";
 
 export const spanishRoutes: Readonly<Record<string, string>> = {
@@ -56,7 +57,8 @@ export function localeSwitchHref(locale: PublicLocale, path: string): string | u
   return reciprocalEnglishPaths.has(englishPath) ? englishPath : englishRouteFallbacks[englishPath];
 }
 
-export function alternatesFor(path: string): LocaleAlternates | undefined {
+export function alternatesFor(path: string): Readonly<Record<string,string>> | undefined {
+  const sourcing=sourcingAlternates(path); if(sourcing) return sourcing;
   const englishPath = englishPathFor(path);
   if (!englishPath || !reciprocalEnglishPaths.has(englishPath)) {
     return undefined;
