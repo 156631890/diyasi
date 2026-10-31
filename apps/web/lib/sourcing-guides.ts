@@ -1,0 +1,9 @@
+import data from "@/data/sourcing-guides.json";
+export const sourcingGuides = data;
+export type SourcingGuide = typeof data[number];
+export const guideDate = "2026-10-31";
+export const guideEvidence = [
+  "The supplier-specific references in this guide come from DIYASI's published catalogue, company information and sourcing pages. They are not independent factory audit findings. Product compositions belong to the identified models and should not be generalized to an entire category. Published quantity and timing guidance must be checked against the current brief. No verified unit-price ladder, universal payment percentage or certification number is supplied by this guide. Where a purchase depends on those details, obtain the relevant document before committing to production.",
+  "Keep a compact evidence folder for the order: the current brief, supplier quotation, proposed allocation, approved sample identification, artwork, inspection arrangement and packing instructions. Name the revision and approval date on each document. When a decision changes, update the affected records together so the commercial terms do not describe one garment while the sample describes another. A single owner should consolidate questions and approvals; other team members can contribute without sending conflicting instructions to the supplier.",
+  "Before sending an enquiry, check that the recipient can identify the product, quantity and decision you need. Include the destination, the intended use and any material or construction requirements that cannot change. Separate a preferred launch date from a confirmed deadline, and explain which alternatives you are willing to consider. Ask for missing information to be stated explicitly. After receiving a response, resolve the essential gaps rather than interpreting silence as acceptance. The next step is a documented feasibility and quotation review, followed by the sample approvals appropriate to the product."
+];

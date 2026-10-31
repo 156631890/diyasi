@@ -1,3 +1,4 @@
+import { sourcingGuides, guideDate } from "./sourcing-guides";
 import { manufacturerPages, sourcingUpdatedAt as manufacturerUpdatedAt } from "./manufacturer-pages";
 import { indexableProducts } from "./indexable-products";
 import { activeResourceArticles } from "./resource-articles";
@@ -210,6 +211,8 @@ export const indexableContent = {
     ...collectionEntries,
     { path: "/manufacturers", lastModified: manufacturerUpdatedAt, changeFrequency: "monthly", priority: 0.9 },
     ...manufacturerPages.map(p => ({path: `/manufacturers/${p.slug}`,lastModified:manufacturerUpdatedAt,changeFrequency:"monthly" as const,priority:0.8})),
+    {path:"/guides",lastModified:guideDate,changeFrequency:"monthly",priority:0.8},
+    ...sourcingGuides.map(g=>({path:`/guides/${g.slug}`,lastModified:guideDate,changeFrequency:"monthly" as const,priority:0.7})),
     ...resourceEntries,
     ...newsEntries,
     ...productEntries,
@@ -219,6 +222,8 @@ export const indexableContent = {
     ...collectionEntries,
     { path: "/manufacturers", lastModified: manufacturerUpdatedAt, changeFrequency: "monthly", priority: 0.9 },
     ...manufacturerPages.map(p => ({path: `/manufacturers/${p.slug}`,lastModified:manufacturerUpdatedAt,changeFrequency:"monthly" as const,priority:0.8})),
+    {path:"/guides",lastModified:guideDate,changeFrequency:"monthly",priority:0.8},
+    ...sourcingGuides.map(g=>({path:`/guides/${g.slug}`,lastModified:guideDate,changeFrequency:"monthly" as const,priority:0.7})),
     ...resourceEntries,
     ...newsEntries,
     ...productEntries,

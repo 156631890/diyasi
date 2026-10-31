@@ -28,7 +28,7 @@ export default function SiteFooter({ initialLang }: { initialLang: SiteLang }) {
   const localizedHref = (path: string) =>
     initialLang === "es" ? (localeHref("es", path) ?? path) : path;
   const groups = [
-    { title: "Sourcing", links: [["Manufacturers", "/manufacturers"],["Private label & OEM", "/oem-odm"],["Factory & quality", "/factory"],["Fabrics & finishes", "/fabrics"],["Labels & packaging", "/packaging"],["Responsible choices", "/sustainability"],["Sourcing guides", "/resources"],["Contact the atelier", "/contact"]] },
+    { title: "Sourcing", links: [["Manufacturers", "/manufacturers"],["Buying guides", "/guides"],["Private label & OEM", "/oem-odm"],["Factory & quality", "/factory"],["Fabrics & finishes", "/fabrics"],["Labels & packaging", "/packaging"],["Responsible choices", "/sustainability"],["Sourcing guides", "/resources"],["Contact the atelier", "/contact"]] },
     {
       title: "The collections",
       links: [
