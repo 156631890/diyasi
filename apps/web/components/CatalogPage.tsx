@@ -1,3 +1,4 @@
+import { collectionManufacturers } from "@/lib/sourcing-topics";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -153,6 +154,7 @@ export default function CatalogPage({
             {collection?.eyebrow ?? "The DIYASI wardrobe"}
           </p>
           <h1>{title}</h1>
+          {collection && <p><Link className="d-text-link" href={`/manufacturers/${collectionManufacturers[collection.slug] ?? "custom-underwear-manufacturer"}`}>Planning a brand order? Review the manufacturing brief ↗</Link></p>}
           <p>
             {collection?.description ??
               "Compare 45 women's and men's underwear styles from DIYASI in Yiwu, China. Choose cotton, lace or laser-cut seamless construction, check each model's measurements and materials, then request samples and a written wholesale quotation. Most listed styles start at 120 pieces per style, subject to confirmation."}
@@ -289,7 +291,7 @@ export default function CatalogPage({
           heading: "Small batch underwear production China: from catalogue to sample",
           intro: "Use the catalogue to compare actual styles before committing to a production run. Most listed specifications start at 120 pieces per style, with mixed sizes and colors subject to confirmation; custom fabrics and branding can have separate minimums.",
           checks: ["Shortlist model numbers, sizes and colors against your target customer.", "Request sample fees, artwork charges, packaging costs and freight as separate quotation items.", "Approve measurements, fabric, labels and a delivery schedule in writing before bulk production."],
-          links: [moqGuide, sampleGuide, keywordLink("/factory"), keywordLink("/resources/120-pcs-moq-underwear-manufacturer"), keywordLink("/resources/yiwu-underwear-manufacturer")],
+          links: [moqGuide, sampleGuide, keywordLink("/factory"), keywordLink("/manufacturers/low-moq-underwear-manufacturer"), keywordLink("/resources/yiwu-underwear-manufacturer")],
         }} />}
         <section className="d-catalog-note">
           <h2>A style is only the beginning.</h2>

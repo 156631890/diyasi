@@ -28,6 +28,7 @@ export default function SiteFooter({ initialLang }: { initialLang: SiteLang }) {
   const localizedHref = (path: string) =>
     initialLang === "es" ? (localeHref("es", path) ?? path) : path;
   const groups = [
+    { title: "Sourcing", links: [["Manufacturers", "/manufacturers"],["Private label & OEM", "/oem-odm"],["Factory & quality", "/factory"],["Fabrics & finishes", "/fabrics"],["Labels & packaging", "/packaging"],["Responsible choices", "/sustainability"],["Sourcing guides", "/resources"],["Contact the atelier", "/contact"]] },
     {
       title: "The collections",
       links: [
@@ -103,10 +104,10 @@ export default function SiteFooter({ initialLang }: { initialLang: SiteLang }) {
         </div>
         {groups.map((group) => (
           <div key={group.title}>
-            <h3>{spanish ? labels[group.title] : group.title}</h3>
+            <h3>{spanish ? (labels[group.title] ?? group.title) : group.title}</h3>
             {group.links.map(([label, href]) => (
               <Link key={href} href={localizedHref(href)}>
-                {spanish ? labels[label] : label}
+                {spanish ? (labels[label] ?? label) : label}
               </Link>
             ))}
           </div>

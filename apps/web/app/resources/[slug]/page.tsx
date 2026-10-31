@@ -1,3 +1,4 @@
+import RelatedManufacturers from "@/components/RelatedManufacturers";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -113,6 +114,7 @@ export default async function ResourceDetailPage({ params }: Props) {
         </aside>
         <article className="d-article-body">
           <p className="d-article-answer">{a.answer}</p>
+          {a.slug === "yiwu-underwear-manufacturer" && <p><Link href="/manufacturers">Compare manufacturing and sourcing routes ↗</Link></p>}
           {a.slug === "private-label-underwear-manufacturer" && (
             <p>
               Ready to develop your collection?{" "}
@@ -211,6 +213,7 @@ export default async function ResourceDetailPage({ params }: Props) {
             </p>
             <ResourceQuoteLink resourceSlug={a.slug} />
           </section>
+          <RelatedManufacturers slugs={a.relatedManufacturers} />
         </article>
       </div>
       {related.length > 0 && (

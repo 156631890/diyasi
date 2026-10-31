@@ -1,3 +1,4 @@
+import { sourcingTopics } from "@/lib/sourcing-topics";
 import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
 import NewsCard from "@/components/NewsCard";
@@ -49,9 +50,9 @@ export default function NewsPage() {
           <h2 id="latest-news-heading">Underwear fabrics, fit and sample approval notes</h2>
           <p className="d-fineprint">Company news · Collection notes · Buying notes</p>
         </div>
-        <div className="d-news-grid">
-          {newsArticles.map((article) => <NewsCard key={article.slug} article={article} />)}
-        </div>
+        {sourcingTopics.map(topic=><section key={topic.id} id={topic.id}><div className="d-section-heading"><h2>{topic.title}</h2><Link href={`/manufacturers/${topic.manufacturer}`} className="d-text-link">Related manufacturing route ↗</Link></div><p>{topic.description}</p><div className="d-news-grid">
+          {newsArticles.filter(article=>article.sourcingTopic === topic.id).map((article) => <NewsCard key={article.slug} article={article} />)}
+        </div></section>)}
       </section>
       <ContentFaq items={[["How should I use these underwear buying notes?", "Use the model references and checklists to prepare your sample brief. Confirm the final order specification and retain an approved physical sample."], ["Do buying notes prove certification or performance?", "No. They describe product sources and review methods. A certification or performance claim needs its own current, order-specific evidence."]]} />
     </main>

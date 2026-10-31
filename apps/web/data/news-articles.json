@@ -96,7 +96,12 @@
         "Can a 95/5 blend be described as 100% cotton?",
         "No. The listed 95% cotton / 5% spandex body is a cotton-spandex blend. Describe the actual component composition and confirm the final label for the order."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "underwear-factory",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "quality"
   },
   {
     "slug": "organic-cotton-underwear-claims-evidence-buyers",
@@ -201,7 +206,12 @@
         "What evidence is needed for an organic cotton claim?",
         "Ask whether the proposed claim concerns cotton fibre in the body, all textile components, a finished garment or a certified supply chain. A cotton-spandex body still contains spandex, and trims or elastic may have other materials. The wording on a product page should match the portion and scope that the evidence actually covers. 'Organic underwear' and 'made with organic cotton' are not interchangeable descriptions."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "underwear-factory",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "quality"
   },
   {
     "slug": "cotton-gusset-vs-cotton-underwear-components",
@@ -300,7 +310,12 @@
         "Does a cotton gusset make the whole garment cotton?",
         "No. A gusset is one component. Confirm and describe the body, gusset and other relevant components separately."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "custom-underwear-manufacturer",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "seamless-underwear-for-leggings-sample-review",
@@ -399,7 +414,12 @@
         "How should a leggings sample review be prepared?",
         "Use the actual leggings fabric or a representative equivalent in the intended color and size. Compare the underwear with the leggings standing, bending and moving under consistent light. Photograph the front, side and back only with the wearer's permission. Record the test garment, underwear sample version and wearer size so the result can be repeated after revisions."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "seamless-underwear-manufacturer",
+      "custom-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "high-waisted-cotton-underwear-range-planning",
@@ -498,7 +518,12 @@
         "What should a high-waisted cotton range brief specify?",
         "Use a common measurement method for front and back rise, waistband height, side seam and leg opening. A high-leg brief exposes more of the upper leg than a long-leg style, while a thong changes rear coverage. Those shapes cannot be reduced to a single 'high-waist' attribute. Give each style a front, side and back image so the consumer understands the difference."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "private-label-underwear-manufacturer",
+      "lingerie-supplier"
+    ],
+    "sourcingTopic": "brand"
   },
   {
     "slug": "cotton-thong-underwear-everyday-range",
@@ -597,7 +622,12 @@
         "How should I plan a cotton thong range?",
         "Record front coverage, side width, rear shape and rise on front and back images. A T-string is a different fit proposition from a broader thong, while high-waist and low-rise versions place the waistband differently. Use the model reference in product copy so a customer can reorder the intended shape, not just a generic 'cotton thong'."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "custom-underwear-manufacturer",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "womens-boxer-vs-boyshort-underwear-names",
@@ -696,7 +726,12 @@
         "How do I distinguish women’s boxers and boyshorts?",
         "Request front, side and back photos plus finished waist, rise, inseam and leg-opening measurements. Some retail sites use 'boxer' for a more relaxed or longer shape; others use it for a close-fitting brief. Do not promise a loose fit from the name alone. Specify whether the intended garment is close to the body and where the leg should end."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "mens-underwear-manufacturer",
+      "custom-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "cotton-lace-underwear-composition-claims",
@@ -795,7 +830,12 @@
         "How should body and lace composition be labeled?",
         "Request a component drawing or annotated inside photo. Identify the main body, lace placement, gusset, elastic and labels. The published LS records list 95% cotton and 5% spandex for the body and 80% polyamide and 20% spandex for the lace. Confirm these details for the actual order, including any alternative trim, before preparing a fibre label."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "lingerie-manufacturer",
+      "private-label-lingerie"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "underwear-for-white-pants-colour-opacity-test",
@@ -894,7 +934,12 @@
         "How should underwear be reviewed beneath white pants?",
         "Use the intended white or pale trouser fabric at the planned fit and thickness. Review the outfit in natural and indoor light, standing and moving. A color that is less noticeable under one pair of trousers may show under another. Record the wearer, underwear model, sample size, outer garment and lighting so a buyer can repeat the comparison."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "custom-underwear-manufacturer",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "2026-underwear-search-themes-factory-buyer-brief",
@@ -993,7 +1038,12 @@
         "How do search themes become a factory brief?",
         "A customer typing 'cotton underwear' may expect a cotton body, while a 'seamless underwear' search may be about visible edges. 'High waisted' describes rise, not fibre or rear coverage. Put those attributes into separate fields in a buyer brief rather than stacking popular phrases onto every page. Each collection landing page should lead to the styles that genuinely match its promise."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "underwear-factory",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "quality"
   },
   {
     "slug": "underwear-leg-opening-elastic-fit-checklist",
@@ -1092,7 +1142,12 @@
         "What should I check at the leg opening?",
         "Record the model, sample size and intended leg line. Mark the front and back points where the opening should sit, then note the finished opening measurement and how the elastic is enclosed or exposed. A high-leg brief may place the edge differently from a boyshort even when both are labelled the same size. The pattern and fabric must be reviewed together with the elastic."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "custom-underwear-manufacturer",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "high-waist-underwear-waistband-roll-down-fit",
@@ -1191,7 +1246,12 @@
         "How do I review waistband roll-down?",
         "Record where the waistband sits when first put on and where it moves after sitting, bending and walking. Note whether an edge folds locally, the whole top slides downward or the body fabric bunches below it. These outcomes can lead to different pattern or component changes. A request to 'make it tighter' alone is too vague and could create new pressure points."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "custom-underwear-manufacturer",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "bonded-vs-stitched-gusset-attachment-underwear",
@@ -1290,7 +1350,12 @@
         "What should a gusset attachment comparison establish?",
         "Ask for the body composition, lining composition, gusset dimensions and edge-attachment method separately. A bonded edge may involve an adhesive or film system that the finished catalogue photo cannot identify. A stitched edge may vary in seam type, stitch placement and thread. The buyer should request construction details for the chosen model rather than infer them from the word 'seamless'."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "seamless-underwear-manufacturer",
+      "custom-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "lace-trim-stretch-placement-underwear-samples",
@@ -1389,7 +1454,12 @@
         "What should a lace trim sample approval record include?",
         "Mark where lace begins and ends at the waist, side and leg opening. Record the finished width, orientation, color and the side that touches the wearer. A lace edge near the leg may need a different fit review from lace placed only at the waist. Share front, back and inside images with the factory so the intended placement is unambiguous."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "lingerie-manufacturer",
+      "private-label-lingerie"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "mens-no-fly-pouch-fit-sample-review",
@@ -1488,7 +1558,12 @@
         "How do I review a no-fly pouch?",
         "Identify whether the selected model has a functional fly, a decorative front seam or a closed front. Request inside and outside sample photographs and a construction drawing where the difference matters. State the intended rise, leg length and size range. A buyer cannot judge pouch shape from the product title alone, and a no-fly label should not be presented as a support claim."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "mens-underwear-manufacturer",
+      "custom-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "printed-underwear-strike-off-artwork-approval",
@@ -1587,7 +1662,12 @@
         "What should I approve on a print strike-off?",
         "Supply an editable artwork file with repeat size, orientation and color references. Mark any motif that must align at the center front, side seam or back panel. State whether a placement is essential or whether normal cutting variation is acceptable. A phrase such as 'same as the picture' does not tell the factory how to place a new graphic across pattern pieces."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "custom-underwear-manufacturer",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "underwear-bulk-shade-band-colour-consistency",
@@ -1686,7 +1766,12 @@
         "How do I agree a bulk shade range?",
         "Identify the approved color reference and the material it applies to. Record whether the body, lace, waistband, thread and labels must match or may differ. Agree the viewing light and background used for comparison. A phone image can help communicate an issue, but camera settings and screens make it unreliable as the sole shade standard."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "underwear-factory",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "quality"
   },
   {
     "slug": "underwear-barcode-variant-label-proofing",
@@ -1785,7 +1870,12 @@
         "What should I proof on a variant barcode label?",
         "List style, model, color, size, pack quantity and intended market in a table. Assign the correct brand SKU and barcode value to each sellable combination. Make it explicit whether a multipack has its own identifier and how it differs from each garment inside. Do not copy a barcode from a sample pack onto another color or size."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "underwear-factory",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "quality"
   },
   {
     "slug": "underwear-carton-protection-transit-checklist",
@@ -1884,7 +1974,12 @@
         "How do I specify carton protection?",
         "Decide whether garments are folded individually, grouped by size or color, or packed as a retail multipack. Record the approved fold, insert, bag, label and carton quantity. Lace edges and printed surfaces may need different contact or folding review from a plain cotton brief. The right choice depends on the sample presentation and shipping route, not a stock photograph."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "underwear-factory",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "quality"
   },
   {
     "slug": "underwear-line-sheet-wholesale-buyer-checklist",
@@ -1988,7 +2083,12 @@
         "What belongs on an underwear line sheet?",
         "Use one row or panel per model and show the model number, product name, front and back imagery, silhouette, rise and relevant construction. Where the image shows a sample color, label it as an example until the order colors are confirmed. Do not merge a printed and plain men's variant under one stock-keeping unit merely because their names are similar."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "private-label-underwear-manufacturer",
+      "lingerie-supplier"
+    ],
+    "sourcingTopic": "brand"
   },
   {
     "slug": "choose-underwear-manufacturer-supplier-checklist",
@@ -2099,7 +2199,12 @@
         "What evidence should I request from an underwear supplier?",
         "Define the intended customer, silhouette, material direction, size range and branding changes. Use front, back and inside references for the selected garment. A supplier experienced in one construction may need a different development process for another, so compare its response to the actual brief rather than its total catalogue size."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "private-label-underwear-manufacturer",
+      "lingerie-supplier"
+    ],
+    "sourcingTopic": "brand"
   },
   {
     "slug": "thong-vs-g-string-t-string-underwear-buyers",
@@ -2200,7 +2305,12 @@
         "How should thong and string coverage be compared?",
         "In common usage a G-string often has a narrower string-like back than a thong, while T-string can refer to the arrangement of narrow straps. These are useful starting descriptions rather than a universal measurement standard. In particular, the DYS230 description refers to a minimal Y-shaped back despite the T-string product name."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "custom-underwear-manufacturer",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "underwear-fabric-gsm-thickness-opacity-guide",
@@ -2306,7 +2416,12 @@
         "Does GSM alone establish fabric opacity?",
         "No. Fabric weight is only one factor. Review the actual fabric structure, color, stretch and sample under the intended wearing conditions."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "custom-underwear-manufacturer",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "tanga-vs-bikini-vs-thong-coverage-guide",
@@ -2407,7 +2522,12 @@
         "How should tanga, bikini and thong coverage be specified?",
         "The selected DYS208, DYS202 and DYS229 styles all list 95% combed cotton and 5% spandex, with sizes S through XL. They nevertheless have different shapes and waistband details. The shared blend is a material reference, not proof of identical stretch, weight or fit."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "custom-underwear-manufacturer",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "heat-transfer-vs-sewn-underwear-labels",
@@ -2508,7 +2628,12 @@
         "How do I compare heat-transfer and sewn labels?",
         "List the logo, size, material information, care instructions and any other required details before choosing the method. They may not all belong in the same location or use the same execution. Confirm the target-market requirements before reducing text to fit a small decorative mark."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "underwear-factory",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "quality"
   },
   {
     "slug": "underwear-aql-inspection-defect-checklist",
@@ -2625,7 +2750,12 @@
         "What should an AQL inspection brief define?",
         "Identify the purchase order, models, colours, sizes, quantities and production status covered by the inspection. Agree how the sample will be selected across the defined lot and how variants will be represented. A few convenient garments chosen from one open carton may not represent the shipment."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "underwear-factory",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "quality"
   },
   {
     "slug": "shipping-underwear-samples-commercial-invoice-checklist",
@@ -2742,7 +2872,12 @@
         "What belongs on a sample shipment invoice?",
         "FedEx's customs-document guidance recommends descriptions that identify what the goods are, how many there are, what they are made from and their intended use. Use the model number as an additional reference, not as a substitute for a plain description that a carrier or customs officer can understand."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "low-moq-underwear-manufacturer",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "orders"
   },
   {
     "slug": "recycled-polyester-underwear-claims-documentation",
@@ -2858,7 +2993,12 @@
         "What documents support a recycled polyester claim?",
         "Write down whether a percentage refers to the body fabric, the polyester component within that fabric or the whole garment by mass. These are different statements. Underwear can include a separate lining, elastic, thread and labels, so a body-fabric claim should not silently become a whole-product claim."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "underwear-factory",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "quality"
   },
   {
     "slug": "underwear-multipack-assortment-planning",
@@ -2964,7 +3104,12 @@
         "How do I specify a multipack assortment?",
         "A repeated-style pack may serve a customer who already knows the fit, while a mixed-shape set may help a brand introduce different coverage choices. Validate that purpose with customer evidence before adding complexity. More garments in a pack do not automatically make the offer more attractive."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "low-moq-underwear-manufacturer",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "orders"
   },
   {
     "slug": "underwear-product-photography-shot-list",
@@ -3075,7 +3220,12 @@
         "What should a product photography shot list show?",
         "LS006 needs views that explain its lace waistband, leg trim and Brazilian back. DYS302 needs a clear view of its thong shape and stitched gusset. M004 benefits from a view of the men's trunk silhouette, waistband and inside pouch. The best detail list follows the garment rather than a fixed number of decorative images."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "private-label-underwear-manufacturer",
+      "lingerie-supplier"
+    ],
+    "sourcingTopic": "brand"
   },
   {
     "slug": "womens-boyshorts-vs-long-leg-underwear",
@@ -3176,7 +3326,12 @@
         "How do I compare boyshort and long-leg coverage?",
         "All three catalogue examples list 95% combed cotton and 5% spandex, with sizes S to XL. Keeping the listed blend similar makes the shape differences easier to discuss, although fabric weight, finishing and pattern measurements still need confirmation. A shared composition does not mean that the garments fit identically."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "mens-underwear-manufacturer",
+      "custom-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "v-waist-underwear-fit-measurement-guide",
@@ -3277,7 +3432,12 @@
         "What measurements define a V-waist brief?",
         "A V-shaped waist describes the front outline. It does not tell you whether the garment is a brief or thong, how much back coverage it provides, or how tightly the waistband fits. Those decisions belong in separate fields of the development brief."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "custom-underwear-manufacturer",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "mens-briefs-vs-trunks-private-label-fit",
@@ -3378,7 +3538,12 @@
         "How should men’s briefs and trunks be compared?",
         "The current catalogue lists these styles in S through 3XL. Each describes a polyester-spandex body and modal lining at the pouch or gusset, without publishing exact fibre percentages. Request the final component composition before preparing labels or making a fabric claim."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "mens-underwear-manufacturer",
+      "custom-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "modal-pouch-vs-modal-underwear-fabric-specification",
@@ -3479,7 +3644,12 @@
         "Does a modal pouch establish a modal body?",
         "No. The listed men’s examples use polyester/spandex bodies with modal pouch components. Request component fiber percentages for your actual order."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "mens-underwear-manufacturer",
+      "custom-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "underwear-tech-pack-measurement-specification",
@@ -3590,7 +3760,12 @@
         "What should an underwear measurement tech pack include?",
         "Put your internal style code, supplier model, version number and issue date on the document. Name the intended size range and base sample size. Keep drawings, measurement sheets, artwork and comments under the same revision so the factory does not combine a new drawing with an old size table."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "custom-underwear-manufacturer",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "underwear-colour-lab-dip-approval-guide",
@@ -3691,7 +3866,12 @@
         "What should color approval cover?",
         "Provide a physical colour standard or an agreed colour-system reference, its edition where relevant, and the intended fabric. A screenshot or hexadecimal colour can communicate a direction, but screen settings and photography make it an unreliable final dyeing standard."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "underwear-factory",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "quality"
   },
   {
     "slug": "underwear-wash-test-shrinkage-recovery-checklist",
@@ -3797,7 +3977,12 @@
         "How should a wash review be recorded?",
         "Identify the model, size, colour, fabric reference and sample version. Agree the intended wash and drying conditions, number of cycles, measurement timing and acceptance criteria with the supplier. If a retailer or target market requires a formal method, arrange the appropriate laboratory work instead of treating an informal home wash as certification."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "underwear-factory",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "quality"
   },
   {
     "slug": "underwear-size-set-sample-grading-checklist",
@@ -3898,7 +4083,12 @@
         "What should a size-set approval record include?",
         "DYS219 is listed from XXS to 2XL, DYS225 from S to 2XL and DYS214 from S to XL. These catalogue ranges are not confirmation of current stock or a guarantee that the same labelled size has the same measurements in every model."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "custom-underwear-manufacturer",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "underwear-sku-carton-packing-list-guide",
@@ -4004,7 +4194,12 @@
         "How do I connect SKUs to carton quantities?",
         "A model identifies a style; a SKU identifies the unit your business manages, usually including a particular colour and size. Retain the supplier's complete model reference alongside your own code. M002 Print should remain distinct from M002, even if your internal coding system abbreviates the name."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "underwear-factory",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "quality"
   },
   {
     "slug": "underwear-pre-production-sample-approval-checklist",
@@ -4115,7 +4310,12 @@
         "What should I approve before bulk production?",
         "Ask whether the sample uses the proposed production fabric, trims, artwork and construction. If any component is a substitute, record it clearly and identify the later approval needed. A fit sample in a convenient colour can answer fit questions without settling the final colour or material approval."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "private-label-underwear-manufacturer",
+      "lingerie-supplier"
+    ],
+    "sourcingTopic": "brand"
   },
   {
     "slug": "cotton-vs-polyamide-underwear-private-label",
@@ -4216,7 +4416,12 @@
         "How do I compare cotton and polyamide samples?",
         "A useful supplier comparison identifies both the fibre blend and the garment construction. The current DYS201 specification lists 95% cotton and 5% spandex. DYS323 and DYS314 list an 80% polyamide and 20% spandex body with a 100% cotton gusset. These are specifications for the named models, not a rule for every cotton or polyamide product."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "seamless-underwear-manufacturer",
+      "custom-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "high-waisted-briefs-vs-thongs-buying-guide",
@@ -4317,7 +4522,12 @@
         "How should I compare high-waisted briefs and thongs?",
         "High waist describes the intended waistband position. High leg describes the shape and height of the leg opening. Full coverage describes a coverage direction, particularly at the back, and still needs a visual reference and measurements. Combining these words into one label can leave the factory and buyer picturing different garments."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "custom-underwear-manufacturer",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "plain-vs-printed-mens-underwear-private-label",
@@ -4434,7 +4644,12 @@
         "How do plain and printed styles differ in approval?",
         "A plain body can put more visual emphasis on the waistband and garment shape. An all-over print adds another set of choices: motif size, repeat, orientation and how the design meets seams. Neither option is automatically easier to sell; assign each a clear role for the intended customer and price position."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "mens-underwear-manufacturer",
+      "custom-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "explore-the-diyasi-underwear-collection",
@@ -4495,7 +4710,12 @@
         "How do I shortlist the DIYASI catalogue?",
         "Women's collections include cotton-rich underwear, lace-trimmed silhouettes and no-show styles in stretch polyamide. The men's range includes briefs, trunks and boxer briefs. Collection pages offer a starting point; each product page gives the model number, stated fabric composition, size range and original photographs."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "private-label-underwear-manufacturer",
+      "lingerie-supplier"
+    ],
+    "sourcingTopic": "brand"
   },
   {
     "slug": "bikini-vs-brazilian-underwear-buying-notes",
@@ -4577,7 +4797,12 @@
         "Which measurements support a bikini and Brazilian sample comparison?",
         "A Brazilian cut generally provides less rear coverage than a conventional bikini, although the exact shape varies between designs and suppliers. A front photograph can hide much of that difference. Include front and back references when requesting samples and identify the areas where more or less coverage is intended."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "custom-underwear-manufacturer",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "trunks-vs-boxer-briefs-sourcing-notes",
@@ -4659,6 +4884,11 @@
         "How should trunk and boxer-brief inseam be measured?",
         "Trunks usually describe a shorter leg, while boxer briefs generally extend further down the thigh. There is no single inseam that every supplier uses for those names. Request measurements for the actual model and sample size, and agree where each measurement begins and ends."
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "mens-underwear-manufacturer",
+      "custom-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   }
 ]

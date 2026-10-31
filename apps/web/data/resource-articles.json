@@ -104,7 +104,12 @@
         "LS006 original manufacturer specification",
         "https://www.diyasiunderwear.com/brazilian-lace-cotton-panties-manufacturer--mid-low-rise-womens-underwear-oem-factory"
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "low-moq-underwear-manufacturer",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "orders"
   },
   {
     "slug": "private-label-underwear-manufacturer",
@@ -216,7 +221,12 @@
         "M005 original manufacturer specification",
         "https://www.diyasiunderwear.com/factory-direct-wholesale-custom-recycled-polyester-mens-boxer-briefs---5-inseam-underwear"
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "underwear-factory",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "quality"
   },
   {
     "slug": "custom-waistband-underwear-manufacturer",
@@ -324,7 +334,12 @@
         "DYS227 original manufacturer specification",
         "https://www.diyasiunderwear.com/wholesale-high-waisted-tanga-thongs-with-wide-elastic-waistband--comfortable-cotton-underwear-for-women--bulk-orders-available"
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "custom-underwear-manufacturer",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "laser-cut-underwear-manufacturer",
@@ -436,7 +451,12 @@
         "DYS322 original manufacturer specification",
         "https://www.diyasiunderwear.com/bonded-seamless-thong--low-rise-one-piece-invisible-panty-oem-manufacturer-supplier"
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "seamless-underwear-manufacturer",
+      "custom-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "underwear-manufacturer-for-startup-brands",
@@ -556,7 +576,12 @@
         "M001 original manufacturer specification",
         "https://www.diyasiunderwear.com/mens-tagless-briefs--moisture-wicking-low-rise-underwear-with-no-fly-pouch"
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "private-label-underwear-manufacturer",
+      "lingerie-supplier"
+    ],
+    "sourcingTopic": "brand"
   },
   {
     "slug": "underwear-sampling-lead-time-guide",
@@ -672,7 +697,12 @@
         "M005 original manufacturer specification",
         "https://www.diyasiunderwear.com/factory-direct-wholesale-custom-recycled-polyester-mens-boxer-briefs---5-inseam-underwear"
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "low-moq-underwear-manufacturer",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "orders"
   },
   {
     "slug": "mens-underwear-manufacturer-private-label",
@@ -820,7 +850,12 @@
         "M005 Print original manufacturer specification",
         "https://www.diyasiunderwear.com/custom-printed-mens-boxers-manufacturer--mid-rise-mid-leg-undies-factory--diyasi-underwear-oem"
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "mens-underwear-manufacturer",
+      "custom-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "yiwu-underwear-manufacturer",
@@ -936,7 +971,12 @@
         "M001 original manufacturer specification",
         "https://www.diyasiunderwear.com/mens-tagless-briefs--moisture-wicking-low-rise-underwear-with-no-fly-pouch"
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "underwear-factory",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "quality"
   },
   {
     "slug": "high-waisted-briefs-manufacturer",
@@ -1048,7 +1088,12 @@
         "DYS314 original manufacturer specification",
         "https://www.diyasiunderwear.com/high-waist-seamless-full-coverage-panties--invisible-cut-cotton-gusset-underwear-oem-factory"
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "custom-underwear-manufacturer",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "bikini-vs-brazilian-underwear",
@@ -1170,7 +1215,12 @@
         "DYS214 original manufacturer specification",
         "https://www.diyasiunderwear.com/comfort-women-boyshorts-high-quality-cotton-underwear-soft-and-breathable-briefs"
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "custom-underwear-manufacturer",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "seamless-vs-no-show-underwear",
@@ -1287,7 +1337,12 @@
         "DYS322 original manufacturer specification",
         "https://www.diyasiunderwear.com/bonded-seamless-thong--low-rise-one-piece-invisible-panty-oem-manufacturer-supplier"
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "seamless-underwear-manufacturer",
+      "custom-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "cotton-vs-seamless-underwear-buyers-guide",
@@ -1413,7 +1468,12 @@
         "DYS314 original manufacturer specification",
         "https://www.diyasiunderwear.com/high-waist-seamless-full-coverage-panties--invisible-cut-cotton-gusset-underwear-oem-factory"
       ]
-    ]
+    ],
+    "relatedManufacturers": [
+      "seamless-underwear-manufacturer",
+      "custom-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "private-label-underwear-moq-guide",
@@ -1501,7 +1561,12 @@
         "https://www.diyasiunderwear.com/products"
       ]
     ],
-    "updatedAt": "2026-10-07"
+    "updatedAt": "2026-10-07",
+    "relatedManufacturers": [
+      "low-moq-underwear-manufacturer",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "orders"
   },
   {
     "slug": "accurate-underwear-yoga-wear-manufacturing-quote",
@@ -1630,7 +1695,12 @@
         "https://www.diyasiunderwear.com/products"
       ]
     ],
-    "updatedAt": "2026-10-11"
+    "updatedAt": "2026-10-11",
+    "relatedManufacturers": [
+      "low-moq-underwear-manufacturer",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "orders"
   },
   {
     "slug": "unit-cost-custom-underwear-manufacturing",
@@ -1726,7 +1796,12 @@
         "https://www.diyasiunderwear.com/products"
       ]
     ],
-    "updatedAt": "2026-10-07"
+    "updatedAt": "2026-10-07",
+    "relatedManufacturers": [
+      "low-moq-underwear-manufacturer",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "orders"
   },
   {
     "slug": "traceless-vs-seamless-underwear-yoga-brands",
@@ -1822,7 +1897,12 @@
         "https://www.ginetex.net/"
       ]
     ],
-    "updatedAt": "2026-10-07"
+    "updatedAt": "2026-10-07",
+    "relatedManufacturers": [
+      "seamless-underwear-manufacturer",
+      "custom-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "lace-underwear-oem-guide-boutique-lingerie-brands",
@@ -1947,7 +2027,12 @@
         "https://www.diyasiunderwear.com/products"
       ]
     ],
-    "updatedAt": "2026-10-08"
+    "updatedAt": "2026-10-08",
+    "relatedManufacturers": [
+      "lingerie-manufacturer",
+      "private-label-lingerie"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "cotton-underwear-oem-guide-daily-basics-startups",
@@ -2076,7 +2161,12 @@
         "https://www.oeko-tex.com/en/our-standards/oeko-tex-standard-100"
       ]
     ],
-    "updatedAt": "2026-10-08"
+    "updatedAt": "2026-10-08",
+    "relatedManufacturers": [
+      "private-label-underwear-manufacturer",
+      "lingerie-supplier"
+    ],
+    "sourcingTopic": "brand"
   },
   {
     "slug": "waistband-customization-mens-boxer-briefs-private-label",
@@ -2164,7 +2254,12 @@
         "https://www.diyasiunderwear.com/products"
       ]
     ],
-    "updatedAt": "2026-10-07"
+    "updatedAt": "2026-10-07",
+    "relatedManufacturers": [
+      "mens-underwear-manufacturer",
+      "custom-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "gusset-construction-womens-underwear-comfort-qc",
@@ -2289,7 +2384,12 @@
         "https://www.oeko-tex.com/en/our-standards/oeko-tex-standard-100"
       ]
     ],
-    "updatedAt": "2026-10-08"
+    "updatedAt": "2026-10-08",
+    "relatedManufacturers": [
+      "mens-underwear-manufacturer",
+      "custom-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "sports-bra-support-levels-small-yoga-brands",
@@ -2377,7 +2477,12 @@
         "https://www.diyasiunderwear.com/products"
       ]
     ],
-    "updatedAt": "2026-10-07"
+    "updatedAt": "2026-10-07",
+    "relatedManufacturers": [
+      "bra-manufacturer",
+      "custom-underwear-manufacturer"
+    ],
+    "sourcingTopic": "materials"
   },
   {
     "slug": "reorder-planning-after-low-moq-first-run",
@@ -2493,7 +2598,12 @@
         "https://www.diyasiunderwear.com/products"
       ]
     ],
-    "updatedAt": "2026-10-08"
+    "updatedAt": "2026-10-08",
+    "relatedManufacturers": [
+      "low-moq-underwear-manufacturer",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "orders"
   },
   {
     "slug": "us-eu-underwear-size-labeling-preparation-startup-brands",
@@ -2622,7 +2732,12 @@
         "https://www.ginetex.net/"
       ]
     ],
-    "updatedAt": "2026-10-08"
+    "updatedAt": "2026-10-08",
+    "relatedManufacturers": [
+      "underwear-factory",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "quality"
   },
   {
     "slug": "underwear-sampling-costs-lead-times-packaging",
@@ -2756,6 +2871,11 @@
         "https://www.ftc.gov/business-guidance/resources/threading-your-way-through-labeling-requirements-under-textile-wool-acts"
       ]
     ],
-    "updatedAt": "2026-10-07"
+    "updatedAt": "2026-10-07",
+    "relatedManufacturers": [
+      "low-moq-underwear-manufacturer",
+      "private-label-underwear-manufacturer"
+    ],
+    "sourcingTopic": "orders"
   }
 ]

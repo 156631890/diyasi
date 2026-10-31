@@ -1,3 +1,4 @@
+import { sourcingTopics } from "@/lib/sourcing-topics";
 import Image from "next/image";
 import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
@@ -35,8 +36,8 @@ export default function ResourcesPage() {
         </div>
       </section>
       <section className="d-section">
-        <div className="d-journal-grid">
-          {activeResourceArticles.map((a) => (
+        {sourcingTopics.map(topic=><section key={topic.id} id={topic.id}><div className="d-section-heading"><h2>{topic.title}</h2><Link href={`/manufacturers/${topic.manufacturer}`} className="d-text-link">Related manufacturing route ↗</Link></div><p>{topic.description}</p><div className="d-journal-grid">
+          {activeResourceArticles.filter(a=>a.sourcingTopic === topic.id).map((a) => (
             <article className="d-journal-card" key={a.slug}>
               <div>
                 <Link href={"/resources/" + a.slug} aria-label={a.title}>
@@ -58,7 +59,7 @@ export default function ResourcesPage() {
               </Link>
             </article>
           ))}
-        </div>
+        </div></section>)}
       </section>
       <ContentFaq title="Underwear sourcing guide questions" items={catalogueFaq} />
     </main>

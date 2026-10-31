@@ -1,3 +1,4 @@
+import RelatedManufacturers from "@/components/RelatedManufacturers";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -117,6 +118,7 @@ export default async function NewsDetailPage({ params }: Props) {
             <p>Share your selected model numbers, intended market and sample requirements with the DIYASI team.</p>
             <Link href="/contact" className="d-button">Discuss your collection ↗</Link>
           </section>
+          <RelatedManufacturers slugs={article.relatedManufacturers} />
         </article>
       </div>
       <section className="d-section d-related">

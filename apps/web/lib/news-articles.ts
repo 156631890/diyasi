@@ -3,6 +3,8 @@ import { catalogProducts } from "./catalog-source";
 
 type NewsSourceArticle = {
   slug: string;
+  relatedManufacturers: string[];
+  sourcingTopic: string;
   title: string;
   description: string;
   category: string;
