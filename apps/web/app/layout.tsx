@@ -126,6 +126,7 @@ export default async function RootLayout({
             description: SITE_DESCRIPTION,
             email: companyInfo.emailPrimary,
             telephone: companyInfo.phone,
+            contactPoint: {"@type":"ContactPoint",contactType:"sales",telephone:companyInfo.phone,email:companyInfo.emailPrimary,areaServed:companyInfo.exportMarkets},
             address: {
               "@type": "PostalAddress",
               streetAddress: "No. 16 Dashi Road, Fotang Town",

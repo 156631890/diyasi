@@ -86,8 +86,8 @@ export default async function ProductPage({ params, searchParams }: Props) {
   ];
   return (
     <main id="main-content" className="d-detail">
-      {/* Quote-only styles have no published offer or reviews. Use ItemPage until
-          genuine, visible data meets Google's Product rich-result requirements. */}
+      {/* Catalogue facts only: no invented transaction or review properties. */}
+      <JsonLd data={{"@context":"https://schema.org","@type":"Product","@id":absoluteUrl("/products/"+p.slug)+"#product",name:p.product_name,description:p.description,sku:p.model_number,material:p.fabric,color:p.color,size:p.size,image:p.gallery_images.map(absoluteUrl),brand:{"@type":"Brand",name:"DIYASI"},manufacturer:{"@id":ORGANIZATION_ID},url:absoluteUrl("/products/"+p.slug)}}/>
       <JsonLd
         data={{
           "@context": "https://schema.org",

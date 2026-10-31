@@ -1,3 +1,7 @@
+import JsonLd from "@/components/JsonLd";
+import { absoluteUrl, buildBreadcrumbJsonLd } from "@/lib/seo";
+import { ORGANIZATION_ID } from "@/lib/site-config";
+import { companyInfo } from "@/lib/site-info";
 import Image from "next/image";
 import Link from "next/link";
 import { manufacturerFaq, manufacturerModels, manufacturerPages, manufacturerPath, manufacturerSpecifications, componentRows, productionSteps, manufacturingNotes, migratedArticle, type ManufacturerPage } from "@/lib/manufacturer-pages";
@@ -10,6 +14,9 @@ export default function ManufacturerPageTemplate({page}:{page:ManufacturerPage})
   const models=manufacturerModels(page);
   const migrated=migratedArticle(page);
   return <main id="main-content">
+    <JsonLd data={buildBreadcrumbJsonLd([{name:"Home",path:"/"},{name:"Manufacturers",path:"/manufacturers"},{name:page.h1,path:manufacturerPath(page.slug)}])}/>
+    <JsonLd data={{"@context":"https://schema.org","@type":"Service","@id":absoluteUrl(manufacturerPath(page.slug))+"#service",name:page.h1,serviceType:page.assessmentOnly ? `${page.h1} feasibility assessment` : page.h1,description:page.intro,url:absoluteUrl(manufacturerPath(page.slug)),provider:{"@id":ORGANIZATION_ID},areaServed:companyInfo.exportMarkets}}/>
+    <JsonLd data={{"@context":"https://schema.org","@type":"FAQPage",mainEntity:manufacturerFaq(page).map(([q,a])=>({"@type":"Question",name:q,acceptedAnswer:{"@type":"Answer",text:a}}))}}/>
     <header className="d-article-head"><nav className="d-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/manufacturers">Manufacturers</Link></nav><p className="d-eyebrow">{page.assessmentOnly ? "Category feasibility enquiry" : "Manufacturing & sourcing"}</p><h1>{page.h1}</h1><p>{page.description}</p><p className="d-fineprint">By <Link href="/about">DIYASI</Link> · Published <time dateTime="2026-10-31">31 October 2026</time></p></header>
     <div className="d-article-layout"><aside className="d-article-aside"><p className="d-eyebrow">Plan your order</p><nav aria-label="Page contents"><a href="#specifications">Specifications</a><a href="#quantities">MOQ & quotation</a><a href="#customization">Labels & packaging</a><a href="#quality">Quality evidence</a><a href="#production">Production process</a><a href="#questions">Questions</a></nav><Link className="d-text-link" href="/contact#quote-form">Discuss your brief ↗</Link></aside>
     <article className="d-article-body"><p className="d-article-answer">{page.intro}</p>
