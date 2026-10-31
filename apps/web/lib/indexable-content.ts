@@ -3,7 +3,6 @@ import { indexableProducts } from "./indexable-products";
 import { activeResourceArticles } from "./resource-articles";
 import { newsArticles } from "./news-articles";
 import { launchCollections } from "./site-info";
-import keywordPages from "@/data/keyword-pages.json";
 
 type ChangeFrequency = "weekly" | "monthly";
 
@@ -18,7 +17,20 @@ const reviewedAt = "2026-09-17";
 const seoUpdatedAt = "2026-09-22";
 const collectionUpdatedAt = "2026-09-27";
 const keywordUpdatedAt = "2026-10-07";
-const keywordUpdatedPaths = new Set(keywordPages.map((page) => page.path));
+// Preserve release dates already recorded for these static pages. Do not derive
+// dates from whichever keywords happen to be present or from the build clock.
+const staticPageDates: Readonly<Record<string, string>> = {
+  "/": "2026-10-24",
+  "/products": "2026-10-24",
+  "/oem-odm": "2026-10-24",
+  "/resources": "2026-10-24",
+  "/about": "2026-10-07",
+  "/factory": "2026-10-07",
+  "/fabrics": "2026-10-07",
+  "/packaging": "2026-10-07",
+  "/sustainability": "2026-10-07",
+  "/contact": "2026-10-07",
+};
 // Record actual releases only; do not refresh every URL on each sitemap request.
 const sourcingUpdatedAt = "2026-10-24";
 const sourcingUpdatedPaths = new Set([
@@ -189,22 +201,18 @@ export const indexableContent = {
   entries: [
     ...pageEntries.map((entry) => ({
       ...entry,
-      lastModified: sourcingUpdatedPaths.has(entry.path)
-        ? sourcingUpdatedAt
-        : keywordUpdatedPaths.has(entry.path)
-        ? keywordUpdatedAt
-        : ["/oem-odm", "/products"].includes(entry.path)
-        ? collectionUpdatedAt
-        : ["/privacy-policy", "/return-policy"].includes(entry.path)
+      lastModified: staticPageDates[entry.path] ?? (
+        ["/privacy-policy", "/return-policy"].includes(entry.path)
           ? entry.lastModified
-          : seoUpdatedAt,
+          : seoUpdatedAt
+      ),
     })),
     ...collectionEntries,
     { path: "/manufacturers", lastModified: manufacturerUpdatedAt, changeFrequency: "monthly", priority: 0.9 },
     ...manufacturerPages.map(p => ({path: `/manufacturers/${p.slug}`,lastModified:manufacturerUpdatedAt,changeFrequency:"monthly" as const,priority:0.8})),
     ...resourceEntries,
     ...newsEntries,
-    ...productEntries.map((entry) => ({ ...entry, lastModified: keywordUpdatedAt })),
+    ...productEntries,
   ],
   paths: [
     ...pageEntries,

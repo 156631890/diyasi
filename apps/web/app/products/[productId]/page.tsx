@@ -1,3 +1,4 @@
+import { ORGANIZATION_ID, WEBSITE_ID } from "@/lib/site-config";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -99,8 +100,8 @@ export default async function ProductPage({ params, searchParams }: Props) {
             ? [p.source_urls[0], sourceEvidence.secondaryUrl]
             : p.source_urls[0],
           inLanguage: "en",
-          isPartOf: { "@id": absoluteUrl("/") + "#website" },
-          publisher: { "@id": absoluteUrl("/") + "#organization" },
+          isPartOf: { "@id": WEBSITE_ID },
+          publisher: { "@id": ORGANIZATION_ID },
           image: p.gallery_images.map(absoluteUrl),
           primaryImageOfPage: {
             "@type": "ImageObject",

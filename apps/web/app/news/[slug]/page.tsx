@@ -1,3 +1,4 @@
+import { ORGANIZATION_ID } from "@/lib/site-config";
 import RelatedManufacturers from "@/components/RelatedManufacturers";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -58,7 +59,7 @@ export default async function NewsDetailPage({ params }: Props) {
         inLanguage: "en",
         articleSection: article.category,
         author: { "@type": "Organization", name: "DIYASI", url: absoluteUrl("/about") },
-        publisher: { "@id": `${absoluteUrl("/")}#organization` },
+        publisher: { "@id": ORGANIZATION_ID },
         mainEntityOfPage: absoluteUrl(path),
         citation: [...sources.map(({ url }) => url), ...(article.references ?? []).map(({ href }) => href)],
       }} />

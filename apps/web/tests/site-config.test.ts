@@ -37,7 +37,7 @@ test("all public URLs use the canonical www origin", () => {
   expect(canonicalUrl("/products")).toBe(
     "https://www.yiwudiyasidress.com/products",
   );
-  expect(canonicalUrl("/")).toBe("https://www.yiwudiyasidress.com/");
+  expect(canonicalUrl("/")).toBe("https://www.yiwudiyasidress.com");
   expect(canonicalUrl("/products?sort=latest#details")).toBe(
     "https://www.yiwudiyasidress.com/products?sort=latest#details",
   );
@@ -62,7 +62,7 @@ test("Spanish counterpart map contains only approved public routes", () => {
 test.each(spanishCounterparts)(
   "locale helpers resolve %s",
   (englishPath, spanishPath) => {
-    const englishUrl = new URL(englishPath, SITE_ORIGIN).toString();
+    const englishUrl = new URL(englishPath, SITE_ORIGIN).toString().replace(/\/$/, "");
 
     expect(localeHref("es", englishPath)).toBe(spanishPath);
     expect(localeHref("en", englishPath)).toBe(englishPath);

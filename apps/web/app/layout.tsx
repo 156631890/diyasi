@@ -15,6 +15,7 @@ import {
 } from "@/lib/seo";
 import { getServerLang } from "@/lib/server-lang";
 import { companyInfo } from "@/lib/site-info";
+import { ORGANIZATION_ID, WEBSITE_ID } from "@/lib/site-config";
 import "./globals.css";
 import "./editorial.css";
 import "./news/news.css";
@@ -99,19 +100,19 @@ export default async function RootLayout({
           data={{
             "@context": "https://schema.org",
             "@type": "WebSite",
-            "@id": absoluteUrl("/") + "#website",
+            "@id": WEBSITE_ID,
             name: SITE_NAME,
             url: SITE_ORIGIN,
             description: SITE_DESCRIPTION,
             inLanguage: ["en", "es"],
-            publisher: { "@id": absoluteUrl("/") + "#organization" },
+            publisher: { "@id": ORGANIZATION_ID },
           }}
         />
         <JsonLd
           data={{
             "@context": "https://schema.org",
             "@type": "Organization",
-            "@id": absoluteUrl("/") + "#organization",
+            "@id": ORGANIZATION_ID,
             name: companyInfo.name,
             alternateName: "DIYASI",
             foundingDate: String(companyInfo.establishedYear),

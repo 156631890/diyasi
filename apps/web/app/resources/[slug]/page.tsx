@@ -1,3 +1,4 @@
+import { ORGANIZATION_ID } from "@/lib/site-config";
 import RelatedManufacturers from "@/components/RelatedManufacturers";
 import Image from "next/image";
 import Link from "next/link";
@@ -67,7 +68,7 @@ export default async function ResourceDetailPage({ params }: Props) {
             name: "DIYASI",
             url: absoluteUrl("/about"),
           },
-          publisher: { "@id": absoluteUrl("/") + "#organization" },
+          publisher: { "@id": ORGANIZATION_ID },
           mainEntityOfPage: absoluteUrl("/resources/" + a.slug),
           citation: a.references.map((r) => r[1]),
         }}
