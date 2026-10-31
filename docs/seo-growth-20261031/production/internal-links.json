@@ -1,0 +1,4335 @@
+{
+  "started": "2026-10-31T10:15:55.637Z",
+  "completed": "2026-10-31T10:16:38.815Z",
+  "baseUrl": "https://www.yiwudiyasidress.com",
+  "publicOrigin": "https://www.yiwudiyasidress.com",
+  "passed": true,
+  "sitemapPageCount": 193,
+  "checkedUrlCount": 275,
+  "linkedAssetChecks": [
+    {
+      "path": "/media/catalog/72faa45b2fedd56b7af9.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/fa7c8cfc7576251d6503.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/27a10374fcd7ab5f967c.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/320af4bf55018ebe52ad.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/1af8e0222fa1e1246bc9.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/d69411d6fd8071fdaa20.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/4270075bdb8051e0d5c3.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/b948a909f2b487f514fc.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/91feef0e6daf7ec0eb68.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/fe1df1f26d3097be2429.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/75a5341a84e8d3892fd8.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/3bf58baa120666d5aa5d.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/f530a230ec22eba4c7cd.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/3bb39170c40434fac35a.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/ec2e154ca51f43b7fc80.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/94ec6f786de31c74a5fe.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/a9e81996242a689ad657.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/e1dcebff7ff453dd11ee.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/48868af6a89f5bc5d0cd.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/66b2d939031b2b3b95f8.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/431d2421015e640be14c.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/746dae0e9a1d2dcab640.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/26c379e83e3913c1a566.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/2a965ade3acfa10ba7a9.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/f063a5ef6c88e6662119.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/020a5f8d6cb6d23776d3.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/4a99440d7c20f19d0227.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/284dfa56889a2334d560.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/27977d5d69715b9237d7.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/26ba65a0a8da195f1e1e.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/469bd52f7a8451bbbb33.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/3cc7a48a2f451d26428a.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/6e5dd70869e3743fa971.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/4231b5f40206c9d0cdd9.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/9a50fd67e3fafdd22c15.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/48cab88493bb86bcd84e.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/8b38d9242dc779208b55.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/4e1ccc90187800e36ac9.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/7f92f7cf73d9d454f445.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/32c5fca07912eed4ad68.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/37ecf5f9524ba7e74c4a.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/08de2f4328b39c299eb8.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/a362b69e64a3434aa253.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/45c0a136f757d1108815.jpg",
+      "status": 200,
+      "redirects": []
+    },
+    {
+      "path": "/media/catalog/af211e0cbfed62115bc6.jpg",
+      "status": 200,
+      "redirects": []
+    }
+  ],
+  "sitemapFiles": [
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "redirects": []
+    }
+  ],
+  "excludedPrivateRoutes": [],
+  "deadLinks": [],
+  "redirects": [
+    {
+      "path": "/resources/120-pcs-moq-underwear-manufacturer",
+      "redirects": [
+        {
+          "status": 301,
+          "from": "/resources/120-pcs-moq-underwear-manufacturer",
+          "to": "/manufacturers/low-moq-underwear-manufacturer"
+        }
+      ]
+    },
+    {
+      "path": "/resources/private-label-underwear-manufacturer",
+      "redirects": [
+        {
+          "status": 301,
+          "from": "/resources/private-label-underwear-manufacturer",
+          "to": "/manufacturers/private-label-underwear-manufacturer"
+        }
+      ]
+    },
+    {
+      "path": "/resources/mens-underwear-manufacturer-private-label",
+      "redirects": [
+        {
+          "status": 301,
+          "from": "/resources/mens-underwear-manufacturer-private-label",
+          "to": "/manufacturers/mens-underwear-manufacturer"
+        }
+      ]
+    }
+  ],
+  "manufacturers": [
+    {
+      "path": "/manufacturers/private-label-underwear-manufacturer",
+      "inboundPages": 200,
+      "clickDepth": 1,
+      "status": 200,
+      "sources": [
+        "/",
+        "/products",
+        "/oem-odm",
+        "/factory",
+        "/contact",
+        "/about",
+        "/fabrics",
+        "/packaging",
+        "/sustainability",
+        "/resources",
+        "/privacy-policy",
+        "/return-policy",
+        "/es",
+        "/es/productos/ropa-interior-marca-privada",
+        "/es/minimo-pedido-ropa-interior",
+        "/es/ropa-interior-sin-costuras",
+        "/es/fabricante-ropa-interior-china",
+        "/es/empaque-personalizado",
+        "/es/fabrica-y-control-de-calidad",
+        "/es/contacto",
+        "/products/womens-panties",
+        "/products/cotton-underwear",
+        "/products/cotton-thongs",
+        "/products/lace-underwear",
+        "/products/seamless-underwear",
+        "/products/thongs",
+        "/products/high-waist",
+        "/products/mens-underwear",
+        "/products/mens-boxer-briefs",
+        "/manufacturers",
+        "/manufacturers/low-moq-underwear-manufacturer",
+        "/manufacturers/custom-underwear-manufacturer",
+        "/manufacturers/seamless-underwear-manufacturer",
+        "/manufacturers/mens-underwear-manufacturer",
+        "/manufacturers/shapewear-manufacturer",
+        "/manufacturers/bra-manufacturer",
+        "/manufacturers/underwear-factory",
+        "/manufacturers/lingerie-manufacturer",
+        "/manufacturers/swimwear-manufacturer",
+        "/manufacturers/lingerie-supplier",
+        "/manufacturers/private-label-lingerie",
+        "/guides",
+        "/guides/underwear-manufacturing-cost",
+        "/guides/underwear-manufacturing-process",
+        "/guides/how-to-find-a-clothing-manufacturer",
+        "/guides/seamless-underwear-wholesale",
+        "/guides/underwear-moq-explained",
+        "/guides/starting-an-underwear-brand",
+        "/es/manufacturers/private-label-underwear-manufacturer",
+        "/es/manufacturers/low-moq-underwear-manufacturer",
+        "/es/manufacturers/custom-underwear-manufacturer",
+        "/es/manufacturers/seamless-underwear-manufacturer",
+        "/fr/manufacturers/private-label-underwear-manufacturer",
+        "/fr/manufacturers/low-moq-underwear-manufacturer",
+        "/fr/manufacturers/custom-underwear-manufacturer",
+        "/fr/manufacturers/seamless-underwear-manufacturer",
+        "/fr/manufacturers/mens-underwear-manufacturer",
+        "/fr/manufacturers/lingerie-manufacturer",
+        "/fr/manufacturers/bra-manufacturer",
+        "/fr/manufacturers/underwear-factory",
+        "/de/manufacturers/private-label-underwear-manufacturer",
+        "/de/manufacturers/low-moq-underwear-manufacturer",
+        "/de/manufacturers/custom-underwear-manufacturer",
+        "/de/manufacturers/seamless-underwear-manufacturer",
+        "/de/manufacturers/mens-underwear-manufacturer",
+        "/de/manufacturers/lingerie-manufacturer",
+        "/de/manufacturers/bra-manufacturer",
+        "/de/manufacturers/underwear-factory",
+        "/it/manufacturers/private-label-underwear-manufacturer",
+        "/it/manufacturers/low-moq-underwear-manufacturer",
+        "/it/manufacturers/custom-underwear-manufacturer",
+        "/it/manufacturers/seamless-underwear-manufacturer",
+        "/it/manufacturers/mens-underwear-manufacturer",
+        "/it/manufacturers/lingerie-manufacturer",
+        "/it/manufacturers/bra-manufacturer",
+        "/it/manufacturers/underwear-factory",
+        "/es/guides/underwear-manufacturing-cost",
+        "/es/guides/underwear-manufacturing-process",
+        "/es/guides/underwear-moq-explained",
+        "/resources/custom-waistband-underwear-manufacturer",
+        "/resources/laser-cut-underwear-manufacturer",
+        "/resources/underwear-manufacturer-for-startup-brands",
+        "/resources/underwear-sampling-lead-time-guide",
+        "/resources/yiwu-underwear-manufacturer",
+        "/resources/high-waisted-briefs-manufacturer",
+        "/resources/bikini-vs-brazilian-underwear",
+        "/resources/seamless-vs-no-show-underwear",
+        "/resources/cotton-vs-seamless-underwear-buyers-guide",
+        "/resources/private-label-underwear-moq-guide",
+        "/resources/accurate-underwear-yoga-wear-manufacturing-quote",
+        "/resources/unit-cost-custom-underwear-manufacturing",
+        "/resources/traceless-vs-seamless-underwear-yoga-brands",
+        "/resources/lace-underwear-oem-guide-boutique-lingerie-brands",
+        "/resources/cotton-underwear-oem-guide-daily-basics-startups",
+        "/resources/waistband-customization-mens-boxer-briefs-private-label",
+        "/resources/gusset-construction-womens-underwear-comfort-qc",
+        "/resources/sports-bra-support-levels-small-yoga-brands",
+        "/resources/reorder-planning-after-low-moq-first-run",
+        "/resources/us-eu-underwear-size-labeling-preparation-startup-brands",
+        "/resources/underwear-sampling-costs-lead-times-packaging",
+        "/news",
+        "/news/100-cotton-vs-cotton-spandex-underwear-labels",
+        "/news/organic-cotton-underwear-claims-evidence-buyers",
+        "/news/cotton-gusset-vs-cotton-underwear-components",
+        "/news/seamless-underwear-for-leggings-sample-review",
+        "/news/high-waisted-cotton-underwear-range-planning",
+        "/news/cotton-thong-underwear-everyday-range",
+        "/news/womens-boxer-vs-boyshort-underwear-names",
+        "/news/cotton-lace-underwear-composition-claims",
+        "/news/underwear-for-white-pants-colour-opacity-test",
+        "/news/2026-underwear-search-themes-factory-buyer-brief",
+        "/news/underwear-leg-opening-elastic-fit-checklist",
+        "/news/high-waist-underwear-waistband-roll-down-fit",
+        "/news/bonded-vs-stitched-gusset-attachment-underwear",
+        "/news/lace-trim-stretch-placement-underwear-samples",
+        "/news/mens-no-fly-pouch-fit-sample-review",
+        "/news/printed-underwear-strike-off-artwork-approval",
+        "/news/underwear-bulk-shade-band-colour-consistency",
+        "/news/underwear-barcode-variant-label-proofing",
+        "/news/underwear-carton-protection-transit-checklist",
+        "/news/underwear-line-sheet-wholesale-buyer-checklist",
+        "/news/choose-underwear-manufacturer-supplier-checklist",
+        "/news/thong-vs-g-string-t-string-underwear-buyers",
+        "/news/underwear-fabric-gsm-thickness-opacity-guide",
+        "/news/tanga-vs-bikini-vs-thong-coverage-guide",
+        "/news/heat-transfer-vs-sewn-underwear-labels",
+        "/news/underwear-aql-inspection-defect-checklist",
+        "/news/shipping-underwear-samples-commercial-invoice-checklist",
+        "/news/recycled-polyester-underwear-claims-documentation",
+        "/news/underwear-multipack-assortment-planning",
+        "/news/underwear-product-photography-shot-list",
+        "/news/womens-boyshorts-vs-long-leg-underwear",
+        "/news/v-waist-underwear-fit-measurement-guide",
+        "/news/mens-briefs-vs-trunks-private-label-fit",
+        "/news/modal-pouch-vs-modal-underwear-fabric-specification",
+        "/news/underwear-tech-pack-measurement-specification",
+        "/news/underwear-colour-lab-dip-approval-guide",
+        "/news/underwear-wash-test-shrinkage-recovery-checklist",
+        "/news/underwear-size-set-sample-grading-checklist",
+        "/news/underwear-sku-carton-packing-list-guide",
+        "/news/underwear-pre-production-sample-approval-checklist",
+        "/news/cotton-vs-polyamide-underwear-private-label",
+        "/news/high-waisted-briefs-vs-thongs-buying-guide",
+        "/news/plain-vs-printed-mens-underwear-private-label",
+        "/news/explore-the-diyasi-underwear-collection",
+        "/news/bikini-vs-brazilian-underwear-buying-notes",
+        "/news/trunks-vs-boxer-briefs-sourcing-notes",
+        "/products/lace-trim-cotton-brazilian-brief-ls006",
+        "/products/v-waist-lace-cotton-brief-ls005-142",
+        "/products/v-waist-lace-cotton-thong-ls005",
+        "/products/bonded-brazilian-seamless-brief-dys323",
+        "/products/bonded-seamless-low-rise-thong-dys322",
+        "/products/seamless-high-waist-full-brief-dys314",
+        "/products/seamless-low-rise-brazilian-brief-dys311",
+        "/products/seamless-mid-low-brazilian-brief-dys306",
+        "/products/invisible-edge-cotton-gusset-thong-dys302",
+        "/products/seamless-v-waist-low-rise-thong-dys301",
+        "/products/printed-low-rise-mens-brief-m008-print",
+        "/products/printed-mid-rise-mens-trunk-m007-print",
+        "/products/contrast-waist-printed-mens-trunk-m006-print",
+        "/products/printed-mid-leg-mens-boxer-brief-m005-print",
+        "/products/printed-modal-pouch-boxer-brief-m004-print",
+        "/products/everyday-printed-mens-boxer-brief-m003-print",
+        "/products/printed-high-waist-long-leg-boxer-m002-print",
+        "/products/printed-low-rise-modal-pouch-trunk-m001-print",
+        "/products/everyday-cotton-mid-rise-thong-dys229",
+        "/products/cotton-low-rise-t-string-dys230",
+        "/products/cotton-mid-rise-t-back-thong-dys228",
+        "/products/wide-waistband-cotton-tanga-thong-dys227",
+        "/products/high-waist-cotton-t-string-dys226",
+        "/products/cotton-high-waist-thong-dys225",
+        "/products/essential-cotton-thong-dys224",
+        "/products/signature-cotton-brief-dys223",
+        "/products/high-leg-cotton-high-waist-brief-dys219",
+        "/products/mens-low-rise-bikini-brief-m008",
+        "/products/mens-4-inch-stretch-boxer-brief-m007",
+        "/products/mens-5-inch-pouch-support-trunk-m006",
+        "/products/mens-5-inch-modal-pouch-boxer-m005",
+        "/products/mens-mid-rise-no-fly-trunk-m004",
+        "/products/mens-modal-pouch-everyday-trunk-m003",
+        "/products/mens-long-leg-stretch-boxer-brief-m002",
+        "/products/mens-tagless-low-rise-brief-m001",
+        "/products/lettered-waist-cotton-tanga-dys218",
+        "/products/wide-waistband-cotton-boxer-dys215",
+        "/products/everyday-cotton-boyshort-dys214",
+        "/products/long-leg-high-waist-cotton-brief-dys210",
+        "/products/everyday-cotton-tanga-dys208",
+        "/products/classic-cotton-bikini-brief-dys206",
+        "/products/extra-high-waist-cotton-thong-dys205",
+        "/products/cotton-stretch-g-string-dys204",
+        "/products/essential-cotton-bikini-brief-dys202",
+        "/products/low-rise-cotton-bikini-brief-dys201",
+        "/products?page=2",
+        "/products?page=3",
+        "/products?page=4",
+        "/products/womens-panties?page=2",
+        "/products/womens-panties?page=3",
+        "/products/cotton-underwear?page=2",
+        "/products/thongs?page=2",
+        "/products/mens-underwear?page=2"
+      ],
+      "passed": true
+    },
+    {
+      "path": "/manufacturers/low-moq-underwear-manufacturer",
+      "inboundPages": 200,
+      "clickDepth": 1,
+      "status": 200,
+      "sources": [
+        "/",
+        "/products",
+        "/oem-odm",
+        "/factory",
+        "/contact",
+        "/about",
+        "/fabrics",
+        "/packaging",
+        "/sustainability",
+        "/resources",
+        "/privacy-policy",
+        "/return-policy",
+        "/es",
+        "/es/productos/ropa-interior-marca-privada",
+        "/es/minimo-pedido-ropa-interior",
+        "/es/ropa-interior-sin-costuras",
+        "/es/fabricante-ropa-interior-china",
+        "/es/empaque-personalizado",
+        "/es/fabrica-y-control-de-calidad",
+        "/es/contacto",
+        "/products/womens-panties",
+        "/products/cotton-underwear",
+        "/products/cotton-thongs",
+        "/products/lace-underwear",
+        "/products/seamless-underwear",
+        "/products/thongs",
+        "/products/high-waist",
+        "/products/mens-underwear",
+        "/products/mens-boxer-briefs",
+        "/manufacturers",
+        "/manufacturers/private-label-underwear-manufacturer",
+        "/manufacturers/custom-underwear-manufacturer",
+        "/manufacturers/seamless-underwear-manufacturer",
+        "/manufacturers/mens-underwear-manufacturer",
+        "/manufacturers/shapewear-manufacturer",
+        "/manufacturers/bra-manufacturer",
+        "/manufacturers/underwear-factory",
+        "/manufacturers/lingerie-manufacturer",
+        "/manufacturers/swimwear-manufacturer",
+        "/manufacturers/lingerie-supplier",
+        "/manufacturers/private-label-lingerie",
+        "/guides",
+        "/guides/underwear-manufacturing-cost",
+        "/guides/underwear-manufacturing-process",
+        "/guides/how-to-find-a-clothing-manufacturer",
+        "/guides/seamless-underwear-wholesale",
+        "/guides/underwear-moq-explained",
+        "/guides/starting-an-underwear-brand",
+        "/es/manufacturers/private-label-underwear-manufacturer",
+        "/es/manufacturers/low-moq-underwear-manufacturer",
+        "/es/manufacturers/custom-underwear-manufacturer",
+        "/es/manufacturers/seamless-underwear-manufacturer",
+        "/fr/manufacturers/private-label-underwear-manufacturer",
+        "/fr/manufacturers/low-moq-underwear-manufacturer",
+        "/fr/manufacturers/custom-underwear-manufacturer",
+        "/fr/manufacturers/seamless-underwear-manufacturer",
+        "/fr/manufacturers/mens-underwear-manufacturer",
+        "/fr/manufacturers/lingerie-manufacturer",
+        "/fr/manufacturers/bra-manufacturer",
+        "/fr/manufacturers/underwear-factory",
+        "/de/manufacturers/private-label-underwear-manufacturer",
+        "/de/manufacturers/low-moq-underwear-manufacturer",
+        "/de/manufacturers/custom-underwear-manufacturer",
+        "/de/manufacturers/seamless-underwear-manufacturer",
+        "/de/manufacturers/mens-underwear-manufacturer",
+        "/de/manufacturers/lingerie-manufacturer",
+        "/de/manufacturers/bra-manufacturer",
+        "/de/manufacturers/underwear-factory",
+        "/it/manufacturers/private-label-underwear-manufacturer",
+        "/it/manufacturers/low-moq-underwear-manufacturer",
+        "/it/manufacturers/custom-underwear-manufacturer",
+        "/it/manufacturers/seamless-underwear-manufacturer",
+        "/it/manufacturers/mens-underwear-manufacturer",
+        "/it/manufacturers/lingerie-manufacturer",
+        "/it/manufacturers/bra-manufacturer",
+        "/it/manufacturers/underwear-factory",
+        "/es/guides/underwear-manufacturing-cost",
+        "/es/guides/underwear-manufacturing-process",
+        "/es/guides/underwear-moq-explained",
+        "/resources/custom-waistband-underwear-manufacturer",
+        "/resources/laser-cut-underwear-manufacturer",
+        "/resources/underwear-manufacturer-for-startup-brands",
+        "/resources/underwear-sampling-lead-time-guide",
+        "/resources/yiwu-underwear-manufacturer",
+        "/resources/high-waisted-briefs-manufacturer",
+        "/resources/bikini-vs-brazilian-underwear",
+        "/resources/seamless-vs-no-show-underwear",
+        "/resources/cotton-vs-seamless-underwear-buyers-guide",
+        "/resources/private-label-underwear-moq-guide",
+        "/resources/accurate-underwear-yoga-wear-manufacturing-quote",
+        "/resources/unit-cost-custom-underwear-manufacturing",
+        "/resources/traceless-vs-seamless-underwear-yoga-brands",
+        "/resources/lace-underwear-oem-guide-boutique-lingerie-brands",
+        "/resources/cotton-underwear-oem-guide-daily-basics-startups",
+        "/resources/waistband-customization-mens-boxer-briefs-private-label",
+        "/resources/gusset-construction-womens-underwear-comfort-qc",
+        "/resources/sports-bra-support-levels-small-yoga-brands",
+        "/resources/reorder-planning-after-low-moq-first-run",
+        "/resources/us-eu-underwear-size-labeling-preparation-startup-brands",
+        "/resources/underwear-sampling-costs-lead-times-packaging",
+        "/news",
+        "/news/100-cotton-vs-cotton-spandex-underwear-labels",
+        "/news/organic-cotton-underwear-claims-evidence-buyers",
+        "/news/cotton-gusset-vs-cotton-underwear-components",
+        "/news/seamless-underwear-for-leggings-sample-review",
+        "/news/high-waisted-cotton-underwear-range-planning",
+        "/news/cotton-thong-underwear-everyday-range",
+        "/news/womens-boxer-vs-boyshort-underwear-names",
+        "/news/cotton-lace-underwear-composition-claims",
+        "/news/underwear-for-white-pants-colour-opacity-test",
+        "/news/2026-underwear-search-themes-factory-buyer-brief",
+        "/news/underwear-leg-opening-elastic-fit-checklist",
+        "/news/high-waist-underwear-waistband-roll-down-fit",
+        "/news/bonded-vs-stitched-gusset-attachment-underwear",
+        "/news/lace-trim-stretch-placement-underwear-samples",
+        "/news/mens-no-fly-pouch-fit-sample-review",
+        "/news/printed-underwear-strike-off-artwork-approval",
+        "/news/underwear-bulk-shade-band-colour-consistency",
+        "/news/underwear-barcode-variant-label-proofing",
+        "/news/underwear-carton-protection-transit-checklist",
+        "/news/underwear-line-sheet-wholesale-buyer-checklist",
+        "/news/choose-underwear-manufacturer-supplier-checklist",
+        "/news/thong-vs-g-string-t-string-underwear-buyers",
+        "/news/underwear-fabric-gsm-thickness-opacity-guide",
+        "/news/tanga-vs-bikini-vs-thong-coverage-guide",
+        "/news/heat-transfer-vs-sewn-underwear-labels",
+        "/news/underwear-aql-inspection-defect-checklist",
+        "/news/shipping-underwear-samples-commercial-invoice-checklist",
+        "/news/recycled-polyester-underwear-claims-documentation",
+        "/news/underwear-multipack-assortment-planning",
+        "/news/underwear-product-photography-shot-list",
+        "/news/womens-boyshorts-vs-long-leg-underwear",
+        "/news/v-waist-underwear-fit-measurement-guide",
+        "/news/mens-briefs-vs-trunks-private-label-fit",
+        "/news/modal-pouch-vs-modal-underwear-fabric-specification",
+        "/news/underwear-tech-pack-measurement-specification",
+        "/news/underwear-colour-lab-dip-approval-guide",
+        "/news/underwear-wash-test-shrinkage-recovery-checklist",
+        "/news/underwear-size-set-sample-grading-checklist",
+        "/news/underwear-sku-carton-packing-list-guide",
+        "/news/underwear-pre-production-sample-approval-checklist",
+        "/news/cotton-vs-polyamide-underwear-private-label",
+        "/news/high-waisted-briefs-vs-thongs-buying-guide",
+        "/news/plain-vs-printed-mens-underwear-private-label",
+        "/news/explore-the-diyasi-underwear-collection",
+        "/news/bikini-vs-brazilian-underwear-buying-notes",
+        "/news/trunks-vs-boxer-briefs-sourcing-notes",
+        "/products/lace-trim-cotton-brazilian-brief-ls006",
+        "/products/v-waist-lace-cotton-brief-ls005-142",
+        "/products/v-waist-lace-cotton-thong-ls005",
+        "/products/bonded-brazilian-seamless-brief-dys323",
+        "/products/bonded-seamless-low-rise-thong-dys322",
+        "/products/seamless-high-waist-full-brief-dys314",
+        "/products/seamless-low-rise-brazilian-brief-dys311",
+        "/products/seamless-mid-low-brazilian-brief-dys306",
+        "/products/invisible-edge-cotton-gusset-thong-dys302",
+        "/products/seamless-v-waist-low-rise-thong-dys301",
+        "/products/printed-low-rise-mens-brief-m008-print",
+        "/products/printed-mid-rise-mens-trunk-m007-print",
+        "/products/contrast-waist-printed-mens-trunk-m006-print",
+        "/products/printed-mid-leg-mens-boxer-brief-m005-print",
+        "/products/printed-modal-pouch-boxer-brief-m004-print",
+        "/products/everyday-printed-mens-boxer-brief-m003-print",
+        "/products/printed-high-waist-long-leg-boxer-m002-print",
+        "/products/printed-low-rise-modal-pouch-trunk-m001-print",
+        "/products/everyday-cotton-mid-rise-thong-dys229",
+        "/products/cotton-low-rise-t-string-dys230",
+        "/products/cotton-mid-rise-t-back-thong-dys228",
+        "/products/wide-waistband-cotton-tanga-thong-dys227",
+        "/products/high-waist-cotton-t-string-dys226",
+        "/products/cotton-high-waist-thong-dys225",
+        "/products/essential-cotton-thong-dys224",
+        "/products/signature-cotton-brief-dys223",
+        "/products/high-leg-cotton-high-waist-brief-dys219",
+        "/products/mens-low-rise-bikini-brief-m008",
+        "/products/mens-4-inch-stretch-boxer-brief-m007",
+        "/products/mens-5-inch-pouch-support-trunk-m006",
+        "/products/mens-5-inch-modal-pouch-boxer-m005",
+        "/products/mens-mid-rise-no-fly-trunk-m004",
+        "/products/mens-modal-pouch-everyday-trunk-m003",
+        "/products/mens-long-leg-stretch-boxer-brief-m002",
+        "/products/mens-tagless-low-rise-brief-m001",
+        "/products/lettered-waist-cotton-tanga-dys218",
+        "/products/wide-waistband-cotton-boxer-dys215",
+        "/products/everyday-cotton-boyshort-dys214",
+        "/products/long-leg-high-waist-cotton-brief-dys210",
+        "/products/everyday-cotton-tanga-dys208",
+        "/products/classic-cotton-bikini-brief-dys206",
+        "/products/extra-high-waist-cotton-thong-dys205",
+        "/products/cotton-stretch-g-string-dys204",
+        "/products/essential-cotton-bikini-brief-dys202",
+        "/products/low-rise-cotton-bikini-brief-dys201",
+        "/products?page=2",
+        "/products?page=3",
+        "/products?page=4",
+        "/products/womens-panties?page=2",
+        "/products/womens-panties?page=3",
+        "/products/cotton-underwear?page=2",
+        "/products/thongs?page=2",
+        "/products/mens-underwear?page=2"
+      ],
+      "passed": true
+    },
+    {
+      "path": "/manufacturers/custom-underwear-manufacturer",
+      "inboundPages": 200,
+      "clickDepth": 1,
+      "status": 200,
+      "sources": [
+        "/",
+        "/products",
+        "/oem-odm",
+        "/factory",
+        "/contact",
+        "/about",
+        "/fabrics",
+        "/packaging",
+        "/sustainability",
+        "/resources",
+        "/privacy-policy",
+        "/return-policy",
+        "/es",
+        "/es/productos/ropa-interior-marca-privada",
+        "/es/minimo-pedido-ropa-interior",
+        "/es/ropa-interior-sin-costuras",
+        "/es/fabricante-ropa-interior-china",
+        "/es/empaque-personalizado",
+        "/es/fabrica-y-control-de-calidad",
+        "/es/contacto",
+        "/products/womens-panties",
+        "/products/cotton-underwear",
+        "/products/cotton-thongs",
+        "/products/lace-underwear",
+        "/products/seamless-underwear",
+        "/products/thongs",
+        "/products/high-waist",
+        "/products/mens-underwear",
+        "/products/mens-boxer-briefs",
+        "/manufacturers",
+        "/manufacturers/private-label-underwear-manufacturer",
+        "/manufacturers/low-moq-underwear-manufacturer",
+        "/manufacturers/seamless-underwear-manufacturer",
+        "/manufacturers/mens-underwear-manufacturer",
+        "/manufacturers/shapewear-manufacturer",
+        "/manufacturers/bra-manufacturer",
+        "/manufacturers/underwear-factory",
+        "/manufacturers/lingerie-manufacturer",
+        "/manufacturers/swimwear-manufacturer",
+        "/manufacturers/lingerie-supplier",
+        "/manufacturers/private-label-lingerie",
+        "/guides",
+        "/guides/underwear-manufacturing-cost",
+        "/guides/underwear-manufacturing-process",
+        "/guides/how-to-find-a-clothing-manufacturer",
+        "/guides/seamless-underwear-wholesale",
+        "/guides/underwear-moq-explained",
+        "/guides/starting-an-underwear-brand",
+        "/es/manufacturers/private-label-underwear-manufacturer",
+        "/es/manufacturers/low-moq-underwear-manufacturer",
+        "/es/manufacturers/custom-underwear-manufacturer",
+        "/es/manufacturers/seamless-underwear-manufacturer",
+        "/fr/manufacturers/private-label-underwear-manufacturer",
+        "/fr/manufacturers/low-moq-underwear-manufacturer",
+        "/fr/manufacturers/custom-underwear-manufacturer",
+        "/fr/manufacturers/seamless-underwear-manufacturer",
+        "/fr/manufacturers/mens-underwear-manufacturer",
+        "/fr/manufacturers/lingerie-manufacturer",
+        "/fr/manufacturers/bra-manufacturer",
+        "/fr/manufacturers/underwear-factory",
+        "/de/manufacturers/private-label-underwear-manufacturer",
+        "/de/manufacturers/low-moq-underwear-manufacturer",
+        "/de/manufacturers/custom-underwear-manufacturer",
+        "/de/manufacturers/seamless-underwear-manufacturer",
+        "/de/manufacturers/mens-underwear-manufacturer",
+        "/de/manufacturers/lingerie-manufacturer",
+        "/de/manufacturers/bra-manufacturer",
+        "/de/manufacturers/underwear-factory",
+        "/it/manufacturers/private-label-underwear-manufacturer",
+        "/it/manufacturers/low-moq-underwear-manufacturer",
+        "/it/manufacturers/custom-underwear-manufacturer",
+        "/it/manufacturers/seamless-underwear-manufacturer",
+        "/it/manufacturers/mens-underwear-manufacturer",
+        "/it/manufacturers/lingerie-manufacturer",
+        "/it/manufacturers/bra-manufacturer",
+        "/it/manufacturers/underwear-factory",
+        "/es/guides/underwear-manufacturing-cost",
+        "/es/guides/underwear-manufacturing-process",
+        "/es/guides/underwear-moq-explained",
+        "/resources/custom-waistband-underwear-manufacturer",
+        "/resources/laser-cut-underwear-manufacturer",
+        "/resources/underwear-manufacturer-for-startup-brands",
+        "/resources/underwear-sampling-lead-time-guide",
+        "/resources/yiwu-underwear-manufacturer",
+        "/resources/high-waisted-briefs-manufacturer",
+        "/resources/bikini-vs-brazilian-underwear",
+        "/resources/seamless-vs-no-show-underwear",
+        "/resources/cotton-vs-seamless-underwear-buyers-guide",
+        "/resources/private-label-underwear-moq-guide",
+        "/resources/accurate-underwear-yoga-wear-manufacturing-quote",
+        "/resources/unit-cost-custom-underwear-manufacturing",
+        "/resources/traceless-vs-seamless-underwear-yoga-brands",
+        "/resources/lace-underwear-oem-guide-boutique-lingerie-brands",
+        "/resources/cotton-underwear-oem-guide-daily-basics-startups",
+        "/resources/waistband-customization-mens-boxer-briefs-private-label",
+        "/resources/gusset-construction-womens-underwear-comfort-qc",
+        "/resources/sports-bra-support-levels-small-yoga-brands",
+        "/resources/reorder-planning-after-low-moq-first-run",
+        "/resources/us-eu-underwear-size-labeling-preparation-startup-brands",
+        "/resources/underwear-sampling-costs-lead-times-packaging",
+        "/news",
+        "/news/100-cotton-vs-cotton-spandex-underwear-labels",
+        "/news/organic-cotton-underwear-claims-evidence-buyers",
+        "/news/cotton-gusset-vs-cotton-underwear-components",
+        "/news/seamless-underwear-for-leggings-sample-review",
+        "/news/high-waisted-cotton-underwear-range-planning",
+        "/news/cotton-thong-underwear-everyday-range",
+        "/news/womens-boxer-vs-boyshort-underwear-names",
+        "/news/cotton-lace-underwear-composition-claims",
+        "/news/underwear-for-white-pants-colour-opacity-test",
+        "/news/2026-underwear-search-themes-factory-buyer-brief",
+        "/news/underwear-leg-opening-elastic-fit-checklist",
+        "/news/high-waist-underwear-waistband-roll-down-fit",
+        "/news/bonded-vs-stitched-gusset-attachment-underwear",
+        "/news/lace-trim-stretch-placement-underwear-samples",
+        "/news/mens-no-fly-pouch-fit-sample-review",
+        "/news/printed-underwear-strike-off-artwork-approval",
+        "/news/underwear-bulk-shade-band-colour-consistency",
+        "/news/underwear-barcode-variant-label-proofing",
+        "/news/underwear-carton-protection-transit-checklist",
+        "/news/underwear-line-sheet-wholesale-buyer-checklist",
+        "/news/choose-underwear-manufacturer-supplier-checklist",
+        "/news/thong-vs-g-string-t-string-underwear-buyers",
+        "/news/underwear-fabric-gsm-thickness-opacity-guide",
+        "/news/tanga-vs-bikini-vs-thong-coverage-guide",
+        "/news/heat-transfer-vs-sewn-underwear-labels",
+        "/news/underwear-aql-inspection-defect-checklist",
+        "/news/shipping-underwear-samples-commercial-invoice-checklist",
+        "/news/recycled-polyester-underwear-claims-documentation",
+        "/news/underwear-multipack-assortment-planning",
+        "/news/underwear-product-photography-shot-list",
+        "/news/womens-boyshorts-vs-long-leg-underwear",
+        "/news/v-waist-underwear-fit-measurement-guide",
+        "/news/mens-briefs-vs-trunks-private-label-fit",
+        "/news/modal-pouch-vs-modal-underwear-fabric-specification",
+        "/news/underwear-tech-pack-measurement-specification",
+        "/news/underwear-colour-lab-dip-approval-guide",
+        "/news/underwear-wash-test-shrinkage-recovery-checklist",
+        "/news/underwear-size-set-sample-grading-checklist",
+        "/news/underwear-sku-carton-packing-list-guide",
+        "/news/underwear-pre-production-sample-approval-checklist",
+        "/news/cotton-vs-polyamide-underwear-private-label",
+        "/news/high-waisted-briefs-vs-thongs-buying-guide",
+        "/news/plain-vs-printed-mens-underwear-private-label",
+        "/news/explore-the-diyasi-underwear-collection",
+        "/news/bikini-vs-brazilian-underwear-buying-notes",
+        "/news/trunks-vs-boxer-briefs-sourcing-notes",
+        "/products/lace-trim-cotton-brazilian-brief-ls006",
+        "/products/v-waist-lace-cotton-brief-ls005-142",
+        "/products/v-waist-lace-cotton-thong-ls005",
+        "/products/bonded-brazilian-seamless-brief-dys323",
+        "/products/bonded-seamless-low-rise-thong-dys322",
+        "/products/seamless-high-waist-full-brief-dys314",
+        "/products/seamless-low-rise-brazilian-brief-dys311",
+        "/products/seamless-mid-low-brazilian-brief-dys306",
+        "/products/invisible-edge-cotton-gusset-thong-dys302",
+        "/products/seamless-v-waist-low-rise-thong-dys301",
+        "/products/printed-low-rise-mens-brief-m008-print",
+        "/products/printed-mid-rise-mens-trunk-m007-print",
+        "/products/contrast-waist-printed-mens-trunk-m006-print",
+        "/products/printed-mid-leg-mens-boxer-brief-m005-print",
+        "/products/printed-modal-pouch-boxer-brief-m004-print",
+        "/products/everyday-printed-mens-boxer-brief-m003-print",
+        "/products/printed-high-waist-long-leg-boxer-m002-print",
+        "/products/printed-low-rise-modal-pouch-trunk-m001-print",
+        "/products/everyday-cotton-mid-rise-thong-dys229",
+        "/products/cotton-low-rise-t-string-dys230",
+        "/products/cotton-mid-rise-t-back-thong-dys228",
+        "/products/wide-waistband-cotton-tanga-thong-dys227",
+        "/products/high-waist-cotton-t-string-dys226",
+        "/products/cotton-high-waist-thong-dys225",
+        "/products/essential-cotton-thong-dys224",
+        "/products/signature-cotton-brief-dys223",
+        "/products/high-leg-cotton-high-waist-brief-dys219",
+        "/products/mens-low-rise-bikini-brief-m008",
+        "/products/mens-4-inch-stretch-boxer-brief-m007",
+        "/products/mens-5-inch-pouch-support-trunk-m006",
+        "/products/mens-5-inch-modal-pouch-boxer-m005",
+        "/products/mens-mid-rise-no-fly-trunk-m004",
+        "/products/mens-modal-pouch-everyday-trunk-m003",
+        "/products/mens-long-leg-stretch-boxer-brief-m002",
+        "/products/mens-tagless-low-rise-brief-m001",
+        "/products/lettered-waist-cotton-tanga-dys218",
+        "/products/wide-waistband-cotton-boxer-dys215",
+        "/products/everyday-cotton-boyshort-dys214",
+        "/products/long-leg-high-waist-cotton-brief-dys210",
+        "/products/everyday-cotton-tanga-dys208",
+        "/products/classic-cotton-bikini-brief-dys206",
+        "/products/extra-high-waist-cotton-thong-dys205",
+        "/products/cotton-stretch-g-string-dys204",
+        "/products/essential-cotton-bikini-brief-dys202",
+        "/products/low-rise-cotton-bikini-brief-dys201",
+        "/products?page=2",
+        "/products?page=3",
+        "/products?page=4",
+        "/products/womens-panties?page=2",
+        "/products/womens-panties?page=3",
+        "/products/cotton-underwear?page=2",
+        "/products/thongs?page=2",
+        "/products/mens-underwear?page=2"
+      ],
+      "passed": true
+    },
+    {
+      "path": "/manufacturers/seamless-underwear-manufacturer",
+      "inboundPages": 200,
+      "clickDepth": 1,
+      "status": 200,
+      "sources": [
+        "/",
+        "/products",
+        "/oem-odm",
+        "/factory",
+        "/contact",
+        "/about",
+        "/fabrics",
+        "/packaging",
+        "/sustainability",
+        "/resources",
+        "/privacy-policy",
+        "/return-policy",
+        "/es",
+        "/es/productos/ropa-interior-marca-privada",
+        "/es/minimo-pedido-ropa-interior",
+        "/es/ropa-interior-sin-costuras",
+        "/es/fabricante-ropa-interior-china",
+        "/es/empaque-personalizado",
+        "/es/fabrica-y-control-de-calidad",
+        "/es/contacto",
+        "/products/womens-panties",
+        "/products/cotton-underwear",
+        "/products/cotton-thongs",
+        "/products/lace-underwear",
+        "/products/seamless-underwear",
+        "/products/thongs",
+        "/products/high-waist",
+        "/products/mens-underwear",
+        "/products/mens-boxer-briefs",
+        "/manufacturers",
+        "/manufacturers/private-label-underwear-manufacturer",
+        "/manufacturers/low-moq-underwear-manufacturer",
+        "/manufacturers/custom-underwear-manufacturer",
+        "/manufacturers/mens-underwear-manufacturer",
+        "/manufacturers/shapewear-manufacturer",
+        "/manufacturers/bra-manufacturer",
+        "/manufacturers/underwear-factory",
+        "/manufacturers/lingerie-manufacturer",
+        "/manufacturers/swimwear-manufacturer",
+        "/manufacturers/lingerie-supplier",
+        "/manufacturers/private-label-lingerie",
+        "/guides",
+        "/guides/underwear-manufacturing-cost",
+        "/guides/underwear-manufacturing-process",
+        "/guides/how-to-find-a-clothing-manufacturer",
+        "/guides/seamless-underwear-wholesale",
+        "/guides/underwear-moq-explained",
+        "/guides/starting-an-underwear-brand",
+        "/es/manufacturers/private-label-underwear-manufacturer",
+        "/es/manufacturers/low-moq-underwear-manufacturer",
+        "/es/manufacturers/custom-underwear-manufacturer",
+        "/es/manufacturers/seamless-underwear-manufacturer",
+        "/fr/manufacturers/private-label-underwear-manufacturer",
+        "/fr/manufacturers/low-moq-underwear-manufacturer",
+        "/fr/manufacturers/custom-underwear-manufacturer",
+        "/fr/manufacturers/seamless-underwear-manufacturer",
+        "/fr/manufacturers/mens-underwear-manufacturer",
+        "/fr/manufacturers/lingerie-manufacturer",
+        "/fr/manufacturers/bra-manufacturer",
+        "/fr/manufacturers/underwear-factory",
+        "/de/manufacturers/private-label-underwear-manufacturer",
+        "/de/manufacturers/low-moq-underwear-manufacturer",
+        "/de/manufacturers/custom-underwear-manufacturer",
+        "/de/manufacturers/seamless-underwear-manufacturer",
+        "/de/manufacturers/mens-underwear-manufacturer",
+        "/de/manufacturers/lingerie-manufacturer",
+        "/de/manufacturers/bra-manufacturer",
+        "/de/manufacturers/underwear-factory",
+        "/it/manufacturers/private-label-underwear-manufacturer",
+        "/it/manufacturers/low-moq-underwear-manufacturer",
+        "/it/manufacturers/custom-underwear-manufacturer",
+        "/it/manufacturers/seamless-underwear-manufacturer",
+        "/it/manufacturers/mens-underwear-manufacturer",
+        "/it/manufacturers/lingerie-manufacturer",
+        "/it/manufacturers/bra-manufacturer",
+        "/it/manufacturers/underwear-factory",
+        "/es/guides/underwear-manufacturing-cost",
+        "/es/guides/underwear-manufacturing-process",
+        "/es/guides/underwear-moq-explained",
+        "/resources/custom-waistband-underwear-manufacturer",
+        "/resources/laser-cut-underwear-manufacturer",
+        "/resources/underwear-manufacturer-for-startup-brands",
+        "/resources/underwear-sampling-lead-time-guide",
+        "/resources/yiwu-underwear-manufacturer",
+        "/resources/high-waisted-briefs-manufacturer",
+        "/resources/bikini-vs-brazilian-underwear",
+        "/resources/seamless-vs-no-show-underwear",
+        "/resources/cotton-vs-seamless-underwear-buyers-guide",
+        "/resources/private-label-underwear-moq-guide",
+        "/resources/accurate-underwear-yoga-wear-manufacturing-quote",
+        "/resources/unit-cost-custom-underwear-manufacturing",
+        "/resources/traceless-vs-seamless-underwear-yoga-brands",
+        "/resources/lace-underwear-oem-guide-boutique-lingerie-brands",
+        "/resources/cotton-underwear-oem-guide-daily-basics-startups",
+        "/resources/waistband-customization-mens-boxer-briefs-private-label",
+        "/resources/gusset-construction-womens-underwear-comfort-qc",
+        "/resources/sports-bra-support-levels-small-yoga-brands",
+        "/resources/reorder-planning-after-low-moq-first-run",
+        "/resources/us-eu-underwear-size-labeling-preparation-startup-brands",
+        "/resources/underwear-sampling-costs-lead-times-packaging",
+        "/news",
+        "/news/100-cotton-vs-cotton-spandex-underwear-labels",
+        "/news/organic-cotton-underwear-claims-evidence-buyers",
+        "/news/cotton-gusset-vs-cotton-underwear-components",
+        "/news/seamless-underwear-for-leggings-sample-review",
+        "/news/high-waisted-cotton-underwear-range-planning",
+        "/news/cotton-thong-underwear-everyday-range",
+        "/news/womens-boxer-vs-boyshort-underwear-names",
+        "/news/cotton-lace-underwear-composition-claims",
+        "/news/underwear-for-white-pants-colour-opacity-test",
+        "/news/2026-underwear-search-themes-factory-buyer-brief",
+        "/news/underwear-leg-opening-elastic-fit-checklist",
+        "/news/high-waist-underwear-waistband-roll-down-fit",
+        "/news/bonded-vs-stitched-gusset-attachment-underwear",
+        "/news/lace-trim-stretch-placement-underwear-samples",
+        "/news/mens-no-fly-pouch-fit-sample-review",
+        "/news/printed-underwear-strike-off-artwork-approval",
+        "/news/underwear-bulk-shade-band-colour-consistency",
+        "/news/underwear-barcode-variant-label-proofing",
+        "/news/underwear-carton-protection-transit-checklist",
+        "/news/underwear-line-sheet-wholesale-buyer-checklist",
+        "/news/choose-underwear-manufacturer-supplier-checklist",
+        "/news/thong-vs-g-string-t-string-underwear-buyers",
+        "/news/underwear-fabric-gsm-thickness-opacity-guide",
+        "/news/tanga-vs-bikini-vs-thong-coverage-guide",
+        "/news/heat-transfer-vs-sewn-underwear-labels",
+        "/news/underwear-aql-inspection-defect-checklist",
+        "/news/shipping-underwear-samples-commercial-invoice-checklist",
+        "/news/recycled-polyester-underwear-claims-documentation",
+        "/news/underwear-multipack-assortment-planning",
+        "/news/underwear-product-photography-shot-list",
+        "/news/womens-boyshorts-vs-long-leg-underwear",
+        "/news/v-waist-underwear-fit-measurement-guide",
+        "/news/mens-briefs-vs-trunks-private-label-fit",
+        "/news/modal-pouch-vs-modal-underwear-fabric-specification",
+        "/news/underwear-tech-pack-measurement-specification",
+        "/news/underwear-colour-lab-dip-approval-guide",
+        "/news/underwear-wash-test-shrinkage-recovery-checklist",
+        "/news/underwear-size-set-sample-grading-checklist",
+        "/news/underwear-sku-carton-packing-list-guide",
+        "/news/underwear-pre-production-sample-approval-checklist",
+        "/news/cotton-vs-polyamide-underwear-private-label",
+        "/news/high-waisted-briefs-vs-thongs-buying-guide",
+        "/news/plain-vs-printed-mens-underwear-private-label",
+        "/news/explore-the-diyasi-underwear-collection",
+        "/news/bikini-vs-brazilian-underwear-buying-notes",
+        "/news/trunks-vs-boxer-briefs-sourcing-notes",
+        "/products/lace-trim-cotton-brazilian-brief-ls006",
+        "/products/v-waist-lace-cotton-brief-ls005-142",
+        "/products/v-waist-lace-cotton-thong-ls005",
+        "/products/bonded-brazilian-seamless-brief-dys323",
+        "/products/bonded-seamless-low-rise-thong-dys322",
+        "/products/seamless-high-waist-full-brief-dys314",
+        "/products/seamless-low-rise-brazilian-brief-dys311",
+        "/products/seamless-mid-low-brazilian-brief-dys306",
+        "/products/invisible-edge-cotton-gusset-thong-dys302",
+        "/products/seamless-v-waist-low-rise-thong-dys301",
+        "/products/printed-low-rise-mens-brief-m008-print",
+        "/products/printed-mid-rise-mens-trunk-m007-print",
+        "/products/contrast-waist-printed-mens-trunk-m006-print",
+        "/products/printed-mid-leg-mens-boxer-brief-m005-print",
+        "/products/printed-modal-pouch-boxer-brief-m004-print",
+        "/products/everyday-printed-mens-boxer-brief-m003-print",
+        "/products/printed-high-waist-long-leg-boxer-m002-print",
+        "/products/printed-low-rise-modal-pouch-trunk-m001-print",
+        "/products/everyday-cotton-mid-rise-thong-dys229",
+        "/products/cotton-low-rise-t-string-dys230",
+        "/products/cotton-mid-rise-t-back-thong-dys228",
+        "/products/wide-waistband-cotton-tanga-thong-dys227",
+        "/products/high-waist-cotton-t-string-dys226",
+        "/products/cotton-high-waist-thong-dys225",
+        "/products/essential-cotton-thong-dys224",
+        "/products/signature-cotton-brief-dys223",
+        "/products/high-leg-cotton-high-waist-brief-dys219",
+        "/products/mens-low-rise-bikini-brief-m008",
+        "/products/mens-4-inch-stretch-boxer-brief-m007",
+        "/products/mens-5-inch-pouch-support-trunk-m006",
+        "/products/mens-5-inch-modal-pouch-boxer-m005",
+        "/products/mens-mid-rise-no-fly-trunk-m004",
+        "/products/mens-modal-pouch-everyday-trunk-m003",
+        "/products/mens-long-leg-stretch-boxer-brief-m002",
+        "/products/mens-tagless-low-rise-brief-m001",
+        "/products/lettered-waist-cotton-tanga-dys218",
+        "/products/wide-waistband-cotton-boxer-dys215",
+        "/products/everyday-cotton-boyshort-dys214",
+        "/products/long-leg-high-waist-cotton-brief-dys210",
+        "/products/everyday-cotton-tanga-dys208",
+        "/products/classic-cotton-bikini-brief-dys206",
+        "/products/extra-high-waist-cotton-thong-dys205",
+        "/products/cotton-stretch-g-string-dys204",
+        "/products/essential-cotton-bikini-brief-dys202",
+        "/products/low-rise-cotton-bikini-brief-dys201",
+        "/products?page=2",
+        "/products?page=3",
+        "/products?page=4",
+        "/products/womens-panties?page=2",
+        "/products/womens-panties?page=3",
+        "/products/cotton-underwear?page=2",
+        "/products/thongs?page=2",
+        "/products/mens-underwear?page=2"
+      ],
+      "passed": true
+    },
+    {
+      "path": "/manufacturers/mens-underwear-manufacturer",
+      "inboundPages": 200,
+      "clickDepth": 1,
+      "status": 200,
+      "sources": [
+        "/",
+        "/products",
+        "/oem-odm",
+        "/factory",
+        "/contact",
+        "/about",
+        "/fabrics",
+        "/packaging",
+        "/sustainability",
+        "/resources",
+        "/privacy-policy",
+        "/return-policy",
+        "/es",
+        "/es/productos/ropa-interior-marca-privada",
+        "/es/minimo-pedido-ropa-interior",
+        "/es/ropa-interior-sin-costuras",
+        "/es/fabricante-ropa-interior-china",
+        "/es/empaque-personalizado",
+        "/es/fabrica-y-control-de-calidad",
+        "/es/contacto",
+        "/products/womens-panties",
+        "/products/cotton-underwear",
+        "/products/cotton-thongs",
+        "/products/lace-underwear",
+        "/products/seamless-underwear",
+        "/products/thongs",
+        "/products/high-waist",
+        "/products/mens-underwear",
+        "/products/mens-boxer-briefs",
+        "/manufacturers",
+        "/manufacturers/private-label-underwear-manufacturer",
+        "/manufacturers/low-moq-underwear-manufacturer",
+        "/manufacturers/custom-underwear-manufacturer",
+        "/manufacturers/seamless-underwear-manufacturer",
+        "/manufacturers/shapewear-manufacturer",
+        "/manufacturers/bra-manufacturer",
+        "/manufacturers/underwear-factory",
+        "/manufacturers/lingerie-manufacturer",
+        "/manufacturers/swimwear-manufacturer",
+        "/manufacturers/lingerie-supplier",
+        "/manufacturers/private-label-lingerie",
+        "/guides",
+        "/guides/underwear-manufacturing-cost",
+        "/guides/underwear-manufacturing-process",
+        "/guides/how-to-find-a-clothing-manufacturer",
+        "/guides/seamless-underwear-wholesale",
+        "/guides/underwear-moq-explained",
+        "/guides/starting-an-underwear-brand",
+        "/es/manufacturers/private-label-underwear-manufacturer",
+        "/es/manufacturers/low-moq-underwear-manufacturer",
+        "/es/manufacturers/custom-underwear-manufacturer",
+        "/es/manufacturers/seamless-underwear-manufacturer",
+        "/fr/manufacturers/private-label-underwear-manufacturer",
+        "/fr/manufacturers/low-moq-underwear-manufacturer",
+        "/fr/manufacturers/custom-underwear-manufacturer",
+        "/fr/manufacturers/seamless-underwear-manufacturer",
+        "/fr/manufacturers/mens-underwear-manufacturer",
+        "/fr/manufacturers/lingerie-manufacturer",
+        "/fr/manufacturers/bra-manufacturer",
+        "/fr/manufacturers/underwear-factory",
+        "/de/manufacturers/private-label-underwear-manufacturer",
+        "/de/manufacturers/low-moq-underwear-manufacturer",
+        "/de/manufacturers/custom-underwear-manufacturer",
+        "/de/manufacturers/seamless-underwear-manufacturer",
+        "/de/manufacturers/mens-underwear-manufacturer",
+        "/de/manufacturers/lingerie-manufacturer",
+        "/de/manufacturers/bra-manufacturer",
+        "/de/manufacturers/underwear-factory",
+        "/it/manufacturers/private-label-underwear-manufacturer",
+        "/it/manufacturers/low-moq-underwear-manufacturer",
+        "/it/manufacturers/custom-underwear-manufacturer",
+        "/it/manufacturers/seamless-underwear-manufacturer",
+        "/it/manufacturers/mens-underwear-manufacturer",
+        "/it/manufacturers/lingerie-manufacturer",
+        "/it/manufacturers/bra-manufacturer",
+        "/it/manufacturers/underwear-factory",
+        "/es/guides/underwear-manufacturing-cost",
+        "/es/guides/underwear-manufacturing-process",
+        "/es/guides/underwear-moq-explained",
+        "/resources/custom-waistband-underwear-manufacturer",
+        "/resources/laser-cut-underwear-manufacturer",
+        "/resources/underwear-manufacturer-for-startup-brands",
+        "/resources/underwear-sampling-lead-time-guide",
+        "/resources/yiwu-underwear-manufacturer",
+        "/resources/high-waisted-briefs-manufacturer",
+        "/resources/bikini-vs-brazilian-underwear",
+        "/resources/seamless-vs-no-show-underwear",
+        "/resources/cotton-vs-seamless-underwear-buyers-guide",
+        "/resources/private-label-underwear-moq-guide",
+        "/resources/accurate-underwear-yoga-wear-manufacturing-quote",
+        "/resources/unit-cost-custom-underwear-manufacturing",
+        "/resources/traceless-vs-seamless-underwear-yoga-brands",
+        "/resources/lace-underwear-oem-guide-boutique-lingerie-brands",
+        "/resources/cotton-underwear-oem-guide-daily-basics-startups",
+        "/resources/waistband-customization-mens-boxer-briefs-private-label",
+        "/resources/gusset-construction-womens-underwear-comfort-qc",
+        "/resources/sports-bra-support-levels-small-yoga-brands",
+        "/resources/reorder-planning-after-low-moq-first-run",
+        "/resources/us-eu-underwear-size-labeling-preparation-startup-brands",
+        "/resources/underwear-sampling-costs-lead-times-packaging",
+        "/news",
+        "/news/100-cotton-vs-cotton-spandex-underwear-labels",
+        "/news/organic-cotton-underwear-claims-evidence-buyers",
+        "/news/cotton-gusset-vs-cotton-underwear-components",
+        "/news/seamless-underwear-for-leggings-sample-review",
+        "/news/high-waisted-cotton-underwear-range-planning",
+        "/news/cotton-thong-underwear-everyday-range",
+        "/news/womens-boxer-vs-boyshort-underwear-names",
+        "/news/cotton-lace-underwear-composition-claims",
+        "/news/underwear-for-white-pants-colour-opacity-test",
+        "/news/2026-underwear-search-themes-factory-buyer-brief",
+        "/news/underwear-leg-opening-elastic-fit-checklist",
+        "/news/high-waist-underwear-waistband-roll-down-fit",
+        "/news/bonded-vs-stitched-gusset-attachment-underwear",
+        "/news/lace-trim-stretch-placement-underwear-samples",
+        "/news/mens-no-fly-pouch-fit-sample-review",
+        "/news/printed-underwear-strike-off-artwork-approval",
+        "/news/underwear-bulk-shade-band-colour-consistency",
+        "/news/underwear-barcode-variant-label-proofing",
+        "/news/underwear-carton-protection-transit-checklist",
+        "/news/underwear-line-sheet-wholesale-buyer-checklist",
+        "/news/choose-underwear-manufacturer-supplier-checklist",
+        "/news/thong-vs-g-string-t-string-underwear-buyers",
+        "/news/underwear-fabric-gsm-thickness-opacity-guide",
+        "/news/tanga-vs-bikini-vs-thong-coverage-guide",
+        "/news/heat-transfer-vs-sewn-underwear-labels",
+        "/news/underwear-aql-inspection-defect-checklist",
+        "/news/shipping-underwear-samples-commercial-invoice-checklist",
+        "/news/recycled-polyester-underwear-claims-documentation",
+        "/news/underwear-multipack-assortment-planning",
+        "/news/underwear-product-photography-shot-list",
+        "/news/womens-boyshorts-vs-long-leg-underwear",
+        "/news/v-waist-underwear-fit-measurement-guide",
+        "/news/mens-briefs-vs-trunks-private-label-fit",
+        "/news/modal-pouch-vs-modal-underwear-fabric-specification",
+        "/news/underwear-tech-pack-measurement-specification",
+        "/news/underwear-colour-lab-dip-approval-guide",
+        "/news/underwear-wash-test-shrinkage-recovery-checklist",
+        "/news/underwear-size-set-sample-grading-checklist",
+        "/news/underwear-sku-carton-packing-list-guide",
+        "/news/underwear-pre-production-sample-approval-checklist",
+        "/news/cotton-vs-polyamide-underwear-private-label",
+        "/news/high-waisted-briefs-vs-thongs-buying-guide",
+        "/news/plain-vs-printed-mens-underwear-private-label",
+        "/news/explore-the-diyasi-underwear-collection",
+        "/news/bikini-vs-brazilian-underwear-buying-notes",
+        "/news/trunks-vs-boxer-briefs-sourcing-notes",
+        "/products/lace-trim-cotton-brazilian-brief-ls006",
+        "/products/v-waist-lace-cotton-brief-ls005-142",
+        "/products/v-waist-lace-cotton-thong-ls005",
+        "/products/bonded-brazilian-seamless-brief-dys323",
+        "/products/bonded-seamless-low-rise-thong-dys322",
+        "/products/seamless-high-waist-full-brief-dys314",
+        "/products/seamless-low-rise-brazilian-brief-dys311",
+        "/products/seamless-mid-low-brazilian-brief-dys306",
+        "/products/invisible-edge-cotton-gusset-thong-dys302",
+        "/products/seamless-v-waist-low-rise-thong-dys301",
+        "/products/printed-low-rise-mens-brief-m008-print",
+        "/products/printed-mid-rise-mens-trunk-m007-print",
+        "/products/contrast-waist-printed-mens-trunk-m006-print",
+        "/products/printed-mid-leg-mens-boxer-brief-m005-print",
+        "/products/printed-modal-pouch-boxer-brief-m004-print",
+        "/products/everyday-printed-mens-boxer-brief-m003-print",
+        "/products/printed-high-waist-long-leg-boxer-m002-print",
+        "/products/printed-low-rise-modal-pouch-trunk-m001-print",
+        "/products/everyday-cotton-mid-rise-thong-dys229",
+        "/products/cotton-low-rise-t-string-dys230",
+        "/products/cotton-mid-rise-t-back-thong-dys228",
+        "/products/wide-waistband-cotton-tanga-thong-dys227",
+        "/products/high-waist-cotton-t-string-dys226",
+        "/products/cotton-high-waist-thong-dys225",
+        "/products/essential-cotton-thong-dys224",
+        "/products/signature-cotton-brief-dys223",
+        "/products/high-leg-cotton-high-waist-brief-dys219",
+        "/products/mens-low-rise-bikini-brief-m008",
+        "/products/mens-4-inch-stretch-boxer-brief-m007",
+        "/products/mens-5-inch-pouch-support-trunk-m006",
+        "/products/mens-5-inch-modal-pouch-boxer-m005",
+        "/products/mens-mid-rise-no-fly-trunk-m004",
+        "/products/mens-modal-pouch-everyday-trunk-m003",
+        "/products/mens-long-leg-stretch-boxer-brief-m002",
+        "/products/mens-tagless-low-rise-brief-m001",
+        "/products/lettered-waist-cotton-tanga-dys218",
+        "/products/wide-waistband-cotton-boxer-dys215",
+        "/products/everyday-cotton-boyshort-dys214",
+        "/products/long-leg-high-waist-cotton-brief-dys210",
+        "/products/everyday-cotton-tanga-dys208",
+        "/products/classic-cotton-bikini-brief-dys206",
+        "/products/extra-high-waist-cotton-thong-dys205",
+        "/products/cotton-stretch-g-string-dys204",
+        "/products/essential-cotton-bikini-brief-dys202",
+        "/products/low-rise-cotton-bikini-brief-dys201",
+        "/products?page=2",
+        "/products?page=3",
+        "/products?page=4",
+        "/products/womens-panties?page=2",
+        "/products/womens-panties?page=3",
+        "/products/cotton-underwear?page=2",
+        "/products/thongs?page=2",
+        "/products/mens-underwear?page=2"
+      ],
+      "passed": true
+    },
+    {
+      "path": "/manufacturers/shapewear-manufacturer",
+      "inboundPages": 200,
+      "clickDepth": 1,
+      "status": 200,
+      "sources": [
+        "/",
+        "/products",
+        "/oem-odm",
+        "/factory",
+        "/contact",
+        "/about",
+        "/fabrics",
+        "/packaging",
+        "/sustainability",
+        "/resources",
+        "/privacy-policy",
+        "/return-policy",
+        "/es",
+        "/es/productos/ropa-interior-marca-privada",
+        "/es/minimo-pedido-ropa-interior",
+        "/es/ropa-interior-sin-costuras",
+        "/es/fabricante-ropa-interior-china",
+        "/es/empaque-personalizado",
+        "/es/fabrica-y-control-de-calidad",
+        "/es/contacto",
+        "/products/womens-panties",
+        "/products/cotton-underwear",
+        "/products/cotton-thongs",
+        "/products/lace-underwear",
+        "/products/seamless-underwear",
+        "/products/thongs",
+        "/products/high-waist",
+        "/products/mens-underwear",
+        "/products/mens-boxer-briefs",
+        "/manufacturers",
+        "/manufacturers/private-label-underwear-manufacturer",
+        "/manufacturers/low-moq-underwear-manufacturer",
+        "/manufacturers/custom-underwear-manufacturer",
+        "/manufacturers/seamless-underwear-manufacturer",
+        "/manufacturers/mens-underwear-manufacturer",
+        "/manufacturers/bra-manufacturer",
+        "/manufacturers/underwear-factory",
+        "/manufacturers/lingerie-manufacturer",
+        "/manufacturers/swimwear-manufacturer",
+        "/manufacturers/lingerie-supplier",
+        "/manufacturers/private-label-lingerie",
+        "/guides",
+        "/guides/underwear-manufacturing-cost",
+        "/guides/underwear-manufacturing-process",
+        "/guides/how-to-find-a-clothing-manufacturer",
+        "/guides/seamless-underwear-wholesale",
+        "/guides/underwear-moq-explained",
+        "/guides/starting-an-underwear-brand",
+        "/es/manufacturers/private-label-underwear-manufacturer",
+        "/es/manufacturers/low-moq-underwear-manufacturer",
+        "/es/manufacturers/custom-underwear-manufacturer",
+        "/es/manufacturers/seamless-underwear-manufacturer",
+        "/fr/manufacturers/private-label-underwear-manufacturer",
+        "/fr/manufacturers/low-moq-underwear-manufacturer",
+        "/fr/manufacturers/custom-underwear-manufacturer",
+        "/fr/manufacturers/seamless-underwear-manufacturer",
+        "/fr/manufacturers/mens-underwear-manufacturer",
+        "/fr/manufacturers/lingerie-manufacturer",
+        "/fr/manufacturers/bra-manufacturer",
+        "/fr/manufacturers/underwear-factory",
+        "/de/manufacturers/private-label-underwear-manufacturer",
+        "/de/manufacturers/low-moq-underwear-manufacturer",
+        "/de/manufacturers/custom-underwear-manufacturer",
+        "/de/manufacturers/seamless-underwear-manufacturer",
+        "/de/manufacturers/mens-underwear-manufacturer",
+        "/de/manufacturers/lingerie-manufacturer",
+        "/de/manufacturers/bra-manufacturer",
+        "/de/manufacturers/underwear-factory",
+        "/it/manufacturers/private-label-underwear-manufacturer",
+        "/it/manufacturers/low-moq-underwear-manufacturer",
+        "/it/manufacturers/custom-underwear-manufacturer",
+        "/it/manufacturers/seamless-underwear-manufacturer",
+        "/it/manufacturers/mens-underwear-manufacturer",
+        "/it/manufacturers/lingerie-manufacturer",
+        "/it/manufacturers/bra-manufacturer",
+        "/it/manufacturers/underwear-factory",
+        "/es/guides/underwear-manufacturing-cost",
+        "/es/guides/underwear-manufacturing-process",
+        "/es/guides/underwear-moq-explained",
+        "/resources/custom-waistband-underwear-manufacturer",
+        "/resources/laser-cut-underwear-manufacturer",
+        "/resources/underwear-manufacturer-for-startup-brands",
+        "/resources/underwear-sampling-lead-time-guide",
+        "/resources/yiwu-underwear-manufacturer",
+        "/resources/high-waisted-briefs-manufacturer",
+        "/resources/bikini-vs-brazilian-underwear",
+        "/resources/seamless-vs-no-show-underwear",
+        "/resources/cotton-vs-seamless-underwear-buyers-guide",
+        "/resources/private-label-underwear-moq-guide",
+        "/resources/accurate-underwear-yoga-wear-manufacturing-quote",
+        "/resources/unit-cost-custom-underwear-manufacturing",
+        "/resources/traceless-vs-seamless-underwear-yoga-brands",
+        "/resources/lace-underwear-oem-guide-boutique-lingerie-brands",
+        "/resources/cotton-underwear-oem-guide-daily-basics-startups",
+        "/resources/waistband-customization-mens-boxer-briefs-private-label",
+        "/resources/gusset-construction-womens-underwear-comfort-qc",
+        "/resources/sports-bra-support-levels-small-yoga-brands",
+        "/resources/reorder-planning-after-low-moq-first-run",
+        "/resources/us-eu-underwear-size-labeling-preparation-startup-brands",
+        "/resources/underwear-sampling-costs-lead-times-packaging",
+        "/news",
+        "/news/100-cotton-vs-cotton-spandex-underwear-labels",
+        "/news/organic-cotton-underwear-claims-evidence-buyers",
+        "/news/cotton-gusset-vs-cotton-underwear-components",
+        "/news/seamless-underwear-for-leggings-sample-review",
+        "/news/high-waisted-cotton-underwear-range-planning",
+        "/news/cotton-thong-underwear-everyday-range",
+        "/news/womens-boxer-vs-boyshort-underwear-names",
+        "/news/cotton-lace-underwear-composition-claims",
+        "/news/underwear-for-white-pants-colour-opacity-test",
+        "/news/2026-underwear-search-themes-factory-buyer-brief",
+        "/news/underwear-leg-opening-elastic-fit-checklist",
+        "/news/high-waist-underwear-waistband-roll-down-fit",
+        "/news/bonded-vs-stitched-gusset-attachment-underwear",
+        "/news/lace-trim-stretch-placement-underwear-samples",
+        "/news/mens-no-fly-pouch-fit-sample-review",
+        "/news/printed-underwear-strike-off-artwork-approval",
+        "/news/underwear-bulk-shade-band-colour-consistency",
+        "/news/underwear-barcode-variant-label-proofing",
+        "/news/underwear-carton-protection-transit-checklist",
+        "/news/underwear-line-sheet-wholesale-buyer-checklist",
+        "/news/choose-underwear-manufacturer-supplier-checklist",
+        "/news/thong-vs-g-string-t-string-underwear-buyers",
+        "/news/underwear-fabric-gsm-thickness-opacity-guide",
+        "/news/tanga-vs-bikini-vs-thong-coverage-guide",
+        "/news/heat-transfer-vs-sewn-underwear-labels",
+        "/news/underwear-aql-inspection-defect-checklist",
+        "/news/shipping-underwear-samples-commercial-invoice-checklist",
+        "/news/recycled-polyester-underwear-claims-documentation",
+        "/news/underwear-multipack-assortment-planning",
+        "/news/underwear-product-photography-shot-list",
+        "/news/womens-boyshorts-vs-long-leg-underwear",
+        "/news/v-waist-underwear-fit-measurement-guide",
+        "/news/mens-briefs-vs-trunks-private-label-fit",
+        "/news/modal-pouch-vs-modal-underwear-fabric-specification",
+        "/news/underwear-tech-pack-measurement-specification",
+        "/news/underwear-colour-lab-dip-approval-guide",
+        "/news/underwear-wash-test-shrinkage-recovery-checklist",
+        "/news/underwear-size-set-sample-grading-checklist",
+        "/news/underwear-sku-carton-packing-list-guide",
+        "/news/underwear-pre-production-sample-approval-checklist",
+        "/news/cotton-vs-polyamide-underwear-private-label",
+        "/news/high-waisted-briefs-vs-thongs-buying-guide",
+        "/news/plain-vs-printed-mens-underwear-private-label",
+        "/news/explore-the-diyasi-underwear-collection",
+        "/news/bikini-vs-brazilian-underwear-buying-notes",
+        "/news/trunks-vs-boxer-briefs-sourcing-notes",
+        "/products/lace-trim-cotton-brazilian-brief-ls006",
+        "/products/v-waist-lace-cotton-brief-ls005-142",
+        "/products/v-waist-lace-cotton-thong-ls005",
+        "/products/bonded-brazilian-seamless-brief-dys323",
+        "/products/bonded-seamless-low-rise-thong-dys322",
+        "/products/seamless-high-waist-full-brief-dys314",
+        "/products/seamless-low-rise-brazilian-brief-dys311",
+        "/products/seamless-mid-low-brazilian-brief-dys306",
+        "/products/invisible-edge-cotton-gusset-thong-dys302",
+        "/products/seamless-v-waist-low-rise-thong-dys301",
+        "/products/printed-low-rise-mens-brief-m008-print",
+        "/products/printed-mid-rise-mens-trunk-m007-print",
+        "/products/contrast-waist-printed-mens-trunk-m006-print",
+        "/products/printed-mid-leg-mens-boxer-brief-m005-print",
+        "/products/printed-modal-pouch-boxer-brief-m004-print",
+        "/products/everyday-printed-mens-boxer-brief-m003-print",
+        "/products/printed-high-waist-long-leg-boxer-m002-print",
+        "/products/printed-low-rise-modal-pouch-trunk-m001-print",
+        "/products/everyday-cotton-mid-rise-thong-dys229",
+        "/products/cotton-low-rise-t-string-dys230",
+        "/products/cotton-mid-rise-t-back-thong-dys228",
+        "/products/wide-waistband-cotton-tanga-thong-dys227",
+        "/products/high-waist-cotton-t-string-dys226",
+        "/products/cotton-high-waist-thong-dys225",
+        "/products/essential-cotton-thong-dys224",
+        "/products/signature-cotton-brief-dys223",
+        "/products/high-leg-cotton-high-waist-brief-dys219",
+        "/products/mens-low-rise-bikini-brief-m008",
+        "/products/mens-4-inch-stretch-boxer-brief-m007",
+        "/products/mens-5-inch-pouch-support-trunk-m006",
+        "/products/mens-5-inch-modal-pouch-boxer-m005",
+        "/products/mens-mid-rise-no-fly-trunk-m004",
+        "/products/mens-modal-pouch-everyday-trunk-m003",
+        "/products/mens-long-leg-stretch-boxer-brief-m002",
+        "/products/mens-tagless-low-rise-brief-m001",
+        "/products/lettered-waist-cotton-tanga-dys218",
+        "/products/wide-waistband-cotton-boxer-dys215",
+        "/products/everyday-cotton-boyshort-dys214",
+        "/products/long-leg-high-waist-cotton-brief-dys210",
+        "/products/everyday-cotton-tanga-dys208",
+        "/products/classic-cotton-bikini-brief-dys206",
+        "/products/extra-high-waist-cotton-thong-dys205",
+        "/products/cotton-stretch-g-string-dys204",
+        "/products/essential-cotton-bikini-brief-dys202",
+        "/products/low-rise-cotton-bikini-brief-dys201",
+        "/products?page=2",
+        "/products?page=3",
+        "/products?page=4",
+        "/products/womens-panties?page=2",
+        "/products/womens-panties?page=3",
+        "/products/cotton-underwear?page=2",
+        "/products/thongs?page=2",
+        "/products/mens-underwear?page=2"
+      ],
+      "passed": true
+    },
+    {
+      "path": "/manufacturers/bra-manufacturer",
+      "inboundPages": 200,
+      "clickDepth": 1,
+      "status": 200,
+      "sources": [
+        "/",
+        "/products",
+        "/oem-odm",
+        "/factory",
+        "/contact",
+        "/about",
+        "/fabrics",
+        "/packaging",
+        "/sustainability",
+        "/resources",
+        "/privacy-policy",
+        "/return-policy",
+        "/es",
+        "/es/productos/ropa-interior-marca-privada",
+        "/es/minimo-pedido-ropa-interior",
+        "/es/ropa-interior-sin-costuras",
+        "/es/fabricante-ropa-interior-china",
+        "/es/empaque-personalizado",
+        "/es/fabrica-y-control-de-calidad",
+        "/es/contacto",
+        "/products/womens-panties",
+        "/products/cotton-underwear",
+        "/products/cotton-thongs",
+        "/products/lace-underwear",
+        "/products/seamless-underwear",
+        "/products/thongs",
+        "/products/high-waist",
+        "/products/mens-underwear",
+        "/products/mens-boxer-briefs",
+        "/manufacturers",
+        "/manufacturers/private-label-underwear-manufacturer",
+        "/manufacturers/low-moq-underwear-manufacturer",
+        "/manufacturers/custom-underwear-manufacturer",
+        "/manufacturers/seamless-underwear-manufacturer",
+        "/manufacturers/mens-underwear-manufacturer",
+        "/manufacturers/shapewear-manufacturer",
+        "/manufacturers/underwear-factory",
+        "/manufacturers/lingerie-manufacturer",
+        "/manufacturers/swimwear-manufacturer",
+        "/manufacturers/lingerie-supplier",
+        "/manufacturers/private-label-lingerie",
+        "/guides",
+        "/guides/underwear-manufacturing-cost",
+        "/guides/underwear-manufacturing-process",
+        "/guides/how-to-find-a-clothing-manufacturer",
+        "/guides/seamless-underwear-wholesale",
+        "/guides/underwear-moq-explained",
+        "/guides/starting-an-underwear-brand",
+        "/es/manufacturers/private-label-underwear-manufacturer",
+        "/es/manufacturers/low-moq-underwear-manufacturer",
+        "/es/manufacturers/custom-underwear-manufacturer",
+        "/es/manufacturers/seamless-underwear-manufacturer",
+        "/fr/manufacturers/private-label-underwear-manufacturer",
+        "/fr/manufacturers/low-moq-underwear-manufacturer",
+        "/fr/manufacturers/custom-underwear-manufacturer",
+        "/fr/manufacturers/seamless-underwear-manufacturer",
+        "/fr/manufacturers/mens-underwear-manufacturer",
+        "/fr/manufacturers/lingerie-manufacturer",
+        "/fr/manufacturers/bra-manufacturer",
+        "/fr/manufacturers/underwear-factory",
+        "/de/manufacturers/private-label-underwear-manufacturer",
+        "/de/manufacturers/low-moq-underwear-manufacturer",
+        "/de/manufacturers/custom-underwear-manufacturer",
+        "/de/manufacturers/seamless-underwear-manufacturer",
+        "/de/manufacturers/mens-underwear-manufacturer",
+        "/de/manufacturers/lingerie-manufacturer",
+        "/de/manufacturers/bra-manufacturer",
+        "/de/manufacturers/underwear-factory",
+        "/it/manufacturers/private-label-underwear-manufacturer",
+        "/it/manufacturers/low-moq-underwear-manufacturer",
+        "/it/manufacturers/custom-underwear-manufacturer",
+        "/it/manufacturers/seamless-underwear-manufacturer",
+        "/it/manufacturers/mens-underwear-manufacturer",
+        "/it/manufacturers/lingerie-manufacturer",
+        "/it/manufacturers/bra-manufacturer",
+        "/it/manufacturers/underwear-factory",
+        "/es/guides/underwear-manufacturing-cost",
+        "/es/guides/underwear-manufacturing-process",
+        "/es/guides/underwear-moq-explained",
+        "/resources/custom-waistband-underwear-manufacturer",
+        "/resources/laser-cut-underwear-manufacturer",
+        "/resources/underwear-manufacturer-for-startup-brands",
+        "/resources/underwear-sampling-lead-time-guide",
+        "/resources/yiwu-underwear-manufacturer",
+        "/resources/high-waisted-briefs-manufacturer",
+        "/resources/bikini-vs-brazilian-underwear",
+        "/resources/seamless-vs-no-show-underwear",
+        "/resources/cotton-vs-seamless-underwear-buyers-guide",
+        "/resources/private-label-underwear-moq-guide",
+        "/resources/accurate-underwear-yoga-wear-manufacturing-quote",
+        "/resources/unit-cost-custom-underwear-manufacturing",
+        "/resources/traceless-vs-seamless-underwear-yoga-brands",
+        "/resources/lace-underwear-oem-guide-boutique-lingerie-brands",
+        "/resources/cotton-underwear-oem-guide-daily-basics-startups",
+        "/resources/waistband-customization-mens-boxer-briefs-private-label",
+        "/resources/gusset-construction-womens-underwear-comfort-qc",
+        "/resources/sports-bra-support-levels-small-yoga-brands",
+        "/resources/reorder-planning-after-low-moq-first-run",
+        "/resources/us-eu-underwear-size-labeling-preparation-startup-brands",
+        "/resources/underwear-sampling-costs-lead-times-packaging",
+        "/news",
+        "/news/100-cotton-vs-cotton-spandex-underwear-labels",
+        "/news/organic-cotton-underwear-claims-evidence-buyers",
+        "/news/cotton-gusset-vs-cotton-underwear-components",
+        "/news/seamless-underwear-for-leggings-sample-review",
+        "/news/high-waisted-cotton-underwear-range-planning",
+        "/news/cotton-thong-underwear-everyday-range",
+        "/news/womens-boxer-vs-boyshort-underwear-names",
+        "/news/cotton-lace-underwear-composition-claims",
+        "/news/underwear-for-white-pants-colour-opacity-test",
+        "/news/2026-underwear-search-themes-factory-buyer-brief",
+        "/news/underwear-leg-opening-elastic-fit-checklist",
+        "/news/high-waist-underwear-waistband-roll-down-fit",
+        "/news/bonded-vs-stitched-gusset-attachment-underwear",
+        "/news/lace-trim-stretch-placement-underwear-samples",
+        "/news/mens-no-fly-pouch-fit-sample-review",
+        "/news/printed-underwear-strike-off-artwork-approval",
+        "/news/underwear-bulk-shade-band-colour-consistency",
+        "/news/underwear-barcode-variant-label-proofing",
+        "/news/underwear-carton-protection-transit-checklist",
+        "/news/underwear-line-sheet-wholesale-buyer-checklist",
+        "/news/choose-underwear-manufacturer-supplier-checklist",
+        "/news/thong-vs-g-string-t-string-underwear-buyers",
+        "/news/underwear-fabric-gsm-thickness-opacity-guide",
+        "/news/tanga-vs-bikini-vs-thong-coverage-guide",
+        "/news/heat-transfer-vs-sewn-underwear-labels",
+        "/news/underwear-aql-inspection-defect-checklist",
+        "/news/shipping-underwear-samples-commercial-invoice-checklist",
+        "/news/recycled-polyester-underwear-claims-documentation",
+        "/news/underwear-multipack-assortment-planning",
+        "/news/underwear-product-photography-shot-list",
+        "/news/womens-boyshorts-vs-long-leg-underwear",
+        "/news/v-waist-underwear-fit-measurement-guide",
+        "/news/mens-briefs-vs-trunks-private-label-fit",
+        "/news/modal-pouch-vs-modal-underwear-fabric-specification",
+        "/news/underwear-tech-pack-measurement-specification",
+        "/news/underwear-colour-lab-dip-approval-guide",
+        "/news/underwear-wash-test-shrinkage-recovery-checklist",
+        "/news/underwear-size-set-sample-grading-checklist",
+        "/news/underwear-sku-carton-packing-list-guide",
+        "/news/underwear-pre-production-sample-approval-checklist",
+        "/news/cotton-vs-polyamide-underwear-private-label",
+        "/news/high-waisted-briefs-vs-thongs-buying-guide",
+        "/news/plain-vs-printed-mens-underwear-private-label",
+        "/news/explore-the-diyasi-underwear-collection",
+        "/news/bikini-vs-brazilian-underwear-buying-notes",
+        "/news/trunks-vs-boxer-briefs-sourcing-notes",
+        "/products/lace-trim-cotton-brazilian-brief-ls006",
+        "/products/v-waist-lace-cotton-brief-ls005-142",
+        "/products/v-waist-lace-cotton-thong-ls005",
+        "/products/bonded-brazilian-seamless-brief-dys323",
+        "/products/bonded-seamless-low-rise-thong-dys322",
+        "/products/seamless-high-waist-full-brief-dys314",
+        "/products/seamless-low-rise-brazilian-brief-dys311",
+        "/products/seamless-mid-low-brazilian-brief-dys306",
+        "/products/invisible-edge-cotton-gusset-thong-dys302",
+        "/products/seamless-v-waist-low-rise-thong-dys301",
+        "/products/printed-low-rise-mens-brief-m008-print",
+        "/products/printed-mid-rise-mens-trunk-m007-print",
+        "/products/contrast-waist-printed-mens-trunk-m006-print",
+        "/products/printed-mid-leg-mens-boxer-brief-m005-print",
+        "/products/printed-modal-pouch-boxer-brief-m004-print",
+        "/products/everyday-printed-mens-boxer-brief-m003-print",
+        "/products/printed-high-waist-long-leg-boxer-m002-print",
+        "/products/printed-low-rise-modal-pouch-trunk-m001-print",
+        "/products/everyday-cotton-mid-rise-thong-dys229",
+        "/products/cotton-low-rise-t-string-dys230",
+        "/products/cotton-mid-rise-t-back-thong-dys228",
+        "/products/wide-waistband-cotton-tanga-thong-dys227",
+        "/products/high-waist-cotton-t-string-dys226",
+        "/products/cotton-high-waist-thong-dys225",
+        "/products/essential-cotton-thong-dys224",
+        "/products/signature-cotton-brief-dys223",
+        "/products/high-leg-cotton-high-waist-brief-dys219",
+        "/products/mens-low-rise-bikini-brief-m008",
+        "/products/mens-4-inch-stretch-boxer-brief-m007",
+        "/products/mens-5-inch-pouch-support-trunk-m006",
+        "/products/mens-5-inch-modal-pouch-boxer-m005",
+        "/products/mens-mid-rise-no-fly-trunk-m004",
+        "/products/mens-modal-pouch-everyday-trunk-m003",
+        "/products/mens-long-leg-stretch-boxer-brief-m002",
+        "/products/mens-tagless-low-rise-brief-m001",
+        "/products/lettered-waist-cotton-tanga-dys218",
+        "/products/wide-waistband-cotton-boxer-dys215",
+        "/products/everyday-cotton-boyshort-dys214",
+        "/products/long-leg-high-waist-cotton-brief-dys210",
+        "/products/everyday-cotton-tanga-dys208",
+        "/products/classic-cotton-bikini-brief-dys206",
+        "/products/extra-high-waist-cotton-thong-dys205",
+        "/products/cotton-stretch-g-string-dys204",
+        "/products/essential-cotton-bikini-brief-dys202",
+        "/products/low-rise-cotton-bikini-brief-dys201",
+        "/products?page=2",
+        "/products?page=3",
+        "/products?page=4",
+        "/products/womens-panties?page=2",
+        "/products/womens-panties?page=3",
+        "/products/cotton-underwear?page=2",
+        "/products/thongs?page=2",
+        "/products/mens-underwear?page=2"
+      ],
+      "passed": true
+    },
+    {
+      "path": "/manufacturers/underwear-factory",
+      "inboundPages": 200,
+      "clickDepth": 1,
+      "status": 200,
+      "sources": [
+        "/",
+        "/products",
+        "/oem-odm",
+        "/factory",
+        "/contact",
+        "/about",
+        "/fabrics",
+        "/packaging",
+        "/sustainability",
+        "/resources",
+        "/privacy-policy",
+        "/return-policy",
+        "/es",
+        "/es/productos/ropa-interior-marca-privada",
+        "/es/minimo-pedido-ropa-interior",
+        "/es/ropa-interior-sin-costuras",
+        "/es/fabricante-ropa-interior-china",
+        "/es/empaque-personalizado",
+        "/es/fabrica-y-control-de-calidad",
+        "/es/contacto",
+        "/products/womens-panties",
+        "/products/cotton-underwear",
+        "/products/cotton-thongs",
+        "/products/lace-underwear",
+        "/products/seamless-underwear",
+        "/products/thongs",
+        "/products/high-waist",
+        "/products/mens-underwear",
+        "/products/mens-boxer-briefs",
+        "/manufacturers",
+        "/manufacturers/private-label-underwear-manufacturer",
+        "/manufacturers/low-moq-underwear-manufacturer",
+        "/manufacturers/custom-underwear-manufacturer",
+        "/manufacturers/seamless-underwear-manufacturer",
+        "/manufacturers/mens-underwear-manufacturer",
+        "/manufacturers/shapewear-manufacturer",
+        "/manufacturers/bra-manufacturer",
+        "/manufacturers/lingerie-manufacturer",
+        "/manufacturers/swimwear-manufacturer",
+        "/manufacturers/lingerie-supplier",
+        "/manufacturers/private-label-lingerie",
+        "/guides",
+        "/guides/underwear-manufacturing-cost",
+        "/guides/underwear-manufacturing-process",
+        "/guides/how-to-find-a-clothing-manufacturer",
+        "/guides/seamless-underwear-wholesale",
+        "/guides/underwear-moq-explained",
+        "/guides/starting-an-underwear-brand",
+        "/es/manufacturers/private-label-underwear-manufacturer",
+        "/es/manufacturers/low-moq-underwear-manufacturer",
+        "/es/manufacturers/custom-underwear-manufacturer",
+        "/es/manufacturers/seamless-underwear-manufacturer",
+        "/fr/manufacturers/private-label-underwear-manufacturer",
+        "/fr/manufacturers/low-moq-underwear-manufacturer",
+        "/fr/manufacturers/custom-underwear-manufacturer",
+        "/fr/manufacturers/seamless-underwear-manufacturer",
+        "/fr/manufacturers/mens-underwear-manufacturer",
+        "/fr/manufacturers/lingerie-manufacturer",
+        "/fr/manufacturers/bra-manufacturer",
+        "/fr/manufacturers/underwear-factory",
+        "/de/manufacturers/private-label-underwear-manufacturer",
+        "/de/manufacturers/low-moq-underwear-manufacturer",
+        "/de/manufacturers/custom-underwear-manufacturer",
+        "/de/manufacturers/seamless-underwear-manufacturer",
+        "/de/manufacturers/mens-underwear-manufacturer",
+        "/de/manufacturers/lingerie-manufacturer",
+        "/de/manufacturers/bra-manufacturer",
+        "/de/manufacturers/underwear-factory",
+        "/it/manufacturers/private-label-underwear-manufacturer",
+        "/it/manufacturers/low-moq-underwear-manufacturer",
+        "/it/manufacturers/custom-underwear-manufacturer",
+        "/it/manufacturers/seamless-underwear-manufacturer",
+        "/it/manufacturers/mens-underwear-manufacturer",
+        "/it/manufacturers/lingerie-manufacturer",
+        "/it/manufacturers/bra-manufacturer",
+        "/it/manufacturers/underwear-factory",
+        "/es/guides/underwear-manufacturing-cost",
+        "/es/guides/underwear-manufacturing-process",
+        "/es/guides/underwear-moq-explained",
+        "/resources/custom-waistband-underwear-manufacturer",
+        "/resources/laser-cut-underwear-manufacturer",
+        "/resources/underwear-manufacturer-for-startup-brands",
+        "/resources/underwear-sampling-lead-time-guide",
+        "/resources/yiwu-underwear-manufacturer",
+        "/resources/high-waisted-briefs-manufacturer",
+        "/resources/bikini-vs-brazilian-underwear",
+        "/resources/seamless-vs-no-show-underwear",
+        "/resources/cotton-vs-seamless-underwear-buyers-guide",
+        "/resources/private-label-underwear-moq-guide",
+        "/resources/accurate-underwear-yoga-wear-manufacturing-quote",
+        "/resources/unit-cost-custom-underwear-manufacturing",
+        "/resources/traceless-vs-seamless-underwear-yoga-brands",
+        "/resources/lace-underwear-oem-guide-boutique-lingerie-brands",
+        "/resources/cotton-underwear-oem-guide-daily-basics-startups",
+        "/resources/waistband-customization-mens-boxer-briefs-private-label",
+        "/resources/gusset-construction-womens-underwear-comfort-qc",
+        "/resources/sports-bra-support-levels-small-yoga-brands",
+        "/resources/reorder-planning-after-low-moq-first-run",
+        "/resources/us-eu-underwear-size-labeling-preparation-startup-brands",
+        "/resources/underwear-sampling-costs-lead-times-packaging",
+        "/news",
+        "/news/100-cotton-vs-cotton-spandex-underwear-labels",
+        "/news/organic-cotton-underwear-claims-evidence-buyers",
+        "/news/cotton-gusset-vs-cotton-underwear-components",
+        "/news/seamless-underwear-for-leggings-sample-review",
+        "/news/high-waisted-cotton-underwear-range-planning",
+        "/news/cotton-thong-underwear-everyday-range",
+        "/news/womens-boxer-vs-boyshort-underwear-names",
+        "/news/cotton-lace-underwear-composition-claims",
+        "/news/underwear-for-white-pants-colour-opacity-test",
+        "/news/2026-underwear-search-themes-factory-buyer-brief",
+        "/news/underwear-leg-opening-elastic-fit-checklist",
+        "/news/high-waist-underwear-waistband-roll-down-fit",
+        "/news/bonded-vs-stitched-gusset-attachment-underwear",
+        "/news/lace-trim-stretch-placement-underwear-samples",
+        "/news/mens-no-fly-pouch-fit-sample-review",
+        "/news/printed-underwear-strike-off-artwork-approval",
+        "/news/underwear-bulk-shade-band-colour-consistency",
+        "/news/underwear-barcode-variant-label-proofing",
+        "/news/underwear-carton-protection-transit-checklist",
+        "/news/underwear-line-sheet-wholesale-buyer-checklist",
+        "/news/choose-underwear-manufacturer-supplier-checklist",
+        "/news/thong-vs-g-string-t-string-underwear-buyers",
+        "/news/underwear-fabric-gsm-thickness-opacity-guide",
+        "/news/tanga-vs-bikini-vs-thong-coverage-guide",
+        "/news/heat-transfer-vs-sewn-underwear-labels",
+        "/news/underwear-aql-inspection-defect-checklist",
+        "/news/shipping-underwear-samples-commercial-invoice-checklist",
+        "/news/recycled-polyester-underwear-claims-documentation",
+        "/news/underwear-multipack-assortment-planning",
+        "/news/underwear-product-photography-shot-list",
+        "/news/womens-boyshorts-vs-long-leg-underwear",
+        "/news/v-waist-underwear-fit-measurement-guide",
+        "/news/mens-briefs-vs-trunks-private-label-fit",
+        "/news/modal-pouch-vs-modal-underwear-fabric-specification",
+        "/news/underwear-tech-pack-measurement-specification",
+        "/news/underwear-colour-lab-dip-approval-guide",
+        "/news/underwear-wash-test-shrinkage-recovery-checklist",
+        "/news/underwear-size-set-sample-grading-checklist",
+        "/news/underwear-sku-carton-packing-list-guide",
+        "/news/underwear-pre-production-sample-approval-checklist",
+        "/news/cotton-vs-polyamide-underwear-private-label",
+        "/news/high-waisted-briefs-vs-thongs-buying-guide",
+        "/news/plain-vs-printed-mens-underwear-private-label",
+        "/news/explore-the-diyasi-underwear-collection",
+        "/news/bikini-vs-brazilian-underwear-buying-notes",
+        "/news/trunks-vs-boxer-briefs-sourcing-notes",
+        "/products/lace-trim-cotton-brazilian-brief-ls006",
+        "/products/v-waist-lace-cotton-brief-ls005-142",
+        "/products/v-waist-lace-cotton-thong-ls005",
+        "/products/bonded-brazilian-seamless-brief-dys323",
+        "/products/bonded-seamless-low-rise-thong-dys322",
+        "/products/seamless-high-waist-full-brief-dys314",
+        "/products/seamless-low-rise-brazilian-brief-dys311",
+        "/products/seamless-mid-low-brazilian-brief-dys306",
+        "/products/invisible-edge-cotton-gusset-thong-dys302",
+        "/products/seamless-v-waist-low-rise-thong-dys301",
+        "/products/printed-low-rise-mens-brief-m008-print",
+        "/products/printed-mid-rise-mens-trunk-m007-print",
+        "/products/contrast-waist-printed-mens-trunk-m006-print",
+        "/products/printed-mid-leg-mens-boxer-brief-m005-print",
+        "/products/printed-modal-pouch-boxer-brief-m004-print",
+        "/products/everyday-printed-mens-boxer-brief-m003-print",
+        "/products/printed-high-waist-long-leg-boxer-m002-print",
+        "/products/printed-low-rise-modal-pouch-trunk-m001-print",
+        "/products/everyday-cotton-mid-rise-thong-dys229",
+        "/products/cotton-low-rise-t-string-dys230",
+        "/products/cotton-mid-rise-t-back-thong-dys228",
+        "/products/wide-waistband-cotton-tanga-thong-dys227",
+        "/products/high-waist-cotton-t-string-dys226",
+        "/products/cotton-high-waist-thong-dys225",
+        "/products/essential-cotton-thong-dys224",
+        "/products/signature-cotton-brief-dys223",
+        "/products/high-leg-cotton-high-waist-brief-dys219",
+        "/products/mens-low-rise-bikini-brief-m008",
+        "/products/mens-4-inch-stretch-boxer-brief-m007",
+        "/products/mens-5-inch-pouch-support-trunk-m006",
+        "/products/mens-5-inch-modal-pouch-boxer-m005",
+        "/products/mens-mid-rise-no-fly-trunk-m004",
+        "/products/mens-modal-pouch-everyday-trunk-m003",
+        "/products/mens-long-leg-stretch-boxer-brief-m002",
+        "/products/mens-tagless-low-rise-brief-m001",
+        "/products/lettered-waist-cotton-tanga-dys218",
+        "/products/wide-waistband-cotton-boxer-dys215",
+        "/products/everyday-cotton-boyshort-dys214",
+        "/products/long-leg-high-waist-cotton-brief-dys210",
+        "/products/everyday-cotton-tanga-dys208",
+        "/products/classic-cotton-bikini-brief-dys206",
+        "/products/extra-high-waist-cotton-thong-dys205",
+        "/products/cotton-stretch-g-string-dys204",
+        "/products/essential-cotton-bikini-brief-dys202",
+        "/products/low-rise-cotton-bikini-brief-dys201",
+        "/products?page=2",
+        "/products?page=3",
+        "/products?page=4",
+        "/products/womens-panties?page=2",
+        "/products/womens-panties?page=3",
+        "/products/cotton-underwear?page=2",
+        "/products/thongs?page=2",
+        "/products/mens-underwear?page=2"
+      ],
+      "passed": true
+    },
+    {
+      "path": "/manufacturers/lingerie-manufacturer",
+      "inboundPages": 200,
+      "clickDepth": 1,
+      "status": 200,
+      "sources": [
+        "/",
+        "/products",
+        "/oem-odm",
+        "/factory",
+        "/contact",
+        "/about",
+        "/fabrics",
+        "/packaging",
+        "/sustainability",
+        "/resources",
+        "/privacy-policy",
+        "/return-policy",
+        "/es",
+        "/es/productos/ropa-interior-marca-privada",
+        "/es/minimo-pedido-ropa-interior",
+        "/es/ropa-interior-sin-costuras",
+        "/es/fabricante-ropa-interior-china",
+        "/es/empaque-personalizado",
+        "/es/fabrica-y-control-de-calidad",
+        "/es/contacto",
+        "/products/womens-panties",
+        "/products/cotton-underwear",
+        "/products/cotton-thongs",
+        "/products/lace-underwear",
+        "/products/seamless-underwear",
+        "/products/thongs",
+        "/products/high-waist",
+        "/products/mens-underwear",
+        "/products/mens-boxer-briefs",
+        "/manufacturers",
+        "/manufacturers/private-label-underwear-manufacturer",
+        "/manufacturers/low-moq-underwear-manufacturer",
+        "/manufacturers/custom-underwear-manufacturer",
+        "/manufacturers/seamless-underwear-manufacturer",
+        "/manufacturers/mens-underwear-manufacturer",
+        "/manufacturers/shapewear-manufacturer",
+        "/manufacturers/bra-manufacturer",
+        "/manufacturers/underwear-factory",
+        "/manufacturers/swimwear-manufacturer",
+        "/manufacturers/lingerie-supplier",
+        "/manufacturers/private-label-lingerie",
+        "/guides",
+        "/guides/underwear-manufacturing-cost",
+        "/guides/underwear-manufacturing-process",
+        "/guides/how-to-find-a-clothing-manufacturer",
+        "/guides/seamless-underwear-wholesale",
+        "/guides/underwear-moq-explained",
+        "/guides/starting-an-underwear-brand",
+        "/es/manufacturers/private-label-underwear-manufacturer",
+        "/es/manufacturers/low-moq-underwear-manufacturer",
+        "/es/manufacturers/custom-underwear-manufacturer",
+        "/es/manufacturers/seamless-underwear-manufacturer",
+        "/fr/manufacturers/private-label-underwear-manufacturer",
+        "/fr/manufacturers/low-moq-underwear-manufacturer",
+        "/fr/manufacturers/custom-underwear-manufacturer",
+        "/fr/manufacturers/seamless-underwear-manufacturer",
+        "/fr/manufacturers/mens-underwear-manufacturer",
+        "/fr/manufacturers/lingerie-manufacturer",
+        "/fr/manufacturers/bra-manufacturer",
+        "/fr/manufacturers/underwear-factory",
+        "/de/manufacturers/private-label-underwear-manufacturer",
+        "/de/manufacturers/low-moq-underwear-manufacturer",
+        "/de/manufacturers/custom-underwear-manufacturer",
+        "/de/manufacturers/seamless-underwear-manufacturer",
+        "/de/manufacturers/mens-underwear-manufacturer",
+        "/de/manufacturers/lingerie-manufacturer",
+        "/de/manufacturers/bra-manufacturer",
+        "/de/manufacturers/underwear-factory",
+        "/it/manufacturers/private-label-underwear-manufacturer",
+        "/it/manufacturers/low-moq-underwear-manufacturer",
+        "/it/manufacturers/custom-underwear-manufacturer",
+        "/it/manufacturers/seamless-underwear-manufacturer",
+        "/it/manufacturers/mens-underwear-manufacturer",
+        "/it/manufacturers/lingerie-manufacturer",
+        "/it/manufacturers/bra-manufacturer",
+        "/it/manufacturers/underwear-factory",
+        "/es/guides/underwear-manufacturing-cost",
+        "/es/guides/underwear-manufacturing-process",
+        "/es/guides/underwear-moq-explained",
+        "/resources/custom-waistband-underwear-manufacturer",
+        "/resources/laser-cut-underwear-manufacturer",
+        "/resources/underwear-manufacturer-for-startup-brands",
+        "/resources/underwear-sampling-lead-time-guide",
+        "/resources/yiwu-underwear-manufacturer",
+        "/resources/high-waisted-briefs-manufacturer",
+        "/resources/bikini-vs-brazilian-underwear",
+        "/resources/seamless-vs-no-show-underwear",
+        "/resources/cotton-vs-seamless-underwear-buyers-guide",
+        "/resources/private-label-underwear-moq-guide",
+        "/resources/accurate-underwear-yoga-wear-manufacturing-quote",
+        "/resources/unit-cost-custom-underwear-manufacturing",
+        "/resources/traceless-vs-seamless-underwear-yoga-brands",
+        "/resources/lace-underwear-oem-guide-boutique-lingerie-brands",
+        "/resources/cotton-underwear-oem-guide-daily-basics-startups",
+        "/resources/waistband-customization-mens-boxer-briefs-private-label",
+        "/resources/gusset-construction-womens-underwear-comfort-qc",
+        "/resources/sports-bra-support-levels-small-yoga-brands",
+        "/resources/reorder-planning-after-low-moq-first-run",
+        "/resources/us-eu-underwear-size-labeling-preparation-startup-brands",
+        "/resources/underwear-sampling-costs-lead-times-packaging",
+        "/news",
+        "/news/100-cotton-vs-cotton-spandex-underwear-labels",
+        "/news/organic-cotton-underwear-claims-evidence-buyers",
+        "/news/cotton-gusset-vs-cotton-underwear-components",
+        "/news/seamless-underwear-for-leggings-sample-review",
+        "/news/high-waisted-cotton-underwear-range-planning",
+        "/news/cotton-thong-underwear-everyday-range",
+        "/news/womens-boxer-vs-boyshort-underwear-names",
+        "/news/cotton-lace-underwear-composition-claims",
+        "/news/underwear-for-white-pants-colour-opacity-test",
+        "/news/2026-underwear-search-themes-factory-buyer-brief",
+        "/news/underwear-leg-opening-elastic-fit-checklist",
+        "/news/high-waist-underwear-waistband-roll-down-fit",
+        "/news/bonded-vs-stitched-gusset-attachment-underwear",
+        "/news/lace-trim-stretch-placement-underwear-samples",
+        "/news/mens-no-fly-pouch-fit-sample-review",
+        "/news/printed-underwear-strike-off-artwork-approval",
+        "/news/underwear-bulk-shade-band-colour-consistency",
+        "/news/underwear-barcode-variant-label-proofing",
+        "/news/underwear-carton-protection-transit-checklist",
+        "/news/underwear-line-sheet-wholesale-buyer-checklist",
+        "/news/choose-underwear-manufacturer-supplier-checklist",
+        "/news/thong-vs-g-string-t-string-underwear-buyers",
+        "/news/underwear-fabric-gsm-thickness-opacity-guide",
+        "/news/tanga-vs-bikini-vs-thong-coverage-guide",
+        "/news/heat-transfer-vs-sewn-underwear-labels",
+        "/news/underwear-aql-inspection-defect-checklist",
+        "/news/shipping-underwear-samples-commercial-invoice-checklist",
+        "/news/recycled-polyester-underwear-claims-documentation",
+        "/news/underwear-multipack-assortment-planning",
+        "/news/underwear-product-photography-shot-list",
+        "/news/womens-boyshorts-vs-long-leg-underwear",
+        "/news/v-waist-underwear-fit-measurement-guide",
+        "/news/mens-briefs-vs-trunks-private-label-fit",
+        "/news/modal-pouch-vs-modal-underwear-fabric-specification",
+        "/news/underwear-tech-pack-measurement-specification",
+        "/news/underwear-colour-lab-dip-approval-guide",
+        "/news/underwear-wash-test-shrinkage-recovery-checklist",
+        "/news/underwear-size-set-sample-grading-checklist",
+        "/news/underwear-sku-carton-packing-list-guide",
+        "/news/underwear-pre-production-sample-approval-checklist",
+        "/news/cotton-vs-polyamide-underwear-private-label",
+        "/news/high-waisted-briefs-vs-thongs-buying-guide",
+        "/news/plain-vs-printed-mens-underwear-private-label",
+        "/news/explore-the-diyasi-underwear-collection",
+        "/news/bikini-vs-brazilian-underwear-buying-notes",
+        "/news/trunks-vs-boxer-briefs-sourcing-notes",
+        "/products/lace-trim-cotton-brazilian-brief-ls006",
+        "/products/v-waist-lace-cotton-brief-ls005-142",
+        "/products/v-waist-lace-cotton-thong-ls005",
+        "/products/bonded-brazilian-seamless-brief-dys323",
+        "/products/bonded-seamless-low-rise-thong-dys322",
+        "/products/seamless-high-waist-full-brief-dys314",
+        "/products/seamless-low-rise-brazilian-brief-dys311",
+        "/products/seamless-mid-low-brazilian-brief-dys306",
+        "/products/invisible-edge-cotton-gusset-thong-dys302",
+        "/products/seamless-v-waist-low-rise-thong-dys301",
+        "/products/printed-low-rise-mens-brief-m008-print",
+        "/products/printed-mid-rise-mens-trunk-m007-print",
+        "/products/contrast-waist-printed-mens-trunk-m006-print",
+        "/products/printed-mid-leg-mens-boxer-brief-m005-print",
+        "/products/printed-modal-pouch-boxer-brief-m004-print",
+        "/products/everyday-printed-mens-boxer-brief-m003-print",
+        "/products/printed-high-waist-long-leg-boxer-m002-print",
+        "/products/printed-low-rise-modal-pouch-trunk-m001-print",
+        "/products/everyday-cotton-mid-rise-thong-dys229",
+        "/products/cotton-low-rise-t-string-dys230",
+        "/products/cotton-mid-rise-t-back-thong-dys228",
+        "/products/wide-waistband-cotton-tanga-thong-dys227",
+        "/products/high-waist-cotton-t-string-dys226",
+        "/products/cotton-high-waist-thong-dys225",
+        "/products/essential-cotton-thong-dys224",
+        "/products/signature-cotton-brief-dys223",
+        "/products/high-leg-cotton-high-waist-brief-dys219",
+        "/products/mens-low-rise-bikini-brief-m008",
+        "/products/mens-4-inch-stretch-boxer-brief-m007",
+        "/products/mens-5-inch-pouch-support-trunk-m006",
+        "/products/mens-5-inch-modal-pouch-boxer-m005",
+        "/products/mens-mid-rise-no-fly-trunk-m004",
+        "/products/mens-modal-pouch-everyday-trunk-m003",
+        "/products/mens-long-leg-stretch-boxer-brief-m002",
+        "/products/mens-tagless-low-rise-brief-m001",
+        "/products/lettered-waist-cotton-tanga-dys218",
+        "/products/wide-waistband-cotton-boxer-dys215",
+        "/products/everyday-cotton-boyshort-dys214",
+        "/products/long-leg-high-waist-cotton-brief-dys210",
+        "/products/everyday-cotton-tanga-dys208",
+        "/products/classic-cotton-bikini-brief-dys206",
+        "/products/extra-high-waist-cotton-thong-dys205",
+        "/products/cotton-stretch-g-string-dys204",
+        "/products/essential-cotton-bikini-brief-dys202",
+        "/products/low-rise-cotton-bikini-brief-dys201",
+        "/products?page=2",
+        "/products?page=3",
+        "/products?page=4",
+        "/products/womens-panties?page=2",
+        "/products/womens-panties?page=3",
+        "/products/cotton-underwear?page=2",
+        "/products/thongs?page=2",
+        "/products/mens-underwear?page=2"
+      ],
+      "passed": true
+    },
+    {
+      "path": "/manufacturers/swimwear-manufacturer",
+      "inboundPages": 200,
+      "clickDepth": 1,
+      "status": 200,
+      "sources": [
+        "/",
+        "/products",
+        "/oem-odm",
+        "/factory",
+        "/contact",
+        "/about",
+        "/fabrics",
+        "/packaging",
+        "/sustainability",
+        "/resources",
+        "/privacy-policy",
+        "/return-policy",
+        "/es",
+        "/es/productos/ropa-interior-marca-privada",
+        "/es/minimo-pedido-ropa-interior",
+        "/es/ropa-interior-sin-costuras",
+        "/es/fabricante-ropa-interior-china",
+        "/es/empaque-personalizado",
+        "/es/fabrica-y-control-de-calidad",
+        "/es/contacto",
+        "/products/womens-panties",
+        "/products/cotton-underwear",
+        "/products/cotton-thongs",
+        "/products/lace-underwear",
+        "/products/seamless-underwear",
+        "/products/thongs",
+        "/products/high-waist",
+        "/products/mens-underwear",
+        "/products/mens-boxer-briefs",
+        "/manufacturers",
+        "/manufacturers/private-label-underwear-manufacturer",
+        "/manufacturers/low-moq-underwear-manufacturer",
+        "/manufacturers/custom-underwear-manufacturer",
+        "/manufacturers/seamless-underwear-manufacturer",
+        "/manufacturers/mens-underwear-manufacturer",
+        "/manufacturers/shapewear-manufacturer",
+        "/manufacturers/bra-manufacturer",
+        "/manufacturers/underwear-factory",
+        "/manufacturers/lingerie-manufacturer",
+        "/manufacturers/lingerie-supplier",
+        "/manufacturers/private-label-lingerie",
+        "/guides",
+        "/guides/underwear-manufacturing-cost",
+        "/guides/underwear-manufacturing-process",
+        "/guides/how-to-find-a-clothing-manufacturer",
+        "/guides/seamless-underwear-wholesale",
+        "/guides/underwear-moq-explained",
+        "/guides/starting-an-underwear-brand",
+        "/es/manufacturers/private-label-underwear-manufacturer",
+        "/es/manufacturers/low-moq-underwear-manufacturer",
+        "/es/manufacturers/custom-underwear-manufacturer",
+        "/es/manufacturers/seamless-underwear-manufacturer",
+        "/fr/manufacturers/private-label-underwear-manufacturer",
+        "/fr/manufacturers/low-moq-underwear-manufacturer",
+        "/fr/manufacturers/custom-underwear-manufacturer",
+        "/fr/manufacturers/seamless-underwear-manufacturer",
+        "/fr/manufacturers/mens-underwear-manufacturer",
+        "/fr/manufacturers/lingerie-manufacturer",
+        "/fr/manufacturers/bra-manufacturer",
+        "/fr/manufacturers/underwear-factory",
+        "/de/manufacturers/private-label-underwear-manufacturer",
+        "/de/manufacturers/low-moq-underwear-manufacturer",
+        "/de/manufacturers/custom-underwear-manufacturer",
+        "/de/manufacturers/seamless-underwear-manufacturer",
+        "/de/manufacturers/mens-underwear-manufacturer",
+        "/de/manufacturers/lingerie-manufacturer",
+        "/de/manufacturers/bra-manufacturer",
+        "/de/manufacturers/underwear-factory",
+        "/it/manufacturers/private-label-underwear-manufacturer",
+        "/it/manufacturers/low-moq-underwear-manufacturer",
+        "/it/manufacturers/custom-underwear-manufacturer",
+        "/it/manufacturers/seamless-underwear-manufacturer",
+        "/it/manufacturers/mens-underwear-manufacturer",
+        "/it/manufacturers/lingerie-manufacturer",
+        "/it/manufacturers/bra-manufacturer",
+        "/it/manufacturers/underwear-factory",
+        "/es/guides/underwear-manufacturing-cost",
+        "/es/guides/underwear-manufacturing-process",
+        "/es/guides/underwear-moq-explained",
+        "/resources/custom-waistband-underwear-manufacturer",
+        "/resources/laser-cut-underwear-manufacturer",
+        "/resources/underwear-manufacturer-for-startup-brands",
+        "/resources/underwear-sampling-lead-time-guide",
+        "/resources/yiwu-underwear-manufacturer",
+        "/resources/high-waisted-briefs-manufacturer",
+        "/resources/bikini-vs-brazilian-underwear",
+        "/resources/seamless-vs-no-show-underwear",
+        "/resources/cotton-vs-seamless-underwear-buyers-guide",
+        "/resources/private-label-underwear-moq-guide",
+        "/resources/accurate-underwear-yoga-wear-manufacturing-quote",
+        "/resources/unit-cost-custom-underwear-manufacturing",
+        "/resources/traceless-vs-seamless-underwear-yoga-brands",
+        "/resources/lace-underwear-oem-guide-boutique-lingerie-brands",
+        "/resources/cotton-underwear-oem-guide-daily-basics-startups",
+        "/resources/waistband-customization-mens-boxer-briefs-private-label",
+        "/resources/gusset-construction-womens-underwear-comfort-qc",
+        "/resources/sports-bra-support-levels-small-yoga-brands",
+        "/resources/reorder-planning-after-low-moq-first-run",
+        "/resources/us-eu-underwear-size-labeling-preparation-startup-brands",
+        "/resources/underwear-sampling-costs-lead-times-packaging",
+        "/news",
+        "/news/100-cotton-vs-cotton-spandex-underwear-labels",
+        "/news/organic-cotton-underwear-claims-evidence-buyers",
+        "/news/cotton-gusset-vs-cotton-underwear-components",
+        "/news/seamless-underwear-for-leggings-sample-review",
+        "/news/high-waisted-cotton-underwear-range-planning",
+        "/news/cotton-thong-underwear-everyday-range",
+        "/news/womens-boxer-vs-boyshort-underwear-names",
+        "/news/cotton-lace-underwear-composition-claims",
+        "/news/underwear-for-white-pants-colour-opacity-test",
+        "/news/2026-underwear-search-themes-factory-buyer-brief",
+        "/news/underwear-leg-opening-elastic-fit-checklist",
+        "/news/high-waist-underwear-waistband-roll-down-fit",
+        "/news/bonded-vs-stitched-gusset-attachment-underwear",
+        "/news/lace-trim-stretch-placement-underwear-samples",
+        "/news/mens-no-fly-pouch-fit-sample-review",
+        "/news/printed-underwear-strike-off-artwork-approval",
+        "/news/underwear-bulk-shade-band-colour-consistency",
+        "/news/underwear-barcode-variant-label-proofing",
+        "/news/underwear-carton-protection-transit-checklist",
+        "/news/underwear-line-sheet-wholesale-buyer-checklist",
+        "/news/choose-underwear-manufacturer-supplier-checklist",
+        "/news/thong-vs-g-string-t-string-underwear-buyers",
+        "/news/underwear-fabric-gsm-thickness-opacity-guide",
+        "/news/tanga-vs-bikini-vs-thong-coverage-guide",
+        "/news/heat-transfer-vs-sewn-underwear-labels",
+        "/news/underwear-aql-inspection-defect-checklist",
+        "/news/shipping-underwear-samples-commercial-invoice-checklist",
+        "/news/recycled-polyester-underwear-claims-documentation",
+        "/news/underwear-multipack-assortment-planning",
+        "/news/underwear-product-photography-shot-list",
+        "/news/womens-boyshorts-vs-long-leg-underwear",
+        "/news/v-waist-underwear-fit-measurement-guide",
+        "/news/mens-briefs-vs-trunks-private-label-fit",
+        "/news/modal-pouch-vs-modal-underwear-fabric-specification",
+        "/news/underwear-tech-pack-measurement-specification",
+        "/news/underwear-colour-lab-dip-approval-guide",
+        "/news/underwear-wash-test-shrinkage-recovery-checklist",
+        "/news/underwear-size-set-sample-grading-checklist",
+        "/news/underwear-sku-carton-packing-list-guide",
+        "/news/underwear-pre-production-sample-approval-checklist",
+        "/news/cotton-vs-polyamide-underwear-private-label",
+        "/news/high-waisted-briefs-vs-thongs-buying-guide",
+        "/news/plain-vs-printed-mens-underwear-private-label",
+        "/news/explore-the-diyasi-underwear-collection",
+        "/news/bikini-vs-brazilian-underwear-buying-notes",
+        "/news/trunks-vs-boxer-briefs-sourcing-notes",
+        "/products/lace-trim-cotton-brazilian-brief-ls006",
+        "/products/v-waist-lace-cotton-brief-ls005-142",
+        "/products/v-waist-lace-cotton-thong-ls005",
+        "/products/bonded-brazilian-seamless-brief-dys323",
+        "/products/bonded-seamless-low-rise-thong-dys322",
+        "/products/seamless-high-waist-full-brief-dys314",
+        "/products/seamless-low-rise-brazilian-brief-dys311",
+        "/products/seamless-mid-low-brazilian-brief-dys306",
+        "/products/invisible-edge-cotton-gusset-thong-dys302",
+        "/products/seamless-v-waist-low-rise-thong-dys301",
+        "/products/printed-low-rise-mens-brief-m008-print",
+        "/products/printed-mid-rise-mens-trunk-m007-print",
+        "/products/contrast-waist-printed-mens-trunk-m006-print",
+        "/products/printed-mid-leg-mens-boxer-brief-m005-print",
+        "/products/printed-modal-pouch-boxer-brief-m004-print",
+        "/products/everyday-printed-mens-boxer-brief-m003-print",
+        "/products/printed-high-waist-long-leg-boxer-m002-print",
+        "/products/printed-low-rise-modal-pouch-trunk-m001-print",
+        "/products/everyday-cotton-mid-rise-thong-dys229",
+        "/products/cotton-low-rise-t-string-dys230",
+        "/products/cotton-mid-rise-t-back-thong-dys228",
+        "/products/wide-waistband-cotton-tanga-thong-dys227",
+        "/products/high-waist-cotton-t-string-dys226",
+        "/products/cotton-high-waist-thong-dys225",
+        "/products/essential-cotton-thong-dys224",
+        "/products/signature-cotton-brief-dys223",
+        "/products/high-leg-cotton-high-waist-brief-dys219",
+        "/products/mens-low-rise-bikini-brief-m008",
+        "/products/mens-4-inch-stretch-boxer-brief-m007",
+        "/products/mens-5-inch-pouch-support-trunk-m006",
+        "/products/mens-5-inch-modal-pouch-boxer-m005",
+        "/products/mens-mid-rise-no-fly-trunk-m004",
+        "/products/mens-modal-pouch-everyday-trunk-m003",
+        "/products/mens-long-leg-stretch-boxer-brief-m002",
+        "/products/mens-tagless-low-rise-brief-m001",
+        "/products/lettered-waist-cotton-tanga-dys218",
+        "/products/wide-waistband-cotton-boxer-dys215",
+        "/products/everyday-cotton-boyshort-dys214",
+        "/products/long-leg-high-waist-cotton-brief-dys210",
+        "/products/everyday-cotton-tanga-dys208",
+        "/products/classic-cotton-bikini-brief-dys206",
+        "/products/extra-high-waist-cotton-thong-dys205",
+        "/products/cotton-stretch-g-string-dys204",
+        "/products/essential-cotton-bikini-brief-dys202",
+        "/products/low-rise-cotton-bikini-brief-dys201",
+        "/products?page=2",
+        "/products?page=3",
+        "/products?page=4",
+        "/products/womens-panties?page=2",
+        "/products/womens-panties?page=3",
+        "/products/cotton-underwear?page=2",
+        "/products/thongs?page=2",
+        "/products/mens-underwear?page=2"
+      ],
+      "passed": true
+    },
+    {
+      "path": "/manufacturers/lingerie-supplier",
+      "inboundPages": 200,
+      "clickDepth": 1,
+      "status": 200,
+      "sources": [
+        "/",
+        "/products",
+        "/oem-odm",
+        "/factory",
+        "/contact",
+        "/about",
+        "/fabrics",
+        "/packaging",
+        "/sustainability",
+        "/resources",
+        "/privacy-policy",
+        "/return-policy",
+        "/es",
+        "/es/productos/ropa-interior-marca-privada",
+        "/es/minimo-pedido-ropa-interior",
+        "/es/ropa-interior-sin-costuras",
+        "/es/fabricante-ropa-interior-china",
+        "/es/empaque-personalizado",
+        "/es/fabrica-y-control-de-calidad",
+        "/es/contacto",
+        "/products/womens-panties",
+        "/products/cotton-underwear",
+        "/products/cotton-thongs",
+        "/products/lace-underwear",
+        "/products/seamless-underwear",
+        "/products/thongs",
+        "/products/high-waist",
+        "/products/mens-underwear",
+        "/products/mens-boxer-briefs",
+        "/manufacturers",
+        "/manufacturers/private-label-underwear-manufacturer",
+        "/manufacturers/low-moq-underwear-manufacturer",
+        "/manufacturers/custom-underwear-manufacturer",
+        "/manufacturers/seamless-underwear-manufacturer",
+        "/manufacturers/mens-underwear-manufacturer",
+        "/manufacturers/shapewear-manufacturer",
+        "/manufacturers/bra-manufacturer",
+        "/manufacturers/underwear-factory",
+        "/manufacturers/lingerie-manufacturer",
+        "/manufacturers/swimwear-manufacturer",
+        "/manufacturers/private-label-lingerie",
+        "/guides",
+        "/guides/underwear-manufacturing-cost",
+        "/guides/underwear-manufacturing-process",
+        "/guides/how-to-find-a-clothing-manufacturer",
+        "/guides/seamless-underwear-wholesale",
+        "/guides/underwear-moq-explained",
+        "/guides/starting-an-underwear-brand",
+        "/es/manufacturers/private-label-underwear-manufacturer",
+        "/es/manufacturers/low-moq-underwear-manufacturer",
+        "/es/manufacturers/custom-underwear-manufacturer",
+        "/es/manufacturers/seamless-underwear-manufacturer",
+        "/fr/manufacturers/private-label-underwear-manufacturer",
+        "/fr/manufacturers/low-moq-underwear-manufacturer",
+        "/fr/manufacturers/custom-underwear-manufacturer",
+        "/fr/manufacturers/seamless-underwear-manufacturer",
+        "/fr/manufacturers/mens-underwear-manufacturer",
+        "/fr/manufacturers/lingerie-manufacturer",
+        "/fr/manufacturers/bra-manufacturer",
+        "/fr/manufacturers/underwear-factory",
+        "/de/manufacturers/private-label-underwear-manufacturer",
+        "/de/manufacturers/low-moq-underwear-manufacturer",
+        "/de/manufacturers/custom-underwear-manufacturer",
+        "/de/manufacturers/seamless-underwear-manufacturer",
+        "/de/manufacturers/mens-underwear-manufacturer",
+        "/de/manufacturers/lingerie-manufacturer",
+        "/de/manufacturers/bra-manufacturer",
+        "/de/manufacturers/underwear-factory",
+        "/it/manufacturers/private-label-underwear-manufacturer",
+        "/it/manufacturers/low-moq-underwear-manufacturer",
+        "/it/manufacturers/custom-underwear-manufacturer",
+        "/it/manufacturers/seamless-underwear-manufacturer",
+        "/it/manufacturers/mens-underwear-manufacturer",
+        "/it/manufacturers/lingerie-manufacturer",
+        "/it/manufacturers/bra-manufacturer",
+        "/it/manufacturers/underwear-factory",
+        "/es/guides/underwear-manufacturing-cost",
+        "/es/guides/underwear-manufacturing-process",
+        "/es/guides/underwear-moq-explained",
+        "/resources/custom-waistband-underwear-manufacturer",
+        "/resources/laser-cut-underwear-manufacturer",
+        "/resources/underwear-manufacturer-for-startup-brands",
+        "/resources/underwear-sampling-lead-time-guide",
+        "/resources/yiwu-underwear-manufacturer",
+        "/resources/high-waisted-briefs-manufacturer",
+        "/resources/bikini-vs-brazilian-underwear",
+        "/resources/seamless-vs-no-show-underwear",
+        "/resources/cotton-vs-seamless-underwear-buyers-guide",
+        "/resources/private-label-underwear-moq-guide",
+        "/resources/accurate-underwear-yoga-wear-manufacturing-quote",
+        "/resources/unit-cost-custom-underwear-manufacturing",
+        "/resources/traceless-vs-seamless-underwear-yoga-brands",
+        "/resources/lace-underwear-oem-guide-boutique-lingerie-brands",
+        "/resources/cotton-underwear-oem-guide-daily-basics-startups",
+        "/resources/waistband-customization-mens-boxer-briefs-private-label",
+        "/resources/gusset-construction-womens-underwear-comfort-qc",
+        "/resources/sports-bra-support-levels-small-yoga-brands",
+        "/resources/reorder-planning-after-low-moq-first-run",
+        "/resources/us-eu-underwear-size-labeling-preparation-startup-brands",
+        "/resources/underwear-sampling-costs-lead-times-packaging",
+        "/news",
+        "/news/100-cotton-vs-cotton-spandex-underwear-labels",
+        "/news/organic-cotton-underwear-claims-evidence-buyers",
+        "/news/cotton-gusset-vs-cotton-underwear-components",
+        "/news/seamless-underwear-for-leggings-sample-review",
+        "/news/high-waisted-cotton-underwear-range-planning",
+        "/news/cotton-thong-underwear-everyday-range",
+        "/news/womens-boxer-vs-boyshort-underwear-names",
+        "/news/cotton-lace-underwear-composition-claims",
+        "/news/underwear-for-white-pants-colour-opacity-test",
+        "/news/2026-underwear-search-themes-factory-buyer-brief",
+        "/news/underwear-leg-opening-elastic-fit-checklist",
+        "/news/high-waist-underwear-waistband-roll-down-fit",
+        "/news/bonded-vs-stitched-gusset-attachment-underwear",
+        "/news/lace-trim-stretch-placement-underwear-samples",
+        "/news/mens-no-fly-pouch-fit-sample-review",
+        "/news/printed-underwear-strike-off-artwork-approval",
+        "/news/underwear-bulk-shade-band-colour-consistency",
+        "/news/underwear-barcode-variant-label-proofing",
+        "/news/underwear-carton-protection-transit-checklist",
+        "/news/underwear-line-sheet-wholesale-buyer-checklist",
+        "/news/choose-underwear-manufacturer-supplier-checklist",
+        "/news/thong-vs-g-string-t-string-underwear-buyers",
+        "/news/underwear-fabric-gsm-thickness-opacity-guide",
+        "/news/tanga-vs-bikini-vs-thong-coverage-guide",
+        "/news/heat-transfer-vs-sewn-underwear-labels",
+        "/news/underwear-aql-inspection-defect-checklist",
+        "/news/shipping-underwear-samples-commercial-invoice-checklist",
+        "/news/recycled-polyester-underwear-claims-documentation",
+        "/news/underwear-multipack-assortment-planning",
+        "/news/underwear-product-photography-shot-list",
+        "/news/womens-boyshorts-vs-long-leg-underwear",
+        "/news/v-waist-underwear-fit-measurement-guide",
+        "/news/mens-briefs-vs-trunks-private-label-fit",
+        "/news/modal-pouch-vs-modal-underwear-fabric-specification",
+        "/news/underwear-tech-pack-measurement-specification",
+        "/news/underwear-colour-lab-dip-approval-guide",
+        "/news/underwear-wash-test-shrinkage-recovery-checklist",
+        "/news/underwear-size-set-sample-grading-checklist",
+        "/news/underwear-sku-carton-packing-list-guide",
+        "/news/underwear-pre-production-sample-approval-checklist",
+        "/news/cotton-vs-polyamide-underwear-private-label",
+        "/news/high-waisted-briefs-vs-thongs-buying-guide",
+        "/news/plain-vs-printed-mens-underwear-private-label",
+        "/news/explore-the-diyasi-underwear-collection",
+        "/news/bikini-vs-brazilian-underwear-buying-notes",
+        "/news/trunks-vs-boxer-briefs-sourcing-notes",
+        "/products/lace-trim-cotton-brazilian-brief-ls006",
+        "/products/v-waist-lace-cotton-brief-ls005-142",
+        "/products/v-waist-lace-cotton-thong-ls005",
+        "/products/bonded-brazilian-seamless-brief-dys323",
+        "/products/bonded-seamless-low-rise-thong-dys322",
+        "/products/seamless-high-waist-full-brief-dys314",
+        "/products/seamless-low-rise-brazilian-brief-dys311",
+        "/products/seamless-mid-low-brazilian-brief-dys306",
+        "/products/invisible-edge-cotton-gusset-thong-dys302",
+        "/products/seamless-v-waist-low-rise-thong-dys301",
+        "/products/printed-low-rise-mens-brief-m008-print",
+        "/products/printed-mid-rise-mens-trunk-m007-print",
+        "/products/contrast-waist-printed-mens-trunk-m006-print",
+        "/products/printed-mid-leg-mens-boxer-brief-m005-print",
+        "/products/printed-modal-pouch-boxer-brief-m004-print",
+        "/products/everyday-printed-mens-boxer-brief-m003-print",
+        "/products/printed-high-waist-long-leg-boxer-m002-print",
+        "/products/printed-low-rise-modal-pouch-trunk-m001-print",
+        "/products/everyday-cotton-mid-rise-thong-dys229",
+        "/products/cotton-low-rise-t-string-dys230",
+        "/products/cotton-mid-rise-t-back-thong-dys228",
+        "/products/wide-waistband-cotton-tanga-thong-dys227",
+        "/products/high-waist-cotton-t-string-dys226",
+        "/products/cotton-high-waist-thong-dys225",
+        "/products/essential-cotton-thong-dys224",
+        "/products/signature-cotton-brief-dys223",
+        "/products/high-leg-cotton-high-waist-brief-dys219",
+        "/products/mens-low-rise-bikini-brief-m008",
+        "/products/mens-4-inch-stretch-boxer-brief-m007",
+        "/products/mens-5-inch-pouch-support-trunk-m006",
+        "/products/mens-5-inch-modal-pouch-boxer-m005",
+        "/products/mens-mid-rise-no-fly-trunk-m004",
+        "/products/mens-modal-pouch-everyday-trunk-m003",
+        "/products/mens-long-leg-stretch-boxer-brief-m002",
+        "/products/mens-tagless-low-rise-brief-m001",
+        "/products/lettered-waist-cotton-tanga-dys218",
+        "/products/wide-waistband-cotton-boxer-dys215",
+        "/products/everyday-cotton-boyshort-dys214",
+        "/products/long-leg-high-waist-cotton-brief-dys210",
+        "/products/everyday-cotton-tanga-dys208",
+        "/products/classic-cotton-bikini-brief-dys206",
+        "/products/extra-high-waist-cotton-thong-dys205",
+        "/products/cotton-stretch-g-string-dys204",
+        "/products/essential-cotton-bikini-brief-dys202",
+        "/products/low-rise-cotton-bikini-brief-dys201",
+        "/products?page=2",
+        "/products?page=3",
+        "/products?page=4",
+        "/products/womens-panties?page=2",
+        "/products/womens-panties?page=3",
+        "/products/cotton-underwear?page=2",
+        "/products/thongs?page=2",
+        "/products/mens-underwear?page=2"
+      ],
+      "passed": true
+    },
+    {
+      "path": "/manufacturers/private-label-lingerie",
+      "inboundPages": 200,
+      "clickDepth": 1,
+      "status": 200,
+      "sources": [
+        "/",
+        "/products",
+        "/oem-odm",
+        "/factory",
+        "/contact",
+        "/about",
+        "/fabrics",
+        "/packaging",
+        "/sustainability",
+        "/resources",
+        "/privacy-policy",
+        "/return-policy",
+        "/es",
+        "/es/productos/ropa-interior-marca-privada",
+        "/es/minimo-pedido-ropa-interior",
+        "/es/ropa-interior-sin-costuras",
+        "/es/fabricante-ropa-interior-china",
+        "/es/empaque-personalizado",
+        "/es/fabrica-y-control-de-calidad",
+        "/es/contacto",
+        "/products/womens-panties",
+        "/products/cotton-underwear",
+        "/products/cotton-thongs",
+        "/products/lace-underwear",
+        "/products/seamless-underwear",
+        "/products/thongs",
+        "/products/high-waist",
+        "/products/mens-underwear",
+        "/products/mens-boxer-briefs",
+        "/manufacturers",
+        "/manufacturers/private-label-underwear-manufacturer",
+        "/manufacturers/low-moq-underwear-manufacturer",
+        "/manufacturers/custom-underwear-manufacturer",
+        "/manufacturers/seamless-underwear-manufacturer",
+        "/manufacturers/mens-underwear-manufacturer",
+        "/manufacturers/shapewear-manufacturer",
+        "/manufacturers/bra-manufacturer",
+        "/manufacturers/underwear-factory",
+        "/manufacturers/lingerie-manufacturer",
+        "/manufacturers/swimwear-manufacturer",
+        "/manufacturers/lingerie-supplier",
+        "/guides",
+        "/guides/underwear-manufacturing-cost",
+        "/guides/underwear-manufacturing-process",
+        "/guides/how-to-find-a-clothing-manufacturer",
+        "/guides/seamless-underwear-wholesale",
+        "/guides/underwear-moq-explained",
+        "/guides/starting-an-underwear-brand",
+        "/es/manufacturers/private-label-underwear-manufacturer",
+        "/es/manufacturers/low-moq-underwear-manufacturer",
+        "/es/manufacturers/custom-underwear-manufacturer",
+        "/es/manufacturers/seamless-underwear-manufacturer",
+        "/fr/manufacturers/private-label-underwear-manufacturer",
+        "/fr/manufacturers/low-moq-underwear-manufacturer",
+        "/fr/manufacturers/custom-underwear-manufacturer",
+        "/fr/manufacturers/seamless-underwear-manufacturer",
+        "/fr/manufacturers/mens-underwear-manufacturer",
+        "/fr/manufacturers/lingerie-manufacturer",
+        "/fr/manufacturers/bra-manufacturer",
+        "/fr/manufacturers/underwear-factory",
+        "/de/manufacturers/private-label-underwear-manufacturer",
+        "/de/manufacturers/low-moq-underwear-manufacturer",
+        "/de/manufacturers/custom-underwear-manufacturer",
+        "/de/manufacturers/seamless-underwear-manufacturer",
+        "/de/manufacturers/mens-underwear-manufacturer",
+        "/de/manufacturers/lingerie-manufacturer",
+        "/de/manufacturers/bra-manufacturer",
+        "/de/manufacturers/underwear-factory",
+        "/it/manufacturers/private-label-underwear-manufacturer",
+        "/it/manufacturers/low-moq-underwear-manufacturer",
+        "/it/manufacturers/custom-underwear-manufacturer",
+        "/it/manufacturers/seamless-underwear-manufacturer",
+        "/it/manufacturers/mens-underwear-manufacturer",
+        "/it/manufacturers/lingerie-manufacturer",
+        "/it/manufacturers/bra-manufacturer",
+        "/it/manufacturers/underwear-factory",
+        "/es/guides/underwear-manufacturing-cost",
+        "/es/guides/underwear-manufacturing-process",
+        "/es/guides/underwear-moq-explained",
+        "/resources/custom-waistband-underwear-manufacturer",
+        "/resources/laser-cut-underwear-manufacturer",
+        "/resources/underwear-manufacturer-for-startup-brands",
+        "/resources/underwear-sampling-lead-time-guide",
+        "/resources/yiwu-underwear-manufacturer",
+        "/resources/high-waisted-briefs-manufacturer",
+        "/resources/bikini-vs-brazilian-underwear",
+        "/resources/seamless-vs-no-show-underwear",
+        "/resources/cotton-vs-seamless-underwear-buyers-guide",
+        "/resources/private-label-underwear-moq-guide",
+        "/resources/accurate-underwear-yoga-wear-manufacturing-quote",
+        "/resources/unit-cost-custom-underwear-manufacturing",
+        "/resources/traceless-vs-seamless-underwear-yoga-brands",
+        "/resources/lace-underwear-oem-guide-boutique-lingerie-brands",
+        "/resources/cotton-underwear-oem-guide-daily-basics-startups",
+        "/resources/waistband-customization-mens-boxer-briefs-private-label",
+        "/resources/gusset-construction-womens-underwear-comfort-qc",
+        "/resources/sports-bra-support-levels-small-yoga-brands",
+        "/resources/reorder-planning-after-low-moq-first-run",
+        "/resources/us-eu-underwear-size-labeling-preparation-startup-brands",
+        "/resources/underwear-sampling-costs-lead-times-packaging",
+        "/news",
+        "/news/100-cotton-vs-cotton-spandex-underwear-labels",
+        "/news/organic-cotton-underwear-claims-evidence-buyers",
+        "/news/cotton-gusset-vs-cotton-underwear-components",
+        "/news/seamless-underwear-for-leggings-sample-review",
+        "/news/high-waisted-cotton-underwear-range-planning",
+        "/news/cotton-thong-underwear-everyday-range",
+        "/news/womens-boxer-vs-boyshort-underwear-names",
+        "/news/cotton-lace-underwear-composition-claims",
+        "/news/underwear-for-white-pants-colour-opacity-test",
+        "/news/2026-underwear-search-themes-factory-buyer-brief",
+        "/news/underwear-leg-opening-elastic-fit-checklist",
+        "/news/high-waist-underwear-waistband-roll-down-fit",
+        "/news/bonded-vs-stitched-gusset-attachment-underwear",
+        "/news/lace-trim-stretch-placement-underwear-samples",
+        "/news/mens-no-fly-pouch-fit-sample-review",
+        "/news/printed-underwear-strike-off-artwork-approval",
+        "/news/underwear-bulk-shade-band-colour-consistency",
+        "/news/underwear-barcode-variant-label-proofing",
+        "/news/underwear-carton-protection-transit-checklist",
+        "/news/underwear-line-sheet-wholesale-buyer-checklist",
+        "/news/choose-underwear-manufacturer-supplier-checklist",
+        "/news/thong-vs-g-string-t-string-underwear-buyers",
+        "/news/underwear-fabric-gsm-thickness-opacity-guide",
+        "/news/tanga-vs-bikini-vs-thong-coverage-guide",
+        "/news/heat-transfer-vs-sewn-underwear-labels",
+        "/news/underwear-aql-inspection-defect-checklist",
+        "/news/shipping-underwear-samples-commercial-invoice-checklist",
+        "/news/recycled-polyester-underwear-claims-documentation",
+        "/news/underwear-multipack-assortment-planning",
+        "/news/underwear-product-photography-shot-list",
+        "/news/womens-boyshorts-vs-long-leg-underwear",
+        "/news/v-waist-underwear-fit-measurement-guide",
+        "/news/mens-briefs-vs-trunks-private-label-fit",
+        "/news/modal-pouch-vs-modal-underwear-fabric-specification",
+        "/news/underwear-tech-pack-measurement-specification",
+        "/news/underwear-colour-lab-dip-approval-guide",
+        "/news/underwear-wash-test-shrinkage-recovery-checklist",
+        "/news/underwear-size-set-sample-grading-checklist",
+        "/news/underwear-sku-carton-packing-list-guide",
+        "/news/underwear-pre-production-sample-approval-checklist",
+        "/news/cotton-vs-polyamide-underwear-private-label",
+        "/news/high-waisted-briefs-vs-thongs-buying-guide",
+        "/news/plain-vs-printed-mens-underwear-private-label",
+        "/news/explore-the-diyasi-underwear-collection",
+        "/news/bikini-vs-brazilian-underwear-buying-notes",
+        "/news/trunks-vs-boxer-briefs-sourcing-notes",
+        "/products/lace-trim-cotton-brazilian-brief-ls006",
+        "/products/v-waist-lace-cotton-brief-ls005-142",
+        "/products/v-waist-lace-cotton-thong-ls005",
+        "/products/bonded-brazilian-seamless-brief-dys323",
+        "/products/bonded-seamless-low-rise-thong-dys322",
+        "/products/seamless-high-waist-full-brief-dys314",
+        "/products/seamless-low-rise-brazilian-brief-dys311",
+        "/products/seamless-mid-low-brazilian-brief-dys306",
+        "/products/invisible-edge-cotton-gusset-thong-dys302",
+        "/products/seamless-v-waist-low-rise-thong-dys301",
+        "/products/printed-low-rise-mens-brief-m008-print",
+        "/products/printed-mid-rise-mens-trunk-m007-print",
+        "/products/contrast-waist-printed-mens-trunk-m006-print",
+        "/products/printed-mid-leg-mens-boxer-brief-m005-print",
+        "/products/printed-modal-pouch-boxer-brief-m004-print",
+        "/products/everyday-printed-mens-boxer-brief-m003-print",
+        "/products/printed-high-waist-long-leg-boxer-m002-print",
+        "/products/printed-low-rise-modal-pouch-trunk-m001-print",
+        "/products/everyday-cotton-mid-rise-thong-dys229",
+        "/products/cotton-low-rise-t-string-dys230",
+        "/products/cotton-mid-rise-t-back-thong-dys228",
+        "/products/wide-waistband-cotton-tanga-thong-dys227",
+        "/products/high-waist-cotton-t-string-dys226",
+        "/products/cotton-high-waist-thong-dys225",
+        "/products/essential-cotton-thong-dys224",
+        "/products/signature-cotton-brief-dys223",
+        "/products/high-leg-cotton-high-waist-brief-dys219",
+        "/products/mens-low-rise-bikini-brief-m008",
+        "/products/mens-4-inch-stretch-boxer-brief-m007",
+        "/products/mens-5-inch-pouch-support-trunk-m006",
+        "/products/mens-5-inch-modal-pouch-boxer-m005",
+        "/products/mens-mid-rise-no-fly-trunk-m004",
+        "/products/mens-modal-pouch-everyday-trunk-m003",
+        "/products/mens-long-leg-stretch-boxer-brief-m002",
+        "/products/mens-tagless-low-rise-brief-m001",
+        "/products/lettered-waist-cotton-tanga-dys218",
+        "/products/wide-waistband-cotton-boxer-dys215",
+        "/products/everyday-cotton-boyshort-dys214",
+        "/products/long-leg-high-waist-cotton-brief-dys210",
+        "/products/everyday-cotton-tanga-dys208",
+        "/products/classic-cotton-bikini-brief-dys206",
+        "/products/extra-high-waist-cotton-thong-dys205",
+        "/products/cotton-stretch-g-string-dys204",
+        "/products/essential-cotton-bikini-brief-dys202",
+        "/products/low-rise-cotton-bikini-brief-dys201",
+        "/products?page=2",
+        "/products?page=3",
+        "/products?page=4",
+        "/products/womens-panties?page=2",
+        "/products/womens-panties?page=3",
+        "/products/cotton-underwear?page=2",
+        "/products/thongs?page=2",
+        "/products/mens-underwear?page=2"
+      ],
+      "passed": true
+    }
+  ],
+  "hreflangErrors": [],
+  "sitemapChecks": [
+    {
+      "path": "/",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/oem-odm",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/oem-odm"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/factory",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/factory"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/contact",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/contact"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/about"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/fabrics",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/fabrics"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/packaging",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/packaging"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/sustainability",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/sustainability"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/resources",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/resources"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/privacy-policy",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/privacy-policy"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/return-policy",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/return-policy"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/es",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/es"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/es/productos/ropa-interior-marca-privada",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/es/productos/ropa-interior-marca-privada"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/es/minimo-pedido-ropa-interior",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/es/minimo-pedido-ropa-interior"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/es/ropa-interior-sin-costuras",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/es/ropa-interior-sin-costuras"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/es/fabricante-ropa-interior-china",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/es/fabricante-ropa-interior-china"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/es/empaque-personalizado",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/es/empaque-personalizado"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/es/fabrica-y-control-de-calidad",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/es/fabrica-y-control-de-calidad"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/es/contacto",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/es/contacto"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/womens-panties",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/womens-panties"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/cotton-underwear",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/cotton-underwear"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/cotton-thongs",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/cotton-thongs"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/lace-underwear",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/lace-underwear"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/seamless-underwear",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/seamless-underwear"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/thongs",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/thongs"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/high-waist",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/high-waist"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/mens-underwear",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/mens-underwear"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/mens-boxer-briefs",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/mens-boxer-briefs"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/manufacturers",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/manufacturers"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/manufacturers/private-label-underwear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/manufacturers/private-label-underwear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/manufacturers/low-moq-underwear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/manufacturers/low-moq-underwear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/manufacturers/custom-underwear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/manufacturers/custom-underwear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/manufacturers/seamless-underwear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/manufacturers/seamless-underwear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/manufacturers/mens-underwear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/manufacturers/mens-underwear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/manufacturers/shapewear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/manufacturers/shapewear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/manufacturers/bra-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/manufacturers/bra-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/manufacturers/underwear-factory",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/manufacturers/underwear-factory"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/manufacturers/lingerie-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/manufacturers/lingerie-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/manufacturers/swimwear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/manufacturers/swimwear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/manufacturers/lingerie-supplier",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/manufacturers/lingerie-supplier"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/manufacturers/private-label-lingerie",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/manufacturers/private-label-lingerie"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/guides",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/guides"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/guides/underwear-manufacturing-cost",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/guides/underwear-manufacturing-cost"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/guides/underwear-manufacturing-process",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/guides/underwear-manufacturing-process"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/guides/how-to-find-a-clothing-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/guides/how-to-find-a-clothing-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/guides/seamless-underwear-wholesale",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/guides/seamless-underwear-wholesale"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/guides/underwear-moq-explained",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/guides/underwear-moq-explained"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/guides/starting-an-underwear-brand",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/guides/starting-an-underwear-brand"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/es/manufacturers/private-label-underwear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/es/manufacturers/private-label-underwear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/es/manufacturers/low-moq-underwear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/es/manufacturers/low-moq-underwear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/es/manufacturers/custom-underwear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/es/manufacturers/custom-underwear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/es/manufacturers/seamless-underwear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/es/manufacturers/seamless-underwear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/fr/manufacturers/private-label-underwear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/fr/manufacturers/private-label-underwear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/fr/manufacturers/low-moq-underwear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/fr/manufacturers/low-moq-underwear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/fr/manufacturers/custom-underwear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/fr/manufacturers/custom-underwear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/fr/manufacturers/seamless-underwear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/fr/manufacturers/seamless-underwear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/fr/manufacturers/mens-underwear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/fr/manufacturers/mens-underwear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/fr/manufacturers/lingerie-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/fr/manufacturers/lingerie-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/fr/manufacturers/bra-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/fr/manufacturers/bra-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/fr/manufacturers/underwear-factory",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/fr/manufacturers/underwear-factory"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/de/manufacturers/private-label-underwear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/de/manufacturers/private-label-underwear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/de/manufacturers/low-moq-underwear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/de/manufacturers/low-moq-underwear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/de/manufacturers/custom-underwear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/de/manufacturers/custom-underwear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/de/manufacturers/seamless-underwear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/de/manufacturers/seamless-underwear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/de/manufacturers/mens-underwear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/de/manufacturers/mens-underwear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/de/manufacturers/lingerie-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/de/manufacturers/lingerie-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/de/manufacturers/bra-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/de/manufacturers/bra-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/de/manufacturers/underwear-factory",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/de/manufacturers/underwear-factory"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/it/manufacturers/private-label-underwear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/it/manufacturers/private-label-underwear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/it/manufacturers/low-moq-underwear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/it/manufacturers/low-moq-underwear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/it/manufacturers/custom-underwear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/it/manufacturers/custom-underwear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/it/manufacturers/seamless-underwear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/it/manufacturers/seamless-underwear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/it/manufacturers/mens-underwear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/it/manufacturers/mens-underwear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/it/manufacturers/lingerie-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/it/manufacturers/lingerie-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/it/manufacturers/bra-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/it/manufacturers/bra-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/it/manufacturers/underwear-factory",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/it/manufacturers/underwear-factory"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/es/guides/underwear-manufacturing-cost",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/es/guides/underwear-manufacturing-cost"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/es/guides/underwear-manufacturing-process",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/es/guides/underwear-manufacturing-process"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/es/guides/underwear-moq-explained",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/es/guides/underwear-moq-explained"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/resources/custom-waistband-underwear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/resources/custom-waistband-underwear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/resources/laser-cut-underwear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/resources/laser-cut-underwear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/resources/underwear-manufacturer-for-startup-brands",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/resources/underwear-manufacturer-for-startup-brands"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/resources/underwear-sampling-lead-time-guide",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/resources/underwear-sampling-lead-time-guide"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/resources/yiwu-underwear-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/resources/yiwu-underwear-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/resources/high-waisted-briefs-manufacturer",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/resources/high-waisted-briefs-manufacturer"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/resources/bikini-vs-brazilian-underwear",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/resources/bikini-vs-brazilian-underwear"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/resources/seamless-vs-no-show-underwear",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/resources/seamless-vs-no-show-underwear"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/resources/cotton-vs-seamless-underwear-buyers-guide",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/resources/cotton-vs-seamless-underwear-buyers-guide"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/resources/private-label-underwear-moq-guide",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/resources/private-label-underwear-moq-guide"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/resources/accurate-underwear-yoga-wear-manufacturing-quote",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/resources/accurate-underwear-yoga-wear-manufacturing-quote"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/resources/unit-cost-custom-underwear-manufacturing",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/resources/unit-cost-custom-underwear-manufacturing"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/resources/traceless-vs-seamless-underwear-yoga-brands",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/resources/traceless-vs-seamless-underwear-yoga-brands"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/resources/lace-underwear-oem-guide-boutique-lingerie-brands",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/resources/lace-underwear-oem-guide-boutique-lingerie-brands"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/resources/cotton-underwear-oem-guide-daily-basics-startups",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/resources/cotton-underwear-oem-guide-daily-basics-startups"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/resources/waistband-customization-mens-boxer-briefs-private-label",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/resources/waistband-customization-mens-boxer-briefs-private-label"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/resources/gusset-construction-womens-underwear-comfort-qc",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/resources/gusset-construction-womens-underwear-comfort-qc"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/resources/sports-bra-support-levels-small-yoga-brands",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/resources/sports-bra-support-levels-small-yoga-brands"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/resources/reorder-planning-after-low-moq-first-run",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/resources/reorder-planning-after-low-moq-first-run"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/resources/us-eu-underwear-size-labeling-preparation-startup-brands",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/resources/us-eu-underwear-size-labeling-preparation-startup-brands"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/resources/underwear-sampling-costs-lead-times-packaging",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/resources/underwear-sampling-costs-lead-times-packaging"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/100-cotton-vs-cotton-spandex-underwear-labels",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/100-cotton-vs-cotton-spandex-underwear-labels"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/organic-cotton-underwear-claims-evidence-buyers",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/organic-cotton-underwear-claims-evidence-buyers"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/cotton-gusset-vs-cotton-underwear-components",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/cotton-gusset-vs-cotton-underwear-components"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/seamless-underwear-for-leggings-sample-review",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/seamless-underwear-for-leggings-sample-review"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/high-waisted-cotton-underwear-range-planning",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/high-waisted-cotton-underwear-range-planning"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/cotton-thong-underwear-everyday-range",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/cotton-thong-underwear-everyday-range"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/womens-boxer-vs-boyshort-underwear-names",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/womens-boxer-vs-boyshort-underwear-names"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/cotton-lace-underwear-composition-claims",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/cotton-lace-underwear-composition-claims"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/underwear-for-white-pants-colour-opacity-test",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/underwear-for-white-pants-colour-opacity-test"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/2026-underwear-search-themes-factory-buyer-brief",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/2026-underwear-search-themes-factory-buyer-brief"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/underwear-leg-opening-elastic-fit-checklist",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/underwear-leg-opening-elastic-fit-checklist"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/high-waist-underwear-waistband-roll-down-fit",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/high-waist-underwear-waistband-roll-down-fit"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/bonded-vs-stitched-gusset-attachment-underwear",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/bonded-vs-stitched-gusset-attachment-underwear"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/lace-trim-stretch-placement-underwear-samples",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/lace-trim-stretch-placement-underwear-samples"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/mens-no-fly-pouch-fit-sample-review",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/mens-no-fly-pouch-fit-sample-review"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/printed-underwear-strike-off-artwork-approval",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/printed-underwear-strike-off-artwork-approval"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/underwear-bulk-shade-band-colour-consistency",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/underwear-bulk-shade-band-colour-consistency"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/underwear-barcode-variant-label-proofing",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/underwear-barcode-variant-label-proofing"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/underwear-carton-protection-transit-checklist",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/underwear-carton-protection-transit-checklist"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/underwear-line-sheet-wholesale-buyer-checklist",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/underwear-line-sheet-wholesale-buyer-checklist"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/choose-underwear-manufacturer-supplier-checklist",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/choose-underwear-manufacturer-supplier-checklist"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/thong-vs-g-string-t-string-underwear-buyers",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/thong-vs-g-string-t-string-underwear-buyers"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/underwear-fabric-gsm-thickness-opacity-guide",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/underwear-fabric-gsm-thickness-opacity-guide"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/tanga-vs-bikini-vs-thong-coverage-guide",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/tanga-vs-bikini-vs-thong-coverage-guide"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/heat-transfer-vs-sewn-underwear-labels",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/heat-transfer-vs-sewn-underwear-labels"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/underwear-aql-inspection-defect-checklist",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/underwear-aql-inspection-defect-checklist"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/shipping-underwear-samples-commercial-invoice-checklist",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/shipping-underwear-samples-commercial-invoice-checklist"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/recycled-polyester-underwear-claims-documentation",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/recycled-polyester-underwear-claims-documentation"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/underwear-multipack-assortment-planning",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/underwear-multipack-assortment-planning"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/underwear-product-photography-shot-list",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/underwear-product-photography-shot-list"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/womens-boyshorts-vs-long-leg-underwear",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/womens-boyshorts-vs-long-leg-underwear"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/v-waist-underwear-fit-measurement-guide",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/v-waist-underwear-fit-measurement-guide"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/mens-briefs-vs-trunks-private-label-fit",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/mens-briefs-vs-trunks-private-label-fit"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/modal-pouch-vs-modal-underwear-fabric-specification",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/modal-pouch-vs-modal-underwear-fabric-specification"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/underwear-tech-pack-measurement-specification",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/underwear-tech-pack-measurement-specification"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/underwear-colour-lab-dip-approval-guide",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/underwear-colour-lab-dip-approval-guide"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/underwear-wash-test-shrinkage-recovery-checklist",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/underwear-wash-test-shrinkage-recovery-checklist"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/underwear-size-set-sample-grading-checklist",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/underwear-size-set-sample-grading-checklist"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/underwear-sku-carton-packing-list-guide",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/underwear-sku-carton-packing-list-guide"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/underwear-pre-production-sample-approval-checklist",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/underwear-pre-production-sample-approval-checklist"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/cotton-vs-polyamide-underwear-private-label",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/cotton-vs-polyamide-underwear-private-label"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/high-waisted-briefs-vs-thongs-buying-guide",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/high-waisted-briefs-vs-thongs-buying-guide"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/plain-vs-printed-mens-underwear-private-label",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/plain-vs-printed-mens-underwear-private-label"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/explore-the-diyasi-underwear-collection",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/explore-the-diyasi-underwear-collection"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/bikini-vs-brazilian-underwear-buying-notes",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/bikini-vs-brazilian-underwear-buying-notes"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/news/trunks-vs-boxer-briefs-sourcing-notes",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/news/trunks-vs-boxer-briefs-sourcing-notes"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/lace-trim-cotton-brazilian-brief-ls006",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/lace-trim-cotton-brazilian-brief-ls006"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/v-waist-lace-cotton-brief-ls005-142",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/v-waist-lace-cotton-brief-ls005-142"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/v-waist-lace-cotton-thong-ls005",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/v-waist-lace-cotton-thong-ls005"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/bonded-brazilian-seamless-brief-dys323",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/bonded-brazilian-seamless-brief-dys323"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/bonded-seamless-low-rise-thong-dys322",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/bonded-seamless-low-rise-thong-dys322"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/seamless-high-waist-full-brief-dys314",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/seamless-high-waist-full-brief-dys314"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/seamless-low-rise-brazilian-brief-dys311",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/seamless-low-rise-brazilian-brief-dys311"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/seamless-mid-low-brazilian-brief-dys306",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/seamless-mid-low-brazilian-brief-dys306"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/invisible-edge-cotton-gusset-thong-dys302",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/invisible-edge-cotton-gusset-thong-dys302"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/seamless-v-waist-low-rise-thong-dys301",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/seamless-v-waist-low-rise-thong-dys301"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/printed-low-rise-mens-brief-m008-print",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/printed-low-rise-mens-brief-m008-print"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/printed-mid-rise-mens-trunk-m007-print",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/printed-mid-rise-mens-trunk-m007-print"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/contrast-waist-printed-mens-trunk-m006-print",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/contrast-waist-printed-mens-trunk-m006-print"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/printed-mid-leg-mens-boxer-brief-m005-print",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/printed-mid-leg-mens-boxer-brief-m005-print"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/printed-modal-pouch-boxer-brief-m004-print",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/printed-modal-pouch-boxer-brief-m004-print"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/everyday-printed-mens-boxer-brief-m003-print",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/everyday-printed-mens-boxer-brief-m003-print"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/printed-high-waist-long-leg-boxer-m002-print",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/printed-high-waist-long-leg-boxer-m002-print"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/printed-low-rise-modal-pouch-trunk-m001-print",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/printed-low-rise-modal-pouch-trunk-m001-print"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/everyday-cotton-mid-rise-thong-dys229",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/everyday-cotton-mid-rise-thong-dys229"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/cotton-low-rise-t-string-dys230",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/cotton-low-rise-t-string-dys230"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/cotton-mid-rise-t-back-thong-dys228",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/cotton-mid-rise-t-back-thong-dys228"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/wide-waistband-cotton-tanga-thong-dys227",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/wide-waistband-cotton-tanga-thong-dys227"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/high-waist-cotton-t-string-dys226",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/high-waist-cotton-t-string-dys226"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/cotton-high-waist-thong-dys225",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/cotton-high-waist-thong-dys225"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/essential-cotton-thong-dys224",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/essential-cotton-thong-dys224"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/signature-cotton-brief-dys223",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/signature-cotton-brief-dys223"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/high-leg-cotton-high-waist-brief-dys219",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/high-leg-cotton-high-waist-brief-dys219"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/mens-low-rise-bikini-brief-m008",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/mens-low-rise-bikini-brief-m008"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/mens-4-inch-stretch-boxer-brief-m007",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/mens-4-inch-stretch-boxer-brief-m007"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/mens-5-inch-pouch-support-trunk-m006",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/mens-5-inch-pouch-support-trunk-m006"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/mens-5-inch-modal-pouch-boxer-m005",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/mens-5-inch-modal-pouch-boxer-m005"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/mens-mid-rise-no-fly-trunk-m004",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/mens-mid-rise-no-fly-trunk-m004"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/mens-modal-pouch-everyday-trunk-m003",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/mens-modal-pouch-everyday-trunk-m003"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/mens-long-leg-stretch-boxer-brief-m002",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/mens-long-leg-stretch-boxer-brief-m002"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/mens-tagless-low-rise-brief-m001",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/mens-tagless-low-rise-brief-m001"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/lettered-waist-cotton-tanga-dys218",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/lettered-waist-cotton-tanga-dys218"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/wide-waistband-cotton-boxer-dys215",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/wide-waistband-cotton-boxer-dys215"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/everyday-cotton-boyshort-dys214",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/everyday-cotton-boyshort-dys214"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/long-leg-high-waist-cotton-brief-dys210",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/long-leg-high-waist-cotton-brief-dys210"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/everyday-cotton-tanga-dys208",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/everyday-cotton-tanga-dys208"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/classic-cotton-bikini-brief-dys206",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/classic-cotton-bikini-brief-dys206"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/extra-high-waist-cotton-thong-dys205",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/extra-high-waist-cotton-thong-dys205"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/cotton-stretch-g-string-dys204",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/cotton-stretch-g-string-dys204"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/essential-cotton-bikini-brief-dys202",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/essential-cotton-bikini-brief-dys202"
+      ],
+      "issues": []
+    },
+    {
+      "path": "/products/low-rise-cotton-bikini-brief-dys201",
+      "status": 200,
+      "canonical": [
+        "https://www.yiwudiyasidress.com/products/low-rise-cotton-bikini-brief-dys201"
+      ],
+      "issues": []
+    }
+  ],
+  "failures": []
+}

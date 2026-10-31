@@ -1,0 +1,129 @@
+[
+  {
+    "site": "https://kuangtueyewear.com",
+    "/": {
+      "status": 200,
+      "url": "https://kuangtueyewear.com/",
+      "xRobots": null,
+      "metaRobots": [
+        "<meta name=\"robots\" content=\"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1\" />"
+      ],
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://kuangtueyewear.com/\" />"
+      ]
+    },
+    "/robots.txt": {
+      "status": 200,
+      "url": "https://kuangtueyewear.com/robots.txt",
+      "xRobots": null,
+      "text": "User-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: *\nAllow: /\nSitemap: https://kuangtueyewear.com/sitemap.xml\n"
+    },
+    "/sitemap.xml": {
+      "status": 200,
+      "url": "https://kuangtueyewear.com/sitemap.xml",
+      "xRobots": null,
+      "locCount": 7,
+      "firstUrls": [
+        "https://kuangtueyewear.com/sitemap-products.xml",
+        "https://kuangtueyewear.com/sitemap-content.xml",
+        "https://kuangtueyewear.com/sitemap-brands.xml",
+        "https://kuangtueyewear.com/sitemap-categories.xml"
+      ]
+    }
+  },
+  {
+    "site": "https://kuangtuhandbags.com",
+    "/": {
+      "status": 200,
+      "url": "https://kuangtuhandbags.com/",
+      "xRobots": null,
+      "metaRobots": [
+        "<meta name=\"robots\" content=\"index, follow\"/>"
+      ],
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://kuangtuhandbags.com/\"/>"
+      ]
+    },
+    "/robots.txt": {
+      "status": 200,
+      "url": "https://kuangtuhandbags.com/robots.txt",
+      "xRobots": null,
+      "text": "User-agent: *\nAllow: /\nDisallow: /api/\nSitemap: https://kuangtuhandbags.com/sitemap.xml\n"
+    },
+    "/sitemap.xml": {
+      "status": 200,
+      "url": "https://kuangtuhandbags.com/sitemap.xml",
+      "xRobots": null,
+      "locCount": 3,
+      "firstUrls": [
+        "https://kuangtuhandbags.com/sitemap-categories.xml",
+        "https://kuangtuhandbags.com/sitemap-products.xml",
+        "https://kuangtuhandbags.com/sitemap-news.xml"
+      ]
+    }
+  },
+  {
+    "site": "https://elosung.cn",
+    "/": {
+      "status": 200,
+      "url": "https://elosung.cn/",
+      "xRobots": null,
+      "metaRobots": [
+        "<meta name=\"robots\" content=\"index, follow\"/>"
+      ],
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://elosung.cn\"/>"
+      ]
+    },
+    "/robots.txt": {
+      "status": 200,
+      "url": "https://elosung.cn/robots.txt",
+      "xRobots": null,
+      "text": "User-Agent: *\nAllow: /\nAllow: /api/affiliate/openapi.json\nAllow: /api/affiliate/mcp\nAllow: /api/affiliate/v1/\nAllow: /promoter-program\nDisallow: /api\nDisallow: /account\nDisallow: /admin\nDisallow: /apply\nDisallow: /auth/\nDisallow: /go/growth/\nDisallow: /notifications\nDisallow: /onboarding\nDisallow: /photo-sourcing/\nDisallow: /portal\nDisallow: /procurement/\nDisallow: /promoter\nDisallow: /rfq/\nDisallow: /sourcing-review\nDisallow: /session-tasks\nDisallow: /sign-in/\nDisallow: /sign-up\nDisallow: /supplier\n\nUser-Agent: OAI-SearchBot\nAllow: /\nAllow: /api/affiliate/openapi.json\nAllow: /api/affiliate/mcp\nAllow: /api/affiliate/v1/\nAllow: /promoter-program\nDisallow: /api\nDisallow: /account\nDisallow: /admin\nDisallow: /apply\nDisallow: /auth/\nDisallow: /go/growth/\nDisallow: /notifications\nDisallow: /onboarding\nDisallow: /photo-sourcing/\nDisallow: /portal\nDisallow: /procurement/\nDisallow: /promoter\nDisallow: /rfq/\nDisallow: /sourcing-review\nDisallow: /session-tasks\nDisallow: /sign-in/\nDisallow: /sign-up\nDisallow: /supplier\n\nUser-Agent: GPTBot\nAllow: /\nAllow: /api/affiliate/openapi.json\nAllow: /api/affiliate/mcp\nAllow: /api/affiliate/v1/\nAllow: /promoter-program\nDisallow: /api\nDisallow: /account\nDisallow: /admin\nDisallow: /apply\nDisallow: /auth/\nDisallow: /go/growth/\nDisallow: /notifications\nDisallow: /onboarding\nDisallow: /photo-sourcing/\nDisallow: /portal\nDisallow: /procurement/\nDisallow: /promoter\nDisallow: /rfq/\nDisallow: /sourcing-review\nDisallow: /session-tasks\nDisallow: /sign-in/\nDisallow: /sign-up\nDisallow: /supplier\n\nUser-Agent: ChatGPT-User\nAllow: /\nAllow: /api/affiliate/openapi.json\nAllow: /api/affiliate/mcp\nAllow: /api/affiliate/v1/\nAllow: /promoter-program\nDisallow: /api\nDisallow: /account\nDisallow: /admin\nDisallow: /apply\nDisallow: /auth/\nDisallow: /go/growth/\nDisallow: /notifications\nDisallow: /onboarding\nDisallow: /photo-sourcing/\nDisallow: /portal\nDisallow: /procurement/\nDisallow: /promoter\nDisallow: /rfq/\nDisallow: /sourcing-review\nDisallow: /session-tasks\nDisallow: /sign-in/\nDisallow: /sign-up\nDisallow: /supplier\n\nUser-Agent: Google-Extended\nAllow: /\nAllow: /api/affiliate/openapi.json\nAllow: /api/affiliate/mcp\nAllow: /api/affiliate/v1/\nAllow: /promoter-program\nDisallow: /api\nDisallow: /account\nDisallow: /admin\nDisallow: /apply\nDisallow: /auth/\nDisallow: /go/growth/\nDisallow: /notifications\nDisallow: /onboarding\nDisallow: /photo-sourcing/\nDisallow: /portal\nDisallow: /procurement/\nDisallow: /promoter\nDisallow: /rfq/\nDisallow: /sourcing-review\nDisallow: /session-tasks\nDisallow: /sign-in/\nDisallow: /sign-up\nDisallow: /supplier\n\nUser-Agent: ClaudeBot\nAllow: /\nAllow: /api/affiliate/openapi.json\nAllow: /api/affiliate/mcp\nAllow: /api/affiliate/v1/\nAllow: /promoter-program\nDisallow: /api\nDisallow: /account\nDisallow: /admin\nDisallow: /apply\nDisallow: /auth/\nDisallow: /go/growth/\nDisallow: /notifications\nDisallow: /onboarding\nDisallow: /photo-sourcing/\nDisallow: /portal\nDisallow: /procurement/\nDisallow: /promoter\nDisallow: /rfq/\nDisallow: /sourcing-review"
+    },
+    "/sitemap.xml": {
+      "status": 200,
+      "url": "https://elosung.cn/sitemap.xml",
+      "xRobots": null,
+      "locCount": 25,
+      "firstUrls": [
+        "https://elosung.cn/sitemaps/static.xml",
+        "https://elosung.cn/sitemaps/products-en.xml",
+        "https://elosung.cn/sitemaps/products-en-2.xml",
+        "https://elosung.cn/sitemaps/products-en-3.xml"
+      ]
+    }
+  },
+  {
+    "site": "https://cupnora.com",
+    "/": {
+      "status": 200,
+      "url": "https://cupnora.com/en",
+      "xRobots": null,
+      "metaRobots": [
+        "<meta name=\"robots\" content=\"index, follow, max-image-preview:large\"/>"
+      ],
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://cupnora.com/en\"/>"
+      ]
+    },
+    "/robots.txt": {
+      "status": 200,
+      "url": "https://cupnora.com/robots.txt",
+      "xRobots": null,
+      "text": "User-agent: *\nAllow: /\nDisallow: /api/\nSitemap: https://cupnora.com/sitemap.xml\nSitemap: https://cupnora.com/sitemap-index.xml\n"
+    },
+    "/sitemap.xml": {
+      "status": 200,
+      "url": "https://cupnora.com/sitemap.xml",
+      "xRobots": null,
+      "locCount": 1562,
+      "firstUrls": [
+        "https://cupnora.com/en",
+        "https://cupnora.com/en/products",
+        "https://cupnora.com/en/custom",
+        "https://cupnora.com/en/stock"
+      ]
+    }
+  }
+]

@@ -1,0 +1,1621 @@
+[
+  {
+    "site": "https://kuangtueyewear.com",
+    "groups": [
+      {
+        "sitemap": "https://kuangtueyewear.com/sitemap-products.xml",
+        "count": 1988,
+        "samples": [
+          "https://kuangtueyewear.com/products/tiffany-tf5006/",
+          "https://kuangtueyewear.com/products/bvlgari-bv40090u/",
+          "https://kuangtueyewear.com/products/rayban-yupoo-154018630/"
+        ]
+      },
+      {
+        "sitemap": "https://kuangtueyewear.com/sitemap-content.xml",
+        "count": 1,
+        "samples": [
+          "https://kuangtueyewear.com/catalogue/"
+        ]
+      },
+      {
+        "sitemap": "https://kuangtueyewear.com/sitemap-brands.xml",
+        "count": 31,
+        "samples": [
+          "https://kuangtueyewear.com/brands/balenciaga/",
+          "https://kuangtueyewear.com/brands/bottega-veneta/",
+          "https://kuangtueyewear.com/brands/versace/"
+        ]
+      },
+      {
+        "sitemap": "https://kuangtueyewear.com/sitemap-categories.xml",
+        "count": 8,
+        "samples": [
+          "https://kuangtueyewear.com/wholesale-sunglasses/square/",
+          "https://kuangtueyewear.com/wholesale-sunglasses/rimless/",
+          "https://kuangtueyewear.com/wholesale-sunglasses/gradient-lens/"
+        ]
+      },
+      {
+        "sitemap": "https://kuangtueyewear.com/sitemap-insights.xml",
+        "count": 8,
+        "samples": [
+          "https://kuangtueyewear.com/insights/how-to-source-designer-sunglasses-wholesale/",
+          "https://kuangtueyewear.com/insights/eyewear-frame-size-guide-for-retailers/",
+          "https://kuangtueyewear.com/insights/yiwu-eyewear-supplier-evaluation/"
+        ]
+      },
+      {
+        "sitemap": "https://kuangtueyewear.com/sitemap-news.xml",
+        "count": 43,
+        "samples": [
+          "https://kuangtueyewear.com/news/",
+          "https://kuangtueyewear.com/news/ray-ban-caravan-rb3136-vs-aviator-rb3025/",
+          "https://kuangtueyewear.com/news/tom-ford-ft1327-rectangular-sunglasses/"
+        ]
+      },
+      {
+        "sitemap": "https://kuangtueyewear.com/sitemap-pages.xml",
+        "count": 13,
+        "samples": [
+          "https://kuangtueyewear.com/wholesale-sunglasses/",
+          "https://kuangtueyewear.com/sunglasses-supplier-china/",
+          "https://kuangtueyewear.com/terms/"
+        ]
+      }
+    ],
+    "checked": [
+      {
+        "url": "https://kuangtueyewear.com/products/tiffany-tf5006/",
+        "final": "https://kuangtueyewear.com/products/tiffany-tf5006/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://kuangtueyewear.com/products/tiffany-tf5006/\" />"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://kuangtueyewear.com/products/bvlgari-bv40090u/",
+        "final": "https://kuangtueyewear.com/products/bvlgari-bv40090u/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://kuangtueyewear.com/products/bvlgari-bv40090u/\" />"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://kuangtueyewear.com/products/rayban-yupoo-154018630/",
+        "final": "https://kuangtueyewear.com/products/rayban-yupoo-154018630/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://kuangtueyewear.com/products/rayban-yupoo-154018630/\" />"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://kuangtueyewear.com/catalogue/",
+        "final": "https://kuangtueyewear.com/catalogue/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://kuangtueyewear.com/catalogue/\" />"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://kuangtueyewear.com/brands/balenciaga/",
+        "final": "https://kuangtueyewear.com/brands/balenciaga/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://kuangtueyewear.com/brands/balenciaga/\" />"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://kuangtueyewear.com/brands/bottega-veneta/",
+        "final": "https://kuangtueyewear.com/brands/bottega-veneta/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://kuangtueyewear.com/brands/bottega-veneta/\" />"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://kuangtueyewear.com/brands/versace/",
+        "final": "https://kuangtueyewear.com/brands/versace/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://kuangtueyewear.com/brands/versace/\" />"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://kuangtueyewear.com/wholesale-sunglasses/square/",
+        "final": "https://kuangtueyewear.com/wholesale-sunglasses/square/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://kuangtueyewear.com/wholesale-sunglasses/square/\" />"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://kuangtueyewear.com/wholesale-sunglasses/rimless/",
+        "final": "https://kuangtueyewear.com/wholesale-sunglasses/rimless/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://kuangtueyewear.com/wholesale-sunglasses/rimless/\" />"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://kuangtueyewear.com/wholesale-sunglasses/gradient-lens/",
+        "final": "https://kuangtueyewear.com/wholesale-sunglasses/gradient-lens/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://kuangtueyewear.com/wholesale-sunglasses/gradient-lens/\" />"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://kuangtueyewear.com/insights/how-to-source-designer-sunglasses-wholesale/",
+        "final": "https://kuangtueyewear.com/insights/how-to-source-designer-sunglasses-wholesale/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://kuangtueyewear.com/insights/how-to-source-designer-sunglasses-wholesale/\" />"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://kuangtueyewear.com/insights/eyewear-frame-size-guide-for-retailers/",
+        "final": "https://kuangtueyewear.com/insights/eyewear-frame-size-guide-for-retailers/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://kuangtueyewear.com/insights/eyewear-frame-size-guide-for-retailers/\" />"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://kuangtueyewear.com/insights/yiwu-eyewear-supplier-evaluation/",
+        "final": "https://kuangtueyewear.com/insights/yiwu-eyewear-supplier-evaluation/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://kuangtueyewear.com/insights/yiwu-eyewear-supplier-evaluation/\" />"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://kuangtueyewear.com/news/",
+        "final": "https://kuangtueyewear.com/news/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://kuangtueyewear.com/news/\" />"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://kuangtueyewear.com/news/ray-ban-caravan-rb3136-vs-aviator-rb3025/",
+        "final": "https://kuangtueyewear.com/news/ray-ban-caravan-rb3136-vs-aviator-rb3025/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://kuangtueyewear.com/news/ray-ban-caravan-rb3136-vs-aviator-rb3025/\" />"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://kuangtueyewear.com/news/tom-ford-ft1327-rectangular-sunglasses/",
+        "final": "https://kuangtueyewear.com/news/tom-ford-ft1327-rectangular-sunglasses/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://kuangtueyewear.com/news/tom-ford-ft1327-rectangular-sunglasses/\" />"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://kuangtueyewear.com/wholesale-sunglasses/",
+        "final": "https://kuangtueyewear.com/wholesale-sunglasses/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://kuangtueyewear.com/wholesale-sunglasses/\" />"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://kuangtueyewear.com/sunglasses-supplier-china/",
+        "final": "https://kuangtueyewear.com/sunglasses-supplier-china/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://kuangtueyewear.com/sunglasses-supplier-china/\" />"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://kuangtueyewear.com/terms/",
+        "final": "https://kuangtueyewear.com/terms/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://kuangtueyewear.com/terms/\" />"
+        ],
+        "h1Count": 1
+      }
+    ]
+  },
+  {
+    "site": "https://kuangtuhandbags.com",
+    "groups": [
+      {
+        "sitemap": "https://kuangtuhandbags.com/sitemap-categories.xml",
+        "count": 388,
+        "samples": [
+          "https://kuangtuhandbags.com/moq/",
+          "https://kuangtuhandbags.com/samples/",
+          "https://kuangtuhandbags.com/the-edit/the-tote-edit/page/14/"
+        ]
+      },
+      {
+        "sitemap": "https://kuangtuhandbags.com/sitemap-products.xml",
+        "count": 2000,
+        "samples": [
+          "https://kuangtuhandbags.com/products/coach-mini-boston-satchel-beige-signature-18cm/",
+          "https://kuangtuhandbags.com/products/hermes-kelly-shoulder-bag-tan/",
+          "https://kuangtuhandbags.com/products/chanel-suede-quilted-shoulder-bag/"
+        ]
+      },
+      {
+        "sitemap": "https://kuangtuhandbags.com/sitemap-news.xml",
+        "count": 61,
+        "samples": [
+          "https://kuangtuhandbags.com/news/",
+          "https://kuangtuhandbags.com/news/burberry-mini-pocket-80393611-open-top-materials/",
+          "https://kuangtuhandbags.com/news/prada-bonnie-small-shoulder-bag-vs-medium-handbag/"
+        ]
+      }
+    ],
+    "checked": [
+      {
+        "url": "https://kuangtuhandbags.com/moq/",
+        "final": "https://kuangtuhandbags.com/moq/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://kuangtuhandbags.com/moq/\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://kuangtuhandbags.com/samples/",
+        "final": "https://kuangtuhandbags.com/samples/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://kuangtuhandbags.com/samples/\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://kuangtuhandbags.com/the-edit/the-tote-edit/page/14/",
+        "final": "https://kuangtuhandbags.com/the-edit/the-tote-edit/page/14/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://kuangtuhandbags.com/the-edit/the-tote-edit/page/14/\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://kuangtuhandbags.com/products/coach-mini-boston-satchel-beige-signature-18cm/",
+        "final": "https://kuangtuhandbags.com/products/coach-mini-boston-satchel-beige-signature-18cm/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://kuangtuhandbags.com/products/coach-mini-boston-satchel-beige-signature-18cm/\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://kuangtuhandbags.com/products/hermes-kelly-shoulder-bag-tan/",
+        "final": "https://kuangtuhandbags.com/products/hermes-kelly-shoulder-bag-tan/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://kuangtuhandbags.com/products/hermes-kelly-shoulder-bag-tan/\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://kuangtuhandbags.com/products/chanel-suede-quilted-shoulder-bag/",
+        "final": "https://kuangtuhandbags.com/products/chanel-suede-quilted-shoulder-bag/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://kuangtuhandbags.com/products/chanel-suede-quilted-shoulder-bag/\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://kuangtuhandbags.com/news/",
+        "final": "https://kuangtuhandbags.com/news/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://kuangtuhandbags.com/news/\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://kuangtuhandbags.com/news/burberry-mini-pocket-80393611-open-top-materials/",
+        "final": "https://kuangtuhandbags.com/news/burberry-mini-pocket-80393611-open-top-materials/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://kuangtuhandbags.com/news/burberry-mini-pocket-80393611-open-top-materials/\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://kuangtuhandbags.com/news/prada-bonnie-small-shoulder-bag-vs-medium-handbag/",
+        "final": "https://kuangtuhandbags.com/news/prada-bonnie-small-shoulder-bag-vs-medium-handbag/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://kuangtuhandbags.com/news/prada-bonnie-small-shoulder-bag-vs-medium-handbag/\"/>"
+        ],
+        "h1Count": 1
+      }
+    ]
+  },
+  {
+    "site": "https://elosung.cn",
+    "groups": [
+      {
+        "sitemap": "https://elosung.cn/sitemaps/static.xml",
+        "count": 252,
+        "samples": [
+          "https://elosung.cn/",
+          "https://elosung.cn/es",
+          "https://elosung.cn/developers"
+        ]
+      },
+      {
+        "sitemap": "https://elosung.cn/sitemaps/products-en.xml",
+        "count": 1000,
+        "samples": [
+          "https://elosung.cn/products/01-3128798",
+          "https://elosung.cn/products/08001",
+          "https://elosung.cn/products/38134"
+        ]
+      },
+      {
+        "sitemap": "https://elosung.cn/sitemaps/products-en-2.xml",
+        "count": 1000,
+        "samples": [
+          "https://elosung.cn/products/38135",
+          "https://elosung.cn/products/38136",
+          "https://elosung.cn/products/60684"
+        ]
+      },
+      {
+        "sitemap": "https://elosung.cn/sitemaps/products-en-3.xml",
+        "count": 1000,
+        "samples": [
+          "https://elosung.cn/products/60685",
+          "https://elosung.cn/products/60686",
+          "https://elosung.cn/products/90101"
+        ]
+      },
+      {
+        "sitemap": "https://elosung.cn/sitemaps/products-en-4.xml",
+        "count": 1000,
+        "samples": [
+          "https://elosung.cn/products/90104",
+          "https://elosung.cn/products/90105",
+          "https://elosung.cn/products/Elosung28489"
+        ]
+      },
+      {
+        "sitemap": "https://elosung.cn/sitemaps/products-en-5.xml",
+        "count": 1000,
+        "samples": [
+          "https://elosung.cn/products/Elosung28500",
+          "https://elosung.cn/products/Elosung28502",
+          "https://elosung.cn/products/Elosung34889"
+        ]
+      },
+      {
+        "sitemap": "https://elosung.cn/sitemaps/products-en-6.xml",
+        "count": 1000,
+        "samples": [
+          "https://elosung.cn/products/Elosung34896",
+          "https://elosung.cn/products/Elosung34901",
+          "https://elosung.cn/products/Elosung39393"
+        ]
+      },
+      {
+        "sitemap": "https://elosung.cn/sitemaps/products-en-7.xml",
+        "count": 1000,
+        "samples": [
+          "https://elosung.cn/products/Elosung39394",
+          "https://elosung.cn/products/Elosung39398",
+          "https://elosung.cn/products/Elosung43349"
+        ]
+      },
+      {
+        "sitemap": "https://elosung.cn/sitemaps/products-en-8.xml",
+        "count": 1000,
+        "samples": [
+          "https://elosung.cn/products/Elosung43353",
+          "https://elosung.cn/products/Elosung43357",
+          "https://elosung.cn/products/Elosung48196"
+        ]
+      },
+      {
+        "sitemap": "https://elosung.cn/sitemaps/products-en-9.xml",
+        "count": 1000,
+        "samples": [
+          "https://elosung.cn/products/Elosung48199",
+          "https://elosung.cn/products/Elosung48203",
+          "https://elosung.cn/products/Elosung53251"
+        ]
+      },
+      {
+        "sitemap": "https://elosung.cn/sitemaps/products-en-10.xml",
+        "count": 860,
+        "samples": [
+          "https://elosung.cn/products/Elosung53255",
+          "https://elosung.cn/products/Elosung53257",
+          "https://elosung.cn/products/WSTG"
+        ]
+      },
+      {
+        "sitemap": "https://elosung.cn/sitemaps/products-es.xml",
+        "count": 1000,
+        "samples": [
+          "https://elosung.cn/es/products/01-3128798",
+          "https://elosung.cn/es/products/08001",
+          "https://elosung.cn/es/products/38135"
+        ]
+      },
+      {
+        "sitemap": "https://elosung.cn/sitemaps/products-es-2.xml",
+        "count": 1000,
+        "samples": [
+          "https://elosung.cn/es/products/38136",
+          "https://elosung.cn/es/products/38138",
+          "https://elosung.cn/es/products/60686"
+        ]
+      },
+      {
+        "sitemap": "https://elosung.cn/sitemaps/products-es-3.xml",
+        "count": 1000,
+        "samples": [
+          "https://elosung.cn/es/products/60687",
+          "https://elosung.cn/es/products/60688",
+          "https://elosung.cn/es/products/90165"
+        ]
+      },
+      {
+        "sitemap": "https://elosung.cn/sitemaps/products-es-4.xml",
+        "count": 1000,
+        "samples": [
+          "https://elosung.cn/es/products/90166",
+          "https://elosung.cn/es/products/90167",
+          "https://elosung.cn/es/products/Elosung28588"
+        ]
+      },
+      {
+        "sitemap": "https://elosung.cn/sitemaps/products-es-5.xml",
+        "count": 1000,
+        "samples": [
+          "https://elosung.cn/es/products/Elosung28591",
+          "https://elosung.cn/es/products/Elosung28592",
+          "https://elosung.cn/es/products/Elosung35060"
+        ]
+      },
+      {
+        "sitemap": "https://elosung.cn/sitemaps/products-es-6.xml",
+        "count": 1000,
+        "samples": [
+          "https://elosung.cn/es/products/Elosung35074",
+          "https://elosung.cn/es/products/Elosung35092",
+          "https://elosung.cn/es/products/Elosung39499"
+        ]
+      },
+      {
+        "sitemap": "https://elosung.cn/sitemaps/products-es-7.xml",
+        "count": 1000,
+        "samples": [
+          "https://elosung.cn/es/products/Elosung39501",
+          "https://elosung.cn/es/products/Elosung39505",
+          "https://elosung.cn/es/products/Elosung43496"
+        ]
+      },
+      {
+        "sitemap": "https://elosung.cn/sitemaps/products-es-8.xml",
+        "count": 1000,
+        "samples": [
+          "https://elosung.cn/es/products/Elosung43500",
+          "https://elosung.cn/es/products/Elosung43503",
+          "https://elosung.cn/es/products/Elosung48320"
+        ]
+      },
+      {
+        "sitemap": "https://elosung.cn/sitemaps/products-es-9.xml",
+        "count": 1000,
+        "samples": [
+          "https://elosung.cn/es/products/Elosung48324",
+          "https://elosung.cn/es/products/Elosung48328",
+          "https://elosung.cn/es/products/Elosung53365"
+        ]
+      },
+      {
+        "sitemap": "https://elosung.cn/sitemaps/products-es-10.xml",
+        "count": 823,
+        "samples": [
+          "https://elosung.cn/es/products/Elosung53367",
+          "https://elosung.cn/es/products/Elosung53368",
+          "https://elosung.cn/es/products/WSTG"
+        ]
+      },
+      {
+        "sitemap": "https://elosung.cn/sitemaps/products-fr.xml",
+        "count": 5,
+        "samples": [
+          "https://elosung.cn/fr/products/44000",
+          "https://elosung.cn/fr/products/89983",
+          "https://elosung.cn/fr/products/L518"
+        ]
+      },
+      {
+        "sitemap": "https://elosung.cn/sitemaps/products-it.xml",
+        "count": 3,
+        "samples": [
+          "https://elosung.cn/it/products/60669",
+          "https://elosung.cn/it/products/Elosung38833",
+          "https://elosung.cn/it/products/Elosung51323"
+        ]
+      },
+      {
+        "sitemap": "https://elosung.cn/sitemaps/products-ru.xml",
+        "count": 2,
+        "samples": [
+          "https://elosung.cn/ru/products/58366",
+          "https://elosung.cn/ru/products/Eosung31012"
+        ]
+      },
+      {
+        "sitemap": "https://elosung.cn/sitemaps/products-zh.xml",
+        "count": 2,
+        "samples": [
+          "https://elosung.cn/zh/products/Elosung35682",
+          "https://elosung.cn/zh/products/Elosung42220"
+        ]
+      }
+    ],
+    "checked": [
+      {
+        "url": "https://elosung.cn/",
+        "final": "https://elosung.cn/",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es",
+        "final": "https://elosung.cn/es",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/developers",
+        "final": "https://elosung.cn/developers",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/developers\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/01-3128798",
+        "final": "https://elosung.cn/products/01-3128798",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/01-3128798\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/08001",
+        "final": "https://elosung.cn/products/08001",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/08001\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/38134",
+        "final": "https://elosung.cn/products/38134",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/38134\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/38135",
+        "final": "https://elosung.cn/products/38135",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/38135\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/38136",
+        "final": "https://elosung.cn/products/38136",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/38136\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/60684",
+        "final": "https://elosung.cn/products/60684",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/60684\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/60685",
+        "final": "https://elosung.cn/products/60685",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/60685\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/60686",
+        "final": "https://elosung.cn/products/60686",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/60686\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/90101",
+        "final": "https://elosung.cn/products/90101",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/90101\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/90104",
+        "final": "https://elosung.cn/products/90104",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/90104\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/90105",
+        "final": "https://elosung.cn/products/90105",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/90105\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/Elosung28489",
+        "final": "https://elosung.cn/products/Elosung28489",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/Elosung28489\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/Elosung28500",
+        "final": "https://elosung.cn/products/Elosung28500",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/Elosung28500\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/Elosung28502",
+        "final": "https://elosung.cn/products/Elosung28502",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/Elosung28502\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/Elosung34889",
+        "final": "https://elosung.cn/products/Elosung34889",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/Elosung34889\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/Elosung34896",
+        "final": "https://elosung.cn/products/Elosung34896",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/Elosung34896\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/Elosung34901",
+        "final": "https://elosung.cn/products/Elosung34901",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/Elosung34901\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/Elosung39393",
+        "final": "https://elosung.cn/products/Elosung39393",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/Elosung39393\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/Elosung39394",
+        "final": "https://elosung.cn/products/Elosung39394",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/Elosung39394\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/Elosung39398",
+        "final": "https://elosung.cn/products/Elosung39398",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/Elosung39398\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/Elosung43349",
+        "final": "https://elosung.cn/products/Elosung43349",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/Elosung43349\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/Elosung43353",
+        "final": "https://elosung.cn/products/Elosung43353",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/Elosung43353\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/Elosung43357",
+        "final": "https://elosung.cn/products/Elosung43357",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/Elosung43357\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/Elosung48196",
+        "final": "https://elosung.cn/products/Elosung48196",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/Elosung48196\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/Elosung48199",
+        "final": "https://elosung.cn/products/Elosung48199",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/Elosung48199\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/Elosung48203",
+        "final": "https://elosung.cn/products/Elosung48203",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/Elosung48203\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/Elosung53251",
+        "final": "https://elosung.cn/products/Elosung53251",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/Elosung53251\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/Elosung53255",
+        "final": "https://elosung.cn/products/Elosung53255",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/Elosung53255\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/Elosung53257",
+        "final": "https://elosung.cn/products/Elosung53257",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/Elosung53257\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/products/WSTG",
+        "final": "https://elosung.cn/products/WSTG",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/products/WSTG\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/01-3128798",
+        "final": "https://elosung.cn/es/products/01-3128798",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/01-3128798\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/08001",
+        "final": "https://elosung.cn/es/products/08001",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/08001\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/38135",
+        "final": "https://elosung.cn/es/products/38135",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/38135\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/38136",
+        "final": "https://elosung.cn/es/products/38136",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/38136\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/38138",
+        "final": "https://elosung.cn/es/products/38138",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/38138\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/60686",
+        "final": "https://elosung.cn/es/products/60686",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/60686\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/60687",
+        "final": "https://elosung.cn/es/products/60687",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/60687\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/60688",
+        "final": "https://elosung.cn/es/products/60688",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/60688\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/90165",
+        "final": "https://elosung.cn/es/products/90165",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/90165\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/90166",
+        "final": "https://elosung.cn/es/products/90166",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/90166\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/90167",
+        "final": "https://elosung.cn/es/products/90167",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/90167\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/Elosung28588",
+        "final": "https://elosung.cn/es/products/Elosung28588",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/Elosung28588\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/Elosung28591",
+        "final": "https://elosung.cn/es/products/Elosung28591",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/Elosung28591\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/Elosung28592",
+        "final": "https://elosung.cn/es/products/Elosung28592",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/Elosung28592\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/Elosung35060",
+        "final": "https://elosung.cn/es/products/Elosung35060",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/Elosung35060\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/Elosung35074",
+        "final": "https://elosung.cn/es/products/Elosung35074",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/Elosung35074\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/Elosung35092",
+        "final": "https://elosung.cn/es/products/Elosung35092",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/Elosung35092\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/Elosung39499",
+        "final": "https://elosung.cn/es/products/Elosung39499",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/Elosung39499\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/Elosung39501",
+        "final": "https://elosung.cn/es/products/Elosung39501",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/Elosung39501\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/Elosung39505",
+        "final": "https://elosung.cn/es/products/Elosung39505",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/Elosung39505\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/Elosung43496",
+        "final": "https://elosung.cn/es/products/Elosung43496",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/Elosung43496\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/Elosung43500",
+        "final": "https://elosung.cn/es/products/Elosung43500",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/Elosung43500\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/Elosung43503",
+        "final": "https://elosung.cn/es/products/Elosung43503",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/Elosung43503\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/Elosung48320",
+        "final": "https://elosung.cn/es/products/Elosung48320",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/Elosung48320\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/Elosung48324",
+        "final": "https://elosung.cn/es/products/Elosung48324",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/Elosung48324\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/Elosung48328",
+        "final": "https://elosung.cn/es/products/Elosung48328",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/Elosung48328\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/Elosung53365",
+        "final": "https://elosung.cn/es/products/Elosung53365",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/Elosung53365\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/Elosung53367",
+        "final": "https://elosung.cn/es/products/Elosung53367",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/Elosung53367\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/Elosung53368",
+        "final": "https://elosung.cn/es/products/Elosung53368",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/Elosung53368\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/es/products/WSTG",
+        "final": "https://elosung.cn/es/products/WSTG",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/es/products/WSTG\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/fr/products/44000",
+        "final": "https://elosung.cn/fr/products/44000",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/fr/products/44000\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/fr/products/89983",
+        "final": "https://elosung.cn/fr/products/89983",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/fr/products/89983\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/fr/products/L518",
+        "final": "https://elosung.cn/fr/products/L518",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/fr/products/L518\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/it/products/60669",
+        "final": "https://elosung.cn/it/products/60669",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/it/products/60669\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/it/products/Elosung38833",
+        "final": "https://elosung.cn/it/products/Elosung38833",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/it/products/Elosung38833\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/it/products/Elosung51323",
+        "final": "https://elosung.cn/it/products/Elosung51323",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/it/products/Elosung51323\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/ru/products/58366",
+        "final": "https://elosung.cn/ru/products/58366",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/ru/products/58366\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/ru/products/Eosung31012",
+        "final": "https://elosung.cn/ru/products/Eosung31012",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/ru/products/Eosung31012\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/zh/products/Elosung35682",
+        "final": "https://elosung.cn/zh/products/Elosung35682",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/zh/products/Elosung35682\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://elosung.cn/zh/products/Elosung42220",
+        "final": "https://elosung.cn/zh/products/Elosung42220",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://elosung.cn/zh/products/Elosung42220\"/>"
+        ],
+        "h1Count": 1
+      }
+    ]
+  },
+  {
+    "site": "https://cupnora.com",
+    "groups": [
+      {
+        "sitemap": "https://cupnora.com/sitemap.xml",
+        "count": 1562,
+        "samples": [
+          "https://cupnora.com/en",
+          "https://cupnora.com/en/products",
+          "https://cupnora.com/en/custom",
+          "https://cupnora.com/en/stock",
+          "https://cupnora.com/en/quality",
+          "https://cupnora.com/en/about",
+          "https://cupnora.com/en/contact",
+          "https://cupnora.com/en/guides",
+          "https://cupnora.com/en/collections",
+          "https://cupnora.com/en/applications",
+          "https://cupnora.com/en/editorial-policy",
+          "https://cupnora.com/en/sourcing-terms",
+          "https://cupnora.com/en/certificates",
+          "https://cupnora.com/en/exhibitions",
+          "https://cupnora.com/en/manufacturing",
+          "https://cupnora.com/en/materials",
+          "https://cupnora.com/en/sampling",
+          "https://cupnora.com/en/packaging",
+          "https://cupnora.com/en/faq",
+          "https://cupnora.com/en/resources",
+          "https://cupnora.com/zh",
+          "https://cupnora.com/zh/products",
+          "https://cupnora.com/zh/custom",
+          "https://cupnora.com/zh/stock"
+        ]
+      }
+    ],
+    "checked": [
+      {
+        "url": "https://cupnora.com/en",
+        "final": "https://cupnora.com/en",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://cupnora.com/en\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://cupnora.com/en/products",
+        "final": "https://cupnora.com/en/products",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://cupnora.com/en/products\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://cupnora.com/en/custom",
+        "final": "https://cupnora.com/en/custom",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://cupnora.com/en/custom\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://cupnora.com/en/stock",
+        "final": "https://cupnora.com/en/stock",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://cupnora.com/en/stock\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://cupnora.com/en/quality",
+        "final": "https://cupnora.com/en/quality",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://cupnora.com/en/quality\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://cupnora.com/en/about",
+        "final": "https://cupnora.com/en/about",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://cupnora.com/en/about\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://cupnora.com/en/contact",
+        "final": "https://cupnora.com/en/contact",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://cupnora.com/en/contact\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://cupnora.com/en/guides",
+        "final": "https://cupnora.com/en/guides",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://cupnora.com/en/guides\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://cupnora.com/en/collections",
+        "final": "https://cupnora.com/en/collections",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://cupnora.com/en/collections\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://cupnora.com/en/applications",
+        "final": "https://cupnora.com/en/applications",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://cupnora.com/en/applications\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://cupnora.com/en/editorial-policy",
+        "final": "https://cupnora.com/en/editorial-policy",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://cupnora.com/en/editorial-policy\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://cupnora.com/en/sourcing-terms",
+        "final": "https://cupnora.com/en/sourcing-terms",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://cupnora.com/en/sourcing-terms\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://cupnora.com/en/certificates",
+        "final": "https://cupnora.com/en/certificates",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://cupnora.com/en/certificates\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://cupnora.com/en/exhibitions",
+        "final": "https://cupnora.com/en/exhibitions",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://cupnora.com/en/exhibitions\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://cupnora.com/en/manufacturing",
+        "final": "https://cupnora.com/en/manufacturing",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://cupnora.com/en/manufacturing\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://cupnora.com/en/materials",
+        "final": "https://cupnora.com/en/materials",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://cupnora.com/en/materials\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://cupnora.com/en/sampling",
+        "final": "https://cupnora.com/en/sampling",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://cupnora.com/en/sampling\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://cupnora.com/en/packaging",
+        "final": "https://cupnora.com/en/packaging",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://cupnora.com/en/packaging\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://cupnora.com/en/faq",
+        "final": "https://cupnora.com/en/faq",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://cupnora.com/en/faq\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://cupnora.com/en/resources",
+        "final": "https://cupnora.com/en/resources",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://cupnora.com/en/resources\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://cupnora.com/zh",
+        "final": "https://cupnora.com/zh",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://cupnora.com/zh\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://cupnora.com/zh/products",
+        "final": "https://cupnora.com/zh/products",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://cupnora.com/zh/products\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://cupnora.com/zh/custom",
+        "final": "https://cupnora.com/zh/custom",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://cupnora.com/zh/custom\"/>"
+        ],
+        "h1Count": 1
+      },
+      {
+        "url": "https://cupnora.com/zh/stock",
+        "final": "https://cupnora.com/zh/stock",
+        "status": 200,
+        "noindex": false,
+        "canonical": [
+          "<link rel=\"canonical\" href=\"https://cupnora.com/zh/stock\"/>"
+        ],
+        "h1Count": 1
+      }
+    ]
+  }
+]

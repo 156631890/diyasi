@@ -1,0 +1,75 @@
+[
+  {
+    "path": "/resources/private-label-underwear-manufacturer",
+    "status": 301,
+    "location": "/manufacturers/private-label-underwear-manufacturer"
+  },
+  {
+    "path": "/resources/mens-underwear-manufacturer-private-label",
+    "status": 301,
+    "location": "/manufacturers/mens-underwear-manufacturer"
+  },
+  {
+    "path": "/resources/120-pcs-moq-underwear-manufacturer",
+    "status": 301,
+    "location": "/manufacturers/low-moq-underwear-manufacturer"
+  },
+  {
+    "path": "/",
+    "status": 200,
+    "xRobots": null,
+    "h1Count": 1,
+    "robots": [
+      "<meta name=\"robots\" content=\"index, follow\"/>"
+    ],
+    "lang": [
+      "en"
+    ],
+    "canonical": [
+      "<link rel=\"canonical\" href=\"https://www.yiwudiyasidress.com\"/>"
+    ],
+    "robotsTxt": null
+  },
+  {
+    "path": "/robots.txt",
+    "status": 200,
+    "xRobots": null,
+    "h1Count": 0,
+    "robots": [],
+    "lang": [],
+    "canonical": [],
+    "robotsTxt": "User-Agent: *\nAllow: /\nDisallow: /admin\nDisallow: /api\nDisallow: /payments\nDisallow: /checkout\n\nSitemap: https://www.yiwudiyasidress.com/sitemap.xml\n"
+  },
+  {
+    "path": "/fr/manufacturers/private-label-underwear-manufacturer",
+    "status": 200,
+    "xRobots": null,
+    "h1Count": 1,
+    "robots": [
+      "<meta name=\"robots\" content=\"index, follow\"/>"
+    ],
+    "lang": [
+      "fr"
+    ],
+    "canonical": [
+      "<link rel=\"canonical\" href=\"https://www.yiwudiyasidress.com/fr/manufacturers/private-label-underwear-manufacturer\"/>"
+    ],
+    "robotsTxt": null
+  },
+  {
+    "path": "/guides/underwear-manufacturing-cost",
+    "status": 200,
+    "xRobots": null,
+    "h1Count": 1,
+    "robots": [
+      "<meta name=\"robots\" content=\"index, follow\"/>"
+    ],
+    "lang": [
+      "en"
+    ],
+    "canonical": [
+      "<link rel=\"canonical\" href=\"https://www.yiwudiyasidress.com/guides/underwear-manufacturing-cost\"/>"
+    ],
+    "robotsTxt": null
+  }
+]
