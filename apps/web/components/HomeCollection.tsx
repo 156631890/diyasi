@@ -23,12 +23,12 @@ export default function HomeCollection({ products }: { products: CatalogProduct[
 
       <section className={s.hero}>
         <Image src="/media/preview/softness-campaign.webp" alt="Concept still life of ivory cotton and lace in warm natural light" fill loading="eager" fetchPriority="high" sizes="100vw" className={s.heroImage} />
-        <div className={s.heroCopy}><p className={s.eyebrow}>YIWU, CHINA · 120 PIECES PER STYLE</p><h1>Low MOQ underwear<br /><em>manufacturer.</em></h1><p>A low MOQ underwear manufacturer for your brand.<br />Cotton, lace and seamless styles. Sample guidance: 5–7 days.</p><a className={s.button} href="#collection">Explore the collection <span>↗</span></a><a className={s.heroSecondary} href={`${live}/oem-odm`}>Private label underwear manufacturing ↗</a></div>
+        <div className={s.heroCopy}><p className={s.eyebrow}>YIWU, CHINA · MADE FOR YOUR BRAND</p><h1>Underwear Manufacturer<br /><em>for your brand.</em></h1><p>Your underwear manufacturer in Yiwu.<br />Cotton, lace and seamless styles. Sample guidance: 5–7 days.</p><a className={s.button} href={`${live}/oem-odm`}>Explore manufacturing services <span>↗</span></a><a className={s.heroSecondary} href={`${live}/oem-odm`}>Private label underwear manufacturing ↗</a></div>
         <div className={s.heroCaption}><span>COTTON · LACE · SEAMLESS</span><span>THE MATERIAL MOOD / 01</span></div>
       </section>
-      <div className={s.benefits}><span>Original DIYASI styles</span><span>Samples before production</span><span>Labels & packaging, your way</span></div>
+      <div className={s.benefits}><span>Low MOQ: 120 pieces per catalogue style</span><span>Samples before production</span><span>Labels & packaging, your way</span></div>
       <section className={s.section} id="collection">
-        <div className={s.heading}><div><p className={s.eyebrow}>FIND YOUR FIT</p><h2>Underwear manufacturer <em>for boutiques.</em></h2></div><a className={s.textLink} href={`${live}/products`}>Underwear manufacturer China OEM ↗</a></div>
+        <div className={s.heading}><div><p className={s.eyebrow}>FIND YOUR FIT</p><h2>Underwear manufacturer <em>for boutiques.</em></h2></div><a className={s.textLink} href={`${live}/oem-odm`}>Compare OEM manufacturing routes ↗</a></div>
         <div className={s.shapes}>{shapes.map(shape => <a href={live + shape.href} className={s.shape} key={shape.name}><div><Image src={byModel(shape.model).image_url} alt={`${shape.name}: original DIYASI ${shape.model} photograph`} fill sizes="(max-width:700px) 34vw, 15vw" /></div><h3>{shape.name}</h3><p>{shape.detail}</p></a>)}</div>
       </section>
       <HomeFeaturedCollection products={products.filter(p => p.gender === "women").map(({ slug, model_number, product_name, collection, material_label, image_url, gallery_images, description, fabric, fit, rise, size, moq }) => ({ slug, model_number, product_name, collection, material_label, image_url, gallery_images, description, fabric, fit, rise, size, moq }))} />

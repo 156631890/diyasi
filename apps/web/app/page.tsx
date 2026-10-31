@@ -9,9 +9,9 @@ import { productByModel } from "@/lib/collections";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Low MOQ Underwear Manufacturer in Yiwu, China",
+  title: "Underwear Manufacturer | Low MOQ Private Label OEM",
   description:
-    "Work with a low MOQ underwear manufacturer in Yiwu. Compare DIYASI cotton, lace, seamless and men's styles; MOQ 120 pieces per style, sample guidance 5–7 days.",
+    "Yiwu underwear manufacturer for low MOQ private-label OEM. Start from 120 pieces per catalogue style; 5–7 day sample guidance, subject to brief review.",
   path: "/",
 });
 const faqs = [
