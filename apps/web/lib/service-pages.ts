@@ -84,7 +84,7 @@ export const servicePages: Record<string, ServicePageContent> = {
           ["OEM development", "Your technical specification, measurements, pattern references and artwork", "Feasibility, development charges, grading, production quantity and schedule"],
           ["ODM starting point", "Selected manufacturer design and a written list of changes", "The agreed design, final specification and responsibility for each approval"],
         ],
-        link: ["Prepare the logo, labels and packaging brief", "/resources/private-label-underwear-manufacturer"],
+        link: ["Prepare the logo, labels and packaging brief", "/manufacturers/private-label-underwear-manufacturer"],
       },
     ],
     faqs: [

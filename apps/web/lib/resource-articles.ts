@@ -12,3 +12,6 @@ export const resourceArticles: ResourceArticle[] = articles.map((article) => ({
       ?.image_url ?? "/media/editorial/cotton-lace-story.png",
   updatedAt: article.updatedAt,
 }));
+
+// Preserve migrated source data for the receiving service page.
+export const activeResourceArticles = resourceArticles.filter(a => !["private-label-underwear-manufacturer", "mens-underwear-manufacturer-private-label", "120-pcs-moq-underwear-manufacturer"].includes(a.slug));

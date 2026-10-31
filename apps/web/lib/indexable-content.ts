@@ -1,5 +1,6 @@
+import { manufacturerPages, sourcingUpdatedAt as manufacturerUpdatedAt } from "./manufacturer-pages";
 import { indexableProducts } from "./indexable-products";
-import { resourceArticles } from "./resource-articles";
+import { activeResourceArticles } from "./resource-articles";
 import { newsArticles } from "./news-articles";
 import { launchCollections } from "./site-info";
 import keywordPages from "@/data/keyword-pages.json";
@@ -170,7 +171,7 @@ const newsEntries: IndexableContentEntry[] = [
   })),
 ];
 
-const resourceEntries = resourceArticles.map((article) => ({
+const resourceEntries = activeResourceArticles.map((article) => ({
   path: `/resources/${article.slug}`,
   lastModified: article.updatedAt,
   changeFrequency: "monthly" as const,
@@ -199,6 +200,8 @@ export const indexableContent = {
           : seoUpdatedAt,
     })),
     ...collectionEntries,
+    { path: "/manufacturers", lastModified: manufacturerUpdatedAt, changeFrequency: "monthly", priority: 0.9 },
+    ...manufacturerPages.map(p => ({path: `/manufacturers/${p.slug}`,lastModified:manufacturerUpdatedAt,changeFrequency:"monthly" as const,priority:0.8})),
     ...resourceEntries,
     ...newsEntries,
     ...productEntries.map((entry) => ({ ...entry, lastModified: keywordUpdatedAt })),
@@ -206,6 +209,8 @@ export const indexableContent = {
   paths: [
     ...pageEntries,
     ...collectionEntries,
+    { path: "/manufacturers", lastModified: manufacturerUpdatedAt, changeFrequency: "monthly", priority: 0.9 },
+    ...manufacturerPages.map(p => ({path: `/manufacturers/${p.slug}`,lastModified:manufacturerUpdatedAt,changeFrequency:"monthly" as const,priority:0.8})),
     ...resourceEntries,
     ...newsEntries,
     ...productEntries,

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
 import { buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
-import { resourceArticles } from "@/lib/resource-articles";
+import { activeResourceArticles } from "@/lib/resource-articles";
 import ContentFaq from "@/components/ContentFaq";
 import { catalogueFaq } from "@/lib/keyword-content";
 
@@ -36,7 +36,7 @@ export default function ResourcesPage() {
       </section>
       <section className="d-section">
         <div className="d-journal-grid">
-          {resourceArticles.map((a) => (
+          {activeResourceArticles.map((a) => (
             <article className="d-journal-card" key={a.slug}>
               <div>
                 <Link href={"/resources/" + a.slug} aria-label={a.title}>

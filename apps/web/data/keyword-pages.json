@@ -1,6 +1,6 @@
 [
   {
-    "path": "/resources/120-pcs-moq-underwear-manufacturer",
+    "path": "/manufacturers/low-moq-underwear-manufacturer",
     "keyword": "120 pcs moq underwear manufacturer",
     "intent": "T",
     "status": "新建",
@@ -22,7 +22,7 @@
     "longtail_updated_at": "2026-10-08"
   },
   {
-    "path": "/resources/private-label-underwear-manufacturer",
+    "path": "/manufacturers/private-label-underwear-manufacturer",
     "keyword": "private label underwear logo and packaging",
     "intent": "I",
     "status": "已优化",
@@ -128,7 +128,7 @@
     "longtail_updated_at": "2026-10-08"
   },
   {
-    "path": "/resources/mens-underwear-manufacturer-private-label",
+    "path": "/manufacturers/mens-underwear-manufacturer",
     "keyword": "mens underwear manufacturers",
     "intent": "C",
     "status": "已优化",

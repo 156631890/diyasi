@@ -4,6 +4,9 @@ import { fileURLToPath } from "node:url";
 const nextConfig = {
   turbopack: { root: fileURLToPath(new URL("../..", import.meta.url)) },
   reactStrictMode: true,
+  async redirects() {
+    return [{"source": "/resources/private-label-underwear-manufacturer", "destination": "/manufacturers/private-label-underwear-manufacturer", "statusCode": 301}, {"source": "/resources/mens-underwear-manufacturer-private-label", "destination": "/manufacturers/mens-underwear-manufacturer", "statusCode": 301}, {"source": "/resources/120-pcs-moq-underwear-manufacturer", "destination": "/manufacturers/low-moq-underwear-manufacturer", "statusCode": 301}];
+  },
   async headers() {
     return [
       {

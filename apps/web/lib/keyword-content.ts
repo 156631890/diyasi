@@ -8,7 +8,7 @@ const keywords = new Map(pages.map((page) => [page.path, page.keyword]));
 export function keywordLink(href: string, fallback?: string): ContentLink {
   return { href, label: fallback ?? keywords.get(href) ?? href };
 }
-const resource = (slug: string) => `/resources/${slug}`;
+const resource = (slug: string) => { const migrated: Record<string,string> = {"private-label-underwear-manufacturer": "private-label-underwear-manufacturer", "mens-underwear-manufacturer-private-label": "mens-underwear-manufacturer", "120-pcs-moq-underwear-manufacturer": "low-moq-underwear-manufacturer"}; return migrated[slug] ? `/manufacturers/${migrated[slug]}` : `/resources/${slug}`; };
 const collection = (slug: string) => `/products/${slug}`;
 const product = (slug: string) => `/products/${slug}`;
 
