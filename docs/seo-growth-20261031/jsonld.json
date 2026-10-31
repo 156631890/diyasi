@@ -1,0 +1,3451 @@
+{
+  "started": "2026-10-31T10:09:43.412Z",
+  "completed": "2026-10-31T10:09:54.054Z",
+  "baseUrl": "http://localhost:3131",
+  "publicOrigin": "https://www.yiwudiyasidress.com",
+  "passed": true,
+  "pages": 193,
+  "parsedBlocks": 892,
+  "faqQuestions": 304,
+  "uniqueDefinedIds": 184,
+  "sharedIdsAreAllowed": true,
+  "idConflicts": [],
+  "unresolvedReferences": [],
+  "canonicalMismatches": [],
+  "records": [
+    {
+      "path": "/",
+      "status": 200,
+      "blocks": 3,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "CollectionPage",
+        "ItemList"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/oem-odm",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/factory",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/contact",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "LocalBusiness"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/fabrics",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/packaging",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/sustainability",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/resources",
+      "status": 200,
+      "blocks": 3,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/privacy-policy",
+      "status": 200,
+      "blocks": 3,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/return-policy",
+      "status": 200,
+      "blocks": 3,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/es",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "WebPage",
+        "BreadcrumbList",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/es/productos/ropa-interior-marca-privada",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "WebPage",
+        "BreadcrumbList",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/es/minimo-pedido-ropa-interior",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "WebPage",
+        "BreadcrumbList",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/es/ropa-interior-sin-costuras",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "WebPage",
+        "BreadcrumbList",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/es/fabricante-ropa-interior-china",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "WebPage",
+        "BreadcrumbList",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/es/empaque-personalizado",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "WebPage",
+        "BreadcrumbList",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/es/fabrica-y-control-de-calidad",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "WebPage",
+        "BreadcrumbList",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/es/contacto",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "WebPage",
+        "BreadcrumbList",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/womens-panties",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "CollectionPage",
+        "ItemList"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/cotton-underwear",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "CollectionPage",
+        "ItemList"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/cotton-thongs",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "CollectionPage",
+        "ItemList"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/lace-underwear",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "CollectionPage",
+        "ItemList"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/seamless-underwear",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "CollectionPage",
+        "ItemList"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/thongs",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "CollectionPage",
+        "ItemList"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/high-waist",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "CollectionPage",
+        "ItemList"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/mens-underwear",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "CollectionPage",
+        "ItemList"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/mens-boxer-briefs",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "CollectionPage",
+        "ItemList"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/manufacturers",
+      "status": 200,
+      "blocks": 3,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/manufacturers/private-label-underwear-manufacturer",
+      "status": 200,
+      "blocks": 6,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/manufacturers/low-moq-underwear-manufacturer",
+      "status": 200,
+      "blocks": 6,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/manufacturers/custom-underwear-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/manufacturers/seamless-underwear-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/manufacturers/mens-underwear-manufacturer",
+      "status": 200,
+      "blocks": 6,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/manufacturers/shapewear-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/manufacturers/bra-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/manufacturers/underwear-factory",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/manufacturers/lingerie-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/manufacturers/swimwear-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/manufacturers/lingerie-supplier",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/manufacturers/private-label-lingerie",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/guides",
+      "status": 200,
+      "blocks": 3,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/guides/underwear-manufacturing-cost",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Article",
+        "BreadcrumbList",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/guides/underwear-manufacturing-process",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Article",
+        "BreadcrumbList",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/guides/how-to-find-a-clothing-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Article",
+        "BreadcrumbList",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/guides/seamless-underwear-wholesale",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Article",
+        "BreadcrumbList",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/guides/underwear-moq-explained",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Article",
+        "BreadcrumbList",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/guides/starting-an-underwear-brand",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Article",
+        "BreadcrumbList",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/es/manufacturers/private-label-underwear-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/es/manufacturers/low-moq-underwear-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/es/manufacturers/custom-underwear-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/es/manufacturers/seamless-underwear-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/fr/manufacturers/private-label-underwear-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/fr/manufacturers/low-moq-underwear-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/fr/manufacturers/custom-underwear-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/fr/manufacturers/seamless-underwear-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/fr/manufacturers/mens-underwear-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/fr/manufacturers/lingerie-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/fr/manufacturers/bra-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/fr/manufacturers/underwear-factory",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/de/manufacturers/private-label-underwear-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/de/manufacturers/low-moq-underwear-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/de/manufacturers/custom-underwear-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/de/manufacturers/seamless-underwear-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/de/manufacturers/mens-underwear-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/de/manufacturers/lingerie-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/de/manufacturers/bra-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/de/manufacturers/underwear-factory",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/it/manufacturers/private-label-underwear-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/it/manufacturers/low-moq-underwear-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/it/manufacturers/custom-underwear-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/it/manufacturers/seamless-underwear-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/it/manufacturers/mens-underwear-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/it/manufacturers/lingerie-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/it/manufacturers/bra-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/it/manufacturers/underwear-factory",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Service",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/es/guides/underwear-manufacturing-cost",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/es/guides/underwear-manufacturing-process",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/es/guides/underwear-moq-explained",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/resources/custom-waistband-underwear-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/resources/laser-cut-underwear-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/resources/underwear-manufacturer-for-startup-brands",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/resources/underwear-sampling-lead-time-guide",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/resources/yiwu-underwear-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/resources/high-waisted-briefs-manufacturer",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/resources/bikini-vs-brazilian-underwear",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/resources/seamless-vs-no-show-underwear",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/resources/cotton-vs-seamless-underwear-buyers-guide",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/resources/private-label-underwear-moq-guide",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/resources/accurate-underwear-yoga-wear-manufacturing-quote",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/resources/unit-cost-custom-underwear-manufacturing",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/resources/traceless-vs-seamless-underwear-yoga-brands",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/resources/lace-underwear-oem-guide-boutique-lingerie-brands",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/resources/cotton-underwear-oem-guide-daily-basics-startups",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/resources/waistband-customization-mens-boxer-briefs-private-label",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/resources/gusset-construction-womens-underwear-comfort-qc",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/resources/sports-bra-support-levels-small-yoga-brands",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/resources/reorder-planning-after-low-moq-first-run",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/resources/us-eu-underwear-size-labeling-preparation-startup-brands",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/resources/underwear-sampling-costs-lead-times-packaging",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "CollectionPage",
+        "ItemList"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/100-cotton-vs-cotton-spandex-underwear-labels",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/organic-cotton-underwear-claims-evidence-buyers",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/cotton-gusset-vs-cotton-underwear-components",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/seamless-underwear-for-leggings-sample-review",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/high-waisted-cotton-underwear-range-planning",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/cotton-thong-underwear-everyday-range",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/womens-boxer-vs-boyshort-underwear-names",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/cotton-lace-underwear-composition-claims",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/underwear-for-white-pants-colour-opacity-test",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/2026-underwear-search-themes-factory-buyer-brief",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/underwear-leg-opening-elastic-fit-checklist",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/high-waist-underwear-waistband-roll-down-fit",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/bonded-vs-stitched-gusset-attachment-underwear",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/lace-trim-stretch-placement-underwear-samples",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/mens-no-fly-pouch-fit-sample-review",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/printed-underwear-strike-off-artwork-approval",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/underwear-bulk-shade-band-colour-consistency",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/underwear-barcode-variant-label-proofing",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/underwear-carton-protection-transit-checklist",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/underwear-line-sheet-wholesale-buyer-checklist",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/choose-underwear-manufacturer-supplier-checklist",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/thong-vs-g-string-t-string-underwear-buyers",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/underwear-fabric-gsm-thickness-opacity-guide",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/tanga-vs-bikini-vs-thong-coverage-guide",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/heat-transfer-vs-sewn-underwear-labels",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/underwear-aql-inspection-defect-checklist",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/shipping-underwear-samples-commercial-invoice-checklist",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/recycled-polyester-underwear-claims-documentation",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/underwear-multipack-assortment-planning",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/underwear-product-photography-shot-list",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/womens-boyshorts-vs-long-leg-underwear",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/v-waist-underwear-fit-measurement-guide",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/mens-briefs-vs-trunks-private-label-fit",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/modal-pouch-vs-modal-underwear-fabric-specification",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/underwear-tech-pack-measurement-specification",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/underwear-colour-lab-dip-approval-guide",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/underwear-wash-test-shrinkage-recovery-checklist",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/underwear-size-set-sample-grading-checklist",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/underwear-sku-carton-packing-list-guide",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/underwear-pre-production-sample-approval-checklist",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/cotton-vs-polyamide-underwear-private-label",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/high-waisted-briefs-vs-thongs-buying-guide",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/plain-vs-printed-mens-underwear-private-label",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/explore-the-diyasi-underwear-collection",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "NewsArticle"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/bikini-vs-brazilian-underwear-buying-notes",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/news/trunks-vs-boxer-briefs-sourcing-notes",
+      "status": 200,
+      "blocks": 4,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "BreadcrumbList",
+        "ListItem",
+        "Article"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/lace-trim-cotton-brazilian-brief-ls006",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/v-waist-lace-cotton-brief-ls005-142",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/v-waist-lace-cotton-thong-ls005",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/bonded-brazilian-seamless-brief-dys323",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/bonded-seamless-low-rise-thong-dys322",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/seamless-high-waist-full-brief-dys314",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/seamless-low-rise-brazilian-brief-dys311",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/seamless-mid-low-brazilian-brief-dys306",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/invisible-edge-cotton-gusset-thong-dys302",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/seamless-v-waist-low-rise-thong-dys301",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/printed-low-rise-mens-brief-m008-print",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/printed-mid-rise-mens-trunk-m007-print",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/contrast-waist-printed-mens-trunk-m006-print",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/printed-mid-leg-mens-boxer-brief-m005-print",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/printed-modal-pouch-boxer-brief-m004-print",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/everyday-printed-mens-boxer-brief-m003-print",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/printed-high-waist-long-leg-boxer-m002-print",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/printed-low-rise-modal-pouch-trunk-m001-print",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/everyday-cotton-mid-rise-thong-dys229",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/cotton-low-rise-t-string-dys230",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/cotton-mid-rise-t-back-thong-dys228",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/wide-waistband-cotton-tanga-thong-dys227",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/high-waist-cotton-t-string-dys226",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/cotton-high-waist-thong-dys225",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/essential-cotton-thong-dys224",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/signature-cotton-brief-dys223",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/high-leg-cotton-high-waist-brief-dys219",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/mens-low-rise-bikini-brief-m008",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/mens-4-inch-stretch-boxer-brief-m007",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/mens-5-inch-pouch-support-trunk-m006",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/mens-5-inch-modal-pouch-boxer-m005",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/mens-mid-rise-no-fly-trunk-m004",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/mens-modal-pouch-everyday-trunk-m003",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/mens-long-leg-stretch-boxer-brief-m002",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/mens-tagless-low-rise-brief-m001",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/lettered-waist-cotton-tanga-dys218",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/wide-waistband-cotton-boxer-dys215",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/everyday-cotton-boyshort-dys214",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/long-leg-high-waist-cotton-brief-dys210",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/everyday-cotton-tanga-dys208",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/classic-cotton-bikini-brief-dys206",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/extra-high-waist-cotton-thong-dys205",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/cotton-stretch-g-string-dys204",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/essential-cotton-bikini-brief-dys202",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/low-rise-cotton-bikini-brief-dys201",
+      "status": 200,
+      "blocks": 5,
+      "types": [
+        "WebSite",
+        "Organization",
+        "ImageObject",
+        "ContactPoint",
+        "PostalAddress",
+        "Product",
+        "Brand",
+        "ItemPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "errors": []
+    }
+  ],
+  "errors": []
+}
