@@ -365,21 +365,24 @@
   },
   {
     "path": "/resources/gusset-construction-womens-underwear-comfort-qc",
-    "keyword": "underwear gusset materials guide",
+    "keyword": "what is a gusset",
     "intent": "I",
     "status": "优化",
     "changes": [
       "保留旧 URL、章节、表格、型号和来源",
       "优化 title、H1、描述和首段",
       "按具体采购任务与新增指南分工",
-      "FAQ 核对、关键词锚文本内链"
+      "FAQ 核对、关键词锚文本内链",
+      "2026-11-15 DataForSEO volume expansion: answer broader style and construction questions with real catalogue examples before sourcing guidance"
     ],
     "support": [
       "cotton gusset underwear specification",
       "underwear gusset placement sample check",
-      "underwear gusset attachment inspection"
+      "underwear gusset attachment inspection",
+      "what is a gusset in underwear",
+      "pocket in underwear"
     ],
-    "longtail_updated_at": "2026-10-08"
+    "longtail_updated_at": "2026-11-15"
   },
   {
     "path": "/resources/sports-bra-support-levels-small-yoga-brands",
@@ -1303,16 +1306,21 @@
   },
   {
     "path": "/news/thong-vs-g-string-t-string-underwear-buyers",
-    "keyword": "thong vs G-string vs T-string",
+    "keyword": "g string vs thong",
     "intent": "I",
     "status": "优化",
     "changes": [
       "保留专门长尾主题、旧 URL、正文、表格、型号及来源",
       "核对/优化 title、H1、描述和首段",
       "增加有证据的底部 FAQ",
-      "连接相关专题和新增采购指南"
+      "连接相关专题和新增采购指南",
+      "2026-11-15 DataForSEO volume expansion: answer broader style and construction questions with real catalogue examples before sourcing guidance"
     ],
-    "support": []
+    "support": [
+      "thong vs g string",
+      "t string vs thong"
+    ],
+    "longtail_updated_at": "2026-11-15"
   },
   {
     "path": "/news/underwear-fabric-gsm-thickness-opacity-guide",
@@ -1446,16 +1454,21 @@
   },
   {
     "path": "/news/mens-briefs-vs-trunks-private-label-fit",
-    "keyword": "men’s briefs vs trunks",
+    "keyword": "briefs vs boxer briefs",
     "intent": "I",
     "status": "优化",
     "changes": [
       "保留专门长尾主题、旧 URL、正文、表格、型号及来源",
       "核对/优化 title、H1、描述和首段",
       "增加有证据的底部 FAQ",
-      "连接相关专题和新增采购指南"
+      "连接相关专题和新增采购指南",
+      "2026-11-15 DataForSEO volume expansion: answer broader style and construction questions with real catalogue examples before sourcing guidance"
     ],
-    "support": []
+    "support": [
+      "briefs vs trunks",
+      "types of mens underwear"
+    ],
+    "longtail_updated_at": "2026-11-15"
   },
   {
     "path": "/news/modal-pouch-vs-modal-underwear-fabric-specification",
@@ -1895,5 +1908,19 @@
       "相关主题 H2、FAQ及关键词内链"
     ],
     "support": []
+  },
+  {
+    "path": "/news/types-of-underwear-for-women",
+    "keyword": "types of underwear for women",
+    "intent": "I",
+    "status": "已优化",
+    "changes": [
+      "2026-11-15 DataForSEO volume expansion: answer broader style and construction questions with real catalogue examples before sourcing guidance"
+    ],
+    "support": [
+      "types of underwear",
+      "types of panties"
+    ],
+    "longtail_updated_at": "2026-11-15"
   }
 ]

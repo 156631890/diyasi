@@ -30,13 +30,13 @@ export const collectionBuyingGuides: Record<string, BuyingGuide> = {
     heading: "How to source women's underwear for your brand",
     intro: "Build a sample shortlist around the wearer, fabric and coverage you need. DIYASI's women's catalogue includes cotton bikinis, lace-trim briefs, thongs and laser-cut styles for wholesale and private-label enquiries.",
     checks: ["Compare front and back coverage across the same size before choosing a bikini, Brazilian brief or thong.", "Confirm the body, lace and gusset compositions separately; a cotton gusset does not mean the whole garment is cotton.", "Ask for a size/color allocation and a separate quote for labels or packaging. Catalogue quantities do not set every custom-component minimum."],
-    links: [moqGuide, sizeGuide, gussetGuide, { label: "Bikini vs Brazilian underwear coverage", href: "/news/bikini-vs-brazilian-underwear-buying-notes" }, { label: "Women's cotton thong underwear", href: "/products/cotton-thongs" }],
+    links: [{ label: "Types of underwear for women: compare shapes", href: "/news/types-of-underwear-for-women" }, moqGuide, sizeGuide, gussetGuide, { label: "Bikini vs Brazilian underwear coverage", href: "/news/bikini-vs-brazilian-underwear-buying-notes" }, { label: "Women's cotton thong underwear", href: "/products/cotton-thongs" }],
   },
   "cotton-underwear": {
     heading: "Planning a private-label cotton underwear range",
     intro: "The current cotton styles list a 95% cotton / 5% spandex body. Compare bikinis, briefs, boyshorts and thongs using actual measurements and waistband construction, then request the selected model numbers for sampling.",
     checks: ["Check stretch recovery, shrinkage and colorfastness on the fabric and garment you plan to order.", "Choose the rise and leg coverage before adding a logo; a wide branded waistband may change the fit and component minimum.", "Confirm the cotton body and gusset specifications on the approved sample and final fiber label."],
-    links: [cottonGuide, moqGuide, sampleGuide, { label: "100% cotton vs cotton-spandex labels", href: "/news/100-cotton-vs-cotton-spandex-underwear-labels" }, { label: "Shop cotton thongs and tangas", href: "/products/cotton-thongs" }],
+    links: [{ label: "Compare bikini, brief, boyshort and thong shapes", href: "/news/types-of-underwear-for-women" }, cottonGuide, moqGuide, sampleGuide, { label: "100% cotton vs cotton-spandex labels", href: "/news/100-cotton-vs-cotton-spandex-underwear-labels" }, { label: "Shop cotton thongs and tangas", href: "/products/cotton-thongs" }],
   },
   "cotton-thongs": {
     heading: "Source cotton thongs by coverage and construction",
@@ -72,7 +72,7 @@ export const collectionBuyingGuides: Record<string, BuyingGuide> = {
     heading: "Private-label men's underwear: pouch, leg and waistband",
     intro: "Compare men's briefs, trunks and boxer briefs by pouch construction and finished inseam. A modal-lined pouch describes a component, not the fiber composition of the entire garment.",
     checks: ["Request body and pouch compositions separately and verify whether the selected style has a fly.", "Set inseam measurements and tolerances by size; trunk and boxer-brief names alone do not establish leg length.", "For printed styles or branded waistbands, approve artwork scale, placement, elastic recovery and the print or elastic minimum."],
-    links: [waistbandGuide, { label: "Trunks vs boxer briefs: leg-length comparison", href: "/news/trunks-vs-boxer-briefs-sourcing-notes" }, sampleGuide, { label: "Browse men's boxer briefs", href: "/products/mens-boxer-briefs" }],
+    links: [{ label: "Briefs vs boxer briefs vs trunks: fit and coverage", href: "/news/mens-briefs-vs-trunks-private-label-fit" }, waistbandGuide, { label: "Trunks vs boxer briefs: leg-length comparison", href: "/news/trunks-vs-boxer-briefs-sourcing-notes" }, sampleGuide, { label: "Browse men's boxer briefs", href: "/products/mens-boxer-briefs" }],
   },
   "mens-boxer-briefs": {
     heading: "Specify men's boxer briefs beyond the product name",
