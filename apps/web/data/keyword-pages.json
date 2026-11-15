@@ -1,14 +1,15 @@
 [
   {
     "path": "/manufacturers/low-moq-underwear-manufacturer",
-    "keyword": "120 pcs moq underwear manufacturer",
+    "keyword": "low MOQ underwear manufacturer",
     "intent": "T",
     "status": "新建",
     "changes": [
       "新建完整采购指南",
       "主词进入 title、H1、描述和首段",
       "支撑词 H2、比较/审批表、底部 FAQ",
-      "真实型号、来源及专题/商品/指南内链"
+      "真实型号、来源及专题/商品/指南内链",
+      "2026-11-15 DataForSEO US English intent review: distinguish catalogue selection, manufacturing services and order-process guidance"
     ],
     "support": [
       "underwear private label low moq",
@@ -19,16 +20,17 @@
       "mixed color underwear order per style",
       "wholesale underwear manufacturer"
     ],
-    "longtail_updated_at": "2026-10-08"
+    "longtail_updated_at": "2026-11-15"
   },
   {
     "path": "/manufacturers/private-label-underwear-manufacturer",
-    "keyword": "private label underwear logo and packaging",
+    "keyword": "private label underwear manufacturer",
     "intent": "I",
     "status": "已优化",
     "changes": [
       "2026-10-24 DataForSEO 美国英语研究：按采购意图分工",
-      "更新真实采购说明、选型证据与内链；保留原有 URL 和产品功能"
+      "更新真实采购说明、选型证据与内链；保留原有 URL 和产品功能",
+      "2026-11-15 DataForSEO US English intent review: distinguish catalogue selection, manufacturing services and order-process guidance"
     ],
     "support": [
       "white label underwear manufacturer",
@@ -39,7 +41,7 @@
       "white label vs private label underwear",
       "private label underwear manufacturers"
     ],
-    "longtail_updated_at": "2026-10-24"
+    "longtail_updated_at": "2026-11-15"
   },
   {
     "path": "/resources/custom-waistband-underwear-manufacturer",
@@ -129,12 +131,13 @@
   },
   {
     "path": "/manufacturers/mens-underwear-manufacturer",
-    "keyword": "mens underwear manufacturers",
+    "keyword": "men's underwear manufacturer",
     "intent": "C",
     "status": "已优化",
     "changes": [
       "2026-10-24 DataForSEO 美国英语研究：按采购意图分工",
-      "更新真实采购说明、选型证据与内链；保留原有 URL 和产品功能"
+      "更新真实采购说明、选型证据与内链；保留原有 URL 和产品功能",
+      "2026-11-15 DataForSEO US English intent review: distinguish catalogue selection, manufacturing services and order-process guidance"
     ],
     "support": [
       "men's briefs manufacturer oem",
@@ -145,7 +148,7 @@
       "mens boxer briefs with custom waistband",
       "mens underwear body vs pouch fabric"
     ],
-    "longtail_updated_at": "2026-10-24"
+    "longtail_updated_at": "2026-11-15"
   },
   {
     "path": "/resources/yiwu-underwear-manufacturer",
@@ -1625,79 +1628,89 @@
   },
   {
     "path": "/products/womens-panties",
-    "keyword": "underwear manufacturer for boutiques",
+    "keyword": "wholesale women's panties",
     "intent": "C",
     "status": "优化",
     "changes": [
       "保留旧 URL、图片、目录筛选和分页",
       "优化 title、H1、描述和首段",
       "支撑词采购 H2、底部 FAQ",
-      "真实商品与新增指南内链"
+      "真实商品与新增指南内链",
+      "2026-11-15 DataForSEO US English intent review: distinguish catalogue selection, manufacturing services and order-process guidance"
     ],
-    "support": []
+    "support": [],
+    "longtail_updated_at": "2026-11-15"
   },
   {
     "path": "/products/cotton-underwear",
-    "keyword": "cotton underwear manufacturer",
+    "keyword": "wholesale cotton underwear",
     "intent": "T",
     "status": "优化",
     "changes": [
       "保留旧 URL、图片、目录筛选和分页",
       "优化 title、H1、描述和首段",
       "支撑词采购 H2、底部 FAQ",
-      "真实商品与新增指南内链"
+      "真实商品与新增指南内链",
+      "2026-11-15 DataForSEO US English intent review: distinguish catalogue selection, manufacturing services and order-process guidance"
     ],
-    "support": []
+    "support": [],
+    "longtail_updated_at": "2026-11-15"
   },
   {
     "path": "/products/cotton-thongs",
-    "keyword": "cotton thong manufacturer",
+    "keyword": "wholesale cotton thongs",
     "intent": "C",
     "status": "优化",
     "changes": [
       "保留旧 URL、图片、目录筛选和分页",
       "优化 title、H1、描述和首段",
       "支撑词采购 H2、底部 FAQ",
-      "真实商品与新增指南内链"
+      "真实商品与新增指南内链",
+      "2026-11-15 DataForSEO US English intent review: distinguish catalogue selection, manufacturing services and order-process guidance"
     ],
-    "support": []
+    "support": [],
+    "longtail_updated_at": "2026-11-15"
   },
   {
     "path": "/products/lace-underwear",
-    "keyword": "private label lingerie",
+    "keyword": "wholesale lace panties",
     "intent": "T",
     "status": "已优化",
     "changes": [
       "2026-10-24 DataForSEO 美国英语研究：按采购意图分工",
-      "更新真实采购说明、选型证据与内链；保留原有 URL 和产品功能"
+      "更新真实采购说明、选型证据与内链；保留原有 URL 和产品功能",
+      "2026-11-15 DataForSEO US English intent review: distinguish catalogue selection, manufacturing services and order-process guidance"
     ],
     "support": [],
-    "longtail_updated_at": "2026-10-24"
+    "longtail_updated_at": "2026-11-15"
   },
   {
     "path": "/products/seamless-underwear",
-    "keyword": "seamless underwear manufacturer",
+    "keyword": "wholesale seamless underwear",
     "intent": "T",
     "status": "已优化",
     "changes": [
       "2026-10-24 DataForSEO 美国英语研究：按采购意图分工",
-      "更新真实采购说明、选型证据与内链；保留原有 URL 和产品功能"
+      "更新真实采购说明、选型证据与内链；保留原有 URL 和产品功能",
+      "2026-11-15 DataForSEO US English intent review: distinguish catalogue selection, manufacturing services and order-process guidance"
     ],
     "support": [],
-    "longtail_updated_at": "2026-10-24"
+    "longtail_updated_at": "2026-11-15"
   },
   {
     "path": "/products/thongs",
-    "keyword": "thong underwear manufacturer OEM",
+    "keyword": "wholesale thongs",
     "intent": "C",
     "status": "优化",
     "changes": [
       "保留旧 URL、图片、目录筛选和分页",
       "优化 title、H1、描述和首段",
       "支撑词采购 H2、底部 FAQ",
-      "真实商品与新增指南内链"
+      "真实商品与新增指南内链",
+      "2026-11-15 DataForSEO US English intent review: distinguish catalogue selection, manufacturing services and order-process guidance"
     ],
-    "support": []
+    "support": [],
+    "longtail_updated_at": "2026-11-15"
   },
   {
     "path": "/products/high-waist",
@@ -1714,41 +1727,46 @@
   },
   {
     "path": "/products/mens-underwear",
-    "keyword": "men’s underwear OEM catalogue",
+    "keyword": "wholesale men's underwear",
     "intent": "C",
     "status": "优化",
     "changes": [
       "保留旧 URL、图片、目录筛选和分页",
       "优化 title、H1、描述和首段",
       "支撑词采购 H2、底部 FAQ",
-      "真实商品与新增指南内链"
+      "真实商品与新增指南内链",
+      "2026-11-15 DataForSEO US English intent review: distinguish catalogue selection, manufacturing services and order-process guidance"
     ],
-    "support": []
+    "support": [],
+    "longtail_updated_at": "2026-11-15"
   },
   {
     "path": "/products/mens-boxer-briefs",
-    "keyword": "men’s boxer briefs manufacturer OEM",
+    "keyword": "wholesale men's boxer briefs",
     "intent": "C",
     "status": "优化",
     "changes": [
       "保留旧 URL、图片、目录筛选和分页",
       "优化 title、H1、描述和首段",
       "支撑词采购 H2、底部 FAQ",
-      "真实商品与新增指南内链"
+      "真实商品与新增指南内链",
+      "2026-11-15 DataForSEO US English intent review: distinguish catalogue selection, manufacturing services and order-process guidance"
     ],
-    "support": []
+    "support": [],
+    "longtail_updated_at": "2026-11-15"
   },
   {
     "path": "/oem-odm",
-    "keyword": "private label underwear",
+    "keyword": "OEM vs ODM underwear manufacturing",
     "intent": "T",
     "status": "已优化",
     "changes": [
       "2026-10-24 DataForSEO 美国英语研究：按采购意图分工",
-      "更新真实采购说明、选型证据与内链；保留原有 URL 和产品功能"
+      "更新真实采购说明、选型证据与内链；保留原有 URL 和产品功能",
+      "2026-11-15 DataForSEO US English intent review: distinguish catalogue selection, manufacturing services and order-process guidance"
     ],
     "support": [],
-    "longtail_updated_at": "2026-10-24"
+    "longtail_updated_at": "2026-11-15"
   },
   {
     "path": "/about",
@@ -1817,27 +1835,30 @@
   },
   {
     "path": "/",
-    "keyword": "low MOQ underwear manufacturer",
+    "keyword": "underwear manufacturer",
     "intent": "T",
     "status": "优化",
     "changes": [
       "保留旧 URL、既有模块和交互",
       "统一 title、H1、描述和首段的主词",
-      "相关主题 H2、FAQ及关键词内链"
+      "相关主题 H2、FAQ及关键词内链",
+      "2026-11-15 DataForSEO US English intent review: distinguish catalogue selection, manufacturing services and order-process guidance"
     ],
-    "support": []
+    "support": [],
+    "longtail_updated_at": "2026-11-15"
   },
   {
     "path": "/products",
-    "keyword": "wholesale underwear manufacturers",
+    "keyword": "wholesale underwear",
     "intent": "T",
     "status": "已优化",
     "changes": [
       "2026-10-24 DataForSEO 美国英语研究：按采购意图分工",
-      "更新真实采购说明、选型证据与内链；保留原有 URL 和产品功能"
+      "更新真实采购说明、选型证据与内链；保留原有 URL 和产品功能",
+      "2026-11-15 DataForSEO US English intent review: distinguish catalogue selection, manufacturing services and order-process guidance"
     ],
     "support": [],
-    "longtail_updated_at": "2026-10-24"
+    "longtail_updated_at": "2026-11-15"
   },
   {
     "path": "/resources",

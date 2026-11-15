@@ -74,7 +74,7 @@ export function catalogMetadata(
     ? Number(first(search.page))
     : 1;
   const meta = buildMetadata({
-    title: `${collection ? collection.seoTitle : "Wholesale Underwear Manufacturer in China"}${page > 1 ? ` · Page ${page}` : ""}`,
+    title: `${collection ? collection.seoTitle : "Wholesale Underwear | Cotton, Lace & Men's Styles"}${page > 1 ? ` · Page ${page}` : ""}`,
     description:
       collection?.description ??
       "Source wholesale underwear from DIYASI in Yiwu, China. Compare 45 cotton, lace, seamless and men's styles, then request samples and a confirmed bulk quote.",
@@ -108,7 +108,7 @@ export default function CatalogPage({
     if (n > 1) params.set("page", String(n));
     return path + (params.size ? "?" + params.toString() : "");
   };
-  const title = collection?.title ?? "Wholesale Underwear Manufacturer in China";
+  const title = collection?.title ?? "Wholesale Underwear Catalogue";
   const selection = sourcingSelections[collection?.slug ?? "all"];
   return (
     <main id="main-content" className="d-catalog">
@@ -289,7 +289,7 @@ export default function CatalogPage({
         )}
         {page === 1 && !q && !search.sort && selection && <SourcingSelection selection={selection} />}
         {page === 1 && !q && <BuyerGuidance guide={collection ? collectionBuyingGuides[collection.slug] : {
-          heading: "Small batch underwear production China: from catalogue to sample",
+          heading: "Plan a small-batch underwear order from the catalogue",
           intro: "Use the catalogue to compare actual styles before committing to a production run. Most listed specifications start at 120 pieces per style, with mixed sizes and colors subject to confirmation; custom fabrics and branding can have separate minimums.",
           checks: ["Shortlist model numbers, sizes and colors against your target customer.", "Request sample fees, artwork charges, packaging costs and freight as separate quotation items.", "Approve measurements, fabric, labels and a delivery schedule in writing before bulk production."],
           links: [moqGuide, sampleGuide, keywordLink("/factory"), keywordLink("/manufacturers/low-moq-underwear-manufacturer"), keywordLink("/resources/yiwu-underwear-manufacturer")],

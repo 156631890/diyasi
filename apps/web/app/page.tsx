@@ -9,7 +9,7 @@ import { productByModel } from "@/lib/collections";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Underwear Manufacturer | Low MOQ Private Label OEM",
+  title: "Underwear Manufacturer in China | Private Label OEM",
   description:
     "Yiwu underwear manufacturer for low MOQ private-label OEM. Start from 120 pieces per catalogue style; 5–7 day sample guidance, subject to brief review.",
   path: "/",
@@ -21,7 +21,7 @@ const faqs = [
       "An OEM brief identifies the brand-supplied pattern and specifications; an ODM starting point uses a selected manufacturer design with agreed changes. DIYASI reviews logo application, waistbands, care labels and packaging against your sample brief.",
   },
   {
-    question: "How does mixed sizes colors MOQ underwear work?",
+    question: "Can I mix sizes and colors in a 120-piece underwear order?",
     answer:
       "Most current product specification tables list 120 pieces per style with mixed sizes and colors, subject to confirmation. Custom fabrics, colors, labels and packaging may require different quantities.",
   },
@@ -43,7 +43,7 @@ export default function HomePage() {
       <div className="d-section">
         <BuyerGuidance guide={{
           heading: "Source underwear from Yiwu, China, with a clear buying brief",
-          intro: "DIYASI is an underwear manufacturer in Yiwu serving brands, retailers and wholesale buyers. Start with actual catalogue models, compare their construction and measurements, then agree the sample and production specification with our team.",
+          intro: "DIYASI is an underwear manufacturer in Yiwu, China, serving brands, retailers and wholesale buyers. Compare cotton, lace, laser-cut seamless and men's catalogue styles, then prepare a private-label or custom manufacturing brief with model numbers, measurements and the proposed order quantity.",
           checks: [
             "Choose cotton, lace or laser-cut seamless styles, or compare men's briefs, trunks and boxer briefs.",
             "Most listed styles start at 120 pieces per style. Confirm the size/color mix and separate minimums for custom fabric, labels, waistbands and packaging.",
@@ -51,7 +51,8 @@ export default function HomePage() {
           ],
           links: [
             { label: "Compare wholesale underwear styles", href: "/products" },
-            { label: "Private-label and custom underwear manufacturing", href: "/oem-odm" },
+            { label: "Private-label underwear manufacturing", href: "/manufacturers/private-label-underwear-manufacturer" },
+            { label: "Compare OEM, ODM and catalogue order routes", href: "/oem-odm" },
             { label: "Review factory photographs and quality checks", href: "/factory" },
             { label: "Request samples and a quotation", href: "/contact#quote-form" },
           ],

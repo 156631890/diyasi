@@ -22,9 +22,9 @@ const keywordUpdatedAt = "2026-10-07";
 // Preserve release dates already recorded for these static pages. Do not derive
 // dates from whichever keywords happen to be present or from the build clock.
 const staticPageDates: Readonly<Record<string, string>> = {
-  "/": "2026-10-31",
-  "/products": "2026-10-24",
-  "/oem-odm": "2026-10-24",
+  "/": "2026-11-15",
+  "/products": "2026-11-15",
+  "/oem-odm": "2026-11-15",
   "/resources": "2026-10-31",
   "/about": "2026-10-07",
   "/factory": "2026-10-07",
@@ -38,6 +38,14 @@ const sourcingUpdatedAt = "2026-10-24";
 const sourcingUpdatedPaths = new Set([
   "/", "/products", "/oem-odm", "/resources",
   "/products/lace-underwear", "/products/seamless-underwear", "/products/mens-underwear",
+]);
+const keywordReleaseDate = "2026-11-15";
+const keywordReleasePaths = new Set([
+  "/products/womens-panties", "/products/cotton-underwear", "/products/cotton-thongs",
+  "/products/lace-underwear", "/products/seamless-underwear", "/products/thongs",
+  "/products/mens-underwear", "/products/mens-boxer-briefs",
+  "/manufacturers/private-label-underwear-manufacturer", "/manufacturers/low-moq-underwear-manufacturer",
+  "/manufacturers/custom-underwear-manufacturer", "/manufacturers/mens-underwear-manufacturer",
 ]);
 
 const pageEntries: IndexableContentEntry[] = [
@@ -165,7 +173,7 @@ const pageEntries: IndexableContentEntry[] = [
 
 const collectionEntries = launchCollections.map((collection) => ({
   path: collection.href,
-  lastModified: sourcingUpdatedPaths.has(collection.href) ? sourcingUpdatedAt : keywordUpdatedAt,
+  lastModified: keywordReleasePaths.has(collection.href) ? keywordReleaseDate : sourcingUpdatedPaths.has(collection.href) ? sourcingUpdatedAt : keywordUpdatedAt,
   changeFrequency: "weekly" as const,
   priority: 0.8,
 }));
@@ -210,8 +218,8 @@ export const indexableContent = {
       ),
     })),
     ...collectionEntries,
-    { path: "/manufacturers", lastModified: manufacturerUpdatedAt, changeFrequency: "monthly", priority: 0.9 },
-    ...manufacturerPages.map(p => ({path: `/manufacturers/${p.slug}`,lastModified:manufacturerUpdatedAt,changeFrequency:"monthly" as const,priority:0.8})),
+    { path: "/manufacturers", lastModified: keywordReleaseDate, changeFrequency: "monthly", priority: 0.9 },
+    ...manufacturerPages.map(p => ({path: `/manufacturers/${p.slug}`,lastModified:keywordReleasePaths.has(`/manufacturers/${p.slug}`) ? keywordReleaseDate : manufacturerUpdatedAt,changeFrequency:"monthly" as const,priority:0.8})),
     {path:"/guides",lastModified:guideDate,changeFrequency:"monthly",priority:0.8},
     ...sourcingGuides.map(g=>({path:`/guides/${g.slug}`,lastModified:guideDate,changeFrequency:"monthly" as const,priority:0.7})),
     ...translatedPaths.map(path=>({path,lastModified:guideDate,changeFrequency:"monthly" as const,priority:0.7})),
@@ -222,8 +230,8 @@ export const indexableContent = {
   paths: [
     ...pageEntries,
     ...collectionEntries,
-    { path: "/manufacturers", lastModified: manufacturerUpdatedAt, changeFrequency: "monthly", priority: 0.9 },
-    ...manufacturerPages.map(p => ({path: `/manufacturers/${p.slug}`,lastModified:manufacturerUpdatedAt,changeFrequency:"monthly" as const,priority:0.8})),
+    { path: "/manufacturers", lastModified: keywordReleaseDate, changeFrequency: "monthly", priority: 0.9 },
+    ...manufacturerPages.map(p => ({path: `/manufacturers/${p.slug}`,lastModified:keywordReleasePaths.has(`/manufacturers/${p.slug}`) ? keywordReleaseDate : manufacturerUpdatedAt,changeFrequency:"monthly" as const,priority:0.8})),
     {path:"/guides",lastModified:guideDate,changeFrequency:"monthly",priority:0.8},
     ...sourcingGuides.map(g=>({path:`/guides/${g.slug}`,lastModified:guideDate,changeFrequency:"monthly" as const,priority:0.7})),
     ...translatedPaths.map(path=>({path,lastModified:guideDate,changeFrequency:"monthly" as const,priority:0.7})),

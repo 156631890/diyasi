@@ -29,8 +29,8 @@ export const sourcingSelections: Record<string, SourcingSelection> = {
     note: "No-show is a wearing outcome, not a fabric or a guarantee that every seam is absent. Keep the sample size, outer garment and viewing conditions consistent when comparing these models.",
   },
   "lace-underwear": {
-    heading: "Private label lingerie: start with the listed lace underwear styles",
-    intro: "For a private label lingerie collection, this range provides lace-trim briefs and thongs with cotton-rich bodies. It does not establish a matching bra or a shapewear set. Compare the actual coverage and lace placement before developing labels or packaging.",
+    heading: "Compare lace panties by coverage, waist shape and trim",
+    intro: "Start a wholesale or private-label assortment with the listed lace-trim briefs and thongs with cotton-rich bodies. Compare actual coverage and lace placement before developing labels or packaging. Matching bras and shapewear sets require separate capability confirmation.",
     models: [
       { model: "LS006", check: "Brazilian back with lace trim: approve back coverage and scallop placement on the selected size." },
       { model: "LS005-142", check: "Low-rise V-waist brief: compare waist shape, back coverage and lace tension." },
