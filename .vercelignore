@@ -11,3 +11,6 @@
 **/*.sqlite3
 **/*.log
 data/generated
+
+docs/geo-20261115
+HANDOFF-20261115.md

@@ -3,7 +3,9 @@ import { SITE_DESCRIPTION, SITE_NAME, absoluteUrl } from "@/lib/seo";
 import { companyInfo } from "@/lib/site-info";
 import { catalogProducts, catalogUpdatedAt } from "@/lib/catalog-source";
 import { collections } from "@/lib/collections";
-import { resourceArticles } from "@/lib/resource-articles";
+import { activeResourceArticles as resourceArticles } from "@/lib/resource-articles";
+import { manufacturerPages } from "@/lib/manufacturer-pages";
+import { sourcingGuides } from "@/lib/sourcing-guides";
 import { newsArticles } from "@/lib/news-articles";
 
 export async function GET() {
@@ -25,6 +27,8 @@ export async function GET() {
     "## Main pages",
     ...[
       ["Collections", "/products"],
+      ["Manufacturing services", "/manufacturers"],
+      ["Buying guides", "/guides"],
       ["Private label & OEM", "/oem-odm"],
       ["Factory & quality", "/factory"],
       ["Materials", "/fabrics"],
@@ -34,6 +38,12 @@ export async function GET() {
       ["News & insights", "/news"],
       ["Contact", "/contact"],
     ].map(([name, path]) => "- [" + name + "](" + absoluteUrl(path) + ")"),
+    "",
+    "## Manufacturing services",
+    ...manufacturerPages.map(p => `- [${p.title}](${absoluteUrl('/manufacturers/' + p.slug)})`),
+    "",
+    "## Buying guides",
+    ...sourcingGuides.map(g => `- [${g.title}](${absoluteUrl('/guides/' + g.slug)})`),
     "",
     "## Collections",
     ...collections.map(

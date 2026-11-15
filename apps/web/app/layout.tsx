@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     apple: { url: "/apple-touch-icon.png", sizes: "180x180" },
   },
   alternates: { canonical: SITE_ORIGIN },
-  robots: { index: true, follow: true },
+  robots: { index: true, follow: true, "max-image-preview": "large" },
   openGraph: {
     title: SITE_NAME,
     description: SITE_DESCRIPTION,

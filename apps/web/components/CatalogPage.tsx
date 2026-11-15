@@ -79,6 +79,7 @@ export function catalogMetadata(
       collection?.description ??
       "Source wholesale underwear from DIYASI in Yiwu, China. Compare 45 cotton, lace, seamless and men's styles, then request samples and a confirmed bulk quote.",
     path: path + (page > 1 ? `?page=${page}` : ""),
+    ...(collection ? { image: { url: collectionImage(collection), alt: collection.title } } : {}),
   });
   return {
     ...meta,

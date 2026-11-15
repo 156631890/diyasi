@@ -1,0 +1,424 @@
+{
+  "paths": [
+    "/",
+    "/products",
+    "/oem-odm",
+    "/factory",
+    "/contact",
+    "/about",
+    "/fabrics",
+    "/packaging",
+    "/sustainability",
+    "/resources",
+    "/privacy-policy",
+    "/return-policy",
+    "/es",
+    "/es/productos/ropa-interior-marca-privada",
+    "/es/minimo-pedido-ropa-interior",
+    "/es/ropa-interior-sin-costuras",
+    "/es/fabricante-ropa-interior-china",
+    "/es/empaque-personalizado",
+    "/es/fabrica-y-control-de-calidad",
+    "/es/contacto",
+    "/products/womens-panties",
+    "/products/cotton-underwear",
+    "/products/cotton-thongs",
+    "/products/lace-underwear",
+    "/products/seamless-underwear",
+    "/products/thongs",
+    "/products/high-waist",
+    "/products/mens-underwear",
+    "/products/mens-boxer-briefs",
+    "/manufacturers",
+    "/manufacturers/private-label-underwear-manufacturer",
+    "/manufacturers/low-moq-underwear-manufacturer",
+    "/manufacturers/custom-underwear-manufacturer",
+    "/manufacturers/seamless-underwear-manufacturer",
+    "/manufacturers/mens-underwear-manufacturer",
+    "/manufacturers/shapewear-manufacturer",
+    "/manufacturers/bra-manufacturer",
+    "/manufacturers/underwear-factory",
+    "/manufacturers/lingerie-manufacturer",
+    "/manufacturers/swimwear-manufacturer",
+    "/manufacturers/lingerie-supplier",
+    "/manufacturers/private-label-lingerie",
+    "/guides",
+    "/guides/underwear-manufacturing-cost",
+    "/guides/underwear-manufacturing-process",
+    "/guides/how-to-find-a-clothing-manufacturer",
+    "/guides/seamless-underwear-wholesale",
+    "/guides/underwear-moq-explained",
+    "/guides/starting-an-underwear-brand",
+    "/es/manufacturers/private-label-underwear-manufacturer",
+    "/es/manufacturers/low-moq-underwear-manufacturer",
+    "/es/manufacturers/custom-underwear-manufacturer",
+    "/es/manufacturers/seamless-underwear-manufacturer",
+    "/fr/manufacturers/private-label-underwear-manufacturer",
+    "/fr/manufacturers/low-moq-underwear-manufacturer",
+    "/fr/manufacturers/custom-underwear-manufacturer",
+    "/fr/manufacturers/seamless-underwear-manufacturer",
+    "/fr/manufacturers/mens-underwear-manufacturer",
+    "/fr/manufacturers/lingerie-manufacturer",
+    "/fr/manufacturers/bra-manufacturer",
+    "/fr/manufacturers/underwear-factory",
+    "/de/manufacturers/private-label-underwear-manufacturer",
+    "/de/manufacturers/low-moq-underwear-manufacturer",
+    "/de/manufacturers/custom-underwear-manufacturer",
+    "/de/manufacturers/seamless-underwear-manufacturer",
+    "/de/manufacturers/mens-underwear-manufacturer",
+    "/de/manufacturers/lingerie-manufacturer",
+    "/de/manufacturers/bra-manufacturer",
+    "/de/manufacturers/underwear-factory",
+    "/it/manufacturers/private-label-underwear-manufacturer",
+    "/it/manufacturers/low-moq-underwear-manufacturer",
+    "/it/manufacturers/custom-underwear-manufacturer",
+    "/it/manufacturers/seamless-underwear-manufacturer",
+    "/it/manufacturers/mens-underwear-manufacturer",
+    "/it/manufacturers/lingerie-manufacturer",
+    "/it/manufacturers/bra-manufacturer",
+    "/it/manufacturers/underwear-factory",
+    "/es/guides/underwear-manufacturing-cost",
+    "/es/guides/underwear-manufacturing-process",
+    "/es/guides/underwear-moq-explained",
+    "/resources/custom-waistband-underwear-manufacturer",
+    "/resources/laser-cut-underwear-manufacturer",
+    "/resources/underwear-manufacturer-for-startup-brands",
+    "/resources/underwear-sampling-lead-time-guide",
+    "/resources/yiwu-underwear-manufacturer",
+    "/resources/high-waisted-briefs-manufacturer",
+    "/resources/bikini-vs-brazilian-underwear",
+    "/resources/seamless-vs-no-show-underwear",
+    "/resources/cotton-vs-seamless-underwear-buyers-guide",
+    "/resources/private-label-underwear-moq-guide",
+    "/resources/accurate-underwear-yoga-wear-manufacturing-quote",
+    "/resources/unit-cost-custom-underwear-manufacturing",
+    "/resources/traceless-vs-seamless-underwear-yoga-brands",
+    "/resources/lace-underwear-oem-guide-boutique-lingerie-brands",
+    "/resources/cotton-underwear-oem-guide-daily-basics-startups",
+    "/resources/waistband-customization-mens-boxer-briefs-private-label",
+    "/resources/gusset-construction-womens-underwear-comfort-qc",
+    "/resources/sports-bra-support-levels-small-yoga-brands",
+    "/resources/reorder-planning-after-low-moq-first-run",
+    "/resources/us-eu-underwear-size-labeling-preparation-startup-brands",
+    "/resources/underwear-sampling-costs-lead-times-packaging",
+    "/news",
+    "/news/100-cotton-vs-cotton-spandex-underwear-labels",
+    "/news/organic-cotton-underwear-claims-evidence-buyers",
+    "/news/cotton-gusset-vs-cotton-underwear-components",
+    "/news/seamless-underwear-for-leggings-sample-review",
+    "/news/high-waisted-cotton-underwear-range-planning",
+    "/news/cotton-thong-underwear-everyday-range",
+    "/news/womens-boxer-vs-boyshort-underwear-names",
+    "/news/cotton-lace-underwear-composition-claims",
+    "/news/underwear-for-white-pants-colour-opacity-test",
+    "/news/2026-underwear-search-themes-factory-buyer-brief",
+    "/news/underwear-leg-opening-elastic-fit-checklist",
+    "/news/high-waist-underwear-waistband-roll-down-fit",
+    "/news/bonded-vs-stitched-gusset-attachment-underwear",
+    "/news/lace-trim-stretch-placement-underwear-samples",
+    "/news/mens-no-fly-pouch-fit-sample-review",
+    "/news/printed-underwear-strike-off-artwork-approval",
+    "/news/underwear-bulk-shade-band-colour-consistency",
+    "/news/underwear-barcode-variant-label-proofing",
+    "/news/underwear-carton-protection-transit-checklist",
+    "/news/underwear-line-sheet-wholesale-buyer-checklist",
+    "/news/choose-underwear-manufacturer-supplier-checklist",
+    "/news/thong-vs-g-string-t-string-underwear-buyers",
+    "/news/underwear-fabric-gsm-thickness-opacity-guide",
+    "/news/tanga-vs-bikini-vs-thong-coverage-guide",
+    "/news/heat-transfer-vs-sewn-underwear-labels",
+    "/news/underwear-aql-inspection-defect-checklist",
+    "/news/shipping-underwear-samples-commercial-invoice-checklist",
+    "/news/recycled-polyester-underwear-claims-documentation",
+    "/news/underwear-multipack-assortment-planning",
+    "/news/underwear-product-photography-shot-list",
+    "/news/womens-boyshorts-vs-long-leg-underwear",
+    "/news/v-waist-underwear-fit-measurement-guide",
+    "/news/mens-briefs-vs-trunks-private-label-fit",
+    "/news/modal-pouch-vs-modal-underwear-fabric-specification",
+    "/news/underwear-tech-pack-measurement-specification",
+    "/news/underwear-colour-lab-dip-approval-guide",
+    "/news/underwear-wash-test-shrinkage-recovery-checklist",
+    "/news/underwear-size-set-sample-grading-checklist",
+    "/news/underwear-sku-carton-packing-list-guide",
+    "/news/underwear-pre-production-sample-approval-checklist",
+    "/news/cotton-vs-polyamide-underwear-private-label",
+    "/news/high-waisted-briefs-vs-thongs-buying-guide",
+    "/news/plain-vs-printed-mens-underwear-private-label",
+    "/news/explore-the-diyasi-underwear-collection",
+    "/news/bikini-vs-brazilian-underwear-buying-notes",
+    "/news/trunks-vs-boxer-briefs-sourcing-notes",
+    "/products/lace-trim-cotton-brazilian-brief-ls006",
+    "/products/v-waist-lace-cotton-brief-ls005-142",
+    "/products/v-waist-lace-cotton-thong-ls005",
+    "/products/bonded-brazilian-seamless-brief-dys323",
+    "/products/bonded-seamless-low-rise-thong-dys322",
+    "/products/seamless-high-waist-full-brief-dys314",
+    "/products/seamless-low-rise-brazilian-brief-dys311",
+    "/products/seamless-mid-low-brazilian-brief-dys306",
+    "/products/invisible-edge-cotton-gusset-thong-dys302",
+    "/products/seamless-v-waist-low-rise-thong-dys301",
+    "/products/printed-low-rise-mens-brief-m008-print",
+    "/products/printed-mid-rise-mens-trunk-m007-print",
+    "/products/contrast-waist-printed-mens-trunk-m006-print",
+    "/products/printed-mid-leg-mens-boxer-brief-m005-print",
+    "/products/printed-modal-pouch-boxer-brief-m004-print",
+    "/products/everyday-printed-mens-boxer-brief-m003-print",
+    "/products/printed-high-waist-long-leg-boxer-m002-print",
+    "/products/printed-low-rise-modal-pouch-trunk-m001-print",
+    "/products/everyday-cotton-mid-rise-thong-dys229",
+    "/products/cotton-low-rise-t-string-dys230",
+    "/products/cotton-mid-rise-t-back-thong-dys228",
+    "/products/wide-waistband-cotton-tanga-thong-dys227",
+    "/products/high-waist-cotton-t-string-dys226",
+    "/products/cotton-high-waist-thong-dys225",
+    "/products/essential-cotton-thong-dys224",
+    "/products/signature-cotton-brief-dys223",
+    "/products/high-leg-cotton-high-waist-brief-dys219",
+    "/products/mens-low-rise-bikini-brief-m008",
+    "/products/mens-4-inch-stretch-boxer-brief-m007",
+    "/products/mens-5-inch-pouch-support-trunk-m006",
+    "/products/mens-5-inch-modal-pouch-boxer-m005",
+    "/products/mens-mid-rise-no-fly-trunk-m004",
+    "/products/mens-modal-pouch-everyday-trunk-m003",
+    "/products/mens-long-leg-stretch-boxer-brief-m002",
+    "/products/mens-tagless-low-rise-brief-m001",
+    "/products/lettered-waist-cotton-tanga-dys218",
+    "/products/wide-waistband-cotton-boxer-dys215",
+    "/products/everyday-cotton-boyshort-dys214",
+    "/products/long-leg-high-waist-cotton-brief-dys210",
+    "/products/everyday-cotton-tanga-dys208",
+    "/products/classic-cotton-bikini-brief-dys206",
+    "/products/extra-high-waist-cotton-thong-dys205",
+    "/products/cotton-stretch-g-string-dys204",
+    "/products/essential-cotton-bikini-brief-dys202",
+    "/products/low-rise-cotton-bikini-brief-dys201"
+  ],
+  "products": [
+    {
+      "id": "lace-trim-cotton-brazilian-brief-ls006",
+      "title": "Lace-Trim Cotton Brazilian Brief",
+      "route": "private-label"
+    },
+    {
+      "id": "v-waist-lace-cotton-brief-ls005-142",
+      "title": "V-Waist Lace & Cotton Brief",
+      "route": "private-label"
+    },
+    {
+      "id": "v-waist-lace-cotton-thong-ls005",
+      "title": "V-Waist Lace & Cotton Thong",
+      "route": "private-label"
+    },
+    {
+      "id": "bonded-brazilian-seamless-brief-dys323",
+      "title": "Bonded Brazilian Seamless Brief",
+      "route": "private-label"
+    },
+    {
+      "id": "bonded-seamless-low-rise-thong-dys322",
+      "title": "Bonded Seamless Low-Rise Thong",
+      "route": "private-label"
+    },
+    {
+      "id": "seamless-high-waist-full-brief-dys314",
+      "title": "Seamless High-Waist Full Brief",
+      "route": "private-label"
+    },
+    {
+      "id": "seamless-low-rise-brazilian-brief-dys311",
+      "title": "Seamless Low-Rise Brazilian Brief",
+      "route": "private-label"
+    },
+    {
+      "id": "seamless-mid-low-brazilian-brief-dys306",
+      "title": "Seamless Mid-Low Brazilian Brief",
+      "route": "private-label"
+    },
+    {
+      "id": "invisible-edge-cotton-gusset-thong-dys302",
+      "title": "Invisible-Edge Cotton-Gusset Thong",
+      "route": "private-label"
+    },
+    {
+      "id": "seamless-v-waist-low-rise-thong-dys301",
+      "title": "Seamless V-Waist Low-Rise Thong",
+      "route": "private-label"
+    },
+    {
+      "id": "printed-low-rise-mens-brief-m008-print",
+      "title": "Printed Low-Rise Men's Brief",
+      "route": "private-label"
+    },
+    {
+      "id": "printed-mid-rise-mens-trunk-m007-print",
+      "title": "Printed Mid-Rise Men's Trunk",
+      "route": "private-label"
+    },
+    {
+      "id": "contrast-waist-printed-mens-trunk-m006-print",
+      "title": "Contrast-Waist Printed Men's Trunk",
+      "route": "private-label"
+    },
+    {
+      "id": "printed-mid-leg-mens-boxer-brief-m005-print",
+      "title": "Printed Mid-Leg Men's Boxer Brief",
+      "route": "private-label"
+    },
+    {
+      "id": "printed-modal-pouch-boxer-brief-m004-print",
+      "title": "Printed Modal-Pouch Boxer Brief",
+      "route": "private-label"
+    },
+    {
+      "id": "everyday-printed-mens-boxer-brief-m003-print",
+      "title": "Everyday Printed Men's Boxer Brief",
+      "route": "private-label"
+    },
+    {
+      "id": "printed-high-waist-long-leg-boxer-m002-print",
+      "title": "Printed High-Waist Long-Leg Boxer",
+      "route": "private-label"
+    },
+    {
+      "id": "printed-low-rise-modal-pouch-trunk-m001-print",
+      "title": "Printed Low-Rise Modal-Pouch Trunk",
+      "route": "private-label"
+    },
+    {
+      "id": "everyday-cotton-mid-rise-thong-dys229",
+      "title": "Everyday Cotton Mid-Rise Thong",
+      "route": "private-label"
+    },
+    {
+      "id": "cotton-low-rise-t-string-dys230",
+      "title": "Cotton Low-Rise T-String",
+      "route": "private-label"
+    },
+    {
+      "id": "cotton-mid-rise-t-back-thong-dys228",
+      "title": "Cotton Mid-Rise T-Back Thong",
+      "route": "private-label"
+    },
+    {
+      "id": "wide-waistband-cotton-tanga-thong-dys227",
+      "title": "Wide-Waistband Cotton Tanga Thong",
+      "route": "private-label"
+    },
+    {
+      "id": "high-waist-cotton-t-string-dys226",
+      "title": "High-Waist Cotton T-String",
+      "route": "private-label"
+    },
+    {
+      "id": "cotton-high-waist-thong-dys225",
+      "title": "Cotton High-Waist Thong",
+      "route": "private-label"
+    },
+    {
+      "id": "essential-cotton-thong-dys224",
+      "title": "Essential Cotton Thong",
+      "route": "private-label"
+    },
+    {
+      "id": "signature-cotton-brief-dys223",
+      "title": "Signature Cotton Brief",
+      "route": "private-label"
+    },
+    {
+      "id": "high-leg-cotton-high-waist-brief-dys219",
+      "title": "High-Leg Cotton High-Waist Brief",
+      "route": "private-label"
+    },
+    {
+      "id": "mens-low-rise-bikini-brief-m008",
+      "title": "Men's Low-Rise Bikini Brief",
+      "route": "private-label"
+    },
+    {
+      "id": "mens-4-inch-stretch-boxer-brief-m007",
+      "title": "Men's 4-Inch Stretch Boxer Brief",
+      "route": "private-label"
+    },
+    {
+      "id": "mens-5-inch-pouch-support-trunk-m006",
+      "title": "Men's 5-Inch Pouch-Support Trunk",
+      "route": "private-label"
+    },
+    {
+      "id": "mens-5-inch-modal-pouch-boxer-m005",
+      "title": "Men's Modal-Pouch Boxer Brief",
+      "route": "private-label"
+    },
+    {
+      "id": "mens-mid-rise-no-fly-trunk-m004",
+      "title": "Men's Mid-Rise No-Fly Trunk",
+      "route": "private-label"
+    },
+    {
+      "id": "mens-modal-pouch-everyday-trunk-m003",
+      "title": "Men's Modal-Pouch Everyday Trunk",
+      "route": "private-label"
+    },
+    {
+      "id": "mens-long-leg-stretch-boxer-brief-m002",
+      "title": "Men's Long-Leg Stretch Boxer Brief",
+      "route": "private-label"
+    },
+    {
+      "id": "mens-tagless-low-rise-brief-m001",
+      "title": "Men's Tagless Low-Rise Brief",
+      "route": "private-label"
+    },
+    {
+      "id": "lettered-waist-cotton-tanga-dys218",
+      "title": "Lettered-Waist Cotton Tanga",
+      "route": "private-label"
+    },
+    {
+      "id": "wide-waistband-cotton-boxer-dys215",
+      "title": "Wide-Waistband Cotton Boxer",
+      "route": "private-label"
+    },
+    {
+      "id": "everyday-cotton-boyshort-dys214",
+      "title": "Everyday Cotton Boyshort",
+      "route": "private-label"
+    },
+    {
+      "id": "long-leg-high-waist-cotton-brief-dys210",
+      "title": "Long-Leg High-Waist Cotton Brief",
+      "route": "private-label"
+    },
+    {
+      "id": "everyday-cotton-tanga-dys208",
+      "title": "Everyday Cotton Tanga",
+      "route": "private-label"
+    },
+    {
+      "id": "classic-cotton-bikini-brief-dys206",
+      "title": "Classic Cotton Bikini Brief",
+      "route": "private-label"
+    },
+    {
+      "id": "extra-high-waist-cotton-thong-dys205",
+      "title": "Extra-High-Waist Cotton Thong",
+      "route": "private-label"
+    },
+    {
+      "id": "cotton-stretch-g-string-dys204",
+      "title": "Cotton Stretch G-String",
+      "route": "private-label"
+    },
+    {
+      "id": "essential-cotton-bikini-brief-dys202",
+      "title": "Essential Cotton Bikini Brief",
+      "route": "private-label"
+    },
+    {
+      "id": "low-rise-cotton-bikini-brief-dys201",
+      "title": "Low-Rise Cotton Bikini Brief",
+      "route": "private-label"
+    }
+  ]
+}

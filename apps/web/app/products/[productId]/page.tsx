@@ -96,6 +96,7 @@ export default async function ProductPage({ params, searchParams }: Props) {
           name: p.product_name,
           description: p.description,
           identifier: p.model_number,
+          mainEntity: { "@id": absoluteUrl("/products/" + p.slug) + "#product" },
           isBasedOn: sourceEvidence
             ? [p.source_urls[0], sourceEvidence.secondaryUrl]
             : p.source_urls[0],

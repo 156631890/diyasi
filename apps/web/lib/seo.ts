@@ -14,13 +14,17 @@ export function buildMetadata({
   title,
   description,
   path = "/",
+  image,
 }: {
   title: string;
   description: string;
   path?: string;
+  image?: { url: string; alt: string };
 }): Metadata {
   const url = absoluteUrl(path);
   const localeAlternates = alternatesFor(path);
+  const locales: Record<string, string> = { en: "en_US", es: "es_ES", fr: "fr_FR", de: "de_DE", it: "it_IT" };
+  const locale = locales[path.split("/")[1]] ?? locales.en;
 
   return {
     title,
@@ -44,10 +48,12 @@ export function buildMetadata({
       url,
       siteName: SITE_NAME,
       type: "website",
+      locale,
+      ...(localeAlternates ? { alternateLocale: Object.keys(localeAlternates).filter(key => key !== "x-default" && locales[key] !== locale).map(key => locales[key]).filter(Boolean) } : {}),
       images: [
         {
-          url: absoluteUrl("/media/editorial/cotton-lace-story.png"),
-          alt: "DIYASI cotton and lace materials",
+          url: absoluteUrl(image?.url ?? "/media/editorial/cotton-lace-story.png"),
+          alt: image?.alt ?? "DIYASI cotton and lace materials",
         },
       ],
     },
@@ -55,7 +61,7 @@ export function buildMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [absoluteUrl("/media/editorial/cotton-lace-story.png")],
+      images: [absoluteUrl(image?.url ?? "/media/editorial/cotton-lace-story.png")],
     },
   };
 }

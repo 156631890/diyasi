@@ -244,7 +244,7 @@ export const localizedPages: Readonly<Record<string, LocalizedPage>> = {
   "/es/ropa-interior-sin-costuras": page({
     path: "/es/ropa-interior-sin-costuras",
     englishPath: "/products/seamless-underwear",
-    title: "Fabricante de ropa interior sin costuras",
+      title: "Ropa interior sin costuras: modelos de corte láser",
     description:
       "Compare ropa interior de corte láser, refuerzos pegados o cosidos y composición de poliamida con elastano. Solicite muestras para su marca.",
     eyebrow: "Ropa interior sin costuras",

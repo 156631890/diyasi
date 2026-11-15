@@ -1,5 +1,4 @@
-import { indexableContent } from "./indexable-content";
-import { getIndexableProduct } from "./indexable-products";
+import { isPublicPath, getPublicProduct as getIndexableProduct, pageLocale } from "./public-routing";
 
 export const ANALYTICS_ID = "G-ZWC86GDCXY";
 export const CONSENT_KEY = "diyasi-analytics-consent-v1";
@@ -40,17 +39,20 @@ export function getAnalyticsConsent(): AnalyticsConsent {
 }
 
 export function safeAnalyticsContext(pathname: string, search = "") {
-  if (!(indexableContent.paths as readonly string[]).includes(pathname))
+  if (!isPublicPath(pathname))
     return null;
   const pathId = pathname.startsWith("/products/") ? pathname.slice(10) : "";
   const queryId = ["/contact", "/es/contacto"].includes(pathname)
     ? new URLSearchParams(search).get("productId")
     : null;
   const product = getIndexableProduct(pathId || queryId || "");
+  const params = new URLSearchParams(search);
+  const sourcePath = params.get("from") || (params.get("resource") ? `/resources/${params.get("resource")}` : "");
   return {
     page_location: origin + pathname,
     page_path: pathname,
-    language: pathname === "/es" || pathname.startsWith("/es/") ? "es" : "en",
+    language: pageLocale(pathname),
+    ...(["/contact", "/es/contacto"].includes(pathname) && isPublicPath(sourcePath) ? { source_path: sourcePath } : {}),
     ...(product ? { product_id: product.id, item_name: product.title } : {}),
   };
 }

@@ -1,5 +1,4 @@
-import { indexableContent } from "./indexable-content";
-import { getIndexableProduct } from "./indexable-products";
+import { isPublicPath, getPublicProduct as getIndexableProduct, pageLocale, publicLocales } from "./public-routing";
 import { moqRoutes } from "./moq-routes";
 import { getAnalyticsConsent, trackAnalyticsEvent } from "./analytics";
 
@@ -14,7 +13,7 @@ export const approvedConversionEvents = [
 
 export type ConversionEvent = (typeof approvedConversionEvents)[number];
 
-export const approvedConversionLocales = ["en", "es", "zh"] as const;
+export const approvedConversionLocales = publicLocales;
 
 export type ConversionEventContext = {
   path?: string;
@@ -36,15 +35,13 @@ export function isApprovedConversionEvent(
 }
 
 function isApprovedConversionPath(value: string): boolean {
-  return (indexableContent.paths as readonly string[]).includes(value);
+  return isPublicPath(value);
 }
 
 function localeFromPathname(
   pathname: string,
 ): (typeof approvedConversionLocales)[number] {
-  if (pathname === "/es" || pathname.startsWith("/es/")) return "es";
-  if (pathname === "/zh" || pathname.startsWith("/zh/")) return "zh";
-  return "en";
+  return pageLocale(pathname);
 }
 
 function isApprovedProjectRoute(value: string): boolean {
