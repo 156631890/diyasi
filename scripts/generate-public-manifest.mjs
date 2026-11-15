@@ -1,7 +1,8 @@
-import { build } from 'esbuild';
+import { createRequire } from 'node:module';
 import { writeFile, readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 const app = fileURLToPath(new URL('../apps/web/', import.meta.url));
+const { build } = createRequire(app + 'package.json')('esbuild');
 // Project only routing and product identifiers into the browser. Article bodies,
 // sourcing translations and supplier evidence belong in server-rendered pages.
 const result = await build({stdin:{contents:'import { indexableContent } from "./lib/indexable-content"; import { indexableProducts } from "./lib/indexable-products"; export default {paths:indexableContent.paths,products:indexableProducts.map(({id,title,route})=>({id,title,route}))};',resolveDir:app,loader:'ts'},bundle:true,platform:'node',format:'esm',write:false,tsconfig:app+'tsconfig.json'});

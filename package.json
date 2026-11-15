@@ -14,7 +14,6 @@
     "test": "npm run test --workspace apps/web"
   },
   "devDependencies": {
-    "esbuild": "0.25.12",
     "next": "16.3.5"
   }
 }

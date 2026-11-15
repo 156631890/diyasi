@@ -1,0 +1,30 @@
+import { BASE_URL, PUBLIC_ORIGIN, parseHtml, fetchPath, saveReport, concurrentMap } from './check-internal-links.mjs';
+import assert from 'node:assert/strict';
+const sitemap=await fetchPath('/sitemap.xml');
+const doc=parseHtml(sitemap.html);
+const images=doc.elements.filter(n=>n.tag==='image:loc').map(n=>doc.rawText(n));
+const alternates=doc.elements.filter(n=>n.tag==='xhtml:link');
+assert(images.length>200,'Expected original catalogue images');
+assert(alternates.length>100,'Expected reciprocal language sitemap links');
+const errors=[];
+const imageChecks=await concurrentMap([...new Set(images)],async url=>{
+ const path=new URL(url).pathname;
+ const r=await fetchPath(path,{headOnly:true});
+ if(r.status!==200)errors.push({path,status:r.status});
+ return {path,status:r.status};
+});
+const llms=await fetchPath('/llms.txt');
+assert(llms.html.includes('/manufacturers/private-label-underwear-manufacturer'));
+assert(!llms.html.includes('/resources/private-label-underwear-manufacturer)'));
+const bots=await concurrentMap(['Googlebot','bingbot','OAI-SearchBot','Claude-SearchBot','PerplexityBot'],async ua=>{
+ const r=await fetch(BASE_URL+'/manufacturers/private-label-underwear-manufacturer',{headers:{'User-Agent':ua},signal:AbortSignal.timeout(30000)});
+ const html=await r.text(),d=parseHtml(html),main=d.elements.find(n=>n.tag==='main');
+ const text=main?d.visible(main):'';
+ const readable=r.status===200&&text.includes('Private Label Underwear Manufacturer')&&text.includes('120 pieces');
+ if(!readable)errors.push({ua,status:r.status});
+ return {ua,status:r.status,readable,words:text.split(/\s+/).length};
+});
+const report={at:new Date().toISOString(),baseUrl:BASE_URL,canonicalOrigin:PUBLIC_ORIGIN,imageEntries:images.length,uniqueImages:imageChecks.length,alternateLinks:alternates.length,imageChecks,bots,errors,passed:!errors.length,note:'UA probes test response behavior, not authenticated crawler IPs, actual bot visits, indexing or AI citations.'};
+await saveReport('release-checks.json',report);
+console.log(JSON.stringify({...report,imageChecks:undefined},null,2));
+if(errors.length)process.exitCode=1;
