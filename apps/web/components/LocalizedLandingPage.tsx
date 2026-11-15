@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import LocalizedCatalog from "./LocalizedCatalog";
+import { russianCompanyFacts, russianMoqRoutes, russianQualitySteps } from "@/lib/russian-pages";
 import SpanishQuoteFlow from "@/components/SpanishQuoteFlow";
 import JsonLd from "@/components/JsonLd";
 import { spanishBuyingGuidance } from "@/lib/spanish-buying-guidance";
@@ -18,12 +20,16 @@ type LocalizedLandingPageProps = {
 export default function LocalizedLandingPage({
   page,
 }: LocalizedLandingPageProps) {
+  const ru = page.path === "/ru" || page.path.startsWith("/ru/");
+  const locale = ru ? "ru" : "es";
+  const home = ru ? "/ru" : "/es";
+  const homeLabel = ru ? "Главная" : "Inicio";
   const buyingGuide = spanishBuyingGuidance[page.path];
   const breadcrumbs =
-    page.path === "/es"
-      ? [{ name: "Inicio", path: "/es" }]
+    page.path === home
+      ? [{ name: homeLabel, path: home }]
       : [
-          { name: "Inicio", path: "/es" },
+          { name: homeLabel, path: home },
           { name: page.title, path: page.path },
         ];
   const breadcrumbJsonLd = buildBreadcrumbJsonLd(breadcrumbs);
@@ -33,7 +39,7 @@ export default function LocalizedLandingPage({
     name: page.headline,
     description: page.intro,
     url: absoluteUrl(page.path),
-    inLanguage: "es",
+    inLanguage: locale,
   };
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -51,7 +57,7 @@ export default function LocalizedLandingPage({
       <JsonLd data={breadcrumbJsonLd} />
       <JsonLd data={faqJsonLd} />
 
-      <nav aria-label="Miga de pan" className="text-sm text-[#5f6b66]">
+      <nav aria-label={ru ? "Навигационная цепочка" : "Miga de pan"} className="text-sm text-[#5f6b66]">
         {breadcrumbs.map((breadcrumb, index) => (
           <span key={breadcrumb.path}>
             {index > 0 ? " / " : null}
@@ -93,6 +99,8 @@ export default function LocalizedLandingPage({
         </div>
       </section>
 
+      {(page.englishPath === "/" || page.englishPath.startsWith("/products")) && <LocalizedCatalog locale={locale} englishPath={page.englishPath} />}
+
       <section className="page-section grid gap-5 md:grid-cols-2">
         {page.sections.map((section) => (
           <article key={section.title} className="card p-6">
@@ -114,10 +122,10 @@ export default function LocalizedLandingPage({
       {page.factSources.includes("company") ? (
         <section className="page-section">
           <h2 className="card-title-standard text-[#1d2521]">
-            Datos de fábrica y contacto
+            {ru ? "Данные фабрики и контакты" : "Datos de fábrica y contacto"}
           </h2>
           <dl className="company-overview-list mt-4">
-            {localizedCompanyFacts.map((fact) => (
+            {(ru ? russianCompanyFacts : localizedCompanyFacts).map((fact) => (
               <div key={fact.label} className="company-overview-row">
                 <dt className="company-overview-label">{fact.label}</dt>
                 <dd className="company-overview-value">{fact.value}</dd>
@@ -130,18 +138,18 @@ export default function LocalizedLandingPage({
       {page.factSources.includes("moq") ? (
         <section className="page-section overflow-x-auto">
           <h2 className="card-title-standard text-[#1d2521]">
-            Niveles de pedido mínimo
+            {ru ? "Минимальные партии по программам" : "Niveles de pedido mínimo"}
           </h2>
           <table className="success-table mt-4 min-w-[640px]">
             <thead>
               <tr>
-                <th>Programa</th>
-                <th>Pedido mínimo</th>
-                <th>Condición</th>
+                <th>{ru ? "Программа" : "Programa"}</th>
+                <th>{ru ? "Минимальный заказ" : "Pedido mínimo"}</th>
+                <th>{ru ? "Условия" : "Condición"}</th>
               </tr>
             </thead>
             <tbody>
-              {localizedMoqRoutes.map((route) => (
+              {(ru ? russianMoqRoutes : localizedMoqRoutes).map((route) => (
                 <tr key={route.id}>
                   <td>{route.title}</td>
                   <td>{route.value}</td>
@@ -156,10 +164,10 @@ export default function LocalizedLandingPage({
       {page.factSources.includes("quality") ? (
         <section className="page-section">
           <h2 className="card-title-standard text-[#1d2521]">
-            Puntos de control de calidad
+            {ru ? "Этапы контроля качества" : "Puntos de control de calidad"}
           </h2>
           <div className="mt-4 grid gap-4 md:grid-cols-3">
-            {localizedQualitySteps.map((step) => (
+            {(ru ? russianQualitySteps : localizedQualitySteps).map((step) => (
               <article key={step.title} className="card p-5">
                 <h3 className="text-base font-bold text-[#1d2521]">
                   {step.title}
@@ -171,12 +179,13 @@ export default function LocalizedLandingPage({
         </section>
       ) : null}
 
-      {page.path === "/es/contacto" ? (
+      {page.englishPath === "/contact" ? (
         <section id="cotizacion" className="page-section">
-          <SpanishQuoteFlow />
+          <SpanishQuoteFlow locale={locale} />
         </section>
       ) : null}
 
+      {page.englishPath !== "/" && !page.englishPath.startsWith("/products") && <LocalizedCatalog locale={locale} englishPath={page.englishPath} />}
       {buyingGuide && <section className="page-section card p-6">
         <h2 className="card-title-standard">{buyingGuide.title}</h2>
         <p className="page-reference-body mt-4">{buyingGuide.body}</p>
@@ -186,7 +195,7 @@ export default function LocalizedLandingPage({
       </section>}
       <section className="page-section">
         <h2 className="card-title-standard text-[#1d2521]">
-          Preguntas frecuentes
+          {ru ? "Частые вопросы" : "Preguntas frecuentes"}
         </h2>
         <div className="mt-4 grid gap-3">
           {page.faqs.map((faq) => (

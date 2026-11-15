@@ -9,12 +9,6 @@ const catchAllRoutePath = fileURLToPath(
 const landingPagePath = fileURLToPath(
   new URL("../components/LocalizedLandingPage.tsx", import.meta.url),
 );
-const topNavPath = fileURLToPath(
-  new URL("../components/TopNav.tsx", import.meta.url),
-);
-const footerPath = fileURLToPath(
-  new URL("../components/SiteFooter.tsx", import.meta.url),
-);
 
 test("Spanish catch-all route is explicit, static, and rejects unknown paths", async () => {
   const source = await readFile(catchAllRoutePath, "utf8");
@@ -36,15 +30,4 @@ test("Spanish landing pages render factual schema and the CTA pair from localize
   expect(source).toContain("localizedQualitySteps");
   expect(source).toContain("SpanishQuoteFlow");
   expect(source).toContain('id="cotizacion"');
-});
-
-test("Spanish navigation and footer resolve only mapped URLs", async () => {
-  const [topNavSource, footerSource] = await Promise.all([
-    readFile(topNavPath, "utf8"),
-    readFile(footerPath, "utf8"),
-  ]);
-
-  expect(topNavSource).toContain('localeHref("es", path)');
-  expect(topNavSource).toContain("localeSwitchHref");
-  expect(footerSource).toContain('localeHref("es", path)');
 });

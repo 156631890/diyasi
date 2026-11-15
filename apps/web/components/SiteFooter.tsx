@@ -2,9 +2,13 @@ import Link from "next/link";
 import { companyInfo } from "@/lib/site-info";
 import { localeHref } from "@/lib/locale-routes";
 import type { SiteLang } from "@/lib/i18n";
-export default function SiteFooter({ initialLang }: { initialLang: SiteLang }) {
+export default function SiteFooter({ initialLang }: { initialLang: SiteLang | "ru" }) {
+  const ru = initialLang === "ru";
+  const locale = ru ? "ru" : initialLang === "es" ? "es" : "en";
   const spanish = initialLang === "es";
+  const russianLabels: Record<string,string> = {"Sourcing": "Закупки", "Manufacturers": "Производители", "Buying guides": "Руководства", "The collections": "Коллекции", "Women's underwear": "Женское белье", "Cotton essentials": "Хлопковое белье", "Lace intimates": "Кружевное белье", "Seamless underwear": "Бесшовное белье", "Men's essentials": "Мужское белье", "Your brand, our craft": "Для вашего бренда", "Private label & OEM": "Собственная марка и OEM", "Fabrics & finishes": "Ткани и отделка", "Labels & packaging": "Этикетки и упаковка", "Factory & quality": "Фабрика и качество", "Sourcing guides": "Материалы для закупок", "News & insights": "Статьи", "About DIYASI": "О DIYASI", "Our story": "Наша история", "Responsible choices": "Ответственное производство", "Contact the atelier": "Связаться с командой", "Privacy": "Конфиденциальность", "Samples & returns": "Образцы и возвраты"};
   const labels: Record<string, string> = {
+    Sourcing: "Compras", Manufacturers: "Fabricantes", "Buying guides": "Guías de compra",
     "The collections": "Las colecciones",
     "Women's underwear": "Ropa interior femenina",
     "Cotton essentials": "Básicos de algodón",
@@ -17,7 +21,7 @@ export default function SiteFooter({ initialLang }: { initialLang: SiteLang }) {
     "Labels & packaging": "Etiquetas y empaque",
     "Factory & quality": "Fábrica y calidad",
     "Sourcing guides": "Guías para compradores",
-    "News & insights": "Noticias y novedades (EN)",
+    "News & insights": "Noticias y novedades",
     "About DIYASI": "Sobre DIYASI",
     "Our story": "Nuestra historia",
     "Responsible choices": "Decisiones responsables",
@@ -26,7 +30,7 @@ export default function SiteFooter({ initialLang }: { initialLang: SiteLang }) {
     "Samples & returns": "Muestras y devoluciones",
   };
   const localizedHref = (path: string) =>
-    initialLang === "es" ? (localeHref("es", path) ?? path) : path;
+    localeHref(locale, path) ?? path;
   const groups = [
     { title: "Sourcing", links: [["Manufacturers", "/manufacturers"],["Buying guides", "/guides"],["Private label & OEM", "/oem-odm"],["Factory & quality", "/factory"],["Fabrics & finishes", "/fabrics"],["Labels & packaging", "/packaging"],["Responsible choices", "/sustainability"],["Sourcing guides", "/resources"],["Contact the atelier", "/contact"]] },
     {
@@ -66,15 +70,14 @@ export default function SiteFooter({ initialLang }: { initialLang: SiteLang }) {
       <section className="d-footer-invitation">
         <div>
           <p className="d-eyebrow">
-            {spanish
-              ? "Algo bonito empieza aquí"
+            {ru ? "Новая коллекция начинается здесь" : spanish ? "Algo bonito empieza aquí"
               : "Something beautiful starts here"}
           </p>
           <h2>
-            {spanish ? "Tu próxima colección." : "Your next collection."}
+            {ru ? "Ваша следующая коллекция." : spanish ? "Tu próxima colección." : "Your next collection."}
             <br />
             <em>
-              {spanish ? "Un comienzo compartido." : "Our shared beginning."}
+              {ru ? "Создадим ее вместе." : spanish ? "Un comienzo compartido." : "Our shared beginning."}
             </em>
           </h2>
         </div>
@@ -82,18 +85,17 @@ export default function SiteFooter({ initialLang }: { initialLang: SiteLang }) {
           href={localizedHref("/contact")}
           className="d-button d-button-light"
         >
-          {spanish ? "Creemos tu colección" : "Let’s make it yours"}{" "}
+          {ru ? "Обсудить коллекцию" : spanish ? "Creemos tu colección" : "Let’s make it yours"}{" "}
           <span aria-hidden="true">↗</span>
         </Link>
       </section>
       <div className="d-footer-grid">
         <div className="d-footer-brand">
-          <Link href={spanish ? "/es" : "/"} className="d-wordmark">
+          <Link href={localizedHref("/")} className="d-wordmark">
             DIYASI<span>INTIMATES, THOUGHTFULLY MADE</span>
           </Link>
           <p>
-            {spanish
-              ? "Desde el primer tejido hasta el último detalle. Ropa interior para cada día, fabricada en Yiwu para marcas de todo el mundo."
+            {ru ? "От выбора ткани до финальной отделки. Нижнее белье на каждый день, произведенное в Иу для брендов разных стран." : spanish ? "Desde el primer tejido hasta el último detalle. Ropa interior para cada día, fabricada en Yiwu para marcas de todo el mundo."
               : "From the first fabric choice to the finishing touch. A family of everyday intimates, made in Yiwu for brands around the world."}
           </p>
           <a href={`mailto:${companyInfo.emailPrimary}`}>
@@ -104,10 +106,10 @@ export default function SiteFooter({ initialLang }: { initialLang: SiteLang }) {
         </div>
         {groups.map((group) => (
           <div key={group.title}>
-            <h3>{spanish ? (labels[group.title] ?? group.title) : group.title}</h3>
+            <h3>{ru ? (russianLabels[group.title] ?? group.title) : spanish ? (labels[group.title] ?? group.title) : group.title}</h3>
             {group.links.map(([label, href]) => (
               <Link key={href} href={localizedHref(href)}>
-                {spanish ? (labels[label] ?? label) : label}
+                {ru ? (russianLabels[label] ?? label) : spanish ? (labels[label] ?? label) : label}{locale !== "en" && !localeHref(locale,href) ? " (EN)" : ""}
               </Link>
             ))}
           </div>
@@ -121,7 +123,7 @@ export default function SiteFooter({ initialLang }: { initialLang: SiteLang }) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            DIYASI manufacturer site ↗
+            {ru ? "Сайт производителя DIYASI (EN)" : spanish ? "Sitio del fabricante DIYASI (EN)" : "DIYASI manufacturer site"} ↗
           </a>
           <a
             href="https://www.linkedin.com/company/111228105/"

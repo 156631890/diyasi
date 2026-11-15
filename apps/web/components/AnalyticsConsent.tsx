@@ -29,6 +29,7 @@ export default function AnalyticsConsent() {
   );
   const [settingsOpen, setSettingsOpen] = useState(false);
   const lastPath = useRef("");
+  const ru = pathname === "/ru" || pathname.startsWith("/ru/");
   const spanish = pathname === "/es" || pathname.startsWith("/es/");
   useEffect(() => {
     if (consent !== "granted") {
@@ -55,27 +56,25 @@ export default function AnalyticsConsent() {
         type="button"
         onClick={() => setSettingsOpen(true)}
       >
-        {spanish ? "Preferencias de cookies" : "Cookie preferences"}
+        {ru ? "Настройки cookies" : spanish ? "Preferencias de cookies" : "Cookie preferences"}
       </button>
       {(consent === null || settingsOpen) && (
         <section
           className="d-cookie-banner"
           aria-label={
-            spanish ? "Preferencias de privacidad" : "Privacy preferences"
+            ru ? "Настройки конфиденциальности" : spanish ? "Preferencias de privacidad" : "Privacy preferences"
           }
         >
           <div>
             <strong>
-              {spanish
-                ? "Ayúdanos a mejorar tu visita"
+              {ru ? "Помогите улучшить сайт" : spanish ? "Ayúdanos a mejorar tu visita"
                 : "Help us make your visit better"}
             </strong>
             <p>
-              {spanish
-                ? "Con tu permiso, Google Analytics mide visitas y clics para mejorar nuestro catálogo. No enviamos tus datos de contacto ni el texto del formulario. Puedes rechazarlo o cambiar tu elección."
+              {ru ? "С вашего разрешения Google Analytics измеряет посещения и клики для улучшения каталога. Контактные данные и текст формы не передаются. Вы можете отказаться или изменить выбор." : spanish ? "Con tu permiso, Google Analytics mide visitas y clics para mejorar nuestro catálogo. No enviamos tus datos de contacto ni el texto del formulario. Puedes rechazarlo o cambiar tu elección."
                 : "With your permission, Google Analytics measures visits and clicks to help us improve our catalogue. We do not send your contact details or form messages. You can decline or change your choice."}{" "}
               <a href="/privacy-policy">
-                {spanish ? "Privacidad" : "Privacy policy"}
+                {ru ? "Политика конфиденциальности (EN)" : spanish ? "Privacidad" : "Privacy policy"}
               </a>
             </p>
           </div>
@@ -85,14 +84,14 @@ export default function AnalyticsConsent() {
               className="d-button d-button-outline"
               onClick={() => choose("denied")}
             >
-              {spanish ? "Rechazar" : "Decline"}
+              {ru ? "Отклонить" : spanish ? "Rechazar" : "Decline"}
             </button>
             <button
               type="button"
               className="d-button"
               onClick={() => choose("granted")}
             >
-              {spanish ? "Permitir estadísticas" : "Allow analytics"}
+              {ru ? "Разрешить аналитику" : spanish ? "Permitir estadísticas" : "Allow analytics"}
             </button>
           </div>
         </section>

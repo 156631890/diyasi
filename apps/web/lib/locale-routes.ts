@@ -1,5 +1,5 @@
 import { sourcingAlternates } from "./sourcing-locale-routes";
-export type PublicLocale = "en" | "es";
+export type PublicLocale = "en" | "es" | "ru";
 
 export const spanishRoutes: Readonly<Record<string, string>> = {
   "/": "/es",
@@ -9,7 +9,13 @@ export const spanishRoutes: Readonly<Record<string, string>> = {
   "/oem-odm": "/es/fabricante-ropa-interior-china",
   "/packaging": "/es/empaque-personalizado",
   "/factory": "/es/fabrica-y-control-de-calidad",
-  "/contact": "/es/contacto"
+  "/contact": "/es/contacto",
+  ...Object.fromEntries(["womens-panties", "cotton-underwear", "cotton-thongs", "lace-underwear", "thongs", "high-waist", "mens-underwear", "mens-boxer-briefs"].map(slug => [`/products/${slug}`, `/es/productos/${slug}`]))
+};
+
+export const russianRoutes: Readonly<Record<string,string>> = {
+  "/": "/ru", "/products": "/ru/products", "/low-moq": "/ru/minimum-order", "/oem-odm": "/ru/private-label", "/packaging": "/ru/packaging", "/factory": "/ru/factory", "/contact": "/ru/contact",
+  ...Object.fromEntries(Object.keys(spanishRoutes).filter(path => path.startsWith("/products/")).map(path => [path, `/ru${path}`]))
 };
 
 const reciprocalEnglishPaths = new Set([
@@ -19,7 +25,8 @@ const reciprocalEnglishPaths = new Set([
   "/oem-odm",
   "/packaging",
   "/factory",
-  "/contact"
+  "/contact",
+  ...Object.keys(spanishRoutes).filter(path => path.startsWith("/products/"))
 ]);
 
 const englishRouteFallbacks: Readonly<Record<string, string>> = {
@@ -33,7 +40,8 @@ export type LocaleAlternates = Readonly<{
 }>;
 
 export function localeHref(locale: PublicLocale, englishPath: string): string | undefined {
-  return locale === "es" ? spanishRoutes[englishPath] : englishPath;
+  if (locale === "en") return englishPath;
+  return (locale === "es" ? spanishRoutes : russianRoutes)[englishPath] ?? sourcingAlternates(englishPath)?.[locale];
 }
 
 export function englishPathFor(path: string): string | undefined {
@@ -41,17 +49,19 @@ export function englishPathFor(path: string): string | undefined {
     return path;
   }
 
-  return Object.entries(spanishRoutes).find(([, spanishPath]) => spanishPath === path)?.[0];
+  return [...Object.entries(spanishRoutes), ...Object.entries(russianRoutes)].find(([, translatedPath]) => translatedPath === path)?.[0];
 }
 
 export function localeSwitchHref(locale: PublicLocale, path: string): string | undefined {
+  const sourcing = sourcingAlternates(path);
+  if (sourcing) return sourcing[locale];
   const englishPath = englishPathFor(path);
   if (!englishPath) {
-    return locale === "en" ? path : undefined;
+    return locale === "en" && !/^\/(es|ru|fr|de|it)(\/|$)/.test(path) ? path : undefined;
   }
 
-  if (locale === "es") {
-    return localeHref("es", englishPath);
+  if (locale !== "en") {
+    return localeHref(locale, englishPath);
   }
 
   return reciprocalEnglishPaths.has(englishPath) ? englishPath : englishRouteFallbacks[englishPath];
@@ -65,5 +75,5 @@ export function alternatesFor(path: string): Readonly<Record<string,string>> | u
   }
 
   const spanishPath = spanishRoutes[englishPath];
-  return { en: englishPath, es: spanishPath, "x-default": englishPath };
+  return { en: englishPath, es: spanishPath, ru: russianRoutes[englishPath], "x-default": englishPath };
 }

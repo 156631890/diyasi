@@ -1,3 +1,4 @@
+import { localeHref } from "@/lib/locale-routes";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import JsonLd from "./JsonLd";
@@ -18,13 +19,13 @@ export function translatedMetadata(locale:SourcingLocale,kind:string,slug:string
 export default function TranslatedSourcingPage({locale,kind,slug}:{locale:SourcingLocale;kind:string;slug:string}){
  const p=getPage(locale,kind,slug),d=p.d,path=`/${locale}/${kind}/${slug}`;
  return <main id="main-content" lang={locale}>
-  <JsonLd data={buildBreadcrumbJsonLd([{name:d.home,path:"/"},{name:kind==="guides"?d.guides:d.hub,path:`/${kind}`},{name:p.title,path}])}/>
+  <JsonLd data={buildBreadcrumbJsonLd([{name:d.home,path:locale === "es" ? "/es" : "/"},{name:kind==="guides"?d.guides:d.hub,path:`/${kind}`},{name:p.title,path}])}/>
   <JsonLd data={{"@context":"https://schema.org","@type":kind==="guides"?"Article":"Service","@id":absoluteUrl(path)+(kind==="guides"?"#article":"#service"),name:p.title,description:p.intro,url:absoluteUrl(path),...(kind==="guides"?{headline:p.title,inLanguage:locale,datePublished:"2026-10-31",dateModified:"2026-10-31",author:{"@id":ORGANIZATION_ID},publisher:{"@id":ORGANIZATION_ID}}:{serviceType:p.assessment ? d.assessment : p.title,provider:{"@id":ORGANIZATION_ID},areaServed:companyInfo.exportMarkets})}}/>
   <JsonLd data={{"@context":"https://schema.org","@type":"FAQPage",mainEntity:p.faq.map(([q,a])=>({"@type":"Question",name:q,acceptedAnswer:{"@type":"Answer",text:a}}))}}/>
-  <header className="d-article-head"><nav className="d-breadcrumb"><Link href="/">{d.home}</Link><span>/</span><Link href={`/${kind}`}>{kind==="guides"?d.guides:d.hub} (EN)</Link></nav><p className="d-eyebrow">DIYASI · Yiwu</p><h1>{p.title}</h1><p>{p.description}</p><p className="d-fineprint">DIYASI · <time dateTime="2026-10-31">31 / 10 / 2026</time></p></header>
+  <header className="d-article-head"><nav className="d-breadcrumb"><Link href={locale === "es" ? "/es" : "/"}>{d.home}</Link><span>/</span><Link href={`/${kind}`}>{kind==="guides"?d.guides:d.hub} (EN)</Link></nav><p className="d-eyebrow">DIYASI · Yiwu</p><h1>{p.title}</h1><p>{p.description}</p><p className="d-fineprint">DIYASI · <time dateTime="2026-10-31">31 / 10 / 2026</time></p></header>
   <div className="d-article-layout"><aside className="d-article-aside"><nav><a href="#specifications">{d.specs}</a><a href="#questions">{d.questions}</a><a href="#related">{d.related}</a></nav><Link href={`${locale==="es"?"/es/contacto":"/contact"}?from=${encodeURIComponent(path)}#quote-form`}>{d.contact}{locale!=="es"?" (EN)":""} ↗</Link></aside><article className="d-article-body"><p className="d-article-answer">{p.intro}</p>{p.assessment&&<p><strong>{d.assessment}</strong></p>}
   {p.sections.map(([title,text])=><section key={title}><h2>{title}</h2><p>{text}</p></section>)}
-  <section id="specifications"><h2>{d.specs}</h2><SourcingTable rows={p.rows} label={d.specs}/><p>{d.evidence}</p><p><Link href="/products">{d.specs} (EN)</Link> · <Link href="/factory">DIYASI · Yiwu (EN)</Link></p></section>
+  <section id="specifications"><h2>{d.specs}</h2><SourcingTable rows={p.rows} label={d.specs}/><p>{d.evidence}</p><p><Link href={localeHref(locale === "es" ? "es" : "en","/products")!}>{d.specs}{locale !== "es" ? " (EN)" : ""}</Link> · <Link href={localeHref(locale === "es" ? "es" : "en","/factory")!}>DIYASI · Yiwu{locale !== "es" ? " (EN)" : ""}</Link></p></section>
   <section id="questions"><h2>{d.questions}</h2><div className="d-accordions">{p.faq.map(([q,a])=><details key={q} open><summary>{q}</summary><p>{a}</p></details>)}</div></section>
   <section id="related"><h2>{d.related}</h2>{p.related.map(slug=><p key={slug}><Link href={`/${locale}/manufacturers/${slug}`}>{d.pages[slug][0]}</Link></p>)}</section><p><Link className="d-button" href={`${locale==="es"?"/es/contacto":"/contact"}?from=${encodeURIComponent(path)}#quote-form`}>{d.contact}{locale!=="es"?" (EN)":""} ↗</Link></p>
   </article></div>

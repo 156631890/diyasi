@@ -1,3 +1,4 @@
+import { allLocalizedPages } from "./localized-pages";
 import { translatedPaths } from "./sourcing-translations";
 import { sourcingGuides, guideDate } from "./sourcing-guides";
 import { manufacturerPages, sourcingUpdatedAt as manufacturerUpdatedAt } from "./manufacturer-pages";
@@ -49,6 +50,7 @@ const keywordReleasePaths = new Set([
 ]);
 
 const pageEntries: IndexableContentEntry[] = [
+  ...Object.keys(allLocalizedPages).map(path => ({path, lastModified:"2026-11-15", changeFrequency:"monthly" as const, priority:0.8})),
   {
     path: "/",
     lastModified: reviewedAt,
@@ -121,54 +123,7 @@ const pageEntries: IndexableContentEntry[] = [
     changeFrequency: "monthly",
     priority: 0.5,
   },
-  {
-    path: "/es",
-    lastModified: reviewedAt,
-    changeFrequency: "weekly",
-    priority: 1,
-  },
-  {
-    path: "/es/productos/ropa-interior-marca-privada",
-    lastModified: reviewedAt,
-    changeFrequency: "weekly",
-    priority: 0.9,
-  },
-  {
-    path: "/es/minimo-pedido-ropa-interior",
-    lastModified: reviewedAt,
-    changeFrequency: "weekly",
-    priority: 0.9,
-  },
-  {
-    path: "/es/ropa-interior-sin-costuras",
-    lastModified: reviewedAt,
-    changeFrequency: "weekly",
-    priority: 0.9,
-  },
-  {
-    path: "/es/fabricante-ropa-interior-china",
-    lastModified: reviewedAt,
-    changeFrequency: "weekly",
-    priority: 0.9,
-  },
-  {
-    path: "/es/empaque-personalizado",
-    lastModified: reviewedAt,
-    changeFrequency: "monthly",
-    priority: 0.8,
-  },
-  {
-    path: "/es/fabrica-y-control-de-calidad",
-    lastModified: reviewedAt,
-    changeFrequency: "weekly",
-    priority: 0.9,
-  },
-  {
-    path: "/es/contacto",
-    lastModified: reviewedAt,
-    changeFrequency: "weekly",
-    priority: 0.9,
-  },
+
 ];
 
 const collectionEntries = launchCollections.map((collection) => ({
@@ -211,7 +166,7 @@ export const indexableContent = {
   entries: [
     ...pageEntries.map((entry) => ({
       ...entry,
-      lastModified: staticPageDates[entry.path] ?? (
+      lastModified: allLocalizedPages[entry.path] ? "2026-11-15" : staticPageDates[entry.path] ?? (
         ["/privacy-policy", "/return-policy"].includes(entry.path)
           ? entry.lastModified
           : seoUpdatedAt

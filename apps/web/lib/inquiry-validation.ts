@@ -1,3 +1,4 @@
+import { pageLocale, type publicLocales } from "./public-routing";
 import { indexableContent } from "./indexable-content";
 import { getIndexableProduct } from "./indexable-products";
 import { SITE_ORIGIN } from "./site-config";
@@ -26,7 +27,7 @@ export type InquiryDetails = {
   product_ids?: string[];
   sample_quantities?: Record<string, string>;
   referrer_origin: string;
-  locale: "en" | "es";
+  locale: (typeof publicLocales)[number];
 };
 
 function knownPath(value: string): string {
@@ -91,7 +92,7 @@ export function validateInquiry(value: unknown): { details: InquiryDetails; subm
       ...(productIds.length ? { product_ids: productIds } : {}),
       ...(Object.keys(quantities).length ? { sample_quantities: quantities as Record<string, string> } : {}),
       referrer_origin: referrerOrigin,
-      locale: sourcePath === "/es" || sourcePath.startsWith("/es/") ? "es" : "en",
+      locale: pageLocale(sourcePath),
     },
   };
 }

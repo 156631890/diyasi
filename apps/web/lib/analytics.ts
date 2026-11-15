@@ -42,7 +42,7 @@ export function safeAnalyticsContext(pathname: string, search = "") {
   if (!isPublicPath(pathname))
     return null;
   const pathId = pathname.startsWith("/products/") ? pathname.slice(10) : "";
-  const queryId = ["/contact", "/es/contacto"].includes(pathname)
+  const queryId = ["/contact", "/es/contacto", "/ru/contact"].includes(pathname)
     ? new URLSearchParams(search).get("productId")
     : null;
   const product = getIndexableProduct(pathId || queryId || "");
@@ -52,7 +52,7 @@ export function safeAnalyticsContext(pathname: string, search = "") {
     page_location: origin + pathname,
     page_path: pathname,
     language: pageLocale(pathname),
-    ...(["/contact", "/es/contacto"].includes(pathname) && isPublicPath(sourcePath) ? { source_path: sourcePath } : {}),
+    ...(["/contact", "/es/contacto", "/ru/contact"].includes(pathname) && isPublicPath(sourcePath) ? { source_path: sourcePath } : {}),
     ...(product ? { product_id: product.id, item_name: product.title } : {}),
   };
 }

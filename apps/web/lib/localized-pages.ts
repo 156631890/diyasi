@@ -1,5 +1,8 @@
 import { moqRoutes } from "./moq-routes";
 import { companyInfo, qualitySteps } from "./site-info";
+import { categoryCopy } from "./catalog-locales";
+import { spanishRoutes, russianRoutes } from "./locale-routes";
+import { russianPages } from "./russian-pages";
 
 export type LocalizedPageSection = {
   title: string;
@@ -430,10 +433,30 @@ export const localizedPages: Readonly<Record<string, LocalizedPage>> = {
   }),
 };
 
-export const spanishStaticParams = Object.keys(localizedPages)
+export const collectionPages: Record<string, LocalizedPage> = Object.fromEntries(
+  (["es", "ru"] as const).flatMap(locale => Object.entries(categoryCopy).filter(([slug]) => slug !== "seamless-underwear").map(([slug, copy]) => {
+    const englishPath = `/products/${slug}`;
+    const path = (locale === "es" ? spanishRoutes : russianRoutes)[englishPath];
+    const [title, description, guidance] = copy[locale];
+    const ru = locale === "ru";
+    const next = ru ? "Укажите модель, количество по размерам и цветам, логотип и упаковку. Стоимость образцов, доступность и сроки согласуются отдельно до производства." : "Indique modelo, cantidades por talla y color, logo y empaque. Costes de muestras, disponibilidad y plazos se confirman antes de producir.";
+    return [path, {
+      path, englishPath, title, description, headline:title, intro:description,
+      eyebrow:ru ? "DIYASI · Коллекции" : "DIYASI · Colecciones",
+      sections:[{title:ru ? "Как сравнить модели" : "Cómo comparar modelos",body:guidance}, {title:ru ? "Подготовьте запрос" : "Prepare su consulta",body:next}],
+      factSources:["moq"],
+      faqs:[{question:ru ? "Что проверить на образце?" : "¿Qué debo revisar en la muestra?",answer:guidance}, {question:ru ? "Как запросить расчет?" : "¿Cómo solicito una cotización?",answer:next}],
+      rfqCta:{href:ru ? "/ru/contact" : "/es/contacto",label:ru ? "Запросить расчет" : "Solicitar cotización"},
+      whatsAppCta:{href:companyInfo.whatsapp,label:ru ? "Написать в WhatsApp" : "Hablar por WhatsApp"}
+    } satisfies LocalizedPage];
+  }))
+);
+export const allLocalizedPages = {...localizedPages, ...russianPages, ...collectionPages};
+export const spanishStaticParams = Object.keys(allLocalizedPages)
+  .filter(path => path.startsWith("/es/"))
   .filter((path) => path !== "/es")
   .map((path) => ({ slug: path.slice("/es/".length).split("/") }));
 
 export function getLocalizedPage(path: string): LocalizedPage | undefined {
-  return localizedPages[path];
+  return allLocalizedPages[path];
 }

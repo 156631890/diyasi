@@ -23,7 +23,7 @@ export function buildMetadata({
 }): Metadata {
   const url = absoluteUrl(path);
   const localeAlternates = alternatesFor(path);
-  const locales: Record<string, string> = { en: "en_US", es: "es_ES", fr: "fr_FR", de: "de_DE", it: "it_IT" };
+  const locales: Record<string, string> = { en: "en_US", es: "es_ES", fr: "fr_FR", de: "de_DE", it: "it_IT", ru: "ru_RU" };
   const locale = locales[path.split("/")[1]] ?? locales.en;
 
   return {

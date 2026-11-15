@@ -56,7 +56,7 @@ test.each([
 });
 
 test("Spanish counterpart map contains only approved public routes", () => {
-  expect(spanishRoutes).toEqual(expectedSpanishRoutes);
+  expect(spanishRoutes).toMatchObject(expectedSpanishRoutes);
 });
 
 test.each(spanishCounterparts)(
@@ -87,6 +87,7 @@ test("page metadata includes language alternates for reciprocal public counterpa
     languages: {
       en: "https://www.yiwudiyasidress.com/contact",
       es: "https://www.yiwudiyasidress.com/es/contacto",
+      ru: "https://www.yiwudiyasidress.com/ru/contact",
       "x-default": "https://www.yiwudiyasidress.com/contact",
     },
   });

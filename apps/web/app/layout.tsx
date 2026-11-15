@@ -106,7 +106,7 @@ export default async function RootLayout({
             name: SITE_NAME,
             url: SITE_ORIGIN,
             description: SITE_DESCRIPTION,
-            inLanguage: ["en", "es", "fr", "de", "it"],
+            inLanguage: ["en", "es", "ru", "fr", "de", "it"],
             publisher: { "@id": ORGANIZATION_ID },
           }}
         />
@@ -177,10 +177,10 @@ export default async function RootLayout({
             }),
           )}
         >
-          <SampleList products={catalogProducts.map(({ slug, product_name, model_number, image_url }) => ({ slug, product_name, model_number, image_url }))}>
-          <TopNav initialLang={lang} />
+          <SampleList products={catalogProducts.map(({ slug, product_name, model_number, image_url, fit }) => ({ slug, product_name, model_number, image_url, fit }))}>
+          <TopNav initialLang={htmlLang === "ru" ? "ru" : lang} />
           {children}
-          <SiteFooter initialLang={lang} />
+          <SiteFooter initialLang={htmlLang === "ru" ? "ru" : lang} />
           <AnalyticsConsent />
           </SampleList>
         </ProductComparison>
