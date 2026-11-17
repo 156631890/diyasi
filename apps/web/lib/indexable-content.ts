@@ -162,6 +162,16 @@ const productEntries = indexableProducts.map((product) => ({
   priority: 0.7,
 }));
 
+const contentRepairPaths = new Set([
+  ...manufacturerPages.map(p=>"/manufacturers/"+p.slug),
+  ...translatedPaths.filter(path=>path.includes("/manufacturers/")),
+  ...productEntries.map(p=>p.path),
+  ...Object.values(allLocalizedPages).filter(page=>page.englishPath.startsWith("/products/")).map(page=>page.path),
+  "/es/empaque-personalizado","/ru/packaging","/es/fabricante-ropa-interior-china","/ru/private-label",
+  "/manufacturers","/resources","/news",
+  "/products/womens-panties","/products/cotton-underwear","/products/lace-underwear","/oem-odm",
+  "/guides/underwear-manufacturing-cost","/guides/underwear-moq-explained","/guides/starting-an-underwear-brand",
+]);
 export const indexableContent = {
   entries: [
     ...pageEntries.map((entry) => ({
@@ -181,7 +191,7 @@ export const indexableContent = {
     ...resourceEntries,
     ...newsEntries,
     ...productEntries,
-  ],
+  ].map(entry=>contentRepairPaths.has(entry.path)?{...entry,lastModified:"2026-11-17"}:entry) as IndexableContentEntry[],
   paths: [
     ...pageEntries,
     ...collectionEntries,

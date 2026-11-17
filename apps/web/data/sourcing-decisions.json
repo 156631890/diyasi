@@ -1,0 +1,1030 @@
+{
+  "es": {
+    "private-label-underwear-manufacturer": {
+      "sections": [
+        [
+          "Validar la prenda base y la versión de marca",
+          "Conserve la muestra del modelo de catálogo para comprobar el ajuste y otra muestra con la marca aplicada. Revise qué cambia entre ambas: posición del logotipo, etiqueta, cintura y presentación del paquete. Una prueba digital no confirma la aplicación sobre el tejido ni la comodidad de la etiqueta."
+        ]
+      ],
+      "rows": [
+        [
+          "Registro",
+          "Qué aprobar"
+        ],
+        [
+          "Modelo base",
+          "Referencia, talla, color y versión de muestra"
+        ],
+        [
+          "Marca",
+          "Archivo de arte, método, posición y referencia del componente"
+        ],
+        [
+          "Paquete",
+          "Correspondencia entre prenda, talla, etiqueta y contenido"
+        ],
+        [
+          "Reposición",
+          "Cambios autorizados y saldo de componentes"
+        ]
+      ],
+      "faq": [
+        [
+          "¿La marca propia incluye exclusividad del diseño?",
+          "No se presupone exclusividad. Cualquier derecho de uso, restricción o propiedad de archivos y patrones debe quedar expresamente acordado."
+        ]
+      ]
+    },
+    "low-moq-underwear-manufacturer": {
+      "sections": [
+        [
+          "Encontrar el mínimo que limita el surtido",
+          "Sume las unidades de cada combinación de talla y color dentro de un solo modelo. Después separe las cantidades de componentes que debe comprar, las que se utilizarán y el saldo que quedará. Si una caja impresa exige más unidades que la prenda, pregunte quién paga y conserva el sobrante antes de comparar presupuestos."
+        ]
+      ],
+      "rows": [
+        [
+          "Cantidad",
+          "Confirmación necesaria"
+        ],
+        [
+          "Prenda",
+          "Total por modelo y reparto aceptado"
+        ],
+        [
+          "Tejido o color",
+          "Disponibilidad y lote mínimo aplicable"
+        ],
+        [
+          "Componente de marca",
+          "Mínimo de compra, consumo y sobrante"
+        ],
+        [
+          "Reposición",
+          "Saldo, almacenamiento y nueva disponibilidad"
+        ]
+      ],
+      "faq": [
+        [
+          "¿Puedo repartir el mínimo entre modelos distintos?",
+          "No dé por aceptado un mínimo conjunto. Presente una tabla por modelo y solicite la confirmación de cada reparto antes de comprar."
+        ]
+      ]
+    },
+    "custom-underwear-manufacturer": {
+      "sections": [
+        [
+          "Preparar una revisión de muestra reproducible",
+          "Identifique cada cambio con una medida, una referencia de material o una foto marcada. Anote el requisito anterior, la modificación solicitada y el resultado de la muestra. Cierre las dudas sobre ajuste, tejido y construcción antes de aprobar la siguiente versión; una petición como «más ajustado» necesita puntos de medida concretos."
+        ]
+      ],
+      "rows": [
+        [
+          "Entrada",
+          "Resultado que debe solicitar"
+        ],
+        [
+          "Patrón",
+          "Puntos de medida, unidades, tallaje y talla de muestra"
+        ],
+        [
+          "Materiales",
+          "Cuerpo, refuerzo y adornos por separado"
+        ],
+        [
+          "Construcción",
+          "Bordes, uniones y colocación en vistas marcadas"
+        ],
+        [
+          "Versión final",
+          "Ficha fechada, comentarios resueltos y muestra identificada"
+        ]
+      ],
+      "faq": [
+        [
+          "¿Es suficiente una fotografía para fabricar?",
+          "Sirve como referencia visual. Todavía deben definirse medidas, materiales, construcción y tolerancias mediante el desarrollo y la aprobación de muestras."
+        ]
+      ]
+    },
+    "seamless-underwear-manufacturer": {
+      "sections": [
+        [
+          "Examinar las uniones y el refuerzo",
+          "Compare DYS323 y DYS314 en la abertura de pierna y la unión del refuerzo. Un borde cortado y una unión pegada son características distintas. Fotografíe la muestra plana y con la extensión acordada; después del cuidado previsto, registre cambios en el borde y la unión sin convertir una observación en una promesa de rendimiento."
+        ]
+      ],
+      "rows": [
+        [
+          "Zona",
+          "Registro de la muestra"
+        ],
+        [
+          "Borde de pierna",
+          "Corte o dobladillo; enrollamiento y cobertura"
+        ],
+        [
+          "Refuerzo",
+          "Unión pegada o cosida y zona examinada"
+        ],
+        [
+          "Composición",
+          "Datos del cuerpo y refuerzo del modelo elegido"
+        ],
+        [
+          "Después del cuidado",
+          "Procedimiento, versión y cambio observado"
+        ]
+      ],
+      "faq": [
+        [
+          "¿Una foto lisa demuestra resistencia del pegado?",
+          "No. Acuerde un procedimiento y criterios para la muestra real y conserve los resultados antes de publicar una afirmación de durabilidad."
+        ]
+      ]
+    }
+  },
+  "fr": {
+    "private-label-underwear-manufacturer": {
+      "sections": [
+        [
+          "Valider séparément le modèle de base et la version marquée",
+          "Conservez l’échantillon du catalogue comme référence de coupe et identifiez les modifications sur la version marquée. Vérifiez l’emplacement du logo, l’étiquette, la ceinture et le produit emballé. Un bon à tirer numérique ne valide ni l’application sur le tissu ni le confort de l’étiquette."
+        ]
+      ],
+      "rows": [
+        [
+          "Dossier",
+          "Validation à conserver"
+        ],
+        [
+          "Modèle de base",
+          "Référence, taille, coloris et version de l’échantillon"
+        ],
+        [
+          "Marque",
+          "Version du fichier, procédé, emplacement et accessoire"
+        ],
+        [
+          "Emballage",
+          "Correspondance entre article, taille, étiquette et contenu"
+        ],
+        [
+          "Réassort",
+          "Substitutions autorisées et solde d’accessoires"
+        ]
+      ],
+      "faq": [
+        [
+          "La marque propre garantit-elle une exclusivité ?",
+          "Non. Les droits d’utilisation, restrictions et éventuelle propriété des fichiers ou patrons doivent faire l’objet d’un accord explicite."
+        ]
+      ]
+    },
+    "low-moq-underwear-manufacturer": {
+      "sections": [
+        [
+          "Identifier le minimum qui contraint l’assortiment",
+          "Additionnez les quantités par taille et coloris pour un seul modèle. Distinguez ensuite les accessoires à acheter, ceux consommés par la commande et le solde restant. Si des boîtes imprimées imposent une quantité supérieure, faites préciser la facturation et la garde du surplus avant de comparer les offres."
+        ]
+      ],
+      "rows": [
+        [
+          "Quantité",
+          "Réponse écrite attendue"
+        ],
+        [
+          "Vêtement",
+          "Total par modèle et répartition acceptée"
+        ],
+        [
+          "Matière ou coloris",
+          "Disponibilité et minimum du lot"
+        ],
+        [
+          "Accessoire de marque",
+          "Minimum d’achat, consommation et surplus"
+        ],
+        [
+          "Réassort",
+          "Solde, stockage et disponibilité à reconfirmer"
+        ]
+      ],
+      "faq": [
+        [
+          "Peut-on répartir le minimum entre plusieurs modèles ?",
+          "Ne supposez pas qu’un minimum global sera accepté. Présentez une grille distincte pour chaque modèle et faites valider les répartitions."
+        ]
+      ]
+    },
+    "custom-underwear-manufacturer": {
+      "sections": [
+        [
+          "Rendre chaque correction d’échantillon reproductible",
+          "Associez chaque modification à un point de mesure, une référence matière ou une photographie annotée. Notez l’exigence précédente, le changement demandé et le résultat observé. Séparez les questions ouvertes des instructions validées : « plus ajusté » ne remplace pas une correction mesurable du dossier."
+        ]
+      ],
+      "rows": [
+        [
+          "Donnée d’entrée",
+          "Livrable à demander"
+        ],
+        [
+          "Patron et coupe",
+          "Points de mesure, unités, gradation et taille d’essai"
+        ],
+        [
+          "Matières",
+          "Corps, fond et accessoires séparés"
+        ],
+        [
+          "Construction",
+          "Bords, assemblages et emplacements annotés"
+        ],
+        [
+          "Validation",
+          "Fiche datée, commentaires clos et échantillon identifié"
+        ]
+      ],
+      "faq": [
+        [
+          "Une photographie suffit-elle pour produire ?",
+          "Elle décrit l’apparence souhaitée. Les mesures, matières, assemblages et tolérances restent à définir puis à valider sur les échantillons."
+        ]
+      ]
+    },
+    "seamless-underwear-manufacturer": {
+      "sections": [
+        [
+          "Examiner l’assemblage au-delà du bord lisse",
+          "Comparez DYS323 et DYS314 au niveau du fond et des ouvertures de jambe. Un bord découpé et une liaison collée sont deux caractéristiques distinctes. Photographiez l’échantillon à plat et sous l’extension convenue, puis relevez les changements après l’entretien prévu dans les mêmes conditions."
+        ]
+      ],
+      "rows": [
+        [
+          "Zone",
+          "Observation à consigner"
+        ],
+        [
+          "Jambe",
+          "Bord découpé ou ourlé ; enroulement et couverture"
+        ],
+        [
+          "Fond",
+          "Assemblage collé ou cousu et zone examinée"
+        ],
+        [
+          "Composition",
+          "Corps et fond du modèle effectivement retenu"
+        ],
+        [
+          "Après entretien",
+          "Procédure, version d’échantillon et changement observé"
+        ]
+      ],
+      "faq": [
+        [
+          "Une photographie prouve-t-elle la tenue du collage ?",
+          "Non. Convenez d’une méthode et de critères pour l’échantillon réel, puis conservez les résultats avant toute affirmation de durabilité."
+        ]
+      ]
+    },
+    "mens-underwear-manufacturer": {
+      "sections": [
+        [
+          "Valider ensemble poche avant, jambe et ceinture",
+          "Précisez la doublure de la poche avant, sa matière et la présence éventuelle d’une ouverture. Sur le même échantillon, examinez la couverture de jambe et la fixation de la ceinture. Un changement d’élastique peut modifier le porté même si la lettre de taille reste identique."
+        ]
+      ],
+      "rows": [
+        [
+          "Zone",
+          "Donnée à enregistrer"
+        ],
+        [
+          "Poche avant",
+          "Forme, ouverture, doublure et fixation"
+        ],
+        [
+          "Jambe",
+          "Points de mesure d’entrejambe et ouverture"
+        ],
+        [
+          "Ceinture",
+          "Largeur, longueur au repos, répétition du logo et raccord"
+        ],
+        [
+          "Tailles",
+          "Mesures propres au modèle ; ne pas déduire l’entrejambe du nom"
+        ]
+      ],
+      "faq": [
+        [
+          "Une ceinture peut-elle être copiée sur tous les modèles homme ?",
+          "Vérifiez sa fixation et le porté sur chaque construction. Un logo commun ne valide pas automatiquement les dimensions ni les quantités d’élastique."
+        ]
+      ]
+    },
+    "lingerie-manufacturer": {
+      "sections": [
+        [
+          "Distinguer le choix de dentelle du choix de coupe",
+          "Définissez d’abord la couverture du slip ou du string. Pour une référence telle que LS006, gardez séparées les compositions du corps et de la dentelle. Examinez le placement du motif dans les tailles demandées et conservez la référence du galon pour toute substitution ultérieure."
+        ]
+      ],
+      "rows": [
+        [
+          "Décision",
+          "Détail à valider"
+        ],
+        [
+          "Couverture",
+          "Vues avant et arrière ; bikini, brésilien ou string"
+        ],
+        [
+          "Dentelle",
+          "Motif, bord, largeur et sens d’extension"
+        ],
+        [
+          "Étiquette",
+          "Composition du corps, de la dentelle et du fond"
+        ],
+        [
+          "Coordination",
+          "Échantillons réels de couleur ; catégories supplémentaires à évaluer"
+        ]
+      ],
+      "faq": [
+        [
+          "Un slip en dentelle établit-il la faisabilité d’un ensemble avec soutien-gorge ?",
+          "Non. Le modèle de slip documente cette seule référence. Le soutien-gorge, la correspondance des couleurs et toute nouvelle construction nécessitent leur propre étude."
+        ]
+      ]
+    },
+    "underwear-factory": {
+      "sections": [
+        [
+          "Demander des preuves liées à votre commande",
+          "Une présentation d’usine et un rapport d’inspection répondent à des questions différentes. Reliez les étapes prévues au modèle choisi et identifiez qui enregistre les contrôles de matière, de construction et d’emballage. Vérifiez l’entité, la date, la version du produit et le lot de chaque document."
+        ]
+      ],
+      "rows": [
+        [
+          "Preuve",
+          "Correspondance à vérifier"
+        ],
+        [
+          "Identité",
+          "Entité contractante, adresse et devis"
+        ],
+        [
+          "Procédé",
+          "Découpe, assemblage et finition de l’échantillon"
+        ],
+        [
+          "Inspection",
+          "Lot, plan de contrôle, défauts et décision"
+        ],
+        [
+          "Expédition",
+          "Quantités, dossier d’emballage et documents"
+        ]
+      ],
+      "faq": [
+        [
+          "Une photographie d’usine prouve-t-elle l’inspection de ma commande ?",
+          "Non. Elle montre un lieu. Seuls les dossiers de la commande peuvent établir la version contrôlée, les vérifications effectuées et leurs résultats."
+        ]
+      ]
+    },
+    "bra-manufacturer": {
+      "sections": [
+        [
+          "Résoudre les points de développement avant de chiffrer la production",
+          "Le catalogue de sous-vêtements ne démontre pas une gamme de soutiens-gorge fabriquée et vérifiée. Transmettez le système de tailles et les composants, puis demandez une confirmation écrite de la construction avant de financer le développement ou d’utiliser les délais du catalogue."
+        ]
+      ],
+      "rows": [
+        [
+          "Étape",
+          "Décision nécessaire"
+        ],
+        [
+          "Construction",
+          "Sans armatures, avec armatures ou autre ; capacité à confirmer"
+        ],
+        [
+          "Tailles",
+          "Bonnet/tour ou lettres, étendue et plan d’essayage"
+        ],
+        [
+          "Composants",
+          "Bonnets, doublure, bretelles, fermeture et bande sous-poitrine"
+        ],
+        [
+          "Maintien",
+          "Usage prévu et preuves requises ; aucun niveau mesuré publié"
+        ],
+        [
+          "Devis",
+          "Plan d’échantillons et minimums spécifiques à cette catégorie"
+        ]
+      ],
+      "faq": [
+        [
+          "Le minimum des slips s’applique-t-il aux soutiens-gorge ?",
+          "Aucun minimum ni calendrier propre aux soutiens-gorge n’est établi ici. Demandez-les après l’étude de la construction, des tailles et des composants."
+        ]
+      ]
+    }
+  },
+  "de": {
+    "private-label-underwear-manufacturer": {
+      "sections": [
+        [
+          "Basismodell und Markenversion getrennt freigeben",
+          "Bewahren Sie das Katalogmuster als Passformreferenz auf. Prüfen Sie am gebrandeten Muster die tatsächlichen Änderungen: Logoposition, Etikett, Bund und verpacktes Produkt. Eine digitale Druckfreigabe bestätigt weder die Anwendung auf dem Stoff noch den Tragekomfort des Etiketts."
+        ]
+      ],
+      "rows": [
+        [
+          "Freigabe",
+          "Zu dokumentieren"
+        ],
+        [
+          "Basismodell",
+          "Modell, Größe, Farbe und Musterversion"
+        ],
+        [
+          "Marke",
+          "Dateiversion, Verfahren, Position und Bauteilreferenz"
+        ],
+        [
+          "Verpackung",
+          "Zuordnung von Produkt, Größe, Etikett und Packungsinhalt"
+        ],
+        [
+          "Nachbestellung",
+          "Genehmigte Ersatzmaterialien und Restbestände"
+        ]
+      ],
+      "faq": [
+        [
+          "Bedeutet Private Label automatisch Exklusivität?",
+          "Nein. Nutzungsrechte, Einschränkungen sowie Eigentum an Dateien oder Schnittmustern müssen ausdrücklich vereinbart werden."
+        ]
+      ]
+    },
+    "low-moq-underwear-manufacturer": {
+      "sections": [
+        [
+          "Die begrenzende Mindestmenge ermitteln",
+          "Addieren Sie jede Größen-Farb-Kombination innerhalb eines Modells. Unterscheiden Sie danach die Einkaufsmenge eines Zubehörteils, den Verbrauch dieser Bestellung und den Restbestand. Übersteigt die Mindestmenge bedruckter Kartons die Bekleidungsmenge, klären Sie Kosten und Lagerung vor dem Angebotsvergleich."
+        ]
+      ],
+      "rows": [
+        [
+          "Menge",
+          "Schriftlich zu bestätigen"
+        ],
+        [
+          "Bekleidung",
+          "Modellsumme und akzeptierte Aufteilung"
+        ],
+        [
+          "Material oder Farbe",
+          "Verfügbarkeit und Mindestcharge"
+        ],
+        [
+          "Markenzubehör",
+          "Einkaufsminimum, Verbrauch und Überschuss"
+        ],
+        [
+          "Nachbestellung",
+          "Restbestand, Lagerung und erneute Verfügbarkeit"
+        ]
+      ],
+      "faq": [
+        [
+          "Darf die Mindestmenge auf verschiedene Modelle verteilt werden?",
+          "Setzen Sie kein gemeinsames Minimum voraus. Legen Sie pro Modell eine eigene Aufteilung vor und lassen Sie diese bestätigen."
+        ]
+      ]
+    },
+    "custom-underwear-manufacturer": {
+      "sections": [
+        [
+          "Musteränderungen nachvollziehbar festhalten",
+          "Verknüpfen Sie jede Änderung mit einem Messpunkt, einer Materialreferenz oder einem markierten Foto. Dokumentieren Sie bisherigen Sollwert, gewünschte Änderung und Musterergebnis. Trennen Sie offene Fragen von freigegebenen Anweisungen; «enger» allein ist keine reproduzierbare Maßkorrektur."
+        ]
+      ],
+      "rows": [
+        [
+          "Eingabe",
+          "Benötigtes Ergebnis"
+        ],
+        [
+          "Schnitt und Passform",
+          "Messpunkte, Einheiten, Gradierung und Mustergröße"
+        ],
+        [
+          "Material",
+          "Hauptstoff, Zwickel und Zubehör getrennt"
+        ],
+        [
+          "Verarbeitung",
+          "Kanten, Verbindungen und markierte Positionen"
+        ],
+        [
+          "Freigabe",
+          "Datierte Spezifikation, geklärte Kommentare und Musterkennung"
+        ]
+      ],
+      "faq": [
+        [
+          "Reicht ein Foto als Produktionsvorgabe?",
+          "Es vermittelt die gewünschte Optik. Maße, Materialien, Verarbeitung und Toleranzen müssen noch entwickelt und am Muster freigegeben werden."
+        ]
+      ]
+    },
+    "seamless-underwear-manufacturer": {
+      "sections": [
+        [
+          "Die Verbindung hinter der glatten Kante prüfen",
+          "Vergleichen Sie DYS323 und DYS314 am Zwickel und Beinausschnitt. Eine geschnittene Kante und eine geklebte Verbindung sind verschiedene Merkmale. Fotografieren Sie das Muster flach und unter vereinbarter Dehnung; vergleichen Sie Veränderungen nach der vorgesehenen Pflege unter gleichen Bedingungen."
+        ]
+      ],
+      "rows": [
+        [
+          "Bereich",
+          "Musterprotokoll"
+        ],
+        [
+          "Beinkante",
+          "Geschnitten oder gesäumt; Einrollen und Bedeckung"
+        ],
+        [
+          "Zwickel",
+          "Geklebte oder genähte Verbindung und geprüfter Bereich"
+        ],
+        [
+          "Material",
+          "Modellspezifische Angaben für Hauptstoff und Zwickel"
+        ],
+        [
+          "Nach Pflege",
+          "Verfahren, Musterversion und beobachtete Veränderung"
+        ]
+      ],
+      "faq": [
+        [
+          "Beweist ein glattes Foto die Haltbarkeit der Verklebung?",
+          "Nein. Vereinbaren Sie Verfahren und Kriterien für das konkrete Muster und dokumentieren Sie Ergebnisse vor einer Haltbarkeitsaussage."
+        ]
+      ]
+    },
+    "mens-underwear-manufacturer": {
+      "sections": [
+        [
+          "Frontbereich, Bein und Bund gemeinsam freigeben",
+          "Halten Sie Futter, hautberührendes Material und einen möglichen Eingriff fest. Prüfen Sie am selben Muster Beinbedeckung und Bundbefestigung. Ein anderes Gummiband kann die Passform verändern, obwohl der Größenbuchstabe gleich bleibt."
+        ]
+      ],
+      "rows": [
+        [
+          "Passformbereich",
+          "Zu dokumentieren"
+        ],
+        [
+          "Frontbereich",
+          "Form, Eingriff, Futter und Befestigung"
+        ],
+        [
+          "Bein",
+          "Messpunkte der Innenbeinlänge und Beinöffnung"
+        ],
+        [
+          "Bund",
+          "Breite, entspannte Länge, Logorapport und Verbindungsnaht"
+        ],
+        [
+          "Größen",
+          "Modellspezifische Maße; Innenbeinlänge nicht aus dem Namen ableiten"
+        ]
+      ],
+      "faq": [
+        [
+          "Lässt sich derselbe Bund auf jedes Herrenmodell übertragen?",
+          "Prüfen Sie Befestigung und Passform für jede Konstruktion. Ein gemeinsames Logo bestätigt weder gleiche Bundmaße noch gleiche Zubehörmengen."
+        ]
+      ]
+    },
+    "lingerie-manufacturer": {
+      "sections": [
+        [
+          "Spitzenauswahl und Schnitt getrennt entscheiden",
+          "Legen Sie zuerst die Bedeckung von Slip oder String fest. Bei LS006 sind Hauptstoff und Spitze getrennt zu beschreiben. Prüfen Sie die Musterplatzierung in den gewünschten Größen und bewahren Sie die Spitzenreferenz für spätere Ersatzentscheidungen auf."
+        ]
+      ],
+      "rows": [
+        [
+          "Sortimentsentscheidung",
+          "Freizugebendes Detail"
+        ],
+        [
+          "Bedeckung",
+          "Vorder- und Rückansicht; Bikini, Brazilian oder String"
+        ],
+        [
+          "Spitze",
+          "Motiv, Kante, Breite und Dehnrichtung"
+        ],
+        [
+          "Etikett",
+          "Materialangaben für Hauptstoff, Spitze und Zwickel"
+        ],
+        [
+          "Kombination",
+          "Reale Farbmuster; zusätzliche Kategorien gesondert prüfen"
+        ]
+      ],
+      "faq": [
+        [
+          "Belegt ein Spitzenslip ein vollständiges BH-Set?",
+          "Nein. Der gelistete Slip belegt nur dieses Modell. BH, Farbabstimmung und neue Verarbeitung brauchen eine eigene Machbarkeits- und Musterprüfung."
+        ]
+      ]
+    },
+    "underwear-factory": {
+      "sections": [
+        [
+          "Nachweise für den konkreten Auftrag anfordern",
+          "Eine Fabrikbeschreibung und ein Prüfbericht beantworten unterschiedliche Fragen. Ordnen Sie die geplanten Arbeitsschritte dem ausgewählten Modell zu und bestimmen Sie, wer Material-, Verarbeitungs- und Verpackungskontrollen dokumentiert. Prüfen Sie Unternehmen, Datum, Produktversion und Charge."
+        ]
+      ],
+      "rows": [
+        [
+          "Nachweis",
+          "Auftragsbezug prüfen"
+        ],
+        [
+          "Identität",
+          "Vertragspartner, Adresse und Angebotsangaben"
+        ],
+        [
+          "Verfahren",
+          "Zuschnitt, Montage und Verarbeitung des Musters"
+        ],
+        [
+          "Prüfung",
+          "Charge, Prüfplan, Fehler und Entscheidung"
+        ],
+        [
+          "Versand",
+          "Modellmengen, Packprotokoll und Dokumente"
+        ]
+      ],
+      "faq": [
+        [
+          "Beweist ein Fabrikfoto die Prüfung meiner Bestellung?",
+          "Nein. Es zeigt einen Ort. Auftragsbezogene Unterlagen müssen belegen, welche Version geprüft wurde, welche Kontrollen stattfanden und was sie ergaben."
+        ]
+      ]
+    },
+    "bra-manufacturer": {
+      "sections": [
+        [
+          "Entwicklungsvoraussetzungen vor dem Produktionsangebot klären",
+          "Der Unterwäschekatalog belegt keine verifizierte BH-Produktionsreihe. Reichen Sie Größensystem und Komponenten ein und lassen Sie die gewünschte Konstruktion schriftlich bestätigen, bevor Sie Entwicklung bezahlen oder Katalogfristen übernehmen."
+        ]
+      ],
+      "rows": [
+        [
+          "Prüfschritt",
+          "Erforderliche Entscheidung"
+        ],
+        [
+          "Konstruktion",
+          "Ohne Bügel, mit Bügel oder anderer Typ; Fähigkeit bestätigen"
+        ],
+        [
+          "Größen",
+          "Cup/Unterbrust oder Buchstaben, Umfang und Anprobeplan"
+        ],
+        [
+          "Komponenten",
+          "Cups, Futter, Träger, Verschluss und Unterbrustband"
+        ],
+        [
+          "Halt",
+          "Verwendung und Nachweise; keine gemessene Stützstufe veröffentlicht"
+        ],
+        [
+          "Angebot",
+          "Kategoriespezifischer Musterplan und Mindestmengen"
+        ]
+      ],
+      "faq": [
+        [
+          "Gilt die Slip-Mindestmenge auch für BHs?",
+          "Hier sind keine BH-spezifische Mindestmenge und keine Termine belegt. Fordern Sie diese nach der Prüfung von Konstruktion, Größen und Komponenten an."
+        ]
+      ]
+    }
+  },
+  "it": {
+    "private-label-underwear-manufacturer": {
+      "sections": [
+        [
+          "Approvare separatamente il modello base e la versione con marchio",
+          "Conservate il campione di catalogo come riferimento di vestibilità. Sulla versione con marchio controllate le modifiche effettive: posizione del logo, etichetta, elastico e prodotto confezionato. Una bozza digitale non approva l’applicazione sul tessuto né il comfort dell’etichetta."
+        ]
+      ],
+      "rows": [
+        [
+          "Registro",
+          "Cosa approvare"
+        ],
+        [
+          "Modello base",
+          "Riferimento, taglia, colore e versione del campione"
+        ],
+        [
+          "Marchio",
+          "Versione del file, metodo, posizione e componente"
+        ],
+        [
+          "Confezione",
+          "Corrispondenza tra capo, taglia, etichetta e contenuto"
+        ],
+        [
+          "Riordino",
+          "Sostituzioni autorizzate e saldo dei componenti"
+        ]
+      ],
+      "faq": [
+        [
+          "Il marchio privato comporta l’esclusiva del modello?",
+          "No. Diritti d’uso, restrizioni e proprietà di file o cartamodelli devono essere concordati espressamente."
+        ]
+      ]
+    },
+    "low-moq-underwear-manufacturer": {
+      "sections": [
+        [
+          "Individuare il minimo che limita l’assortimento",
+          "Sommate ogni combinazione di taglia e colore all’interno di un singolo modello. Distinguete poi i componenti da acquistare, quelli utilizzati nell’ordine e il saldo residuo. Se una scatola stampata richiede una quantità maggiore dei capi, chiarite costi e custodia dell’eccedenza prima di confrontare i preventivi."
+        ]
+      ],
+      "rows": [
+        [
+          "Quantità",
+          "Conferma scritta richiesta"
+        ],
+        [
+          "Capi",
+          "Totale per modello e ripartizione accettata"
+        ],
+        [
+          "Tessuto o colore",
+          "Disponibilità e lotto minimo"
+        ],
+        [
+          "Componente di marca",
+          "Minimo d’acquisto, consumo ed eccedenza"
+        ],
+        [
+          "Riordino",
+          "Saldo, deposito e disponibilità da riconfermare"
+        ]
+      ],
+      "faq": [
+        [
+          "Si può distribuire il minimo su modelli diversi?",
+          "Non presumete un minimo complessivo. Presentate una griglia per ciascun modello e fate confermare ogni ripartizione."
+        ]
+      ]
+    },
+    "custom-underwear-manufacturer": {
+      "sections": [
+        [
+          "Rendere riproducibile ogni revisione del campione",
+          "Collegate ogni modifica a un punto di misura, a un materiale o a una fotografia annotata. Registrate requisito precedente, cambiamento richiesto e risultato del campione. Separate i dubbi aperti dalle istruzioni approvate: «più aderente» deve diventare una correzione misurabile."
+        ]
+      ],
+      "rows": [
+        [
+          "Dato iniziale",
+          "Documento da richiedere"
+        ],
+        [
+          "Modello e vestibilità",
+          "Punti di misura, unità, sviluppo taglie e taglia campione"
+        ],
+        [
+          "Materiali",
+          "Corpo, tassello e accessori separati"
+        ],
+        [
+          "Costruzione",
+          "Bordi, giunzioni e posizioni annotate"
+        ],
+        [
+          "Approvazione",
+          "Scheda datata, commenti risolti e campione identificato"
+        ]
+      ],
+      "faq": [
+        [
+          "Basta una fotografia per produrre?",
+          "È un riferimento visivo. Misure, materiali, costruzione e tolleranze devono ancora essere definiti e approvati sui campioni."
+        ]
+      ]
+    },
+    "seamless-underwear-manufacturer": {
+      "sections": [
+        [
+          "Esaminare le giunzioni oltre il bordo liscio",
+          "Confrontate DYS323 e DYS314 sul tassello e sull’apertura della gamba. Un bordo tagliato e una giunzione incollata sono caratteristiche distinte. Fotografate il campione disteso e sotto l’estensione concordata; registrate i cambiamenti dopo la cura prevista nelle stesse condizioni."
+        ]
+      ],
+      "rows": [
+        [
+          "Zona",
+          "Registro del campione"
+        ],
+        [
+          "Bordo gamba",
+          "Taglio o orlo; arrotolamento e copertura"
+        ],
+        [
+          "Tassello",
+          "Giunzione incollata o cucita e area esaminata"
+        ],
+        [
+          "Composizione",
+          "Corpo e tassello del modello selezionato"
+        ],
+        [
+          "Dopo la cura",
+          "Procedura, versione e cambiamento osservato"
+        ]
+      ],
+      "faq": [
+        [
+          "Una foto liscia dimostra la durata dell’incollaggio?",
+          "No. Concordate procedura e criteri per il campione reale e conservate i risultati prima di dichiararne la durata."
+        ]
+      ]
+    },
+    "mens-underwear-manufacturer": {
+      "sections": [
+        [
+          "Approvare insieme parte anteriore, gamba ed elastico",
+          "Definite fodera, materiale a contatto con la pelle ed eventuale apertura anteriore. Sullo stesso campione valutate copertura della gamba e fissaggio dell’elastico. Cambiare elastico può modificare la vestibilità anche se la lettera della taglia resta uguale."
+        ]
+      ],
+      "rows": [
+        [
+          "Zona",
+          "Informazione da registrare"
+        ],
+        [
+          "Parte anteriore",
+          "Forma, apertura, fodera e fissaggio"
+        ],
+        [
+          "Gamba",
+          "Punti di misura dell’interno gamba e apertura"
+        ],
+        [
+          "Elastico",
+          "Larghezza, lunghezza a riposo, ripetizione logo e giunzione"
+        ],
+        [
+          "Taglie",
+          "Misure del modello; non ricavare l’interno gamba dal nome"
+        ]
+      ],
+      "faq": [
+        [
+          "Lo stesso elastico può essere usato su tutti i modelli uomo?",
+          "Verificate fissaggio e vestibilità su ciascuna costruzione. Un logo comune non conferma dimensioni o quantità identiche per ogni modello."
+        ]
+      ]
+    },
+    "lingerie-manufacturer": {
+      "sections": [
+        [
+          "Distinguere la scelta del pizzo dalla silhouette",
+          "Definite prima la copertura di slip o perizoma. Per un modello come LS006, mantenete separate le composizioni del corpo e del pizzo. Valutate il posizionamento del motivo nelle taglie richieste e conservate il riferimento del pizzo per eventuali sostituzioni."
+        ]
+      ],
+      "rows": [
+        [
+          "Scelta",
+          "Dettaglio da approvare"
+        ],
+        [
+          "Copertura",
+          "Vista anteriore e posteriore; bikini, brasiliana o perizoma"
+        ],
+        [
+          "Pizzo",
+          "Motivo, bordo, larghezza e direzione elastica"
+        ],
+        [
+          "Etichetta",
+          "Composizione di corpo, pizzo e tassello"
+        ],
+        [
+          "Coordinati",
+          "Campioni reali di colore; altre categorie da valutare"
+        ]
+      ],
+      "faq": [
+        [
+          "Uno slip in pizzo conferma la fattibilità di un completo con reggiseno?",
+          "No. Il catalogo documenta quello slip. Reggiseno, abbinamento colori e nuove costruzioni richiedono una valutazione e campioni specifici."
+        ]
+      ]
+    },
+    "underwear-factory": {
+      "sections": [
+        [
+          "Richiedere prove riferite al proprio ordine",
+          "La descrizione della fabbrica e un rapporto d’ispezione rispondono a domande diverse. Collegate le lavorazioni previste al modello scelto e definite chi registra i controlli su materiali, costruzione e imballaggio. Verificate impresa, data, versione del prodotto e lotto di ogni documento."
+        ]
+      ],
+      "rows": [
+        [
+          "Prova",
+          "Corrispondenza con l’ordine"
+        ],
+        [
+          "Identità",
+          "Controparte contrattuale, indirizzo e preventivo"
+        ],
+        [
+          "Processo",
+          "Taglio, assemblaggio e finitura del campione"
+        ],
+        [
+          "Ispezione",
+          "Lotto, piano di controllo, difetti e decisione"
+        ],
+        [
+          "Spedizione",
+          "Quantità per modello, confezionamento e documenti"
+        ]
+      ],
+      "faq": [
+        [
+          "Una foto della fabbrica prova che il mio ordine è stato ispezionato?",
+          "No. Mostra un luogo. Servono i registri dell’ordine per stabilire versione controllata, verifiche effettuate e risultati."
+        ]
+      ]
+    },
+    "bra-manufacturer": {
+      "sections": [
+        [
+          "Chiarire lo sviluppo prima del preventivo di produzione",
+          "Il catalogo di intimo non dimostra una gamma verificata di reggiseni prodotti. Inviate sistema di taglie e componenti, poi chiedete una conferma scritta della costruzione prima di pagare lo sviluppo o applicare i tempi del catalogo."
+        ]
+      ],
+      "rows": [
+        [
+          "Fase",
+          "Decisione necessaria"
+        ],
+        [
+          "Costruzione",
+          "Senza ferretto, con ferretto o altro; capacità da confermare"
+        ],
+        [
+          "Taglie",
+          "Coppa/girotorace o lettere, gamma e piano di prova"
+        ],
+        [
+          "Componenti",
+          "Coppe, fodera, spalline, chiusura e fascia sottoseno"
+        ],
+        [
+          "Sostegno",
+          "Uso previsto e prove richieste; nessun livello misurato pubblicato"
+        ],
+        [
+          "Preventivo",
+          "Piano campioni e minimi specifici per la categoria"
+        ]
+      ],
+      "faq": [
+        [
+          "Il minimo degli slip vale anche per i reggiseni?",
+          "Qui non sono stabiliti minimi o tempi specifici per i reggiseni. Richiedeteli dopo la valutazione di costruzione, taglie e componenti."
+        ]
+      ]
+    }
+  }
+}

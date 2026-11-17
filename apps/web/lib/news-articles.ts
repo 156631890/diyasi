@@ -25,6 +25,7 @@ export type NewsArticle = Omit<NewsSourceArticle, "coverImage"> & { coverImage: 
 const sourceArticles: NewsSourceArticle[] = articles;
 
 export const newsArticles: NewsArticle[] = sourceArticles
+  .filter(article => article.slug !== "bikini-vs-brazilian-underwear-buying-notes")
   .map((article) => ({
     ...article,
     coverImage:

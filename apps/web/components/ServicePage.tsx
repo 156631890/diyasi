@@ -145,6 +145,7 @@ export default function ServicePage({
       </div>
       <section className="d-section d-reading">
         <h2>Plan your next sourcing step</h2>
+        {path==="/oem-odm" && <Link href="/manufacturers" className="d-text-link">Choose a manufacturing brief by product and order type ↗</Link>}
         {serviceRelatedLinks[path]?.map(({ label, href }) => <Link key={href} href={href} className="d-text-link">{label} ↗</Link>)}
       </section>
       <section className="d-service-cta">

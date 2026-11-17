@@ -1,4 +1,6 @@
 import source from "@/data/manufacturer-pages.json";
+import decisions from "@/data/manufacturer-decisions.json";
+export const manufacturerDecisions: Record<string,{heading:string;text:string;rows:string[][];faq:string[]}> = decisions;
 import { catalogProducts } from "./catalog-source";
 import { resourceArticles } from "./resource-articles";
 import { sampleAndLeadTimes } from "./site-info";
@@ -6,7 +8,7 @@ import { sampleAndLeadTimes } from "./site-info";
 export type ManufacturerPage = {slug:string;keyword:string;title:string;h1:string;description:string;intro:string;models:string[];resources:string[];relatedManufacturers:string[];migratedFrom?:string;assessmentOnly?:boolean;focus:{title:string;text:string}[];specificFaq:string[]};
 export const manufacturerPages: ManufacturerPage[] = source;
 export const manufacturerPath = (slug: string) => `/manufacturers/${slug}`;
-export const sourcingUpdatedAt = "2026-10-31";
+export const sourcingUpdatedAt = "2026-11-17";
 export const resourceMigrations: Record<string, string> = {
   "private-label-underwear-manufacturer": "private-label-underwear-manufacturer",
   "mens-underwear-manufacturer-private-label": "mens-underwear-manufacturer",
@@ -16,14 +18,9 @@ export function manufacturerModels(page: ManufacturerPage) {
   return catalogProducts.filter(p => page.models.includes(p.model_number));
 }
 export function manufacturerFaq(page: ManufacturerPage): string[][] {
-  return [page.specificFaq,
-    ["How is the sample schedule confirmed?", page.assessmentOnly
-      ? "This category needs a feasibility review before a schedule can be confirmed. The underwear catalogue's 5–7 day sample guidance is not a promise for this proposed development. Confirm sample charges, revisions and courier time separately."
-      : "Catalogue sample guidance is 5–7 days after the team reviews the brief and material availability. Confirm the start point, charges, revision rounds and courier delivery separately. A new pattern or component can require a different plan."],
-    ["Are published unit prices or automatic quantity discounts available?", "No verified unit-price ladder is published here. Request a written quotation identifying the style, composition, quantity, size and colour allocation, branding, packing and delivery terms. Ask for development, component and freight charges separately so offers can be compared on the same basis."],
-    ["What payment and approval terms apply?", "Request the current payment terms in your written quotation; no universal deposit percentage is stated here. Approve the physical sample, final specification, artwork, packing instruction and agreed schedule before authorising production. Use the existing contact form to submit the project brief."],
-  ];
+  return [page.specificFaq, manufacturerDecisions[page.slug].faq];
 }
+
 export function manufacturerSpecifications(page: ManufacturerPage): string[][] {
   const models = manufacturerModels(page);
   return [

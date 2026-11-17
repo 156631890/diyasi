@@ -1,3 +1,7 @@
+import LandedCostCalculator from "@/components/LandedCostCalculator";
+import ModelSizeReference from "@/components/ModelSizeReference";
+import ProcurementWorksheet from "@/components/ProcurementWorksheet";
+import { resourceWorksheets } from "@/lib/procurement-worksheets";
 import { ORGANIZATION_ID } from "@/lib/site-config";
 import RelatedManufacturers from "@/components/RelatedManufacturers";
 import Image from "next/image";
@@ -103,6 +107,9 @@ export default async function ResourceDetailPage({ params }: Props) {
         <aside className="d-article-aside">
           <p className="d-eyebrow">In this guide</p>
           <nav aria-label="Article contents">
+            {a.slug==="unit-cost-custom-underwear-manufacturing" && <a href="#cost-calculator">Landed cost calculator</a>}
+            {a.slug==="us-eu-underwear-size-labeling-preparation-startup-brands" && <a href="#model-size-reference">Actual model size references</a>}
+            {resourceWorksheets[a.slug] && <a href={"#"+resourceWorksheets[a.slug].id}>{resourceWorksheets[a.slug].title}</a>}
             {a.sections.map((s, i) => (
               <a key={s.title} href={"#section-" + (i + 1)}>
                 {s.title}
@@ -142,6 +149,10 @@ export default async function ResourceDetailPage({ params }: Props) {
                 : "Illustrative fabric still life."}
             </figcaption>
           </figure>
+          {a.slug==="unit-cost-custom-underwear-manufacturing" && <LandedCostCalculator/>}
+          {a.slug==="us-eu-underwear-size-labeling-preparation-startup-brands" && <ModelSizeReference/>}
+          {resourceWorksheets[a.slug] && <ProcurementWorksheet sheet={resourceWorksheets[a.slug]}/>}
+          {a.slug==="bikini-vs-brazilian-underwear" && <figure className="d-article-photo"><Image src={catalogProducts.find(p=>p.model_number==="LS006")!.image_url} alt="DIYASI LS006 cotton Brazilian brief with lace waistband and leg openings" width={800} height={800} loading="lazy"/><figcaption>LS006: cotton-and-lace Brazilian reference retained from the buying notes. Its construction does not describe every Brazilian brief.</figcaption></figure>}
           {a.sections.map((s, i) => (
             <section key={s.title} id={"section-" + (i + 1)}>
               <h2>{s.title}</h2>
@@ -206,6 +217,12 @@ export default async function ResourceDetailPage({ params }: Props) {
               </a>
             ))}
           </section>
+          {a.slug==="unit-cost-custom-underwear-manufacturing" && <p><Link href="/guides/underwear-manufacturing-cost">Need to plan the budget before requesting prices? Read the cost planning guide ↗</Link></p>}
+          {a.slug==="private-label-underwear-moq-guide" && <p><Link href="/guides/underwear-moq-explained">How garment and component minimums work ↗</Link></p>}
+          {a.slug==="waistband-customization-mens-boxer-briefs-private-label" && <p><Link href="/resources/custom-waistband-underwear-manufacturer">Choose a waistband branding method before approval ↗</Link></p>}
+          {a.slug==="underwear-manufacturer-for-startup-brands" && <p><Link href="/guides/starting-an-underwear-brand">Still choosing your brand direction? Start with the launch planning guide ↗</Link></p>}
+          {a.slug==="traceless-vs-seamless-underwear-yoga-brands" && <p><Link href="/resources/seamless-vs-no-show-underwear">Seamless and no-show: terms and clothing visibility ↗</Link> · <Link href="/resources/gusset-construction-womens-underwear-comfort-qc">Gusset materials and attachment checklist ↗</Link></p>}
+          {a.slug==="bikini-vs-brazilian-underwear" && <p><Link href="/products/womens-panties">Browse women’s underwear</Link> · <Link href="/resources/traceless-vs-seamless-underwear-yoga-brands">Compare bonded and stitched joins</Link> · <Link href="/resources/gusset-construction-womens-underwear-comfort-qc">Review gusset construction</Link></p>}
           <section className="d-service-cta">
             <h2>Put the details into practice.</h2>
             <p>

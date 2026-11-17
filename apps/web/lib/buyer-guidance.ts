@@ -30,7 +30,7 @@ export const collectionBuyingGuides: Record<string, BuyingGuide> = {
     heading: "How to source women's underwear for your brand",
     intro: "Build a sample shortlist around the wearer, fabric and coverage you need. DIYASI's women's catalogue includes cotton bikinis, lace-trim briefs, thongs and laser-cut styles for wholesale and private-label enquiries.",
     checks: ["Compare front and back coverage across the same size before choosing a bikini, Brazilian brief or thong.", "Confirm the body, lace and gusset compositions separately; a cotton gusset does not mean the whole garment is cotton.", "Ask for a size/color allocation and a separate quote for labels or packaging. Catalogue quantities do not set every custom-component minimum."],
-    links: [{ label: "Types of underwear for women: compare shapes", href: "/news/types-of-underwear-for-women" }, moqGuide, sizeGuide, gussetGuide, { label: "Bikini vs Brazilian underwear coverage", href: "/news/bikini-vs-brazilian-underwear-buying-notes" }, { label: "Women's cotton thong underwear", href: "/products/cotton-thongs" }],
+    links: [{ label: "Types of underwear for women: compare shapes", href: "/news/types-of-underwear-for-women" }, moqGuide, sizeGuide, gussetGuide, { label: "Bikini vs Brazilian underwear coverage", href: "/resources/bikini-vs-brazilian-underwear" }, { label: "Women's cotton thong underwear", href: "/products/cotton-thongs" }],
   },
   "cotton-underwear": {
     heading: "Planning a private-label cotton underwear range",

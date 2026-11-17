@@ -1,4 +1,5 @@
 import Image from "next/image";
+import CategoryModelComparison from "./CategoryModelComparison";
 import Link from "next/link";
 import { catalogProducts } from "@/lib/catalog-source";
 import { productsForCollection } from "@/lib/collections";
@@ -11,6 +12,7 @@ export default function LocalizedCatalog({locale, englishPath}: {locale:CatalogL
   const showProducts = englishPath === "/products" || englishPath.startsWith("/products/");
   const products = englishPath === "/products" ? catalogProducts : productsForCollection(englishPath.slice("/products/".length));
   return <>
+    {englishPath.startsWith("/products/") && <CategoryModelComparison slug={englishPath.slice("/products/".length)} locale={locale}/>}
     {showProducts && <section className="page-section" id="models">
       <h2 className="card-title-standard">{ru ? "Модели каталога" : "Modelos del catálogo"} · {products.length}</h2>
       <p className="page-reference-body mt-3">{ru ? "Добавьте модели в список образцов. Полные технические карточки доступны на английском; номер модели и состав сохранены из исходного каталога." : "Añada modelos a su lista de muestras. Las fichas técnicas completas están en inglés; se conservan los números de modelo y la composición del catálogo original."}</p>

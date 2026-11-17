@@ -33,6 +33,7 @@ export default function ResourcesPage() {
             prepare a brief and compare supplier quotations.
           </p>
           <Link href="/news" className="d-text-link">Company news &amp; collection notes ↗</Link>
+          <p><Link href="/guides">Start with the buying guides</Link> · <Link href="/resources/unit-cost-custom-underwear-manufacturing#cost-calculator">Calculate landed unit cost</Link> · <Link href="/resources/us-eu-underwear-size-labeling-preparation-startup-brands#model-size-reference">Check model size references</Link></p>
         </div>
       </section>
       <section className="d-section">

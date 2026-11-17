@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import ProductCard from "./ProductCard";
+import CategoryModelComparison from "./CategoryModelComparison";
 import JsonLd from "./JsonLd";
 import BuyerGuidance from "./BuyerGuidance";
 import ContentFaq from "./ContentFaq";
@@ -288,6 +289,7 @@ export default function CatalogPage({
           </nav>
         )}
         {page === 1 && !q && !search.sort && selection && <SourcingSelection selection={selection} />}
+        {page === 1 && !q && !search.sort && collection?.slug === "lace-underwear" && <CategoryModelComparison slug="lace-underwear"/>}
         {page === 1 && !q && <BuyerGuidance guide={collection ? collectionBuyingGuides[collection.slug] : {
           heading: "Plan a small-batch underwear order from the catalogue",
           intro: "Use the catalogue to compare actual styles before committing to a production run. Most listed specifications start at 120 pieces per style, with mixed sizes and colors subject to confirmation; custom fabrics and branding can have separate minimums.",

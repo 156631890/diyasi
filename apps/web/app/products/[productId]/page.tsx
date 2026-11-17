@@ -14,7 +14,7 @@ import { SampleButton } from "@/components/SampleList";
 import JsonLd from "@/components/JsonLd";
 import BuyerGuidance from "@/components/BuyerGuidance";
 import ContentFaq from "@/components/ContentFaq";
-import { catalogueFaq, collectionKeywordGuides } from "@/lib/keyword-content";
+
 import { productBuyingGuide } from "@/lib/buyer-guidance";
 import { productSourceEvidence } from "@/lib/product-source-evidence";
 import {
@@ -239,44 +239,9 @@ export default async function ProductPage({ params, searchParams }: Props) {
                 How to confirm sizes for your market ↗
               </Link>
             </details>
-            <details>
-              <summary>Make it your own</summary>
-              <p>
-                Discuss logo application, waistband artwork, care labels, colors
-                and packaging. Availability and minimum quantities depend on the
-                exact customization. Approve a physical sample and written
-                specification before bulk production.
-              </p>
-              <Link href="/packaging">Explore labels & packaging ↗</Link>
-            </details>
-            <details>
-              <summary>Sampling, delivery & care</summary>
-              <p>
-                Ask for current stock availability and a sample in the intended
-                fabric and size. Delivery timing starts after your
-                specifications are confirmed. Follow the care label approved for
-                the finished garment; heat and bleach may affect stretch fibers
-                and lace.
-              </p>
-              <Link href="/return-policy">Sample & order policy ↗</Link>
-            </details>
-            <details>
-              <summary>Sample costs & packaging</summary>
-              <p>
-                Sample fees, development charges and courier costs are quoted
-                for the selected style and destination. Confirm any sample-fee
-                credit against a bulk order in writing. Choose plain or branded
-                bags, hangtags, barcode labels or boxes with the team; component
-                minimums and print/setup charges are quoted separately.
-              </p>
-              <p>
-                Request a dated schedule showing sample approval, material and
-                artwork approval, production, inspection and dispatch. Freight
-                and customs time are additional to production time.
-              </p>
-              <Link href="/resources/underwear-sampling-costs-lead-times-packaging">
-                Sample and quotation checklist ↗
-              </Link>
+            <details><summary>Branding, samples and delivery</summary>
+              <p>Confirm logo, labels and packing for {p.model_number} on the physical sample. Ask for component minimums, sample and development charges, courier costs and a dated order schedule. Follow the care instructions approved for the finished garment.</p>
+              <p><Link href="/packaging">Labels &amp; packaging</Link> · <Link href="/resources/underwear-sampling-costs-lead-times-packaging">Sample and quotation checklist</Link> · <Link href="/return-policy">Sample &amp; order policy</Link></p>
             </details>
           </div>
         </div>
@@ -321,6 +286,11 @@ export default async function ProductPage({ params, searchParams }: Props) {
         )}
       </aside>
       <BuyerGuidance guide={productBuyingGuide(p)} />
+      {related.length>0 && <section className="d-section"><h2>Compare {p.model_number} with related catalogue models</h2><p>These are published model specifications, not interchangeable fit approvals. Compare coverage and components together, then use the linked photographs and source charts to select samples.</p>
+        <div className="d-table-scroll" tabIndex={0} role="region" aria-label={p.model_number+" model comparison"}><table><thead><tr><th scope="col">Model</th><th scope="col">Fit / rise</th><th scope="col">Composition</th><th scope="col">Listed sizes</th></tr></thead><tbody>
+          {[p,...related.slice(0,2)].map(model=><tr key={model.slug}><th scope="row">{model.slug===p.slug?model.model_number:<Link href={"/products/"+model.slug}>{model.model_number} ↗</Link>}</th><td>{model.fit} · {model.rise}</td><td>{model.fabric}</td><td>{model.size.replace(/^Standard American \/ European [Ss]ize\s*-\s*/, "")}</td></tr>)}
+        </tbody></table></div>
+      </section>}
       <section className="d-product-enquiry" id="product-inquiry">
         <div>
           <p className="d-eyebrow">Let’s begin with a sample</p>
@@ -365,8 +335,7 @@ export default async function ProductPage({ params, searchParams }: Props) {
       )}
       <ContentFaq title={`${p.model_number} sample questions`} items={[
         [`What should I confirm for ${p.seo_heading}?`, `Review the listed ${p.fit.toLowerCase()} fit, ${p.rise.toLowerCase()} rise and ${p.size} size range on the physical sample. Confirm the body and other component compositions separately; the final order specification and measurements require approval.`],
-        ...(collectionKeywordGuides[p.collection]?.faq.slice(0, 1) ?? []),
-        ...catalogueFaq,
+
       ]} />
     </main>
   );

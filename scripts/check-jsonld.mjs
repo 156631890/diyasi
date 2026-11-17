@@ -51,9 +51,10 @@ async function main() {
       }
     }
     if (/^(?:\/(?:es|fr|de|it))?\/manufacturers\/[^/]+$/.test(page.path)) {
-      for (const required of ['Organization', 'Service', 'FAQPage', 'BreadcrumbList']) if (!types.has(required)) pageErrors.push(`Manufacturer page missing ${required}`);
-      const faqCount = schemas.flatMap((schema) => [...walk(schema)]).filter((node) => hasType(node, 'FAQPage')).reduce((count, node) => count + (node.mainEntity?.length || 0), 0);
-      if (faqCount !== 4) pageErrors.push(`Manufacturer page must have exactly 4 FAQ questions, found ${faqCount}`);
+      const assessment = /\/(bra|swimwear|shapewear)-manufacturer$/.test(page.path);
+      for (const required of ['Organization', assessment ? 'WebPage' : 'Service', 'FAQPage', 'BreadcrumbList']) if (!types.has(required)) pageErrors.push(`Manufacturer page missing ${required}`);
+      if (assessment && types.has('Service')) pageErrors.push('Unverified category assessment must not claim a manufacturing Service');
+      // FAQ count follows actual buyer questions; exact visible text is checked above.
     }
     if (/^\/(resources|news|guides)\/[^/]+$/.test(page.path)) {
       if (!types.has('Article') && !types.has('NewsArticle')) pageErrors.push('Article route lacks Article/NewsArticle');

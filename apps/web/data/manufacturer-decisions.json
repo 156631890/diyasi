@@ -1,0 +1,374 @@
+{
+  "private-label-underwear-manufacturer": {
+    "heading": "Approve the base garment and the brand version separately",
+    "text": "Keep the catalogue model as the reference for fit. On the branded sample, check only the changes you requested and their effect on that fit. A logo proof cannot approve the garment, and a plain garment cannot approve the finished brand presentation.",
+    "rows": [
+      [
+        "Approval record",
+        "Record before release"
+      ],
+      [
+        "Base model",
+        "Model, size, colour and sample revision"
+      ],
+      [
+        "Brand components",
+        "Artwork file version, application position and component reference"
+      ],
+      [
+        "Packed sample",
+        "Garment identity, label text and pack contents"
+      ],
+      [
+        "Reorder",
+        "Approved substitutions, component balance and artwork ownership"
+      ]
+    ],
+    "faq": [
+      "Does a branded sample replace the original reference?",
+      "Keep both references when details change. The base sample identifies the selected fit; the approved branded sample records how the actual labels, waistband or packaging were applied."
+    ]
+  },
+  "low-moq-underwear-manufacturer": {
+    "heading": "Find the minimum that constrains your assortment",
+    "text": "Start with one quantity grid per model. Reconcile the garment total before asking whether a custom component can support it. Ask for the number of components you must buy, the number used on this order and the balance remaining; those three quantities need not be the same.",
+    "rows": [
+      [
+        "Quantity decision",
+        "Written answer needed"
+      ],
+      [
+        "Style total",
+        "Quantity for this model, not a combined collection total"
+      ],
+      [
+        "Size × colour",
+        "Proposed units in every combination and supplier acceptance"
+      ],
+      [
+        "Custom component",
+        "Purchase minimum, units used and charged surplus"
+      ],
+      [
+        "Second order",
+        "Storage owner, component balance and availability review"
+      ]
+    ],
+    "faq": [
+      "Can a small garment order leave unused packaging?",
+      "It can if the packaging purchase minimum exceeds the garment quantity. Ask for the balance, charges and storage arrangement in the quotation; no storage service is assumed."
+    ]
+  },
+  "custom-underwear-manufacturer": {
+    "heading": "Build a sample revision that can be reproduced",
+    "text": "Give each change an identifier and connect it to a measuring point, material reference or marked photograph. Record the old requirement, the requested change and the sample result. Separate unresolved questions from approved instructions before releasing the next version.",
+    "rows": [
+      [
+        "Development input",
+        "Deliverable to request"
+      ],
+      [
+        "Pattern and fit",
+        "Measuring points, units, grading proposal and sample size"
+      ],
+      [
+        "Materials",
+        "Body, gusset and trims listed separately"
+      ],
+      [
+        "Construction",
+        "Join, edge and attachment details on marked views"
+      ],
+      [
+        "Revision release",
+        "Dated technical sheet, comments closed and approved sample identity"
+      ]
+    ],
+    "faq": [
+      "What if I only have a photograph?",
+      "Use it to explain appearance, then identify the missing measurements, materials and construction decisions. Request a development proposal rather than treating the photograph as a complete production specification."
+    ]
+  },
+  "seamless-underwear-manufacturer": {
+    "heading": "Inspect the join, not just the flat edge",
+    "text": "Compare DYS323 and DYS314 at the gusset and leg opening. Both a smooth cut edge and a low-profile join need to be described separately. Photograph the assembled sample flat and under the agreed extension; then compare it after care under the same conditions.",
+    "rows": [
+      [
+        "Area",
+        "Sample record"
+      ],
+      [
+        "Leg edge",
+        "Cut or hemmed edge; curling and coverage observations"
+      ],
+      [
+        "Gusset join",
+        "Bonded or stitched attachment and exact area examined"
+      ],
+      [
+        "Body and gusset",
+        "Composition from the selected model, not another style"
+      ],
+      [
+        "After care",
+        "Care procedure, sample version and observed change"
+      ]
+    ],
+    "faq": [
+      "Does a flat photograph establish bonding durability?",
+      "No. It shows appearance at one moment. Agree a procedure and acceptance criteria for the actual sample; record the results before making a durability claim."
+    ]
+  },
+  "mens-underwear-manufacturer": {
+    "heading": "Approve pouch, leg and waistband as one garment",
+    "text": "Record whether the pouch is lined, which material touches the wearer and whether a fly is required. On the same sample, review leg coverage and waistband attachment. A different elastic or pouch construction can change the fit even when the size letter remains unchanged.",
+    "rows": [
+      [
+        "Fit area",
+        "Information to record"
+      ],
+      [
+        "Pouch",
+        "Shape, fly, lining composition and attachment"
+      ],
+      [
+        "Leg",
+        "Inseam measuring points, leg opening and movement observations"
+      ],
+      [
+        "Waistband",
+        "Width, relaxed length, repeat alignment and joining seam"
+      ],
+      [
+        "Size set",
+        "Model-specific measurements; do not infer inseam from a style name"
+      ]
+    ],
+    "faq": [
+      "Can I copy the same waistband specification to every men's model?",
+      "First confirm attachment and fit on each selected construction. A shared logo does not establish that elastic dimensions or component quantities work across every model."
+    ]
+  },
+  "underwear-factory": {
+    "heading": "Request evidence for the process your order uses",
+    "text": "A facility description and an order inspection report answer different questions. Connect the proposed production steps to your chosen model, then identify who records incoming material, construction and final packing checks. Compare documents by entity, date, product and lot.",
+    "rows": [
+      [
+        "Evidence",
+        "Match to the order"
+      ],
+      [
+        "Business identity",
+        "Contracting entity, address and quotation details"
+      ],
+      [
+        "Process",
+        "Cutting, assembly and finishing steps relevant to the sample"
+      ],
+      [
+        "Inspection",
+        "Lot, sample plan, defects recorded and disposition"
+      ],
+      [
+        "Dispatch",
+        "Style quantities, packing record and shipment documents"
+      ]
+    ],
+    "faq": [
+      "Does a factory photograph prove my order passed inspection?",
+      "No. A photograph describes the setting. Request records identifying the actual order, specification, checks and results to establish what was inspected."
+    ]
+  },
+  "lingerie-manufacturer": {
+    "heading": "Separate lace selection from silhouette selection",
+    "text": "Use the catalogue to distinguish briefs and thongs before choosing decorative details. For a lace style such as LS006, keep body and lace composition separate. Review lace placement on the requested sizes and retain the trim reference for future replacement decisions.",
+    "rows": [
+      [
+        "Range decision",
+        "Sample detail to approve"
+      ],
+      [
+        "Coverage",
+        "Front and rear views; bikini, Brazilian or thong"
+      ],
+      [
+        "Lace",
+        "Pattern placement, edge, width and stretch direction"
+      ],
+      [
+        "Component labels",
+        "Body, lace and gusset information for this model"
+      ],
+      [
+        "Matching pieces",
+        "Actual colour and material samples; extra categories require review"
+      ]
+    ],
+    "faq": [
+      "Does a lace brief establish a complete bra-and-brief set?",
+      "No. A listed brief is evidence for that model. A bra, matching colour or new construction needs its own capability, material and sample review."
+    ]
+  },
+  "bra-manufacturer": {
+    "heading": "Resolve the bra development gates before quoting production",
+    "text": "The published underwear catalogue does not establish a verified bra production range. Submit the size system and component requirements first. Ask the team to confirm the requested construction in writing before paying for development or treating underwear lead times as applicable.",
+    "rows": [
+      [
+        "Development gate",
+        "Required input / decision"
+      ],
+      [
+        "Construction",
+        "Wire-free, underwired or other type; capability confirmation"
+      ],
+      [
+        "Sizing",
+        "Cup/band or letter system, intended size coverage and fit-review plan"
+      ],
+      [
+        "Components",
+        "Cup, lining, strap, closure and underband specifications"
+      ],
+      [
+        "Support claim",
+        "Intended use and evidence required; no measured support level is supplied"
+      ],
+      [
+        "Commercial review",
+        "Category-specific sample plan, component minimums and quotation"
+      ]
+    ],
+    "faq": [
+      "Can I apply the underwear MOQ to a bra project?",
+      "No category-specific bra minimum or timetable is established here. Request written confirmation after the construction, size range and components have been reviewed."
+    ]
+  },
+  "swimwear-manufacturer": {
+    "heading": "Prepare a wet-use development decision",
+    "text": "Submit a garment and colour specification that can be reviewed as a lined assembly. Decide whether your brief calls for pool use, beach use or a fashion sample, and identify evidence needed for the actual intended use. No swimwear capability or performance result is established by the underwear catalogue.",
+    "rows": [
+      [
+        "Development gate",
+        "Required input / decision"
+      ],
+      [
+        "Assembly",
+        "Outer fabric, lining, elastic, fastenings and intended silhouette"
+      ],
+      [
+        "Wet sample review",
+        "Coverage, opacity and fit observations for the actual colour"
+      ],
+      [
+        "Exposure",
+        "Intended pool/salt-water/light exposure and agreed evaluation method"
+      ],
+      [
+        "Claims",
+        "Product-specific evidence for any UV or resistance wording"
+      ],
+      [
+        "Go / revise / stop",
+        "Written category capability, sample plan and quotation before production"
+      ]
+    ],
+    "faq": [
+      "Can an underwear sample serve as approved swimwear?",
+      "No. A swimwear brief requires its own materials, lining, construction, intended-use review and capability confirmation. Do not transfer underwear specifications without assessment."
+    ]
+  },
+  "shapewear-manufacturer": {
+    "heading": "Map support zones without inventing compression",
+    "text": "Draw the intended support areas and define how the sample will be assessed when put on, worn and removed. Keep descriptive construction decisions separate from pressure or health claims. If the necessary construction or evidence cannot be confirmed, revise or stop the project before a production commitment.",
+    "rows": [
+      [
+        "Development gate",
+        "Required input / decision"
+      ],
+      [
+        "Zone map",
+        "Panel boundaries, material references and intended support areas"
+      ],
+      [
+        "Fit access",
+        "Putting on/removal, waist and leg rolling, gusset access"
+      ],
+      [
+        "Size set",
+        "Measuring points and fit evaluation across intended sizes"
+      ],
+      [
+        "Evidence",
+        "Method and substantiation for any pressure or performance claim"
+      ],
+      [
+        "Production decision",
+        "Confirmed capability, specification, sample scope and separate quotation"
+      ]
+    ],
+    "faq": [
+      "Does a high-waisted brief prove shapewear compression?",
+      "No. Height and fabric stretch do not establish a measured compression level. This page provides a development checklist; category capability and any claimed performance require separate evidence."
+    ]
+  },
+  "lingerie-supplier": {
+    "heading": "Compare supply offers line by line",
+    "text": "Use the same model, size and colour allocation, material description and delivery basis in each offer. Mark any substitute as a changed specification. A lower unit figure cannot be compared fairly until excluded components and destination costs are visible.",
+    "rows": [
+      [
+        "Offer line",
+        "Reconcile before acceptance"
+      ],
+      [
+        "Product identity",
+        "Model, component materials and approved sample"
+      ],
+      [
+        "Included work",
+        "Branding, packing and inspection scope"
+      ],
+      [
+        "Commercial basis",
+        "Currency, quantity, delivery terms and exclusions"
+      ],
+      [
+        "Replenishment",
+        "Current availability, substitution approval and version changes"
+      ]
+    ],
+    "faq": [
+      "Is replenishment guaranteed at the original price?",
+      "No fixed replenishment price or reserved inventory is published. Reconfirm the specification, available components, price and schedule for each order."
+    ]
+  },
+  "private-label-lingerie": {
+    "heading": "Create a label matrix for a coordinated range",
+    "text": "Assign a brand SKU to every source model and retain that mapping in the packing file. A collection can share a visual identity while its garments use different components and care information. Check each label against its own product before approving a mixed pack.",
+    "rows": [
+      [
+        "Range record",
+        "What belongs in it"
+      ],
+      [
+        "Identity",
+        "Brand SKU ↔ source model ↔ approved sample"
+      ],
+      [
+        "Label version",
+        "Model-specific composition and size artwork"
+      ],
+      [
+        "Visual approval",
+        "Body, lace, elastic and print samples compared together"
+      ],
+      [
+        "Pack plan",
+        "Contents by model and size, barcode/SKU match and artwork revision"
+      ]
+    ],
+    "faq": [
+      "Can I use one fibre label for the whole collection?",
+      "Only where it accurately describes each finished product and meets destination requirements. Different body, lace or gusset materials need the appropriate model-specific information."
+    ]
+  }
+}

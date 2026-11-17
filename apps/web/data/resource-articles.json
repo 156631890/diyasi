@@ -460,17 +460,17 @@
   },
   {
     "slug": "underwear-manufacturer-for-startup-brands",
-    "title": "Underwear Manufacturer for Startup Brands: First Order",
+    "title": "First Underwear Order: RFQ Checklist for Startup Brands",
     "category": "Private label sourcing",
     "publishedAt": "2026-10-07",
-    "updatedAt": "2026-10-08",
-    "desc": "Choose an underwear manufacturer for startup brands with a clear first-order brief. Plan 120 pieces per style, samples, branding and written approvals.",
+    "updatedAt": "2026-11-17",
+    "desc": "Turn a selected underwear range into a first-order RFQ. Record model references, size and colour quantities, sample decisions, exclusions and approval ownership.",
     "models": [
       "DYS201",
       "DYS224",
       "M001"
     ],
-    "answer": "An underwear manufacturer for startup brands should help turn a small, specific range into an approved sample brief. Begin with the wearer, sales market and a shortlist of real models. DIYASI catalogue MOQ is 120 pieces per style, with mixed sizes and colors confirmed for the order. Use the 5–7 day sampling guidance to plan the sample stage, while confirming approval, bulk production and freight milestones separately.",
+    "answer": "After choosing your product direction, use this first-order handoff to request a comparable quotation. Identify the source model, what changes, the quantities and the question each sample must resolve. The worksheet is an execution record; customer research and brand positioning belong in the separate brand launch guide.",
     "sections": [
       {
         "title": "Low MOQ underwear manufacturer: limit the first assortment",
@@ -513,43 +513,9 @@
       {
         "title": "How to prepare underwear quotation brief: separate costs",
         "text": "Send the style list, quantities, materials, branding, packing and delivery destination. Ask for sample fees, artwork or setup charges, packaging and freight as separate items. Review payment and delivery terms in the actual quotation. No website price, sales projection or profitability claim replaces your own first-order calculation."
-      },
-      {
-        "title": "Custom underwear manufacturer",
-        "text": "Brief a custom underwear manufacturer with a compact first assortment in which each style has a clear purpose. Separate the catalogue base from requested pattern changes, and name which sample must establish fit before branding is approved. Keep garment quantities, custom components and the desired delivery destination visible in the same request.",
-        "rows": [
-          [
-            "Decision",
-            "First-order record"
-          ],
-          [
-            "Assortment",
-            "Why each selected model is needed"
-          ],
-          [
-            "Fit",
-            "Reference sample and requested measurement changes"
-          ],
-          [
-            "Branding",
-            "Files and components needing approval"
-          ],
-          [
-            "Quantity",
-            "Size/color allocation for each style"
-          ]
-        ]
       }
     ],
     "faq": [
-      [
-        "How many styles should a new underwear brand start with?",
-        "There is no universal number. Choose a manageable sample shortlist around your customer, budget and per-style quantity; each catalogue style starts at 120 pieces."
-      ],
-      [
-        "Can mixed sizes and colors reduce the first-order risk?",
-        "An allocation can help organize an assortment, but it does not prove demand. Confirm availability and use your customer research to choose the size/color mix."
-      ],
       [
         "When should I approve bulk production?",
         "After the garment, fit, materials, branding, packaging and quotation have been approved in writing and an agreed reference sample is retained."
@@ -557,10 +523,6 @@
       [
         "How should I prepare a first underwear order size and color plan?",
         "Create a separate allocation for each model and mark any unconfirmed combinations. Use your intended customers and available sizing evidence to choose the split; a catalogue size name does not establish demand or universal fit."
-      ],
-      [
-        "What should small batch private label underwear for boutiques include?",
-        "Prepare a model line sheet, component composition, size/color grid and branding/packing brief. DIYASI catalogue MOQ is 120 pieces per style. Confirm component minimums and bulk timing separately after the sample review."
       ]
     ],
     "references": [
@@ -1100,7 +1062,7 @@
     "title": "Bikini vs Brazilian Underwear: A Buyer’s Fit Guide",
     "category": "Buyer selection guides",
     "publishedAt": "2026-10-07",
-    "updatedAt": "2026-10-08",
+    "updatedAt": "2026-11-17",
     "desc": "Compare bikini vs Brazilian underwear by coverage, rise and measurements. Use cotton, lace and seamless DIYASI references to build an OEM sample brief.",
     "models": [
       "DYS201",
@@ -1111,8 +1073,38 @@
     "answer": "Compare bikini vs Brazilian underwear using the back coverage and measured fit of a sample, rather than relying on a silhouette name. DYS201 is a low-rise cotton-spandex bikini; LS006 is a lace-trim Brazilian and DYS323 a bonded seamless Brazilian. DYS214 adds a cotton boyshort reference. The models vary in material as well as pattern, so record those differences when choosing a base for your brand.",
     "sections": [
       {
-        "title": "Bikini panties manufacturer OEM: establish the reference",
-        "text": "A bikini brief is a useful fuller-back reference in this comparison, but names do not fix side width or rise. Measure DYS201 in the intended sample size and record front/back rise, side width, back coverage and leg opening. Use its actual cotton-spandex specification in the brief rather than calling it an all-cotton garment."
+        "title": "Use the back view as part of the brief",
+        "text": "A Brazilian cut generally provides less rear coverage than a conventional bikini, although the exact shape varies between designs and suppliers. A front photograph can hide much of that difference. Include front and back references when requesting samples and identify the areas where more or less coverage is intended. Rise is a separate choice. A lower waistband does not automatically mean a narrower back, and a higher waistband does not establish how the leg opening will sit. Record the intended rise and coverage as separate points rather than relying on one category label.",
+        "rows": [
+          [
+            "Review point",
+            "What to record"
+          ],
+          [
+            "Rear coverage",
+            "Back-view reference and the intended amount of coverage"
+          ],
+          [
+            "Rise and sides",
+            "Waistband position, front and back rise, and side width"
+          ],
+          [
+            "Leg opening",
+            "Shape, finishing method and fit observations on the sample"
+          ],
+          [
+            "Gusset",
+            "Material, dimensions, placement and attachment method"
+          ]
+        ]
+      },
+      {
+        "title": "Compare the construction as well as the cut",
+        "text": "The DIYASI catalogue provides several useful starting points. DYS201 is a bikini with a stated body composition of 95% cotton and 5% spandex. LS006 is a Brazilian brief with a 95% cotton and 5% spandex body, plus polyamide-and-spandex lace. DYS323 is also a Brazilian style, but its body is listed as 80% polyamide and 20% spandex with a cotton gusset. This comparison separates silhouette from material. Two Brazilian briefs can use different edges, fabrics and gusset construction. Neither the name nor the fibre percentage proves how a garment will feel on a particular wearer or perform after repeated washing. Confirm those requirements through an appropriate sample review and supporting tests where needed."
+      },
+      {
+        "title": "Give each sample a clear purpose",
+        "text": "For an initial range, a buyer might sample one bikini and one Brazilian to compare coverage, then decide whether an additional lace or no-show construction serves a different customer need. This is a planning option rather than a fixed recommendation for every brand. Use the same measurement method and record the size worn for each comparison. Note any requested adjustments with marked photographs or a measurement sheet. Before asking for a production quote, identify which model and construction have been selected, which details stay unchanged and which need development. Final size allocation, colours and component quantities should be confirmed with the factory."
       },
       {
         "title": "Bikini vs boyshort vs brief: compare on common measurements",
@@ -1148,32 +1140,6 @@
       {
         "title": "Boyshort underwear manufacturer: document the leg shape",
         "text": "For DYS214, measure the side and leg opening, then test movement and seated comfort. A short-leg pattern does not establish an identical fit to a bikini or longer-leg brief. If you want to compare only the coverage, keep other variables as similar as possible or identify every difference in your review record."
-      },
-      {
-        "title": "Turn fit notes into an OEM sample request",
-        "text": "List the model closest to your desired result, then mark changes to coverage, rise, fabric or waistband. Ask for the source size chart and agree measurement tolerances. Catalogue MOQ is 120 pieces per style and sample guidance is 5–7 days after brief review. Approve the pattern and component details before final label and packaging artwork."
-      },
-      {
-        "title": "Bikini vs Brazilian underwear back coverage",
-        "text": "Compare bikini vs Brazilian underwear back coverage using paired front and back views of samples in the same intended size. DYS201 provides a cotton/spandex bikini reference and LS006 a cotton-body Brazilian with separate lace trim. Record both coverage and component differences so a fit preference is not mistaken for a fabric comparison.",
-        "rows": [
-          [
-            "View",
-            "Record on both samples"
-          ],
-          [
-            "Back",
-            "Panel width and coverage at agreed points"
-          ],
-          [
-            "Side",
-            "Side width and waistband position"
-          ],
-          [
-            "Front",
-            "Rise and leg-opening shape"
-          ]
-        ]
       }
     ],
     "faq": [
@@ -1477,10 +1443,10 @@
   },
   {
     "slug": "private-label-underwear-moq-guide",
-    "title": "Underwear MOQ Explained: Styles, Colors and Labels",
+    "title": "Underwear MOQ Allocation Worksheet for Private Label",
     "category": "Planning your collection",
     "publishedAt": "2026-09-17",
-    "desc": "Understand underwear MOQ explained by style, size/color allocation and custom components. Plan a 120-piece style order with a written specification.",
+    "desc": "Prepare a per-model size and colour allocation, separate garment and component minimums, and download a worksheet for supplier confirmation.",
     "models": [
       "DYS201",
       "LS006",
@@ -1521,32 +1487,6 @@
       {
         "title": "Before approving the order",
         "text": "Record the model number, body and gusset composition, measurements, color references, branding artwork and packing method. Agree on sample approval, quantity tolerances, final price, delivery terms and payment milestones. The catalogue commonly quotes 5 to 7 days for samples; the actual schedule depends on your changes and material availability."
-      },
-      {
-        "title": "Build a minimum-order worksheet",
-        "text": "Before comparing quotations, separate the garment commitment from the components you may need to carry into a reorder. A lower garment quantity can still tie up money in labels or packaging. Use a separate line for each model and ask the factory to confirm the proposed split.",
-        "rows": [
-          [
-            "Confirm",
-            "Record in the quotation"
-          ],
-          [
-            "Garments",
-            "Model, total units and size/color quantities"
-          ],
-          [
-            "Fabric or dye lot",
-            "Minimum batch and treatment of unused fabric"
-          ],
-          [
-            "Brand components",
-            "Label, elastic and packaging minimums"
-          ],
-          [
-            "Reorder",
-            "Component balance, storage arrangements and lead time"
-          ]
-        ]
       }
     ],
     "faq": [
@@ -1561,7 +1501,7 @@
         "https://www.diyasiunderwear.com/products"
       ]
     ],
-    "updatedAt": "2026-10-07",
+    "updatedAt": "2026-11-17",
     "relatedManufacturers": [
       "low-moq-underwear-manufacturer",
       "private-label-underwear-manufacturer"
@@ -1704,16 +1644,16 @@
   },
   {
     "slug": "unit-cost-custom-underwear-manufacturing",
-    "title": "Underwear Manufacturing Cost Breakdown for Buyers",
+    "title": "Underwear Landed Cost Calculator & Quote Breakdown",
     "category": "Cost planning",
     "publishedAt": "2026-01-22",
-    "desc": "Use an underwear manufacturing cost breakdown to separate fabric, construction, labels, packaging, sample fees and freight when comparing quotations.",
+    "desc": "Calculate underwear cost per sellable unit from your quotation. Separate garment, packing, development, freight and import costs, then export your calculation.",
     "models": [
       "DYS201",
       "LS006",
       "DYS323"
     ],
-    "answer": "Use an underwear manufacturing cost breakdown to separate fabric, construction, labels, packaging, sample fees and freight when comparing quotations. Underwear unit cost depends on fabric consumption, construction, order volume, the color/size split, branding and packaging. The cheapest quoted garment is not automatically the lowest landed cost; compare the same specification and delivery terms.",
+    "answer": "Use the calculator below once you have an itemized quotation. It divides your actual order and delivery costs by the quantity you expect to sell. No factory price is prefilled: every amount comes from you, in one currency. The breakdown helps you catch omitted charges or double counting before comparing two offers.",
     "sections": [
       {
         "title": "Build a cost breakdown",
@@ -1754,34 +1694,8 @@
         "text": "Pattern development, grading and artwork setup may be separate from the repeat garment cost. Ask which charges recur on a reorder and who owns the approved artwork and patterns. Do not divide a setup charge by a large hypothetical order when your actual first run is much smaller."
       },
       {
-        "title": "A simple planning calculation",
-        "text": "An internal estimate can use: landed cost per sellable unit = total garment, setup, packaging, freight and import costs divided by the expected sellable quantity. Use your own quotations and tax advice for the destination. No fixed retail margin or factory price is implied by this formula."
-      },
-      {
-        "title": "Calculate the cost of an accepted unit",
-        "text": "For planning, divide the confirmed garment, development, packaging, freight and applicable import costs by the number of saleable units you expect to receive. Keep recoverable taxes separate where relevant. This is a comparison method, not a DIYASI price estimate; ask a customs or tax adviser about your destination.",
-        "rows": [
-          [
-            "Cost group",
-            "Check before comparing"
-          ],
-          [
-            "One-time development",
-            "Pattern, grading, artwork and sample rounds"
-          ],
-          [
-            "Recurring production",
-            "Fabric, trims, labor, inspection and packing"
-          ],
-          [
-            "Logistics",
-            "Freight, insurance, customs clearance and destination charges"
-          ],
-          [
-            "Reorder assumptions",
-            "Reused artwork, components already paid for and quantity changes"
-          ]
-        ]
+        "title": "Compare a first order with a reorder",
+        "text": "Run the calculation separately for each quotation. Do not remove development charges on a reorder unless the supplier confirms they will not recur. Include a previously purchased component only when it creates a new charge; keep its remaining balance in your stock record. Compare total cash committed as well as cost per sellable unit."
       }
     ],
     "faq": [
@@ -1796,7 +1710,7 @@
         "https://www.diyasiunderwear.com/products"
       ]
     ],
-    "updatedAt": "2026-10-07",
+    "updatedAt": "2026-11-17",
     "relatedManufacturers": [
       "low-moq-underwear-manufacturer",
       "private-label-underwear-manufacturer"
@@ -1805,80 +1719,44 @@
   },
   {
     "slug": "traceless-vs-seamless-underwear-yoga-brands",
-    "title": "Bonded vs Stitched Seamless Underwear Construction",
+    "title": "Bonded vs Stitched Underwear: Join Inspection Worksheet",
     "category": "Fabric & construction",
     "publishedAt": "2026-02-09",
-    "desc": "Compare bonded vs stitched seamless underwear construction through gusset attachment, cut edges, care checks and real model specifications.",
+    "desc": "Compare bonded and stitched gusset joins with model references and a downloadable sample record. Track flatness, attachment and changes after agreed care.",
     "models": [
       "DYS323",
       "DYS314"
     ],
-    "answer": "Compare bonded vs stitched seamless underwear construction through gusset attachment, cut edges, care checks and real model specifications. No-show or traceless describes an intended appearance under clothing; seamless can describe several constructions. Neither term alone tells you whether a garment is circular-knitted, laser-cut, bonded or stitched. Check the actual edges, side joins and gusset.",
+    "answer": "Use DYS323 as a bonded-gusset reference and DYS314 as a stitched-gusset reference, then inspect the actual samples. A laser-cut outer edge does not establish how the gusset is attached. This page helps record construction differences; the separate seamless/no-show guide covers terminology and visibility under clothing.",
     "sections": [
       {
-        "title": "Bonded vs stitched seamless underwear construction: define the joins",
-        "text": "The current DIYASI seamless collection includes stretch-polyamide briefs and thongs with laser-cut edges. Gusset attachment varies by style. A flat outer edge does not mean every part of the garment is free of stitching.",
+        "title": "Compare the same join and state the other differences",
+        "text": "DYS323 and DYS314 have different silhouettes as well as different gusset attachment. Record the size, fit and materials of each sample so an observed difference is not automatically attributed to bonding or stitching. Examine the attachment area from both sides and retain marked photographs.",
         "rows": [
           [
-            "Term",
-            "What it can mean",
-            "What to inspect"
+            "Reference",
+            "Construction comparison",
+            "Limit"
           ],
           [
-            "Seamless knit",
-            "Body knitted with fewer joining seams",
-            "Crotch, waistband and leg finishing"
+            "DYS323",
+            "Bonded cotton gusset; laser-cut Brazilian style",
+            "Source specification, not a bonding test result"
           ],
           [
-            "Laser-cut",
-            "Fabric edges cut without a folded hem",
-            "Edge stability and rolling after wear"
-          ],
-          [
-            "Bonded",
-            "Layers joined with adhesive or heat",
-            "Bond strength and wash durability"
-          ],
-          [
-            "No-show / traceless",
-            "Intended low visibility under clothes",
-            "Try-on under the buyer's actual clothing"
+            "DYS314",
+            "Stitched gusset; high-waist full brief",
+            "Different silhouette; not a controlled equivalent sample"
           ]
         ]
-      },
-      {
-        "title": "Test a complete outfit",
-        "text": "Sample the intended size under light and dark fitted clothing. Check waistband pressure, edge visibility, movement and coverage while sitting and walking. Compare the same wearer, clothing and lighting across styles. A no-show result in one outfit does not guarantee the same result in every fabric or size."
       },
       {
         "title": "Inspect after laundering",
         "text": "Follow the proposed care instructions and compare the washed sample with an unwashed reference. Record curling, delamination, shrinkage and stretch recovery. Agree on acceptable changes with the supplier before choosing a production specification."
       },
       {
-        "title": "Use a repeatable no-show sample check",
-        "text": "Review the same garment size under the same outer clothing when comparing samples. Observe the waist, leg edges and gusset both before and after the agreed wash test. Record what changed instead of treating a marketing term as a performance result.",
-        "rows": [
-          [
-            "Construction",
-            "Sample question"
-          ],
-          [
-            "Laser-cut edge",
-            "Does the edge roll or become visible under the intended clothing?"
-          ],
-          [
-            "Bonded gusset",
-            "Does the bonded edge remain flat after washing and stretching?"
-          ],
-          [
-            "Stitched gusset",
-            "Is the stitching comfortable and visible through the outer layer?"
-          ],
-          [
-            "Seamless knitting",
-            "Which seams or joins remain in the finished garment?"
-          ]
-        ]
+        "title": "Decide what to do with a failed join observation",
+        "text": "If you see lifting, separation, broken stitches or curling, record the sample version and the exact location. Ask whether material, attachment or the evaluation procedure needs revision. Agree the next sample and acceptance criteria; a single observation does not establish batch performance or a laboratory result."
       }
     ],
     "faq": [
@@ -1897,7 +1775,7 @@
         "https://www.ginetex.net/"
       ]
     ],
-    "updatedAt": "2026-10-07",
+    "updatedAt": "2026-11-17",
     "relatedManufacturers": [
       "seamless-underwear-manufacturer",
       "custom-underwear-manufacturer"
@@ -2170,43 +2048,13 @@
   },
   {
     "slug": "waistband-customization-mens-boxer-briefs-private-label",
-    "title": "Custom Waistband Logo Methods Explained: Elastic Approval",
+    "title": "Custom Waistband Sample Approval Worksheet",
     "category": "Branding details",
     "publishedAt": "2026-03-30",
-    "desc": "Read custom waistband logo methods explained with artwork, repeat, elastic recovery and garment approval checks for private-label men’s styles.",
+    "desc": "Record artwork, elastic dimensions, joining seam, sample observations and component quantities in a downloadable waistband approval worksheet.",
     "models": [],
-    "answer": "Read custom waistband logo methods explained with artwork, repeat, elastic recovery and garment approval checks for private-label men’s styles. Specify the elastic width, relaxed and stretched measurements, logo repeat, colors and attachment method before ordering a branded waistband. Confirm the elastic supplier's minimum separately from the garment quantity.",
+    "answer": "Use this record after choosing a waistband method. It keeps the artwork proof, loose elastic swatch and assembled garment decision separate, so each approval refers to an identifiable version. Complete the fields using your actual sample and agreed procedure; no test result or universal elastic dimension is supplied.",
     "sections": [
-      {
-        "title": "Choose a branding method",
-        "text": "Woven or jacquard artwork is built into the elastic; printed artwork is applied to a surface. Each route has different artwork and production requirements. Ask for a physical elastic sample with your actual logo, because a digital mockup cannot show hand feel or recovery.",
-        "rows": [
-          [
-            "Item",
-            "What to send or approve"
-          ],
-          [
-            "Artwork",
-            "Vector logo, colors, repeat length and spacing"
-          ],
-          [
-            "Elastic",
-            "Width, composition and surface feel"
-          ],
-          [
-            "Fit",
-            "Relaxed length, extension and recovery"
-          ],
-          [
-            "Assembly",
-            "Join location and alignment at the garment seam"
-          ],
-          [
-            "Durability",
-            "Appearance and recovery after the agreed care cycle"
-          ]
-        ]
-      },
       {
         "title": "Approve the waistband on the garment",
         "text": "Check whether the elastic rolls or digs in and whether the logo becomes distorted under normal stretch. Examine the seam where the repeat joins. A comfortable loose elastic swatch may behave differently once attached to the boxer body."
@@ -2214,32 +2062,6 @@
       {
         "title": "Plan unused components and reorders",
         "text": "Ask who holds surplus elastic, how it is identified and whether it can be used for a later order. Record the approved supplier reference and color code. Reconfirm availability and price before assuming the next batch will match."
-      },
-      {
-        "title": "Approve the waistband at rest and when stretched",
-        "text": "A logo that looks correct in an artwork file may distort on elastic. Check repeat spacing on the physical sample and where the repeat meets the joining seam. The elastic supplier minimum should be quoted separately from the garment order.",
-        "rows": [
-          [
-            "Specification",
-            "What to approve"
-          ],
-          [
-            "Artwork",
-            "Vector file, colors, logo height and repeat spacing"
-          ],
-          [
-            "Elastic",
-            "Finished width, hand feel and recovery"
-          ],
-          [
-            "Joining seam",
-            "Logo alignment and seam position"
-          ],
-          [
-            "Durability",
-            "Appearance and recovery after the agreed care test"
-          ]
-        ]
       }
     ],
     "faq": [
@@ -2254,7 +2076,7 @@
         "https://www.diyasiunderwear.com/products"
       ]
     ],
-    "updatedAt": "2026-10-07",
+    "updatedAt": "2026-11-17",
     "relatedManufacturers": [
       "mens-underwear-manufacturer",
       "custom-underwear-manufacturer"
@@ -2646,15 +2468,16 @@
   },
   {
     "slug": "us-eu-underwear-size-labeling-preparation-startup-brands",
-    "title": "Underwear Sizing Chart US EU: Measurements and Labels",
+    "title": "Underwear Size Charts: Model Measurements & Label Prep",
     "category": "Sizing & labeling",
     "publishedAt": "2026-05-26",
-    "desc": "Prepare an underwear sizing chart US EU brief using finished measurements, source charts and label requirements rather than assumed universal conversions.",
+    "desc": "Use DYS201 and DYS323 body measurement references to prepare an underwear size brief. Separate wearer ranges, garment dimensions and US/EU label preparation.",
     "models": [
       "DYS201",
+      "DYS323",
       "DYS219"
     ],
-    "answer": "Prepare an underwear sizing chart US EU brief using finished measurements, source charts and label requirements rather than assumed universal conversions. Build a measurement-based size chart and confirm labeling requirements for the destination market. A size letter alone does not establish a US or EU fit. Fiber composition, care instructions and other required information should be reviewed for the finished garment before printing.",
+    "answer": "Start with the actual model chart, then build a separate finished-garment measurement sheet. The DYS201 and DYS323 references below show wearer waist and hip ranges; they are not US/EU conversion tables. Use samples to establish fit and confirm destination-specific label requirements before printing.",
     "sections": [
       {
         "title": "Use measurements rather than conversion guesses",
@@ -2693,54 +2516,6 @@
       {
         "title": "Approve the actual label sample",
         "text": "Check wording, legibility, placement and comfort on the garment. Confirm that the body, lace and gusset descriptions match the final specification. Keep dated artwork and an approved physical sample with the production record."
-      },
-      {
-        "title": "Keep sizing and labeling approvals separate",
-        "text": "A size label such as M is not a measurement specification. Keep one approved measurement sheet for the garment and a separate artwork sheet for required labeling. Confirm the current rules for the destination, the responsible business and the actual fiber components before production.",
-        "rows": [
-          [
-            "Approval file",
-            "Include"
-          ],
-          [
-            "Measurement chart",
-            "Measuring points, units, size grading and tolerance"
-          ],
-          [
-            "Fiber label",
-            "Confirmed component composition and required terminology"
-          ],
-          [
-            "Care artwork",
-            "Instructions appropriate to the finished garment"
-          ],
-          [
-            "Market artwork",
-            "Required language, origin and responsible-business information"
-          ]
-        ]
-      },
-      {
-        "title": "Underwear size chart by model",
-        "text": "Use an underwear size chart by model rather than a universal letter-size conversion. Keep wearer body measurements separate from finished-garment measurements, and identify the measuring method for waist, hip, rise and leg opening. Match the requested size set to the actual catalogue model before approving fit or the size label.",
-        "rows": [
-          [
-            "Record",
-            "Keep explicit"
-          ],
-          [
-            "Wearer measurements",
-            "Body measuring points and intended fit"
-          ],
-          [
-            "Garment measurements",
-            "Model, size and relaxed/stretched method"
-          ],
-          [
-            "Tolerance",
-            "Agreed units and permitted variation by measuring point"
-          ]
-        ]
       }
     ],
     "faq": [
@@ -2771,7 +2546,7 @@
         "https://www.ginetex.net/"
       ]
     ],
-    "updatedAt": "2026-10-08",
+    "updatedAt": "2026-11-17",
     "relatedManufacturers": [
       "underwear-factory",
       "private-label-underwear-manufacturer"

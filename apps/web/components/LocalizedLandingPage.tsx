@@ -1,4 +1,6 @@
 import Link from "next/link";
+import ProcurementWorksheet from "./ProcurementWorksheet";
+import { localizedWorksheets } from "@/lib/procurement-worksheets";
 
 import LocalizedCatalog from "./LocalizedCatalog";
 import { russianCompanyFacts, russianMoqRoutes, russianQualitySteps } from "@/lib/russian-pages";
@@ -52,7 +54,7 @@ export default function LocalizedLandingPage({
   };
 
   return (
-    <main id="main-content" className="container-shell page-shell page-stack">
+    <main id="main-content" lang={locale} className="container-shell page-shell page-stack">
       <JsonLd data={webPageJsonLd} />
       <JsonLd data={breadcrumbJsonLd} />
       <JsonLd data={faqJsonLd} />
@@ -119,6 +121,7 @@ export default function LocalizedLandingPage({
         ))}
       </section>
 
+      {localizedWorksheets[page.path] && <ProcurementWorksheet sheet={localizedWorksheets[page.path]} />}
       {page.factSources.includes("company") ? (
         <section className="page-section">
           <h2 className="card-title-standard text-[#1d2521]">

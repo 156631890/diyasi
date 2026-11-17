@@ -4215,6 +4215,32 @@ a {
   }
 }
 
+/* Buyer tools use the site's existing neutral palette and readable form controls. */
+.d-procurement-tool { margin: 2rem 0; padding: clamp(1rem, 3vw, 2rem); border: 1px solid #c6cfc5; background: #f4f6ef; border-radius: 12px; min-width: 0; }
+.d-procurement-tool h2 { margin-top: 0; font-size: clamp(1.4rem, 3vw, 1.8rem); line-height: 1.25; }
+.d-tool-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin: 1.5rem 0; }
+.d-tool-fields label { display: flex; flex-direction: column; gap: .4rem; font-size: .95rem; font-weight: 600; }
+.d-tool-fields label span { font-weight: 400; font-size: .8rem; color: #526253; }
+.d-procurement-tool input { width: 100%; min-width: 0; padding: .8rem; border: 1px solid #94a292; border-radius: 5px; background: #fff; color: #1d2521; font: inherit; }
+.d-procurement-tool input:focus-visible { outline: 3px solid #0e5b51; outline-offset: 2px; }
+.d-procurement-tool .d-table-scroll { margin: 1.5rem 0; }
+.d-procurement-tool table { width: 100%; border-collapse: collapse; min-width: 640px; }
+.d-procurement-tool th, .d-procurement-tool td { text-align: left; padding: .8rem; border-bottom: 1px solid #c6cfc5; vertical-align: top; }
+.d-procurement-tool td:last-child { width: 35%; min-width: 220px; }
+.d-procurement-tool .d-button { min-height: 44px; white-space: normal; text-align: center; }
+.d-procurement-tool form > .d-text-link { margin: .8rem 1rem; }
+.d-tool-result { margin: 1.5rem 0; padding: 1rem; background: #e4ecdf; border-left: 4px solid #0e5b51; }
+.d-tool-result h3 { margin-top: 0; }
+@media(max-width:640px) {
+  .d-tool-fields { grid-template-columns: 1fr; }
+  .d-procurement-tool table, .d-procurement-tool tbody, .d-procurement-tool tr, .d-procurement-tool th, .d-procurement-tool td { display: block; min-width: 0; width: 100%; }
+  .d-procurement-tool .d-table-scroll table { min-width: 0; }
+  .d-procurement-tool thead { display: none; }
+  .d-procurement-tool tr { padding: .8rem 0; border-bottom: 1px solid #c6cfc5; }
+  .d-procurement-tool th, .d-procurement-tool td { padding: .3rem 0; border: 0; }
+  .d-procurement-tool td:last-child { width: 100%; min-width: 0; }
+}
+
 @media (max-width: 480px) {
   .luxury-gallery-side {
     grid-template-columns: 1fr;

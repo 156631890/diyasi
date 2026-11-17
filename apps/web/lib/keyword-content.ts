@@ -6,7 +6,13 @@ export type ContentLink = { label: string; href: string };
 // remain in their existing modules.
 const keywords = new Map(pages.map((page) => [page.path, page.keyword]));
 export function keywordLink(href: string, fallback?: string): ContentLink {
-  return { href, label: fallback ?? keywords.get(href) ?? href };
+  const migrations: Record<string,string> = {
+    "/resources/private-label-underwear-manufacturer":"/manufacturers/private-label-underwear-manufacturer",
+    "/resources/120-pcs-moq-underwear-manufacturer":"/manufacturers/low-moq-underwear-manufacturer",
+    "/resources/mens-underwear-manufacturer-private-label":"/manufacturers/mens-underwear-manufacturer",
+  };
+  const canonical = migrations[href] ?? href;
+  return { href:canonical, label: fallback && !fallback.startsWith("/") ? fallback : keywords.get(canonical) ?? canonical };
 }
 const resource = (slug: string) => { const migrated: Record<string,string> = {"private-label-underwear-manufacturer": "private-label-underwear-manufacturer", "mens-underwear-manufacturer-private-label": "mens-underwear-manufacturer", "120-pcs-moq-underwear-manufacturer": "low-moq-underwear-manufacturer"}; return migrated[slug] ? `/manufacturers/${migrated[slug]}` : `/resources/${slug}`; };
 const collection = (slug: string) => `/products/${slug}`;
@@ -22,7 +28,7 @@ export const newResourceLinks: Record<string, ContentLink[]> = {
   "mens-underwear-manufacturer-private-label": ["/oem-odm", collection("mens-underwear"), collection("mens-boxer-briefs"), resource("custom-waistband-underwear-manufacturer"), product("mens-tagless-low-rise-brief-m001")].map((href) => keywordLink(href)),
   "yiwu-underwear-manufacturer": ["/about", "/factory", "/products", resource("120-pcs-moq-underwear-manufacturer"), product("low-rise-cotton-bikini-brief-dys201")].map((href) => keywordLink(href)),
   "high-waisted-briefs-manufacturer": [collection("high-waist"), collection("cotton-underwear"), resource("us-eu-underwear-size-labeling-preparation-startup-brands"), product("high-leg-cotton-high-waist-brief-dys219")].map((href) => keywordLink(href)),
-  "bikini-vs-brazilian-underwear": [collection("womens-panties"), resource("cotton-vs-seamless-underwear-buyers-guide"), "/news/bikini-vs-brazilian-underwear-buying-notes", product("lace-trim-cotton-brazilian-brief-ls006")].map((href) => keywordLink(href)),
+  "bikini-vs-brazilian-underwear": [collection("womens-panties"), resource("cotton-vs-seamless-underwear-buyers-guide"), resource("gusset-construction-womens-underwear-comfort-qc"), product("lace-trim-cotton-brazilian-brief-ls006")].map((href) => keywordLink(href)),
   "seamless-vs-no-show-underwear": [collection("seamless-underwear"), resource("traceless-vs-seamless-underwear-yoga-brands"), resource("laser-cut-underwear-manufacturer"), product("seamless-high-waist-full-brief-dys314")].map((href) => keywordLink(href)),
   "cotton-vs-seamless-underwear-buyers-guide": ["/fabrics", collection("cotton-underwear"), collection("seamless-underwear"), resource("gusset-construction-womens-underwear-comfort-qc"), product("low-rise-cotton-bikini-brief-dys201")].map((href) => keywordLink(href)),
 };

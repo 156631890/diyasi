@@ -1,0 +1,126 @@
+{
+  "/es/empaque-personalizado": {
+    "sections": [
+      {
+        "title": "Diseñar el empaque desde la prenda doblada",
+        "body": "Indique el modelo, cómo se dobla y cuántas prendas contiene cada paquete. Defina ancho, alto y fondo cuando corresponda. Compruebe el cierre y la lectura de talla/SKU con una muestra realmente empaquetada; una medida de bolsa aislada no confirma que la prenda encaje."
+      },
+      {
+        "title": "Separar la prueba de impresión de la aprobación del paquete",
+        "body": "La prueba digital sirve para texto, color de referencia y posición. La muestra física permite revisar material, cierre, legibilidad y escaneo del código. Mantenga ambas versiones identificadas y no sustituya una aprobación por la otra.",
+        "items": [
+          "Prueba de arte: idioma, composición confirmada, talla, SKU y archivo final.",
+          "Muestra empaquetada: prenda correcta, cantidad, cierre y código legible.",
+          "Compra de componentes: mínimo, coste de preparación y sobrante acordados por escrito."
+        ]
+      },
+      {
+        "title": "Cotizar el sobrante antes de imprimir",
+        "body": "Pida tres cantidades: componentes comprados, componentes usados en el pedido y saldo. Si el mínimo de impresión supera la cantidad de prendas, confirme quién paga y conserva el sobrante, con qué referencia se identifica y si se podrá utilizar en un pedido posterior. No se presupone un servicio de almacenamiento."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "¿Debo imprimir antes de aprobar la talla y la composición?",
+        "answer": "Cierre primero la información del producto y el arte correspondiente. Un cambio de talla, componente o versión puede volver incorrecta una etiqueta ya impresa."
+      },
+      {
+        "question": "¿Un archivo de código de barras prueba que se leerá en el paquete?",
+        "answer": "No. Compruebe el código impreso en el material y tamaño finales, con el paquete armado y el sistema de lectura previsto."
+      }
+    ]
+  },
+  "/ru/packaging": {
+    "sections": [
+      {
+        "title": "Определите упаковку по сложенному изделию",
+        "body": "Укажите модель, способ складывания и количество изделий в комплекте. Задайте ширину, высоту и при необходимости глубину. На упакованном образце проверьте закрытие и доступность размера/SKU: отдельный размер пакета не подтверждает, что изделие поместится."
+      },
+      {
+        "title": "Разделите проверку макета и готовой упаковки",
+        "body": "Цифровой макет позволяет проверить текст, цветовой ориентир и положение элементов. Физический образец нужен для материала, закрытия, читаемости и сканирования кода. Сохраните идентификаторы обеих версий.",
+        "items": [
+          "Макет: язык, подтверждённый состав, размер, SKU и финальный файл.",
+          "Упакованный образец: нужное изделие, количество, закрытие и читаемый код.",
+          "Закупка компонентов: отдельный минимум, подготовительные расходы и остаток."
+        ]
+      },
+      {
+        "title": "Согласуйте остаток до печати",
+        "body": "Запросите три количества: закупленные компоненты, расход на заказ и остаток. Если минимум печати выше количества изделий, согласуйте оплату, хранение, идентификацию и возможность использования остатка в следующем заказе. Услуга хранения не предполагается автоматически."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Можно ли печатать до утверждения размеров и состава?",
+        "answer": "Сначала согласуйте данные изделия и соответствующий макет. Изменение размера, материала или версии может сделать уже напечатанную этикетку неверной."
+      },
+      {
+        "question": "Достаточно ли файла штрихкода для проверки чтения?",
+        "answer": "Нет. Проверьте напечатанный код на выбранном материале и в окончательном размере, на собранной упаковке и в предполагаемой системе считывания."
+      }
+    ]
+  },
+  "/es/fabricante-ropa-interior-china": {
+    "sections": [
+      {
+        "title": "Elegir entre un modelo existente y una nueva construcción",
+        "body": "Una referencia de catálogo permite conservar patrón y construcción y revisar el marcado. Un nuevo corte, tejido o refuerzo requiere identificar las diferencias y solicitar una revisión de viabilidad. No traslade automáticamente el mínimo o plazo del catálogo a una nueva construcción."
+      },
+      {
+        "title": "Entregar una ficha que permita comparar revisiones",
+        "body": "Incluya vistas delantera y trasera, medidas con unidades y puntos definidos, materiales por componente y una tabla de cantidades. Marque lo que debe mantenerse, lo que cambia y lo que aún no está decidido. Una fotografía expresa la apariencia, pero no resuelve por sí sola el patrón ni las tolerancias.",
+        "items": [
+          "Versión base: modelo, talla de muestra y referencia de material.",
+          "Revisión: cambio solicitado, medida o foto marcada y resultado esperado.",
+          "Aprobación: muestra identificada y comentarios pendientes cerrados."
+        ]
+      },
+      {
+        "title": "Cerrar juntos producto y condiciones comerciales",
+        "body": "Antes de producir, haga coincidir la versión de muestra, ficha, arte, empaque y cotización. Solicite por separado desarrollo, componentes, transporte y condiciones del pedido. Si se propone otro tejido o elástico después de aprobar, revise su efecto sobre el ajuste antes de aceptar la sustitución."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "¿Cambiar la etiqueta es lo mismo que desarrollar un patrón?",
+        "answer": "No. La etiqueta modifica la presentación de una base seleccionada. Un patrón nuevo cambia medidas o construcción y necesita un alcance de desarrollo, muestras y condiciones propios."
+      },
+      {
+        "question": "¿Qué documento sirve para repetir el pedido?",
+        "answer": "Conserve modelo, ficha final, muestra aprobada, artes y lista de componentes. En cada reposición confirme materiales disponibles, precio y calendario; las condiciones anteriores no se renuevan automáticamente."
+      }
+    ]
+  },
+  "/ru/private-label": {
+    "sections": [
+      {
+        "title": "Выберите каталожную модель или новую конструкцию",
+        "body": "Для существующей модели можно сохранить лекала и конструкцию, отдельно согласовав брендирование. Новый крой, ткань или ластовица требуют перечня изменений и оценки осуществимости. Минимум и сроки каталога нельзя автоматически переносить на новую разработку."
+      },
+      {
+        "title": "Подготовьте спецификацию для сравнения версий",
+        "body": "Добавьте вид спереди и сзади, мерки с единицами и точками измерения, материалы по компонентам и таблицу количества. Отметьте, что сохраняется, что меняется и что ещё не решено. Фотография показывает внешний вид, но не задаёт лекала и допуски.",
+        "items": [
+          "Исходная версия: артикул, размер образца и материал.",
+          "Изменение: требование, мерка или фото с отметками и ожидаемый результат.",
+          "Утверждение: идентификатор образца и закрытые замечания."
+        ]
+      },
+      {
+        "title": "Согласуйте изделие и коммерческие условия одной версии",
+        "body": "Перед производством сверьте образец, спецификацию, макеты, упаковку и расчёт. Отдельно запросите затраты на разработку, компоненты, перевозку и условия заказа. Если после утверждения предложена другая ткань или резинка, сначала оцените влияние на посадку."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Замена этикетки равна разработке новых лекал?",
+        "answer": "Нет. Этикетка меняет оформление выбранной основы. Новые лекала меняют мерки или конструкцию и требуют отдельного объёма разработки, образцов и условий."
+      },
+      {
+        "question": "Что сохранить для повторного заказа?",
+        "answer": "Артикул, финальную спецификацию, утверждённый образец, макеты и перечень компонентов. При повторном заказе заново подтвердите доступность, цену и сроки; прежние условия не продлеваются автоматически."
+      }
+    ]
+  }
+}

@@ -1,3 +1,4 @@
+import contentRepair from "@/data/localized-content-repair.json";
 import { moqRoutes } from "./moq-routes";
 import { companyInfo, qualitySteps } from "./site-info";
 import { categoryCopy } from "./catalog-locales";
@@ -451,7 +452,8 @@ export const collectionPages: Record<string, LocalizedPage> = Object.fromEntries
     } satisfies LocalizedPage];
   }))
 );
-export const allLocalizedPages = {...localizedPages, ...russianPages, ...collectionPages};
+const repairCopy = contentRepair as Record<string, {sections:LocalizedPage["sections"];faqs:LocalizedPage["faqs"]}>;
+export const allLocalizedPages:Record<string,LocalizedPage> = Object.fromEntries(Object.entries({...localizedPages, ...russianPages, ...collectionPages}).map(([path,page])=>[path,repairCopy[path]?{...page,...repairCopy[path]}:page]));
 export const spanishStaticParams = Object.keys(allLocalizedPages)
   .filter(path => path.startsWith("/es/"))
   .filter((path) => path !== "/es")
