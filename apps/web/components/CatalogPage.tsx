@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import ProductCard from "./ProductCard";
+import { PricingNote } from "./ProductPricing";
 import CategoryModelComparison from "./CategoryModelComparison";
 import JsonLd from "./JsonLd";
 import BuyerGuidance from "./BuyerGuidance";
@@ -159,7 +160,7 @@ export default function CatalogPage({
           {collection && <p><Link className="d-text-link" href={`/manufacturers/${collectionManufacturers[collection.slug] ?? "custom-underwear-manufacturer"}`}>Planning a brand order? Review the manufacturing brief ↗</Link></p>}
           <p>
             {collection?.description ??
-              "Compare 45 women's and men's underwear styles from DIYASI in Yiwu, China. Choose cotton, lace or laser-cut seamless construction, check each model's measurements and materials, then request samples and a written wholesale quotation. Most listed styles start at 120 pieces per style, subject to confirmation."}
+              "Compare 45 women's and men's underwear styles from DIYASI in Yiwu, China. Choose cotton, lace or laser-cut seamless construction, check each model's measurements and materials, then request samples and a written wholesale quotation. Listed styles start at 120 pieces per style; confirm your size/color mix and customization requirements."}
           </p>
         </div>
         {collection && (
@@ -174,6 +175,7 @@ export default function CatalogPage({
           </div>
         )}
       </section>
+      <PricingNote />
       <div className="d-collection-nav" aria-label="Underwear collections">
         <Link href="/products" aria-current={!collection ? "page" : undefined}>
           All styles

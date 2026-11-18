@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ProductPricing, { PricingNote } from "./ProductPricing";
 import CategoryModelComparison from "./CategoryModelComparison";
 import Link from "next/link";
 import { catalogProducts } from "@/lib/catalog-source";
@@ -16,10 +17,12 @@ export default function LocalizedCatalog({locale, englishPath}: {locale:CatalogL
     {showProducts && <section className="page-section" id="models">
       <h2 className="card-title-standard">{ru ? "Модели каталога" : "Modelos del catálogo"} · {products.length}</h2>
       <p className="page-reference-body mt-3">{ru ? "Добавьте модели в список образцов. Полные технические карточки доступны на английском; номер модели и состав сохранены из исходного каталога." : "Añada modelos a su lista de muestras. Las fichas técnicas completas están en inglés; se conservan los números de modelo y la composición del catálogo original."}</p>
+      <PricingNote locale={locale} />
       <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {products.map(p => <article key={p.slug} className="card overflow-hidden">
           <Link href={`/products/${p.slug}`}><Image className="aspect-[4/3] w-full object-contain bg-white" src={p.image_url} alt={localizedProductName(p,locale)} width={480} height={360} /></Link>
           <div className="grid gap-3 p-5"><h3 className="font-semibold">{localizedProductName(p,locale)}</h3><p className="text-sm leading-6">{localizedFabric(p.fabric,locale)}</p>
+            <ProductPricing product={p} locale={locale} />
             <Link className="text-sm underline" href={`/products/${p.slug}`}>{ru ? "Полная карточка (EN)" : "Ficha completa (EN)"} ↗</Link>
             <SampleButton productId={p.slug} />
           </div>

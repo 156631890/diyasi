@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { PricingNote } from "./ProductPricing";
 import {downloadCsv, makeCsv} from "@/lib/buyer-export";
 import {SITE_ORIGIN} from "@/lib/site-config";
 import Link from "next/link";
@@ -24,8 +25,10 @@ export type ComparisonProduct = {
   rise: string;
   size: string;
   moq: string;
+  price_text: string;
+  price_checked_at: string;
 };
-const uiLabels: Record<string,[string,string]> = {"Selected styles": ["Modelos seleccionados", "Выбранные модели"], "Compare styles": ["Comparar modelos", "Сравнить модели"], "Clear": ["Vaciar", "Очистить"], "Your shortlist.": ["Su selección.", "Ваш выбор."], "Close comparison": ["Cerrar comparación", "Закрыть сравнение"], "Show different values only": ["Mostrar solo diferencias", "Показать только различия"], "Download comparison (CSV)": ["Descargar comparación (CSV, EN)", "Скачать сравнение (CSV, EN)"], "Product specification comparison": ["Comparación de especificaciones (EN)", "Сравнение характеристик (EN)"], "The details": ["Características (EN)", "Характеристики (EN)"], "Selection": ["Selección", "Выбор"], "Remove": ["Eliminar", "Удалить"], "Fabric": ["Tejido", "Ткань"], "Fit": ["Corte", "Фасон"], "Rise": ["Tiro", "Посадка"], "Sizes": ["Tallas", "Размеры"], "Starting quantity": ["Cantidad inicial", "Начальное количество"], "You can compare up to four styles. Remove one to add another.": ["Puede comparar hasta cuatro modelos. Elimine uno para añadir otro.", "Можно сравнить до четырех моделей. Удалите одну, чтобы добавить другую."]};
+const uiLabels: Record<string,[string,string]> = {"Reference price": ["Precio de referencia", "Ориентировочная цена"], "Price checked": ["Precio verificado", "Цена проверена"], "Selected styles": ["Modelos seleccionados", "Выбранные модели"], "Compare styles": ["Comparar modelos", "Сравнить модели"], "Clear": ["Vaciar", "Очистить"], "Your shortlist.": ["Su selección.", "Ваш выбор."], "Close comparison": ["Cerrar comparación", "Закрыть сравнение"], "Show different values only": ["Mostrar solo diferencias", "Показать только различия"], "Download comparison (CSV)": ["Descargar comparación (CSV, EN)", "Скачать сравнение (CSV, EN)"], "Product specification comparison": ["Comparación de especificaciones (EN)", "Сравнение характеристик (EN)"], "The details": ["Características (EN)", "Характеристики (EN)"], "Selection": ["Selección", "Выбор"], "Remove": ["Eliminar", "Удалить"], "Fabric": ["Tejido", "Ткань"], "Fit": ["Corte", "Фасон"], "Rise": ["Tiro", "Посадка"], "Sizes": ["Tallas", "Размеры"], "Starting quantity": ["Cantidad inicial", "Начальное количество"], "You can compare up to four styles. Remove one to add another.": ["Puede comparar hasta cuatro modelos. Elimine uno para añadir otro.", "Можно сравнить до четырех моделей. Удалите одну, чтобы добавить другую."]};
 const key = "diyasi_compare_ids";
 const eventName = "diyasi-compare-changed";
 let memory = "[]";
@@ -149,7 +152,7 @@ export default function ProductComparison({
         </div>
         <div style={{display: "flex", flexWrap: "wrap", gap: "1rem", alignItems: "center", marginBottom: "1rem"}}>
           <label><input type="checkbox" checked={differences} onChange={e=>setDifferences(e.target.checked)}/> {t("Show different values only")}</label>
-          <button type="button" className="d-button" disabled={!selected.length} onClick={()=>downloadCsv(makeCsv([["Model", "Product", "Fabric", "Fit", "Rise", "Listed sizes", "Listed starting quantity", "Product URL", "Status"], ...selected.map(p=>[p.model_number, p.product_name, p.fabric, p.fit, p.rise, p.size, p.moq, `${SITE_ORIGIN}/products/${p.slug}`, "Comparison draft; confirm measurements, sample costs, size/color mix and MOQ; no enquiry submitted"])]), "diyasi-style-comparison.csv")}>{t("Download comparison (CSV)")} ↓</button>
+          <button type="button" className="d-button" disabled={!selected.length} onClick={()=>downloadCsv(makeCsv([["Model", "Product", "Fabric", "Fit", "Rise", "Listed sizes", "Listed starting quantity", "Reference unit price (USD)", "Price checked", "Product URL", "Status"], ...selected.map(p=>[p.model_number, p.product_name, p.fabric, p.fit, p.rise, p.size, p.moq, p.price_text, p.price_checked_at, `${SITE_ORIGIN}/products/${p.slug}`, "Comparison draft; confirm final unit price, measurements, sample costs, size/color mix, MOQ, customization, shipping and taxes; no enquiry submitted"])]), "diyasi-style-comparison.csv")}>{t("Download comparison (CSV)")} ↓</button>
         </div>
         <div
           className="d-table-scroll"
@@ -188,6 +191,8 @@ export default function ProductComparison({
                   ["Rise", "rise"],
                   ["Sizes", "size"],
                   ["Starting quantity", "moq"],
+                  ["Reference price", "price_text"],
+                  ["Price checked", "price_checked_at"],
                 ] as const
               ).filter(([,field]) => !differences || selected.length < 2 || new Set(selected.map(p=>p[field].trim())).size > 1).map(([label, field]) => (
                 <tr key={field}>
@@ -217,6 +222,7 @@ export default function ProductComparison({
             </tbody>
           </table>
         </div>
+        <PricingNote locale={locale === "es" || locale === "ru" ? locale : "en"} />
         <p className="d-fineprint">
           {locale === "ru" ? "Характеристики и CSV — из английского каталога. Уточните размеры, цвета и минимумы компонентов в запросе образцов." : locale === "es" ? "Especificaciones y CSV del catálogo en inglés. Confirme tallas, colores y mínimos de componentes al solicitar muestras." : "Confirm the size/color mix and any custom-component minimums with your sample brief."}
         </p>

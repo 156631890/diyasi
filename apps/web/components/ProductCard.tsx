@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ProductPricing from "./ProductPricing";
 import Link from "next/link";
 import type { CatalogProduct } from "@/lib/catalog-source";
 import CompareButton from "./CompareButton";
@@ -44,6 +45,7 @@ export default function ProductCard({
       <p className="d-product-caption">
         {product.rise} <span aria-hidden="true">·</span> Private label available
       </p>
+      <ProductPricing product={product} />
       <div className="d-product-actions"><SampleButton productId={product.slug} /><CompareButton productId={product.slug} /></div>
     </article>
   );

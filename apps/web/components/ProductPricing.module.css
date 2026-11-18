@@ -1,0 +1,17 @@
+.pricing { margin: 14px 0 8px; color: #562b38; line-height: 1.5; }
+.label { display: block; color: #75665e; font-size: 11px; }
+.amount { display: flex; align-items: baseline; flex-wrap: wrap; gap: 5px; }
+.amount strong { font-size: 19px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.amount span, .moq { font-size: 12px; }
+.moq { margin-top: 3px; color: #61544e; }
+.note, .source { color: #75665e; font-size: 12px; line-height: 1.7; margin: 12px 0 0; }
+.source { font-size: 11px; }
+.source a { text-decoration: underline; text-underline-offset: 3px; }
+.detailed { border-block: 1px solid #e2d8d0; padding: 18px 0; margin: 22px 0; }
+.detailed .amount strong { font-size: 30px; }
+.detailed .moq { font-size: 13px; }
+@media (max-width: 600px) {
+  .amount strong { font-size: 17px; }
+  .label { font-size: 10px; }
+  .moq { font-size: 11px; }
+}

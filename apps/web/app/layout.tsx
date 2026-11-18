@@ -164,6 +164,8 @@ export default async function RootLayout({
               rise,
               size,
               moq,
+              price_text,
+              price_checked_at,
             }) => ({
               slug,
               product_name,
@@ -174,6 +176,8 @@ export default async function RootLayout({
               rise,
               size,
               moq,
+              price_text,
+              price_checked_at,
             }),
           )}
         >

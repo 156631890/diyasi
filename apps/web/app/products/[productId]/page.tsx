@@ -8,6 +8,7 @@ import CatalogPage, {
   type CatalogSearch,
 } from "@/components/CatalogPage";
 import ProductCard from "@/components/ProductCard";
+import ProductPricing from "@/components/ProductPricing";
 import ProductGallery from "@/components/ProductGallery";
 import ProductInquiryForm from "@/components/ProductInquiryForm";
 import { SampleButton } from "@/components/SampleList";
@@ -137,9 +138,7 @@ export default async function ProductPage({ params, searchParams }: Props) {
           </p>
           <h1>{p.seo_heading}</h1>
           <p className="d-detail-description">{p.description}</p>
-          <p className="d-quote-price">
-            Made for your label. <span>Quoted for your order.</span>
-          </p>
+          <ProductPricing product={p} detailed />
           <dl className="d-key-facts">
             <div>
               <dt>The fit</dt>

@@ -16,4 +16,9 @@ export type HomeFeaturedProduct = Pick<
   | "rise"
   | "size"
   | "moq"
+  | "price_from"
+  | "price_currency"
+  | "moq_pieces"
+  | "price_checked_at"
+  | "source_urls"
 >;
