@@ -1,0 +1,25 @@
+.rail { position:fixed; z-index:25; right:16px; top:50%; transform:translateY(-50%); }
+.links { display:flex; flex-direction:column; gap:5px; padding:7px; background:#fffdf9; border:1px solid var(--line); border-radius:30px; box-shadow:0 5px 24px #392a2b14; }
+.link { position:relative; display:flex; align-items:center; justify-content:center; width:44px; height:44px; color:var(--brand); border-radius:50%; transition:background-color .15s,color .15s; }
+.link:hover,.link:focus-visible { color:white; background:var(--brand); }
+.whatsapp { color:#186545; }
+.whatsapp:hover,.whatsapp:focus-visible { background:#186545; }
+.link:focus-visible,.toggle:focus-visible { outline:2px solid var(--brand); outline-offset:4px; }
+.socialIcon { font-family:Arial,sans-serif; font-size:23px; line-height:1; font-weight:700; letter-spacing:-1px; }
+.label { pointer-events:none; position:absolute; right:calc(100% + 17px); top:50%; transform:translateY(-50%); visibility:hidden; opacity:0; width:max-content; max-width:min(310px,70vw); background:#fffdf9; color:var(--text); padding:10px 14px; border:1px solid var(--line); border-radius:7px; box-shadow:0 4px 18px #392a2b10; font-size:12px; line-height:1.5; overflow-wrap:anywhere; }
+.label strong,.label span { display:block; }
+.label span { font-size:11px; color:var(--muted); margin-top:2px; }
+.link:hover .label,.link:focus-visible .label { visibility:visible; opacity:1; }
+.toggle { display:none; }
+@media(max-width:700px), (max-height:500px) {
+  .rail { top:auto; bottom:calc(88px + env(safe-area-inset-bottom)); right:12px; transform:none; }
+  .toggle { display:flex; width:48px; height:48px; margin-left:auto; align-items:center; justify-content:center; border:1px solid #fffdf9; border-radius:50%; color:#fff; background:var(--brand); box-shadow:0 3px 15px #392a2b26; cursor:pointer; }
+  .links { display:none; position:absolute; bottom:60px; right:0; width:min(292px,calc(100vw - 24px)); max-height:calc(100dvh - 170px - env(safe-area-inset-bottom)); overflow:auto; border-radius:12px; gap:2px; padding:8px; }
+  .rail[data-open="true"] .links { display:flex; }
+  .link { width:100%; height:auto; min-height:48px; justify-content:flex-start; padding:8px 10px; gap:12px; border-radius:7px; }
+  .link svg,.socialIcon { flex-shrink:0; width:23px; text-align:center; }
+  .label { position:static; transform:none; opacity:1; visibility:visible; width:auto; max-width:none; padding:0; border:0; box-shadow:none; background:none; color:inherit; }
+  .link:hover .label span,.link:focus-visible .label span { color:inherit; }
+}
+@media(prefers-reduced-motion:reduce) { .link { transition:none; } }
+@media print { .rail { display:none; } }

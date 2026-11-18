@@ -8,6 +8,8 @@ import JsonLd from "@/components/JsonLd";
 import ProductCard from "@/components/ProductCard";
 import NewsCard from "@/components/NewsCard";
 import ContentFaq from "@/components/ContentFaq";
+import ProcurementWorksheet from "@/components/ProcurementWorksheet";
+import { newsWorksheets } from "@/lib/procurement-worksheets";
 import { collectionKeywordGuides, keywordLink, uniqueKeywordLinks } from "@/lib/keyword-content";
 import { catalogProducts } from "@/lib/catalog-source";
 import { findNewsArticle, newsArticles, newsDate } from "@/lib/news-articles";
@@ -61,7 +63,7 @@ export default async function NewsDetailPage({ params }: Props) {
         author: { "@type": "Organization", name: "DIYASI", url: absoluteUrl("/about") },
         publisher: { "@id": ORGANIZATION_ID },
         mainEntityOfPage: absoluteUrl(path),
-        citation: [...sources.map(({ url }) => url), ...(article.references ?? []).map(({ href }) => href)],
+        citation: [...new Set([...sources.map(({ url }) => url), ...(article.references ?? []).map(({ href }) => href), ...article.sections.flatMap(section => (section.sources ?? []).map(({ href }) => href))])],
       }} />
       <header className="d-article-head">
         <nav className="d-breadcrumb" aria-label="Breadcrumb">
@@ -84,6 +86,7 @@ export default async function NewsDetailPage({ params }: Props) {
         </aside>
         <article className="d-article-body">
           <p className="d-article-answer">{article.intro}</p>
+          {article.dataScope && <aside className="d-insight-scope" aria-label="Research scope"><strong>Data &amp; scope</strong><p>{article.dataScope}</p></aside>}
           <figure className="d-article-photo">
             <Image src={article.coverImage} alt={article.coverAlt} width={900} height={700} sizes="(max-width:800px) 88vw,750px" priority />
             <figcaption>{article.imageCaption}</figcaption>
@@ -98,8 +101,10 @@ export default async function NewsDetailPage({ params }: Props) {
                   <tbody>{section.rows.slice(1).map((row) => <tr key={row[0]}>{row.map((cell, cellIndex) => cellIndex === 0 ? <th scope="row" key={cell}>{cell}</th> : <td key={cell}>{cell}</td>)}</tr>)}</tbody>
                 </table>
               </div>}
+              {section.sources && <p className="d-insight-sources">Sources: {section.sources.map(({ label, href }, sourceIndex) => <span key={href}>{sourceIndex > 0 && " · "}<a href={href} target="_blank" rel="noopener noreferrer">{label} ↗</a></span>)}</p>}
             </section>
           ))}
+          {newsWorksheets[article.slug] && <ProcurementWorksheet sheet={newsWorksheets[article.slug]} />}
           <section className="d-reading">
             <h2>Put your research to work</h2>
             {reading.map(({ label, href }) => <Link key={href} className="d-text-link" href={href}>{label} ↗</Link>)}

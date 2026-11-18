@@ -1,0 +1,236 @@
+[
+  {
+    "slug": "textile-materials-outlook-2026-underwear-sourcing",
+    "relatedManufacturers": ["private-label-underwear-manufacturer", "custom-underwear-manufacturer"],
+    "sourcingTopic": "materials",
+    "title": "2026 Textile Materials Outlook: What Underwear Buyers Should Ask",
+    "description": "Read the 2026 Textile Exchange production data, compare cotton and polyamide underwear components, and build a material evidence brief for your supplier.",
+    "category": "Industry insights",
+    "publishedAt": "2026-11-18",
+    "updatedAt": "2026-11-18",
+    "coverModel": "LS006",
+    "coverAlt": "DIYASI LS006 cotton and lace underwear used to illustrate separate body and trim specifications",
+    "imageCaption": "LS006 is a catalogue example of a garment with different body and lace compositions. The photograph does not establish recycled content, certification or performance.",
+    "models": ["DYS201", "LS006", "DYS323"],
+    "insight": true,
+    "dataScope": "Research checked on 18 November 2026. Textile Exchange's 2026 Materials Market Report describes global fibre production in 2025; its cotton figure uses the 2024/25 season. These are supply statistics, not underwear sales, retail demand or DIYASI purchasing data. Product examples use the linked DIYASI catalogue specifications.",
+    "intro": "The useful procurement signal in textile production data is which questions to ask about your materials. It cannot tell a brand which underwear style will sell. Start with the fibre and component you need, define the evidence behind any claim, then compare quotations for the same approved specification.",
+    "sections": [
+      {
+        "title": "The supply picture: more fibre does not mean more circular fibre",
+        "paragraphs": [
+          "Textile Exchange reports approximately 139 million tonnes of global fibre production in 2025, up from 132 million in 2024. That is about 5.3% growth, calculated from the report's rounded totals. Recycled feedstocks represented about 7.6% of production; textile-to-textile recycling supplied less than 1% of the overall fibre market.",
+          "For a buyer, the gap between total supply and textile-to-textile supply is a reason to specify the feedstock. A request for recycled material leaves several questions unanswered: which component, which percentage, and recycled from what? A supplier's answer should identify those boundaries before the brand designs a label or builds a price comparison."
+        ],
+        "rows": [
+          ["Material", "Reported production", "Share within that material"],
+          ["Polyester, 2025", "82.5 million tonnes", "Recycled polyester: 11.8%"],
+          ["Polyamide, 2025", "7.3 million tonnes", "Recycled polyamide: about 3%"],
+          ["Cotton, 2024/25", "25.7 million tonnes", "Seasonal figure; not a calendar-year comparison"]
+        ],
+        "sources": [{"label": "Textile Exchange, 2026 Materials Market Report, pp. 5–6 (PDF)", "href": "https://dev.textileexchange.org/app/uploads/2026/09/2026-Materials-Market-Report.pdf"}]
+      },
+      {
+        "title": "Write the specification by component",
+        "paragraphs": [
+          "An underwear garment can combine a body fabric, gusset, lace, elastic, sewing thread and labels. One percentage statement may describe only the body. Ask for a component-level bill of materials and make the supplier identify the scope of each statement. If your planned consumer claim concerns the whole garment, a body-fabric specification alone cannot resolve it.",
+          "The catalogue examples below make this distinction concrete. Polyamide and polyester are different fibre families: a global polyester recycling percentage says nothing about the lace on LS006. Likewise, a cotton gusset does not make DYS323 a cotton-body garment. Preserve those differences when translating your brief or comparing an alternative supplier's sample."
+        ],
+        "rows": [
+          ["DIYASI example", "Catalogue composition", "Question for sample approval"],
+          ["DYS201", "95% cotton / 5% spandex", "Which components does the composition cover? Request the full component breakdown."],
+          ["LS006", "Body: 95% cotton / 5% spandex; lace: 80% polyamide / 20% spandex", "Are the body and lace references fixed for the quoted version?"],
+          ["DYS323", "Body: 80% polyamide / 20% spandex; gusset: 100% cotton", "Does the proposed product description distinguish the body from the gusset?"]
+        ]
+      },
+      {
+        "title": "Treat an environmental claim as an evidence request",
+        "paragraphs": [
+          "Begin with the precise sentence you intend to put on packaging. Then ask what document supports it, which material or component the document covers, and how that material connects to the order. A generic presentation about a mill is different from a record identifying the fabric used in your approved sample and production batch.",
+          "Keep composition, sourcing claims and performance evidence in separate fields. A fibre name does not establish organic status. A recycled-content statement does not establish that the assembled garment is recyclable. A certificate should be checked for its named organisation, scope, validity and connection to the proposed supply; this article does not establish certification for the illustrated products.",
+          "When a required document is unavailable, record the claim as unresolved. The practical options are to obtain the missing evidence, change the material brief, or remove that claim from the proposed copy. Keeping an open item visible is more useful than letting an unsupported adjective pass from a quotation into a product listing."
+        ]
+      },
+      {
+        "title": "Compare the same garment before comparing the price",
+        "paragraphs": [
+          "Use the catalogue model as a starting reference, then freeze the requested fabric, colour, size allocation, trim and packing. Ask each quotation to identify its exclusions and validity. A material substitution can change the sample you need to approve even when the silhouette looks unchanged. Record the substitution explicitly instead of accepting a general description such as equivalent fabric.",
+          "DIYASI's current catalogue displays a 120-piece minimum per model and indicative unit prices. That minimum does not establish the availability or minimum of a newly requested recycled fabric, special colour, elastic or printed packaging. Ask for the garment and component conditions separately, including who owns any unused component balance.",
+          "For a controlled comparison, request one unchanged catalogue specification and one clearly identified alternative. Compare the commercial terms alongside a physical sample and the evidence record. Global production growth alone cannot predict the price difference, a delivery date or whether the alternative will feel the same in wear."
+        ]
+      },
+      {
+        "title": "Turn the outlook into a supplier brief",
+        "paragraphs": [
+          "Prepare one record per proposed model and revision. Attach the intended claim, component list, reference sample, quantity plan and unresolved evidence questions. Assign someone to close each open item before approving artwork or releasing an order. The downloadable worksheet below is a place to organise these questions; it is not a certificate or a completed test report.",
+          "The buying decision should end with a defined garment and traceable answers. The industry report provides context for asking better questions; your order-specific documents and approved sample determine what you can actually buy and describe."
+        ]
+      }
+    ],
+    "reading": [
+      {"label": "Organic cotton claims: what evidence to request", "href": "/news/organic-cotton-underwear-claims-evidence-buyers"},
+      {"label": "Cotton gusset versus cotton underwear", "href": "/news/cotton-gusset-vs-cotton-underwear-components"},
+      {"label": "Plan model and component minimums", "href": "/resources/private-label-underwear-moq-guide"},
+      {"label": "Prepare product data for EU textile rules", "href": "/news/eu-textile-rules-2026-underwear-buyers"}
+    ]
+  },
+  {
+    "slug": "apparel-returns-data-underwear-fit-approval",
+    "relatedManufacturers": ["private-label-underwear-manufacturer", "low-moq-underwear-manufacturer"],
+    "sourcingTopic": "quality",
+    "title": "Apparel Returns Data: A Fit-Approval Plan for Underwear Brands",
+    "description": "Use European apparel returns research to plan underwear sample checks, distinguish fit from style complaints, and track returns by model, size and batch.",
+    "category": "Industry insights",
+    "publishedAt": "2026-11-18",
+    "updatedAt": "2026-11-18",
+    "coverModel": "DYS202",
+    "coverAlt": "DIYASI DYS202 regular-rise bikini underwear, a reference model for a fit-approval brief",
+    "imageCaption": "DYS202 is a catalogue reference for defining rise and coverage. No customer return rate or completed wear test is represented by this image.",
+    "models": ["DYS201", "DYS202", "LS006"],
+    "insight": true,
+    "dataScope": "Research checked on 18 November 2026. The European Environment Agency briefing was published on 4 March 2024 and synthesises earlier studies. Its apparel figures are not an underwear-only benchmark, a 2026 measurement or a DIYASI return rate. The numerical example below is hypothetical.",
+    "intro": "A returns headline becomes useful when it changes what a brand records and approves. For underwear, separate size and fit complaints from style expectations, compare identified samples, and connect later feedback to the actual model and production batch. The aim is a decision process you can inspect, without promising an unmeasured reduction in returns.",
+    "sections": [
+      {
+        "title": "What the published figures can tell a buyer",
+        "paragraphs": [
+          "The European Environment Agency's 2024 briefing estimates an average clothing return rate of 20% in Europe. It also reports that buyer-perceived poor fit or style accounts for 70% of returns in the research it cites. Those figures have different denominators: garments sold for the return rate, and returns for the reasons breakdown.",
+          "The estimates make fit and expectation-setting useful areas to investigate. They do not tell us the return rate for underwear, a particular country, a small brand or DIYASI. Do not multiply the two figures to forecast your own losses: the source does not establish that they describe one matched population. Use your own sales and returns records for the commercial calculation."
+        ],
+        "sources": [{"label": "European Environment Agency, The destruction of returned and unsold textiles (4 March 2024)", "href": "https://www.eea.europa.eu/en/analysis/publications/the-destruction-of-returned-and-unsold-textiles-in-europes-circular-economy"}]
+      },
+      {
+        "title": "Define the fit promise before selecting a sample",
+        "paragraphs": [
+          "A shared size letter does not make two cuts interchangeable. Write down the intended rise, rear coverage, leg opening and waistband position before deciding what a successful sample should look like. Keep garment measurements separate from the body measurements used to explain sizing to a customer.",
+          "Compare DYS201 and DYS202 when rise is the open question: the catalogue describes a low-rise bikini and a regular-rise bikini respectively. LS006 is a Brazilian style with a mid-low rise and lace. It introduces a different coverage and trim brief. These are selection references, not proof that one model fits every person better."
+        ],
+        "rows": [
+          ["Reference", "Catalogue distinction", "Sample question"],
+          ["DYS201", "Low-rise bikini; 95% cotton / 5% spandex", "Does the intended waistband position match the product description?"],
+          ["DYS202", "Regular-rise bikini; 95% combed cotton / 5% spandex", "Are the approved rise and size measurements clearly recorded?"],
+          ["LS006", "Brazilian, mid-low rise; separate cotton body and polyamide lace", "Do coverage photographs and trim observations reflect this exact sample?"]
+        ]
+      },
+      {
+        "title": "Build a repeatable sample review",
+        "paragraphs": [
+          "Identify every sample by model, size, colour and revision. Agree the measurement points and whether each measurement is relaxed or taken under a defined extension. Record the actual values beside the requested specification. Without a shared method, a difference between two measurements may be a difference in how they were taken.",
+          "For a fit review, use consenting participants relevant to your intended range and handle their information appropriately. Record observations such as waistband movement, leg pressure, coverage or trim contact in consistent terms. Keep a wearer preference separate from a measured specification deviation. A small sample review can guide revisions; it cannot establish a universal fit claim.",
+          "If care testing is part of approval, agree the procedure and acceptance criteria first. Compare the same identified areas before and after that procedure, retaining measurements and photographs. Link any requested change to a new sample revision so that the approved fit does not become detached from the fabric or elastic used for production."
+        ]
+      },
+      {
+        "title": "Measure returns with one denominator and one observation window",
+        "paragraphs": [
+          "Choose a sales cohort whose return window has had time to close. Track garments sold and returned for that cohort, excluding cancelled or unfulfilled orders and stating how exchanges are treated. Do not divide this month's incoming returns by this month's sales when the returned units belong to earlier sales periods.",
+          "Hypothetical example: 120 individual garments were sold and shipped in a defined cohort, with 12 returned after the stated observation window. The item return rate is 12 ÷ 120 = 10%. If four of the returned garments have fit as their primary reason, that is 4 ÷ 12 = 33.3% of returns, or 4 ÷ 120 = 3.3% of sold garments. These are different questions, not competing rates.",
+          "Keep units consistent for multipacks. Sixty two-piece packs contain 120 garments, but pack returns and garment returns need their own counts. Do not mix order count, pack count and garment count in one fraction. With small cohorts, display the counts beside percentages so that a change of one or two returns remains visible."
+        ]
+      },
+      {
+        "title": "Route each finding to a specific action",
+        "paragraphs": [
+          "A single free-text returns field is hard to turn into a production decision. Use a consistent primary reason, retain the customer's wording, and record condition separately. A wrong-size dispatch, an expectation about coverage and a failed join require different follow-up. Customer-facing return eligibility must follow the applicable policy and law; an internal reason code does not decide it."
+        ],
+        "rows": [
+          ["Observed issue", "Evidence to retain", "Next review"],
+          ["Too tight or loose", "Model, size, approved measurements and customer wording", "Size guidance, measurement consistency and sample fit"],
+          ["Unexpected rise or coverage", "Purchased listing version and sample photographs", "Images, cut description and range selection"],
+          ["Wrong item or size sent", "Ordered SKU, received label and packing record", "Variant mapping and dispatch process"],
+          ["Join or trim complaint", "Batch, location, photographs and care information", "Construction review against agreed criteria"],
+          ["Resale status unclear", "Condition inspection and handling decision", "Documented policy and applicable requirements"]
+        ]
+      },
+      {
+        "title": "Close the loop before the next order",
+        "paragraphs": [
+          "Give each proposed correction an owner and a revision reference. A product-page clarification may resolve an expectation mismatch without changing the garment. A material or construction change needs a fresh sample decision. Record which action you chose so that later cohorts can be compared with the version they actually received.",
+          "Use the worksheet below for one model, size and batch at a time. Retain a downloaded copy alongside the approved specification and your underlying records. This makes the next supplier discussion about a specific observation and a proposed correction, instead of an industry percentage with no link to your product."
+        ]
+      }
+    ],
+    "reading": [
+      {"label": "Leg-opening elastic: what to inspect on a sample", "href": "/news/underwear-leg-opening-elastic-fit-checklist"},
+      {"label": "Review waistband roll-down on high-waist styles", "href": "/news/high-waist-underwear-waistband-roll-down-fit"},
+      {"label": "Prepare a first-order supplier brief", "href": "/resources/underwear-manufacturer-for-startup-brands"},
+      {"label": "EU textile rules and unsold inventory records", "href": "/news/eu-textile-rules-2026-underwear-buyers"}
+    ]
+  },
+  {
+    "slug": "eu-textile-rules-2026-underwear-buyers",
+    "relatedManufacturers": ["custom-underwear-manufacturer", "underwear-factory"],
+    "sourcingTopic": "brand",
+    "title": "EU Textile Rules in 2026: A Buyer Data Checklist",
+    "description": "Separate textile EPR, unsold-apparel destruction rules and the ESPR product-passport framework, then prepare component, batch and inventory data for review.",
+    "category": "Industry insights",
+    "publishedAt": "2026-11-18",
+    "updatedAt": "2026-11-18",
+    "coverModel": "DYS323",
+    "coverAlt": "DIYASI DYS323 underwear, with separate body and cotton gusset specifications in the catalogue",
+    "imageCaption": "DYS323 illustrates why a buyer's product file should distinguish body and gusset materials. The product image and this checklist do not establish regulatory compliance.",
+    "models": ["DYS323", "LS006"],
+    "insight": true,
+    "dataScope": "General procurement information checked on 18 November 2026 against the European Commission sources linked below. National implementation, company classification and product-specific measures require confirmation for the intended market. This is a buyer data checklist, not a legal determination, compliance certificate or digital product passport.",
+    "intro": "Three different EU policy tracks are relevant to textile procurement: extended producer responsibility, rules on destroying unsold apparel, and the Ecodesign for Sustainable Products Regulation framework. They have different triggers and timelines. A useful first step for an underwear buyer is to assemble an accurate product and operator file, then identify which requirements apply with the responsible EU business and its adviser.",
+    "sections": [
+      {
+        "title": "Textile EPR: establish the market and responsible business",
+        "paragraphs": [
+          "The Commission states that the revised Waste Framework Directive entered into force on 16 October 2025. Member States have 20 months to transpose it and 30 months to establish textile extended producer responsibility schemes. These are implementation periods, not a single EU-wide registration or fee schedule for an underwear order.",
+          "Begin with where the goods will be placed on the market and which business is responsible under the applicable national scheme. Ask that business to confirm registration, reporting categories, fee basis and relevant existing obligations. Do not assume every country is waiting for a new scheme or that a factory invoice answers the producer-responsibility question.",
+          "Prepare data that can be reconciled to actual goods: your SKU, model reference, component breakdown, measured weight, units and destination. Keep the measurement method and treatment of packaging explicit. This is a proposed internal record structure; the destination scheme determines the categories and units it accepts."
+        ],
+        "sources": [{"label": "European Commission, revised Waste Framework Directive enters into force (16 October 2025)", "href": "https://environment.ec.europa.eu/news/revised-waste-framework-directive-enters-force-2025-10-16_en"}]
+      },
+      {
+        "title": "Unsold apparel: separate inventory decisions from disposal decisions",
+        "paragraphs": [
+          "The Commission's July 2026 notice states that the ban on destroying unsold clothes, clothing accessories and footwear applies to large companies from 19 July 2026 and to medium-sized companies from 2030. Small and micro companies are exempt from these requirements. That scope does not establish an exemption from EPR or from every other textile obligation.",
+          "For purchasing teams, the practical question is whether an unsold unit can be traced to a model, batch, condition assessment and documented next step. Keep overstock separate from returned goods and from goods with a recorded defect. Those distinctions help the responsible team assess its options; a stock status alone is not a legal permission to destroy an item.",
+          "Do not assume that every underwear item automatically qualifies for a hygiene-related exception. Any applicable derogation and its evidence requirements need to be checked against the current rules. Agree who owns the inventory record, who makes the decision and where supporting documents are retained before a disposal decision becomes urgent."
+        ],
+        "sources": [{"label": "European Commission, ban on destruction of unsold clothes and shoes (17 July 2026)", "href": "https://environment.ec.europa.eu/news/ban-destruction-unsold-clothes-and-shoes-enters-application-2026-07-17_en"}]
+      },
+      {
+        "title": "ESPR and product passports: prepare data without inventing a deadline",
+        "paragraphs": [
+          "The Ecodesign for Sustainable Products Regulation entered into force on 18 July 2024. The Commission describes a framework under which specific product requirements, including digital product passport information, are developed. The framework's existence alone does not establish a current passport obligation or one universal deadline for every underwear SKU.",
+          "Before commissioning a passport system, identify the adopted measure, covered product group, required information and applicable date for your product. A QR code linked to a spreadsheet is not proof of compliance. Your EU importer or compliance adviser should confirm the actual obligation and who is responsible for maintaining the required information.",
+          "You can still improve the underlying records now. Use stable identifiers for products and revisions, distinguish confirmed from missing data, and retain the source of each material statement. These practices help avoid rebuilding the same facts later without pretending that this internal file satisfies a future technical standard."
+        ],
+        "sources": [{"label": "European Commission, Ecodesign for Sustainable Products Regulation overview", "href": "https://environment.ec.europa.eu/strategy/circular-economy/ecodesign-sustainable-products-regulation_en"}]
+      },
+      {
+        "title": "Build one evidence file, with separate decisions for each rule",
+        "paragraphs": [
+          "A shared evidence file reduces repeated requests to a supplier, but the legal decisions remain separate. For example, LS006 has a cotton/spandex body and polyamide/spandex lace; DYS323 has a polyamide/spandex body and a cotton gusset. Describing either with one broad material label loses information that a buyer may need for a subsequent classification or reporting review.",
+          "Treat a material substitution, new trim or packaging change as a revision. Ask whether the change affects the data previously supplied to the importer and retain both versions. Do not silently overwrite the record for goods already sold. The following fields are recommended for internal preparation; they are not presented as a universal statutory template."
+        ],
+        "rows": [
+          ["Record", "What to collect", "Who should confirm it"],
+          ["Product identity", "Brand SKU, factory model, variant and revision", "Buyer and supplier"],
+          ["Materials", "Body, gusset, trim and other components separately", "Supplier, supported by relevant documentation"],
+          ["Weight", "Measured garment weight, method and packaging treatment", "Party performing the measurement"],
+          ["Market and operator", "Destination, importer and responsible business", "EU business and adviser"],
+          ["Commercial batch", "Order, shipment, quantities and specification revision", "Buyer, supplier and logistics records"],
+          ["Unsold inventory", "Quantity, condition, assessment and recorded next step", "Inventory owner and responsible decision-maker"],
+          ["Applicable obligation", "Rule or scheme, scope, date and open questions", "Responsible EU business and qualified adviser"]
+        ]
+      },
+      {
+        "title": "Use the checklist at quotation and again before shipment",
+        "paragraphs": [
+          "At quotation, send the destination market and the data your responsible EU business needs. Ask the supplier to mark each field as confirmed, unavailable or subject to final sample approval. This exposes missing information while there is still time to adjust the brief, rather than after labels and packaging are produced.",
+          "Before shipment, reconcile the approved sample, final component specification and batch records. Ask the responsible business to close the rule-specific questions separately. Buying a particular catalogue model does not automatically resolve EPR, disposal or passport obligations; a completed internal worksheet should identify the evidence and decision owner instead of declaring a general compliance pass."
+        ]
+      }
+    ],
+    "reading": [
+      {"label": "2026 materials data and component evidence", "href": "/news/textile-materials-outlook-2026-underwear-sourcing"},
+      {"label": "Apparel returns data and sample approval", "href": "/news/apparel-returns-data-underwear-fit-approval"},
+      {"label": "Cotton and lace composition claims", "href": "/news/cotton-lace-underwear-composition-claims"},
+      {"label": "Explore DIYASI sourcing resources", "href": "/resources"}
+    ]
+  }
+]

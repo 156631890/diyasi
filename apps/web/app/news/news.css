@@ -3,6 +3,13 @@
 .d-news-intro .d-text-link { display: inline-block; margin: 12px 0 8px; font-size: 12px; }
 .d-news-list { padding-top: 42px; }
 .d-home-news { border-top: 1px solid var(--line); }
+.d-industry-insights { border-bottom:1px solid var(--line); }
+.d-industry-insights > p { max-width:850px; margin-bottom:28px; color:var(--muted); font-size:13px; }
+.d-insight-scope { padding:20px 24px; border-left:3px solid var(--brand); background:#f4eee9; margin:24px 0; }
+.d-insight-scope strong { font-size:12px; color:var(--brand); }
+.d-insight-scope p { margin:8px 0 0; font-size:12px; line-height:1.8; }
+.d-insight-sources { font-size:11px!important; line-height:1.8; color:var(--muted); margin-top:14px; }
+.d-insight-sources a { text-decoration:underline; text-underline-offset:3px; }
 .d-news-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; }
 .d-news-card { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; }
 .d-news-image { position: relative; display: block; width: 100%; aspect-ratio: 4 / 3; background: #fff; border: 1px solid var(--line); }

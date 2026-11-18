@@ -7,8 +7,8 @@ import { absoluteUrl, buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import ContentFaq from "@/components/ContentFaq";
 
 export const metadata = buildMetadata({
-  title: "Underwear Buying Notes: Models, Fit and Components",
-  description: "Use underwear buying notes to review actual DIYASI models, fabric components, fit, labeling and sample approvals before planning your next collection.",
+  title: "Underwear Industry Insights & Buying Guides",
+  description: "Explore underwear sourcing insights backed by industry data: materials, returns and EU textile rules, with model comparisons and practical buyer worksheets.",
   path: "/news",
 });
 
@@ -40,18 +40,23 @@ export default function NewsPage() {
             <Link href="/">Home</Link><span>/</span><span aria-current="page">News</span>
           </nav>
           <p className="d-eyebrow">From the people behind your collection</p>
-          <h1>Underwear buying notes</h1>
-          <p>Use underwear buying notes to review real model specifications, fit, component materials and sample approval. Turn a focused product comparison into a written brief for your collection.</p>
+          <h1>Underwear industry insights &amp; buying guides</h1>
+          <p>Understand the data behind sourcing decisions. Explore materials supply, apparel returns and textile policy, then use real DIYASI model comparisons and buyer worksheets to prepare your next collection.</p>
           <Link href="/resources" className="d-text-link">Underwear sourcing guides ↗</Link>
         </div>
       </header>
+      <section className="d-section d-industry-insights" aria-labelledby="industry-insights-heading">
+        <div className="d-section-heading"><div><p className="d-eyebrow">EVIDENCE FOR YOUR NEXT DECISION</p><h2 id="industry-insights-heading">Industry data, buyer perspective.</h2></div></div>
+        <p>Each insight separates published industry figures from DIYASI catalogue facts and buying recommendations. Check the data year, scope and original sources before applying a benchmark to your own range.</p>
+        <div className="d-news-grid">{newsArticles.filter(article => article.insight).map(article => <NewsCard key={article.slug} article={article} />)}</div>
+      </section>
       <section className="d-section d-news-list" aria-labelledby="latest-news-heading">
         <div className="d-section-heading">
           <h2 id="latest-news-heading">Underwear fabrics, fit and sample approval notes</h2>
           <p className="d-fineprint">Company news · Collection notes · Buying notes</p>
         </div>
         {sourcingTopics.map(topic=><section key={topic.id} id={topic.id}><div className="d-section-heading"><h2>{topic.title}</h2><Link href={`/manufacturers/${topic.manufacturer}`} className="d-text-link">Related manufacturing route ↗</Link></div><p>{topic.description}</p><div className="d-news-grid">
-          {newsArticles.filter(article=>article.sourcingTopic === topic.id).map((article) => <NewsCard key={article.slug} article={article} />)}
+          {newsArticles.filter(article=>!article.insight && article.sourcingTopic === topic.id).map((article) => <NewsCard key={article.slug} article={article} />)}
         </div></section>)}
       </section>
       <ContentFaq items={[["How should I use these underwear buying notes?", "Use the model references and checklists to prepare your sample brief. Confirm the final order specification and retain an approved physical sample."], ["Do buying notes prove certification or performance?", "No. They describe product sources and review methods. A certification or performance claim needs its own current, order-specific evidence."]]} />

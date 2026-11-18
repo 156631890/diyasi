@@ -6,6 +6,7 @@ import TopNav from "@/components/TopNav";
 import JsonLd from "@/components/JsonLd";
 import ProductComparison from "@/components/ProductComparison";
 import AnalyticsConsent from "@/components/AnalyticsConsent";
+import FloatingContactBar from "@/components/FloatingContactBar";
 import SampleList from "@/components/SampleList";
 import { catalogProducts } from "@/lib/catalog-source";
 import {
@@ -185,6 +186,7 @@ export default async function RootLayout({
           <TopNav initialLang={htmlLang === "ru" ? "ru" : lang} />
           {children}
           <SiteFooter initialLang={htmlLang === "ru" ? "ru" : lang} />
+          <FloatingContactBar contacts={{ whatsapp: companyInfo.whatsapp, email: companyInfo.emailPrimary, phone: companyInfo.phone, phoneHref: companyInfo.phoneHref, linkedin: companyInfo.linkedin, facebook: companyInfo.facebook }} />
           <AnalyticsConsent />
           </SampleList>
         </ProductComparison>

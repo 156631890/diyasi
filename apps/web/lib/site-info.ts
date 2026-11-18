@@ -15,6 +15,8 @@ export const companyInfo = {
   phone: "+86 18042579030",
   phoneHref: "tel:+8618042579030",
   whatsapp: "https://wa.me/8618042579030",
+  linkedin: "https://www.linkedin.com/company/111228105/",
+  facebook: "https://www.facebook.com/profile.php?id=61586239027302",
   fax: "+86-579-85569925",
   exportMarkets:
     "USA, UK, Germany, France, Australia, Spain, and other global markets",

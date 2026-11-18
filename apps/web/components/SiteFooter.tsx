@@ -126,14 +126,14 @@ export default function SiteFooter({ initialLang }: { initialLang: SiteLang | "r
             {ru ? "Сайт производителя DIYASI (EN)" : spanish ? "Sitio del fabricante DIYASI (EN)" : "DIYASI manufacturer site"} ↗
           </a>
           <a
-            href="https://www.linkedin.com/company/111228105/"
+            href={companyInfo.linkedin}
             target="_blank"
             rel="noopener noreferrer"
           >
             LinkedIn ↗
           </a>
           <a
-            href="https://www.facebook.com/profile.php?id=61586239027302"
+            href={companyInfo.facebook}
             target="_blank"
             rel="noopener noreferrer"
           >

@@ -1,4 +1,5 @@
 import articles from "@/data/news-articles.json";
+import insights from "@/data/industry-insights.json";
 import { catalogProducts } from "./catalog-source";
 
 type NewsSourceArticle = {
@@ -16,13 +17,15 @@ type NewsSourceArticle = {
   imageCaption: string;
   models: string[];
   intro: string;
-  sections: Array<{ title: string; paragraphs: string[]; rows?: string[][] }>;
+  insight?: boolean;
+  dataScope?: string;
+  sections: Array<{ title: string; paragraphs: string[]; rows?: string[][]; sources?: Array<{ label: string; href: string }> }>;
   reading: Array<{ label: string; href: string }>;
   references?: Array<{ label: string; href: string }>;
   faq?: string[][];
 };
 export type NewsArticle = Omit<NewsSourceArticle, "coverImage"> & { coverImage: string };
-const sourceArticles: NewsSourceArticle[] = articles;
+const sourceArticles: NewsSourceArticle[] = [...articles, ...insights];
 
 export const newsArticles: NewsArticle[] = sourceArticles
   .filter(article => article.slug !== "bikini-vs-brazilian-underwear-buying-notes")

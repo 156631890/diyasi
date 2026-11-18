@@ -1,5 +1,49 @@
 import type { Worksheet } from "@/components/ProcurementWorksheet";
 const base={columns:["Field","What to record","Your entry"] as [string,string,string],download:"Download completed worksheet (CSV)",privacy:"Entries stay in this page until you leave or reload. Download a copy to keep them; this worksheet does not submit an enquiry.",placeholder:"Enter your requirement"};
+export const newsWorksheets: Record<string, Worksheet> = {
+  "textile-materials-outlook-2026-underwear-sourcing": {
+    ...base, id: "material-evidence-brief", title: "Your material evidence brief",
+    intro: "Complete one record per proposed model and revision. Record missing evidence as an open item; this worksheet does not certify a material or confirm a quotation.",
+    fields: [
+      ["Model and revision", "Catalogue model, brand SKU and sample version"],
+      ["Component breakdown", "Body, gusset, lace, elastic and other components separately"],
+      ["Requested claim", "Exact proposed packaging or listing wording and component scope"],
+      ["Feedstock and percentage", "Claimed origin, recycled content and which material it covers"],
+      ["Supporting evidence", "Document reference, issuer, scope, validity and link to the order"],
+      ["Sample decision", "Reference, comparison method, observations and unresolved changes"],
+      ["Commercial conditions", "Garment/component quantities, exclusions, validity and surplus terms"],
+      ["Open items and owner", "Missing evidence, required answer and person closing each item"]
+    ]
+  },
+  "apparel-returns-data-underwear-fit-approval": {
+    ...base, id: "fit-returns-review", title: "Your fit and returns review record",
+    intro: "Use one record per model, size and batch. Enter real cohort counts from your own records; this worksheet neither supplies a benchmark nor calculates or predicts a return rate.",
+    fields: [
+      ["Model, size and batch", "Brand SKU, factory model, sample revision and production reference"],
+      ["Fit promise and approval", "Rise, coverage, measurement method and approved specification"],
+      ["Cohort and observation window", "Sales period, return cutoff and exchange treatment"],
+      ["Garments sold and shipped", "Fulfilled units in this cohort; keep packs/orders separate"],
+      ["Garments returned", "Returned units belonging to the same cohort and window"],
+      ["Primary reason counts", "Fit, coverage expectation, dispatch, construction or other; reconcile total"],
+      ["Condition and evidence", "Inspection, photographs, care information and underlying record reference"],
+      ["Corrective action and owner", "Listing, sample or process revision; responsible person and review date"]
+    ]
+  },
+  "eu-textile-rules-2026-underwear-buyers": {
+    ...base, id: "eu-textile-data-checklist", title: "Your EU textile data preparation checklist",
+    intro: "Organise the evidence for a market-specific review with your responsible EU business. These suggested fields are not a statutory form, compliance approval or digital product passport.",
+    fields: [
+      ["Product and revision", "Brand SKU, factory model, variants and specification version"],
+      ["Component materials", "Body, gusset, trim, elastic and supporting document references"],
+      ["Measured weight", "Result, unit, measurement method and treatment of packaging"],
+      ["Destination and operator", "Market, importer and business responsible under the applicable rule"],
+      ["Rule-specific review", "EPR scheme, unsold-goods rule or adopted product measure; scope and date"],
+      ["Order and batch", "Order, shipment, quantities and the specification actually supplied"],
+      ["Inventory status", "Unsold/returned units, condition, decision and evidence references"],
+      ["Open questions and owner", "Missing evidence, adviser confirmation and person responsible"]
+    ]
+  }
+};
 export const resourceWorksheets:Record<string,Worksheet>={
  "private-label-underwear-moq-guide":{...base,id:"moq-allocation",title:"Your model allocation and component worksheet",intro:"Use one copy per model. Enter the size × colour quantities as separate lines in the downloaded file, reconcile the total, then ask the supplier to accept or revise the allocation. Blank fields are not confirmed terms.",fields:[
  ["Model / revision","Source model and sample version"],["Size × colour quantities","List each combination and units; reconcile the sum"],["Total garments","Whole units for this model only"],["Proposed fabric / colours","Available reference or custom development"],["Garment minimum accepted","Supplier response; do not infer acceptance from the catalogue"],["Component purchased / used","Separate label, elastic and packaging quantities"],["Unused component balance","Quantity, charge, owner and storage arrangement"],["Reorder decision","Availability and terms that must be reconfirmed"]
