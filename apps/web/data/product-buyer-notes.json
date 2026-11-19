@@ -1,0 +1,227 @@
+{
+  "LS006": {
+    "selection": "On the sample, check lace contact at both openings and identify every point where lace is attached. Use LS005-142 if the reference brief you want has a V-shaped waistband.",
+    "approval": "Approve the stretch of the body and lace together before choosing trim colors. Keep the two compositions separate in the artwork brief.",
+    "compareModel": "LS005-142"
+  },
+  "LS005-142": {
+    "selection": "Compare waist depth at center front and rear coverage with LS005 in the same size. Use the brief when the buyer wants more rear fabric with the V-waist treatment.",
+    "approval": "Ask for a physical color match between lace and body. The listed color choices do not show whether the two components match under your selling photography.",
+    "compareModel": "LS005"
+  },
+  "LS005": {
+    "selection": "Confirm how far the point of the V sits below the side waist and how the lace behaves when the garment stretches. Compare LS005-142 when you want a brief cut in the same collection.",
+    "approval": "Include an approved view of the front V and a separate lace color reference so the approval applies to the trim as well as the main fabric.",
+    "compareModel": "LS005-142"
+  },
+  "DYS323": {
+    "selection": "Compare DYS311 in the same size to isolate the difference between a bonded and stitched gusset as closely as possible. Record other panel differences before interpreting the result.",
+    "approval": "Inspect the bond perimeter before and after your agreed care procedure. Photograph any edge opening or lift and compare it with the approved sample.",
+    "compareModel": "DYS311"
+  },
+  "DYS322": {
+    "selection": "Compare DYS302 if the buyer is choosing between bonded and stitched attachment in a low-rise thong. Record rear strip width and gusset position alongside the join type.",
+    "approval": "Inspect the gusset bond where it meets the narrow back. Ask the supplier to confirm that production will use the attachment approved on the sample.",
+    "compareModel": "DYS302"
+  },
+  "DYS314": {
+    "selection": "Compare the front rise and seat coverage with DYS306. Both are in the seamless collection, but their silhouettes solve different coverage needs.",
+    "approval": "Assess waist roll while seated and compare the edge under the outer fabric selected for the range. Use the observed result when writing the listing.",
+    "compareModel": "DYS306"
+  },
+  "DYS311": {
+    "selection": "Inspect the two rear panels and gusset stitching where the garment contacts the body. Bring a DYS323 sample to compare the different gusset attachment.",
+    "approval": "Specify whether any stitching visible on the approved sample is acceptable in the final garment, especially when listing the style as seamless.",
+    "compareModel": "DYS323"
+  },
+  "DYS306": {
+    "selection": "Measure front and rear rise from the same reference points on DYS306 and DYS311. Compare rear coverage while standing and sitting before choosing a higher or lower cut.",
+    "approval": "Save a rear-view approval image so the panel placement and coverage are recorded even when product names are translated or shortened.",
+    "compareModel": "DYS311"
+  },
+  "DYS302": {
+    "selection": "Compare DYS322 if a bonded gusset is an option. Check the location of the stitched section and visibility through the exact outer fabric selected for the trial.",
+    "approval": "Record the outer garment, underwear size and lighting with any visibility observation. Avoid extending the result to other outfits without checking them.",
+    "compareModel": "DYS322"
+  },
+  "DYS301": {
+    "selection": "Compare DYS302 for a second low-rise option. Lay both samples flat and compare the depth of the front dip before evaluating side coverage on the body.",
+    "approval": "Keep a straight-on fit photo with the waist placement marked, so the approved V is distinguishable from the edge finish alone.",
+    "compareModel": "DYS302"
+  },
+  "M008 Print": {
+    "selection": "Compare the placement and appearance of the supplied print with the plain M008 sample. Confirm the coverage and fit on both, especially if the print changes fabric handling.",
+    "approval": "Approve the print on a cut and assembled front, where stretch and seam placement can change the appearance from the flat artwork.",
+    "compareModel": "M008"
+  },
+  "M007 Print": {
+    "selection": "Use the M007 Print chart and physical garment to check the leg. The printed trunk and plain M007 boxer brief are different catalogue entries, so confirm dimensions separately.",
+    "approval": "Approve an assembled sample with waistband and print colors together. Take the leg measurement from the specified seam rather than relying on the model family name.",
+    "compareModel": "M007"
+  },
+  "M006 Print": {
+    "selection": "Compare M007 Print at the same labelled size to see how waistband and leg openings read on the body. Confirm the finished inseam for both.",
+    "approval": "Approve the elastic color against the printed fabric under consistent light and record the acceptable shade reference for each component.",
+    "compareModel": "M007 Print"
+  },
+  "M005 Print": {
+    "selection": "Compare with plain M005 at the same size. Confirm each measured inseam and distinguish fit approval from approval of the print.",
+    "approval": "Mark which motifs may cross the pouch seams and which must remain visible. Approve the assembled strike-off before signing off the repeat placement.",
+    "compareModel": "M005"
+  },
+  "M004 Print": {
+    "selection": "Compare it with plain M004, which the catalogue describes as a no-fly trunk. Use independent fit records for the two entries.",
+    "approval": "Approve the artwork repeat at the finished waistband and front-panel junction. Check that a color revision has not changed the version of trim you approved.",
+    "compareModel": "M004"
+  },
+  "M003 Print": {
+    "selection": "If 3XL boxer briefs are part of the brief, include the upper size in the sample set. Compare pouch depth and leg opening to your base size after grading.",
+    "approval": "Approve a print reference at both ends of your selected size run. A fixed repeat can sit differently on panels cut for different sizes.",
+    "compareModel": "M005 Print"
+  },
+  "M002 Print": {
+    "selection": "Review it against the plain M002, whose listed rise is regular. Measure front rise, back rise and inseam on both before allocating sizes.",
+    "approval": "Check the motif placement along the extended leg and confirm whether major artwork elements must line up across left and right panels.",
+    "compareModel": "M002"
+  },
+  "M001 Print": {
+    "selection": "Compare with the plain M001 brief only as a different silhouette. Confirm the leg coverage you want before assuming the two M001 names describe a single pattern.",
+    "approval": "Specify waistband and print as separate approvals and include an assembled front photo so the agreed placement survives artwork revisions.",
+    "compareModel": "M001"
+  },
+  "DYS229": {
+    "selection": "Compare DYS228 when the back shape or size range is the open decision. DYS229 is listed through XL, while the source for DYS228 extends through XXL.",
+    "approval": "Check zigzag stitching at rest and under the agreed stretch. Note any visible stitch change or discomfort on the physical sample.",
+    "compareModel": "DYS228"
+  },
+  "DYS230": {
+    "selection": "Compare the rise and strap position with DYS226. Measure how the back strip meets the side straps and note the level of rear coverage on the actual sample.",
+    "approval": "Approve the waistband position separately from the back shape. A retailer's T-string label should match the photographs and cut it actually sells.",
+    "compareModel": "DYS226"
+  },
+  "DYS228": {
+    "selection": "Compare its T-back dimensions with DYS229 and include the upper size when reviewing grade changes. Record back width on the physical sample.",
+    "approval": "Confirm how the back strip and side edges sit on the upper-size sample. Use the finished measurements in your range sheet.",
+    "compareModel": "DYS229"
+  },
+  "DYS227": {
+    "selection": "Compare DYS225 if you are choosing between a broad waistband tanga and a high-waist thong. Record band width and rear coverage as distinct selection criteria.",
+    "approval": "Approve the elastic width and artwork repeat on the garment. Check the band's recovery and position before committing artwork to an elastic order.",
+    "compareModel": "DYS225"
+  },
+  "DYS226": {
+    "selection": "Use DYS230 to see how the low-rise option changes waistband position. Check side strap length and front rise on both samples at the same size.",
+    "approval": "Record the desired rise and back shape separately. This lets a reviewer identify which feature needs a revision without switching the entire pattern.",
+    "compareModel": "DYS230"
+  },
+  "DYS225": {
+    "selection": "Compare the rise with extra-high DYS205 and note that their listed size endpoints differ. Confirm the waist height on an upper-size sample if 2XL is planned.",
+    "approval": "Use the same garment measurement points on each size. Keep waistband height and total front rise as separate approval fields.",
+    "compareModel": "DYS205"
+  },
+  "DYS224": {
+    "selection": "Compare it with DYS225 to decide whether to offer the higher rise alongside it. Request the same labelled size in both to review coverage on comparable samples.",
+    "approval": "Select a regular-rise base size and retain a separate approval for the 2XL grade. Confirm mixed color and size allocation on your quotation.",
+    "compareModel": "DYS225"
+  },
+  "DYS223": {
+    "selection": "Compare DYS206 if your assortment is choosing between a conventional brief and bikini coverage. Verify waist position and leg-opening curve on both.",
+    "approval": "Approve the size allocation after inspecting upper-size seat coverage. Use the finished DYS223 sample to position the label away from pressure points.",
+    "compareModel": "DYS206"
+  },
+  "DYS219": {
+    "selection": "Compare DYS210 to separate a high-cut opening from an extended-leg design. Both sit in the high-rise group and differ noticeably at the upper thigh.",
+    "approval": "Include sizes near both ends of the intended range when checking leg-opening curve and waist height. Confirm that your approved grade follows the desired proportions.",
+    "compareModel": "DYS210"
+  },
+  "M008": {
+    "selection": "Compare the brief shape with M001 and record side depth and front opening in the intended base size. The waistband treatment is one of the selection points.",
+    "approval": "Inspect whether the inner waistband construction meets the buyer's label-placement and contact requirements before approving a branding method.",
+    "compareModel": "M001"
+  },
+  "M007": {
+    "selection": "Ask the supplier to define the inseam measurement points and sample size. Compare the finished length with M005 using that same method.",
+    "approval": "Check the leg opening after movement and confirm how the pouch seam sits. Record the measurements and observations as separate pass criteria.",
+    "compareModel": "M005"
+  },
+  "M006": {
+    "selection": "Measure the physical inseam and agree how the five-inch description is used in the buyer's copy. Compare M004 when the no-fly front is a stated priority.",
+    "approval": "Confirm the lining and main fabric separately. For any proposed recycled-polyester option, request the composition and order-specific supporting records before approving a claim.",
+    "compareModel": "M004"
+  },
+  "M005": {
+    "selection": "Measure M005 and M007 from a shared inseam point. Approve the measurement before turning a nominal length into a consumer-facing dimension.",
+    "approval": "If recycled polyester is proposed, keep it as a separate material option until the supplier provides order-specific composition and traceability records.",
+    "compareModel": "M007"
+  },
+  "M004": {
+    "selection": "Compare M003 if regular rise is the other option. Check front pouch depth and seam position in the same size and capture how the no-fly construction is described.",
+    "approval": "Mark waistband logo position on the assembled sample, especially if the logo must align with the front center of the no-fly pouch.",
+    "compareModel": "M003"
+  },
+  "M003": {
+    "selection": "Compare the regular-rise silhouette with M004 and keep the exact pouch shape in the sample brief. Review the largest selected size if grading is part of the order.",
+    "approval": "Capture a measurement of the pouch and the leg opening at the upper size. This checks the fit plan before the brand prints a size chart.",
+    "compareModel": "M004"
+  },
+  "M002": {
+    "selection": "Check inseam, leg opening and waistband tension alongside the shorter listed M007. Use matching measurement points and sample sizes on both.",
+    "approval": "Review the leg opening after movement and record whether the long leg stays where intended. Treat the result as a sample observation for your specific size.",
+    "compareModel": "M007"
+  },
+  "M001": {
+    "selection": "Check what the approved tagless treatment will look like after adding your branding. Compare the cut with M008 in the same size before choosing the leg profile.",
+    "approval": "Agree where the required product information will appear and request a proof of the approved branding treatment on the physical garment.",
+    "compareModel": "M008"
+  },
+  "DYS218": {
+    "selection": "Compare DYS208 for another regular-rise tanga. Look at the waistband and rear coverage separately so the logo choice does not determine fit selection.",
+    "approval": "Mark the lettering repeat, front-center placement and join position on approved artwork. Review the band on the garment at rest and under stretch.",
+    "compareModel": "DYS208"
+  },
+  "DYS215": {
+    "selection": "Compare the waistband and leg profile with DYS214. Request same-size samples and record where the leg opening rests instead of relying on boxer versus boyshort naming.",
+    "approval": "Check waistband height and hold with the garment in the intended position. Confirm artwork dimensions only after agreeing the visible elastic area.",
+    "compareModel": "DYS214"
+  },
+  "DYS214": {
+    "selection": "Compare DYS215 if a wide waist treatment is also under consideration. Evaluate the short-leg opening against the intended leg coverage and edge feel.",
+    "approval": "Keep the finished short-leg measurements and photographic reference with the sample record. They give the final listing a more reliable shape description than the category term alone.",
+    "compareModel": "DYS215"
+  },
+  "DYS210": {
+    "selection": "Compare DYS219 to see the difference between extended coverage and a high-cut leg opening. Confirm the intended thigh coverage on the same size first.",
+    "approval": "Measure leg opening and extension independently. A change to either can affect where the hem sits under the outer garment selected for testing.",
+    "compareModel": "DYS219"
+  },
+  "DYS208": {
+    "selection": "Lay it beside DYS218 and compare back width at the same point below the waistband. Confirm whether the labeled tanga coverage matches your retailer's description.",
+    "approval": "Use a rear-view photo of the approved garment to guide the product description. Record rear panel width separately from side depth.",
+    "compareModel": "DYS218"
+  },
+  "DYS206": {
+    "selection": "Compare DYS202 as another regular-rise cotton reference. Check the shape of the leg opening, side depth and waistband on both before choosing the base pattern.",
+    "approval": "Record the finished leg opening with the garment laid flat and the measurement method stated. Review the edge against the intended wearing position on the sample.",
+    "compareModel": "DYS202"
+  },
+  "DYS205": {
+    "selection": "Compare DYS225 to see how much rise the extra-high version adds at the chosen size. Request separate measurements for front and back.",
+    "approval": "Review the waistband position when seated as well as standing. Confirm the waist treatment before approving any logo or woven label placement.",
+    "compareModel": "DYS225"
+  },
+  "DYS204": {
+    "selection": "Compare DYS230 if the plan also includes a T-string. Measure the back strip and side straps, and use photos to show how the two silhouettes differ.",
+    "approval": "Examine the transition from the narrow back to the gusset on the physical sample. Record the contact point and panel width before approving the cut.",
+    "compareModel": "DYS230"
+  },
+  "DYS202": {
+    "selection": "Compare low-rise DYS201 at the same size. Use side depth and front rise to decide whether the launch needs one rise or both.",
+    "approval": "Approve the main fabric and color assortment with the same sample revision. Record any color-specific fit or fabric observations before assigning a shared listing description.",
+    "compareModel": "DYS201"
+  },
+  "DYS201": {
+    "selection": "Compare DYS202 to verify how much the front rise and side depth differ on the same size. Confirm the preferred waistband position before approving the sample.",
+    "approval": "Keep the cotton blend name accurate in the product description and retain an approved measurement and image for the low-rise profile.",
+    "compareModel": "DYS202"
+  }
+}

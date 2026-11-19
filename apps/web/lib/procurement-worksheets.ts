@@ -1,6 +1,22 @@
 import type { Worksheet } from "@/components/ProcurementWorksheet";
 const base={columns:["Field","What to record","Your entry"] as [string,string,string],download:"Download completed worksheet (CSV)",privacy:"Entries stay in this page until you leave or reload. Download a copy to keep them; this worksheet does not submit an enquiry.",placeholder:"Enter your requirement"};
 export const newsWorksheets: Record<string, Worksheet> = {
+  "us-underwear-label-evidence": {
+    ...base,
+    id: "us-underwear-label-approval",
+    title: "Underwear label evidence record",
+    intro: "Use one record per model and sample revision. Mark a field as open if the responsible business has yet to confirm it.",
+    fields: [
+      ["Model and revision", "Brand SKU, factory model, colorway and physical sample version"],
+      ["Body and components", "Fabric references, component locations, generic fiber names and supporting percentages"],
+      ["Origin evidence", "Manufacturing stages, source documents and shipment-specific decision"],
+      ["Business identification", "Name or valid RN confirmed by the responsible party"],
+      ["Care evidence", "Method, sample reference, observations and approved instructions"],
+      ["Claim and surface", "Exact text, component scope, packaging or product page location"],
+      ["Artwork proof", "Version, wording, print position and assembled sample reference"],
+      ["Decision and owner", "Approver, open points, release date and substitution procedure"],
+    ],
+  },
   "textile-materials-outlook-2026-underwear-sourcing": {
     ...base, id: "material-evidence-brief", title: "Your material evidence brief",
     intro: "Complete one record per proposed model and revision. Record missing evidence as an open item; this worksheet does not certify a material or confirm a quotation.",

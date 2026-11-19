@@ -81,6 +81,7 @@ export default async function NewsDetailPage({ params }: Props) {
           <p className="d-eyebrow">In this story</p>
           <nav aria-label="Article contents">
             {article.sections.map((section, index) => <a key={section.title} href={`#section-${index + 1}`}>{section.title}</a>)}
+            {article.downloads && <a href="#research-downloads">Download the data</a>}
           </nav>
           <Link href="/news" className="d-text-link">All news &amp; insights ↗</Link>
         </aside>
@@ -104,6 +105,10 @@ export default async function NewsDetailPage({ params }: Props) {
               {section.sources && <p className="d-insight-sources">Sources: {section.sources.map(({ label, href }, sourceIndex) => <span key={href}>{sourceIndex > 0 && " · "}<a href={href} target="_blank" rel="noopener noreferrer">{label} ↗</a></span>)}</p>}
             </section>
           ))}
+          {article.downloads && <section className="d-source-links" id="research-downloads">
+            <h2>Download the data</h2>
+            {article.downloads.map(({ label, href }) => <a key={href} href={href} download>{label} ↓</a>)}
+          </section>}
           {newsWorksheets[article.slug] && <ProcurementWorksheet sheet={newsWorksheets[article.slug]} />}
           <section className="d-reading">
             <h2>Put your research to work</h2>

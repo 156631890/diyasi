@@ -126,6 +126,9 @@
     "/resources/us-eu-underwear-size-labeling-preparation-startup-brands",
     "/resources/underwear-sampling-costs-lead-times-packaging",
     "/news",
+    "/news/us-knit-underwear-imports-2025",
+    "/news/underwear-size-range-catalogue-study",
+    "/news/us-underwear-label-evidence",
     "/news/textile-materials-outlook-2026-underwear-sourcing",
     "/news/apparel-returns-data-underwear-fit-approval",
     "/news/eu-textile-rules-2026-underwear-buyers",
@@ -224,22 +227,22 @@
   "products": [
     {
       "id": "lace-trim-cotton-brazilian-brief-ls006",
-      "title": "Lace-Trim Cotton Brazilian Brief",
+      "title": "Lace-Trim Cotton Brazilian Panties",
       "route": "private-label"
     },
     {
       "id": "v-waist-lace-cotton-brief-ls005-142",
-      "title": "V-Waist Lace & Cotton Brief",
+      "title": "V-Waist Lace-Trim Cotton Panties",
       "route": "private-label"
     },
     {
       "id": "v-waist-lace-cotton-thong-ls005",
-      "title": "V-Waist Lace & Cotton Thong",
+      "title": "Low-Rise V-Waist Lace Thong",
       "route": "private-label"
     },
     {
       "id": "bonded-brazilian-seamless-brief-dys323",
-      "title": "Bonded Brazilian Seamless Brief",
+      "title": "Bonded Brazilian Seamless Underwear",
       "route": "private-label"
     },
     {
@@ -249,202 +252,202 @@
     },
     {
       "id": "seamless-high-waist-full-brief-dys314",
-      "title": "Seamless High-Waist Full Brief",
+      "title": "High-Waisted Seamless Full Briefs",
       "route": "private-label"
     },
     {
       "id": "seamless-low-rise-brazilian-brief-dys311",
-      "title": "Seamless Low-Rise Brazilian Brief",
+      "title": "Stitched-Gusset Seamless Brazilian Panties",
       "route": "private-label"
     },
     {
       "id": "seamless-mid-low-brazilian-brief-dys306",
-      "title": "Seamless Mid-Low Brazilian Brief",
+      "title": "Mid-Low Rise Seamless Brazilian Briefs",
       "route": "private-label"
     },
     {
       "id": "invisible-edge-cotton-gusset-thong-dys302",
-      "title": "Invisible-Edge Cotton-Gusset Thong",
+      "title": "Cotton-Gusset Low-Rise Seamless Thong",
       "route": "private-label"
     },
     {
       "id": "seamless-v-waist-low-rise-thong-dys301",
-      "title": "Seamless V-Waist Low-Rise Thong",
+      "title": "V-Cut Seamless Thong with Cotton Gusset",
       "route": "private-label"
     },
     {
       "id": "printed-low-rise-mens-brief-m008-print",
-      "title": "Printed Low-Rise Men's Brief",
+      "title": "Men’s Printed Low-Rise Briefs",
       "route": "private-label"
     },
     {
       "id": "printed-mid-rise-mens-trunk-m007-print",
-      "title": "Printed Mid-Rise Men's Trunk",
+      "title": "Men’s Mid-Rise Printed Trunks",
       "route": "private-label"
     },
     {
       "id": "contrast-waist-printed-mens-trunk-m006-print",
-      "title": "Contrast-Waist Printed Men's Trunk",
+      "title": "Contrast-Waist Printed Men’s Trunks",
       "route": "private-label"
     },
     {
       "id": "printed-mid-leg-mens-boxer-brief-m005-print",
-      "title": "Printed Mid-Leg Men's Boxer Brief",
+      "title": "Men’s Printed Mid-Rise Boxer Briefs",
       "route": "private-label"
     },
     {
       "id": "printed-modal-pouch-boxer-brief-m004-print",
-      "title": "Printed Modal-Pouch Boxer Brief",
+      "title": "Men’s Printed Boxer Briefs with Modal Pouch",
       "route": "private-label"
     },
     {
       "id": "everyday-printed-mens-boxer-brief-m003-print",
-      "title": "Everyday Printed Men's Boxer Brief",
+      "title": "Men’s Printed Stretch Boxer Briefs to 3XL",
       "route": "private-label"
     },
     {
       "id": "printed-high-waist-long-leg-boxer-m002-print",
-      "title": "Printed High-Waist Long-Leg Boxer",
+      "title": "Men’s High-Rise Printed Long-Leg Boxer Briefs",
       "route": "private-label"
     },
     {
       "id": "printed-low-rise-modal-pouch-trunk-m001-print",
-      "title": "Printed Low-Rise Modal-Pouch Trunk",
+      "title": "Men’s Printed Low-Rise Trunks with Modal Lining",
       "route": "private-label"
     },
     {
       "id": "everyday-cotton-mid-rise-thong-dys229",
-      "title": "Everyday Cotton Mid-Rise Thong",
+      "title": "Cotton Mid-Rise Thong with Zigzag Waistband",
       "route": "private-label"
     },
     {
       "id": "cotton-low-rise-t-string-dys230",
-      "title": "Cotton Low-Rise T-String",
+      "title": "Low-Rise Cotton T-String Underwear",
       "route": "private-label"
     },
     {
       "id": "cotton-mid-rise-t-back-thong-dys228",
-      "title": "Cotton Mid-Rise T-Back Thong",
+      "title": "Mid-Rise Cotton T-Back Thong to 2XL",
       "route": "private-label"
     },
     {
       "id": "wide-waistband-cotton-tanga-thong-dys227",
-      "title": "Wide-Waistband Cotton Tanga Thong",
+      "title": "High-Rise Cotton Tanga with Wide Waistband",
       "route": "private-label"
     },
     {
       "id": "high-waist-cotton-t-string-dys226",
-      "title": "High-Waist Cotton T-String",
+      "title": "High-Waisted Cotton T-String",
       "route": "private-label"
     },
     {
       "id": "cotton-high-waist-thong-dys225",
-      "title": "Cotton High-Waist Thong",
+      "title": "High-Waisted Cotton Thong to 2XL",
       "route": "private-label"
     },
     {
       "id": "essential-cotton-thong-dys224",
-      "title": "Essential Cotton Thong",
+      "title": "Regular-Rise Cotton Thong to 2XL",
       "route": "private-label"
     },
     {
       "id": "signature-cotton-brief-dys223",
-      "title": "Signature Cotton Brief",
+      "title": "Regular-Rise Women’s Cotton Briefs to 2XL",
       "route": "private-label"
     },
     {
       "id": "high-leg-cotton-high-waist-brief-dys219",
-      "title": "High-Leg Cotton High-Waist Brief",
+      "title": "High-Cut Cotton Briefs with High Waist",
       "route": "private-label"
     },
     {
       "id": "mens-low-rise-bikini-brief-m008",
-      "title": "Men's Low-Rise Bikini Brief",
+      "title": "Men’s Low-Rise Bikini Briefs with No Fly",
       "route": "private-label"
     },
     {
       "id": "mens-4-inch-stretch-boxer-brief-m007",
-      "title": "Men's 4-Inch Stretch Boxer Brief",
+      "title": "Men’s 4-Inch Boxer Briefs with Contour Pouch",
       "route": "private-label"
     },
     {
       "id": "mens-5-inch-pouch-support-trunk-m006",
-      "title": "Men's 5-Inch Pouch-Support Trunk",
+      "title": "Men’s 5-Inch Trunks with Modal Pouch Lining",
       "route": "private-label"
     },
     {
       "id": "mens-5-inch-modal-pouch-boxer-m005",
-      "title": "Men's Modal-Pouch Boxer Brief",
+      "title": "Men’s Mid-Rise Boxer Briefs with Modal Pouch",
       "route": "private-label"
     },
     {
       "id": "mens-mid-rise-no-fly-trunk-m004",
-      "title": "Men's Mid-Rise No-Fly Trunk",
+      "title": "Men’s Mid-Rise No-Fly Trunks",
       "route": "private-label"
     },
     {
       "id": "mens-modal-pouch-everyday-trunk-m003",
-      "title": "Men's Modal-Pouch Everyday Trunk",
+      "title": "Men’s Regular-Rise Trunks with Modal Lining",
       "route": "private-label"
     },
     {
       "id": "mens-long-leg-stretch-boxer-brief-m002",
-      "title": "Men's Long-Leg Stretch Boxer Brief",
+      "title": "Men’s Long-Leg Boxer Briefs with Support Pouch",
       "route": "private-label"
     },
     {
       "id": "mens-tagless-low-rise-brief-m001",
-      "title": "Men's Tagless Low-Rise Brief",
+      "title": "Men’s Tagless Low-Rise Briefs",
       "route": "private-label"
     },
     {
       "id": "lettered-waist-cotton-tanga-dys218",
-      "title": "Lettered-Waist Cotton Tanga",
+      "title": "Cotton Tanga Panties with Lettered Waistband",
       "route": "private-label"
     },
     {
       "id": "wide-waistband-cotton-boxer-dys215",
-      "title": "Wide-Waistband Cotton Boxer",
+      "title": "Women’s Cotton Boxers with Wide Waistband",
       "route": "private-label"
     },
     {
       "id": "everyday-cotton-boyshort-dys214",
-      "title": "Everyday Cotton Boyshort",
+      "title": "Women’s Combed Cotton Boyshort Underwear",
       "route": "private-label"
     },
     {
       "id": "long-leg-high-waist-cotton-brief-dys210",
-      "title": "Long-Leg High-Waist Cotton Brief",
+      "title": "High-Waisted Long-Leg Cotton Briefs",
       "route": "private-label"
     },
     {
       "id": "everyday-cotton-tanga-dys208",
-      "title": "Everyday Cotton Tanga",
+      "title": "Regular-Rise Cotton Tanga Underwear",
       "route": "private-label"
     },
     {
       "id": "classic-cotton-bikini-brief-dys206",
-      "title": "Classic Cotton Bikini Brief",
+      "title": "Classic Combed Cotton Bikini Briefs",
       "route": "private-label"
     },
     {
       "id": "extra-high-waist-cotton-thong-dys205",
-      "title": "Extra-High-Waist Cotton Thong",
+      "title": "Extra-High-Rise Cotton Thong Underwear",
       "route": "private-label"
     },
     {
       "id": "cotton-stretch-g-string-dys204",
-      "title": "Cotton Stretch G-String",
+      "title": "Combed Cotton Stretch G-String Underwear",
       "route": "private-label"
     },
     {
       "id": "essential-cotton-bikini-brief-dys202",
-      "title": "Essential Cotton Bikini Brief",
+      "title": "Regular-Rise Cotton Bikini Underwear",
       "route": "private-label"
     },
     {
       "id": "low-rise-cotton-bikini-brief-dys201",
-      "title": "Low-Rise Cotton Bikini Brief",
+      "title": "Low-Rise Cotton Bikini Underwear",
       "route": "private-label"
     }
   ]

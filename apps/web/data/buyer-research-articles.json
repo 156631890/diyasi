@@ -1,0 +1,215 @@
+[
+  {
+    "slug": "us-knit-underwear-imports-2025",
+    "title": "U.S. Knit Underwear Imports in 2025: Four Categories Compared",
+    "description": "Compare 2024 and 2025 U.S. import values for four knit underwear codes using UN Comtrade. Download the underlying figures and see how to use them in sourcing.",
+    "relatedManufacturers": ["private-label-underwear-manufacturer", "mens-underwear-manufacturer"],
+    "sourcingTopic": "brand",
+    "category": "Industry insights",
+    "publishedAt": "2026-11-19",
+    "updatedAt": "2026-11-19",
+    "coverModel": "M007",
+    "coverAlt": "DIYASI M007 boxer brief shown as a knit underwear sourcing example",
+    "imageCaption": "DIYASI M007 is a catalogue example. The trade figures cover U.S. aggregate imports and do not identify the suppliers or models included.",
+    "models": ["M007", "DYS201", "DYS314"],
+    "insight": true,
+    "dataScope": "DIYASI analysis of UN Comtrade annual merchandise data retrieved 19 November 2026. Reporter: United States (842). Partner: World (0). Flow: imports (M). Classification: HS 2022 (H6), four selected six-digit codes. Values use the database's primaryValue in nominal U.S. dollars. World aggregates are used once per code and year.",
+    "intro": "U.S. imports across four selected knit underwear categories totaled $2.415 billion in 2025, down 9.1% from $2.658 billion in 2024. Women's and girls' cotton briefs and panties were the only category in this comparison to rise, up 1.1%. The figures show how the four import groups moved and help buyers decide which categories deserve a closer sourcing review.",
+    "downloads": [
+      {"label": "U.S. knit underwear import values by HS code and year (CSV)", "href": "/research/us-knit-underwear-imports-2024-2025.csv"}
+    ],
+    "sections": [
+      {
+        "title": "The four selected import categories",
+        "paragraphs": [
+          "The comparison covers men's and boys' knit underpants and briefs and women's and girls' knit briefs and panties, each split into cotton and man-made fibers. The selected codes exclude other fiber categories and other garment groups in headings 6107 and 6108. The figures therefore describe four codes within the market.",
+          "We calculated changes as (2025 value ÷ 2024 value − 1) × 100. Table values are rounded for reading. The downloadable CSV retains whole dollars so the changes and totals can be recalculated."
+        ],
+        "rows": [
+          ["HS code and knit category", "2024 value (US$ million)", "2025 value (US$ million)", "Change"],
+          ["610711 · Men's/boys' cotton underpants and briefs", "651.18", "596.26", "−8.4%"],
+          ["610712 · Men's/boys' man-made fiber underpants and briefs", "602.08", "505.30", "−16.1%"],
+          ["610821 · Women's/girls' cotton briefs and panties", "552.69", "558.96", "+1.1%"],
+          ["610822 · Women's/girls' man-made fiber briefs and panties", "851.95", "754.53", "−11.4%"],
+          ["Four-code total", "2,657.90", "2,415.06", "−9.1%"]
+        ],
+        "sources": [
+          {"label": "UN Comtrade 2024 API extract", "href": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?period=2024&reporterCode=842&cmdCode=610711,610712,610821,610822&flowCode=M&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&maxRecords=50"},
+          {"label": "UN Comtrade 2025 API extract", "href": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?period=2025&reporterCode=842&cmdCode=610711,610712,610821,610822&flowCode=M&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&maxRecords=50"},
+          {"label": "USITC Harmonized Tariff Schedule, Chapter 61", "href": "https://hts.usitc.gov/"}
+        ]
+      },
+      {
+        "title": "The change in the women's mix",
+        "paragraphs": [
+          "The man-made fiber code accounted for 57.4% of the combined value of the two selected women's and girls' codes in 2025, down from 60.7% in 2024. That share uses only codes 610821 and 610822 as the denominator. Cotton's share rose even though its dollar growth was modest, because the other code fell far more.",
+          "The two men's and boys' codes together accounted for $151.7 million of the $242.8 million four-code decline, or 62.5%. This is a contribution to the observed change in value, calculated by subtracting each pair's 2025 total from its 2024 total. The figures show where the dollar change was concentrated within the selected codes.",
+          "For a brand choosing between a cotton bikini and a polyamide full brief, the figures support testing both hypotheses with customer and sample data. A one-year shift in import value can reflect quantities, sourcing mix, prices and timing. It cannot establish why a customer chose a fiber or what they will order next season."
+        ]
+      },
+      {
+        "title": "Import value and unit quotation answer different questions",
+        "paragraphs": [
+          "UN Comtrade's primary value uses CIF-type values when available for imports and can use FOB-type values where relevant. In the eight records used here, the data field equals the corresponding CIF field. These statistical values are for trade flows at the border. They do not provide final retail revenue, sell-through or supplier unit prices.",
+          "A sourcing decision needs the quote currency, delivery terms, quantity, garment dimensions and component specification. For example, the DYS201 catalogue lists 95% cotton and 5% spandex. DYS314 lists a stretch-polyamide body with a cotton gusset. These are examples of the details to record before a broker or importer determines classification for the actual shipment."
+        ],
+        "sources": [
+          {"label": "UN Comtrade methodology for CIF, FOB and primary trade values", "href": "https://comtradeapi.un.org/files/v1/app/wiki/MethodologyGuideforComtradePlus.pdf"},
+          {"label": "UN Comtrade reference fields", "href": "https://comtradeplus.un.org/en/reference-tables?table=dataitem"}
+        ]
+      },
+      {
+        "title": "Turn the data into a sourcing comparison",
+        "paragraphs": [
+          "Start a worksheet with one row per proposed SKU and retain the precise knit construction, body and secondary component compositions, intended market and sample revision. Reconcile each quotation against that row. Two offers described as cotton briefs can cover different patterns, quantities or packing terms, even when a broad trade category places them together.",
+          "Compare the trade data again only after matching the same reporter, partner, commodity classification, valuation field and complete year. Keep world and individual partner rows separate when aggregating. Use the annual dataset for market context, and keep fit approval, pricing, and customs decisions tied to the actual garment."
+        ]
+      }
+    ],
+    "reading": [
+      {"label": "Compare size labels across the 45-model DIYASI catalogue", "href": "/news/underwear-size-range-catalogue-study"},
+      {"label": "Prepare a comparable underwear quotation", "href": "/resources/accurate-underwear-yoga-wear-manufacturing-quote"},
+      {"label": "Compare men's briefs, trunks and boxer briefs", "href": "/news/mens-briefs-vs-trunks-private-label-fit"}
+    ]
+  },
+  {
+    "slug": "underwear-size-range-catalogue-study",
+    "title": "Underwear Size Ranges: A 45-Model Catalogue Study",
+    "description": "See how the listed size labels vary across 45 DIYASI underwear models. Download the model data and use it to build a size-set and grading brief.",
+    "relatedManufacturers": ["custom-underwear-manufacturer", "low-moq-underwear-manufacturer"],
+    "sourcingTopic": "quality",
+    "category": "Industry insights",
+    "publishedAt": "2026-11-19",
+    "updatedAt": "2026-11-19",
+    "coverModel": "DYS219",
+    "coverAlt": "DIYASI DYS219 high-cut cotton brief, listed from XXS through 2XL",
+    "imageCaption": "DYS219 is the only model in the analysed catalogue snapshot with listed sizes below S. Listed labels do not define body measurements.",
+    "models": ["DYS219", "DYS225", "M007"],
+    "insight": true,
+    "dataScope": "Snapshot of all 45 product listings in the DIYASI catalogue on 19 November 2026. Each model identifier is counted once, including each separately listed print version. We use each model's primary collection and normalize XXL to 2XL for grouping while retaining the listed source labels in the CSV. The dataset measures listed labels rather than availability, garment grading or body-size coverage.",
+    "intro": "Twenty-four of 45 DIYASI models list S through XL, five women's cotton models list 2XL, and all 16 men's models list S through 3XL. DYS219 is the only model in the snapshot with XXS and XS labels. The result gives buyers a way to shortlist models before ordering a size set.",
+    "downloads": [
+      {"label": "DIYASI 45-model listed size-range snapshot (CSV)", "href": "/research/diyasi-underwear-size-ranges-2026-11-19.csv"}
+    ],
+    "sections": [
+      {
+        "title": "Where the listed labels vary",
+        "paragraphs": [
+          "The table groups models by all listed labels, rather than only the first and last. Big differences appear between collections in this snapshot. All ten lace and seamless models list S through XL. Cotton accounts for every women's model in the dataset whose listing extends to 2XL.",
+          "The 16 men's rows include eight solid and eight print listings. Treating them as catalogue entries shows what a buyer can open and compare. A size chart bearing the same labels may still specify different garment dimensions. The counts do not indicate how many independent grading blocks the supplier uses."
+        ],
+        "rows": [
+          ["Primary collection", "Models", "S–XL", "S–2XL", "XXS–2XL", "S–3XL"],
+          ["Women's cotton", "19", "14", "4", "1", "0"],
+          ["Women's lace", "3", "3", "0", "0", "0"],
+          ["Women's seamless", "7", "7", "0", "0", "0"],
+          ["Men's", "16", "0", "0", "0", "16"],
+          ["All catalogue models", "45", "24", "4", "1", "16"]
+        ]
+      },
+      {
+        "title": "A size endpoint can change the sample shortlist",
+        "paragraphs": [
+          "For a women's cotton assortment that requires a listed 2XL, start by checking five models: DYS219, DYS223, DYS224, DYS225 and DYS228. The styles include a high-cut brief, a regular brief and several thong cuts. Select a sample on both fit and rise, then verify the endpoint on a physical garment.",
+          "A buyer planning a high-waist thong through 2XL can start with DYS225. DYS205 has an extra-high rise and is listed through XL. A buyer wanting the smallest listed labels can start with DYS219 and examine its high-cut leg. In both cases the shortlist depends on the required shape in addition to the size label."
+        ]
+      },
+      {
+        "title": "Separate catalogue labels from measurement approval",
+        "paragraphs": [
+          "Use three fields in the range plan: the letter printed on the garment, the body measurement range you intend to serve, and the finished garment measurement with its method and tolerance. Include the relaxed or extended state for elastic measurements. Changes in stretch fabric or waistband can affect how the same flat measurements fit.",
+          "Select a base size, then choose the end sizes most likely to expose a grading issue. For a high-cut brief, track rise and leg curve across the grade. For a long-legged boxer brief, check finished inseam and opening. Use an approved sample for each important endpoint before releasing customer-facing size guidance."
+        ],
+        "rows": [
+          ["Shape to verify", "Measurement to record", "Approval decision"],
+          ["High-cut brief", "Front and back rise, hip width and leg opening", "Check that the high-cut curve behaves as intended across selected sizes"],
+          ["High-waisted thong", "Waist height, rear strip width and gusset position", "Confirm the waist and rear coverage independently at the base and upper sizes"],
+          ["Men's boxer brief", "Inseam, thigh opening and pouch dimensions", "Check the shortest and longest relative fit points on the agreed size set"]
+        ]
+      },
+      {
+        "title": "How to reuse the snapshot",
+        "paragraphs": [
+          "Download the model rows and filter by collection, fit, rise or normalized labels. The CSV retains the original source-size wording and links to both the product and its specification source. Count the distinct model codes after filtering. Do not merge the printed and plain entries unless the supplier confirms the finished dimensions and grading are shared.",
+          "Record the destination, target size mix, matching garment measurements and the revision you approve. Exact size and color quantities and applicable component minimums belong in the written order confirmation. Recheck the model listing and sample brief before using this dated snapshot for a later order."
+        ]
+      }
+    ],
+    "reading": [
+      {"label": "Prepare US and EU size labels and measurement points", "href": "/resources/us-eu-underwear-size-labeling-preparation-startup-brands"},
+      {"label": "Review size-set samples and grading", "href": "/news/underwear-size-set-sample-grading-checklist"},
+      {"label": "Plan the size and color allocation for a minimum order", "href": "/resources/private-label-underwear-moq-guide"},
+      {"label": "Review data on apparel returns and fit approval", "href": "/news/apparel-returns-data-underwear-fit-approval"}
+    ]
+  },
+  {
+    "slug": "us-underwear-label-evidence",
+    "title": "U.S. Underwear Labels: Fiber, Origin and Care Evidence",
+    "description": "Build an approval file for U.S. underwear labeling. Compare real body, lace and gusset examples and separate fiber disclosure, origin and care evidence.",
+    "relatedManufacturers": ["private-label-underwear-manufacturer", "custom-underwear-manufacturer"],
+    "sourcingTopic": "materials",
+    "category": "Industry insights",
+    "publishedAt": "2026-11-19",
+    "updatedAt": "2026-11-19",
+    "coverModel": "LS006",
+    "coverAlt": "DIYASI LS006 brief with a cotton-rich body and separately specified lace",
+    "imageCaption": "LS006 illustrates the difference between a body fabric and a separate trim. The photo and catalogue specification do not approve a finished label.",
+    "models": ["LS006", "DYS323", "M007"],
+    "insight": true,
+    "dataScope": "FTC guidance and U.S. regulations reviewed 19 November 2026. Scope is record preparation for covered U.S. textile apparel. Applicable treatment depends on the garment, marketing claims, business and shipment. Consult the responsible importer or adviser for an order-specific decision. Component weights in the worked example are illustrative.",
+    "intro": "Prepare separate evidence for fiber content, origin, responsible business identification and care before approving an underwear label for the U.S. market. When the main fabric, lace and gusset have different compositions, use a component file to connect the supplier's evidence to the wording, artwork and exact sample revision.",
+    "sections": [
+      {
+        "title": "Assign an evidence owner to each label field",
+        "paragraphs": [
+          "FTC textile guidance explains the usual fiber, origin and business identity disclosures for covered products. Care instructions are addressed under a separate FTC rule. A brand ordering a label should assign someone to validate each field and verify the company identity permitted for the actual line of distribution.",
+          "Start the file before artwork design. Identify the model and colorway, collect the finished specification, record the relevant origin determination and gather the care evidence. A supplier name, marketing brand and company name used on business documents can be different. Have the responsible firm confirm the label identity and any valid RN used."
+        ],
+        "rows": [
+          ["Field", "Evidence to assemble", "Owner to confirm"],
+          ["Fiber disclosure", "Component map, percentages by weight and proposed claims", "Materials supplier and responsible labeling business"],
+          ["Country of origin", "Production stages and shipment-specific origin determination", "Importer or qualified adviser"],
+          ["Business identification", "Eligible company name or valid RN for the actual distribution arrangement", "Brand, importer or other responsible business"],
+          ["Care", "Reasonable basis for the instructions on the finished garment", "Party responsible for care labeling"],
+          ["Artwork", "Approved wording, component scope, placement and sample revision", "Label approver and supplier"]
+        ],
+        "sources": [
+          {"label": "FTC textile fiber labeling guide", "href": "https://www.ftc.gov/business-guidance/resources/threading-your-way-through-labeling-requirements-under-textile-wool-acts"},
+          {"label": "16 CFR Part 303, textile fiber identification rules", "href": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-C/part-303"}
+        ]
+      },
+      {
+        "title": "Translate a fabric statement into a scoped component record",
+        "paragraphs": [
+          "The LS006 catalogue lists a body of 95% cotton and 5% spandex and lace of 80% polyamide and 20% spandex. DYS323 lists a body of 80% polyamide and 20% spandex and a 100% cotton gusset. M007 lists a polyester and spandex body with a modal gusset, without body percentages in the public specification. These entries support different claim scopes and different follow-up questions.",
+          "Ask the supplier for a versioned component record tied to the finished sample. A line such as polyester and spandex does not provide the percentages needed for a percentage claim. If a brand describes a trim or lining in marketing, include that wording in the label review. FTC guidance covers sectional disclosures and exceptions for certain components, so the responsible party should determine which rules apply before printing.",
+          "Illustrative calculation: assume a 24 g fabric section containing 95% cotton and a separate 6 g section containing no cotton. The first section contains 22.8 g of cotton. Across just those two weighed sections, the cotton share would be 22.8 ÷ 30 = 76%. The result describes the two hypothetical sections combined. It omits any unweighed components and does not determine the format or scope of a legal fiber label."
+        ]
+      },
+      {
+        "title": "Keep proof of care with the assembled sample",
+        "paragraphs": [
+          "FTC guidance describes the need for a reasonable basis for care instructions for covered garments. If the body fabric and trim have different sensitivities, look at the assembled garment and confirm that the proposed instruction applies to it. Keep the original method, sample identifier, observations and the approved instruction together.",
+          "For a lace brief, review what can change at the trim edge after the proposed care process. For a bonded gusset, document the condition of the join before and after the same process. For a print or heat-transfer label, review legibility and appearance with the proposed body fabric and trim. These are sample review questions that support your evidence plan."
+        ],
+        "sources": [
+          {"label": "FTC guide to the Care Labeling Rule", "href": "https://www.ftc.gov/business-guidance/resources/clothes-captioning-complying-care-labeling-rule"},
+          {"label": "16 CFR Part 423, care labeling", "href": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-D/part-423"}
+        ]
+      },
+      {
+        "title": "Approve the same wording across the label, pack and listing",
+        "paragraphs": [
+          "Make a row for each claim and record the product surface where it appears: sewn or printed label, hangtag, retail packaging or product page. Cross-check the scope against the component map. Review a claim about a cotton gusset as a gusset claim even if the product title or card has less space.",
+          "Ask who can release the artwork and how substitutions trigger another review. Preserve the prior revision for goods already produced. A traceable approval packet ties together the material documents, origin determination, care evidence, label text, sample and order revision."
+        ]
+      }
+    ],
+    "reading": [
+      {"label": "Read a cotton gusset claim by component", "href": "/news/cotton-gusset-vs-cotton-underwear-components"},
+      {"label": "Compare heat-transfer and sewn underwear labels", "href": "/news/heat-transfer-vs-sewn-underwear-labels"},
+      {"label": "Prepare material evidence using the 2026 textile outlook", "href": "/news/textile-materials-outlook-2026-underwear-sourcing"},
+      {"label": "Prepare labels and packaging", "href": "/packaging"}
+    ]
+  }
+]

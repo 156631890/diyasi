@@ -165,10 +165,9 @@ const productEntries = indexableProducts.map((product) => ({
 const contentRepairPaths = new Set([
   ...manufacturerPages.map(p=>"/manufacturers/"+p.slug),
   ...translatedPaths.filter(path=>path.includes("/manufacturers/")),
-  ...productEntries.map(p=>p.path),
   ...Object.values(allLocalizedPages).filter(page=>page.englishPath.startsWith("/products/")).map(page=>page.path),
   "/es/empaque-personalizado","/ru/packaging","/es/fabricante-ropa-interior-china","/ru/private-label",
-  "/manufacturers","/resources","/news",
+  "/manufacturers","/resources",
   "/products/womens-panties","/products/cotton-underwear","/products/lace-underwear","/oem-odm",
   "/guides/underwear-manufacturing-cost","/guides/underwear-moq-explained","/guides/starting-an-underwear-brand",
 ]);

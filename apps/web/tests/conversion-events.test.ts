@@ -61,7 +61,7 @@ test("WhatsApp links contain only non-PII page and project context", () => {
 test("contact product context accepts only reviewed product IDs", () => {
   expect(
     resolveReviewedProductTitle("lace-trim-cotton-brazilian-brief-ls006"),
-  ).toBe("Lace-Trim Cotton Brazilian Brief");
+  ).toBe("Lace-Trim Cotton Brazilian Panties");
   expect(resolveReviewedProductTitle("buyer@example.com")).toBeUndefined();
   expect(
     resolveReviewedProductTitle("Lace-Trim Cotton Brazilian Brief"),

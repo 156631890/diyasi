@@ -15,6 +15,7 @@ import { SampleButton } from "@/components/SampleList";
 import JsonLd from "@/components/JsonLd";
 import BuyerGuidance from "@/components/BuyerGuidance";
 import ContentFaq from "@/components/ContentFaq";
+import buyerNotes from "@/data/product-buyer-notes.json";
 
 import { productBuyingGuide } from "@/lib/buyer-guidance";
 import { productSourceEvidence } from "@/lib/product-source-evidence";
@@ -70,11 +71,15 @@ export default async function ProductPage({ params, searchParams }: Props) {
   const p = await getCatalogProductById(productId);
   if (!p) notFound();
   const sourceEvidence = productSourceEvidence[p.model_number];
+  const notes = buyerNotes[p.model_number as keyof typeof buyerNotes];
+  const comparison = catalogProducts.find((product) => product.model_number === notes.compareModel)!;
+  const guide = productBuyingGuide(p);
   const parent = findCollection(p.collection)!;
-  const related = catalogProducts
-    .filter((x) => x.collection === p.collection && x.slug !== p.slug)
+  const closest = catalogProducts
+    .filter((x) => x.collection === p.collection && x.slug !== p.slug && x.slug !== comparison.slug)
     .sort((a, b) => Number(b.fit === p.fit) - Number(a.fit === p.fit) || Number(b.rise === p.rise) - Number(a.rise === p.rise))
-    .slice(0, 4);
+    .slice(0, 3);
+  const related = [comparison, ...closest];
   const facts = [
     ["Style number", p.model_number],
     ["Composition", p.fabric],
@@ -134,7 +139,7 @@ export default async function ProductPage({ params, searchParams }: Props) {
         />
         <div className="d-detail-copy">
           <p className="d-eyebrow">
-            Private label &amp; wholesale · {p.model_number}
+            DIYASI {p.model_number} · Private label &amp; wholesale
           </p>
           <h1>{p.seo_heading}</h1>
           <p className="d-detail-description">{p.description}</p>
@@ -284,7 +289,12 @@ export default async function ProductPage({ params, searchParams }: Props) {
           </div>
         )}
       </aside>
-      <BuyerGuidance guide={productBuyingGuide(p)} />
+      <BuyerGuidance guide={{
+        ...guide,
+        heading: `How to evaluate ${p.model_number} before ordering`,
+        intro: notes.selection,
+        checks: [notes.approval, ...guide.checks],
+      }} />
       {related.length>0 && <section className="d-section"><h2>Compare {p.model_number} with related catalogue models</h2><p>These are published model specifications, not interchangeable fit approvals. Compare coverage and components together, then use the linked photographs and source charts to select samples.</p>
         <div className="d-table-scroll" tabIndex={0} role="region" aria-label={p.model_number+" model comparison"}><table><thead><tr><th scope="col">Model</th><th scope="col">Fit / rise</th><th scope="col">Composition</th><th scope="col">Listed sizes</th></tr></thead><tbody>
           {[p,...related.slice(0,2)].map(model=><tr key={model.slug}><th scope="row">{model.slug===p.slug?model.model_number:<Link href={"/products/"+model.slug}>{model.model_number} ↗</Link>}</th><td>{model.fit} · {model.rise}</td><td>{model.fabric}</td><td>{model.size.replace(/^Standard American \/ European [Ss]ize\s*-\s*/, "")}</td></tr>)}
